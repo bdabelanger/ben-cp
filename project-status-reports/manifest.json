@@ -1,17 +1,26 @@
 {
     "project": "Platform Weekly Status",
-    "last_run": null,
-    "steps": {
-        "1_asana_ingest": {
+    "last_run": "2026_04_03",
+    "config": {
+        "repo_root": "/Users/benbelanger/GitHub/ben-cp/project-status-reports",
+        "processed_dir": "inputs/processed",
+        "archive_dir": "inputs/archive"
+    },
+    "steps": [
+        {
+            "id": "1_asana_ingest",
             "status": "pending",
-            "script": "project-status-reports/scripts/step_1_asana_platform_filter.py",
-            "input": "project-status-reports/inputs/raw/asana_all_projects.json",
-            "output": "project-status-reports/inputs/processed/asana_active.json"
+            "file": "inputs/processed/asana_active_2026_04_03.json"
         },
-        "2_jira_harvest": {
+        {
+            "id": "2_jira_harvest",
             "status": "pending",
-            "input": "project-status-reports/inputs/processed/asana_active.json",
-            "output": "project-status-reports/inputs/processed/jira_issues.json"
+            "file": "inputs/processed/jira_issues_2026_04_03.json"
+        },
+        {
+            "id": "3_report_generation",
+            "status": "pending",
+            "file": "outputs/Platform_Status_2026_04_03.md"
         }
-    }
+    ]
 }

@@ -1,0 +1,17 @@
+{
+    "project": "Platform Weekly Status",
+    "last_run": null,
+    "steps": {
+        "1_asana_ingest": {
+            "status": "pending",
+            "script": "project-status-reports/scripts/step_1_asana_platform_filter.py",
+            "input": "project-status-reports/inputs/raw/asana_all_projects.json",
+            "output": "project-status-reports/inputs/processed/asana_active.json"
+        },
+        "2_jira_harvest": {
+            "status": "pending",
+            "input": "project-status-reports/inputs/processed/asana_active.json",
+            "output": "project-status-reports/inputs/processed/jira_issues.json"
+        }
+    }
+}

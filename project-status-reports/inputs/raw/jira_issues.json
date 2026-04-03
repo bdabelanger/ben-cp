@@ -1,0 +1,58 @@
+[
+    {
+        "key": "CBP-3150",
+        "fields": {
+            "summary": "Notes datagrid - Show 'Service interaction people' in the People column",
+            "parent": {
+                "key": "CBP-2736"
+            },
+            "status": {
+                "name": "In Development",
+                "statusCategory": {
+                    "name": "In Progress"
+                }
+            },
+            "assignee": {
+                "displayName": "Tuan Nguyen"
+            },
+            "timeoriginalestimate": 0,
+            "timespent": 0,
+            "priority": {
+                "name": "P2"
+            },
+            "fixVersions": [
+                {
+                    "name": "Platform-2026-4-2"
+                }
+            ]
+        }
+    },
+    {
+        "key": "CBP-3107",
+        "fields": {
+            "summary": "Notes - Rename date fields for Services section",
+            "parent": {
+                "key": "CBP-2736"
+            },
+            "status": {
+                "name": "Merged to QA",
+                "statusCategory": {
+                    "name": "In Progress"
+                }
+            },
+            "assignee": {
+                "displayName": "Bisoye Atolagbe"
+            },
+            "timeoriginalestimate": 0,
+            "timespent": 0,
+            "priority": {
+                "name": "P2"
+            },
+            "fixVersions": [
+                {
+                    "name": "Platform-2026-4-2"
+                }
+            ]
+        }
+    }
+]

@@ -1,17 +1,17 @@
-## Atlassian Rovo - Standard Operating Procedures
+## Atlassian Rovo - Standard Operating Procedures (CBP-XXXX)
 
-Process for Identifying and Retrieving Information about a “CBP-XXXX” Issue:
+**Objective:** To efficiently locate and gather comprehensive data on "CBP-XXXX" issues using available tools.
 
-Initial Search (Tool: searchAtlassian): Begin by using the searchAtlassian tool with a specific query (e.g., “CBP-XXXX”) to locate the issue within Confluence and Jira. This is crucial as it might not always be immediately obvious from a standard URL.
+### 🔍 Investigation Workflow
 
-ARI Identification (Tool: getJiraIssue): If the initial search returns a standard URL, use the getJiraIssue tool with the issue ID or key (e.g., “CBP-XXXX”) to retrieve detailed information about the issue, including its status, assignee, and related fields.
+1.  **The Great Hunt (Tool: searchAtlassian):** Initiate the investigation by calling `searchAtlassian`. **Crucially, structure your query to include both the issue key AND a relevant context keyword** (e.g., `"CBP-XXXX" "status_keyword"`). This maximizes discovery beyond simple URL matching.
+    *   **🛑 Fallback:** If `searchAtlassian` returns zero results for a known issue, immediately escalate or verify the issue key's existence outside of Rovo tools.
 
-Remote Link Check (Tool: getJiraIssueRemoteIssueLinks): If the issue has remote links, use the getJiraIssueRemoteIssueLinks tool to explore those connections and potentially uncover related issues or discussions.
+2.  **Data Retrieval (Tool: getJiraIssue):** Once a standard URL is found via Step 1, use `getJiraIssue` with the precise ID/Key (`CBP-XXXX`) to pull core data (status, assignee, fields). This is your primary source of truth.
 
-No Remote Links - Deep Dive (Tool: getJiraIssue): If no remote links are found, rely on the information returned by getJiraIssue to understand the issue's context and any potential next steps.
+3.  **Link Exploration (Tool: getJiraIssueRemoteIssueLinks):** If available, execute this tool to map out related discussions or linked entities. Note that an empty list here is a common occurrence and does not indicate failure.
 
-Key Considerations:
-* The searchAtlassian tool is vital for finding issues when a standard URL isn’t available.
-* The getJiraIssue tool provides comprehensive information about the issue, including fields and relationships.
-* The getJiraIssueRemoteIssueLinks tool is useful for discovering related issues, but it may return an empty list.
-* This process should help streamline future investigations and reduce the need for repeated tool calls when dealing with “CBP-XXXX” issues.
+### 💡 Key Takeaways & Best Practices
+*   `searchAtlassian` is your initial compass; always refine the query for precision.
+*   `getJiraIssue` provides the bedrock data—treat its output as definitive context.
+*   This streamlined process minimizes unnecessary tool calls, making investigations faster and less prone to guesswork when tackling "CBP-XXXX" issues.

@@ -13,3 +13,11 @@ When importing this into a tool like Tableau, PowerBI, or Looker:
 1.  Use **People** as your central fact table.
 2.  Ensure that bridge/junction tables are used to prevent Cartesian explosion (many-to-many duplication) when aggregating counts.
 3.  Implement the "Correct Concat" logic at the view/query level for Resource Labels so visualizations read cleanly.
+
+## 🔗 BI Syntax References
+For specific syntax guides, see:
+* Reveal BI Syntax: [reveal_bi_syntax.md](/Users/benbelanger/GitHub/ben-cp/sop/casebook-reporting/reveal_bi_syntax.md)
+* Visualization Examples: [reveal_bi_visualizations.md](/Users/benbelanger/GitHub/ben-cp/sop/casebook-reporting/reveal_bi_visualizations.md)
+
+## 🛠️ File Management Best Practice
+Before making any edits or writing to any SOP file via the filesystem tools, ALWAYS use 'read_text_file' first to pull a fresh copy of the content. This prevents overwriting recent changes.

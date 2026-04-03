@@ -1,3 +1,9 @@
+# Trigger: "Generate Platform Weekly Status Report"
+When this phrase is used, the agent must:
+1. Run `update_manifest.py reset`.
+2. Execute Steps 1 through 4 sequentially.
+3. Adhere to "Strict Tooling Rules" below.
+
 # SOP: Status Report Orchestrator (Final)
 
 ## Goal
@@ -14,7 +20,7 @@ Manage the multi-step relay for the Platform Weekly Status report using `manifes
 ### 1. The Clean Start (New Run Only)
 * **Action:** Move existing files in `project-status-reports/inputs/processed/` to `project-status-reports/inputs/archive/`.
 * **Action:** Run the reset command: `python3 /Users/benbelanger/GitHub/ben-cp/project-status-reports/scripts/update_manifest.py reset`
-* **Result:** This automatically updates last_run and the Step 3 file path to the current date.
+* **Result:** This automatically updates last_run and the Step files to the current date.
 
 ### 2. State Verification
 * **Action:** Always read `manifest.json` first. Only execute steps marked `pending`.
@@ -24,14 +30,19 @@ Manage the multi-step relay for the Platform Weekly Status report using `manifes
 * **Action:** Run `python3 /Users/benbelanger/GitHub/ben-cp/project-status-reports/scripts/step_1_asana_platform_filter.py`.
 * **Success:** `asana_active.json` is created. Update manifest to `complete`.
 
-### 4. Step 2: Jira Harvest
+### 4. Step 2: Rovo Context
 * **Requirement:** Step 1 status is `complete`.
-* **Action:** Run `python3 /Users/benbelanger/GitHub/ben-cp/project-status-reports/scripts/step_2_jira_harvest.py`.
+* **Action:** Run `python3 /Users/benbelanger/GitHub/ben-cp/project-status-reports/scripts/step_2_rovo_context.py`.
+* **Success:** `rovo_insights.json` is created. Update manifest to `complete`.
+
+### 5. Step 3: Jira Harvest
+* **Requirement:** Step 1 status is `complete`.
+* **Action:** Run `python3 /Users/benbelanger/GitHub/ben-cp/project-status-reports/scripts/step_3_jira_harvest.py`.
 * **Success:** `jira_issues.json` is created. Update manifest to `complete`.
 
-### 5. Step 3: Report Generation
-* **Requirement:** Step 2 status is `complete`.
-* **Action:** Run `python3 /Users/benbelanger/GitHub/ben-cp/project-status-reports/scripts/step_3_report_generator.py`.
+### 6. Step 4: Report Generation
+* **Requirement:** Steps 1, 2, and 3 statuses are `complete`.
+* **Action:** Run `python3 /Users/benbelanger/GitHub/ben-cp/project-status-reports/scripts/step_4_report_generator.py`.
 * **Convention:** The script dynamically names the file `Platform_Status_YYYY_MM_DD.md` in the `outputs/` folder.
 * **Success:** Update manifest to `complete`.
 

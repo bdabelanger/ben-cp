@@ -20,12 +20,15 @@ def generate_report():
     
     # Resolve step-specific file dependencies dynamically
     ASANA_FILE = get_path_from_manifest("1_asana_ingest")
-    JIRA_FILE = get_path_from_manifest("2_jira_harvest")
-    OUTPUT_PATH = get_path_from_manifest("3_report_generation")
+    ROVO_FILE = get_path_from_manifest("2_rovo_context")
+    JIRA_FILE = get_path_from_manifest("3_jira_harvest")
+    OUTPUT_PATH = get_path_from_manifest("4_report_generation")
 
     try:
         with open(ASANA_FILE, 'r') as f:
             asana_data = json.load(f)
+        with open(ROVO_FILE, 'r') as f:
+            rovo_data = json.load(f)
         with open(JIRA_FILE, 'r') as f:
             jira_data = json.load(f)
 
@@ -34,10 +37,19 @@ def generate_report():
         for project in asana_data:
             name = project.get('name', 'Unknown Project')
             permalink = project.get('permalink_url', '#')
-            # Custom logic for status bar (defaulting to 50% for dummy data)
+            
             report.append(f"**Project Header:** {name}")
             report.append(f"**Asana Permalink:** [View Project]({permalink})")
             report.append(f"**Overall Status:** {get_progress_bar(50)} (On Track)\n")
+            
+            # --- ROVO CONTEXT INJECTION ---
+            insight = rovo_data.get(name, {})
+            if insight:
+                report.append("#### 🧠 Rovo Decisions & Context")
+                report.append(f"* **Sentiment**: {insight.get('sentiment', 'N/A')}")
+                report.append(f"* **Insight**: {insight.get('summary', 'No summary available.')}")
+                report.append(f"* **Blockers**: {insight.get('blockers_mention', 'N/A')}\n")
+            
             report.append("---\n### ⚙️ Jira Issue Breakdown\n")
 
             # Group Jira issues by status
@@ -65,7 +77,7 @@ def generate_report():
         with open(OUTPUT_PATH, 'w') as f:
             f.write("\n".join(report))
         
-        print(f"✅ 3_report_generation Complete: {OUTPUT_PATH}")
+        print(f"✅ 4_report_generation Complete: {OUTPUT_PATH}")
 
     except Exception as e:
         print(f"❌ Error generating report: {str(e)}")

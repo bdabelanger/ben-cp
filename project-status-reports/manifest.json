@@ -9,17 +9,22 @@
     "steps": [
         {
             "id": "1_asana_ingest",
-            "status": "pending",
+            "status": "complete",
             "file": "inputs/processed/asana_active_2026_04_03.json"
         },
         {
-            "id": "2_jira_harvest",
-            "status": "pending",
+            "id": "2_rovo_context",
+            "status": "complete",
+            "file": "inputs/processed/rovo_insights_2026_04_03.json"
+        },
+        {
+            "id": "3_jira_harvest",
+            "status": "complete",
             "file": "inputs/processed/jira_issues_2026_04_03.json"
         },
         {
-            "id": "3_report_generation",
-            "status": "pending",
+            "id": "4_report_generation",
+            "status": "complete",
             "file": "outputs/Platform_Status_2026_04_03.md"
         }
     ]

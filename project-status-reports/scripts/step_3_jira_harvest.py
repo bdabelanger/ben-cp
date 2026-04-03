@@ -19,7 +19,7 @@ def harvest():
     # Resolve step-specific file dependencies dynamically
     ASANA_ACTIVE = get_path_from_manifest("1_asana_ingest")
     JIRA_RAW = os.path.join(repo_root, "inputs/raw/jira_issues.json")
-    OUTPUT = get_path_from_manifest("2_jira_harvest")
+    OUTPUT = get_path_from_manifest("3_jira_harvest")
 
     # 1. Load active Asana projects to get Jira keys
     with open(ASANA_ACTIVE, 'r') as f:
@@ -44,7 +44,7 @@ def harvest():
     with open(OUTPUT, 'w') as f:
         json.dump(filtered, f, indent=2)
     
-    print(f"✅ 2_jira_harvest Complete: {OUTPUT}")
+    print(f"✅ 3_jira_harvest Complete: {OUTPUT}")
 
 if __name__ == "__main__":
     harvest()

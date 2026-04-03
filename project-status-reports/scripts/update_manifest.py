@@ -36,20 +36,15 @@ def reset_manifest():
     data['last_run'] = run_id
     for step in data['steps']:
         step['status'] = "pending"
-        # Extract base name without existing dates to rebuild path
-        if step['id'] == "3_report_generation":
+        # New ID-based naming logic
+        if step['id'] == "4_report_generation":
             step['file'] = f"outputs/Platform_Status_{run_id}.md"
-        else:
-            # Logic to keep the prefix but update the date suffix
-            # Applying a minor correction to user's logic to match the explicit asana_active/jira_issues format
-            if step['id'] == '1_asana_ingest':
-                base_name = 'asana_active'
-            elif step['id'] == '2_jira_harvest':
-                base_name = 'jira_issues'
-            else:
-                base_name = step['id'].replace('1_', 'asana_').replace('2_', 'jira_')
-                
-            step['file'] = f"{data['config']['processed_dir']}/{base_name}_{run_id}.json"
+        elif step['id'] == "1_asana_ingest":
+            step['file'] = f"inputs/processed/asana_active_{run_id}.json"
+        elif step['id'] == "2_rovo_context":
+            step['file'] = f"inputs/processed/rovo_insights_{run_id}.json"
+        elif step['id'] == "3_jira_harvest":
+            step['file'] = f"inputs/processed/jira_issues_{run_id}.json"
             
     save_manifest(data)
     print(f"🔄 Manifest Reset for RUN_ID: {run_id}")

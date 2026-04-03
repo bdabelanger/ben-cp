@@ -1,30 +1,79 @@
 [
     {
+        "name": "Services - Service plan datagrid with bulk actions",
+        "gid": "1211631360190563",
+        "status": "on_track",
+        "stage": "Development",
+        "jira_link": "CBP-3066"
+    },
+    {
+        "name": "Services WLV - Bulk actions",
+        "gid": "1211733450555414",
+        "status": "off_track",
+        "stage": "Development",
+        "jira_link": "CBP-3121"
+    },
+    {
+        "name": "Notes - Locked Notes",
+        "gid": "1211786365522017",
+        "status": "on_track",
+        "stage": "In QA",
+        "jira_link": "CBP-2923"
+    },
+    {
+        "name": "Notes - Tabbed design",
+        "gid": "1213002343224284",
+        "status": "on_track",
+        "stage": "In QA",
+        "jira_link": "N/A"
+    },
+    {
+        "name": "Notes - Bulk Service Notes",
+        "gid": "1211757637943244",
+        "status": "on_track",
+        "stage": "In QA",
+        "jira_link": "CBP-2924"
+    },
+    {
         "name": "Notes - Notes datagrid",
-        "gid": "1208822149019495",
-        "permalink_url": "https://app.asana.com/0/1123317448830974/1208822149019495",
-        "current_status_update": {
-            "status_type": "on_track"
-        },
-        "custom_fields": [
-            {
-                "gid": "1208820967756795",
-                "name": "Team",
-                "enum_value": {
-                    "gid": "1208820967756799",
-                    "name": "Platform"
-                }
-            },
-            {
-                "gid": "1208818005809198",
-                "name": "JIRA Link",
-                "display_value": "https://casecommons.atlassian.net/browse/CBP-2736"
-            },
-            {
-                "gid": "1208822149019495",
-                "name": "Stage",
-                "display_value": "GA"
-            }
-        ]
+        "gid": "1209963394727039",
+        "status": "on_track",
+        "stage": "GA",
+        "jira_link": "CBP-2736"
+    },
+    {
+        "name": "Service Plan - Bulk Services section",
+        "gid": "1211631356870657",
+        "status": "on_track",
+        "stage": "Beta",
+        "jira_link": "CBP-2992"
+    },
+    {
+        "name": "Notes - Bulk \"General Notes\"",
+        "gid": "1211838817183809",
+        "status": "on_track",
+        "stage": "Beta",
+        "jira_link": "CBP-2752"
+    },
+    {
+        "name": "Integrations - Zapier improvements",
+        "gid": "1213496879668016",
+        "status": "on_track",
+        "stage": "Development",
+        "jira_link": "N/A"
+    },
+    {
+        "name": "Data import - Clearer error messages",
+        "gid": "1210860550580329",
+        "status": "on_track",
+        "stage": "Development",
+        "jira_link": "CBP-498"
+    },
+    {
+        "name": "Notifications - Eliminate HTML injection/XSS vulnerability (KPP)",
+        "gid": "1212555058482954",
+        "status": "on_track",
+        "stage": "In QA",
+        "jira_link": "CBP-1593"
     }
 ]

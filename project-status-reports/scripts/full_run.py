@@ -29,7 +29,7 @@ def main():
     run_script("step_4_report_generator.py")
     run_script("update_manifest.py", "4_report_generation", "complete")
     
-    print("✅ Full Run Pipeline Finished Successfully!")
+    print("Relay Success: Asana(Filtered) -> Rovo(Stubbed) -> Jira(Mapped) -> Report(Generated).")
 
 if __name__ == "__main__":
     main()

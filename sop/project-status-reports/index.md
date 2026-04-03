@@ -14,6 +14,16 @@ Manage the multi-step relay for the Platform Weekly Status report using `manifes
    `python3 /Users/benbelanger/GitHub/ben-cp/project-status-reports/scripts/update_manifest.py [step_id] [status]`
 2. **Absolute Pathing:** Every tool call (shell, filesystem, ben-cp) MUST use full absolute paths starting with `/Users/benbelanger/GitHub/ben-cp/`.
 3. **Script Maintenance:** If a Python script fails due to logic, use `write_file` to update the script content before retrying the shell command.
+4. **STRICT LAZY LOADING:** Do not read processed JSON files until the final Synthesis step (Step 4).
+5. **SCRIPT-CENTRIC:** Trust the shell tool output. If a script prints '✅ Complete', do not verify it by reading the file content. Move immediately to the next shell command.
+6. **FIELD RESTRICTION:** The 'file' paths in `manifest.json` are pointers for Python scripts, not for the AI Agent. Reading these paths via ben-cp is a context-waste violation.
+
+### ⚡ Execution Macro
+When triggered, follow this exact sequence:
+1. **Reset Manifest**
+2. **Run Meta-Scripts** (Steps 1 through 3, checking status in terminal only)
+3. **Synthesis** (Read ONLY the specific output files for Step 4, if needed)
+4. **Finalize**
 
 ## 🔄 Core Logic
 
@@ -44,7 +54,7 @@ Manage the multi-step relay for the Platform Weekly Status report using `manifes
 * **Requirement:** Steps 1, 2, and 3 statuses are `complete`.
 * **Action:** Run `python3 /Users/benbelanger/GitHub/ben-cp/project-status-reports/scripts/step_4_report_generator.py`.
 * **Convention:** The script dynamically names the file `Platform_Status_YYYY_MM_DD.md` in the `outputs/` folder.
-* **Success:** Update manifest to `complete`.
+* **Success:** Update manifest to `complete`. The script will output the full report wrapped in `--- REPORT START ---` and `--- REPORT END ---` tags. Your only task is to copy the content between these tags. Do not use filesystem tools to read the .md file.
 
 ## ⚠️ Error Handling
 * **Permission Errors:** Verify you are inside the allowed root: `/Users/benbelanger/GitHub/ben-cp/`.

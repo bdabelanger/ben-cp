@@ -34,6 +34,11 @@ def generate_report():
 
         report = [f"### Platform Weekly Status Report ({today})\n"]
 
+        total_projects = len(asana_data)
+        total_rovo_insights = 0
+        total_blockers = 0
+        total_jira_issues = len(jira_data)
+
         for project in asana_data:
             name = project.get('name', 'Unknown Project')
             permalink = project.get('permalink_url', '#')
@@ -45,10 +50,15 @@ def generate_report():
             # --- ROVO CONTEXT INJECTION ---
             insight = rovo_data.get(name, {})
             if insight:
+                total_rovo_insights += 1
+                blocker = insight.get('blockers_mention', 'N/A')
+                if blocker and blocker.lower() != 'n/a':
+                    total_blockers += 1
+                    
                 report.append("#### 🧠 Rovo Decisions & Context")
                 report.append(f"* **Sentiment**: {insight.get('sentiment', 'N/A')}")
                 report.append(f"* **Insight**: {insight.get('summary', 'No summary available.')}")
-                report.append(f"* **Blockers**: {insight.get('blockers_mention', 'N/A')}\n")
+                report.append(f"* **Blockers**: {blocker}\n")
             
             report.append("---\n### ⚙️ Jira Issue Breakdown\n")
 
@@ -77,7 +87,32 @@ def generate_report():
         with open(OUTPUT_PATH, 'w') as f:
             f.write("\n".join(report))
         
-        print(f"✅ 4_report_generation Complete: {OUTPUT_PATH}")
+        # --- TERMINAL SUMMARY FOR LAZY LOADING ---
+        print("\n" + "="*50)
+        print("📊 SUMMARY OF CHANGES (For Gemma)")
+        print("="*50)
+        print(f"Projects Processed: {total_projects}")
+        print(f"Rovo Insights Found: {total_rovo_insights} ({total_blockers} mentioning blockers)")
+        print(f"Jira Issues Included: {total_jira_issues}")
+        
+        status_counts = {}
+        for issue in jira_data:
+            s_name = issue.get('fields', {}).get('status', {}).get('name', 'Unknown')
+            status_counts[s_name] = status_counts.get(s_name, 0) + 1
+            
+        if status_counts:
+            print("Jira Issues by Status:")
+            for s_name, count in status_counts.items():
+                print(f"  - {s_name}: {count}")
+                
+        print("="*50 + "\n")
+        
+        # --- STDOUT REPORT CONTRACT ---
+        print("--- REPORT START ---")
+        print("\n".join(report))
+        print("--- REPORT END ---")
+        
+        print(f"\n✅ 4_report_generation Complete: {OUTPUT_PATH}")
 
     except Exception as e:
         print(f"❌ Error generating report: {str(e)}")

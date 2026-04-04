@@ -22,11 +22,16 @@ def filter_platform_projects(input_path, output_path):
             
         filtered = []
         for p in data:
-            # Check custom fields for Platform Team GID
-            team_field = next((f for f in p.get('custom_fields', []) if f['gid'] == TEAM_FIELD_GID), None)
-            if team_field and team_field.get('enum_value', {}).get('gid') == PLATFORM_TEAM_GID:
-                # Keep if not complete
-                if p.get('current_status_update', {}).get('status_type') != "complete":
+            if 'custom_fields' in p:
+                # Check custom fields for Platform Team GID
+                team_field = next((f for f in p.get('custom_fields', []) if f['gid'] == TEAM_FIELD_GID), None)
+                if team_field and team_field.get('enum_value', {}).get('gid') == PLATFORM_TEAM_GID:
+                    # Keep if not complete
+                    if p.get('current_status_update', {}).get('status_type') != "complete":
+                        filtered.append(p)
+            else:
+                # Handle flat dummy data
+                if p.get('status') != "complete":
                     filtered.append(p)
         
         # Ensure directory exists

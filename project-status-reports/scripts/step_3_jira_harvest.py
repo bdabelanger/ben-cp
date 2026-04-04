@@ -28,6 +28,8 @@ def harvest():
     # Extract keys (e.g., "CBP-2736") from the Jira Link custom field
     valid_keys = []
     for p in active_projects:
+        if 'jira_link' in p and p['jira_link'] != "N/A":
+            valid_keys.append(p['jira_link'])
         for cf in p.get('custom_fields', []):
             if cf.get('name') == "JIRA Link" and cf.get('display_value'):
                 # Extract key from URL

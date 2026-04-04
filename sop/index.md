@@ -4,6 +4,7 @@ This document serves as the primary entry point for all Standard Operating Proce
 
 ## 🧭 Core Process Guides
 
+*   **Platform Weekly Status Report:** To trigger the automated multi-step orchestrator and generate the weekly status report (and to review the strict rules for this workflow), see the dedicated guide: [Status Report Orchestrator SOP](/Users/benbelanger/GitHub/ben-cp/sop/project-status-reports/index.md)
 *   **Rovo Issue Management:** For procedures related to finding, identifying, and retrieving information about "CBP-XXXX" issues using Atlassian Rovo tools (searchAtlassian, getJiraIssue, etc.), see the detailed guide in the Rovo subdirectory: [Rovo SOP Guide](/Users/benbelanger/GitHub/ben-cp/sop/rovo/rovo-sop.md)
 
 ## 📂 Sub-Category Guides

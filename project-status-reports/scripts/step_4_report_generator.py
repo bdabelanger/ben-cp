@@ -87,32 +87,12 @@ def generate_report():
         with open(OUTPUT_PATH, 'w') as f:
             f.write("\n".join(report))
         
-        # --- TERMINAL SUMMARY FOR LAZY LOADING ---
-        print("\n" + "="*50)
-        print("📊 SUMMARY OF CHANGES (For Gemma)")
-        print("="*50)
-        print(f"Projects Processed: {total_projects}")
-        print(f"Rovo Insights Found: {total_rovo_insights} ({total_blockers} mentioning blockers)")
-        print(f"Jira Issues Included: {total_jira_issues}")
-        
-        status_counts = {}
-        for issue in jira_data:
-            s_name = issue.get('fields', {}).get('status', {}).get('name', 'Unknown')
-            status_counts[s_name] = status_counts.get(s_name, 0) + 1
-            
-        if status_counts:
-            print("Jira Issues by Status:")
-            for s_name, count in status_counts.items():
-                print(f"  - {s_name}: {count}")
-                
-        print("="*50 + "\n")
-        
         # --- STDOUT REPORT CONTRACT ---
         print("--- REPORT START ---")
         print("\n".join(report))
         print("--- REPORT END ---")
         
-        print(f"\n✅ 4_report_generation Complete: {OUTPUT_PATH}")
+        print(f"\n✅ 4_report_generation Complete")
 
     except Exception as e:
         print(f"❌ Error generating report: {str(e)}")

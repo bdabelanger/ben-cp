@@ -7,9 +7,9 @@ This document serves as the primary entry point for all Standard Operating Proce
 *   **Platform Weekly Status Report:** [Status Report Orchestrator SOP](project-status-reports/index.md)
     *   ⚡ **Quick Trigger**: If asked to "generate the report", run:
         ```
-        cd project-status-reports/scripts && python3 full_run.py
+        cd project-status-reports/scripts && python3 full_run.py --force
         ```
-        The pipeline runs end-to-end automatically. Requires `JIRA_USER_EMAIL` and `JIRA_API_TOKEN` set in the environment.
+        `--force` ensures fresh Jira data each run. The pipeline runs end-to-end automatically. Requires `JIRA_USER_EMAIL` and `JIRA_API_TOKEN` set in the environment.
 *   **Rovo Issue Management:** [Rovo SOP Guide](rovo/rovo-sop.md)
 
 ## 📂 Sub-Category Guides

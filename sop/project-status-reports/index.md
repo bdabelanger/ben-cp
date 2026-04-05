@@ -3,10 +3,18 @@
 > [!IMPORTANT]
 > ⚡ **KICKSTART** — Run from the scripts directory:
 >
+> **Fresh weekly run (always use this):**
 > ```
 > cd project-status-reports/scripts
+> python3 full_run.py --force
+> ```
+>
+> **Re-render only (Jira data already fresh, just re-generate the report):**
+> ```
 > python3 full_run.py
 > ```
+>
+> `--force` wipes stale Jira cache and resets the manifest before running. Without it, the pipeline skips re-fetching if processed data already exists from a previous run.
 >
 > The pipeline runs fully automated — no agent tool calls required. Ensure `JIRA_USER_EMAIL` and `JIRA_API_TOKEN` are exported before running.
 
@@ -104,10 +112,12 @@ Rank: `Development=1 → In QA=2 → In UAT=3 → Beta=4 → GA=5`
 ## 🔄 Execution Macro (Summary)
 
 ```
-python3 full_run.py
+python3 full_run.py --force
 ```
 
-The orchestrator now handles the entire pipeline autonomously end-to-end:
-1. `full_run.py` invokes Step 1 (Asana Ingest).
-2. `full_run.py` invokes Step 2 (Jira Fetch) automatically using `requests` if credentials are set.
+The orchestrator handles the entire pipeline autonomously end-to-end:
+1. `--force` wipes `inputs/raw/jira/` and resets the manifest (archives old processed files).
+2. `full_run.py` invokes Step 1 (Asana Ingest).
+3. `full_run.py` invokes Step 2 (Jira Fetch) automatically via `requests` — fetches child issues per epic using `parent in (KEY)` JQL.
+4. `full_run.py` cascades into Step 3 (Harvest) and Step 4 (Report Generation).
 3. `full_run.py` automatically cascades into Step 3 (Harvest) and Step 4 (Report Generation).

@@ -71,7 +71,11 @@ def fetch_missing_atlassian_data():
     # 3. Iteratively fetch each missing epic
     for key in missing_keys:
         save_path = os.path.join(JIRA_RAW_DIR, f"{key}.json")
-        jql = f'project = CBP AND issuetype != QAFE AND (issuekey = {key} OR "Epic Link" = {key} OR parent = {key}) ORDER BY updated DESC'
+        # Use parent in (...) — this workspace uses "Project" as the top-level type,
+        # not Epic. Child stories have parent.key set directly. "Epic Link" is the
+        # old Jira Epic field and does not apply here.
+        # QAFE exclusion is done in step_3_jira_harvest.py (Python), not in JQL.
+        jql = f'project = CBP AND parent in ({key}) ORDER BY parent ASC, status ASC'
         
         all_issues = []
         start_at = 0
@@ -111,9 +115,8 @@ def fetch_missing_atlassian_data():
                 break
         
         if not all_issues:
-            print("❌ Error: 0 issues returned for this Epic. Fatal pipeline error.", file=sys.stderr)
-            sys.exit(1)
-            
+            print(f"⚠️  0 child issues found for {key} — saving empty file and continuing.")
+
         print(f"OK ({len(all_issues)} issues)")
         
         # 4. Save to disk

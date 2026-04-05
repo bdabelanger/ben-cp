@@ -8,21 +8,7 @@
 > python3 full_run.py
 > ```
 >
-> It will print exact instructions for every step, including the exact JQL and save path for each Jira epic. Follow the printed instructions literally.
-
----
-
-## ⛔ STOP — Read Before Calling Any Tools
-
-These are the only correct tools for this pipeline. Do not substitute.
-
-| Step | Correct Tool | Common Wrong Choices (NEVER USE) |
-|------|-------------|----------------------------------|
-| Jira fetch | `searchJiraIssuesUsingJql` | `searchAtlassian`, `fetchAtlassian`, `getJiraIssue` |
-| Asana data | Already on disk from Step 1 — do not re-fetch via MCP | `get_projects`, `get_items_for_portfolio` |
-| Confluence | Not part of this pipeline | `searchAtlassian`, `getConfluencePage` |
-
-If you cannot find `searchJiraIssuesUsingJql` in your available tools, **stop and tell the user**. Do not attempt an alternative.
+> The pipeline runs fully automated — no agent tool calls required. Ensure `JIRA_USER_EMAIL` and `JIRA_API_TOKEN` are exported before running.
 
 ---
 

@@ -9,7 +9,7 @@ This document serves as the primary entry point for all Standard Operating Proce
         ```
         cd project-status-reports/scripts && python3 full_run.py
         ```
-        Follow the printed instructions exactly. The script tells you every step including the exact JQL to call with `searchJiraIssuesUsingJql` (Atlassian MCP). Do NOT use `searchAtlassian`.
+        The pipeline runs end-to-end automatically. Requires `JIRA_USER_EMAIL` and `JIRA_API_TOKEN` set in the environment.
 *   **Rovo Issue Management:** [Rovo SOP Guide](rovo/rovo-sop.md)
 
 ## 📂 Sub-Category Guides

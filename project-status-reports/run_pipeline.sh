@@ -11,7 +11,8 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-ENV_FILE="$SCRIPT_DIR/.env"
+REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+ENV_FILE="$REPO_ROOT/.env"
 LOG_FILE="$SCRIPT_DIR/logs/run.log"
 
 mkdir -p "$SCRIPT_DIR/logs"
@@ -24,8 +25,8 @@ if [[ -f "$ENV_FILE" ]]; then
 fi
 
 # Validate credentials
-if [[ -z "${JIRA_USER_EMAIL:-}" || -z "${JIRA_API_TOKEN:-}" ]]; then
-    echo "❌ JIRA_USER_EMAIL or JIRA_API_TOKEN not set. Copy .env.example to .env and fill in values." >&2
+if [[ -z "${ATLASSIAN_USER_EMAIL:-}" || -z "${ATLASSIAN_API_TOKEN:-}" ]]; then
+    echo "❌ ATLASSIAN_USER_EMAIL or ATLASSIAN_API_TOKEN not set. Add them to $ENV_FILE." >&2
     exit 1
 fi
 

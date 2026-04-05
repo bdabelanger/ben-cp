@@ -26,13 +26,13 @@ def generate_report():
 
     try:
         with open(ASANA_FILE, 'r') as f:
-            asana_data = json.load(f)
+            asana_data = [d for d in json.load(f) if "_metadata" not in d]
         with open(ROVO_FILE, 'r') as f:
             rovo_data = json.load(f)
         with open(JIRA_DATA, 'r') as f:
-            jira_data = json.load(f)
+            jira_data = [d for d in json.load(f) if "_metadata" not in d]
 
-        report = [f"### Platform Weekly Status Report ({today})\n"]
+        report = [f"### Platform Weekly Status Report\n", f"_Generated at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}_\n"]
 
         total_projects = len(asana_data)
         total_rovo_insights = 0
@@ -101,4 +101,5 @@ def generate_report():
         print(f"❌ Error generating report: {str(e)}")
 
 if __name__ == "__main__":
+    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Started step_4_report_generator.py")
     generate_report()

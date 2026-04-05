@@ -102,5 +102,7 @@ def main():
     print(report_md)
 
 if __name__ == "__main__":
+    import datetime
+    print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Started full_run.py")
     main()
 

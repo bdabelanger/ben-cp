@@ -47,6 +47,12 @@ def harvest():
     # 2. Filter and Map Jira issues
     with open(JIRA_RAW, 'r') as f:
         all_issues = json.load(f)
+        
+    if not all_issues:
+        print("❌ Error: Jira issues fetch returned empty results. The agent step failed to retrieve data.")
+        import sys
+        sys.exit(1)
+        
     
     # Pass 1: Deduplicate and exclude QAFE
     filtered = []
@@ -78,6 +84,8 @@ def harvest():
     final_harvest = [i for i in filtered if i['key'] in valid_keys or i.get('fields', {}).get('parent', {}).get('key') in valid_keys]
 
     os.makedirs(os.path.dirname(OUTPUT), exist_ok=True)
+    import datetime
+    final_harvest.insert(0, {"_metadata": {"generated_at": datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}})
     with open(OUTPUT, 'w') as f:
         json.dump(final_harvest, f, indent=2)
     
@@ -85,4 +93,6 @@ def harvest():
 
 
 if __name__ == "__main__":
+    import datetime
+    print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Started step_3_jira_harvest.py")
     harvest()

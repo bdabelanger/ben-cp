@@ -38,15 +38,15 @@ def reset_manifest():
         step['status'] = "pending"
         # New Linear ID naming logic
         if step['id'] == "1_asana_ingest":
-            step['file'] = f"inputs/processed/asana_active_{run_id}.json"
+            step['file'] = "inputs/processed/asana_active.json"
         elif step['id'] == "2_jira_fetch":
-            step['file'] = f"inputs/raw/jira_issues.json"
+            step['file'] = "inputs/raw/jira_issues.json"
         elif step['id'] == "3_rovo_context":
-            step['file'] = f"inputs/processed/rovo_insights_{run_id}.json"
+            step['file'] = "inputs/processed/rovo_insights.json"
         elif step['id'] == "4_jira_harvest":
-            step['file'] = f"inputs/processed/jira_issues_{run_id}.json"
+            step['file'] = "inputs/processed/jira_issues.json"
         elif step['id'] == "5_report_generation":
-             step['file'] = f"outputs/Platform_Status_{run_id}.md"
+             step['file'] = "outputs/Platform_Status.md"
             
     save_manifest(data)
     print(f"🔄 Manifest Reset for RUN_ID: {run_id}")
@@ -60,6 +60,7 @@ def update_status(step_id, new_status):
     print(f"✅ Status Updated: {step_id} -> {new_status}")
 
 if __name__ == "__main__":
+    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Started update_manifest.py")
     if len(sys.argv) < 2:
         print("Usage: python3 update_manifest.py [reset | step_id status]")
         sys.exit(1)

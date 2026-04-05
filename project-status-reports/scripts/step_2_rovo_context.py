@@ -39,10 +39,14 @@ def generate_insights():
         }
         
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
+    import datetime
+    insights["_metadata"] = {"generated_at": datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
     with open(OUTPUT_FILE, 'w') as f:
         json.dump(insights, f, indent=2)
         
     print(f"✅ 3_rovo_context Complete: {OUTPUT_FILE}")
 
 if __name__ == "__main__":
+    import datetime
+    print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Started step_2_rovo_context.py")
     generate_insights()

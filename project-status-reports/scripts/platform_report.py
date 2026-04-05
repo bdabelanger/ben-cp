@@ -21,8 +21,8 @@ class PlatformStatusReport:
     }
 
     def __init__(self, asana_data_path, jira_data_path):
-        self.asana_data = self._load_json(asana_data_path)
-        self.jira_issues = self._load_json(jira_data_path)
+        self.asana_data = [d for d in self._load_json(asana_data_path) if "_metadata" not in d]
+        self.jira_issues = [d for d in self._load_json(jira_data_path) if "_metadata" not in d]
         
         # Map Jira issues to their parents (recursive resolution)
         self.project_issues = {}
@@ -120,7 +120,7 @@ class PlatformStatusReport:
         qa_issues = [i for i in self.jira_issues if i.get('fields', {}).get('status', {}).get('name') in ["Merged to QA", "In QA", "QA Revise"]]
         
         # ... logic for DQ summary omitted for space but preserved in memory ...
-        md = f"# Platform Weekly Status — {datetime.now().strftime('%B %d, %Y')}\n\n"
+        md = f"# Platform Weekly Status\n_Generated at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}_\n\n"
         md += "## ⚙️ Data Quality\n(Engineer-level estimates and actuals logging coverage)\n\n"
         
         # 2. Summary

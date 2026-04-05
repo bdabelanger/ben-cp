@@ -35,7 +35,7 @@ This step is performed by the agent, not a script. Complete it between KICKSTART
 
 ### 2a. Read the Asana output
 Read the file written by Step 1:
-`/Users/benbelanger/GitHub/ben-cp/project-status-reports/inputs/processed/asana_active_{TODAY}.json`
+`/Users/benbelanger/GitHub/ben-cp/project-status-reports/inputs/processed/asana_active.json`
 
 Extract all `jira_link` values (format: `CBP-XXXX`). These are your Epic keys.
 
@@ -64,7 +64,10 @@ Fetch up to 100 issues per call. Paginate if `total > 100`.
 Write the full issues array to:
 `/Users/benbelanger/GitHub/ben-cp/project-status-reports/inputs/raw/jira_issues.json`
 
-This file must be a valid JSON array. Step 3 reads it directly.
+> [!WARNING]
+> **Strict Validation:** The resulting JSON array MUST NOT be empty. If Jira returns 0 issues, it is considered a fatal error in the pipeline. Stop and evaluate the JQL or credentials.
+
+This file must be a valid JSON array. Step 3 reads it directly and will crash if it's empty.
 
 ---
 

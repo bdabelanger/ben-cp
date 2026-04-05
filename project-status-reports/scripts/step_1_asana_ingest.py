@@ -74,6 +74,8 @@ def filter_platform_projects(input_path, output_path, target_gid=None):
 
         
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        import datetime
+        filtered.insert(0, {"_metadata": {"generated_at": datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}})
         with open(output_path, 'w') as f:
             json.dump(filtered, f, indent=2)
             
@@ -82,6 +84,8 @@ def filter_platform_projects(input_path, output_path, target_gid=None):
         print(f"❌ Error: {str(e)}")
 
 if __name__ == "__main__":
+    import datetime
+    print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Started step_1_asana_ingest.py")
     with open(MANIFEST_PATH, 'r') as f:
         manifest_data = json.load(f)
     repo_root = manifest_data['config']['repo_root']

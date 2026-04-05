@@ -1,7 +1,9 @@
 import os
 import sys
 import json
+import shutil
 import subprocess
+import webbrowser
 from datetime import datetime
 from platform_report import PlatformStatusReport
 
@@ -34,8 +36,19 @@ def main():
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] full_run.py")
     script_dir = os.path.dirname(os.path.abspath(__file__))
 
-    # 📡 Mode Detection (Asana URL / Batch)
-    target_arg = sys.argv[1] if len(sys.argv) > 1 else None
+    # Parse flags
+    args = sys.argv[1:]
+    force = "--force" in args
+    open_report = "--open" in args
+    args = [a for a in args if not a.startswith("--")]
+    target_arg = args[0] if args else None
+
+    if force:
+        print("🔄 --force: wiping inputs/raw/jira/ and processed outputs for a clean run...")
+        jira_raw_dir = os.path.join(REPO_ROOT, "inputs/raw/jira")
+        if os.path.isdir(jira_raw_dir):
+            shutil.rmtree(jira_raw_dir)
+        subprocess.run(["python3", os.path.join(script_dir, "update_manifest.py"), "reset"], check=True)
 
     with open(MANIFEST_PATH, 'r') as f:
         manifest = json.load(f)
@@ -88,6 +101,8 @@ def main():
         f.write(report_md)
 
     print(f"✅ Report generated: {OUTPUT_PATH}")
+    if open_report:
+        webbrowser.open(f"file://{os.path.abspath(OUTPUT_PATH)}")
     print(f"\n--- PREVIEW ---\n")
     print(report_md)
 

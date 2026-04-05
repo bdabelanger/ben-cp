@@ -1,9 +1,13 @@
 import os
 import sys
 import json
-import requests
+try:
+    import requests
+    from requests.auth import HTTPBasicAuth
+except ImportError:
+    print("❌ Error: 'requests' library not installed. Run: pip3 install requests", file=sys.stderr)
+    sys.exit(1)
 from datetime import datetime
-from requests.auth import HTTPBasicAuth
 
 # Manifest path resolution
 MANIFEST_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../manifest.json")

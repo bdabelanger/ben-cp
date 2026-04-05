@@ -78,9 +78,9 @@ def main():
 
         if missing_keys:
             print(f"\n📥 Fetching raw Jira data for {len(missing_keys)} epic(s)...")
-            result = subprocess.run(["python3", os.path.join(script_dir, "step_2_jira_fetch.py")])
+            result = subprocess.run(["python3", os.path.join(script_dir, "step_2_atlassian_fetch.py")])
             if result.returncode != 0:
-                print("❌ Jira fetch failed. Check step_2_jira_fetch.py output above.")
+                print("❌ Jira fetch failed. Check step_2_atlassian_fetch.py output above.")
                 sys.exit(1)
 
         # Raw files present — run harvest automatically

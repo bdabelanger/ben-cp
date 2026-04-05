@@ -38,7 +38,7 @@ def reset_manifest():
         step['status'] = "pending"
         if step['id'] == "1_asana_ingest":
             step['file'] = "inputs/processed/asana_active.json"
-        elif step['id'] == "2_jira_fetch":
+        elif step['id'] == "2_atlassian_fetch":
             step['file'] = "inputs/raw/jira"
         elif step['id'] == "3_rovo_context":
             step['file'] = "inputs/processed/rovo_insights.json"

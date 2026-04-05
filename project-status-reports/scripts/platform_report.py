@@ -48,6 +48,7 @@ class PlatformStatusReport:
     def __init__(self, asana_data_path, jira_data_path):
         self.asana_data = self._load_json(asana_data_path)
         self.jira_issues = self._load_json(jira_data_path)
+        self.jira_issues = [i for i in self.jira_issues if "key" in i]
         self.today = datetime.now().date()
 
         # Apply status category overrides and ensure effective_category is set

@@ -35,27 +35,27 @@ def build_epic_keys_from_asana(asana_path):
                     keys.append(val.split('/')[-1].strip())
     return list(dict.fromkeys(keys))
 
-def fetch_missing_jira_data():
-    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] step_2_jira_fetch.py")
+def fetch_missing_atlassian_data():
+    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] step_2_atlassian_fetch.py")
     
     # 1. Check for required credentials
-    jira_email = os.environ.get("JIRA_USER_EMAIL")
-    jira_token = os.environ.get("JIRA_API_TOKEN")
+    atlassian_email = os.environ.get("ATLASSIAN_USER_EMAIL")
+    atlassian_token = os.environ.get("ATLASSIAN_API_TOKEN")
     
-    if not jira_email or not jira_token:
-        print("❌ Error: Missing credentials. Please set JIRA_USER_EMAIL and JIRA_API_TOKEN environment variables.", file=sys.stderr)
+    if not atlassian_email or not atlassian_token:
+        print("❌ Error: Missing credentials. Please set ATLASSIAN_USER_EMAIL and ATLASSIAN_API_TOKEN environment variables.", file=sys.stderr)
         sys.exit(1)
         
-    auth = HTTPBasicAuth(jira_email, jira_token)
+    auth = HTTPBasicAuth(atlassian_email, atlassian_token)
     headers = {"Accept": "application/json"}
-    jira_base_url = "https://casecommons.atlassian.net"
+    atlassian_base_url = "https://casecommons.atlassian.net"
 
     # 2. Setup dynamic paths
     with open(MANIFEST_PATH, 'r') as f:
         manifest = json.load(f)
 
     ASANA_FILTERED = get_path_from_manifest(manifest, "1_asana_ingest")
-    JIRA_RAW_DIR = get_path_from_manifest(manifest, "2_jira_fetch")
+    JIRA_RAW_DIR = get_path_from_manifest(manifest, "2_atlassian_fetch")
     
     os.makedirs(JIRA_RAW_DIR, exist_ok=True)
 
@@ -63,10 +63,10 @@ def fetch_missing_jira_data():
     missing_keys = [k for k in epic_keys if not os.path.exists(os.path.join(JIRA_RAW_DIR, f"{k}.json"))]
 
     if not missing_keys:
-        print("✅ step_2_jira_fetch Complete: No missing keys to fetch.")
+        print("✅ step_2_atlassian_fetch Complete: No missing keys to fetch.")
         return
 
-    print(f"📥 Fetching Jira data for {len(missing_keys)} missing epics...")
+    print(f"📥 Fetchin Atlassian data for {len(missing_keys)} missing epics...")
 
     # 3. Iteratively fetch each missing epic
     for key in missing_keys:
@@ -87,17 +87,17 @@ def fetch_missing_jira_data():
             }
             
             resp = requests.get(
-                f"{jira_base_url}/rest/api/3/search",
+                f"{atlassian_base_url}/rest/api/3/search",
                 headers=headers,
                 params=params,
                 auth=auth
             )
             
             if resp.status_code in (401, 403):
-                print(f"\n❌ Error: Authentication failed (HTTP {resp.status_code}). Please verify your JIRA_USER_EMAIL and JIRA_API_TOKEN.", file=sys.stderr)
+                print(f"\n❌ Error: Authentication failed (HTTP {resp.status_code}). Please verify your ATLASSIAN_USER_EMAIL and ATLASSIAN_API_TOKEN.", file=sys.stderr)
                 sys.exit(1)
             elif resp.status_code != 200:
-                print(f"\n❌ Error: Jira API returned HTTP {resp.status_code} - {resp.text}", file=sys.stderr)
+                print(f"\n❌ Error: Atlassian API returned HTTP {resp.status_code} - {resp.text}", file=sys.stderr)
                 sys.exit(1)
                 
             data = resp.json()
@@ -120,7 +120,7 @@ def fetch_missing_jira_data():
         with open(save_path, 'w') as f:
             json.dump(all_issues, f, indent=2)
             
-    print(f"✅ step_2_jira_fetch Complete: Successfully fetched {len(missing_keys)} epics.")
+    print(f"✅ step_2_atlassian_fetch Complete: Successfully fetched {len(missing_keys)} epics.")
 
 if __name__ == "__main__":
-    fetch_missing_jira_data()
+    fetch_missing_atlassian_data()

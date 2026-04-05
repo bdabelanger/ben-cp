@@ -12,7 +12,7 @@
             "file": "inputs/processed/asana_active.json"
         },
         {
-            "id": "2_jira_fetch",
+            "id": "2_atlassian_fetch",
             "status": "pending",
             "file": "inputs/raw/jira"
         },

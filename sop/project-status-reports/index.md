@@ -19,7 +19,7 @@ Manage the multi-step relay for the Platform Weekly Status report using `manifes
 
 ## 🔄 Step 2: Jira Fetch (Automated via Script)
 
-This step has been fully automated to avoid LLM context-window limits. When `full_run.py` executes, it will automatically call `step_2_jira_fetch.py`.
+This step has been fully automated to avoid LLM context-window limits. When `full_run.py` executes, it will automatically call `step_2_atlassian_fetch.py`.
 
 It securely uses standard Atlassian API tokens to run the necessary JQL queries for any missing epics and writes the data directly to disk:
 

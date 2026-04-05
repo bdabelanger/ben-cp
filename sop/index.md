@@ -4,8 +4,13 @@ This document serves as the primary entry point for all Standard Operating Proce
 
 ## 🧭 Core Process Guides
 
-*   **Platform Weekly Status Report:** To trigger the automated multi-step orchestrator and generate the weekly status report (and to review the strict rules for this workflow), see the dedicated guide: [Status Report Orchestrator SOP](/Users/benbelanger/GitHub/ben-cp/sop/project-status-reports/index.md)
-*   **Rovo Issue Management:** For procedures related to finding, identifying, and retrieving information about "CBP-XXXX" issues using Atlassian Rovo tools (searchAtlassian, getJiraIssue, etc.), see the detailed guide in the Rovo subdirectory: [Rovo SOP Guide](/Users/benbelanger/GitHub/ben-cp/sop/rovo/rovo-sop.md)
+*   **Platform Weekly Status Report:** [Status Report Orchestrator SOP](/Users/benbelanger/GitHub/ben-cp/sop/project-status-reports/index.md)
+    *   ⚡ **Quick Trigger**: If asked to "generate the report", immediately:
+        1. **Reset**: `python3 /Users/benbelanger/GitHub/ben-cp/project-status-reports/scripts/update_manifest.py reset`
+        2. **Identify**: `python3 /Users/benbelanger/GitHub/ben-cp/project-status-reports/scripts/step_1_asana_ingest.py`
+        3. **Fetch**: Read the Asana output and call **`searchJiraIssuesUsingJql`** (Atlassian MCP) — full instructions in the dedicated SOP. Do NOT use `searchAtlassian`.
+        4. **Finish**: `python3 .../step_3_jira_harvest.py && python3 .../step_4_report_generator.py`
+*   **Rovo Issue Management:** [Rovo SOP Guide](/Users/benbelanger/GitHub/ben-cp/sop/rovo/rovo-sop.md)
 
 ## 📂 Sub-Category Guides
 

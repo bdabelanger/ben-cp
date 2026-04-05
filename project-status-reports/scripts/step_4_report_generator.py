@@ -20,16 +20,16 @@ def generate_report():
     
     # Resolve step-specific file dependencies dynamically
     ASANA_FILE = get_path_from_manifest("1_asana_ingest")
-    ROVO_FILE = get_path_from_manifest("2_rovo_context")
-    JIRA_FILE = get_path_from_manifest("3_jira_harvest")
-    OUTPUT_PATH = get_path_from_manifest("4_report_generation")
+    ROVO_FILE = get_path_from_manifest("3_rovo_context")
+    JIRA_DATA = get_path_from_manifest("4_jira_harvest")
+    OUTPUT = get_path_from_manifest("5_report_generation")
 
     try:
         with open(ASANA_FILE, 'r') as f:
             asana_data = json.load(f)
         with open(ROVO_FILE, 'r') as f:
             rovo_data = json.load(f)
-        with open(JIRA_FILE, 'r') as f:
+        with open(JIRA_DATA, 'r') as f:
             jira_data = json.load(f)
 
         report = [f"### Platform Weekly Status Report ({today})\n"]
@@ -66,7 +66,8 @@ def generate_report():
             statuses = {}
             for issue in jira_data:
                 # Only include issues related to this project (simplification for dummy run)
-                status_name = issue['fields']['status']['name']
+                # SAFE: get status name or fallback to "N/A"
+                status_name = issue.get('fields', {}).get('status', {}).get('name', 'N/A')
                 if status_name not in statuses:
                     statuses[status_name] = []
                 statuses[status_name].append(issue)
@@ -74,17 +75,19 @@ def generate_report():
             for status, issues in statuses.items():
                 report.append(f"#### **{status}** ({get_progress_bar(70)})")
                 for isue in issues:
-                    key = isue['key']
-                    summary = isue['fields']['summary']
-                    assignee = isue['fields'].get('assignee', {}).get('displayName', 'Unassigned')
-                    priority = isue['fields'].get('priority', {}).get('name', 'P3')
+                    key = isue.get('key', 'Unknown')
+                    # SAFE: get summary, assignee, priority
+                    fields = isue.get('fields', {})
+                    summary = fields.get('summary', 'No summary provided')
+                    assignee = fields.get('assignee', {}).get('displayName', 'Unassigned')
+                    priority = fields.get('priority', {}).get('name', 'P3')
                     report.append(f"* **{key}**: {summary}")
                     report.append(f"    * Assignee: {assignee} | Priority: {priority}")
                 report.append("")
 
         # Save the report
-        os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
-        with open(OUTPUT_PATH, 'w') as f:
+        os.makedirs(os.path.dirname(OUTPUT), exist_ok=True)
+        with open(OUTPUT, 'w') as f:
             f.write("\n".join(report))
         
         # --- STDOUT REPORT CONTRACT ---
@@ -92,7 +95,7 @@ def generate_report():
         print("\n".join(report))
         print("--- REPORT END ---")
         
-        print(f"\n✅ 4_report_generation Complete")
+        print(f"✅ 5_report_generation Complete: {OUTPUT}")
 
     except Exception as e:
         print(f"❌ Error generating report: {str(e)}")

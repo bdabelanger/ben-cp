@@ -1,6 +1,6 @@
 {
     "project": "Platform Weekly Status",
-    "last_run": "2026_04_03",
+    "last_run": "2026_04_04",
     "config": {
         "repo_root": "/Users/benbelanger/GitHub/ben-cp/project-status-reports",
         "processed_dir": "inputs/processed",
@@ -9,23 +9,28 @@
     "steps": [
         {
             "id": "1_asana_ingest",
-            "status": "complete",
-            "file": "inputs/processed/asana_active_2026_04_03.json"
+            "status": "pending",
+            "file": "inputs/processed/asana_active_2026_04_04.json"
         },
         {
-            "id": "2_rovo_context",
-            "status": "complete",
-            "file": "inputs/processed/rovo_insights_2026_04_03.json"
+            "id": "2_jira_fetch",
+            "status": "pending",
+            "file": "inputs/raw/jira_issues.json"
         },
         {
-            "id": "3_jira_harvest",
-            "status": "complete",
-            "file": "inputs/processed/jira_issues_2026_04_03.json"
+            "id": "3_rovo_context",
+            "status": "pending",
+            "file": "inputs/processed/rovo_insights_2026_04_04.json"
         },
         {
-            "id": "4_report_generation",
-            "status": "complete",
-            "file": "outputs/Platform_Status_2026_04_03.md"
+            "id": "4_jira_harvest",
+            "status": "pending",
+            "file": "inputs/processed/jira_issues_2026_04_04.json"
+        },
+        {
+            "id": "5_report_generation",
+            "status": "pending",
+            "file": "outputs/Platform_Status_2026_04_04.md"
         }
     ]
 }

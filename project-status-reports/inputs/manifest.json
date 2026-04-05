@@ -1,0 +1,6 @@
+{
+  "steps": [
+    {"id": "1_asana_ingest", "file": "processed/asana_ingest.json", "status": "completed"},
+    {"id": "3_jira_harvest", "file": "raw/jira_harvest.json", "status": "failed"}
+  ]
+}

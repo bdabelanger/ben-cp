@@ -1,0 +1,90 @@
+[
+  {
+    "name": "Services - Service plan datagrid with bulk actions",
+    "gid": "1211631360190563",
+    "status": "on_track",
+    "stage": "Development",
+    "jira_link": "CBP-3066",
+    "milestones": {}
+  },
+  {
+    "name": "Services WLV - Bulk actions",
+    "gid": "1211733450555414",
+    "status": "off_track",
+    "stage": "Development",
+    "jira_link": "CBP-3121",
+    "milestones": {}
+  },
+  {
+    "name": "Notes - Locked Notes",
+    "gid": "1211786365522017",
+    "status": "on_track",
+    "stage": "In QA",
+    "jira_link": "CBP-2923",
+    "milestones": {}
+  },
+  {
+    "name": "Notes - Tabbed design",
+    "gid": "1213002343224284",
+    "status": "on_track",
+    "stage": "In QA",
+    "jira_link": "N/A",
+    "milestones": {}
+  },
+  {
+    "name": "Notes - Bulk Service Notes",
+    "gid": "1211757637943244",
+    "status": "on_track",
+    "stage": "In QA",
+    "jira_link": "CBP-2924",
+    "milestones": {}
+  },
+  {
+    "name": "Notes - Notes datagrid",
+    "gid": "1209963394727039",
+    "status": "on_track",
+    "stage": "GA",
+    "jira_link": "CBP-2736",
+    "milestones": {}
+  },
+  {
+    "name": "Service Plan - Bulk Services section",
+    "gid": "1211631356870657",
+    "status": "on_track",
+    "stage": "Beta",
+    "jira_link": "CBP-2992",
+    "milestones": {}
+  },
+  {
+    "name": "Notes - Bulk \"General Notes\"",
+    "gid": "1211838817183809",
+    "status": "on_track",
+    "stage": "Beta",
+    "jira_link": "CBP-2752",
+    "milestones": {}
+  },
+  {
+    "name": "Integrations - Zapier improvements",
+    "gid": "1213496879668016",
+    "status": "on_track",
+    "stage": "Development",
+    "jira_link": "N/A",
+    "milestones": {}
+  },
+  {
+    "name": "Data import - Clearer error messages",
+    "gid": "1210860550580329",
+    "status": "on_track",
+    "stage": "Development",
+    "jira_link": "CBP-498",
+    "milestones": {}
+  },
+  {
+    "name": "Notifications - Eliminate HTML injection/XSS vulnerability (KPP)",
+    "gid": "1212555058482954",
+    "status": "on_track",
+    "stage": "In QA",
+    "jira_link": "CBP-1593",
+    "milestones": {}
+  }
+]

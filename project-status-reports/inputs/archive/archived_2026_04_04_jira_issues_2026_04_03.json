@@ -1,0 +1,42 @@
+[
+  {
+    "key": "CBP-3066",
+    "fields": { "summary": "Epic: Service plan datagrid with bulk actions", "status": { "name": "In Development", "statusCategory": { "key": "inprogress" } } }
+  },
+  {
+    "key": "CBP-3150",
+    "fields": { "summary": "Notes datagrid - Show 'Service interaction people' in the People column", "parent": { "key": "CBP-2736" }, "status": { "name": "In Development", "statusCategory": { "key": "inprogress" } }, "assignee": { "displayName": "Tuan Nguyen" }, "priority": { "name": "P2" } }
+  },
+  {
+    "key": "CBP-3121",
+    "fields": { "summary": "Epic: Services WLV - Bulk actions", "status": { "name": "Backlog", "statusCategory": { "key": "new" } } }
+  },
+  {
+    "key": "CBP-498",
+    "fields": { "summary": "Epic: Data import - Clearer error messages", "status": { "name": "In Progress", "statusCategory": { "key": "inprogress" } } }
+  },
+  {
+    "key": "CBP-1593",
+    "fields": { "summary": "Epic: Notifications - Eliminate HTML injection/XSS vulnerability", "status": { "name": "Testing", "statusCategory": { "key": "inprogress" } } }
+  },
+  {
+    "key": "CBP-2923",
+    "fields": { "summary": "Epic: Notes - Locked Notes", "status": { "name": "Review", "statusCategory": { "key": "inprogress" } } }
+  },
+  {
+    "key": "CBP-2924",
+    "fields": { "summary": "Epic: Notes - Bulk Service Notes", "status": { "name": "Review", "statusCategory": { "key": "inprogress" } } }
+  },
+  {
+    "key": "CBP-2992",
+    "fields": { "summary": "Epic: Service Plan - Bulk Services section", "status": { "name": "Beta", "statusCategory": { "key": "inprogress" } } }
+  },
+  {
+    "key": "CBP-2752",
+    "fields": { "summary": "Epic: Notes - Bulk \"General Notes\"", "status": { "name": "Beta", "statusCategory": { "key": "inprogress" } } }
+  },
+  {
+    "key": "CBP-2736",
+    "fields": { "summary": "Epic: Notes - Notes datagrid", "status": { "name": "Done", "statusCategory": { "key": "done" } } }
+  }
+]

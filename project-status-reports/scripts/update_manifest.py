@@ -36,15 +36,17 @@ def reset_manifest():
     data['last_run'] = run_id
     for step in data['steps']:
         step['status'] = "pending"
-        # New ID-based naming logic
-        if step['id'] == "4_report_generation":
-            step['file'] = f"outputs/Platform_Status_{run_id}.md"
-        elif step['id'] == "1_asana_ingest":
+        # New Linear ID naming logic
+        if step['id'] == "1_asana_ingest":
             step['file'] = f"inputs/processed/asana_active_{run_id}.json"
-        elif step['id'] == "2_rovo_context":
+        elif step['id'] == "2_jira_fetch":
+            step['file'] = f"inputs/raw/jira_issues.json"
+        elif step['id'] == "3_rovo_context":
             step['file'] = f"inputs/processed/rovo_insights_{run_id}.json"
-        elif step['id'] == "3_jira_harvest":
+        elif step['id'] == "4_jira_harvest":
             step['file'] = f"inputs/processed/jira_issues_{run_id}.json"
+        elif step['id'] == "5_report_generation":
+             step['file'] = f"outputs/Platform_Status_{run_id}.md"
             
     save_manifest(data)
     print(f"🔄 Manifest Reset for RUN_ID: {run_id}")

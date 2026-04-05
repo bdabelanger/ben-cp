@@ -4,7 +4,8 @@
   "type": "module",
   "description": "Personal MCP Server — Skill Vault",
   "scripts": {
-    "start": "tsx src/ben-cp.ts"
+    "start": "tsx src/ben-cp.ts",
+    "build": "tsc src/ben-cp.ts --outDir dist --module esnext --target esnext --moduleResolution node"
   },
   "main": "index.js",
   "dependencies": {

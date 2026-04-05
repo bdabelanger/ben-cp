@@ -12,7 +12,7 @@ def get_path_from_manifest(step_id):
 
 def generate_insights():
     ASANA_FILE = get_path_from_manifest("1_asana_ingest")
-    OUTPUT_FILE = get_path_from_manifest("2_rovo_context")
+    OUTPUT_FILE = get_path_from_manifest("3_rovo_context")
     
     with open(ASANA_FILE, 'r') as f:
         projects = json.load(f)
@@ -42,7 +42,7 @@ def generate_insights():
     with open(OUTPUT_FILE, 'w') as f:
         json.dump(insights, f, indent=2)
         
-    print(f"✅ 2_rovo_context Complete: {OUTPUT_FILE}")
+    print(f"✅ 3_rovo_context Complete: {OUTPUT_FILE}")
 
 if __name__ == "__main__":
     generate_insights()

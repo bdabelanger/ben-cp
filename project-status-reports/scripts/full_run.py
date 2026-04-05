@@ -64,34 +64,11 @@ def main():
         missing_keys = [k for k in epic_keys if not os.path.exists(os.path.join(JIRA_RAW_DIR, f"{k}.json"))]
 
         if missing_keys:
-            print(f"\n❌ PIPELINE PAUSED: Raw Jira data missing for {len(missing_keys)} epic(s)")
-            print("=" * 60)
-            print("🤖 AGENT ACTION REQUIRED — Step 2: Jira Fetch")
-            print("=" * 60)
-            print("Tool: searchJiraIssuesUsingJql  (Atlassian MCP)")
-            print("Do NOT use: searchAtlassian, fetchAtlassian, or any other tool.\n")
-            print("Call searchJiraIssuesUsingJql ONCE PER EPIC below.")
-            print("Fields: summary, status, assignee, priority, issuetype, parent,")
-            print("        timeoriginalestimate, timespent, fixVersions, created, updated")
-            print("Max results: 100\n")
-
-            for key in missing_keys:
-                save_path = os.path.join(JIRA_RAW_DIR, f"{key}.json")
-                jql = (
-                    f'project = CBP AND issuetype != QAFE AND ('
-                    f'issuekey = {key} OR "Epic Link" = {key} OR parent = {key}'
-                    f') ORDER BY updated DESC'
-                )
-                print(f"  Epic:  {key}")
-                print(f"  JQL:   {jql}")
-                print(f"  Save → {save_path}")
-                print()
-
-            print("=" * 60)
-            print("After saving all files above, run:")
-            print(f"  python3 {os.path.join(script_dir, 'full_run.py')}")
-            print("=" * 60)
-            sys.exit(1)
+            print(f"\n📥 Fetching raw Jira data for {len(missing_keys)} epic(s)...")
+            result = subprocess.run(["python3", os.path.join(script_dir, "step_2_jira_fetch.py")])
+            if result.returncode != 0:
+                print("❌ Jira fetch failed. Check step_2_jira_fetch.py output above.")
+                sys.exit(1)
 
         # Raw files present — run harvest automatically
         print("📥 Raw Jira files found for all epics. Running harvest...")

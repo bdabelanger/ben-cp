@@ -1,14 +1,14 @@
 import json
 import os
 
-MANIFEST_PATH = "/Users/benbelanger/GitHub/ben-cp/project-status-reports/manifest.json"
+MANIFEST_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../manifest.json")
+REPO_ROOT = os.path.dirname(os.path.abspath(MANIFEST_PATH))
 
 def get_path_from_manifest(step_id):
     with open(MANIFEST_PATH, 'r') as f:
         data = json.load(f)
-    repo_root = data['config']['repo_root']
     relative_path = next(s['file'] for s in data['steps'] if s['id'] == step_id)
-    return os.path.join(repo_root, relative_path)
+    return os.path.join(REPO_ROOT, relative_path)
 
 def generate_insights():
     ASANA_FILE = get_path_from_manifest("1_asana_ingest")

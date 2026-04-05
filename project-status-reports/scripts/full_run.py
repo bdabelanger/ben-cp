@@ -5,19 +5,21 @@ import subprocess
 from datetime import datetime
 from platform_report import PlatformStatusReport
 
-MANIFEST_PATH = "/Users/benbelanger/GitHub/ben-cp/project-status-reports/manifest.json"
+MANIFEST_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../manifest.json")
+REPO_ROOT = os.path.dirname(os.path.abspath(MANIFEST_PATH))
 
 def get_path_from_manifest(data, step_id):
-    repo_root = data['config']['repo_root']
     relative_path = next(s['file'] for s in data['steps'] if s['id'] == step_id)
-    return os.path.join(repo_root, relative_path)
+    return os.path.join(REPO_ROOT, relative_path)
 
-def build_jql_from_asana(asana_path):
-    """Extract epic keys from Asana output and return a ready-to-run JQL string."""
+def build_epic_keys_from_asana(asana_path):
+    """Extract epic CBP-XXXX keys from the filtered Asana output."""
     with open(asana_path, 'r') as f:
         projects = json.load(f)
     keys = []
     for p in projects:
+        if '_metadata' in p:
+            continue
         link = p.get('jira_link') or ''
         if 'CBP-' in link:
             keys.append(link.split('/')[-1].strip())
@@ -29,20 +31,20 @@ def build_jql_from_asana(asana_path):
     return list(dict.fromkeys(keys))  # dedupe, preserve order
 
 def main():
+    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] full_run.py")
     script_dir = os.path.dirname(os.path.abspath(__file__))
 
     # 📡 Mode Detection (Asana URL / Batch)
     target_arg = sys.argv[1] if len(sys.argv) > 1 else None
 
-    # Resolve all paths from manifest (dynamic — date-safe)
     with open(MANIFEST_PATH, 'r') as f:
         manifest = json.load(f)
 
-    base_dir = manifest['config']['repo_root']
-    ASANA_RAW = os.path.join(base_dir, "inputs/raw/asana_all_projects.json")
+    ASANA_RAW      = os.path.join(REPO_ROOT, "inputs/raw/asana_all_projects.json")
+    JIRA_RAW_DIR   = os.path.join(REPO_ROOT, "inputs/raw/jira")
     ASANA_FILTERED = get_path_from_manifest(manifest, "1_asana_ingest")
     JIRA_HARVESTED = get_path_from_manifest(manifest, "4_jira_harvest")
-    OUTPUT_PATH = get_path_from_manifest(manifest, "5_report_generation")
+    OUTPUT_PATH    = get_path_from_manifest(manifest, "5_report_generation")
 
     if not os.path.exists(ASANA_RAW):
         print(f"❌ Error: Raw Asana data missing at {ASANA_RAW}")
@@ -50,44 +52,55 @@ def main():
 
     print("🚀 Triggering Pipeline Components...")
 
-    # Step 1: Execute Asana Filter (Pass GID/URL if present)
+    # Step 1: Asana filter
     cmd = ["python3", os.path.join(script_dir, "step_1_asana_ingest.py")]
     if target_arg:
         cmd.append(target_arg)
     subprocess.run(cmd)
 
-    # Step 2 (Agent-side): Jira fetch via searchJiraIssuesUsingJql
+    # Step 2 (Agent-side): per-epic Jira fetch via searchJiraIssuesUsingJql
     if not os.path.exists(JIRA_HARVESTED):
-        print(f"\n❌ PIPELINE PAUSED: Jira harvest data missing at {JIRA_HARVESTED}")
-        print("=" * 60)
-        print("🤖 AGENT ACTION REQUIRED — Step 2: Jira Fetch")
-        print("=" * 60)
-        print("Call tool: searchJiraIssuesUsingJql (Atlassian MCP)")
-        print("Do NOT use: searchAtlassian, fetchAtlassian, or any other tool.\n")
+        epic_keys = build_epic_keys_from_asana(ASANA_FILTERED) if os.path.exists(ASANA_FILTERED) else []
+        missing_keys = [k for k in epic_keys if not os.path.exists(os.path.join(JIRA_RAW_DIR, f"{k}.json"))]
 
-        if os.path.exists(ASANA_FILTERED):
-            epic_keys = build_jql_from_asana(ASANA_FILTERED)
-            if epic_keys:
-                key_list = ', '.join(epic_keys)
-                print(f"Epic keys found: {key_list}\n")
-                print("JQL to use:")
-                print(f'  project = CBP AND issuetype != QAFE AND (issuekey in ({key_list}) OR "Epic Link" in ({key_list}) OR parent in ({key_list})) ORDER BY updated DESC')
-                print(f"\nFields to request: summary, status, assignee, priority, issuetype, parent, timeoriginalestimate, timespent, fixVersions, created, updated")
-                print(f"Max results: 100 (paginate if total > 100)")
-            else:
-                print("⚠️  No epic keys found in Asana output. Check that jira_link fields are populated.")
-        else:
-            print(f"⚠️  Asana output not found at {ASANA_FILTERED}. Run step_1_asana_ingest.py first.")
+        if missing_keys:
+            print(f"\n❌ PIPELINE PAUSED: Raw Jira data missing for {len(missing_keys)} epic(s)")
+            print("=" * 60)
+            print("🤖 AGENT ACTION REQUIRED — Step 2: Jira Fetch")
+            print("=" * 60)
+            print("Tool: searchJiraIssuesUsingJql  (Atlassian MCP)")
+            print("Do NOT use: searchAtlassian, fetchAtlassian, or any other tool.\n")
+            print("Call searchJiraIssuesUsingJql ONCE PER EPIC below.")
+            print("Fields: summary, status, assignee, priority, issuetype, parent,")
+            print("        timeoriginalestimate, timespent, fixVersions, created, updated")
+            print("Max results: 100\n")
 
-        print("=" * 60)
-        print(f"After fetching, save the issues array to:")
-        print(f"  {os.path.join(base_dir, 'inputs/raw/jira_issues.json')}")
-        print(f"Then run: python3 {os.path.join(script_dir, 'step_3_jira_harvest.py')}")
-        print(f"Then run: python3 {os.path.join(script_dir, 'step_4_report_generator.py')}")
-        print("=" * 60)
-        sys.exit(1)
+            for key in missing_keys:
+                save_path = os.path.join(JIRA_RAW_DIR, f"{key}.json")
+                jql = (
+                    f'project = CBP AND issuetype != QAFE AND ('
+                    f'issuekey = {key} OR "Epic Link" = {key} OR parent = {key}'
+                    f') ORDER BY updated DESC'
+                )
+                print(f"  Epic:  {key}")
+                print(f"  JQL:   {jql}")
+                print(f"  Save → {save_path}")
+                print()
 
-    # 📊 FINAL SYNTHESIS
+            print("=" * 60)
+            print("After saving all files above, run:")
+            print(f"  python3 {os.path.join(script_dir, 'full_run.py')}")
+            print("=" * 60)
+            sys.exit(1)
+
+        # Raw files present — run harvest automatically
+        print("📥 Raw Jira files found for all epics. Running harvest...")
+        result = subprocess.run(["python3", os.path.join(script_dir, "step_3_jira_harvest.py")])
+        if result.returncode != 0 or not os.path.exists(JIRA_HARVESTED):
+            print("❌ Harvest failed. Check step_3_jira_harvest.py output above.")
+            sys.exit(1)
+
+    # 📊 Final Synthesis
     print("📊 Synthesizing Platform Weekly Status...")
 
     reporter = PlatformStatusReport(ASANA_FILTERED, JIRA_HARVESTED)
@@ -102,7 +115,4 @@ def main():
     print(report_md)
 
 if __name__ == "__main__":
-    import datetime
-    print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Started full_run.py")
     main()
-

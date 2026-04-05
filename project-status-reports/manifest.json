@@ -2,7 +2,6 @@
     "project": "Platform Weekly Status",
     "last_run": "2026_04_05",
     "config": {
-        "repo_root": "/Users/benbelanger/GitHub/ben-cp/project-status-reports",
         "processed_dir": "inputs/processed",
         "archive_dir": "inputs/archive"
     },
@@ -15,7 +14,7 @@
         {
             "id": "2_jira_fetch",
             "status": "pending",
-            "file": "inputs/raw/jira_issues.json"
+            "file": "inputs/raw/jira"
         },
         {
             "id": "3_rovo_context",

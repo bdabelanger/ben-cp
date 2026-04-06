@@ -245,7 +245,7 @@ def _time_bar_html(bar_text):
     bar = (f'<div class="time-bar-wrap">'
            f'<div class="{fill_cls}" style="width:{fill_pct}%"></div>'
            f'</div>')
-    label = f'<span class="stat-row">{prefix}{act:.1f}d act / {est:.1f}d est ({pct}%)</span>'
+    label = f'<span class="stat-row">{prefix}{est:.1f}d estimated &nbsp;·&nbsp; {act:.1f}d actual ({pct}%)</span>'
     return bar + label
 
 
@@ -259,6 +259,7 @@ def md_to_html(md: str) -> str:
     html_parts = []
     i = 0
     in_ul = False
+    in_ol = False
     in_project = False
 
     def close_ul():
@@ -266,6 +267,12 @@ def md_to_html(md: str) -> str:
         if in_ul:
             html_parts.append("</ul>")
             in_ul = False
+
+    def close_ol():
+        nonlocal in_ol
+        if in_ol:
+            html_parts.append("</ol>")
+            in_ol = False
 
     def close_project():
         nonlocal in_project
@@ -278,7 +285,7 @@ def md_to_html(md: str) -> str:
 
         # H1 — report title → header card
         if line.startswith("# "):
-            close_ul(); close_project()
+            close_ul(); close_ol(); close_project()
             title = _md_inline(line[2:])
             subtitle = f'Generated {datetime.now().strftime("%B %d, %Y at %H:%M")}'
             html_parts.append(
@@ -291,18 +298,19 @@ def md_to_html(md: str) -> str:
 
         # H2 — section heading
         if line.startswith("## "):
-            close_ul(); close_project()
+            close_ul(); close_ol(); close_project()
             heading = _md_inline(line[3:])
             html_parts.append(f'<h2>{heading}</h2>')
             i += 1; continue
 
         # H3 — project card header
         if line.startswith("### "):
-            close_ul(); close_project()
-            heading = _md_inline(line[4:])
-            # Extract stage badge if present — e.g. "### Name · KEY · Stage"
+            close_ul(); close_ol(); close_project()
+            # Extract stage badge from last · segment, then strip it from heading text
             stage_m = re.search(r'·\s+([^··]+)\s*$', line)
             stage_html = _stage_badge(stage_m.group(1).strip()) if stage_m else ""
+            heading_text = re.sub(r'\s*·\s*[^··]+\s*$', '', line[4:]) if stage_m else line[4:]
+            heading = _md_inline(heading_text)
             html_parts.append(
                 f'<div class="project-card">'
                 f'<h3>{heading} {stage_html}</h3>'
@@ -331,8 +339,19 @@ def md_to_html(md: str) -> str:
             html_parts.append(f'<p><code>{inner}</code></p>')
             i += 1; continue
 
+        # Ordered list item (1. 2. etc.)
+        if re.match(r'^\d+\. ', line):
+            close_ul()
+            if not in_ol:
+                html_parts.append('<ol>')
+                in_ol = True
+            content = _md_inline(re.sub(r'^\d+\. ', '', line))
+            html_parts.append(f'<li>{content}</li>')
+            i += 1; continue
+
         # Bullet list item
         if re.match(r'^[\*\-] ', line) or re.match(r'^\* ', line):
+            close_ol()
             if not in_ul:
                 html_parts.append('<ul>')
                 in_ul = True
@@ -342,22 +361,23 @@ def md_to_html(md: str) -> str:
 
         # Blank line or horizontal rule (--- section dividers)
         if line.strip() == "" or line.strip() == "---":
-            close_ul()
+            close_ul(); close_ol()
             i += 1; continue
 
         # Bold line (standalone **…**)
         if line.startswith("**") and line.endswith("**") and line.count("**") == 2:
-            close_ul()
+            close_ul(); close_ol()
             html_parts.append(f'<p><strong>{line[2:-2]}</strong></p>')
             i += 1; continue
 
         # Fallback: paragraph
-        close_ul()
+        close_ul(); close_ol()
         if line.strip():
             html_parts.append(f'<p>{_md_inline(line)}</p>')
         i += 1
 
     close_ul()
+    close_ol()
     close_project()
     return "\n".join(html_parts)
 

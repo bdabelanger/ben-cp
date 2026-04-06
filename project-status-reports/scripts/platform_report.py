@@ -538,7 +538,7 @@ class PlatformStatusReport:
         md = "## 📋 Summary\n"
         next_steps = []
 
-        for project in active_projects:
+        for idx, project in enumerate(active_projects, start=1):
             pkey = self._get_pkey(project)
             name = project.get("name", "Unknown")
             asana_url = self._asana_url(project)
@@ -583,7 +583,7 @@ class PlatformStatusReport:
             elif status == "at_risk":
                 line += f" Last status was `{status}`"
 
-            md += line + "\n"
+            md += f"{idx}. {line}\n"
 
         if next_steps:
             md += "\n**Next Steps**\n"

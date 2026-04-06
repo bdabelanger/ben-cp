@@ -119,7 +119,7 @@ tr:last-child td { border-bottom: none; }
 }
 .time-actual           { background: var(--accent); }
 .time-actual-over      { background: #ef4444; }
-.time-remaining        { background: #3451c7; }
+.time-remaining        { background: #1a237e; }
 .time-remaining-over   { background: #ef4444; }
 
 /* ---------- badge / pill ---------- */
@@ -174,16 +174,34 @@ tr:last-child td { border-bottom: none; }
 .issue-meta { color: var(--muted); font-size: 0.78rem; white-space: nowrap; }
 .issue-meta-row { font-size: 0.78rem; color: var(--muted); margin-top: 0.15rem; }
 
-/* ---------- section callout ---------- */
-.data-quality {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1rem 1.3rem;
-    margin-bottom: 1rem;
-    box-shadow: var(--shadow);
+/* ---------- sidebar layout ---------- */
+.report-layout {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
 }
-.data-quality p { font-size: 0.88rem; }
+.report-main { flex: 1; min-width: 0; }
+.report-sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 1.5rem;
+}
+.report-sidebar h2 {
+    font-size: 0.95rem;
+    margin-top: 0;
+    border-bottom-width: 1px;
+}
+.report-sidebar p,
+.report-sidebar table { font-size: 0.82rem; }
+.report-sidebar th { font-size: 0.72rem; }
+.report-sidebar td,
+.report-sidebar th { padding: 0.25rem 0.5rem; }
+
+@media (max-width: 800px) {
+    .report-layout { flex-direction: column; }
+    .report-sidebar { width: 100%; position: static; }
+}
 
 /* ---------- footer ---------- */
 .footer { margin-top: 2.5rem; font-size: 0.78rem; color: var(--muted); text-align: right; }
@@ -489,7 +507,20 @@ def md_to_html(md: str) -> str:
 
 def render_html(report_md: str) -> str:
     """Return a complete self-contained HTML document for the platform report."""
-    body = md_to_html(report_md)
+    dq_marker = "\n## ⚙️ Data Quality\n"
+    if dq_marker in report_md:
+        main_md, dq_md = report_md.split(dq_marker, 1)
+        main_html = md_to_html(main_md)
+        sidebar_html = md_to_html("## ⚙️ Data Quality\n" + dq_md)
+        body = (
+            f'<div class="report-layout">'
+            f'<div class="report-main">{main_html}</div>'
+            f'<aside class="report-sidebar">{sidebar_html}</aside>'
+            f'</div>'
+        )
+    else:
+        body = md_to_html(report_md)
+
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>

@@ -466,10 +466,9 @@ class PlatformStatusReport:
             md += "No in-progress issues found.\n\n"
             return md
 
-        # --- Estimates ---
+        # --- Estimates (in-progress) ---
         with_est = [i for i in in_progress if (i.get("fields", {}).get("timeoriginalestimate") or 0) > 0]
         pct = int(len(with_est) / len(in_progress) * 100)
-        md += f"**Estimates:** {len(with_est)} of {len(in_progress)} in-progress issues have estimates ({pct}%)\n\n"
 
         eng_est = {}
         for i in in_progress:
@@ -482,14 +481,6 @@ class PlatformStatusReport:
             if (i.get("fields", {}).get("timeoriginalestimate") or 0) > 0:
                 eng_est[first]["estimated"] += 1
 
-        if eng_est:
-            md += "| Engineer | Estimated | Total | % |\n|---|---|---|---|\n"
-            for eng, c in sorted(eng_est.items(), key=lambda x: -x[1]["estimated"]):
-                p = int(c["estimated"] / c["total"] * 100) if c["total"] else 0
-                flag = " 👀" if c["estimated"] == 0 or (p < 20 and c["total"] >= 3) else ""
-                md += f"| {eng} | {c['estimated']} | {c['total']} | {p}%{flag} |\n"
-            md += "\n"
-
         # --- Actuals (QA-stage issues only) ---
         qa_statuses = {"Merged to QA", "In QA", "QA Revise"}
         qa_issues = [
@@ -497,12 +488,12 @@ class PlatformStatusReport:
             if (i.get("fields", {}).get("status", {}).get("name", "")) in qa_statuses
         ]
 
+        eng_act = {}
+        pct_act = 0
+        best_name = None
         if qa_issues:
             with_act = [i for i in qa_issues if (i.get("fields", {}).get("timespent") or 0) > 0]
             pct_act = int(len(with_act) / len(qa_issues) * 100)
-            md += f"**Actuals:** {len(with_act)} of {len(qa_issues)} issues in QA have time tracked ({pct_act}%)\n\n"
-
-            eng_act = {}
             for i in qa_issues:
                 name = (((i.get("fields", {}).get("assignee") or {}).get("displayName")) or "Unassigned")
                 if name == "Unassigned":
@@ -512,26 +503,44 @@ class PlatformStatusReport:
                 eng_act[first]["total"] += 1
                 if (i.get("fields", {}).get("timespent") or 0) > 0:
                     eng_act[first]["logged"] += 1
-
             for c in eng_act.values():
                 c["pct"] = int(c["logged"] / c["total"] * 100) if c["total"] else 0
-
-            best_name = None
             if eng_act:
                 best_name = max(eng_act, key=lambda k: (eng_act[k]["pct"], eng_act[k]["logged"]))
 
-            if eng_act:
-                md += "| Engineer | Logged | Total | % |\n|---|---|---|---|\n"
-                for eng, c in sorted(eng_act.items(), key=lambda x: -x[1]["logged"]):
-                    p = c["pct"]
-                    if eng == best_name and c["logged"] > 0:
-                        flag = " 👏"
-                    elif c["logged"] == 0 or (p < 20 and c["total"] >= 3):
-                        flag = " 👀"
+        # --- Combined Estimates + Actuals table ---
+        md += f"**Estimates:** {len(with_est)}/{len(in_progress)} in-progress ({pct}%)\n"
+        if qa_issues:
+            md += f"**Actuals:** {len(with_act)}/{len(qa_issues)} in QA ({pct_act}%)\n"
+        md += "\n"
+
+        all_engs = sorted(set(list(eng_est.keys()) + list(eng_act.keys())))
+        if all_engs:
+            md += "| Engineer | Estimates | Actuals |\n|---|---|---|\n"
+            for eng in all_engs:
+                est_c = eng_est.get(eng)
+                if est_c:
+                    ep = int(est_c["estimated"] / est_c["total"] * 100) if est_c["total"] else 0
+                    eflag = " 👀" if est_c["estimated"] == 0 or (ep < 20 and est_c["total"] >= 3) else ""
+                    est_cell = f"{est_c['estimated']}/{est_c['total']} ({ep}%){eflag}"
+                else:
+                    est_cell = "—"
+
+                act_c = eng_act.get(eng)
+                if act_c:
+                    ap = act_c["pct"]
+                    if eng == best_name and act_c["logged"] > 0:
+                        aflag = " 👏"
+                    elif act_c["logged"] == 0 or (ap < 20 and act_c["total"] >= 3):
+                        aflag = " 👀"
                     else:
-                        flag = ""
-                    md += f"| {eng} | {c['logged']} | {c['total']} | {p}%{flag} |\n"
-                md += "\n"
+                        aflag = ""
+                    act_cell = f"{act_c['logged']}/{act_c['total']} ({ap}%){aflag}"
+                else:
+                    act_cell = "—"
+
+                md += f"| {eng} | {est_cell} | {act_cell} |\n"
+            md += "\n"
 
         # --- Unprioritized ---
         unprio = [i for i in in_progress if not (i.get("fields", {}).get("fixVersions") or [])]
@@ -546,11 +555,11 @@ class PlatformStatusReport:
                 proj_unprio[proj_name] = {"unprio": proj_unprio_count, "total": len(proj_inp)}
 
         if proj_unprio:
-            md += "| Project | Unprioritized | In Progress | % |\n|---|---|---|---|\n"
+            md += "| Project | Unprioritized |\n|---|---|\n"
             for proj_name, counts in sorted(proj_unprio.items(), key=lambda x: -x[1]["unprio"]):
                 p = int(counts["unprio"] / counts["total"] * 100) if counts["total"] else 0
                 flag = " 👀" if p == 100 else ""
-                md += f"| {proj_name} | {counts['unprio']} | {counts['total']} | {p}%{flag} |\n"
+                md += f"| {proj_name} | {counts['unprio']}/{counts['total']} ({p}%){flag} |\n"
 
         return md + "\n"
 
@@ -647,10 +656,7 @@ class PlatformStatusReport:
 
         md = f"# Platform Weekly Status — {today_str}\n\n"
 
-        # 1. Data Quality
-        md += self._render_data_quality(issues_by_name)
-
-        # 2. Summary
+        # 1. Summary
         md += self._render_summary(active, issues_by_pkey)
 
         # 3. Active Projects
@@ -687,5 +693,8 @@ class PlatformStatusReport:
                     line += f" ⚠️ Last status: {status.replace('_', ' ')}"
                 md += line + "\n"
             md += "\n"
+
+        # 6. Data Quality (sidebar)
+        md += self._render_data_quality(issues_by_name)
 
         return md

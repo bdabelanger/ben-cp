@@ -52,6 +52,8 @@ h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.25rem; }
 h2 { font-size: 1.2rem;  font-weight: 700; margin: 2rem 0 0.75rem;
      padding-bottom: 0.4rem; border-bottom: 2px solid var(--border); }
 h3 { font-size: 1rem;    font-weight: 600; margin: 1.25rem 0 0.4rem; }
+h4 { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em;
+     color: var(--muted); margin: 1.75rem 0 0.5rem; }
 p  { margin: 0.4rem 0; }
 a  { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -114,7 +116,7 @@ tr:last-child td { border-bottom: none; }
 }
 .time-actual           { background: var(--accent); }
 .time-actual-over      { background: #ef4444; }
-.time-remaining        { background: #1a237e; }
+.time-remaining        { background: #8b5cf6; }
 .time-remaining-over   { background: #ef4444; }
 
 /* ---------- badge / pill ---------- */
@@ -214,90 +216,33 @@ code {
 </head>
 <body>
 <div class="container">
-<div class="report-layout"><div class="report-main"><div class="report-header"><h1>Platform Weekly Status — April 6, 2026</h1><div class="subtitle">Generated April 06, 2026 at 03:37</div></div>
+<div class="report-layout"><div class="report-main"><div class="report-header"><h1>Platform Weekly Status — April 6, 2026</h1><div class="subtitle">Generated April 06, 2026 at 19:33</div></div>
 <h2>📋 Summary</h2>
 <ol>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1210860550580329">Data import - Clearer error messages</a> (<a href="https://casecommons.atlassian.net/browse/CBP-498">CBP-498</a>) is in <strong>In QA</strong> — 13 done · 1 in progress · 0 to do. Open work: 1 P2.</li>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1212552174642233">Web applications - Material UI upgrade (all components)</a> (<a href="https://casecommons.atlassian.net/browse/CBP-2917">CBP-2917</a>) is in <strong>In QA</strong> — 6 done · 3 in progress · 0 to do. Open work: 3 P2.</li>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1212555058482954">Notifications - Eliminate HTML injection/XSS vulnerability (KPP)</a> (<a href="https://casecommons.atlassian.net/browse/CBP-1593">CBP-1593</a>) is in <strong>In QA</strong> — 6 done · 1 in progress · 0 to do. Open work: 1 P2.</li>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1211631356870657">Enrollment dialog - Bulk Services section</a> (<a href="https://casecommons.atlassian.net/browse/CBP-2992">CBP-2992</a>) is in <strong>Beta</strong> — 18 done · 1 in progress · 2 to do. Open work: 3 P2.</li>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1209963394727039">Notes - Notes datagrid</a> (<a href="https://casecommons.atlassian.net/browse/CBP-2736">CBP-2736</a>) is in <strong>GA</strong> — 18 done · 8 in progress · 5 to do. Open work: 8 P2, 3 P3, 2 P4.</li>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1211838817183809">Notes - Bulk "General Notes"</a> (<a href="https://casecommons.atlassian.net/browse/CBP-2752">CBP-2752</a>) is in <strong>Beta</strong> — 11 done · 0 in progress · 1 to do. Open work: 1 P3.</li>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1211786365522017">Notes - Locked Notes</a> (<a href="https://casecommons.atlassian.net/browse/CBP-2923">CBP-2923</a>) is in <strong>In QA</strong> — 0 done · 3 in progress · 0 to do. Open work: 3 P2.</li>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1211757637943244">Notes - Bulk Service Notes</a> (<a href="https://casecommons.atlassian.net/browse/CBP-2924">CBP-2924</a>) is in <strong>In QA</strong> — 2 done · 13 in progress · 4 to do. Open work: 👀 1 P1, 8 P2, 7 P3, 1 P4.</li>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1213496879668016">Integrations - Zapier improvements</a> (<a href="https://casecommons.atlassian.net/browse/CBP-3158">CBP-3158</a>) is in <strong>Development</strong> — 0 done · 0 in progress · 1 to do. Open work: 1 P2.</li>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1211631360190563">Services - Service plan datagrid with bulk actions</a> (<a href="https://casecommons.atlassian.net/browse/CBP-3066">CBP-3066</a>) is in <strong>Development</strong> — 0 done · 7 in progress · 1 to do. Open work: 8 P2.</li>
+<li><a href="#CBP-498">Data import - Clearer error messages</a> is in <span class="badge badge-qa">In QA</span><div class="issue-meta-row">1 P2 left</div></li>
+<li><a href="#CBP-2917">Web applications - Material UI upgrade (all components)</a> is in <span class="badge badge-qa">In QA</span><div class="issue-meta-row">3 P2 left</div></li>
+<li><a href="#CBP-1593">Notifications - Eliminate HTML injection/XSS vulnerability (KPP)</a> is in <span class="badge badge-qa">In QA</span><div class="issue-meta-row">1 P2 left</div></li>
+<li><a href="#CBP-2992">Enrollment dialog - Bulk Services section</a> is in <span class="badge badge-beta">Beta</span><div class="issue-meta-row">3 P2 left</div></li>
+<li><a href="#CBP-2736">Notes - Notes datagrid</a> is in <span class="badge badge-ga">GA</span><div class="issue-meta-row">8 P2, 3 P3, 2 P4 left</div></li>
+<li><a href="#CBP-3078">Communications - Text message syncing routing improvements</a> is in <span class="badge badge-dev">Development</span><div class="issue-meta-row">4 P2, 2 P4 left</div></li>
+<li><a href="#CBP-2752">Notes - Bulk "General Notes"</a> is in <span class="badge badge-beta">Beta</span><div class="issue-meta-row">1 P3 left</div></li>
+<li><a href="#CBP-2923">Notes - Locked Notes</a> is in <span class="badge badge-qa">In QA</span><div class="issue-meta-row">3 P2 left</div></li>
+<li><a href="#CBP-2924">Notes - Bulk Service Notes</a> is in <span class="badge badge-qa">In QA</span><div class="issue-meta-row">👀 1 P1, 8 P2, 7 P3, 1 P4 left</div></li>
+<li><a href="#CBP-3158">Integrations - Zapier improvements</a> is in <span class="badge badge-dev">Development</span><div class="issue-meta-row">1 P2 left</div></li>
+<li><a href="#CBP-3066">Services - Service plan datagrid with bulk actions</a> is in <span class="badge badge-dev">Development</span><div class="issue-meta-row">8 P2 left</div></li>
 </ol>
-<h2>🟢 Active Projects</h2>
-<div class="project-card"><h3><a href="https://app.asana.com/1/1123317448830974/project/1210860550580329">Data import - Clearer error messages</a> · <a href="https://casecommons.atlassian.net/browse/CBP-498">CBP-498</a> <span class="badge badge-qa">In QA</span></h3>
-<div class="progress-wrap"><div class="prog-done" style="width:92.9%"></div><div class="prog-progress" style="width:7.1%"></div><div class="prog-todo" style="width:0.0%"></div></div><span class="stat-row">13 done &nbsp;·&nbsp; 1 in progress &nbsp;·&nbsp; 0 to do</span>
-<div class="time-bar-wrap"><div class="time-actual" style="width:27.2%"></div><div class="time-remaining" style="width:10.2%"></div></div><span class="stat-row">29.4d estimated &nbsp;·&nbsp; 8.0d actual &nbsp;·&nbsp; 3.0d remaining (37%)</span>
-<ul>
-<li>✅ QA Start - Mar 27</li>
-<li>❌ UAT Start - Apr 3</li>
-<li>⚠️ GA - Apr 9</li>
-</ul>
-<p><strong>Done:</strong> 13 issues</p>
-<p class="stat-row">26.4d estimated · 8.0d actual</p>
-<p><strong>In Progress:</strong> 1 issues · ~3.0d est remaining</p>
-<ul>
-<li><a href="https://casecommons.atlassian.net/browse/CBP-3008">CBP-3008</a> — Bulk import - Return all validation error messages at once — Ben<div class="issue-meta-row">QA revise · 3.0d estimated · No actual 👀 · P2 · 2026-4-1</div></li>
-</ul>
+<h2>📋 Detailed Status</h2>
+<h4>March 2025</h4>
+<div class="project-card"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1209067717586477">Intake - Transfer more data with "Create case"</a> <span class="badge badge-onhold">On hold</span></h3>
 </div>
-<div class="project-card"><h3><a href="https://app.asana.com/1/1123317448830974/project/1212552174642233">Web applications - Material UI upgrade (all components)</a> · <a href="https://casecommons.atlassian.net/browse/CBP-2917">CBP-2917</a> <span class="badge badge-qa">In QA</span></h3>
-<div class="progress-wrap"><div class="prog-done" style="width:66.7%"></div><div class="prog-progress" style="width:33.3%"></div><div class="prog-todo" style="width:0.0%"></div></div><span class="stat-row">6 done &nbsp;·&nbsp; 3 in progress &nbsp;·&nbsp; 0 to do</span>
-<div class="time-bar-wrap"><div class="time-actual" style="width:58.3%"></div><div class="time-remaining" style="width:0.0%"></div></div><span class="stat-row">6.0d estimated &nbsp;·&nbsp; 3.5d actual &nbsp;·&nbsp; 0.0d remaining (58%)</span>
-<ul>
-<li>✅ QA Start - Mar 16</li>
-<li>❌ UAT Start - Apr 3</li>
-<li>⚠️ GA - Apr 9</li>
-</ul>
-<p><strong>Done:</strong> 6 issues</p>
-<p class="stat-row">6.0d estimated · 3.5d actual</p>
-<p><strong>In Progress:</strong> 3 issues</p>
-<ul>
-<li><a href="https://casecommons.atlassian.net/browse/CBP-3173">CBP-3173</a> — Reporting/Intake - SVG icon data-testid attributes missing after MUI upgrade — Sodiq<div class="issue-meta-row">In development · Unestimated 👀 · No actual 👀 · P2 · 2026-4-1</div></li>
-<li><a href="https://casecommons.atlassian.net/browse/CBP-3006">CBP-3006</a> — Update core components to MUI v7 — Sodiq<div class="issue-meta-row">Merged to QA · Unestimated 👀 · No actual 👀 · P2 · 2026-4-1</div></li>
-<li><a href="https://casecommons.atlassian.net/browse/CBP-3004">CBP-3004</a> — Update undercase to MUI v7 — Sodiq<div class="issue-meta-row">QA revise · Unestimated 👀 · No actual 👀 · P2 · 2026-4-1</div></li>
-</ul>
+<h4>October 2025</h4>
+<div class="project-card"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1209963394727206">Notes - Navigate to note from case history</a> <span class="badge badge-onhold">On hold</span></h3>
 </div>
-<div class="project-card"><h3><a href="https://app.asana.com/1/1123317448830974/project/1212555058482954">Notifications - Eliminate HTML injection/XSS vulnerability (KPP)</a> · <a href="https://casecommons.atlassian.net/browse/CBP-1593">CBP-1593</a> <span class="badge badge-qa">In QA</span></h3>
-<div class="progress-wrap"><div class="prog-done" style="width:85.7%"></div><div class="prog-progress" style="width:14.3%"></div><div class="prog-todo" style="width:0.0%"></div></div><span class="stat-row">6 done &nbsp;·&nbsp; 1 in progress &nbsp;·&nbsp; 0 to do</span>
-<div class="time-bar-wrap"><div class="time-actual" style="width:0.0%"></div><div class="time-remaining" style="width:100.0%"></div></div><span class="stat-row">👀 2.0d estimated &nbsp;·&nbsp; 0.0d actual &nbsp;·&nbsp; 2.0d remaining (100%)</span>
-<ul>
-<li>✅ QA Start - Mar 27</li>
-<li>❌ UAT Start - Apr 3</li>
-<li>⚠️ GA - Apr 9</li>
-</ul>
-<p><strong>Done:</strong> 6 issues</p>
-<p class="stat-row">Unestimated 👀 · No actual 👀</p>
-<p><strong>In Progress:</strong> 1 issues · ~2.0d est remaining</p>
-<ul>
-<li><a href="https://casecommons.atlassian.net/browse/CBP-3016">CBP-3016</a> — KPP feedback - Cross-Site Scripting — Tuan<div class="issue-meta-row">Merged to QA · 2.0d estimated · No actual 👀 · P2 · 2026-4-1</div></li>
-</ul>
+<h4>November 2025</h4>
+<div class="project-card"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1210452458408257">Funding - Budgets for allowable services</a> <span class="badge badge-onhold">On hold</span></h3>
 </div>
-<div class="project-card"><h3><a href="https://app.asana.com/1/1123317448830974/project/1211631356870657">Enrollment dialog - Bulk Services section</a> · <a href="https://casecommons.atlassian.net/browse/CBP-2992">CBP-2992</a> <span class="badge badge-beta">Beta</span></h3>
-<div class="progress-wrap"><div class="prog-done" style="width:85.7%"></div><div class="prog-progress" style="width:4.8%"></div><div class="prog-todo" style="width:9.5%"></div></div><span class="stat-row">18 done &nbsp;·&nbsp; 1 in progress &nbsp;·&nbsp; 2 to do</span>
-<div class="time-bar-wrap"><div class="time-actual-over" style="width:50.0%"></div><div class="time-remaining-over" style="width:50.0%"></div></div><span class="stat-row">❌ 1.0d estimated &nbsp;·&nbsp; 3.0d actual &nbsp;·&nbsp; 3.0d remaining (600%)</span>
-<ul>
-<li>✅ QA Start - Feb 26</li>
-<li>✅ UAT Start - Mar 12</li>
-<li>✅ Beta Start - Mar 18</li>
-<li>🎯 GA - Apr 15</li>
-</ul>
-<p><strong>Done:</strong> 18 issues</p>
-<p class="stat-row">31.0d estimated · 3.0d actual</p>
-<p><strong>In Progress:</strong> 1 issues · ~2.0d est remaining</p>
-<ul>
-<li><a href="https://casecommons.atlassian.net/browse/CBP-3093">CBP-3093</a> — Enrollments - Investigate dropdown field UX confusion in Services datagrid — Tuan<div class="issue-meta-row">Merged to QA · 2.0d estimated · No actual 👀 · P2 · 2026-4-1</div></li>
-</ul>
-<p><strong>To Do:</strong> 2 issues</p>
-<ul>
-<li><a href="https://casecommons.atlassian.net/browse/CBP-3095">CBP-3095</a> — FE - Service Enrollment - Service Type changed is not reflected in the View Service Enrollment — Unassigned<div class="issue-meta-row">To do · 1.0d estimated · No actual 👀 · P2 · 👀 Unprioritized</div></li>
-<li><a href="https://casecommons.atlassian.net/browse/CBP-3094">CBP-3094</a> — FE - Service Enrollment - Default value is not reflected in the Add Service enrollment (For ex: Method of delivery) — Ben<div class="issue-meta-row">To do · Unestimated 👀 · No actual 👀 · P2 · 2026-4-2</div></li>
-</ul>
-</div>
-<div class="project-card"><h3><a href="https://app.asana.com/1/1123317448830974/project/1209963394727039">Notes - Notes datagrid</a> · <a href="https://casecommons.atlassian.net/browse/CBP-2736">CBP-2736</a> <span class="badge badge-ga">GA</span></h3>
+<h4>April</h4>
+<div class="project-card" id="CBP-2736"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1209963394727039">Notes - Notes datagrid</a> · <svg width="13" height="13" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><path fill="#0052CC" d="M12 0L0 12l12 12 12-12L12 0zm0 3.5L20.5 12 12 20.5 3.5 12 12 3.5z"/></svg><a href="https://casecommons.atlassian.net/browse/CBP-2736">CBP-2736</a> <span class="badge badge-ga">GA</span></h3>
 <div class="progress-wrap"><div class="prog-done" style="width:58.1%"></div><div class="prog-progress" style="width:25.8%"></div><div class="prog-todo" style="width:16.1%"></div></div><span class="stat-row">18 done &nbsp;·&nbsp; 8 in progress &nbsp;·&nbsp; 5 to do</span>
 <div class="time-bar-wrap"><div class="time-actual" style="width:55.0%"></div><div class="time-remaining" style="width:13.3%"></div></div><span class="stat-row">33.1d estimated &nbsp;·&nbsp; 18.2d actual &nbsp;·&nbsp; 4.4d remaining (68%)</span>
 <ul>
@@ -327,7 +272,99 @@ code {
 <li><a href="https://casecommons.atlassian.net/browse/CBP-3054">CBP-3054</a> — Notes - Enable multi-filter stacking in Notes Datagrid — Blessing<div class="issue-meta-row">To do · Unestimated 👀 · No actual 👀 · P3 · 👀 Unprioritized</div></li>
 </ul>
 </div>
-<div class="project-card"><h3><a href="https://app.asana.com/1/1123317448830974/project/1211838817183809">Notes - Bulk "General Notes"</a> · <a href="https://casecommons.atlassian.net/browse/CBP-2752">CBP-2752</a> <span class="badge badge-beta">Beta</span></h3>
+<div class="project-card" id="CBP-2992"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1211631356870657">Enrollment dialog - Bulk Services section</a> · <svg width="13" height="13" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><path fill="#0052CC" d="M12 0L0 12l12 12 12-12L12 0zm0 3.5L20.5 12 12 20.5 3.5 12 12 3.5z"/></svg><a href="https://casecommons.atlassian.net/browse/CBP-2992">CBP-2992</a> <span class="badge badge-beta">Beta</span></h3>
+<div class="progress-wrap"><div class="prog-done" style="width:85.7%"></div><div class="prog-progress" style="width:4.8%"></div><div class="prog-todo" style="width:9.5%"></div></div><span class="stat-row">18 done &nbsp;·&nbsp; 1 in progress &nbsp;·&nbsp; 2 to do</span>
+<div class="time-bar-wrap"><div class="time-actual-over" style="width:50.0%"></div><div class="time-remaining-over" style="width:50.0%"></div></div><span class="stat-row">❌ 1.0d estimated &nbsp;·&nbsp; 3.0d actual &nbsp;·&nbsp; 3.0d remaining (600%)</span>
+<ul>
+<li>✅ QA Start - Feb 26</li>
+<li>✅ UAT Start - Mar 12</li>
+<li>✅ Beta Start - Mar 18</li>
+<li>🎯 GA - Apr 15</li>
+</ul>
+<p><strong>Done:</strong> 18 issues</p>
+<p class="stat-row">31.0d estimated · 3.0d actual</p>
+<p><strong>In Progress:</strong> 1 issues · ~2.0d est remaining</p>
+<ul>
+<li><a href="https://casecommons.atlassian.net/browse/CBP-3093">CBP-3093</a> — Enrollments - Investigate dropdown field UX confusion in Services datagrid — Tuan<div class="issue-meta-row">Merged to QA · 2.0d estimated · No actual 👀 · P2 · 2026-4-1</div></li>
+</ul>
+<p><strong>To Do:</strong> 2 issues</p>
+<ul>
+<li><a href="https://casecommons.atlassian.net/browse/CBP-3095">CBP-3095</a> — FE - Service Enrollment - Service Type changed is not reflected in the View Service Enrollment — Unassigned<div class="issue-meta-row">To do · 1.0d estimated · No actual 👀 · P2 · 👀 Unprioritized</div></li>
+<li><a href="https://casecommons.atlassian.net/browse/CBP-3094">CBP-3094</a> — FE - Service Enrollment - Default value is not reflected in the Add Service enrollment (For ex: Method of delivery) — Ben<div class="issue-meta-row">To do · Unestimated 👀 · No actual 👀 · P2 · 2026-4-2</div></li>
+</ul>
+</div>
+<div class="project-card" id="CBP-498"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1210860550580329">Data import - Clearer error messages</a> · <svg width="13" height="13" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><path fill="#0052CC" d="M12 0L0 12l12 12 12-12L12 0zm0 3.5L20.5 12 12 20.5 3.5 12 12 3.5z"/></svg><a href="https://casecommons.atlassian.net/browse/CBP-498">CBP-498</a> <span class="badge badge-qa">In QA</span></h3>
+<div class="progress-wrap"><div class="prog-done" style="width:92.9%"></div><div class="prog-progress" style="width:7.1%"></div><div class="prog-todo" style="width:0.0%"></div></div><span class="stat-row">13 done &nbsp;·&nbsp; 1 in progress &nbsp;·&nbsp; 0 to do</span>
+<div class="time-bar-wrap"><div class="time-actual" style="width:27.2%"></div><div class="time-remaining" style="width:10.2%"></div></div><span class="stat-row">29.4d estimated &nbsp;·&nbsp; 8.0d actual &nbsp;·&nbsp; 3.0d remaining (37%)</span>
+<ul>
+<li>✅ QA Start - Mar 27</li>
+<li>❌ UAT Start - Apr 3</li>
+<li>⚠️ GA - Apr 9</li>
+</ul>
+<p><strong>Done:</strong> 13 issues</p>
+<p class="stat-row">26.4d estimated · 8.0d actual</p>
+<p><strong>In Progress:</strong> 1 issues · ~3.0d est remaining</p>
+<ul>
+<li><a href="https://casecommons.atlassian.net/browse/CBP-3008">CBP-3008</a> — Bulk import - Return all validation error messages at once — Ben<div class="issue-meta-row">QA revise · 3.0d estimated · No actual 👀 · P2 · 2026-4-1</div></li>
+</ul>
+</div>
+<div class="project-card" id="CBP-1593"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1212555058482954">Notifications - Eliminate HTML injection/XSS vulnerability (KPP)</a> · <svg width="13" height="13" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><path fill="#0052CC" d="M12 0L0 12l12 12 12-12L12 0zm0 3.5L20.5 12 12 20.5 3.5 12 12 3.5z"/></svg><a href="https://casecommons.atlassian.net/browse/CBP-1593">CBP-1593</a> <span class="badge badge-qa">In QA</span></h3>
+<div class="progress-wrap"><div class="prog-done" style="width:85.7%"></div><div class="prog-progress" style="width:14.3%"></div><div class="prog-todo" style="width:0.0%"></div></div><span class="stat-row">6 done &nbsp;·&nbsp; 1 in progress &nbsp;·&nbsp; 0 to do</span>
+<div class="time-bar-wrap"><div class="time-actual" style="width:0.0%"></div><div class="time-remaining" style="width:100.0%"></div></div><span class="stat-row">👀 2.0d estimated &nbsp;·&nbsp; 0.0d actual &nbsp;·&nbsp; 2.0d remaining (100%)</span>
+<ul>
+<li>✅ QA Start - Mar 27</li>
+<li>❌ UAT Start - Apr 3</li>
+<li>⚠️ GA - Apr 9</li>
+</ul>
+<p><strong>Done:</strong> 6 issues</p>
+<p class="stat-row">Unestimated 👀 · No actual 👀</p>
+<p><strong>In Progress:</strong> 1 issues · ~2.0d est remaining</p>
+<ul>
+<li><a href="https://casecommons.atlassian.net/browse/CBP-3016">CBP-3016</a> — KPP feedback - Cross-Site Scripting — Tuan<div class="issue-meta-row">Merged to QA · 2.0d estimated · No actual 👀 · P2 · 2026-4-1</div></li>
+</ul>
+</div>
+<div class="project-card" id="CBP-2917"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1212552174642233">Web applications - Material UI upgrade (all components)</a> · <svg width="13" height="13" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><path fill="#0052CC" d="M12 0L0 12l12 12 12-12L12 0zm0 3.5L20.5 12 12 20.5 3.5 12 12 3.5z"/></svg><a href="https://casecommons.atlassian.net/browse/CBP-2917">CBP-2917</a> <span class="badge badge-qa">In QA</span></h3>
+<div class="progress-wrap"><div class="prog-done" style="width:66.7%"></div><div class="prog-progress" style="width:33.3%"></div><div class="prog-todo" style="width:0.0%"></div></div><span class="stat-row">6 done &nbsp;·&nbsp; 3 in progress &nbsp;·&nbsp; 0 to do</span>
+<div class="time-bar-wrap"><div class="time-actual" style="width:58.3%"></div><div class="time-remaining" style="width:0.0%"></div></div><span class="stat-row">6.0d estimated &nbsp;·&nbsp; 3.5d actual &nbsp;·&nbsp; 0.0d remaining (58%)</span>
+<ul>
+<li>✅ QA Start - Mar 16</li>
+<li>❌ UAT Start - Apr 3</li>
+<li>⚠️ GA - Apr 9</li>
+</ul>
+<p><strong>Done:</strong> 6 issues</p>
+<p class="stat-row">6.0d estimated · 3.5d actual</p>
+<p><strong>In Progress:</strong> 3 issues</p>
+<ul>
+<li><a href="https://casecommons.atlassian.net/browse/CBP-3173">CBP-3173</a> — Reporting/Intake - SVG icon data-testid attributes missing after MUI upgrade — Sodiq<div class="issue-meta-row">In development · Unestimated 👀 · No actual 👀 · P2 · 2026-4-1</div></li>
+<li><a href="https://casecommons.atlassian.net/browse/CBP-3006">CBP-3006</a> — Update core components to MUI v7 — Sodiq<div class="issue-meta-row">Merged to QA · Unestimated 👀 · No actual 👀 · P2 · 2026-4-1</div></li>
+<li><a href="https://casecommons.atlassian.net/browse/CBP-3004">CBP-3004</a> — Update undercase to MUI v7 — Sodiq<div class="issue-meta-row">QA revise · Unestimated 👀 · No actual 👀 · P2 · 2026-4-1</div></li>
+</ul>
+</div>
+<div class="project-card" id="CBP-3078"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1213880656869265">Communications - Text message syncing routing improvements</a> · <svg width="13" height="13" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><path fill="#0052CC" d="M12 0L0 12l12 12 12-12L12 0zm0 3.5L20.5 12 12 20.5 3.5 12 12 3.5z"/></svg><a href="https://casecommons.atlassian.net/browse/CBP-3078">CBP-3078</a> <span class="badge badge-dev">Development</span></h3>
+<div class="progress-wrap"><div class="prog-done" style="width:25.0%"></div><div class="prog-progress" style="width:50.0%"></div><div class="prog-todo" style="width:25.0%"></div></div><span class="stat-row">2 done &nbsp;·&nbsp; 4 in progress &nbsp;·&nbsp; 2 to do</span>
+<p><code>👀 no time data</code></p>
+<ul>
+<li>🎯 QA Start - Apr 6</li>
+<li>🎯 UAT Start - Apr 16</li>
+<li>🎯 GA - Apr 23</li>
+</ul>
+<p><strong>Done:</strong> 2 issues</p>
+<p class="stat-row">Unestimated 👀 · No actual 👀</p>
+<p><strong>In Progress:</strong> 4 issues</p>
+<ul>
+<li><a href="https://casecommons.atlassian.net/browse/CBP-3138">CBP-3138</a> — Text Message Syncing - Delete individual text messages and entire threads — Duc<div class="issue-meta-row">In development · Unestimated 👀 · No actual 👀 · P2 · 👀 Unprioritized</div></li>
+<li><a href="https://casecommons.atlassian.net/browse/CBP-3140">CBP-3140</a> — Text Message Syncing - Threads with an ambiguous phone number (matched to multiple people) should route to Unidentified Conversations — Duc<div class="issue-meta-row">Merged to QA · Unestimated 👀 · No actual 👀 · P2 · 2026-4-1</div></li>
+<li><a href="https://casecommons.atlassian.net/browse/CBP-3137">CBP-3137</a> — Text Message Syncing - Staff-only texts (no client participant) should route to Unidentified Conversations, not cases — Duc<div class="issue-meta-row">Merged to QA · Unestimated 👀 · No actual 👀 · P2 · 2026-4-1</div></li>
+<li><a href="https://casecommons.atlassian.net/browse/CBP-2980">CBP-2980</a> — Text message syncing - Unexpected behavior in Unidentified messages queue — Duc<div class="issue-meta-row">In development · Unestimated 👀 · No actual 👀 · P4 · 👀 Unprioritized</div></li>
+</ul>
+<p><strong>To Do:</strong> 2 issues</p>
+<ul>
+<li><a href="https://casecommons.atlassian.net/browse/CBP-3139">CBP-3139</a> — Text Message Syncing - Handle participant phone number updated or deleted — Duc<div class="issue-meta-row">To do · Unestimated 👀 · No actual 👀 · P2 · 👀 Unprioritized</div></li>
+<li><a href="https://casecommons.atlassian.net/browse/CBP-2265">CBP-2265</a> — Communications - Client name not populating in Text Messages (onehh) — Ben<div class="issue-meta-row">To do · Unestimated 👀 · No actual 👀 · P4 · 👀 Unprioritized</div></li>
+</ul>
+</div>
+<h4>May</h4>
+<div class="project-card" id="CBP-2752"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1211838817183809">Notes - Bulk "General Notes"</a> · <svg width="13" height="13" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><path fill="#0052CC" d="M12 0L0 12l12 12 12-12L12 0zm0 3.5L20.5 12 12 20.5 3.5 12 12 3.5z"/></svg><a href="https://casecommons.atlassian.net/browse/CBP-2752">CBP-2752</a> <span class="badge badge-beta">Beta</span></h3>
 <div class="progress-wrap"><div class="prog-done" style="width:91.7%"></div><div class="prog-progress" style="width:0.0%"></div><div class="prog-todo" style="width:8.3%"></div></div><span class="stat-row">11 done &nbsp;·&nbsp; 0 in progress &nbsp;·&nbsp; 1 to do</span>
 <div class="time-bar-wrap"><div class="time-actual" style="width:55.3%"></div><div class="time-remaining" style="width:0.0%"></div></div><span class="stat-row">15.9d estimated &nbsp;·&nbsp; 8.8d actual &nbsp;·&nbsp; 0.0d remaining (55%)</span>
 <ul>
@@ -343,7 +380,7 @@ code {
 <li><a href="https://casecommons.atlassian.net/browse/CBP-2862">CBP-2862</a> — Columns on people grid of New note modal doesn't support scroll unless few people are added — Sindhu<div class="issue-meta-row">To do · Unestimated 👀 · No actual 👀 · P3 · 👀 Unprioritized</div></li>
 </ul>
 </div>
-<div class="project-card"><h3><a href="https://app.asana.com/1/1123317448830974/project/1211786365522017">Notes - Locked Notes</a> · <a href="https://casecommons.atlassian.net/browse/CBP-2923">CBP-2923</a> <span class="badge badge-qa">In QA</span></h3>
+<div class="project-card" id="CBP-2923"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1211786365522017">Notes - Locked Notes</a> · <svg width="13" height="13" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><path fill="#0052CC" d="M12 0L0 12l12 12 12-12L12 0zm0 3.5L20.5 12 12 20.5 3.5 12 12 3.5z"/></svg><a href="https://casecommons.atlassian.net/browse/CBP-2923">CBP-2923</a> <span class="badge badge-qa">In QA</span></h3>
 <div class="progress-wrap"><div class="prog-done" style="width:0.0%"></div><div class="prog-progress" style="width:100.0%"></div><div class="prog-todo" style="width:0.0%"></div></div><span class="stat-row">0 done &nbsp;·&nbsp; 3 in progress &nbsp;·&nbsp; 0 to do</span>
 <div class="time-bar-wrap"><div class="time-actual" style="width:0.0%"></div><div class="time-remaining" style="width:100.0%"></div></div><span class="stat-row">👀 6.0d estimated &nbsp;·&nbsp; 0.0d actual &nbsp;·&nbsp; 6.0d remaining (100%)</span>
 <ul>
@@ -359,7 +396,10 @@ code {
 <li><a href="https://casecommons.atlassian.net/browse/CBP-2756">CBP-2756</a> — Notes - Show "Access" section for all note types — Russell<div class="issue-meta-row">Merged to QA · 4.0d estimated · 3.6d actual · P2 · 2026-4-2</div></li>
 </ul>
 </div>
-<div class="project-card"><h3><a href="https://app.asana.com/1/1123317448830974/project/1211757637943244">Notes - Bulk Service Notes</a> · <a href="https://casecommons.atlassian.net/browse/CBP-2924">CBP-2924</a> <span class="badge badge-qa">In QA</span></h3>
+<div class="project-card" id="CBP-3121"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1211733450555414">Services WLV - Bulk actions</a> · <svg width="13" height="13" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><path fill="#0052CC" d="M12 0L0 12l12 12 12-12L12 0zm0 3.5L20.5 12 12 20.5 3.5 12 12 3.5z"/></svg><a href="https://casecommons.atlassian.net/browse/CBP-3121">CBP-3121</a> <span class="badge badge-discovery">Discovery</span></h3>
+</div>
+<h4>June</h4>
+<div class="project-card" id="CBP-2924"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1211757637943244">Notes - Bulk Service Notes</a> · <svg width="13" height="13" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><path fill="#0052CC" d="M12 0L0 12l12 12 12-12L12 0zm0 3.5L20.5 12 12 20.5 3.5 12 12 3.5z"/></svg><a href="https://casecommons.atlassian.net/browse/CBP-2924">CBP-2924</a> <span class="badge badge-qa">In QA</span></h3>
 <div class="progress-wrap"><div class="prog-done" style="width:10.5%"></div><div class="prog-progress" style="width:68.4%"></div><div class="prog-todo" style="width:21.1%"></div></div><span class="stat-row">2 done &nbsp;·&nbsp; 13 in progress &nbsp;·&nbsp; 4 to do</span>
 <div class="time-bar-wrap"><div class="time-actual" style="width:0.0%"></div><div class="time-remaining" style="width:95.0%"></div></div><span class="stat-row">👀 30.1d estimated &nbsp;·&nbsp; 0.0d actual &nbsp;·&nbsp; 28.6d remaining (95%)</span>
 <ul>
@@ -394,7 +434,7 @@ code {
 <li><a href="https://casecommons.atlassian.net/browse/CBP-1503">CBP-1503</a> — raisethebarr - Rostered people are not populated on service note of Notebook page navigated via enrollment with rostered service — Unassigned<div class="issue-meta-row">Blocked - Needs Review · 2.0d estimated · No actual 👀 · P3 · 👀 Unprioritized</div></li>
 </ul>
 </div>
-<div class="project-card"><h3><a href="https://app.asana.com/1/1123317448830974/project/1213496879668016">Integrations - Zapier improvements</a> · <a href="https://casecommons.atlassian.net/browse/CBP-3158">CBP-3158</a> <span class="badge badge-dev">Development</span></h3>
+<div class="project-card" id="CBP-3158"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1213496879668016">Integrations - Zapier improvements</a> · <svg width="13" height="13" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><path fill="#0052CC" d="M12 0L0 12l12 12 12-12L12 0zm0 3.5L20.5 12 12 20.5 3.5 12 12 3.5z"/></svg><a href="https://casecommons.atlassian.net/browse/CBP-3158">CBP-3158</a> <span class="badge badge-dev">Development</span></h3>
 <div class="progress-wrap"><div class="prog-done" style="width:0.0%"></div><div class="prog-progress" style="width:0.0%"></div><div class="prog-todo" style="width:100.0%"></div></div><span class="stat-row">0 done &nbsp;·&nbsp; 0 in progress &nbsp;·&nbsp; 1 to do</span>
 <p><code>👀 no time data</code></p>
 <ul>
@@ -407,7 +447,7 @@ code {
 <li><a href="https://casecommons.atlassian.net/browse/CBP-3159">CBP-3159</a> — Zapier - Create/Update a Person Write Action — eric.engoron<div class="issue-meta-row">To do · Unestimated 👀 · No actual 👀 · P2 · 👀 Unprioritized</div></li>
 </ul>
 </div>
-<div class="project-card"><h3><a href="https://app.asana.com/1/1123317448830974/project/1211631360190563">Services - Service plan datagrid with bulk actions</a> · <a href="https://casecommons.atlassian.net/browse/CBP-3066">CBP-3066</a> <span class="badge badge-dev">Development</span></h3>
+<div class="project-card" id="CBP-3066"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1211631360190563">Services - Service plan datagrid with bulk actions</a> · <svg width="13" height="13" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><path fill="#0052CC" d="M12 0L0 12l12 12 12-12L12 0zm0 3.5L20.5 12 12 20.5 3.5 12 12 3.5z"/></svg><a href="https://casecommons.atlassian.net/browse/CBP-3066">CBP-3066</a> <span class="badge badge-dev">Development</span></h3>
 <div class="progress-wrap"><div class="prog-done" style="width:0.0%"></div><div class="prog-progress" style="width:87.5%"></div><div class="prog-todo" style="width:12.5%"></div></div><span class="stat-row">0 done &nbsp;·&nbsp; 7 in progress &nbsp;·&nbsp; 1 to do</span>
 <div class="time-bar-wrap"><div class="time-actual" style="width:0.0%"></div><div class="time-remaining" style="width:100.0%"></div></div><span class="stat-row">👀 8.1d estimated &nbsp;·&nbsp; 0.0d actual &nbsp;·&nbsp; 8.1d remaining (100%)</span>
 <ul>
@@ -431,48 +471,69 @@ code {
 <li><a href="https://casecommons.atlassian.net/browse/CBP-3144">CBP-3144</a> — Service plan - Bulk row selection, bulk actions menu UI, and bulk action implementations — Blessing<div class="issue-meta-row">To do · Unestimated 👀 · No actual 👀 · P2 · 👀 Unprioritized</div></li>
 </ul>
 </div>
-<h2>🟣 Discovery</h2>
-<ul>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1208822133040792">Nylas Upgrade - UX Improvements</a> · Study</li>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1209189001499701">Assignment-based task notifications study</a> · Study</li>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1211733450555414">Services WLV - Bulk actions</a> · <a href="https://casecommons.atlassian.net/browse/CBP-3121">CBP-3121</a> · Discovery</li>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1213506659163435">Portal - Client Dashboard</a> · Discovery</li>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1213564552809143">Accessibility - 2026 VPAT accessibility audit</a> · <a href="https://casecommons.atlassian.net/browse/CBP-3085">CBP-3085</a> · Discovery</li>
-</ul>
-<h2>⚪ Backlog</h2>
-<ul>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1209067717586477">Intake - Transfer more data with "Create case"</a> · On hold</li>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1209067717586483">Forms - Long-term strategy</a> · On hold</li>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1209963394727206">Notes - Navigate to note from case history</a> · On hold</li>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1210368097846960">Notes - Global Notes WLV</a> · Backlog</li>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1210452458408257">Funding - Budgets for allowable services</a> · On hold</li>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1210452458408269">Services - Multiple rosters for enrollments and notes</a> · On hold ⚠️ Last status: at risk</li>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1210615331914089">Text messaging - Phone number selection/onboarding</a> · Backlog</li>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1210615331914095">Internal Admin - Activate/inactivate tenants from Chargebee</a> · On hold</li>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1210860550580376">Data import - Clearer IDs</a> · On hold</li>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1210860550580423">Data import - Bulk import for Notes</a> · Backlog</li>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1210874981107020">Test Automation Suite for Endpoint Security</a> · Backlog</li>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1212560621975480">Dynamic pages - Schema migration and duplicate prevention</a> · Backlog ⚠️ Last status: off track</li>
-<li><a href="https://app.asana.com/1/1123317448830974/project/1213685097670612">Notes - Optional People in Service Notes</a> · Backlog</li>
-</ul></div><aside class="report-sidebar"><h2>⚙️ Data Quality</h2>
-<p><strong>Estimates:</strong> 22/37 in-progress (59%)</p>
-<p><strong>Actuals:</strong> 5/27 in QA (18%)</p>
+<div class="project-card" id="CBP-3085"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1213564552809143">Accessibility - 2026 VPAT accessibility audit</a> · <svg width="13" height="13" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><path fill="#0052CC" d="M12 0L0 12l12 12 12-12L12 0zm0 3.5L20.5 12 12 20.5 3.5 12 12 3.5z"/></svg><a href="https://casecommons.atlassian.net/browse/CBP-3085">CBP-3085</a> <span class="badge badge-discovery">Discovery</span></h3>
+</div>
+<h4>July</h4>
+<div class="project-card"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1210860550580423">Data import - Bulk import for Notes</a> <span class="badge badge-backlog">Backlog</span></h3>
+</div>
+<div class="project-card"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1212560621975480">Dynamic pages - Schema migration and duplicate prevention</a> <span class="badge badge-backlog">Backlog</span></h3>
+</div>
+<div class="project-card"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1210368097846960">Notes - Global Notes WLV</a> <span class="badge badge-backlog">Backlog</span></h3>
+</div>
+<h4>TBD</h4>
+<div class="project-card"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1213506659163435">Portal - Client Dashboard</a> <span class="badge badge-discovery">Discovery</span></h3>
+</div>
+<div class="project-card"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1209189001499701">Assignment-based task notifications study</a> <span class="badge badge-study">Study</span></h3>
+</div>
+<div class="project-card"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1208822133040792">Nylas Upgrade - UX Improvements</a> <span class="badge badge-study">Study</span></h3>
+</div>
+<div class="project-card"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1210860550580376">Data import - Clearer IDs</a> <span class="badge badge-backlog">Backlog</span></h3>
+</div>
+<div class="project-card"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1209067717586483">Forms - Long-term strategy</a> <span class="badge badge-backlog">Backlog</span></h3>
+</div>
+<div class="project-card"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1210615331914095">Internal Admin - Activate/inactivate tenants from Chargebee</a> <span class="badge badge-backlog">Backlog</span></h3>
+</div>
+<div class="project-card"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1213685097670612">Notes - Optional People in Service Notes</a> <span class="badge badge-backlog">Backlog</span></h3>
+</div>
+<div class="project-card"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1210452458408269">Services - Multiple rosters for enrollments and notes</a> <span class="badge badge-backlog">Backlog</span></h3>
+<p>⚠️ Last status: at risk</p>
+</div>
+<div class="project-card"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1210874981107020">Test Automation Suite for Endpoint Security</a> <span class="badge badge-backlog">Backlog</span></h3>
+</div>
+<div class="project-card"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1210615331914089">Text messaging - Phone number selection/onboarding</a> <span class="badge badge-backlog">Backlog</span></h3>
+</div>
+<div class="project-card"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1211796849380964">Automation & Deflection 2026</a> <span class="badge badge-backlog">None</span></h3>
+</div>
+<div class="project-card"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1211002139187115">MDM Upgrade & Implementation</a> <span class="badge badge-backlog">None</span></h3>
+</div>
+<div class="project-card"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1213022940723417">Notes - Anonymous service notes</a> <span class="badge badge-backlog">None</span></h3>
+</div>
+<div class="project-card"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1211708145580080">Services - Service groups for notes</a> <span class="badge badge-backlog">None</span></h3>
+</div>
+<div class="project-card"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1210154179999344">Services - Service note resource linking</a> <span class="badge badge-backlog">None</span></h3>
+</div>
+<div class="project-card"><h3><svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0"><circle cx="50" cy="22" r="22" fill="#F06A6A"/><circle cx="22" cy="73" r="22" fill="#F06A6A"/><circle cx="78" cy="73" r="22" fill="#F06A6A"/></svg><a href="https://app.asana.com/1/1123317448830974/project/1209742093504572">Small wins - May</a> <span class="badge badge-backlog">None</span></h3>
+</div></div><aside class="report-sidebar"><h2>⚙️ Data Quality</h2>
+<p><strong>Estimates:</strong> 22/41 in-progress (53%)</p>
+<p><strong>Actuals:</strong> 5/29 in QA (17%)</p>
 <table><thead><tr><th>Engineer</th><th>Estimates</th><th>Actuals</th></tr></thead><tbody>
 <tr><td>Ben</td><td>1/1 (100%)</td><td>—</td></tr>
 <tr><td>Bisoye</td><td>4/10 (40%)</td><td>3/9 (33%) 👏</td></tr>
 <tr><td>Blessing</td><td>9/12 (75%)</td><td>0/10 (0%) 👀</td></tr>
+<tr><td>Duc</td><td>0/4 (0%) 👀</td><td>0/2 (0%) 👀</td></tr>
 <tr><td>Russell</td><td>4/5 (80%)</td><td>1/3 (33%)</td></tr>
 <tr><td>Sodiq</td><td>0/3 (0%) 👀</td><td>0/1 (0%) 👀</td></tr>
 <tr><td>Tuan</td><td>4/5 (80%)</td><td>1/4 (25%)</td></tr>
 <tr><td>Uday</td><td>0/1 (0%) 👀</td><td>—</td></tr>
 </tbody></table>
-<p><strong>Unprioritized:</strong> 9 of 37 in-progress issues have no fix version set (24%)</p>
+<p><strong>Unprioritized:</strong> 11 of 41 in-progress issues have no fix version set (26%)</p>
 <table><thead><tr><th>Project</th><th>Unprioritized</th></tr></thead><tbody>
 <tr><td>Services - Service plan datagrid with bulk actions</td><td>7/7 (100%) 👀</td></tr>
+<tr><td>Communications - Text message syncing routing improvements</td><td>2/4 (50%)</td></tr>
 <tr><td>Notes - Notes datagrid</td><td>1/8 (12%)</td></tr>
 <tr><td>Notes - Bulk Service Notes</td><td>1/13 (7%)</td></tr>
 </tbody></table></aside></div>
-<div class="footer">Platform Status Pipeline · 2026-04-06 03:37</div>
+<div class="footer">Platform Status Pipeline · 2026-04-06 19:33</div>
 </div>
 </body>
 </html>

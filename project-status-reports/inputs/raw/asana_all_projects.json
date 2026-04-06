@@ -5029,10 +5029,10 @@
       {
         "gid": "1208822149019495",
         "enum_value": {
-          "gid": "1211633294655726"
+          "gid": "1208822011920664"
         },
         "name": "Stage",
-        "display_value": "On hold"
+        "display_value": "Backlog"
       },
       {
         "gid": "1208817993811507",
@@ -17892,34 +17892,10 @@
     },
     "custom_fields": [
       {
-        "gid": "1208817993811507",
-        "name": "Discovery Start",
-        "display_value": null,
-        "date_value": null
-      },
-      {
-        "gid": "1208818118276550",
-        "name": "Dev Start",
-        "display_value": null,
-        "date_value": null
-      },
-      {
-        "gid": "1208818118032458",
-        "name": "Beta Start",
-        "display_value": null,
-        "date_value": null
-      },
-      {
-        "gid": "1208818124273418",
-        "name": "GA",
-        "display_value": null,
-        "date_value": null
-      },
-      {
-        "gid": "1208818005809198",
-        "name": "JIRA Link",
-        "display_value": null,
-        "text_value": null
+        "gid": "1208818049849054",
+        "enum_value": null,
+        "name": "Priority",
+        "display_value": null
       },
       {
         "gid": "1208820967756795",
@@ -17930,20 +17906,20 @@
         "display_value": "Platform"
       },
       {
+        "gid": "1208822149019495",
+        "enum_value": {
+          "gid": "1208822011920664"
+        },
+        "name": "Stage",
+        "display_value": "Backlog"
+      },
+      {
         "gid": "1208821111273828",
         "enum_value": {
           "gid": "1208821182414817"
         },
         "name": "Release Quarter",
         "display_value": "N/A"
-      },
-      {
-        "gid": "1208822149019495",
-        "enum_value": {
-          "gid": "1211633294655726"
-        },
-        "name": "Stage",
-        "display_value": "On hold"
       },
       {
         "gid": "1209127915359058",
@@ -17970,28 +17946,10 @@
         "display_value": "75%"
       },
       {
-        "gid": "1210191417850167",
-        "name": "Next DR Date",
-        "display_value": null,
-        "date_value": null
-      },
-      {
         "gid": "1210191417850169",
         "name": "Next Discovery Topics",
         "display_value": "https://app.asana.com/1/1123317448830974/project/1210452458408269/note/1210577849077122",
         "text_value": "https://app.asana.com/1/1123317448830974/project/1210452458408269/note/1210577849077122"
-      },
-      {
-        "gid": "1210319522464926",
-        "name": " Next CEO Date",
-        "display_value": null,
-        "date_value": null
-      },
-      {
-        "gid": "1210320475546788",
-        "name": "CEO Meeting",
-        "display_value": null,
-        "text_value": null
       },
       {
         "gid": "1210860558531904",
@@ -17999,20 +17957,17 @@
         "display_value": "Bisoye, Tuan"
       },
       {
-        "gid": "1210909305830092",
-        "name": "Release Date(s)",
-        "display_value": null
+        "gid": "1211092108897416",
+        "name": "Product Assignee",
+        "display_value": "Ben Belanger, Pierre Klein"
       },
       {
-        "gid": "1210909549820601",
-        "name": "GA Month",
-        "display_value": "TBD"
-      },
-      {
-        "gid": "1211631943113717",
-        "name": "QA Start",
-        "display_value": null,
-        "date_value": null
+        "gid": "1211763621285210",
+        "enum_value": {
+          "gid": "1211763621285218"
+        },
+        "name": "Roadmap",
+        "display_value": "Strengthen Core Case Management"
       },
       {
         "gid": "1211632501491612",
@@ -18037,29 +17992,9 @@
         "text_value": "https://casecommons.atlassian.net/wiki/x/BQBN2w"
       },
       {
-        "gid": "1211632748689814",
-        "name": "Launch Plan",
-        "display_value": null,
-        "text_value": null
-      },
-      {
-        "gid": "1210467277124544",
-        "name": "UAT Start",
-        "display_value": null,
-        "date_value": null
-      },
-      {
-        "gid": "1211763621285210",
-        "enum_value": {
-          "gid": "1211763621285218"
-        },
-        "name": "Roadmap",
-        "display_value": "Strengthen Core Case Management"
-      },
-      {
-        "gid": "1211092108897416",
-        "name": "Product Assignee",
-        "display_value": "Ben Belanger, Pierre Klein"
+        "gid": "1210909549820601",
+        "name": "GA Month",
+        "display_value": "TBD"
       }
     ],
     "name": "Services - Multiple rosters for enrollments and notes",
@@ -18806,10 +18741,10 @@
       {
         "gid": "1208822149019495",
         "enum_value": {
-          "gid": "1211633294655726"
+          "gid": "1208822011920664"
         },
         "name": "Stage",
-        "display_value": "On hold"
+        "display_value": "Backlog"
       },
       {
         "gid": "1210199693442470",
@@ -22256,7 +22191,7 @@
   {
     "gid": "1210860550580329",
     "current_status_update": {
-      "gid": "1213828314857417",
+      "gid": "1213963991088077",
       "status_type": "on_track"
     },
     "custom_fields": [
@@ -22454,34 +22389,10 @@
     },
     "custom_fields": [
       {
-        "gid": "1208817993811507",
-        "name": "Discovery Start",
-        "display_value": null,
-        "date_value": null
-      },
-      {
-        "gid": "1208818118276550",
-        "name": "Dev Start",
-        "display_value": null,
-        "date_value": null
-      },
-      {
-        "gid": "1208818118032458",
-        "name": "Beta Start",
-        "display_value": null,
-        "date_value": null
-      },
-      {
-        "gid": "1208818124273418",
-        "name": "GA",
-        "display_value": null,
-        "date_value": null
-      },
-      {
-        "gid": "1208818005809198",
-        "name": "JIRA Link",
-        "display_value": null,
-        "text_value": null
+        "gid": "1208818049849054",
+        "enum_value": null,
+        "name": "Priority",
+        "display_value": null
       },
       {
         "gid": "1208820967756795",
@@ -22492,20 +22403,20 @@
         "display_value": "Platform"
       },
       {
+        "gid": "1208822149019495",
+        "enum_value": {
+          "gid": "1208822011920664"
+        },
+        "name": "Stage",
+        "display_value": "Backlog"
+      },
+      {
         "gid": "1208821111273828",
         "enum_value": {
           "gid": "1211441089905126"
         },
         "name": "Release Quarter",
         "display_value": "Q4 2026"
-      },
-      {
-        "gid": "1208822149019495",
-        "enum_value": {
-          "gid": "1211633294655726"
-        },
-        "name": "Stage",
-        "display_value": "On hold"
       },
       {
         "gid": "1209127915359058",
@@ -22524,91 +22435,17 @@
         "display_value": "75%"
       },
       {
+        "gid": "1211092108897416",
+        "name": "Product Assignee",
+        "display_value": "Ben Belanger, Pierre Klein"
+      },
+      {
         "gid": "1210199693442470",
         "enum_value": {
           "gid": "1210199693442477"
         },
         "name": "Target Discovery Stage",
         "display_value": "100%"
-      },
-      {
-        "gid": "1210191417850167",
-        "name": "Next DR Date",
-        "display_value": null,
-        "date_value": null
-      },
-      {
-        "gid": "1210191417850169",
-        "name": "Next Discovery Topics",
-        "display_value": "https://app.asana.com/1/1123317448830974/project/1210860550580376/note/1211708145580055",
-        "text_value": "https://app.asana.com/1/1123317448830974/project/1210860550580376/note/1211708145580055"
-      },
-      {
-        "gid": "1210319522464926",
-        "name": " Next CEO Date",
-        "display_value": null,
-        "date_value": null
-      },
-      {
-        "gid": "1210320475546788",
-        "name": "CEO Meeting",
-        "display_value": null,
-        "text_value": null
-      },
-      {
-        "gid": "1210860558531904",
-        "name": "Engineering Assignee(s)",
-        "display_value": null
-      },
-      {
-        "gid": "1210909305830092",
-        "name": "Release Date(s)",
-        "display_value": null
-      },
-      {
-        "gid": "1210909549820601",
-        "name": "GA Month",
-        "display_value": "TBD"
-      },
-      {
-        "gid": "1211631943113717",
-        "name": "QA Start",
-        "display_value": null,
-        "date_value": null
-      },
-      {
-        "gid": "1211632501491612",
-        "enum_value": {
-          "gid": "1211632501491615"
-        },
-        "name": "R-Notes Stage",
-        "display_value": "Not Started"
-      },
-      {
-        "gid": "1211632506130433",
-        "enum_value": {
-          "gid": "1211632506130436"
-        },
-        "name": "KB Stage",
-        "display_value": "Not Started"
-      },
-      {
-        "gid": "1211632504010030",
-        "name": "PRD",
-        "display_value": "https://casecommons.atlassian.net/wiki/spaces/PROD/pages/1682309130",
-        "text_value": "https://casecommons.atlassian.net/wiki/spaces/PROD/pages/1682309130"
-      },
-      {
-        "gid": "1211632748689814",
-        "name": "Launch Plan",
-        "display_value": null,
-        "text_value": null
-      },
-      {
-        "gid": "1210467277124544",
-        "name": "UAT Start",
-        "display_value": null,
-        "date_value": null
       },
       {
         "gid": "1211763621285210",
@@ -22619,9 +22456,37 @@
         "display_value": "Enhance Core Configurability"
       },
       {
-        "gid": "1211092108897416",
-        "name": "Product Assignee",
-        "display_value": "Ben Belanger, Pierre Klein"
+        "gid": "1211632504010030",
+        "name": "PRD",
+        "display_value": "https://casecommons.atlassian.net/wiki/spaces/PROD/pages/1682309130",
+        "text_value": "https://casecommons.atlassian.net/wiki/spaces/PROD/pages/1682309130"
+      },
+      {
+        "gid": "1211632506130433",
+        "enum_value": {
+          "gid": "1211632506130436"
+        },
+        "name": "KB Stage",
+        "display_value": "Not Started"
+      },
+      {
+        "gid": "1211632501491612",
+        "enum_value": {
+          "gid": "1211632501491615"
+        },
+        "name": "R-Notes Stage",
+        "display_value": "Not Started"
+      },
+      {
+        "gid": "1210191417850169",
+        "name": "Next Discovery Topics",
+        "display_value": "https://app.asana.com/1/1123317448830974/project/1210860550580376/note/1211708145580055",
+        "text_value": "https://app.asana.com/1/1123317448830974/project/1210860550580376/note/1211708145580055"
+      },
+      {
+        "gid": "1210909549820601",
+        "name": "GA Month",
+        "display_value": "TBD"
       }
     ],
     "name": "Data import - Clearer IDs",
@@ -22629,10 +22494,7 @@
   },
   {
     "gid": "1210860550580423",
-    "current_status_update": {
-      "gid": "1212696197905306",
-      "status_type": "on_hold"
-    },
+    "current_status_update": null,
     "custom_fields": [
       {
         "gid": "1208817993811507",
@@ -26531,8 +26393,161 @@
   },
   {
     "gid": "1211569679152293",
-    "current_status_update": null,
-    "custom_fields": [],
+    "current_status_update": {
+      "gid": "1213961383655926",
+      "status_type": "complete"
+    },
+    "custom_fields": [
+      {
+        "gid": "1208817993811507",
+        "name": "Discovery Start",
+        "display_value": null,
+        "date_value": null
+      },
+      {
+        "gid": "1208818118276550",
+        "name": "Dev Start",
+        "display_value": null,
+        "date_value": null
+      },
+      {
+        "gid": "1208818118032458",
+        "name": "Beta Start",
+        "display_value": null,
+        "date_value": null
+      },
+      {
+        "gid": "1208818124273418",
+        "name": "GA",
+        "display_value": null,
+        "date_value": null
+      },
+      {
+        "gid": "1208818005809198",
+        "name": "JIRA Link",
+        "display_value": null,
+        "text_value": null
+      },
+      {
+        "gid": "1208820967756795",
+        "enum_value": null,
+        "name": "Team",
+        "display_value": null
+      },
+      {
+        "gid": "1208821111273828",
+        "enum_value": null,
+        "name": "Release Quarter",
+        "display_value": null
+      },
+      {
+        "gid": "1208822149019495",
+        "enum_value": {
+          "gid": "1208822149019501"
+        },
+        "name": "Stage",
+        "display_value": "GA"
+      },
+      {
+        "gid": "1209127915359058",
+        "enum_value": null,
+        "name": "Type",
+        "display_value": null
+      },
+      {
+        "gid": "1210199689431979",
+        "enum_value": null,
+        "name": "Current Discovery Stage",
+        "display_value": null
+      },
+      {
+        "gid": "1210199693442470",
+        "enum_value": null,
+        "name": "Target Discovery Stage",
+        "display_value": null
+      },
+      {
+        "gid": "1210191417850167",
+        "name": "Next DR Date",
+        "display_value": null,
+        "date_value": null
+      },
+      {
+        "gid": "1210191417850169",
+        "name": "Next Discovery Topics",
+        "display_value": null,
+        "text_value": null
+      },
+      {
+        "gid": "1210319522464926",
+        "name": " Next CEO Date",
+        "display_value": null,
+        "date_value": null
+      },
+      {
+        "gid": "1210320475546788",
+        "name": "CEO Meeting",
+        "display_value": null,
+        "text_value": null
+      },
+      {
+        "gid": "1210860558531904",
+        "name": "Engineering Assignee(s)",
+        "display_value": null
+      },
+      {
+        "gid": "1210909305830092",
+        "name": "Release Date(s)",
+        "display_value": null
+      },
+      {
+        "gid": "1210909549820601",
+        "name": "GA Month",
+        "display_value": null
+      },
+      {
+        "gid": "1211631943113717",
+        "name": "QA Start",
+        "display_value": null,
+        "date_value": null
+      },
+      {
+        "gid": "1211632501491612",
+        "enum_value": null,
+        "name": "R-Notes Stage",
+        "display_value": null
+      },
+      {
+        "gid": "1211632506130433",
+        "enum_value": null,
+        "name": "KB Stage",
+        "display_value": null
+      },
+      {
+        "gid": "1211632504010030",
+        "name": "PRD",
+        "display_value": null,
+        "text_value": null
+      },
+      {
+        "gid": "1211632748689814",
+        "name": "Launch Plan",
+        "display_value": null,
+        "text_value": null
+      },
+      {
+        "gid": "1210467277124544",
+        "name": "UAT Start",
+        "display_value": null,
+        "date_value": null
+      },
+      {
+        "gid": "1211763621285210",
+        "enum_value": null,
+        "name": "Roadmap",
+        "display_value": null
+      }
+    ],
     "name": "Admin - Fields - Show indicator that fields can be rearranged",
     "permalink_url": "https://app.asana.com/1/1123317448830974/project/1211569679152293"
   },
@@ -26738,7 +26753,7 @@
   {
     "gid": "1211631360190563",
     "current_status_update": {
-      "gid": "1213828328424607",
+      "gid": "1213963991088107",
       "status_type": "on_track"
     },
     "custom_fields": [
@@ -29031,8 +29046,8 @@
   {
     "gid": "1211733450555414",
     "current_status_update": {
-      "gid": "1213616576544872",
-      "status_type": "off_track"
+      "gid": "1213828329080045",
+      "status_type": "on_track"
     },
     "custom_fields": [
       {
@@ -29564,7 +29579,7 @@
   {
     "gid": "1211757637943244",
     "current_status_update": {
-      "gid": "1213828315726960",
+      "gid": "1213963991088100",
       "status_type": "on_track"
     },
     "custom_fields": [
@@ -30167,7 +30182,7 @@
   {
     "gid": "1211786365522017",
     "current_status_update": {
-      "gid": "1213828475163520",
+      "gid": "1213963991088091",
       "status_type": "on_track"
     },
     "custom_fields": [
@@ -31344,10 +31359,10 @@
       {
         "gid": "1211632506130433",
         "enum_value": {
-          "gid": "1211632506130438"
+          "gid": "1211843164552616"
         },
         "name": "KB Stage",
-        "display_value": "In Review"
+        "display_value": "Ready to Publish"
       },
       {
         "gid": "1211763621285210",
@@ -32840,10 +32855,10 @@
       {
         "gid": "1211632506130433",
         "enum_value": {
-          "gid": "1211632506130437"
+          "gid": "1211632506130439"
         },
         "name": "KB Stage",
-        "display_value": "In Progress"
+        "display_value": "Published"
       },
       {
         "gid": "1211763621285210",
@@ -34395,8 +34410,8 @@
   {
     "gid": "1212560621975480",
     "current_status_update": {
-      "gid": "1213616576618694",
-      "status_type": "off_track"
+      "gid": "1213961383986934",
+      "status_type": "on_track"
     },
     "custom_fields": [
       {
@@ -40243,34 +40258,10 @@
     "current_status_update": null,
     "custom_fields": [
       {
-        "gid": "1208817993811507",
-        "name": "Discovery Start",
-        "display_value": null,
-        "date_value": null
-      },
-      {
-        "gid": "1208818118276550",
-        "name": "Dev Start",
-        "display_value": null,
-        "date_value": null
-      },
-      {
-        "gid": "1208818118032458",
-        "name": "Beta Start",
-        "display_value": null,
-        "date_value": null
-      },
-      {
-        "gid": "1208818124273418",
-        "name": "GA",
-        "display_value": null,
-        "date_value": null
-      },
-      {
-        "gid": "1208818005809198",
-        "name": "JIRA Link",
-        "display_value": null,
-        "text_value": null
+        "gid": "1208818049849054",
+        "enum_value": null,
+        "name": "Priority",
+        "display_value": null
       },
       {
         "gid": "1208820967756795",
@@ -40330,6 +40321,118 @@
         }
       },
       {
+        "gid": "1211763621285210",
+        "enum_value": {
+          "gid": "1211763621285218"
+        },
+        "name": "Roadmap",
+        "display_value": "Strengthen Core Case Management"
+      },
+      {
+        "gid": "1210909549820601",
+        "name": "GA Month",
+        "display_value": "TBD"
+      }
+    ],
+    "name": "Notes - Optional People in Service Notes",
+    "permalink_url": "https://app.asana.com/1/1123317448830974/project/1213685097670612"
+  },
+  {
+    "gid": "1213880656869265",
+    "current_status_update": {
+      "gid": "1213918288389182",
+      "status_type": "on_track"
+    },
+    "custom_fields": [
+      {
+        "gid": "1208817993811507",
+        "name": "Discovery Start",
+        "display_value": null,
+        "date_value": null
+      },
+      {
+        "gid": "1208818118276550",
+        "name": "Dev Start",
+        "display_value": "2026-03-23T00:00:00.000Z",
+        "date_value": {
+          "date": "2026-03-23",
+          "date_time": null
+        }
+      },
+      {
+        "gid": "1208818118032458",
+        "name": "Beta Start",
+        "display_value": null,
+        "date_value": null
+      },
+      {
+        "gid": "1208818124273418",
+        "name": "GA",
+        "display_value": "2026-04-23T00:00:00.000Z",
+        "date_value": {
+          "date": "2026-04-23",
+          "date_time": null
+        }
+      },
+      {
+        "gid": "1208818005809198",
+        "name": "JIRA Link",
+        "display_value": "https://casecommons.atlassian.net/browse/CBP-3078",
+        "text_value": "https://casecommons.atlassian.net/browse/CBP-3078"
+      },
+      {
+        "gid": "1208820967756795",
+        "enum_value": {
+          "gid": "1208820967756799"
+        },
+        "name": "Team",
+        "display_value": "Platform"
+      },
+      {
+        "gid": "1208821111273828",
+        "enum_value": {
+          "gid": "1211441089905124"
+        },
+        "name": "Release Quarter",
+        "display_value": "Q2 2026"
+      },
+      {
+        "gid": "1208822149019495",
+        "enum_value": {
+          "gid": "1208822149019499"
+        },
+        "name": "Stage",
+        "display_value": "Development"
+      },
+      {
+        "gid": "1209127915359058",
+        "enum_value": {
+          "gid": "1209127915359063"
+        },
+        "name": "Type",
+        "display_value": "BAU"
+      },
+      {
+        "gid": "1210199689431979",
+        "enum_value": {
+          "gid": "1210201162196334"
+        },
+        "name": "Current Discovery Stage",
+        "display_value": "N/A"
+      },
+      {
+        "gid": "1210199693442470",
+        "enum_value": null,
+        "name": "Target Discovery Stage",
+        "display_value": null
+      },
+      {
+        "gid": "1210191417850167",
+        "name": "Next DR Date",
+        "display_value": null,
+        "date_value": null
+      },
+      {
         "gid": "1210191417850169",
         "name": "Next Discovery Topics",
         "display_value": null,
@@ -40350,23 +40453,26 @@
       {
         "gid": "1210860558531904",
         "name": "Engineering Assignee(s)",
-        "display_value": null
+        "display_value": "Duc"
       },
       {
         "gid": "1210909305830092",
         "name": "Release Date(s)",
-        "display_value": null
+        "display_value": "4/23/2026, 4/9/2026"
       },
       {
         "gid": "1210909549820601",
         "name": "GA Month",
-        "display_value": "TBD"
+        "display_value": "Apr 26"
       },
       {
         "gid": "1211631943113717",
         "name": "QA Start",
-        "display_value": null,
-        "date_value": null
+        "display_value": "2026-04-06T00:00:00.000Z",
+        "date_value": {
+          "date": "2026-04-06",
+          "date_time": null
+        }
       },
       {
         "gid": "1211632501491612",
@@ -40395,20 +40501,21 @@
       {
         "gid": "1210467277124544",
         "name": "UAT Start",
-        "display_value": null,
-        "date_value": null
+        "display_value": "2026-04-16T00:00:00.000Z",
+        "date_value": {
+          "date": "2026-04-16",
+          "date_time": null
+        }
       },
       {
         "gid": "1211763621285210",
-        "enum_value": {
-          "gid": "1211763621285218"
-        },
+        "enum_value": null,
         "name": "Roadmap",
-        "display_value": "Strengthen Core Case Management"
+        "display_value": null
       }
     ],
-    "name": "Notes - Optional People in Service Notes",
-    "permalink_url": "https://app.asana.com/1/1123317448830974/project/1213685097670612"
+    "name": "Communications - Text message syncing routing improvements",
+    "permalink_url": "https://app.asana.com/1/1123317448830974/project/1213880656869265"
   },
   {
     "gid": "1208821032291337",

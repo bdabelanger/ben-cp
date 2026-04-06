@@ -219,11 +219,36 @@ code {
 """
 
 # ---------------------------------------------------------------------------
+# Brand icons (inline SVG, shown only in project card headings)
+# ---------------------------------------------------------------------------
+
+_ICON_ASANA = (
+    '<svg width="13" height="13" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:3px;flex-shrink:0">'
+    '<circle cx="50" cy="22" r="22" fill="#F06A6A"/>'
+    '<circle cx="22" cy="73" r="22" fill="#F06A6A"/>'
+    '<circle cx="78" cy="73" r="22" fill="#F06A6A"/>'
+    '</svg>'
+)
+_ICON_JIRA = (
+    '<svg width="13" height="13" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:3px;flex-shrink:0">'
+    '<path fill="#0052CC" d="M12 0L0 12l12 12 12-12L12 0zm0 3.5L20.5 12 12 20.5 3.5 12 12 3.5z"/>'
+    '</svg>'
+)
+
+def _add_heading_icons(html):
+    """Prepend brand icons before Asana and Jira links (H3 headings only)."""
+    html = re.sub(r'(<a href="https://app\.asana\.com[^"]*">)', _ICON_ASANA + r'\1', html)
+    html = re.sub(r'(<a href="https://casecommons\.atlassian\.net/browse[^"]*">)', _ICON_JIRA + r'\1', html)
+    return html
+
+# ---------------------------------------------------------------------------
 # Markdown → HTML (lightweight, purpose-built for this report's output)
 # ---------------------------------------------------------------------------
 
 def _md_inline(text):
     """Convert inline markdown (links, bold, code, emoji-safe) to HTML."""
+    # [stage:Name] → badge pill
+    text = re.sub(r'\[stage:([^\]]+)\]', lambda m: _stage_badge(m.group(1)), text)
     # [text](url)
     text = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2">\1</a>', text)
     # **bold**
@@ -392,14 +417,17 @@ def md_to_html(md: str) -> str:
 
         # H3 — project card header
         if line.startswith("### "):
-            close_ul(); close_ol(); close_project()
+            close_ul(); close_ol(); close_table(); close_project()
             # Extract stage badge from last · segment, then strip it from heading text
             stage_m = re.search(r'·\s+([^··]+)\s*$', line)
             stage_html = _stage_badge(stage_m.group(1).strip()) if stage_m else ""
             heading_text = re.sub(r'\s*·\s*[^··]+\s*$', '', line[4:]) if stage_m else line[4:]
-            heading = _md_inline(heading_text)
+            heading = _add_heading_icons(_md_inline(heading_text))
+            # Extract CBP key for anchor ID
+            pkey_m = re.search(r'CBP-\d+', line)
+            id_attr = f' id="{pkey_m.group(0)}"' if pkey_m else ''
             html_parts.append(
-                f'<div class="project-card">'
+                f'<div class="project-card"{id_attr}>'
                 f'<h3>{heading} {stage_html}</h3>'
             )
             in_project = True
@@ -434,12 +462,19 @@ def md_to_html(md: str) -> str:
 
         # Ordered list item (1. 2. etc.)
         if re.match(r'^\d+\. ', line):
-            close_ul()
+            close_ul(); close_table()
             if not in_ol:
                 html_parts.append('<ol>')
                 in_ol = True
-            content = _md_inline(re.sub(r'^\d+\. ', '', line))
-            html_parts.append(f'<li>{content}</li>')
+            body = re.sub(r'^\d+\. ', '', line)
+            if '||' in body:
+                main, meta = body.split('||', 1)
+                html_parts.append(
+                    f'<li>{_md_inline(main)}'
+                    f'<div class="issue-meta-row">{_md_inline(meta)}</div></li>'
+                )
+            else:
+                html_parts.append(f'<li>{_md_inline(body)}</li>')
             i += 1; continue
 
         # Table separator row (|---|---| etc.) — skip, just marks thead boundary

@@ -632,23 +632,20 @@ class PlatformStatusReport:
             status = project.get("status") or ""
 
             issues = issues_by_pkey.get(pkey, []) if pkey else []
-            done = sum(1 for i in issues if i.get("effective_category") == "Done")
-            inp = sum(1 for i in issues if i.get("effective_category") == "In Progress")
-            todo = sum(1 for i in issues if i.get("effective_category") == "To Do")
             open_issues = [i for i in issues if i.get("effective_category") != "Done"]
 
-            if pkey:
-                proj_link = f"[{name}]({asana_url}) ([{pkey}]({self._jira_url(pkey)}))"
-            else:
-                proj_link = f"[{name}]({asana_url})"
+            # Anchor link to card below (or fall back to Asana for no-pkey projects)
+            proj_link = f"[{name}](#{pkey})" if pkey else f"[{name}]({asana_url})"
 
-            line = f"{proj_link} is in **{stage}** — {done} done · {inp} in progress · {todo} to do."
-
+            # Build the tail: priority breakdown or sentinel
             if not pkey:
-                line += " 🎯 No Jira link set"
+                tail = "🎯 no Jira link"
                 next_steps.append((1, f"🎯 [{name}]({asana_url}): Add Jira link — no stories can be tracked without it"))
+            elif not issues:
+                tail = "👀 no stories"
+            elif not open_issues:
+                tail = "✅ all done"
             else:
-                # Priority breakdown of open work
                 p_counts = {}
                 for i in open_issues:
                     p = ((i.get("fields", {}).get("priority") or {}).get("name") or "")
@@ -660,16 +657,17 @@ class PlatformStatusReport:
                         if p in p_counts:
                             prefix = "👀 " if p == "P1" else ""
                             parts.append(f"{prefix}{p_counts[p]} {p}")
-                    if parts:
-                        line += f" Open work: {', '.join(parts)}."
+                    tail = ", ".join(parts) + " left"
+                else:
+                    tail = f"{len(open_issues)} open"
 
             if status == "off_track":
-                line += f" 🎯 Last status was `{status}` — checking in"
-                next_steps.append((2, f"🎯 {proj_link}: Last status was `{status}` — checking in"))
+                tail += " · 🎯 off track"
+                next_steps.append((2, f"🎯 {proj_link}: Last status was off track — checking in"))
             elif status == "at_risk":
-                line += f" Last status was `{status}`"
+                tail += " · ⚠️ at risk"
 
-            md += f"{idx}. {line}\n"
+            md += f"{idx}. {proj_link} is in [stage:{stage}]||{tail}\n"
 
         if next_steps:
             md += "\n**Next Steps**\n"

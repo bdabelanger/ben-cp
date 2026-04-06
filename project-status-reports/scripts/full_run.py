@@ -6,6 +6,7 @@ import subprocess
 import webbrowser
 from datetime import datetime
 from platform_report import PlatformStatusReport
+from render_html import render_html
 
 MANIFEST_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../manifest.json")
 REPO_ROOT = os.path.dirname(os.path.abspath(MANIFEST_PATH))
@@ -100,9 +101,14 @@ def main():
     with open(OUTPUT_PATH, "w") as f:
         f.write(report_md)
 
+    html_path = OUTPUT_PATH.replace(".md", ".html")
+    with open(html_path, "w") as f:
+        f.write(render_html(report_md))
+
     print(f"✅ Report generated: {OUTPUT_PATH}")
+    print(f"✅ HTML report:      {html_path}")
     if open_report:
-        webbrowser.open(f"file://{os.path.abspath(OUTPUT_PATH)}")
+        webbrowser.open(f"file://{os.path.abspath(html_path)}")
     print(f"\n--- PREVIEW ---\n")
     print(report_md)
 

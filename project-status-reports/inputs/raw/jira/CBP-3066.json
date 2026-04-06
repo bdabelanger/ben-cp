@@ -1,0 +1,770 @@
+[
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "48815",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/48815",
+    "key": "CBP-3144",
+    "fields": {
+      "summary": "Service plan - Bulk row selection, bulk actions menu UI, and bulk action implementations",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
+        "id": "10057",
+        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
+        "name": "User Story",
+        "subtask": false,
+        "avatarId": 10306,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "46012",
+        "key": "CBP-3066",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/46012",
+        "fields": {
+          "summary": "Services - Service plan datagrid",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
+            "description": "Development in progress in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
+            "name": "In development",
+            "id": "3",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+              "id": 4,
+              "key": "indeterminate",
+              "colorName": "yellow",
+              "name": "In Progress"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2026-03-26T00:04:11.727-0400",
+      "timespent": null,
+      "timeoriginalestimate": null,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Af53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "accountId": "712020:f53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "emailAddress": "blessing.adesina@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "24x24": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "16x16": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "32x32": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png"
+        },
+        "displayName": "Blessing Philips",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2026-03-31T19:58:37.967-0400",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
+        "description": "Ready for development in DEV environment",
+        "iconUrl": "https://casecommons.atlassian.net/",
+        "name": "To do",
+        "id": "10007",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
+          "id": 2,
+          "key": "new",
+          "colorName": "blue-gray",
+          "name": "To Do"
+        }
+      }
+    }
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "46018",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/46018",
+    "key": "CBP-3069",
+    "fields": {
+      "summary": "Service plan - Stacking filters",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
+        "id": "10057",
+        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
+        "name": "User Story",
+        "subtask": false,
+        "avatarId": 10306,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "46012",
+        "key": "CBP-3066",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/46012",
+        "fields": {
+          "summary": "Services - Service plan datagrid",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
+            "description": "Development in progress in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
+            "name": "In development",
+            "id": "3",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+              "id": 4,
+              "key": "indeterminate",
+              "colorName": "yellow",
+              "name": "In Progress"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2026-03-04T09:46:44.342-0500",
+      "timespent": null,
+      "timeoriginalestimate": 57600,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Af53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "accountId": "712020:f53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "emailAddress": "blessing.adesina@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "24x24": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "16x16": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "32x32": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png"
+        },
+        "displayName": "Blessing Philips",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2026-03-23T19:45:24.308-0400",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10011",
+        "description": "Ready for QA review in QA environment",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+        "name": "Merged to QA",
+        "id": "10011",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+          "id": 4,
+          "key": "indeterminate",
+          "colorName": "yellow",
+          "name": "In Progress"
+        }
+      }
+    }
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "46532",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/46532",
+    "key": "CBP-3100",
+    "fields": {
+      "summary": "Add service plan datagrid feature flag for Engage, Intake and People",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
+        "id": "10057",
+        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
+        "name": "User Story",
+        "subtask": false,
+        "avatarId": 10306,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "46012",
+        "key": "CBP-3066",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/46012",
+        "fields": {
+          "summary": "Services - Service plan datagrid",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
+            "description": "Development in progress in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
+            "name": "In development",
+            "id": "3",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+              "id": 4,
+              "key": "indeterminate",
+              "colorName": "yellow",
+              "name": "In Progress"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2026-03-08T17:30:26.345-0400",
+      "timespent": null,
+      "timeoriginalestimate": 3600,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Af53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "accountId": "712020:f53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "emailAddress": "blessing.adesina@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "24x24": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "16x16": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "32x32": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png"
+        },
+        "displayName": "Blessing Philips",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2026-03-23T19:45:14.981-0400",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
+        "description": "QA review in progress in QA environment",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+        "name": "In QA",
+        "id": "10010",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+          "id": 4,
+          "key": "indeterminate",
+          "colorName": "yellow",
+          "name": "In Progress"
+        }
+      }
+    }
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "46530",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/46530",
+    "key": "CBP-3099",
+    "fields": {
+      "summary": "GQL Service plan - Implement filter logic for service offerings ",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
+        "id": "10057",
+        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
+        "name": "User Story",
+        "subtask": false,
+        "avatarId": 10306,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "46012",
+        "key": "CBP-3066",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/46012",
+        "fields": {
+          "summary": "Services - Service plan datagrid",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
+            "description": "Development in progress in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
+            "name": "In development",
+            "id": "3",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+              "id": 4,
+              "key": "indeterminate",
+              "colorName": "yellow",
+              "name": "In Progress"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2026-03-08T16:25:50.975-0400",
+      "timespent": null,
+      "timeoriginalestimate": 57600,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Af53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "accountId": "712020:f53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "emailAddress": "blessing.adesina@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "24x24": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "16x16": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "32x32": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png"
+        },
+        "displayName": "Blessing Philips",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2026-03-23T19:45:14.354-0400",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
+        "description": "QA review in progress in QA environment",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+        "name": "In QA",
+        "id": "10010",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+          "id": 4,
+          "key": "indeterminate",
+          "colorName": "yellow",
+          "name": "In Progress"
+        }
+      }
+    }
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "46032",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/46032",
+    "key": "CBP-3076",
+    "fields": {
+      "summary": "Service plan - Quick filter",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
+        "id": "10057",
+        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
+        "name": "User Story",
+        "subtask": false,
+        "avatarId": 10306,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "46012",
+        "key": "CBP-3066",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/46012",
+        "fields": {
+          "summary": "Services - Service plan datagrid",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
+            "description": "Development in progress in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
+            "name": "In development",
+            "id": "3",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+              "id": 4,
+              "key": "indeterminate",
+              "colorName": "yellow",
+              "name": "In Progress"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2026-03-04T11:08:09.341-0500",
+      "timespent": null,
+      "timeoriginalestimate": null,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Af53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "accountId": "712020:f53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "emailAddress": "blessing.adesina@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "24x24": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "16x16": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "32x32": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png"
+        },
+        "displayName": "Blessing Philips",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2026-03-23T19:45:21.095-0400",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
+        "description": "QA review in progress in QA environment",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+        "name": "In QA",
+        "id": "10010",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+          "id": 4,
+          "key": "indeterminate",
+          "colorName": "yellow",
+          "name": "In Progress"
+        }
+      }
+    }
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "46026",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/46026",
+    "key": "CBP-3073",
+    "fields": {
+      "summary": "Service plan - Row pinning",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
+        "id": "10057",
+        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
+        "name": "User Story",
+        "subtask": false,
+        "avatarId": 10306,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "46012",
+        "key": "CBP-3066",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/46012",
+        "fields": {
+          "summary": "Services - Service plan datagrid",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
+            "description": "Development in progress in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
+            "name": "In development",
+            "id": "3",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+              "id": 4,
+              "key": "indeterminate",
+              "colorName": "yellow",
+              "name": "In Progress"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2026-03-04T09:47:03.831-0500",
+      "timespent": null,
+      "timeoriginalestimate": null,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Af53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "accountId": "712020:f53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "emailAddress": "blessing.adesina@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "24x24": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "16x16": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "32x32": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png"
+        },
+        "displayName": "Blessing Philips",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2026-03-23T19:45:20.241-0400",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
+        "description": "QA review in progress in QA environment",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+        "name": "In QA",
+        "id": "10010",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+          "id": 4,
+          "key": "indeterminate",
+          "colorName": "yellow",
+          "name": "In Progress"
+        }
+      }
+    }
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "46024",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/46024",
+    "key": "CBP-3072",
+    "fields": {
+      "summary": "Service plan - Cache user preferences",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
+        "id": "10057",
+        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
+        "name": "User Story",
+        "subtask": false,
+        "avatarId": 10306,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "46012",
+        "key": "CBP-3066",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/46012",
+        "fields": {
+          "summary": "Services - Service plan datagrid",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
+            "description": "Development in progress in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
+            "name": "In development",
+            "id": "3",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+              "id": 4,
+              "key": "indeterminate",
+              "colorName": "yellow",
+              "name": "In Progress"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2026-03-04T09:46:59.494-0500",
+      "timespent": null,
+      "timeoriginalestimate": 28800,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Af53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "accountId": "712020:f53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "emailAddress": "blessing.adesina@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "24x24": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "16x16": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "32x32": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png"
+        },
+        "displayName": "Blessing Philips",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2026-03-23T19:45:13.858-0400",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
+        "description": "QA review in progress in QA environment",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+        "name": "In QA",
+        "id": "10010",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+          "id": 4,
+          "key": "indeterminate",
+          "colorName": "yellow",
+          "name": "In Progress"
+        }
+      }
+    }
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "46014",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/46014",
+    "key": "CBP-3067",
+    "fields": {
+      "summary": "Service plan - Display enrollments as a datagrid with sorting and toolbar",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
+        "id": "10057",
+        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
+        "name": "User Story",
+        "subtask": false,
+        "avatarId": 10306,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "46012",
+        "key": "CBP-3066",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/46012",
+        "fields": {
+          "summary": "Services - Service plan datagrid",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
+            "description": "Development in progress in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
+            "name": "In development",
+            "id": "3",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+              "id": 4,
+              "key": "indeterminate",
+              "colorName": "yellow",
+              "name": "In Progress"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2026-03-04T09:46:37.566-0500",
+      "timespent": null,
+      "timeoriginalestimate": 86400,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Af53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "accountId": "712020:f53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "emailAddress": "blessing.adesina@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "24x24": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "16x16": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "32x32": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png"
+        },
+        "displayName": "Blessing Philips",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2026-03-23T19:45:13.377-0400",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
+        "description": "QA review in progress in QA environment",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+        "name": "In QA",
+        "id": "10010",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+          "id": 4,
+          "key": "indeterminate",
+          "colorName": "yellow",
+          "name": "In Progress"
+        }
+      }
+    }
+  }
+]

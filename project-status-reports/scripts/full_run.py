@@ -12,8 +12,9 @@ MANIFEST_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../man
 REPO_ROOT = os.path.dirname(os.path.abspath(MANIFEST_PATH))
 
 def _load_dotenv():
-    """Load .env from repo root into os.environ (does not overwrite existing vars)."""
-    env_path = os.path.join(REPO_ROOT, ".env")
+    """Load .env from the git repo root (one level above project-status-reports/)."""
+    # REPO_ROOT = ben-cp/project-status-reports/  →  parent = ben-cp/
+    env_path = os.path.join(os.path.dirname(REPO_ROOT), ".env")
     if not os.path.exists(env_path):
         return
     with open(env_path) as f:

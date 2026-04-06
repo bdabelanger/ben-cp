@@ -1,7 +1,7 @@
 # SOP: Status Report Orchestrator (Final)
 
 > [!IMPORTANT]
-> ⚡ **KICKSTART** — Run from the scripts directory:
+> ⚡ **KICKSTART** — Run from the repo root:
 >
 > **Fresh weekly run (always use this):**
 > ```
@@ -15,7 +15,7 @@
 >
 > `--force` wipes stale Jira cache and resets the manifest before running. Without it, the pipeline skips re-fetching if processed data already exists from a previous run.
 >
-> The pipeline runs fully automated — no agent tool calls required. Ensure `JIRA_USER_EMAIL` and `JIRA_API_TOKEN` are exported before running.
+> The pipeline runs fully automated — no agent tool calls required. Requires `ATLASSIAN_USER_EMAIL` and `ATLASSIAN_API_TOKEN` in the environment (loaded from `.env` at repo root).
 
 ---
 
@@ -36,11 +36,11 @@ inputs/raw/jira/{KEY}.json     e.g.  inputs/raw/jira/CBP-2736.json
 
 > [!IMPORTANT]
 > **Credentials Required**
-> Before executing the pipeline, the environment must have the following variables exported:
-> `JIRA_USER_EMAIL` (e.g. benbelanger@casebook.net)
-> `JIRA_API_TOKEN` (the Atlassian API token)
+> The environment must have the following variables set (via `.env` at repo root):
+> `ATLASSIAN_USER_EMAIL` — your Atlassian account email
+> `ATLASSIAN_API_TOKEN` — your Atlassian API token
 >
-> If the Jira fetch step throws a 401 or 403 HTTP error, the pipeline will fail hard. Check these environment credentials before running!
+> If the fetch step throws a 401 or 403 HTTP error, the pipeline will fail hard. Verify these credentials before running.
 
 ---
 

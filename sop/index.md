@@ -9,7 +9,7 @@ This document serves as the primary entry point for all Standard Operating Proce
         ```
         python3 project-status-reports/scripts/full_run.py --force
         ```
-        `--force` ensures fresh Jira data each run. The pipeline runs end-to-end automatically. Requires `JIRA_USER_EMAIL` and `JIRA_API_TOKEN` set in the environment.
+        `--force` ensures fresh data each run. Requires `ATLASSIAN_USER_EMAIL` and `ATLASSIAN_API_TOKEN` in the environment (loaded from `.env` at repo root).
 *   **Rovo Issue Management:** [Rovo SOP Guide](rovo/rovo-sop.md)
 
 ## 📂 Sub-Category Guides

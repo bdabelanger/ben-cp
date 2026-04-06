@@ -46,9 +46,20 @@ GA_MONTH_MAP = {
 
 class PlatformStatusReport:
 
-    def __init__(self, asana_data_path, jira_data_path):
+    def __init__(self, asana_data_path, jira_data_path, jira_raw_dir=None):
         self.asana_data = self._load_json(asana_data_path)
         self.jira_issues = self._load_json(jira_data_path)
+
+        # Load epic-level data (timeoriginalestimate) keyed by CBP-XXXX
+        self.epic_data = {}
+        if jira_raw_dir and os.path.isdir(jira_raw_dir):
+            for fname in os.listdir(jira_raw_dir):
+                if fname.endswith("_epic.json"):
+                    with open(os.path.join(jira_raw_dir, fname)) as f:
+                        data = json.load(f)
+                    key = data.get("key")
+                    if key:
+                        self.epic_data[key] = data
         self.jira_issues = [i for i in self.jira_issues if "key" in i]
         self.today = datetime.now().date()
 
@@ -177,18 +188,31 @@ class PlatformStatusReport:
                 bar += "░"; todo += 1
         return f"`{bar} {done} done · {inp} in progress · {todo} to do`"
 
-    def _time_bar(self, issues):
-        est = sum((i.get("fields", {}).get("timeoriginalestimate") or 0) for i in issues) / 28800
-        act = sum((i.get("fields", {}).get("timespent") or 0) for i in issues) / 28800
-        if est == 0 and act == 0:
-            return "`👀 no time data`"
-        if est == 0:
-            return f"`👀 {act:.1f}d logged / no estimates`"
-        ratio = act / est
-        if ratio > 1:
-            return f"`⚠️ ██████████ {act:.1f}d act / {est:.1f}d est ({int(ratio*100)}%) — over budget`"
-        filled = min(10, int(ratio * 10))
-        return f"`{'█' * filled}{'░' * (10 - filled)} {act:.1f}d act / {est:.1f}d est ({int(ratio*100)}%)`"
+    def _time_bar(self, issues, pkey=None):
+        # Epic-level original estimate (if available)
+        epic = self.epic_data.get(pkey) if pkey else None
+        orig_est = ((epic or {}).get("fields", {}).get("timeoriginalestimate") or 0) / 28800
+
+        # Actual = timespent on Done tickets; remaining = orig estimates on open tickets
+        done_issues = [i for i in issues if i.get("effective_category") == "Done"]
+        open_issues = [i for i in issues if i.get("effective_category") != "Done"]
+        act = sum((i.get("fields", {}).get("timespent") or 0) for i in done_issues) / 28800
+        rem = sum((i.get("fields", {}).get("timeoriginalestimate") or 0) for i in open_issues) / 28800
+
+        if orig_est == 0:
+            # Fallback: no epic estimate — use sum of child estimates as the budget
+            child_est = sum((i.get("fields", {}).get("timeoriginalestimate") or 0) for i in issues) / 28800
+            if child_est == 0 and act == 0:
+                return "`👀 no time data`"
+            if child_est == 0:
+                return f"`👀 {act:.1f}d logged / no estimates`"
+            orig_est = child_est  # treat child sum as the budget and fall through
+
+        pct = int((act + rem) / orig_est * 100)
+        actual_over   = act > orig_est
+        combined_over = (act + rem) > orig_est
+        prefix = "❌ " if actual_over else ("⚠️ " if combined_over else ("👀 " if pct >= 90 else ""))
+        return f"`{prefix}{orig_est:.1f}d estimated · {act:.1f}d actual · {rem:.1f}d remaining ({pct}%)`"
 
     # -------------------------------------------------------------------------
     # Milestone bullets
@@ -233,29 +257,26 @@ class PlatformStatusReport:
     def _issue_bullet(self, issue):
         key = issue["key"]
         f = issue.get("fields", {})
-        summary = (f.get("summary") or "")[:70]
+        summary = (f.get("summary") or "")
         assignee = (((f.get("assignee") or {}).get("displayName") or "Unassigned")).split(" ")[0]
         status_name = ((f.get("status") or {}).get("name") or "")
         est = (f.get("timeoriginalestimate") or 0) / 28800
         act = (f.get("timespent") or 0) / 28800
 
-        if est == 0 and act == 0:
-            time_str = "Unestimated 👀"
-        elif est > 0 and act > 0:
-            time_str = f"{est:.1f}d est / {act:.1f}d act"
-        elif est > 0:
-            time_str = f"{est:.1f}d est"
-        else:
-            time_str = f"{act:.1f}d act"
+        est_str = f"{est:.1f}d estimated" if est > 0 else "Unestimated 👀"
+        act_str = f"{act:.1f}d actual" if act > 0 else "No actual 👀"
 
         priority = ((f.get("priority") or {}).get("name") or "")
         version = self._format_versions(f)
 
-        line = f"[{key}]({self._jira_url(key)}) — {summary} — {assignee} · {status_name} · {time_str}"
+        main = f"[{key}]({self._jira_url(key)}) — {summary} — {assignee}"
+        meta_parts = [status_name, est_str, act_str]
         if priority:
-            line += f" · {priority}"
-        line += f" · {version}"
-        return "- " + line
+            meta_parts.append(priority)
+        meta_parts.append(version)
+        meta = " · ".join(meta_parts)
+
+        return f"- {main}||{meta}"
 
     # -------------------------------------------------------------------------
     # Flag logic
@@ -367,7 +388,7 @@ class PlatformStatusReport:
         # Progress bar
         md += "\n" + self._progress_bar(issues) + "\n"
         # Time bar
-        md += "\n" + self._time_bar(issues) + "\n"
+        md += "\n" + self._time_bar(issues, pkey) + "\n"
 
         # Milestone bullets
         m = project.get("milestones", {})
@@ -398,13 +419,9 @@ class PlatformStatusReport:
         if done_issues:
             d_est = sum((i.get("fields", {}).get("timeoriginalestimate") or 0) for i in done_issues) / 28800
             d_act = sum((i.get("fields", {}).get("timespent") or 0) for i in done_issues) / 28800
-            time_parts = []
-            if d_est > 0:
-                time_parts.append(f"~{d_est:.1f}d est")
-            if d_act > 0:
-                time_parts.append(f"~{d_act:.1f}d logged")
-            suffix = f" ({', '.join(time_parts)})" if time_parts else ""
-            md += f"\n**Done:** {len(done_issues)} issues{suffix}\n"
+            est_str = f"{d_est:.1f}d estimated" if d_est > 0 else "Unestimated 👀"
+            act_str = f"{d_act:.1f}d actual" if d_act > 0 else "No actual 👀"
+            md += f"\n**Done:** {len(done_issues)} issues\n~~{est_str} · {act_str}\n"
 
         # In Progress section
         inp = sorted(

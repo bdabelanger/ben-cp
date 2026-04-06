@@ -113,8 +113,10 @@ strong { font-weight: 600; }
     background: var(--todo);
     margin: 0.3rem 0;
 }
-.time-filled   { background: var(--accent); }
-.time-over     { background: #ef4444; }
+.time-actual           { background: var(--accent); }
+.time-actual-over      { background: #ef4444; }
+.time-remaining        { background: #3451c7; }
+.time-remaining-over   { background: #ef4444; }
 
 /* ---------- badge / pill ---------- */
 .badge {
@@ -125,19 +127,27 @@ strong { font-weight: 600; }
     font-weight: 600;
     letter-spacing: 0.02em;
 }
-.badge-stage   { background: #dbeafe; color: #1d4ed8; }
-.badge-ga      { background: #dcfce7; color: #15803d; }
-.badge-beta    { background: #fef9c3; color: #854d0e; }
-.badge-qa      { background: #fce7f3; color: #9d174d; }
-.badge-dev     { background: #f3f4f6; color: #374151; }
+.badge-backlog    { background: #f3f4f6; color: #4b5563; }
+.badge-discovery  { background: #ede9fe; color: #6d28d9; }
+.badge-dev        { background: #cffafe; color: #0e7490; }
+.badge-qa         { background: #fef3c7; color: #b45309; }
+.badge-uat        { background: #fefce8; color: #854d0e; }
+.badge-beta       { background: #d1fae5; color: #065f46; }
+.badge-ga         { background: #dcfce7; color: #166534; }
+.badge-study      { background: #ffedd5; color: #9a3412; }
+.badge-onhold     { background: #dbeafe; color: #1e40af; }
 .stat-row      { font-size: 0.85rem; color: var(--muted); margin: 0.2rem 0; }
 
 @media (prefers-color-scheme: dark) {
-    .badge-stage { background: #1e3a8a; color: #93c5fd; }
-    .badge-ga    { background: #14532d; color: #86efac; }
-    .badge-beta  { background: #713f12; color: #fde68a; }
-    .badge-qa    { background: #831843; color: #fbcfe8; }
-    .badge-dev   { background: #1f2937; color: #d1d5db; }
+    .badge-backlog   { background: #1f2937; color: #9ca3af; }
+    .badge-discovery { background: #2e1065; color: #c4b5fd; }
+    .badge-dev       { background: #164e63; color: #67e8f9; }
+    .badge-qa        { background: #451a03; color: #fcd34d; }
+    .badge-uat       { background: #422006; color: #fde68a; }
+    .badge-beta      { background: #064e3b; color: #6ee7b7; }
+    .badge-ga        { background: #14532d; color: #86efac; }
+    .badge-study     { background: #431407; color: #fdba74; }
+    .badge-onhold    { background: #1e3a8a; color: #93c5fd; }
 }
 
 /* ---------- milestone list ---------- */
@@ -158,6 +168,7 @@ strong { font-weight: 600; }
 .issue-list li:first-child { border-top: none; }
 .issue-key { font-weight: 600; white-space: nowrap; }
 .issue-meta { color: var(--muted); font-size: 0.78rem; white-space: nowrap; }
+.issue-meta-row { font-size: 0.78rem; color: var(--muted); margin-top: 0.15rem; }
 
 /* ---------- section callout ---------- */
 .data-quality {
@@ -200,11 +211,16 @@ def _md_inline(text):
 
 def _stage_badge(stage):
     cls = {
-        "GA": "badge-ga",
-        "Beta": "badge-beta",
-        "In QA": "badge-qa",
-        "In UAT": "badge-qa",
-    }.get(stage, "badge-dev")
+        "GA":        "badge-ga",
+        "Beta":      "badge-beta",
+        "In QA":     "badge-qa",
+        "In UAT":    "badge-uat",
+        "Development": "badge-dev",
+        "Discovery": "badge-discovery",
+        "Study":     "badge-study",
+        "On hold":   "badge-onhold",
+        "Backlog":   "badge-backlog",
+    }.get(stage, "badge-backlog")
     return f'<span class="badge {cls}">{stage}</span>'
 
 
@@ -232,20 +248,50 @@ def _progress_bar_html(bar_text):
 
 def _time_bar_html(bar_text):
     """
-    Parse `█████░░░░░ 3.5d act / 7.0d est (50%)` into an HTML bar + label.
+    Parse `60.0d estimated · 10.0d actual · 25.0d remaining (42%)` into a 3-segment HTML bar + label.
+    Segments: actual (blue/red) | remaining (light-blue/red) | slack (gray background).
+    Bar width = max(estimated, actual + remaining) so it always tells the full story.
     """
-    m = re.search(r'([\d.]+)d\s+act\s*/\s*([\d.]+)d\s+est\s*\((\d+)%\)', bar_text)
+    # Strip leading emoji prefix before parsing numbers
+    clean = re.sub(r'^[⚠️👀❌\s]+', '', bar_text).strip()
+
+    m = re.search(
+        r'([\d.]+)d\s+estimated\s*·\s*([\d.]+)d\s+actual\s*·\s*([\d.]+)d\s+remaining\s*\((\d+)%\)',
+        clean
+    )
     if not m:
         return f"<p><code>{bar_text}</code></p>"
-    act, est, pct = float(m.group(1)), float(m.group(2)), int(m.group(3))
-    over = pct > 100
-    fill_cls = "time-over" if over else "time-filled"
-    fill_pct = min(100, pct)
-    prefix = "⚠️ " if over else ""
+
+    est, act, rem, pct = float(m.group(1)), float(m.group(2)), float(m.group(3)), int(m.group(4))
+
+    actual_over    = act > est                  # actual alone blew the budget → ❌
+    combined_over  = (act + rem) > est          # on track to blow the budget  → ⚠️
+
+    # Symbol: ❌ wins if actual is already over, otherwise ⚠️ for projected overage
+    if actual_over:
+        symbol = "❌ "
+    elif combined_over:
+        symbol = "⚠️ "
+    elif pct >= 90:
+        symbol = "👀 "
+    else:
+        symbol = ""
+
+    # Bar total = max(est, act+rem) so overages extend naturally
+    total = max(est, act + rem) or 1
+    actual_pct    = act / total * 100
+    remaining_pct = rem / total * 100
+
+    actual_cls    = "time-actual-over" if actual_over    else "time-actual"
+    remaining_cls = "time-remaining-over" if combined_over else "time-remaining"
+
     bar = (f'<div class="time-bar-wrap">'
-           f'<div class="{fill_cls}" style="width:{fill_pct}%"></div>'
+           f'<div class="{actual_cls}" style="width:{actual_pct:.1f}%"></div>'
+           f'<div class="{remaining_cls}" style="width:{remaining_pct:.1f}%"></div>'
            f'</div>')
-    label = f'<span class="stat-row">{prefix}{est:.1f}d estimated &nbsp;·&nbsp; {act:.1f}d actual ({pct}%)</span>'
+    label = (f'<span class="stat-row">{symbol}'
+             f'{est:.1f}d estimated &nbsp;·&nbsp; {act:.1f}d actual &nbsp;·&nbsp; {rem:.1f}d remaining ({pct}%)'
+             f'</span>')
     return bar + label
 
 
@@ -318,8 +364,8 @@ def md_to_html(md: str) -> str:
             in_project = True
             i += 1; continue
 
-        # Time bar line (backtick-wrapped containing 'd act' / 'd logged' / 'no time') — check BEFORE progress bar
-        if line.startswith("`") and ("d act" in line or "d logged" in line or "no time" in line):
+        # Time bar line (backtick-wrapped containing time data) — check BEFORE progress bar
+        if line.startswith("`") and ("d actual" in line or "d estimated" in line or "d logged" in line or "no time" in line):
             close_ul()
             inner = line.strip("`").strip()
             html_parts.append(_time_bar_html(inner))
@@ -339,6 +385,12 @@ def md_to_html(md: str) -> str:
             html_parts.append(f'<p><code>{inner}</code></p>')
             i += 1; continue
 
+        # Stat-row line (~~text)
+        if line.startswith("~~"):
+            close_ul(); close_ol()
+            html_parts.append(f'<p class="stat-row">{_md_inline(line[2:])}</p>')
+            i += 1; continue
+
         # Ordered list item (1. 2. etc.)
         if re.match(r'^\d+\. ', line):
             close_ul()
@@ -355,8 +407,15 @@ def md_to_html(md: str) -> str:
             if not in_ul:
                 html_parts.append('<ul>')
                 in_ul = True
-            content = _md_inline(line[2:])
-            html_parts.append(f'<li>{content}</li>')
+            body = line[2:]
+            if '||' in body:
+                main, meta = body.split('||', 1)
+                html_parts.append(
+                    f'<li>{_md_inline(main)}'
+                    f'<div class="issue-meta-row">{_md_inline(meta)}</div></li>'
+                )
+            else:
+                html_parts.append(f'<li>{_md_inline(body)}</li>')
             i += 1; continue
 
         # Blank line or horizontal rule (--- section dividers)

@@ -1,0 +1,34 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "46343",
+  "self": "https://casecommons.atlassian.net/rest/api/3/issue/46343",
+  "key": "CBP-3085",
+  "fields": {
+    "summary": "2025 VPAT accessibility audit",
+    "issuetype": {
+      "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+      "id": "10000",
+      "description": "A roadmapped initiative",
+      "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+      "name": "Project",
+      "subtask": false,
+      "hierarchyLevel": 1
+    },
+    "timespent": null,
+    "timeoriginalestimate": null,
+    "status": {
+      "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
+      "description": "Ready for development in DEV environment",
+      "iconUrl": "https://casecommons.atlassian.net/",
+      "name": "To do",
+      "id": "10007",
+      "statusCategory": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
+        "id": 2,
+        "key": "new",
+        "colorName": "blue-gray",
+        "name": "To Do"
+      }
+    }
+  }
+}

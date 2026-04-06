@@ -118,10 +118,24 @@ def fetch_missing_atlassian_data():
             print(f"⚠️  0 child issues found for {key} — saving empty file and continuing.")
 
         print(f"OK ({len(all_issues)} issues)")
-        
-        # 4. Save to disk
+
+        # 4. Save child issues to disk
         with open(save_path, 'w') as f:
             json.dump(all_issues, f, indent=2)
+
+        # 5. Also fetch the epic itself for timeoriginalestimate
+        epic_path = os.path.join(JIRA_RAW_DIR, f"{key}_epic.json")
+        epic_resp = requests.get(
+            f"{atlassian_base_url}/rest/api/3/issue/{key}",
+            headers=headers,
+            params={"fields": "summary,timeoriginalestimate,timespent,status,issuetype"},
+            auth=auth
+        )
+        if epic_resp.status_code == 200:
+            with open(epic_path, 'w') as f:
+                json.dump(epic_resp.json(), f, indent=2)
+        else:
+            print(f"  ⚠️  Could not fetch epic {key} ({epic_resp.status_code})")
             
     print(f"✅ step_2_atlassian_fetch Complete: Successfully fetched {len(missing_keys)} epics.")
 

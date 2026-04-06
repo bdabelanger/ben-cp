@@ -112,7 +112,7 @@ def main():
     # 📊 Final Synthesis
     print("📊 Synthesizing Platform Weekly Status...")
 
-    reporter = PlatformStatusReport(ASANA_FILTERED, JIRA_HARVESTED)
+    reporter = PlatformStatusReport(ASANA_FILTERED, JIRA_HARVESTED, JIRA_RAW_DIR)
     report_md = reporter.render()
 
     html_path = OUTPUT_PATH.replace(".md", ".html")

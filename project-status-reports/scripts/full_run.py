@@ -11,6 +11,23 @@ from render_html import render_html
 MANIFEST_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../manifest.json")
 REPO_ROOT = os.path.dirname(os.path.abspath(MANIFEST_PATH))
 
+def _load_dotenv():
+    """Load .env from repo root into os.environ (does not overwrite existing vars)."""
+    env_path = os.path.join(REPO_ROOT, ".env")
+    if not os.path.exists(env_path):
+        return
+    with open(env_path) as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, _, val = line.partition("=")
+            key = key.strip()
+            val = val.strip().strip('"').strip("'")
+            os.environ.setdefault(key, val)
+
+_load_dotenv()
+
 def get_path_from_manifest(data, step_id):
     relative_path = next(s['file'] for s in data['steps'] if s['id'] == step_id)
     return os.path.join(REPO_ROOT, relative_path)

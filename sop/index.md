@@ -4,21 +4,21 @@ This document serves as the primary entry point for all Standard Operating Proce
 
 ## 🧭 Core Process Guides
 
-*   **Platform Weekly Status Report:** [Status Report Orchestrator SOP](/Users/benbelanger/GitHub/ben-cp/sop/project-status-reports/index.md)
-    *   ⚡ **Quick Trigger**: If asked to "generate the report", immediately:
-        1. **Reset**: `python3 /Users/benbelanger/GitHub/ben-cp/project-status-reports/scripts/update_manifest.py reset`
-        2. **Identify**: `python3 /Users/benbelanger/GitHub/ben-cp/project-status-reports/scripts/step_1_asana_ingest.py`
-        3. **Fetch**: Read the Asana output and call **`searchJiraIssuesUsingJql`** (Atlassian MCP) — full instructions in the dedicated SOP. Do NOT use `searchAtlassian`.
-        4. **Finish**: `python3 .../step_3_jira_harvest.py && python3 .../step_4_report_generator.py`
-*   **Rovo Issue Management:** [Rovo SOP Guide](/Users/benbelanger/GitHub/ben-cp/sop/rovo/rovo-sop.md)
+*   **Platform Weekly Status Report:** [Status Report Orchestrator SOP](project-status-reports/index.md)
+    *   ⚡ **Quick Trigger**: If asked to "generate the report", run:
+        ```
+        python3 project-status-reports/scripts/full_run.py --force
+        ```
+        `--force` ensures fresh data each run. Requires `ATLASSIAN_USER_EMAIL` and `ATLASSIAN_API_TOKEN` in the environment (loaded from `.env` at repo root).
+*   **Rovo Issue Management:** [Rovo SOP Guide](rovo/rovo-sop.md)
 
 ## 📂 Sub-Category Guides
 
-*   **Data Modeling & Reporting:** Procedures for SQL join maps, BI modeling strategies, and schema relationships are located here: [Reporting Guide](/Users/benbelanger/GitHub/ben-cp/sop/casebook-reporting/index.md)
-*   **Case Intake:** Guidance on initial case intake procedures (refer to specific file in the reporting subdirectory for details): [Intake Guide](/Users/benbelanger/GitHub/ben-cp/sop/casebook-reporting/casebook-intake.md)
-*   **People Data:** Schema and relationship definitions for client, provider, and subject demographics: [People Data](/Users/benbelanger/GitHub/ben-cp/sop/casebook-reporting/casebook-people.md)
-*   **System Users:** Guides for managing system accounts (caseworkers, admins) scoped to a tenant: [User Management](/Users/benbelanger/GitHub/ben-cp/sop/casebook-reporting/casebook-users.md)
-*   **Tenant Security & Scoping:** Mandatory rules for multi-tenancy architecture and data isolation: [Tenant Rules](/Users/benbelanger/GitHub/ben-cp/sop/casebook-reporting/casebook-tenants.md)
+*   **Data Modeling & Reporting:** Procedures for SQL join maps, BI modeling strategies, and schema relationships are located here: [Reporting Guide](casebook-reporting/index.md)
+*   **Case Intake:** Guidance on initial case intake procedures (refer to specific file in the reporting subdirectory for details): [Intake Guide](casebook-reporting/casebook-intake.md)
+*   **People Data:** Schema and relationship definitions for client, provider, and subject demographics: [People Data](casebook-reporting/casebook-people.md)
+*   **System Users:** Guides for managing system accounts (caseworkers, admins) scoped to a tenant: [User Management](casebook-reporting/casebook-users.md)
+*   **Tenant Security & Scoping:** Mandatory rules for multi-tenancy architecture and data isolation: [Tenant Rules](casebook-reporting/casebook-tenants.md)
 
 ***
 

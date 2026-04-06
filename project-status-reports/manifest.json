@@ -2,7 +2,6 @@
     "project": "Platform Weekly Status",
     "last_run": "2026_04_05",
     "config": {
-        "repo_root": "/Users/benbelanger/GitHub/ben-cp/project-status-reports",
         "processed_dir": "inputs/processed",
         "archive_dir": "inputs/archive"
     },
@@ -13,9 +12,9 @@
             "file": "inputs/processed/asana_active.json"
         },
         {
-            "id": "2_jira_fetch",
+            "id": "2_atlassian_fetch",
             "status": "pending",
-            "file": "inputs/raw/jira_issues.json"
+            "file": "inputs/raw/jira"
         },
         {
             "id": "3_rovo_context",
@@ -30,7 +29,7 @@
         {
             "id": "5_report_generation",
             "status": "pending",
-            "file": "outputs/Platform_Status.md"
+            "file": "outputs/Platform_Status_Apr-5-2026.html"
         }
     ]
 }

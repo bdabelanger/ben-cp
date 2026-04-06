@@ -1,26 +1,21 @@
 # SOP: Status Report Orchestrator (Final)
 
 > [!IMPORTANT]
-> ⚡ **KICKSTART** — Run these in order. Do not skip or reorder.
+> ⚡ **KICKSTART** — Run from the repo root:
 >
-> 1. **Reset**: `python3 /Users/benbelanger/GitHub/ben-cp/project-status-reports/scripts/update_manifest.py reset`
-> 2. **Identify**: `python3 /Users/benbelanger/GitHub/ben-cp/project-status-reports/scripts/step_1_asana_ingest.py`
-> 3. **Fetch**: Perform Step 2 (Jira Fetch) manually — see section below. ⬇️
-> 4. **Finish**: `python3 /Users/benbelanger/GitHub/ben-cp/project-status-reports/scripts/step_3_jira_harvest.py && python3 /Users/benbelanger/GitHub/ben-cp/project-status-reports/scripts/step_4_report_generator.py`
-
----
-
-## ⛔ STOP — Read Before Calling Any Tools
-
-These are the only correct tools for this pipeline. Do not substitute.
-
-| Step | Correct Tool | Common Wrong Choices (NEVER USE) |
-|------|-------------|----------------------------------|
-| Jira fetch | `searchJiraIssuesUsingJql` | `searchAtlassian`, `fetchAtlassian`, `getJiraIssue` |
-| Asana data | Already on disk from Step 1 — do not re-fetch via MCP | `get_projects`, `get_items_for_portfolio` |
-| Confluence | Not part of this pipeline | `searchAtlassian`, `getConfluencePage` |
-
-If you cannot find `searchJiraIssuesUsingJql` in your available tools, **stop and tell the user**. Do not attempt an alternative.
+> **Fresh weekly run (always use this):**
+> ```
+> python3 project-status-reports/scripts/full_run.py --force
+> ```
+>
+> **Re-render only (Jira data already fresh, just re-generate the report):**
+> ```
+> python3 project-status-reports/scripts/full_run.py
+> ```
+>
+> `--force` wipes stale Jira cache and resets the manifest before running. Without it, the pipeline skips re-fetching if processed data already exists from a previous run.
+>
+> The pipeline runs fully automated — no agent tool calls required. Requires `ATLASSIAN_USER_EMAIL` and `ATLASSIAN_API_TOKEN` in the environment (loaded from `.env` at repo root).
 
 ---
 
@@ -29,45 +24,23 @@ Manage the multi-step relay for the Platform Weekly Status report using `manifes
 
 ---
 
-## 🔄 Step 2: Jira Fetch (Agent-Side — Manual)
+## 🔄 Step 2: Jira Fetch (Automated via Script)
 
-This step is performed by the agent, not a script. Complete it between KICKSTART steps 2 and 4.
+This step has been fully automated to avoid LLM context-window limits. When `full_run.py` executes, it will automatically call `step_2_atlassian_fetch.py`.
 
-### 2a. Read the Asana output
-Read the file written by Step 1:
-`/Users/benbelanger/GitHub/ben-cp/project-status-reports/inputs/processed/asana_active.json`
-
-Extract all `jira_link` values (format: `CBP-XXXX`). These are your Epic keys.
-
-### 2b. Call `searchJiraIssuesUsingJql`
-
-Use this exact tool: **`searchJiraIssuesUsingJql`** (Atlassian MCP).
-
-Build the JQL from the Epic keys you extracted:
+It securely uses standard Atlassian API tokens to run the necessary JQL queries for any missing epics and writes the data directly to disk:
 
 ```
-project = CBP AND issuetype != QAFE AND (
-  issuekey in ({EPIC_KEYS})
-  OR "Epic Link" in ({EPIC_KEYS})
-  OR parent in ({EPIC_KEYS})
-)
-ORDER BY updated DESC
+inputs/raw/jira/{KEY}.json     e.g.  inputs/raw/jira/CBP-2736.json
 ```
 
-Replace `{EPIC_KEYS}` with a comma-separated list, e.g.: `CBP-2736, CBP-3066, CBP-3150`
-
-Request these fields: `summary, status, assignee, priority, issuetype, parent, timeoriginalestimate, timespent, fixVersions, created, updated`
-
-Fetch up to 100 issues per call. Paginate if `total > 100`.
-
-### 2c. Save the raw result
-Write the full issues array to:
-`/Users/benbelanger/GitHub/ben-cp/project-status-reports/inputs/raw/jira_issues.json`
-
-> [!WARNING]
-> **Strict Validation:** The resulting JSON array MUST NOT be empty. If Jira returns 0 issues, it is considered a fatal error in the pipeline. Stop and evaluate the JQL or credentials.
-
-This file must be a valid JSON array. Step 3 reads it directly and will crash if it's empty.
+> [!IMPORTANT]
+> **Credentials Required**
+> The environment must have the following variables set (via `.env` at repo root):
+> `ATLASSIAN_USER_EMAIL` — your Atlassian account email
+> `ATLASSIAN_API_TOKEN` — your Atlassian API token
+>
+> If the fetch step throws a 401 or 403 HTTP error, the pipeline will fail hard. Verify these credentials before running.
 
 ---
 
@@ -102,8 +75,8 @@ This file must be a valid JSON array. Step 3 reads it directly and will crash if
 * ⚠️ UAT - Apr 3
 * ⚠️ GA - Apr 9
 
-**In Progress:** 8 issues
-- [CBP-3150](...) — Summary — Tuan · In development · 1.0d est / 0.5d act · P2 · 2026-4-2
+**In Progress:** 8 issues · ~12.5d est remaining
+- [CBP-3150](https://casecommons.atlassian.net/browse/CBP-3150) — Summary — Tuan · In development · 1.0d est / 0.5d act · P2 · v2.4
 ```
 
 ---
@@ -111,8 +84,8 @@ This file must be a valid JSON array. Step 3 reads it directly and will crash if
 ## 🛠️ Tooling Rules (STRICT)
 
 ### 1. Mode Detection
-- **Single-project mode**: Ben shares an Asana project URL. Extract the project GID. Run steps scoped entirely to that project.
-- **Batch mode**: No project URL is shared. Fetch all Platform team projects (GID `1208820967756799`).
+- **Single-project mode**: Ben shares an Asana project URL. Pass it as an argument: `python3 full_run.py https://app.asana.com/0/...`
+- **Batch mode**: No URL argument. Fetches all Platform team projects (GID `1208820967756799`).
 
 ### 2. Status Category Overrides
 - `Blocked - Needs Review` → **To Do**
@@ -125,7 +98,7 @@ Evaluate each milestone against today's date AND current Asana Stage:
 Rank: `Development=1 → In QA=2 → In UAT=3 → Beta=4 → GA=5`
 - `✅ Passed, hit`: Date in past AND current stage rank ≥ milestone's required rank.
 - `❌ Passed, missed`: Date in past AND current stage rank < milestone's required rank.
-- `⚠️ At risk`: Date in future AND (previous was ❌ OR unassigned proximity).
+- `⚠️ At risk`: Date in future AND previous milestone was ❌.
 - `🎯 On track`: Date in future and none of the above.
 - `❓ Not set`: Date field is missing.
 
@@ -138,11 +111,12 @@ Rank: `Development=1 → In QA=2 → In UAT=3 → Beta=4 → GA=5`
 ## 🔄 Execution Macro (Summary)
 
 ```
-Step 1 (script) → Step 2 (agent: searchJiraIssuesUsingJql) → Step 3+4 (script)
+python3 project-status-reports/scripts/full_run.py --force
 ```
 
-1. `update_manifest.py reset` — clears state
-2. `step_1_asana_ingest.py` — filters active Platform projects to disk
-3. **Agent reads Asana output → calls `searchJiraIssuesUsingJql` → writes `inputs/raw/jira_issues.json`**
-4. `step_3_jira_harvest.py` — cross-references Jira issues against active Asana epics
-5. `step_4_report_generator.py` — renders final Markdown report
+The orchestrator handles the entire pipeline autonomously end-to-end:
+1. `--force` wipes `inputs/raw/jira/` and resets the manifest (archives old processed files).
+2. `full_run.py` invokes Step 1 (Asana Ingest).
+3. `full_run.py` invokes Step 2 (Jira Fetch) automatically via `requests` — fetches child issues per epic using `parent in (KEY)` JQL.
+4. `full_run.py` cascades into Step 3 (Harvest) and Step 4 (Report Generation).
+3. `full_run.py` automatically cascades into Step 3 (Harvest) and Step 4 (Report Generation).

@@ -1,0 +1,1456 @@
+[
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "43352",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/43352",
+    "key": "CBP-3008",
+    "fields": {
+      "summary": "Bulk import - Return all validation error messages at once",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
+        "id": "10057",
+        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
+        "name": "User Story",
+        "subtask": false,
+        "avatarId": 10306,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "11199",
+        "key": "CBP-498",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/11199",
+        "fields": {
+          "summary": "Data import - Q4 2025",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
+            "description": "Ready for development in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/",
+            "name": "To do",
+            "id": "10007",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
+              "id": 2,
+              "key": "new",
+              "colorName": "blue-gray",
+              "name": "To Do"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2026-02-09T15:40:41.475-0500",
+      "timespent": null,
+      "timeoriginalestimate": 86400,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=629dfdc29b728c006a928e90",
+        "accountId": "629dfdc29b728c006a928e90",
+        "emailAddress": "ben.belanger@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/56513ae8984eb11e1e971326a665a9fa?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBB-2.png",
+          "24x24": "https://secure.gravatar.com/avatar/56513ae8984eb11e1e971326a665a9fa?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBB-2.png",
+          "16x16": "https://secure.gravatar.com/avatar/56513ae8984eb11e1e971326a665a9fa?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBB-2.png",
+          "32x32": "https://secure.gravatar.com/avatar/56513ae8984eb11e1e971326a665a9fa?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBB-2.png"
+        },
+        "displayName": "Ben Belanger",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12461",
+          "id": "12461",
+          "description": "",
+          "name": "Platform-2026-4-1",
+          "archived": false,
+          "released": false,
+          "releaseDate": "2026-04-09"
+        }
+      ],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2026-04-03T04:58:51.446-0400",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10066",
+        "description": "Additional development required in QA environment",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+        "name": "QA revise",
+        "id": "10066",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+          "id": 4,
+          "key": "indeterminate",
+          "colorName": "yellow",
+          "name": "In Progress"
+        }
+      }
+    }
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "38222",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/38222",
+    "key": "CBP-2887",
+    "fields": {
+      "summary": "SPIKE \u2013 Evaluate Bulk Importer Maximum Data Capacity and Performance Impact",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10064",
+        "id": "10064",
+        "description": "",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10320?size=medium",
+        "name": "Research",
+        "subtask": false,
+        "avatarId": 10320,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "11199",
+        "key": "CBP-498",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/11199",
+        "fields": {
+          "summary": "Data import - Q4 2025",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
+            "description": "Ready for development in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/",
+            "name": "To do",
+            "id": "10007",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
+              "id": 2,
+              "key": "new",
+              "colorName": "blue-gray",
+              "name": "To Do"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2025-12-10T17:00:07.733-0500",
+      "timespent": null,
+      "timeoriginalestimate": 57600,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=5c01b9d6dda509509754c6d6",
+        "accountId": "5c01b9d6dda509509754c6d6",
+        "emailAddress": "yi.liu@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5c01b9d6dda509509754c6d6/8dee7d6f-04dc-478f-9c01-db246d59eca5/48",
+          "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5c01b9d6dda509509754c6d6/8dee7d6f-04dc-478f-9c01-db246d59eca5/24",
+          "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5c01b9d6dda509509754c6d6/8dee7d6f-04dc-478f-9c01-db246d59eca5/16",
+          "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5c01b9d6dda509509754c6d6/8dee7d6f-04dc-478f-9c01-db246d59eca5/32"
+        },
+        "displayName": "Yi Liu",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/11865",
+          "id": "11865",
+          "description": "",
+          "name": "Platform-2025-12-2",
+          "archived": false,
+          "released": true,
+          "releaseDate": "2025-12-23"
+        }
+      ],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2026-01-08T15:15:00.232-0500",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10103",
+        "description": "Complete, does not require release",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/closed.png",
+        "name": "Done",
+        "id": "10103",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/3",
+          "id": 3,
+          "key": "done",
+          "colorName": "green",
+          "name": "Done"
+        }
+      }
+    }
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "35672",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/35672",
+    "key": "CBP-2819",
+    "fields": {
+      "summary": "SPIKE - Investigate bulk import error handling",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10064",
+        "id": "10064",
+        "description": "",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10320?size=medium",
+        "name": "Research",
+        "subtask": false,
+        "avatarId": 10320,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "11199",
+        "key": "CBP-498",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/11199",
+        "fields": {
+          "summary": "Data import - Q4 2025",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
+            "description": "Ready for development in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/",
+            "name": "To do",
+            "id": "10007",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
+              "id": 2,
+              "key": "new",
+              "colorName": "blue-gray",
+              "name": "To Do"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2025-11-11T01:18:48.548-0500",
+      "timespent": null,
+      "timeoriginalestimate": 86400,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=629dfdc29b728c006a928e90",
+        "accountId": "629dfdc29b728c006a928e90",
+        "emailAddress": "ben.belanger@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/56513ae8984eb11e1e971326a665a9fa?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBB-2.png",
+          "24x24": "https://secure.gravatar.com/avatar/56513ae8984eb11e1e971326a665a9fa?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBB-2.png",
+          "16x16": "https://secure.gravatar.com/avatar/56513ae8984eb11e1e971326a665a9fa?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBB-2.png",
+          "32x32": "https://secure.gravatar.com/avatar/56513ae8984eb11e1e971326a665a9fa?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBB-2.png"
+        },
+        "displayName": "Ben Belanger",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2026-03-10T10:38:16.152-0400",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10103",
+        "description": "Complete, does not require release",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/closed.png",
+        "name": "Done",
+        "id": "10103",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/3",
+          "id": 3,
+          "key": "done",
+          "colorName": "green",
+          "name": "Done"
+        }
+      }
+    }
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "35145",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/35145",
+    "key": "CBP-2806",
+    "fields": {
+      "summary": "SPIKE - Investigate bulk importer throughput capacity",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10064",
+        "id": "10064",
+        "description": "",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10320?size=medium",
+        "name": "Research",
+        "subtask": false,
+        "avatarId": 10320,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "11199",
+        "key": "CBP-498",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/11199",
+        "fields": {
+          "summary": "Data import - Q4 2025",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
+            "description": "Ready for development in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/",
+            "name": "To do",
+            "id": "10007",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
+              "id": 2,
+              "key": "new",
+              "colorName": "blue-gray",
+              "name": "To Do"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2025-11-02T22:26:39.282-0500",
+      "timespent": null,
+      "timeoriginalestimate": 86400,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Ae715f612-98cd-4680-b8d8-410006257c59",
+        "accountId": "712020:e715f612-98cd-4680-b8d8-410006257c59",
+        "emailAddress": "tuan.nguyen@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/48",
+          "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/24",
+          "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/16",
+          "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/32"
+        },
+        "displayName": "Tuan Nguyen",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/11865",
+          "id": "11865",
+          "description": "",
+          "name": "Platform-2025-12-2",
+          "archived": false,
+          "released": true,
+          "releaseDate": "2025-12-23"
+        }
+      ],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2026-02-02T16:40:50.976-0500",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10103",
+        "description": "Complete, does not require release",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/closed.png",
+        "name": "Done",
+        "id": "10103",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/3",
+          "id": 3,
+          "key": "done",
+          "colorName": "green",
+          "name": "Done"
+        }
+      }
+    }
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "38690",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/38690",
+    "key": "CBP-2890",
+    "fields": {
+      "summary": "cbp-bulks-api-node Make validation failure a hard stop on file import",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
+        "id": "10057",
+        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
+        "name": "User Story",
+        "subtask": false,
+        "avatarId": 10306,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "11199",
+        "key": "CBP-498",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/11199",
+        "fields": {
+          "summary": "Data import - Q4 2025",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
+            "description": "Ready for development in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/",
+            "name": "To do",
+            "id": "10007",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
+              "id": 2,
+              "key": "new",
+              "colorName": "blue-gray",
+              "name": "To Do"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2025-12-15T09:37:32.632-0500",
+      "timespent": 57600,
+      "timeoriginalestimate": 57600,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Ad27d517d-1c8b-43bb-bde1-577563ba5a79",
+        "accountId": "712020:d27d517d-1c8b-43bb-bde1-577563ba5a79",
+        "emailAddress": "scott.taylor@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/f25f98dd8a473210f48db186c56f1baf?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FST-5.png",
+          "24x24": "https://secure.gravatar.com/avatar/f25f98dd8a473210f48db186c56f1baf?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FST-5.png",
+          "16x16": "https://secure.gravatar.com/avatar/f25f98dd8a473210f48db186c56f1baf?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FST-5.png",
+          "32x32": "https://secure.gravatar.com/avatar/f25f98dd8a473210f48db186c56f1baf?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FST-5.png"
+        },
+        "displayName": "Scott Taylor",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/11997",
+          "id": "11997",
+          "description": "",
+          "name": "Platform-2026-1-3",
+          "archived": false,
+          "released": true,
+          "releaseDate": "2026-02-04"
+        }
+      ],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2026-02-10T10:42:39.671-0500",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10052",
+        "description": "Released to Production environment (US and CA)",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+        "name": "Released",
+        "id": "10052",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/3",
+          "id": 3,
+          "key": "done",
+          "colorName": "green",
+          "name": "Done"
+        }
+      }
+    }
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "36985",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/36985",
+    "key": "CBP-2858",
+    "fields": {
+      "summary": "BE - cannot bulk import any person due to the 503 error",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10011",
+        "id": "10011",
+        "description": "",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10303?size=medium",
+        "name": "Bug",
+        "subtask": false,
+        "avatarId": 10303,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "11199",
+        "key": "CBP-498",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/11199",
+        "fields": {
+          "summary": "Data import - Q4 2025",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
+            "description": "Ready for development in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/",
+            "name": "To do",
+            "id": "10007",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
+              "id": 2,
+              "key": "new",
+              "colorName": "blue-gray",
+              "name": "To Do"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2025-11-25T17:16:40.846-0500",
+      "timespent": null,
+      "timeoriginalestimate": 28800,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Ae715f612-98cd-4680-b8d8-410006257c59",
+        "accountId": "712020:e715f612-98cd-4680-b8d8-410006257c59",
+        "emailAddress": "tuan.nguyen@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/48",
+          "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/24",
+          "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/16",
+          "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/32"
+        },
+        "displayName": "Tuan Nguyen",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/11501",
+          "id": "11501",
+          "description": "Lighthouse accessibility",
+          "name": "Platform-2025-11-2",
+          "archived": false,
+          "released": true,
+          "releaseDate": "2025-11-24"
+        }
+      ],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/2",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/high.svg",
+        "name": "P1",
+        "id": "2"
+      },
+      "updated": "2026-02-02T16:40:48.575-0500",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10052",
+        "description": "Released to Production environment (US and CA)",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+        "name": "Released",
+        "id": "10052",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/3",
+          "id": 3,
+          "key": "done",
+          "colorName": "green",
+          "name": "Done"
+        }
+      }
+    }
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "35783",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/35783",
+    "key": "CBP-2824",
+    "fields": {
+      "summary": "Data - Increase possible max import file size",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
+        "id": "10057",
+        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
+        "name": "User Story",
+        "subtask": false,
+        "avatarId": 10306,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "11199",
+        "key": "CBP-498",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/11199",
+        "fields": {
+          "summary": "Data import - Q4 2025",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
+            "description": "Ready for development in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/",
+            "name": "To do",
+            "id": "10007",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
+              "id": 2,
+              "key": "new",
+              "colorName": "blue-gray",
+              "name": "To Do"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2025-11-12T14:20:32.499-0500",
+      "timespent": null,
+      "timeoriginalestimate": 86400,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Ad27d517d-1c8b-43bb-bde1-577563ba5a79",
+        "accountId": "712020:d27d517d-1c8b-43bb-bde1-577563ba5a79",
+        "emailAddress": "scott.taylor@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/f25f98dd8a473210f48db186c56f1baf?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FST-5.png",
+          "24x24": "https://secure.gravatar.com/avatar/f25f98dd8a473210f48db186c56f1baf?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FST-5.png",
+          "16x16": "https://secure.gravatar.com/avatar/f25f98dd8a473210f48db186c56f1baf?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FST-5.png",
+          "32x32": "https://secure.gravatar.com/avatar/f25f98dd8a473210f48db186c56f1baf?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FST-5.png"
+        },
+        "displayName": "Scott Taylor",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/11865",
+          "id": "11865",
+          "description": "",
+          "name": "Platform-2025-12-2",
+          "archived": false,
+          "released": true,
+          "releaseDate": "2025-12-23"
+        }
+      ],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2025-12-30T10:53:33.518-0500",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10052",
+        "description": "Released to Production environment (US and CA)",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+        "name": "Released",
+        "id": "10052",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/3",
+          "id": 3,
+          "key": "done",
+          "colorName": "green",
+          "name": "Done"
+        }
+      }
+    }
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "34545",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/34545",
+    "key": "CBP-2784",
+    "fields": {
+      "summary": "Admin - Services Data import updates",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
+        "id": "10057",
+        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
+        "name": "User Story",
+        "subtask": false,
+        "avatarId": 10306,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "11199",
+        "key": "CBP-498",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/11199",
+        "fields": {
+          "summary": "Data import - Q4 2025",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
+            "description": "Ready for development in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/",
+            "name": "To do",
+            "id": "10007",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
+              "id": 2,
+              "key": "new",
+              "colorName": "blue-gray",
+              "name": "To Do"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2025-10-20T22:38:26.957-0400",
+      "timespent": 28800,
+      "timeoriginalestimate": 28800,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Ae715f612-98cd-4680-b8d8-410006257c59",
+        "accountId": "712020:e715f612-98cd-4680-b8d8-410006257c59",
+        "emailAddress": "tuan.nguyen@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/48",
+          "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/24",
+          "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/16",
+          "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/32"
+        },
+        "displayName": "Tuan Nguyen",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/11401",
+          "id": "11401",
+          "description": "Service groups for enrollments; Clearer instructions for data import",
+          "name": "Platform-2025-11-1",
+          "archived": false,
+          "released": true,
+          "releaseDate": "2025-11-06"
+        }
+      ],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2026-01-06T11:34:18.500-0500",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10052",
+        "description": "Released to Production environment (US and CA)",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+        "name": "Released",
+        "id": "10052",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/3",
+          "id": 3,
+          "key": "done",
+          "colorName": "green",
+          "name": "Done"
+        }
+      }
+    }
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "34544",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/34544",
+    "key": "CBP-2783",
+    "fields": {
+      "summary": "Admin - Providers Data import updates",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
+        "id": "10057",
+        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
+        "name": "User Story",
+        "subtask": false,
+        "avatarId": 10306,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "11199",
+        "key": "CBP-498",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/11199",
+        "fields": {
+          "summary": "Data import - Q4 2025",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
+            "description": "Ready for development in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/",
+            "name": "To do",
+            "id": "10007",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
+              "id": 2,
+              "key": "new",
+              "colorName": "blue-gray",
+              "name": "To Do"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2025-10-20T22:31:16.365-0400",
+      "timespent": 57600,
+      "timeoriginalestimate": 86400,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Ae715f612-98cd-4680-b8d8-410006257c59",
+        "accountId": "712020:e715f612-98cd-4680-b8d8-410006257c59",
+        "emailAddress": "tuan.nguyen@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/48",
+          "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/24",
+          "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/16",
+          "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/32"
+        },
+        "displayName": "Tuan Nguyen",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/11401",
+          "id": "11401",
+          "description": "Service groups for enrollments; Clearer instructions for data import",
+          "name": "Platform-2025-11-1",
+          "archived": false,
+          "released": true,
+          "releaseDate": "2025-11-06"
+        }
+      ],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2026-01-06T05:46:29.757-0500",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10052",
+        "description": "Released to Production environment (US and CA)",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+        "name": "Released",
+        "id": "10052",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/3",
+          "id": 3,
+          "key": "done",
+          "colorName": "green",
+          "name": "Done"
+        }
+      }
+    }
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "33167",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/33167",
+    "key": "CBP-2731",
+    "fields": {
+      "summary": "Large Intake Report Submission Fails with 503 Error",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10013",
+        "id": "10013",
+        "description": "",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10304?size=medium",
+        "name": "CX bug",
+        "subtask": false,
+        "avatarId": 10304,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "11199",
+        "key": "CBP-498",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/11199",
+        "fields": {
+          "summary": "Data import - Q4 2025",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
+            "description": "Ready for development in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/",
+            "name": "To do",
+            "id": "10007",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
+              "id": 2,
+              "key": "new",
+              "colorName": "blue-gray",
+              "name": "To Do"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2025-09-23T13:45:21.673-0400",
+      "timespent": null,
+      "timeoriginalestimate": 10800,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=5f3a74e6d3796e00460f8612",
+        "accountId": "5f3a74e6d3796e00460f8612",
+        "emailAddress": "ahmed.onawale@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/87ea0bc1e7c78cb1d8bd644164ddf92a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAO-6.png",
+          "24x24": "https://secure.gravatar.com/avatar/87ea0bc1e7c78cb1d8bd644164ddf92a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAO-6.png",
+          "16x16": "https://secure.gravatar.com/avatar/87ea0bc1e7c78cb1d8bd644164ddf92a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAO-6.png",
+          "32x32": "https://secure.gravatar.com/avatar/87ea0bc1e7c78cb1d8bd644164ddf92a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAO-6.png"
+        },
+        "displayName": "Ahmed Onawale",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/11997",
+          "id": "11997",
+          "description": "",
+          "name": "Platform-2026-1-3",
+          "archived": false,
+          "released": true,
+          "releaseDate": "2026-02-04"
+        }
+      ],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/2",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/high.svg",
+        "name": "P1",
+        "id": "2"
+      },
+      "updated": "2026-01-20T16:45:29.116-0500",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10052",
+        "description": "Released to Production environment (US and CA)",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+        "name": "Released",
+        "id": "10052",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/3",
+          "id": 3,
+          "key": "done",
+          "colorName": "green",
+          "name": "Done"
+        }
+      }
+    }
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "11202",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/11202",
+    "key": "CBP-500",
+    "fields": {
+      "summary": "Admin - People Data import updates",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
+        "id": "10057",
+        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
+        "name": "User Story",
+        "subtask": false,
+        "avatarId": 10306,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "11199",
+        "key": "CBP-498",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/11199",
+        "fields": {
+          "summary": "Data import - Q4 2025",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
+            "description": "Ready for development in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/",
+            "name": "To do",
+            "id": "10007",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
+              "id": 2,
+              "key": "new",
+              "colorName": "blue-gray",
+              "name": "To Do"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2023-02-10T11:10:28.529-0500",
+      "timespent": 57600,
+      "timeoriginalestimate": 86400,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Ae715f612-98cd-4680-b8d8-410006257c59",
+        "accountId": "712020:e715f612-98cd-4680-b8d8-410006257c59",
+        "emailAddress": "tuan.nguyen@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/48",
+          "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/24",
+          "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/16",
+          "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/32"
+        },
+        "displayName": "Tuan Nguyen",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/11401",
+          "id": "11401",
+          "description": "Service groups for enrollments; Clearer instructions for data import",
+          "name": "Platform-2025-11-1",
+          "archived": false,
+          "released": true,
+          "releaseDate": "2025-11-06"
+        }
+      ],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2026-01-06T05:46:50.485-0500",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10052",
+        "description": "Released to Production environment (US and CA)",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+        "name": "Released",
+        "id": "10052",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/3",
+          "id": 3,
+          "key": "done",
+          "colorName": "green",
+          "name": "Done"
+        }
+      }
+    }
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "11201",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/11201",
+    "key": "CBP-499",
+    "fields": {
+      "summary": "Admin - Cases Data import updates",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
+        "id": "10057",
+        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
+        "name": "User Story",
+        "subtask": false,
+        "avatarId": 10306,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "11199",
+        "key": "CBP-498",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/11199",
+        "fields": {
+          "summary": "Data import - Q4 2025",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
+            "description": "Ready for development in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/",
+            "name": "To do",
+            "id": "10007",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
+              "id": 2,
+              "key": "new",
+              "colorName": "blue-gray",
+              "name": "To Do"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2023-02-10T10:59:42.064-0500",
+      "timespent": null,
+      "timeoriginalestimate": 86400,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Ae715f612-98cd-4680-b8d8-410006257c59",
+        "accountId": "712020:e715f612-98cd-4680-b8d8-410006257c59",
+        "emailAddress": "tuan.nguyen@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/48",
+          "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/24",
+          "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/16",
+          "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/32"
+        },
+        "displayName": "Tuan Nguyen",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/11401",
+          "id": "11401",
+          "description": "Service groups for enrollments; Clearer instructions for data import",
+          "name": "Platform-2025-11-1",
+          "archived": false,
+          "released": true,
+          "releaseDate": "2025-11-06"
+        }
+      ],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2025-12-16T10:59:41.249-0500",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10052",
+        "description": "Released to Production environment (US and CA)",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+        "name": "Released",
+        "id": "10052",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/3",
+          "id": 3,
+          "key": "done",
+          "colorName": "green",
+          "name": "Done"
+        }
+      }
+    }
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "40090",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/40090",
+    "key": "CBP-2915",
+    "fields": {
+      "summary": "cbp-bulks-api-node update for 80% code coverage on generate-template.ts and entities-mutator.ts",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
+        "id": "10057",
+        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
+        "name": "User Story",
+        "subtask": false,
+        "avatarId": 10306,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "11199",
+        "key": "CBP-498",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/11199",
+        "fields": {
+          "summary": "Data import - Q4 2025",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
+            "description": "Ready for development in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/",
+            "name": "To do",
+            "id": "10007",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
+              "id": 2,
+              "key": "new",
+              "colorName": "blue-gray",
+              "name": "To Do"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2026-01-06T14:33:02.491-0500",
+      "timespent": null,
+      "timeoriginalestimate": 28800,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=629dfdc29b728c006a928e90",
+        "accountId": "629dfdc29b728c006a928e90",
+        "emailAddress": "ben.belanger@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/56513ae8984eb11e1e971326a665a9fa?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBB-2.png",
+          "24x24": "https://secure.gravatar.com/avatar/56513ae8984eb11e1e971326a665a9fa?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBB-2.png",
+          "16x16": "https://secure.gravatar.com/avatar/56513ae8984eb11e1e971326a665a9fa?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBB-2.png",
+          "32x32": "https://secure.gravatar.com/avatar/56513ae8984eb11e1e971326a665a9fa?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBB-2.png"
+        },
+        "displayName": "Ben Belanger",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2026-01-20T14:57:13.039-0500",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10009",
+        "description": "",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+        "name": "Won't do",
+        "id": "10009",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/3",
+          "id": 3,
+          "key": "done",
+          "colorName": "green",
+          "name": "Done"
+        }
+      }
+    }
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "39024",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/39024",
+    "key": "CBP-2894",
+    "fields": {
+      "summary": "Bulk Import - Remove date range \"Data Validation\" rules in Excel templates",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10011",
+        "id": "10011",
+        "description": "",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10303?size=medium",
+        "name": "Bug",
+        "subtask": false,
+        "avatarId": 10303,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "11199",
+        "key": "CBP-498",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/11199",
+        "fields": {
+          "summary": "Data import - Q4 2025",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
+            "description": "Ready for development in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/",
+            "name": "To do",
+            "id": "10007",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
+              "id": 2,
+              "key": "new",
+              "colorName": "blue-gray",
+              "name": "To Do"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2025-12-16T17:45:27.634-0500",
+      "timespent": 28800,
+      "timeoriginalestimate": 28800,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=62e8bd48ec6b328032f0f7c8",
+        "accountId": "62e8bd48ec6b328032f0f7c8",
+        "emailAddress": "sindhu.moulee@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/1486149e54d520853b643ca284483149?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSM-2.png",
+          "24x24": "https://secure.gravatar.com/avatar/1486149e54d520853b643ca284483149?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSM-2.png",
+          "16x16": "https://secure.gravatar.com/avatar/1486149e54d520853b643ca284483149?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSM-2.png",
+          "32x32": "https://secure.gravatar.com/avatar/1486149e54d520853b643ca284483149?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSM-2.png"
+        },
+        "displayName": "Sindhu Moulee",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2026-03-23T16:14:15.197-0400",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10009",
+        "description": "",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+        "name": "Won't do",
+        "id": "10009",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/3",
+          "id": 3,
+          "key": "done",
+          "colorName": "green",
+          "name": "Done"
+        }
+      }
+    }
+  }
+]

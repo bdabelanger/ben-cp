@@ -91,7 +91,7 @@ def fetch_missing_atlassian_data():
             }
             
             resp = requests.get(
-                f"{atlassian_base_url}/rest/api/3/search",
+                f"{atlassian_base_url}/rest/api/3/search/jql",
                 headers=headers,
                 params=params,
                 auth=auth

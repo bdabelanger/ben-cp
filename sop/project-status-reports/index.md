@@ -5,13 +5,12 @@
 >
 > **Fresh weekly run (always use this):**
 > ```
-> cd project-status-reports/scripts
-> python3 full_run.py --force
+> python3 project-status-reports/scripts/full_run.py --force
 > ```
 >
 > **Re-render only (Jira data already fresh, just re-generate the report):**
 > ```
-> python3 full_run.py
+> python3 project-status-reports/scripts/full_run.py
 > ```
 >
 > `--force` wipes stale Jira cache and resets the manifest before running. Without it, the pipeline skips re-fetching if processed data already exists from a previous run.
@@ -112,7 +111,7 @@ Rank: `Development=1 → In QA=2 → In UAT=3 → Beta=4 → GA=5`
 ## 🔄 Execution Macro (Summary)
 
 ```
-python3 full_run.py --force
+python3 project-status-reports/scripts/full_run.py --force
 ```
 
 The orchestrator handles the entire pipeline autonomously end-to-end:

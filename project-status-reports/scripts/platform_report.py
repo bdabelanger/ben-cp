@@ -4,6 +4,7 @@ import re
 from datetime import datetime, date
 
 JIRA_BASE = "https://casecommons.atlassian.net/browse"
+ASANA_BASE = "https://app.asana.com/1/1123317448830974/project"
 
 # Status name overrides — take precedence over Jira's native statusCategory
 STATUS_OVERRIDES = {
@@ -94,6 +95,14 @@ class PlatformStatusReport:
 
     def _jira_url(self, key):
         return f"{JIRA_BASE}/{key}"
+
+    def _asana_url(self, project):
+        """Return Asana project URL, constructing from GID if permalink_url absent."""
+        url = project.get("permalink_url")
+        if url:
+            return url
+        gid = project.get("gid", "")
+        return f"{ASANA_BASE}/{gid}" if gid else "#"
 
     def _get_pkey(self, project):
         """Extract CBP-XXXX key from project's jira_link field."""
@@ -316,7 +325,7 @@ class PlatformStatusReport:
 
         # Last status
         if status in ("at_risk", "off_track"):
-            flags.append(f"⚠️ Last status was `{status}` — checking in")
+            flags.append(f"⚠️ Last status was `{status.replace('_', ' ')}` — checking in")
 
         return flags
 
@@ -327,7 +336,7 @@ class PlatformStatusReport:
     def _render_active_card(self, project, issues):
         pkey = self._get_pkey(project)
         name = project.get("name", "Unknown")
-        asana_url = project.get("permalink_url", "#")
+        asana_url = self._asana_url(project)
         stage = project.get("stage", "")
         prd = project.get("prd_link") or project.get("prd")
 
@@ -532,7 +541,7 @@ class PlatformStatusReport:
         for project in active_projects:
             pkey = self._get_pkey(project)
             name = project.get("name", "Unknown")
-            asana_url = project.get("permalink_url", "#")
+            asana_url = self._asana_url(project)
             stage = project.get("stage", "")
             status = project.get("status") or ""
 
@@ -632,7 +641,7 @@ class PlatformStatusReport:
             md += "---\n## 🟣 Discovery\n\n"
             for p in discovery:
                 name = p.get("name", "Unknown")
-                asana_url = p.get("permalink_url", "#")
+                asana_url = self._asana_url(p)
                 pkey = self._get_pkey(p)
                 stage = p.get("stage", "")
                 if pkey:
@@ -646,12 +655,12 @@ class PlatformStatusReport:
             md += "---\n## ⚪ Backlog\n\n"
             for p in backlog:
                 name = p.get("name", "Unknown")
-                asana_url = p.get("permalink_url", "#")
+                asana_url = self._asana_url(p)
                 stage = p.get("stage", "")
                 status = p.get("status") or ""
                 line = f"- [{name}]({asana_url}) · {stage}"
                 if status in ("at_risk", "off_track"):
-                    line += f" ⚠️ Last status: {status}"
+                    line += f" ⚠️ Last status: {status.replace('_', ' ')}"
                 md += line + "\n"
             md += "\n"
 

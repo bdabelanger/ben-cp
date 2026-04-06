@@ -48,7 +48,7 @@ def reset_manifest():
         elif step['id'] == "5_report_generation":
             d = datetime.now()
             date_str = f"{d.strftime('%b')}-{d.day}-{d.year}"  # e.g. Apr-6-2026
-            step['file'] = f"outputs/Platform_Status_{date_str}.md"
+            step['file'] = f"outputs/Platform_Status_{date_str}.html"
 
     save_manifest(data)
     print(f"🔄 Manifest Reset for RUN_ID: {run_id}")

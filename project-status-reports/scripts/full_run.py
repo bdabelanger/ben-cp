@@ -115,16 +115,12 @@ def main():
     reporter = PlatformStatusReport(ASANA_FILTERED, JIRA_HARVESTED)
     report_md = reporter.render()
 
-    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
-    with open(OUTPUT_PATH, "w") as f:
-        f.write(report_md)
-
     html_path = OUTPUT_PATH.replace(".md", ".html")
+    os.makedirs(os.path.dirname(html_path), exist_ok=True)
     with open(html_path, "w") as f:
         f.write(render_html(report_md))
 
-    print(f"✅ Report generated: {OUTPUT_PATH}")
-    print(f"✅ HTML report:      {html_path}")
+    print(f"✅ Report generated: {html_path}")
     if open_report:
         webbrowser.open(f"file://{os.path.abspath(html_path)}")
     print(f"\n--- PREVIEW ---\n")

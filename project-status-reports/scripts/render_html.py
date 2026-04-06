@@ -63,6 +63,10 @@ a:hover { text-decoration: underline; }
 ul { padding-left: 1.4rem; margin: 0.3rem 0; }
 li { margin: 0.15rem 0; }
 strong { font-weight: 600; }
+table { border-collapse: collapse; width: 100%; margin: 0.5rem 0 1rem; font-size: 0.88rem; }
+th { text-align: left; padding: 0.3rem 0.75rem; font-weight: 600; color: var(--muted); font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.04em; border-bottom: 2px solid var(--border); }
+td { text-align: left; padding: 0.35rem 0.75rem; border-bottom: 1px solid var(--border); }
+tr:last-child td { border-bottom: none; }
 
 /* ---------- header card ---------- */
 .report-header {
@@ -306,6 +310,7 @@ def md_to_html(md: str) -> str:
     i = 0
     in_ul = False
     in_ol = False
+    in_table = False
     in_project = False
 
     def close_ul():
@@ -320,11 +325,20 @@ def md_to_html(md: str) -> str:
             html_parts.append("</ol>")
             in_ol = False
 
+    def close_table():
+        nonlocal in_table
+        if in_table:
+            html_parts.append("</tbody></table>")
+            in_table = False
+
     def close_project():
         nonlocal in_project
         if in_project:
             html_parts.append("</div>")  # .project-card
             in_project = False
+
+    def close_all():
+        close_ul(); close_ol(); close_table()
 
     while i < len(lines):
         line = lines[i]
@@ -401,9 +415,36 @@ def md_to_html(md: str) -> str:
             html_parts.append(f'<li>{content}</li>')
             i += 1; continue
 
+        # Table separator row (|---|---| etc.) — skip, just marks thead boundary
+        if line.startswith('|') and re.match(r'^[\|\-\s:]+$', line):
+            i += 1; continue
+
+        # Table data/header row
+        if line.startswith('|'):
+            close_ul(); close_ol()
+            cells = [c.strip() for c in line.strip('|').split('|')]
+            next_line = lines[i + 1] if i + 1 < len(lines) else ""
+            is_header = bool(re.match(r'^[\|\-\s:]+$', next_line))
+            if is_header:
+                close_table()
+                html_parts.append(
+                    '<table><thead><tr>'
+                    + ''.join(f'<th>{_md_inline(c)}</th>' for c in cells)
+                    + '</tr></thead><tbody>'
+                )
+                in_table = True
+            else:
+                if not in_table:
+                    html_parts.append('<table><tbody>')
+                    in_table = True
+                html_parts.append(
+                    '<tr>' + ''.join(f'<td>{_md_inline(c)}</td>' for c in cells) + '</tr>'
+                )
+            i += 1; continue
+
         # Bullet list item
         if re.match(r'^[\*\-] ', line) or re.match(r'^\* ', line):
-            close_ol()
+            close_ol(); close_table()
             if not in_ul:
                 html_parts.append('<ul>')
                 in_ul = True
@@ -420,23 +461,24 @@ def md_to_html(md: str) -> str:
 
         # Blank line or horizontal rule (--- section dividers)
         if line.strip() == "" or line.strip() == "---":
-            close_ul(); close_ol()
+            close_ul(); close_ol(); close_table()
             i += 1; continue
 
         # Bold line (standalone **…**)
         if line.startswith("**") and line.endswith("**") and line.count("**") == 2:
-            close_ul(); close_ol()
+            close_ul(); close_ol(); close_table()
             html_parts.append(f'<p><strong>{line[2:-2]}</strong></p>')
             i += 1; continue
 
         # Fallback: paragraph
-        close_ul(); close_ol()
+        close_ul(); close_ol(); close_table()
         if line.strip():
             html_parts.append(f'<p>{_md_inline(line)}</p>')
         i += 1
 
     close_ul()
     close_ol()
+    close_table()
     close_project()
     return "\n".join(html_parts)
 

@@ -43,6 +43,12 @@ GA_MONTH_MAP = {
     "Jul": 7, "Aug": 8, "Sep": 9, "Oct": 10, "Nov": 11, "Dec": 12,
 }
 
+# Stage sort rank for grouping (higher = more active, sorts descending)
+STAGE_SORT_RANKS = {
+    "GA": 10, "Beta": 9, "In UAT": 8, "In QA": 7, "Development": 6,
+    "Discovery": 5, "Study": 4, "Backlog": 3, "On hold": 2, "N/A": 1,
+}
+
 
 class PlatformStatusReport:
 
@@ -168,6 +174,37 @@ class PlatformStatusReport:
                 pass
 
         return (1, date.max, -stage_rank)
+
+    def _parse_ga_group(self, project):
+        """Returns (sort_key, year, month) for GA Month grouping. sort_key=1 means TBD/blank → last."""
+        m = project.get("milestones", {})
+        for field in ("ga_target", "ga_date"):
+            raw = m.get(field)
+            if not raw:
+                continue
+            try:
+                d = datetime.strptime(raw, "%Y-%m-%d").date()
+                return (0, d.year, d.month)
+            except ValueError:
+                pass
+            try:
+                parts = raw.split()
+                if len(parts) == 2:
+                    month_num = GA_MONTH_MAP.get(parts[0][:3], 0)
+                    yr_raw = parts[1]
+                    year = 2000 + int(yr_raw) if len(yr_raw) <= 2 else int(yr_raw)
+                    if month_num:
+                        return (0, year, month_num)
+            except (ValueError, TypeError):
+                pass
+        return (1, 9999, 99)
+
+    def _ga_group_label(self, group_key):
+        sort_key, year, month = group_key
+        if sort_key == 1:
+            return "TBD"
+        d = date(year, month, 1)
+        return d.strftime("%B") if year == self.today.year else d.strftime("%B %Y")
 
     # -------------------------------------------------------------------------
     # Progress / time bars
@@ -451,6 +488,22 @@ class PlatformStatusReport:
 
         return md + "\n"
 
+    def _render_simple_card(self, project):
+        """Lightweight card for non-active stages (Discovery, Study, Backlog, On hold)."""
+        pkey = self._get_pkey(project)
+        name = project.get("name", "Unknown")
+        asana_url = self._asana_url(project)
+        stage = project.get("stage", "")
+        status = project.get("status") or ""
+        if pkey:
+            header = f"### [{name}]({asana_url}) · [{pkey}]({self._jira_url(pkey)}) · {stage}"
+        else:
+            header = f"### [{name}]({asana_url}) · {stage}"
+        md = header + "\n"
+        if status in ("at_risk", "off_track"):
+            md += f"⚠️ Last status: {status.replace('_', ' ')}\n"
+        return md + "\n"
+
     # -------------------------------------------------------------------------
     # Data Quality section
     # -------------------------------------------------------------------------
@@ -633,17 +686,11 @@ class PlatformStatusReport:
         today_str = datetime.now().strftime("%B %-d, %Y")
 
         active_stages = {"Development", "In QA", "In UAT", "Beta", "GA"}
-        discovery_stages = {"Discovery", "Study"}
-        backlog_stages = {"On hold", "Backlog"}
 
         active = [p for p in self.asana_data if p.get("stage") in active_stages]
-        discovery = [p for p in self.asana_data if p.get("stage") in discovery_stages]
-        backlog = [p for p in self.asana_data if p.get("stage") in backlog_stages]
-
-        # Sort active: soonest GA first, then stage rank descending
         active.sort(key=self._parse_ga_sort_key)
 
-        # Build lookup maps
+        # Build Jira lookup maps (active projects only — data quality + summary)
         issues_by_pkey = {}
         issues_by_name = {}
         for p in active:
@@ -656,45 +703,34 @@ class PlatformStatusReport:
 
         md = f"# Platform Weekly Status — {today_str}\n\n"
 
-        # 1. Summary
+        # 1. Summary (active projects only)
         md += self._render_summary(active, issues_by_pkey)
 
-        # 3. Active Projects
-        md += "---\n## 🟢 Active Projects\n\n"
-        for p in active:
-            pkey = self._get_pkey(p)
-            issues = issues_by_pkey.get(pkey, []) if pkey else []
-            md += self._render_active_card(p, issues)
+        # 2. Detailed Status — all projects grouped by GA Month
+        md += "---\n## 📋 Detailed Status\n\n"
 
-        # 4. Discovery
-        if discovery:
-            md += "---\n## 🟣 Discovery\n\n"
-            for p in discovery:
-                name = p.get("name", "Unknown")
-                asana_url = self._asana_url(p)
+        groups = {}
+        for p in self.asana_data:
+            gk = self._parse_ga_group(p)
+            groups.setdefault(gk, []).append(p)
+
+        for gk in sorted(groups.keys()):
+            label = self._ga_group_label(gk)
+            md += f"#### {label}\n\n"
+            projects_in_group = sorted(
+                groups[gk],
+                key=lambda p: (-STAGE_SORT_RANKS.get(p.get("stage", ""), 0), (p.get("name") or "").lower())
+            )
+            for p in projects_in_group:
+                stage = p.get("stage", "")
                 pkey = self._get_pkey(p)
-                stage = p.get("stage", "")
-                if pkey:
-                    md += f"- [{name}]({asana_url}) · [{pkey}]({self._jira_url(pkey)}) · {stage}\n"
+                issues = issues_by_pkey.get(pkey, []) if pkey else []
+                if stage in active_stages:
+                    md += self._render_active_card(p, issues)
                 else:
-                    md += f"- [{name}]({asana_url}) · {stage}\n"
-            md += "\n"
+                    md += self._render_simple_card(p)
 
-        # 5. Backlog
-        if backlog:
-            md += "---\n## ⚪ Backlog\n\n"
-            for p in backlog:
-                name = p.get("name", "Unknown")
-                asana_url = self._asana_url(p)
-                stage = p.get("stage", "")
-                status = p.get("status") or ""
-                line = f"- [{name}]({asana_url}) · {stage}"
-                if status in ("at_risk", "off_track"):
-                    line += f" ⚠️ Last status: {status.replace('_', ' ')}"
-                md += line + "\n"
-            md += "\n"
-
-        # 6. Data Quality (sidebar)
+        # 3. Data Quality (sidebar)
         md += self._render_data_quality(issues_by_name)
 
         return md

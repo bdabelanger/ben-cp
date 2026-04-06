@@ -57,6 +57,8 @@ h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.25rem; }
 h2 { font-size: 1.2rem;  font-weight: 700; margin: 2rem 0 0.75rem;
      padding-bottom: 0.4rem; border-bottom: 2px solid var(--border); }
 h3 { font-size: 1rem;    font-weight: 600; margin: 1.25rem 0 0.4rem; }
+h4 { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em;
+     color: var(--muted); margin: 1.75rem 0 0.5rem; }
 p  { margin: 0.4rem 0; }
 a  { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -119,7 +121,7 @@ tr:last-child td { border-bottom: none; }
 }
 .time-actual           { background: var(--accent); }
 .time-actual-over      { background: #ef4444; }
-.time-remaining        { background: #1a237e; }
+.time-remaining        { background: #8b5cf6; }
 .time-remaining-over   { background: #ef4444; }
 
 /* ---------- badge / pill ---------- */
@@ -379,6 +381,13 @@ def md_to_html(md: str) -> str:
             close_ul(); close_ol(); close_project()
             heading = _md_inline(line[3:])
             html_parts.append(f'<h2>{heading}</h2>')
+            i += 1; continue
+
+        # H4 — month group header
+        if line.startswith("#### "):
+            close_ul(); close_ol(); close_table(); close_project()
+            heading = _md_inline(line[5:])
+            html_parts.append(f'<h4>{heading}</h4>')
             i += 1; continue
 
         # H3 — project card header

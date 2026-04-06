@@ -1,0 +1,98 @@
+[
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "49337",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/49337",
+    "key": "CBP-3159",
+    "fields": {
+      "summary": "Zapier - Create/Update a Person Write Action",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
+        "id": "10057",
+        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
+        "name": "User Story",
+        "subtask": false,
+        "avatarId": 10306,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "49336",
+        "key": "CBP-3158",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/49336",
+        "fields": {
+          "summary": "Integrations - Zapier Write Actions (Person, Intake Report, Case)",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
+            "description": "Ready for development in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/",
+            "name": "To do",
+            "id": "10007",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
+              "id": 2,
+              "key": "new",
+              "colorName": "blue-gray",
+              "name": "To Do"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2026-03-30T17:40:37.836-0400",
+      "timespent": null,
+      "timeoriginalestimate": null,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3A17bc35f6-4edb-46a5-917c-6d64a50607ca",
+        "accountId": "712020:17bc35f6-4edb-46a5-917c-6d64a50607ca",
+        "emailAddress": "eric.engoron@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/0fdc28157b0df0ce4511a74cb0af89f8?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FE-0.png",
+          "24x24": "https://secure.gravatar.com/avatar/0fdc28157b0df0ce4511a74cb0af89f8?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FE-0.png",
+          "16x16": "https://secure.gravatar.com/avatar/0fdc28157b0df0ce4511a74cb0af89f8?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FE-0.png",
+          "32x32": "https://secure.gravatar.com/avatar/0fdc28157b0df0ce4511a74cb0af89f8?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FE-0.png"
+        },
+        "displayName": "eric.engoron",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2026-04-03T12:44:42.765-0400",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
+        "description": "Ready for development in DEV environment",
+        "iconUrl": "https://casecommons.atlassian.net/",
+        "name": "To do",
+        "id": "10007",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
+          "id": 2,
+          "key": "new",
+          "colorName": "blue-gray",
+          "name": "To Do"
+        }
+      }
+    }
+  }
+]

@@ -10,6 +10,7 @@ REPO_ROOT = os.path.dirname(os.path.abspath(MANIFEST_PATH))
 # GIDs from the Official Specification
 TEAM_FIELD_GID = "1208820967756795"
 PLATFORM_TEAM_GID = "1208820967756799"
+STAGE_FIELD_GID = "1208822149019495"
 MILESTONE_GIDS = {
     "qa_start": "1211631943113717",
     "uat_start": "1210467277124544",
@@ -47,12 +48,24 @@ def filter_platform_projects(input_path, output_path, target_gid=None):
             jira_link = p.get('jira_link')
             stage = p.get('stage')
 
+            # Extract stage from custom fields if not already set (new format)
+            if not stage:
+                stage_field = next((f for f in custom_fields if f['gid'] == STAGE_FIELD_GID), None)
+                if stage_field:
+                    stage = (stage_field.get('enum_value') or {}).get('name') or stage_field.get('display_value')
+
+            # Extract status from current_status_update if not already set (new format)
+            if not p.get('status'):
+                csu = p.get('current_status_update') or {}
+                if csu.get('status_type'):
+                    p['status'] = csu['status_type']
+
             team_field = next((f for f in custom_fields if f['gid'] == TEAM_FIELD_GID), None)
-            is_platform = (team_field and team_field.get('enum_value', {}).get('gid') == PLATFORM_TEAM_GID)
+            is_platform = (team_field and (team_field.get('enum_value') or {}).get('gid') == PLATFORM_TEAM_GID)
 
             if is_platform or not custom_fields:
                 # Exclude completed projects
-                if p.get('current_status_update', {}).get('status_type') == "complete" or p.get('status') == "complete":
+                if (p.get('current_status_update') or {}).get('status_type') == "complete" or p.get('status') == "complete":
                     continue
 
                 # Extract milestones
@@ -60,9 +73,10 @@ def filter_platform_projects(input_path, output_path, target_gid=None):
                 for key, gid in MILESTONE_GIDS.items():
                     field = next((f for f in custom_fields if f['gid'] == gid), None)
                     if field:
-                        milestones[key] = field.get('date_value', {}).get('date') or field.get('enum_value', {}).get('name')
+                        milestones[key] = (field.get('date_value') or {}).get('date') or (field.get('enum_value') or {}).get('name')
 
                 p['milestones'] = milestones
+                p['stage'] = stage
 
                 # Ensure jira_link is present for the harvester
                 if not jira_link:

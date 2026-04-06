@@ -21,7 +21,7 @@ CSS = """
     --muted:     #6b6b80;
     --accent:    #4f6ef7;
     --done:      #22c55e;
-    --progress:  #f59e0b;
+    --progress:  #4f6ef7;
     --todo:      #e2e2e8;
     --radius:    10px;
     --shadow:    0 2px 8px rgba(0,0,0,0.07);
@@ -107,12 +107,11 @@ strong { font-weight: 600; }
 /* ---------- time bar ---------- */
 .time-bar-wrap {
     display: flex;
-    height: 8px;
+    height: 10px;
     border-radius: 6px;
     overflow: hidden;
     background: var(--todo);
     margin: 0.3rem 0;
-    max-width: 260px;
 }
 .time-filled   { background: var(--accent); }
 .time-over     { background: #ef4444; }
@@ -311,18 +310,18 @@ def md_to_html(md: str) -> str:
             in_project = True
             i += 1; continue
 
+        # Time bar line (backtick-wrapped containing 'd act' / 'd logged' / 'no time') — check BEFORE progress bar
+        if line.startswith("`") and ("d act" in line or "d logged" in line or "no time" in line):
+            close_ul()
+            inner = line.strip("`").strip()
+            html_parts.append(_time_bar_html(inner))
+            i += 1; continue
+
         # Progress bar line (backtick-wrapped containing ▓/▒/░)
         if line.startswith("`") and any(c in line for c in "▓▒░"):
             close_ul()
             inner = line.strip("`").strip()
             html_parts.append(_progress_bar_html(inner))
-            i += 1; continue
-
-        # Time bar line (backtick-wrapped containing █/░ and 'd act')
-        if line.startswith("`") and ("d act" in line or "d logged" in line or "no time" in line):
-            close_ul()
-            inner = line.strip("`").strip()
-            html_parts.append(_time_bar_html(inner))
             i += 1; continue
 
         # Generic backtick code line
@@ -341,8 +340,8 @@ def md_to_html(md: str) -> str:
             html_parts.append(f'<li>{content}</li>')
             i += 1; continue
 
-        # Blank line
-        if line.strip() == "":
+        # Blank line or horizontal rule (--- section dividers)
+        if line.strip() == "" or line.strip() == "---":
             close_ul()
             i += 1; continue
 

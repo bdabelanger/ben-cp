@@ -29,6 +29,10 @@ if [[ -z "${ATLASSIAN_USER_EMAIL:-}" || -z "${ATLASSIAN_API_TOKEN:-}" ]]; then
     echo "❌ ATLASSIAN_USER_EMAIL or ATLASSIAN_API_TOKEN not set. Add them to $ENV_FILE." >&2
     exit 1
 fi
+if [[ -z "${ASANA_API_TOKEN:-}" ]]; then
+    echo "❌ ASANA_API_TOKEN not set. Add it to $ENV_FILE." >&2
+    exit 1
+fi
 
 echo "========================================"  >> "$LOG_FILE"
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] run_pipeline.sh starting" >> "$LOG_FILE"

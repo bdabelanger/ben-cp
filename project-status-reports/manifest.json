@@ -29,7 +29,7 @@
         {
             "id": "5_report_generation",
             "status": "pending",
-            "file": "outputs/Platform_Status_Apr-5-2026.md"
+            "file": "outputs/Platform_Status_Apr-5-2026.html"
         }
     ]
 }

@@ -78,11 +78,15 @@ def main():
     JIRA_HARVESTED = get_path_from_manifest(manifest, "4_jira_harvest")
     OUTPUT_PATH    = get_path_from_manifest(manifest, "5_report_generation")
 
-    if not os.path.exists(ASANA_RAW):
-        print(f"❌ Error: Raw Asana data missing at {ASANA_RAW}")
-        sys.exit(1)
-
     print("🚀 Triggering Pipeline Components...")
+
+    # Step 0: Asana API refresh
+    result = subprocess.run(["python3", os.path.join(script_dir, "step_0_asana_refresh.py")])
+    if result.returncode != 0:
+        if not os.path.exists(ASANA_RAW):
+            print(f"❌ Asana refresh failed and no cached data at {ASANA_RAW}. Aborting.")
+            sys.exit(1)
+        print("⚠️  Asana refresh failed — continuing with existing cached data.")
 
     # Step 1: Asana filter
     cmd = ["python3", os.path.join(script_dir, "step_1_asana_ingest.py")]

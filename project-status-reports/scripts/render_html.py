@@ -176,6 +176,26 @@ tr:last-child td { border-bottom: none; }
 .issue-meta { color: var(--muted); font-size: 0.78rem; white-space: nowrap; }
 .issue-meta-row { font-size: 0.78rem; color: var(--muted); margin-top: 0.15rem; }
 
+/* ---------- asana status body (rich html) ---------- */
+.status-body { font-size: 0.82rem; margin: 0.35rem 0 0.5rem; color: var(--text); }
+.status-body h1, .status-body h2 { font-size: 0.82rem; font-weight: 700; margin: 0.5rem 0 0.15rem; }
+.status-body p { margin: 0.15rem 0; }
+.status-body ul, .status-body ol { padding-left: 1.2rem; margin: 0.15rem 0; }
+.status-body a { color: var(--accent); }
+
+/* ---------- asana status tag ---------- */
+.asana-status { display: inline-block; padding: 0.1rem 0.55rem; border-radius: 999px;
+    font-size: 0.72rem; font-weight: 600; margin: 0.25rem 0 0.15rem; }
+.status-on-track    { background: #d1fae5; color: #065f46; }
+.status-at-risk     { background: #fef3c7; color: #92400e; }
+.status-off-track   { background: #fee2e2; color: #991b1b; }
+.status-on-hold     { background: #dbeafe; color: #1e40af; }
+.status-complete    { background: #dcfce7; color: #166534; }
+
+/* ---------- jira link row in card ---------- */
+.card-jira-row { display: flex; align-items: center; font-size: 0.82rem; font-weight: 600;
+    margin: 0.6rem 0 0.2rem; padding-top: 0.5rem; border-top: 1px solid var(--border); }
+
 /* ---------- sidebar layout ---------- */
 .report-layout {
     display: flex;
@@ -230,8 +250,11 @@ _ICON_ASANA = (
     '</svg>'
 )
 _ICON_JIRA = (
-    '<svg width="13" height="13" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:3px;flex-shrink:0">'
-    '<path fill="#0052CC" d="M12 0L0 12l12 12 12-12L12 0zm0 3.5L20.5 12 12 20.5 3.5 12 12 3.5z"/>'
+    '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"'
+    ' style="vertical-align:middle;margin-right:3px;flex-shrink:0">'
+    '<polyline points="3,5 10,12 3,19" stroke="#0052CC"/>'
+    '<polyline points="8,5 15,12 8,19" stroke="#2684FF"/>'
+    '<polyline points="13,5 20,12 13,19" stroke="#579DFF"/>'
     '</svg>'
 )
 
@@ -415,16 +438,40 @@ def md_to_html(md: str) -> str:
             html_parts.append(f'<h4>{heading}</h4>')
             i += 1; continue
 
+        # Raw HTML passthrough (Asana status update HTML)
+        if line.startswith("<!-- raw -->"):
+            html_parts.append(line[12:].strip())
+            i += 1; continue
+
+        # [status:type:label] — Asana status tag
+        if line.startswith('[status:'):
+            m = re.match(r'^\[status:(\w+):(.+)\]$', line)
+            if m:
+                stype, label = m.group(1), m.group(2)
+                css = f"status-{stype.replace('_', '-')}"
+                html_parts.append(f'<span class="asana-status {css}">{label}</span>')
+                i += 1; continue
+
+        # [jira:CBP-XXX] — standalone Jira link above progress bars
+        if line.startswith('[jira:'):
+            m = re.match(r'^\[jira:(CBP-\d+)\]$', line)
+            if m:
+                key = m.group(1)
+                url = f"https://casecommons.atlassian.net/browse/{key}"
+                html_parts.append(f'<div class="card-jira-row">{_ICON_JIRA}<a href="{url}">{key}</a></div>')
+                i += 1; continue
+
         # H3 — project card header
         if line.startswith("### "):
             close_ul(); close_ol(); close_table(); close_project()
-            # Extract stage badge from last · segment, then strip it from heading text
+            # Extract stage from last · segment
             stage_m = re.search(r'·\s+([^··]+)\s*$', line)
             stage_html = _stage_badge(stage_m.group(1).strip()) if stage_m else ""
             heading_text = re.sub(r'\s*·\s*[^··]+\s*$', '', line[4:]) if stage_m else line[4:]
-            heading = _add_heading_icons(_md_inline(heading_text))
-            # Extract CBP key for anchor ID
+            # Strip plain CBP key (e.g. · CBP-1234) — kept only for anchor ID
             pkey_m = re.search(r'CBP-\d+', line)
+            heading_text = re.sub(r'\s*·\s*CBP-\d+\s*$', '', heading_text)
+            heading = _add_heading_icons(_md_inline(heading_text))
             id_attr = f' id="{pkey_m.group(0)}"' if pkey_m else ''
             html_parts.append(
                 f'<div class="project-card"{id_attr}>'

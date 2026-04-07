@@ -134,6 +134,79 @@ Rank: `Development=1 → In QA=2 → In UAT=3 → Beta=4 → GA=5`
 
 ---
 
+### 5. Icon Key
+
+#### 👀 Needs attention / missing data
+Appears wherever something is absent or silently risky — not a blocker, but worth a look.
+
+| Location | Trigger |
+|---|---|
+| Time bar prefix | Burn rate is 90–100% of budget (close but not over) |
+| Time bar label | No epic estimate and no child estimates exist (`👀 no time data`) |
+| Time bar label | Time has been logged but no estimates exist (`👀 Xd logged / no estimates`) |
+| Issue row | No original estimate set on the ticket (`Unestimated 👀`) |
+| Issue row | No time logged on the ticket (`No actual 👀`) |
+| Issue row | No fix version set — ticket is unprioritized (`👀 Unprioritized`) |
+| Summary | Project has a Jira link but zero stories exist (`👀 no stories`) |
+| Summary | P1 issues in the open count get a `👀` prefix |
+| Data quality — Estimates | Engineer has 0% or <20% estimated with 3+ in-progress tickets |
+| Data quality — Actuals | Engineer has 0% or <20% actuals logged with 3+ QA-stage tickets |
+| Data quality — Unprioritized | A project has 100% of its in-progress tickets unprioritized |
+
+#### ⚠️ Projected problem / active concern
+Appears when something is likely to go wrong or has already raised a flag, but hasn't definitively failed yet.
+
+| Location | Trigger |
+|---|---|
+| Time bar prefix | `actual + remaining > estimate` — on track to blow the budget |
+| Milestone bullet | Date is in the future AND the previous milestone was missed (`❌`) |
+| Flag | Unassigned open stories within 7 days (before or after) of the next milestone |
+| Flag | Next milestone date passed more than 7 days ago with open stories still remaining |
+| Flag | Last Asana status was `at_risk` or `off_track` |
+| Summary tail | Project's last status is `at_risk` |
+
+#### ❌ Already blown / definitively failed
+Appears when an actual failure has occurred — budget exceeded or milestone missed.
+
+| Location | Trigger |
+|---|---|
+| Time bar prefix | Actual time logged already exceeds the epic estimate |
+| Milestone bullet | Milestone date is in the past AND current stage rank is below what the milestone requires |
+
+#### ✅ Done / achieved
+Appears when something has successfully completed.
+
+| Location | Trigger |
+|---|---|
+| Milestone bullet | Milestone date is in the past AND current stage rank meets or exceeds the required rank |
+| Summary tail | All Jira issues on the project are in Done status (`✅ all done`) |
+
+#### 🎯 On track / action needed
+Dual use: optimistic on milestones, action-required in the summary.
+
+| Location | Trigger |
+|---|---|
+| Milestone bullet | Date is in the future and no previous milestone was missed — currently on track |
+| Summary tail | Project has no Jira link set (`🎯 no Jira link`) — stories can't be tracked without one |
+| Summary tail | Project's last status is `off_track` (`🎯 off track`) |
+| Next Steps | Off-track projects are surfaced here with a `🎯` prompt to follow up |
+
+#### ❓ Unknown / not set
+Appears only on milestones where the date field is missing entirely.
+
+| Location | Trigger |
+|---|---|
+| Milestone bullet | The milestone date custom field has no value in Asana |
+
+#### 👏 Best performer
+Appears once per report run in the Data Quality sidebar.
+
+| Location | Trigger |
+|---|---|
+| Data quality — Actuals | The engineer with the highest actuals-logging rate (must have at least one logged) |
+
+---
+
 ## 🔄 Execution Macro (Summary)
 
 ```

@@ -3,6 +3,17 @@ import os
 import re
 from datetime import datetime, date
 
+
+def _clean_asana_html(html):
+    """Strip <body> wrapper and collapse to a single line for the raw-html renderer."""
+    html = re.sub(r'</?body[^>]*>', '', html).strip()
+    html = ' '.join(html.split())
+    # Remove Asana template dash separators (e.g. ----------------------------------------)
+    html = re.sub(r'\s*-{10,}\s*', ' ', html)
+    # Make Summary / Next steps block-level headings
+    html = re.sub(r'<strong>(Summary|Next steps)</strong>\s*', r'<p><strong>\1</strong></p>', html)
+    return html.strip()
+
 JIRA_BASE = "https://casecommons.atlassian.net/browse"
 ASANA_BASE = "https://app.asana.com/1/1123317448830974/project"
 
@@ -396,14 +407,34 @@ class PlatformStatusReport:
         name = project.get("name", "Unknown")
         asana_url = self._asana_url(project)
         stage = project.get("stage", "")
+        status = project.get("status") or ""
         prd = project.get("prd_link") or project.get("prd")
+        csu = project.get("current_status_update") or {}
+        status_text = (csu.get("text") or "").strip()
 
-        # Header line
+        # H3: Asana link only; CBP key as plain text for renderer to extract anchor ID
         if pkey:
-            header = f"### [{name}]({asana_url}) · [{pkey}]({self._jira_url(pkey)}) · {stage}"
+            header = f"### [{name}]({asana_url}) · {pkey} · {stage}"
         else:
             header = f"### [{name}]({asana_url}) · {stage}"
         md = header + "\n"
+
+        # Asana status tag + body (HTML preferred, plain text fallback)
+        if status:
+            label = status.replace("_", " ").title()
+            md += f"[status:{status}:{label}]\n"
+            html_text = csu.get("html_text") or ""
+            if html_text:
+                clean = _clean_asana_html(html_text)
+                if clean:
+                    md += f"<!-- raw --><div class='status-body'>{clean}</div>\n"
+            elif status_text:
+                for txt_line in status_text.splitlines():
+                    txt_line = txt_line.strip()
+                    if txt_line:
+                        md += f"{txt_line}\n"
+                md += "\n"
+
         if prd:
             md += f"PRD: {prd}\n"
 
@@ -415,12 +446,16 @@ class PlatformStatusReport:
 
         # Minimal card: Jira link set but no stories
         if not issues:
+            md += f"[jira:{pkey}]\n"
             md += "\n`👀 no time data`\n\n"
             md += (
                 f"⚠️ Jira link set but no child stories found — "
                 f"stories need to be created in [{pkey}]({self._jira_url(pkey)})\n\n"
             )
             return md
+
+        # Jira link above progress bars
+        md += f"[jira:{pkey}]\n"
 
         # Progress bar
         md += "\n" + self._progress_bar(issues) + "\n"
@@ -495,13 +530,27 @@ class PlatformStatusReport:
         asana_url = self._asana_url(project)
         stage = project.get("stage", "")
         status = project.get("status") or ""
+        csu = project.get("current_status_update") or {}
+        status_text = (csu.get("text") or "").strip()
+
         if pkey:
-            header = f"### [{name}]({asana_url}) · [{pkey}]({self._jira_url(pkey)}) · {stage}"
+            header = f"### [{name}]({asana_url}) · {pkey} · {stage}"
         else:
             header = f"### [{name}]({asana_url}) · {stage}"
         md = header + "\n"
-        if status in ("at_risk", "off_track"):
-            md += f"⚠️ Last status: {status.replace('_', ' ')}\n"
+
+        if status:
+            label = status.replace("_", " ").title()
+            md += f"[status:{status}:{label}]\n"
+            if status_text:
+                for txt_line in status_text.splitlines():
+                    txt_line = txt_line.strip()
+                    if txt_line:
+                        md += f"{txt_line}\n"
+                md += "\n"
+        if pkey:
+            md += f"[jira:{pkey}]\n"
+
         return md + "\n"
 
     # -------------------------------------------------------------------------
@@ -667,7 +716,7 @@ class PlatformStatusReport:
             elif status == "at_risk":
                 tail += " · ⚠️ at risk"
 
-            md += f"{idx}. {proj_link} is in [stage:{stage}]||{tail}\n"
+            md += f"{idx}. {proj_link} [stage:{stage}]||{tail}\n"
 
         if next_steps:
             md += "\n**Next Steps**\n"
@@ -709,10 +758,14 @@ class PlatformStatusReport:
 
         groups = {}
         for p in self.asana_data:
+            if p.get("stage") == "On hold":
+                continue
             gk = self._parse_ga_group(p)
             groups.setdefault(gk, []).append(p)
 
         for gk in sorted(groups.keys()):
+            if gk[0] == 1:  # TBD group — no GA date set
+                continue
             label = self._ga_group_label(gk)
             md += f"#### {label}\n\n"
             projects_in_group = sorted(

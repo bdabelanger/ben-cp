@@ -3,6 +3,10 @@ import os
 import sys
 import re
 from datetime import datetime
+try:
+    import requests
+except ImportError:
+    requests = None
 
 MANIFEST_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../manifest.json")
 REPO_ROOT = os.path.dirname(os.path.abspath(MANIFEST_PATH))
@@ -85,6 +89,28 @@ def filter_platform_projects(input_path, output_path, target_gid=None):
 
                 p['jira_link'] = jira_link
                 filtered.append(p)
+
+        # Enrich filtered projects with Asana status update HTML (separate API call per project)
+        token = os.environ.get("ASANA_API_TOKEN")
+        if token and requests:
+            headers = {"Authorization": f"Bearer {token}", "Accept": "application/json"}
+            enriched = 0
+            for p in filtered:
+                csu = p.get("current_status_update") or {}
+                gid = csu.get("gid")
+                if not gid:
+                    continue
+                url = f"https://app.asana.com/api/1.0/status_updates/{gid}?opt_fields=html_text,text,title,status_type"
+                resp = requests.get(url, headers=headers)
+                if resp.status_code == 200:
+                    su = resp.json().get("data", {})
+                    csu["html_text"] = su.get("html_text", "")
+                    csu["text"] = su.get("text", "")
+                    csu["title"] = su.get("title", "")
+                    p["current_status_update"] = csu
+                    enriched += 1
+            if enriched:
+                print(f"  Fetched status update HTML for {enriched} projects.")
 
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         with open(output_path, 'w') as f:

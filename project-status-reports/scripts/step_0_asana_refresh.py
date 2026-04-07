@@ -15,7 +15,7 @@ ASANA_API_URL = (
     "https://app.asana.com/api/1.0/teams/1208693459152259/projects"
     "?completed=false"
     "&opt_fields=name,gid,permalink_url"
-    ",current_status_update,current_status_update.status_type"
+    ",current_status_update,current_status_update.status_type,current_status_update.title,current_status_update.text"
     ",custom_fields,custom_fields.gid,custom_fields.name"
     ",custom_fields.enum_value,custom_fields.enum_value.gid"
     ",custom_fields.date_value,custom_fields.text_value,custom_fields.display_value"

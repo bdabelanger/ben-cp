@@ -25,12 +25,19 @@ def reset_manifest():
     arch_dir = os.path.join(REPO_ROOT, data['config']['archive_dir'])
     os.makedirs(arch_dir, exist_ok=True)
 
+    d = datetime.now()
+    date_str = f"{d.strftime('%b')}-{d.day}-{d.year}"  # e.g. Apr-7-2026
+
     for dir_to_archive in [proc_dir, os.path.join(REPO_ROOT, "outputs")]:
         if os.path.exists(dir_to_archive):
             for filename in os.listdir(dir_to_archive):
                 if filename.endswith(('.json', '.md', '.html')):
                     src = os.path.join(dir_to_archive, filename)
-                    dst = os.path.join(arch_dir, f"archived_{run_id}_{filename}")
+                    # Reports get a clean dated name; everything else gets the archived_ prefix
+                    if filename == "Status_Report.html":
+                        dst = os.path.join(arch_dir, f"Status_Report_{date_str}.html")
+                    else:
+                        dst = os.path.join(arch_dir, f"archived_{run_id}_{filename}")
                     shutil.move(src, dst)
                     print(f"📦 Archived: {filename} -> {dst}")
 
@@ -46,9 +53,7 @@ def reset_manifest():
         elif step['id'] == "4_jira_harvest":
             step['file'] = "inputs/processed/jira_issues.json"
         elif step['id'] == "5_report_generation":
-            d = datetime.now()
-            date_str = f"{d.strftime('%b')}-{d.day}-{d.year}"  # e.g. Apr-6-2026
-            step['file'] = f"outputs/Platform_Status_{date_str}.html"
+            step['file'] = "outputs/Status_Report.html"
 
     save_manifest(data)
     print(f"🔄 Manifest Reset for RUN_ID: {run_id}")

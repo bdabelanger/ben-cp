@@ -183,6 +183,18 @@ tr:last-child td { border-bottom: none; }
 .status-body ul, .status-body ol { padding-left: 1.2rem; margin: 0.15rem 0; }
 .status-body a { color: var(--accent); }
 
+/* ---------- tumbleweed / not-set pill ---------- */
+.tw {
+    display: inline-block;
+    font-size: 0.73rem;
+    font-style: italic;
+    color: var(--muted);
+    background: var(--bg);
+    border: 1px dashed var(--border);
+    border-radius: 4px;
+    padding: 0.05rem 0.4rem;
+}
+
 /* ---------- asana status tag ---------- */
 .asana-status { display: inline-block; padding: 0.1rem 0.55rem; border-radius: 999px;
     font-size: 0.72rem; font-weight: 600; margin: 0.25rem 0 0.15rem; }
@@ -270,6 +282,8 @@ def _add_heading_icons(html):
 
 def _md_inline(text):
     """Convert inline markdown (links, bold, code, emoji-safe) to HTML."""
+    # [tw:text] → tumbleweed / not-set pill
+    text = re.sub(r'\[tw:([^\]]+)\]', r'<span class="tw">\1</span>', text)
     # [stage:Name] → badge pill
     text = re.sub(r'\[stage:([^\]]+)\]', lambda m: _stage_badge(m.group(1)), text)
     # [text](url)
@@ -450,6 +464,13 @@ def md_to_html(md: str) -> str:
                 stype, label = m.group(1), m.group(2)
                 css = f"status-{stype.replace('_', '-')}"
                 html_parts.append(f'<span class="asana-status {css}">{label}</span>')
+                i += 1; continue
+
+        # [tw:text] — standalone tumbleweed / not-set pill on its own line
+        if line.startswith('[tw:'):
+            m = re.match(r'^\[tw:([^\]]+)\]$', line)
+            if m:
+                html_parts.append(f'<p><span class="tw">{m.group(1)}</span></p>')
                 i += 1; continue
 
         # [jira:CBP-XXX] — standalone Jira link above progress bars

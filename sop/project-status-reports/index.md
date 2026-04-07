@@ -111,7 +111,22 @@ The `_epic.json` file contains the epic-level `timeoriginalestimate` used by the
 
 ### 1. Mode Detection
 - **Single-project mode**: Ben shares an Asana project URL. Pass it as an argument: `python3 full_run.py https://app.asana.com/0/...`
-- **Batch mode**: No URL argument. Fetches all Platform team projects (GID `1208820967756799`).
+- **Batch mode**: No URL argument. Fetches all projects for the selected team (default: Platform).
+- **Team selection**: Pass `--team <name>` to filter by a different team's custom field value. Default is `platform`.
+
+```
+python3 project-status-reports/scripts/full_run.py --force --team reporting
+```
+
+**Team GIDs** (custom `Team` field on Asana projects — the overarching Asana "Product" team GID `1208693459152259` never changes):
+
+| Team | GID |
+|---|---|
+| Platform | `1208820967756799` |
+| Reporting | `1208820967756798` |
+| DevOps | `1209860073668304` |
+| Indiana | `1209860073668305` |
+| Specialty | `1209101939195843` |
 
 ### 2. Status Category Overrides
 - `Blocked - Needs Review` → **To Do**

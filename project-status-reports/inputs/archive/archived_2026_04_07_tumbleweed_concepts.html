@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tumbleweed Concepts</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+    --bg: #f9f9fb; --surface: #ffffff; --border: #e2e2e8;
+    --text: #1a1a2e; --muted: #6b6b80; --accent: #4f6ef7;
+    --done: #22c55e; --progress: #4f6ef7; --todo: #e2e2e8;
+    --radius: 10px; --shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; }
+.container { max-width: 960px; margin: 0 auto; }
+h1 { font-size: 1.4rem; font-weight: 700; margin-bottom: 1.5rem; }
+h2 { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); margin: 2rem 0 0.75rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--border); }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.concept-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); margin-bottom: 0.5rem; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.3rem; box-shadow: var(--shadow); }
+.card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.2rem; }
+.badge { display: inline-block; padding: 0.1rem 0.55rem; border-radius: 999px; font-size: 0.73rem; font-weight: 600; }
+.badge-discovery { background: #ede9fe; color: #6d28d9; }
+.badge-dev { background: #cffafe; color: #0e7490; }
+.badge-ga { background: #dcfce7; color: #166534; }
+.asana-status { display: inline-block; padding: 0.1rem 0.55rem; border-radius: 999px; font-size: 0.72rem; font-weight: 600; margin: 0.25rem 0 0.15rem; }
+.status-on-track { background: #d1fae5; color: #065f46; }
+.status-body { font-size: 0.82rem; margin: 0.25rem 0 0.4rem; }
+.status-body p { margin: 0.1rem 0; }
+.card-jira-row { display: flex; align-items: center; font-size: 0.82rem; font-weight: 600; margin: 0.5rem 0 0.2rem; padding-top: 0.4rem; border-top: 1px solid var(--border); }
+.progress-wrap { display: flex; height: 10px; border-radius: 6px; overflow: hidden; background: var(--todo); margin: 0.5rem 0; }
+.prog-done { background: var(--done); }
+.prog-progress { background: var(--progress); }
+.stat-row { font-size: 0.85rem; color: var(--muted); margin: 0.2rem 0; display: block; }
+.milestone { font-size: 0.85rem; margin: 0.15rem 0; }
+a { color: var(--accent); text-decoration: none; }
+p { margin: 0.3rem 0; font-size: 0.88rem; }
+
+/* ── Concept A: em-dash in muted ── */
+.tw-a { color: var(--muted); font-size: 0.82rem; }
+
+/* ── Concept B: subtle italic pill ── */
+.tw-b {
+    display: inline-block;
+    font-size: 0.73rem;
+    font-style: italic;
+    color: var(--muted);
+    background: var(--bg);
+    border: 1px dashed var(--border);
+    border-radius: 4px;
+    padding: 0.05rem 0.4rem;
+}
+
+/* ── Concept C: ghost row with opacity ── */
+.tw-c {
+    font-size: 0.82rem;
+    color: var(--border);
+    letter-spacing: 0.05em;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Tumbleweed Concepts</h1>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h2>Scenario 1 — No status update, no Jira issues</h2>
+<div class="grid">
+
+  <!-- A -->
+  <div>
+    <div class="concept-label">A — em-dash</div>
+    <div class="card">
+      <h3><a href="#">Accessibility - 2026 VPAT</a> <span class="badge badge-discovery">Discovery</span></h3>
+      <div class="tw-a">— no status update</div>
+      <div class="card-jira-row"><a href="#">CBP-3085</a></div>
+      <div class="tw-a" style="margin-top:0.4rem">— no stories yet</div>
+    </div>
+  </div>
+
+  <!-- B -->
+  <div>
+    <div class="concept-label">B — dashed pill</div>
+    <div class="card">
+      <h3><a href="#">Accessibility - 2026 VPAT</a> <span class="badge badge-discovery">Discovery</span></h3>
+      <span class="tw-b">no status update</span>
+      <div class="card-jira-row"><a href="#">CBP-3085</a></div>
+      <div style="margin-top:0.4rem"><span class="tw-b">no stories yet</span></div>
+    </div>
+  </div>
+
+  <!-- C -->
+  <div>
+    <div class="concept-label">C — ghost dots</div>
+    <div class="card">
+      <h3><a href="#">Accessibility - 2026 VPAT</a> <span class="badge badge-discovery">Discovery</span></h3>
+      <div class="tw-c">· · · no status update</div>
+      <div class="card-jira-row"><a href="#">CBP-3085</a></div>
+      <div class="tw-c" style="margin-top:0.4rem">· · · no stories yet</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h2>Scenario 2 — No time data</h2>
+<div class="grid">
+
+  <!-- A -->
+  <div>
+    <div class="concept-label">A — em-dash</div>
+    <div class="card">
+      <h3><a href="#">Integrations - Zapier</a> <span class="badge badge-dev">Development</span></h3>
+      <span class="asana-status status-on-track">On Track</span>
+      <div class="status-body"><p><strong>Summary</strong></p><p>Eric will be starting development…</p></div>
+      <div class="card-jira-row"><a href="#">CBP-3158</a></div>
+      <div class="progress-wrap"><div class="prog-done" style="width:0%"></div><div class="prog-progress" style="width:0%"></div></div>
+      <span class="stat-row">0 done · 0 in progress · 1 to do</span>
+      <div class="tw-a" style="margin:0.35rem 0">— no time estimates</div>
+      <p class="milestone">🎯 QA Start - May 11</p>
+    </div>
+  </div>
+
+  <!-- B -->
+  <div>
+    <div class="concept-label">B — dashed pill</div>
+    <div class="card">
+      <h3><a href="#">Integrations - Zapier</a> <span class="badge badge-dev">Development</span></h3>
+      <span class="asana-status status-on-track">On Track</span>
+      <div class="status-body"><p><strong>Summary</strong></p><p>Eric will be starting development…</p></div>
+      <div class="card-jira-row"><a href="#">CBP-3158</a></div>
+      <div class="progress-wrap"><div class="prog-done" style="width:0%"></div></div>
+      <span class="stat-row">0 done · 0 in progress · 1 to do</span>
+      <div style="margin:0.35rem 0"><span class="tw-b">no time estimates</span></div>
+      <p class="milestone">🎯 QA Start - May 11</p>
+    </div>
+  </div>
+
+  <!-- C -->
+  <div>
+    <div class="concept-label">C — ghost dots</div>
+    <div class="card">
+      <h3><a href="#">Integrations - Zapier</a> <span class="badge badge-dev">Development</span></h3>
+      <span class="asana-status status-on-track">On Track</span>
+      <div class="status-body"><p><strong>Summary</strong></p><p>Eric will be starting development…</p></div>
+      <div class="card-jira-row"><a href="#">CBP-3158</a></div>
+      <div class="progress-wrap"></div>
+      <span class="stat-row">0 done · 0 in progress · 1 to do</span>
+      <div class="tw-c" style="margin:0.35rem 0">· · · no time estimates</div>
+      <p class="milestone">🎯 QA Start - May 11</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<h2>Scenario 3 — Missing milestone dates</h2>
+<div class="grid">
+
+  <!-- A -->
+  <div>
+    <div class="concept-label">A — em-dash</div>
+    <div class="card">
+      <h3><a href="#">Notes - Notes datagrid</a> <span class="badge badge-ga">GA</span></h3>
+      <span class="asana-status status-on-track">On Track</span>
+      <div class="status-body"><p><strong>Summary</strong></p><p>Live with ~275 tenants…</p></div>
+      <div class="card-jira-row"><a href="#">CBP-2736</a></div>
+      <div class="progress-wrap"><div class="prog-done" style="width:58%"></div><div class="prog-progress" style="width:26%"></div></div>
+      <span class="stat-row">18 done · 8 in progress · 5 to do</span>
+      <span class="stat-row">35.1d estimated · 18.2d actual · 6.4d remaining (70%)</span>
+      <p class="milestone"><span class="tw-a">— QA Start not set</span></p>
+      <p class="milestone"><span class="tw-a">— UAT Start not set</span></p>
+      <p class="milestone">🎯 GA - Apr 23</p>
+    </div>
+  </div>
+
+  <!-- B -->
+  <div>
+    <div class="concept-label">B — dashed pill</div>
+    <div class="card">
+      <h3><a href="#">Notes - Notes datagrid</a> <span class="badge badge-ga">GA</span></h3>
+      <span class="asana-status status-on-track">On Track</span>
+      <div class="status-body"><p><strong>Summary</strong></p><p>Live with ~275 tenants…</p></div>
+      <div class="card-jira-row"><a href="#">CBP-2736</a></div>
+      <div class="progress-wrap"><div class="prog-done" style="width:58%"></div><div class="prog-progress" style="width:26%"></div></div>
+      <span class="stat-row">18 done · 8 in progress · 5 to do</span>
+      <span class="stat-row">35.1d estimated · 18.2d actual · 6.4d remaining (70%)</span>
+      <p class="milestone">QA Start <span class="tw-b">not set</span></p>
+      <p class="milestone">UAT Start <span class="tw-b">not set</span></p>
+      <p class="milestone">🎯 GA - Apr 23</p>
+    </div>
+  </div>
+
+  <!-- C -->
+  <div>
+    <div class="concept-label">C — ghost dots</div>
+    <div class="card">
+      <h3><a href="#">Notes - Notes datagrid</a> <span class="badge badge-ga">GA</span></h3>
+      <span class="asana-status status-on-track">On Track</span>
+      <div class="status-body"><p><strong>Summary</strong></p><p>Live with ~275 tenants…</p></div>
+      <div class="card-jira-row"><a href="#">CBP-2736</a></div>
+      <div class="progress-wrap"><div class="prog-done" style="width:58%"></div><div class="prog-progress" style="width:26%"></div></div>
+      <span class="stat-row">18 done · 8 in progress · 5 to do</span>
+      <span class="stat-row">35.1d estimated · 18.2d actual · 6.4d remaining (70%)</span>
+      <p class="milestone tw-c">· · · QA Start not set</p>
+      <p class="milestone tw-c">· · · UAT Start not set</p>
+      <p class="milestone">🎯 GA - Apr 23</p>
+    </div>
+  </div>
+
+</div>
+</div>
+</body>
+</html>

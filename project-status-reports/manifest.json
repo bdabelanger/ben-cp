@@ -1,6 +1,6 @@
 {
     "project": "Platform Weekly Status",
-    "last_run": "2026_04_06",
+    "last_run": "2026_04_07",
     "config": {
         "processed_dir": "inputs/processed",
         "archive_dir": "inputs/archive"
@@ -29,7 +29,7 @@
         {
             "id": "5_report_generation",
             "status": "pending",
-            "file": "outputs/Platform_Status_Apr-6-2026.html"
+            "file": "outputs/Platform_Status_Apr-7-2026.html"
         }
     ]
 }

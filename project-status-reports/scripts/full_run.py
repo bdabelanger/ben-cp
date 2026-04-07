@@ -59,8 +59,9 @@ def main():
     args = sys.argv[1:]
     force = "--force" in args
     open_report = "--open" in args
-    args = [a for a in args if not a.startswith("--")]
-    target_arg = args[0] if args else None
+    team_arg = args[args.index("--team") + 1].lower() if "--team" in args else None
+    plain_args = [a for a in args if not a.startswith("--")]
+    target_arg = plain_args[0] if plain_args else None
 
     if force:
         print("🔄 --force: wiping inputs/raw/jira/ and processed outputs for a clean run...")
@@ -92,6 +93,8 @@ def main():
     cmd = ["python3", os.path.join(script_dir, "step_1_asana_ingest.py")]
     if target_arg:
         cmd.append(target_arg)
+    if team_arg:
+        cmd += ["--team", team_arg]
     subprocess.run(cmd)
 
     # Step 2 (Agent-side): per-epic Jira fetch via searchJiraIssuesUsingJql
@@ -99,19 +102,26 @@ def main():
         epic_keys = build_epic_keys_from_asana(ASANA_FILTERED) if os.path.exists(ASANA_FILTERED) else []
         missing_keys = [k for k in epic_keys if not os.path.exists(os.path.join(JIRA_RAW_DIR, f"{k}.json"))]
 
-        if missing_keys:
-            print(f"\n📥 Fetching raw Jira data for {len(missing_keys)} epic(s)...")
-            result = subprocess.run(["python3", os.path.join(script_dir, "step_2_atlassian_fetch.py")])
-            if result.returncode != 0:
-                print("❌ Jira fetch failed. Check step_2_atlassian_fetch.py output above.")
-                sys.exit(1)
+        if not epic_keys:
+            print("ℹ️  No Jira epic keys found — skipping Jira fetch and harvest.")
+            # Write an empty harvest file so the report generator has something to read
+            os.makedirs(os.path.dirname(JIRA_HARVESTED), exist_ok=True)
+            with open(JIRA_HARVESTED, "w") as f:
+                json.dump([], f)
+        else:
+            if missing_keys:
+                print(f"\n📥 Fetching raw Jira data for {len(missing_keys)} epic(s)...")
+                result = subprocess.run(["python3", os.path.join(script_dir, "step_2_atlassian_fetch.py")])
+                if result.returncode != 0:
+                    print("❌ Jira fetch failed. Check step_2_atlassian_fetch.py output above.")
+                    sys.exit(1)
 
-        # Raw files present — run harvest automatically
-        print("📥 Raw Jira files found for all epics. Running harvest...")
-        result = subprocess.run(["python3", os.path.join(script_dir, "step_3_jira_harvest.py")])
-        if result.returncode != 0 or not os.path.exists(JIRA_HARVESTED):
-            print("❌ Harvest failed. Check step_3_jira_harvest.py output above.")
-            sys.exit(1)
+            # Raw files present — run harvest automatically
+            print("📥 Raw Jira files found for all epics. Running harvest...")
+            result = subprocess.run(["python3", os.path.join(script_dir, "step_3_jira_harvest.py")])
+            if result.returncode != 0 or not os.path.exists(JIRA_HARVESTED):
+                print("❌ Harvest failed. Check step_3_jira_harvest.py output above.")
+                sys.exit(1)
 
     # 📊 Final Synthesis
     print("📊 Synthesizing Platform Weekly Status...")

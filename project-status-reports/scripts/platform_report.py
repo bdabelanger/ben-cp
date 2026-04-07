@@ -251,9 +251,9 @@ class PlatformStatusReport:
             # Fallback: no epic estimate — use sum of child estimates as the budget
             child_est = sum((i.get("fields", {}).get("timeoriginalestimate") or 0) for i in issues) / 28800
             if child_est == 0 and act == 0:
-                return "`👀 no time data`"
+                return "[tw:not set]"
             if child_est == 0:
-                return f"`👀 {act:.1f}d logged / no estimates`"
+                return f"[tw:not set]"
             orig_est = child_est  # treat child sum as the budget and fall through
 
         pct = int((act + rem) / orig_est * 100)
@@ -269,7 +269,7 @@ class PlatformStatusReport:
     def _milestone_bullet(self, label, key, date_str, stage, prev_missed):
         """Returns (bullet_text, missed_bool)."""
         if not date_str:
-            return f"* ❓ {label} - not set", False
+            return f"* {label} [tw:not set]", False
         try:
             m_date = datetime.strptime(date_str, "%Y-%m-%d").date()
         except ValueError:
@@ -402,7 +402,8 @@ class PlatformStatusReport:
     # Card renderer
     # -------------------------------------------------------------------------
 
-    def _render_active_card(self, project, issues):
+    def _render_card(self, project, issues):
+        """Unified card renderer — sections appear only when data is available."""
         pkey = self._get_pkey(project)
         name = project.get("name", "Unknown")
         asana_url = self._asana_url(project)
@@ -411,15 +412,16 @@ class PlatformStatusReport:
         prd = project.get("prd_link") or project.get("prd")
         csu = project.get("current_status_update") or {}
         status_text = (csu.get("text") or "").strip()
+        active_stages = {"Development", "In QA", "In UAT", "Beta", "GA"}
 
-        # H3: Asana link only; CBP key as plain text for renderer to extract anchor ID
+        # Header
         if pkey:
             header = f"### [{name}]({asana_url}) · {pkey} · {stage}"
         else:
             header = f"### [{name}]({asana_url}) · {stage}"
         md = header + "\n"
 
-        # Asana status tag + body (HTML preferred, plain text fallback)
+        # Status tag + body (HTML preferred, plain text fallback)
         if status:
             label = status.replace("_", " ").title()
             md += f"[status:{status}:{label}]\n"
@@ -434,32 +436,32 @@ class PlatformStatusReport:
                     if txt_line:
                         md += f"{txt_line}\n"
                 md += "\n"
+        else:
+            md += "[tw:not set]\n"
 
+        # PRD link
         if prd:
             md += f"PRD: {prd}\n"
 
-        # Minimal card: no Jira link
-        if not pkey:
-            md += "\n`👀 no time data`\n\n"
+        # Jira link + warnings (warnings only for active stages where stories are expected)
+        if pkey:
+            md += f"[jira:{pkey}]\n"
+        elif stage in active_stages:
+            md += "[tw:not set]\n"
             md += "⚠️ No Jira link set — Jira stories needed to track progress\n\n"
             return md
 
-        # Minimal card: Jira link set but no stories
         if not issues:
-            md += f"[jira:{pkey}]\n"
-            md += "\n`👀 no time data`\n\n"
-            md += (
-                f"⚠️ Jira link set but no child stories found — "
-                f"stories need to be created in [{pkey}]({self._jira_url(pkey)})\n\n"
-            )
-            return md
+            if stage in active_stages and pkey:
+                md += "[tw:not set]\n"
+                md += (
+                    f"⚠️ Jira link set but no child stories found — "
+                    f"stories need to be created in [{pkey}]({self._jira_url(pkey)})\n\n"
+                )
+            return md + "\n"
 
-        # Jira link above progress bars
-        md += f"[jira:{pkey}]\n"
-
-        # Progress bar
+        # Progress + time bars
         md += "\n" + self._progress_bar(issues) + "\n"
-        # Time bar
         md += "\n" + self._time_bar(issues, pkey) + "\n"
 
         # Milestone bullets
@@ -520,36 +522,6 @@ class PlatformStatusReport:
             md += f"\n**To Do:** {len(todo)} issues\n"
             for i in todo:
                 md += self._issue_bullet(i) + "\n"
-
-        return md + "\n"
-
-    def _render_simple_card(self, project):
-        """Lightweight card for non-active stages (Discovery, Study, Backlog, On hold)."""
-        pkey = self._get_pkey(project)
-        name = project.get("name", "Unknown")
-        asana_url = self._asana_url(project)
-        stage = project.get("stage", "")
-        status = project.get("status") or ""
-        csu = project.get("current_status_update") or {}
-        status_text = (csu.get("text") or "").strip()
-
-        if pkey:
-            header = f"### [{name}]({asana_url}) · {pkey} · {stage}"
-        else:
-            header = f"### [{name}]({asana_url}) · {stage}"
-        md = header + "\n"
-
-        if status:
-            label = status.replace("_", " ").title()
-            md += f"[status:{status}:{label}]\n"
-            if status_text:
-                for txt_line in status_text.splitlines():
-                    txt_line = txt_line.strip()
-                    if txt_line:
-                        md += f"{txt_line}\n"
-                md += "\n"
-        if pkey:
-            md += f"[jira:{pkey}]\n"
 
         return md + "\n"
 
@@ -773,13 +745,9 @@ class PlatformStatusReport:
                 key=lambda p: (-STAGE_SORT_RANKS.get(p.get("stage", ""), 0), (p.get("name") or "").lower())
             )
             for p in projects_in_group:
-                stage = p.get("stage", "")
                 pkey = self._get_pkey(p)
                 issues = issues_by_pkey.get(pkey, []) if pkey else []
-                if stage in active_stages:
-                    md += self._render_active_card(p, issues)
-                else:
-                    md += self._render_simple_card(p)
+                md += self._render_card(p, issues)
 
         # 3. Data Quality (sidebar)
         md += self._render_data_quality(issues_by_name)

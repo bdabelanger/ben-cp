@@ -13,7 +13,16 @@ REPO_ROOT = os.path.dirname(os.path.abspath(MANIFEST_PATH))
 
 # GIDs from the Official Specification
 TEAM_FIELD_GID = "1208820967756795"
-PLATFORM_TEAM_GID = "1208820967756799"
+
+# Custom Team field enum GIDs (the overarching Asana "Product" team never changes)
+TEAM_GIDS = {
+    "platform":  "1208820967756799",
+    "reporting": "1208820967756798",
+    "devops":    "1209860073668304",
+    "indiana":   "1209860073668305",
+    "specialty": "1209101939195843",
+}
+PLATFORM_TEAM_GID = TEAM_GIDS["platform"]  # kept for backwards compatibility
 STAGE_FIELD_GID = "1208822149019495"
 MILESTONE_GIDS = {
     "qa_start": "1211631943113717",
@@ -33,7 +42,7 @@ def extract_gid_from_url(url):
     match = re.search(r'/0/(\d+)', url)
     return match.group(1) if match else None
 
-def filter_platform_projects(input_path, output_path, target_gid=None):
+def filter_platform_projects(input_path, output_path, target_gid=None, team_gid=None):
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] step_1_asana_ingest.py")
     print(f"Reading from: {input_path}")
 
@@ -64,8 +73,9 @@ def filter_platform_projects(input_path, output_path, target_gid=None):
                 if csu.get('status_type'):
                     p['status'] = csu['status_type']
 
+            target_team_gid = team_gid or PLATFORM_TEAM_GID
             team_field = next((f for f in custom_fields if f['gid'] == TEAM_FIELD_GID), None)
-            is_platform = (team_field and (team_field.get('enum_value') or {}).get('gid') == PLATFORM_TEAM_GID)
+            is_platform = (team_field and (team_field.get('enum_value') or {}).get('gid') == target_team_gid)
 
             if is_platform or not custom_fields:
                 # Exclude completed projects
@@ -125,8 +135,22 @@ if __name__ == "__main__":
     OUTPUT_FILE = get_path_from_manifest("1_asana_ingest")
 
     target_gid = None
-    if len(sys.argv) > 1 and "asana.com" in sys.argv[1]:
-        target_gid = extract_gid_from_url(sys.argv[1])
+    team_gid = None
+
+    plain_args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    flag_args  = sys.argv[1:]
+
+    # --team <name>  e.g. --team reporting
+    if "--team" in flag_args:
+        team_name = flag_args[flag_args.index("--team") + 1].lower()
+        team_gid = TEAM_GIDS.get(team_name)
+        if not team_gid:
+            print(f"❌ Unknown team '{team_name}'. Options: {', '.join(TEAM_GIDS)}", file=sys.stderr)
+            sys.exit(1)
+        print(f"🏷️  Team filter: {team_name} ({team_gid})")
+
+    if plain_args and "asana.com" in plain_args[0]:
+        target_gid = extract_gid_from_url(plain_args[0])
         print(f"🎯 Single-project mode detected for GID: {target_gid}")
 
-    filter_platform_projects(INPUT_FILE, OUTPUT_FILE, target_gid)
+    filter_platform_projects(INPUT_FILE, OUTPUT_FILE, target_gid, team_gid)

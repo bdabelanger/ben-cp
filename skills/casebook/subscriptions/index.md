@@ -1,6 +1,8 @@
 # Skill: Casebook Subscriptions MCP
 
-> **Repo:** `/Users/benbelanger/GitHub/casebook-billing-mcp`
+> **Repo:** `/Users/benbelanger/GitHub/casebook-billing-mcp` _(dir name is legacy — repo should be renamed to `casebook-subscriptions-mcp` on GitHub)_
+> **Package name:** `casebook-subscriptions-mcp`
+> **MCP server name:** `casebook-subscriptions-mcp`
 > **Server:** SSE/Express on port `3003`
 > **Entry point:** `src/casebook-mcp.ts`
 > Last updated: 2026-04-08

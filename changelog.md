@@ -4,6 +4,24 @@ This log tracks major architectural, process, and documentation standard changes
 
 ## [Unreleased]
 
+## [1.4.1] — Crypt-Keeper First Run (2026-04-08)
+
+**Detail logs:**
+- `skills/crypt-keeper/changelog.md`
+
+**Changes:**
+- Crypt-Keeper scheduled run completed — 7 checks across 46 .md files
+- 13 total flags across 6 checks (Check 5 clean); 2 new flags (CLAUDE.md, README.md) not in prior session
+- Report written to `skills/crypt-keeper/reports/cleanup-report-2026-04-08.md`
+- `skills/crypt-keeper/reports/` and `reports/archive/` directories created
+- 1 new handoff created: `handoff/2026-04-08-p2-crypt-keeper-root-exemptions.md`
+- 5 prior handoffs remain open — all flagged in report for next run verification
+
+**Next Tasks:**
+1. Execute all 6 open handoffs (assign to Claude Code or Gemma)
+2. Pull Notes Datagrid April baseline from GA (feature live 2026-04-09)
+3. Next Crypt-Keeper run: 2026-04-15
+
 ## [1.4.0] — Casebook MCP Tools Fully Wired (2026-04-08)
 
 **Detail logs:**
@@ -170,7 +188,8 @@ You are "Gemma," a highly capable, proactive, and pragmatic AI agent dedicated t
 
 **Changes:**
 *   Finalized the baseline measurement for KR: Notes Datagrid Navigation Shortcuts by integrating early signal data into `notes_datagrid_shortcuts.md`.
-*   Confirmed and codified the strict Read $ightarrow$ Write modification preference across all SOP updates.
+*   Confirmed and codified the strict Read $
+ightarrow$ Write modification preference across all SOP updates.
 
 **TODOs:**
 *   Obtain final Q2 aggregate data for both Denominator and Numerator to replace directional signals.

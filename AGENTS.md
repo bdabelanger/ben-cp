@@ -132,7 +132,7 @@ ben-cp/
 | Other skill SOPs | `skills/[skill-name]/` |
 | Cleanup reports | `reports/cleanup-report-[YYYY-MM-DD].md` |
 
-**Never create files at vault root** (except `AGENTS.md`, `GEMMA.md`, `changelog.md`).
+**Never create files at vault root** (except `AGENTS.md`, `GEMMA.md`, `changelog.md`, `CLAUDE.md`, `README.md`).
 
 ### File Naming
 

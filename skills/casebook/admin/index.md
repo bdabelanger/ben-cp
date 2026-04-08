@@ -1,6 +1,8 @@
 # Skill: Casebook Admin MCP
 
 > **Repo:** `/Users/benbelanger/GitHub/casebook-admin-mcp`
+> **Package name:** `casebook-admin-mcp`
+> **MCP server name:** `casebook-admin-mcp`
 > **Server:** SSE/Express on port `3002`
 > **Entry point:** `src/casebook-mcp.ts`
 > Last updated: 2026-04-08

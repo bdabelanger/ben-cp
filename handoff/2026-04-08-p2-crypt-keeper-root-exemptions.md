@@ -1,0 +1,109 @@
+# Claude Code Implementation Plan: Document Root-Level File Exemptions in AGENTS.md
+
+> **Prepared by:** Crypt-Keeper (scheduled run, 2026-04-08)
+> **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
+> **Priority:** P2 — structural violation (AGENTS.md compliance)
+> **Source report:** `skills/crypt-keeper/reports/cleanup-report-2026-04-08.md`
+> **v1.0**
+> **STATUS: 🔲 READY — pick up when handling P2 work**
+
+---
+
+## Context
+
+Crypt-Keeper Check 2 flagged two files at vault root that are not listed in
+AGENTS.md's explicit exemptions: `CLAUDE.md` and `README.md`. The current rule
+reads: "Never create files at vault root (except `AGENTS.md`, `GEMMA.md`,
+`changelog.md`)."
+
+- `README.md` is standard GitHub convention — it belongs at root and should be
+  permanently exempted in AGENTS.md.
+- `CLAUDE.md` appears to be a Claude Code agent directive stub (parallel to
+  `GEMMA.md` for Gemma). Ben needs to confirm intent: if it's intentional,
+  add it to the exemption list; if it duplicates `AGENTS.md`, delete it.
+
+No file moves or deletions here — this is purely an AGENTS.md documentation
+update (plus one conditional deletion).
+
+---
+
+## Execution Order
+
+1. **Task 1** — Read `CLAUDE.md` and confirm intent with context
+2. **Task 2** — Update AGENTS.md exemption list
+3. **Task 3** — (Conditional) Delete `CLAUDE.md` if redundant
+4. **Task 4** — Write changelog and mark complete
+
+---
+
+## Task 1: Read CLAUDE.md
+
+**Read:** `/Users/benbelanger/GitHub/ben-cp/CLAUDE.md`
+
+Assess:
+- If it contains unique Claude Code–specific guidance not in `AGENTS.md` → retain, add to exemptions
+- If it is a pure redirect/stub duplicating `AGENTS.md` content → flag for deletion in Task 3
+
+---
+
+## Task 2: Update AGENTS.md — Root Exemption List
+
+**Read first:** `AGENTS.md`
+
+Find the line:
+```
+**Never create files at vault root** (except `AGENTS.md`, `GEMMA.md`, `changelog.md`).
+```
+
+Replace with:
+```
+**Never create files at vault root** (except `AGENTS.md`, `CLAUDE.md`, `GEMMA.md`, `README.md`, `changelog.md`).
+```
+
+If Task 1 determined `CLAUDE.md` should be deleted, omit it from the exemption list and use:
+```
+**Never create files at vault root** (except `AGENTS.md`, `GEMMA.md`, `README.md`, `changelog.md`).
+```
+
+Use `edit_file` — do not `write_file` on AGENTS.md.
+
+---
+
+## Task 3: (Conditional) Delete CLAUDE.md
+
+Only execute if Task 1 confirmed `CLAUDE.md` is a redundant stub.
+
+```
+git rm /Users/benbelanger/GitHub/ben-cp/CLAUDE.md
+```
+
+If retaining, skip this task.
+
+---
+
+## Task 4: Changelog + Completion
+
+Write changelog entries using `write_changelog_entry`:
+
+**Subdirectory level** (`skills/crypt-keeper/changelog.md`):
+- Note: AGENTS.md root exemption list updated per Crypt-Keeper flag 2.2–2.3
+- Include disposition of CLAUDE.md (retained or deleted)
+
+**Root level** (`changelog.md`):
+- One-liner: `AGENTS.md root exemptions updated — README.md and CLAUDE.md clarified`
+- Pointer: `See skills/crypt-keeper/changelog.md`
+
+Then mark this file complete:
+1. Update STATUS line to `✅ COMPLETE — [date]`
+2. Add one-paragraph summary
+3. Move to `handoff/complete/2026-04-08-p2-crypt-keeper-root-exemptions-COMPLETE.md`
+
+---
+
+## Notes for This Agent
+
+- Read before every write — no exceptions
+- Do not modify `CLAUDE.md` content — only assess and optionally delete
+- The exemption list update is a targeted `edit_file` on one line in AGENTS.md
+- If unsure about CLAUDE.md intent, retain it and add to exemptions — Ben can
+  decide to delete later

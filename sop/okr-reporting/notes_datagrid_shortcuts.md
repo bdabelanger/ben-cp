@@ -13,3 +13,11 @@
 **Calculated Signal (%):** Approximately 19.0%.
 
 **Next Steps:** This signal is lower than reality since the feature is in beta rollout, with much lower number of current tenants with the feature on than 356.
+
+---
+
+## 📊 Data Sources
+
+For establishing official Q2/Q3 baselines, all data pulls must reference the master inventory at `/Users/benbelanger/GitHub/ben-cp/sop/okr-reporting/data_sources.md`. Specific instrumentation for this KR is tracked via:
+*   **GA4 Property Link:** https://analytics.google.com/analytics/web/#/analysis/a122185697p384028779/edit/aK7_-dWoRZSgOlSAKdeIRQ
+*   **Measurement Focus:** Tenant-level event tracking for shortcut usage and note submission.

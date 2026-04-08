@@ -17523,15 +17523,19 @@
       },
       {
         "gid": "1211632501491612",
-        "enum_value": null,
+        "enum_value": {
+          "gid": "1211843164552618"
+        },
         "name": "R-Notes Stage",
-        "display_value": null
+        "display_value": "Backlog"
       },
       {
         "gid": "1211632506130433",
-        "enum_value": null,
+        "enum_value": {
+          "gid": "1211843164552615"
+        },
         "name": "KB Stage",
-        "display_value": null
+        "display_value": "Backlog"
       },
       {
         "gid": "1211632504010030",
@@ -26888,9 +26892,9 @@
       {
         "gid": "1208818124273418",
         "name": "GA",
-        "display_value": "2026-04-15T00:00:00.000Z",
+        "display_value": "2026-04-27T00:00:00.000Z",
         "date_value": {
-          "date": "2026-04-15",
+          "date": "2026-04-27",
           "date_time": null
         }
       },
@@ -31128,9 +31132,9 @@
       {
         "gid": "1208818118032458",
         "name": "Beta Start",
-        "display_value": "2026-04-27T00:00:00.000Z",
+        "display_value": "2026-03-18T00:00:00.000Z",
         "date_value": {
-          "date": "2026-04-27",
+          "date": "2026-03-18",
           "date_time": null
         }
       },
@@ -31573,8 +31577,8 @@
       {
         "gid": "1208818005809198",
         "name": "JIRA Link",
-        "display_value": null,
-        "text_value": null
+        "display_value": "https://casecommons.atlassian.net/browse/DATA-2807",
+        "text_value": "https://casecommons.atlassian.net/browse/DATA-2807"
       },
       {
         "gid": "1208820967756795",
@@ -33087,8 +33091,8 @@
       {
         "gid": "1208818005809198",
         "name": "JIRA Link",
-        "display_value": null,
-        "text_value": null
+        "display_value": "https://casecommons.atlassian.net/browse/DATA-2825",
+        "text_value": "https://casecommons.atlassian.net/browse/DATA-2825"
       },
       {
         "gid": "1208820967756795",
@@ -38575,18 +38579,18 @@
       {
         "gid": "1211632501491612",
         "enum_value": {
-          "gid": "1211632501491619"
+          "gid": "1211843164552618"
         },
         "name": "R-Notes Stage",
-        "display_value": "N/A"
+        "display_value": "Backlog"
       },
       {
         "gid": "1211632506130433",
         "enum_value": {
-          "gid": "1211632746890467"
+          "gid": "1211843164552615"
         },
         "name": "KB Stage",
-        "display_value": "N/A"
+        "display_value": "Backlog"
       },
       {
         "gid": "1211763621285210",
@@ -40109,15 +40113,19 @@
       },
       {
         "gid": "1211632501491612",
-        "enum_value": null,
+        "enum_value": {
+          "gid": "1211632501491619"
+        },
         "name": "R-Notes Stage",
-        "display_value": null
+        "display_value": "N/A"
       },
       {
         "gid": "1211632506130433",
-        "enum_value": null,
+        "enum_value": {
+          "gid": "1211632746890467"
+        },
         "name": "KB Stage",
-        "display_value": null
+        "display_value": "N/A"
       },
       {
         "gid": "1211763621285210",
@@ -40486,15 +40494,19 @@
       },
       {
         "gid": "1211632501491612",
-        "enum_value": null,
+        "enum_value": {
+          "gid": "1211843164552618"
+        },
         "name": "R-Notes Stage",
-        "display_value": null
+        "display_value": "Backlog"
       },
       {
         "gid": "1211632506130433",
-        "enum_value": null,
+        "enum_value": {
+          "gid": "1211843164552615"
+        },
         "name": "KB Stage",
-        "display_value": null
+        "display_value": "Backlog"
       },
       {
         "gid": "1211632504010030",
@@ -40667,15 +40679,19 @@
       },
       {
         "gid": "1211632501491612",
-        "enum_value": null,
+        "enum_value": {
+          "gid": "1211843164552618"
+        },
         "name": "R-Notes Stage",
-        "display_value": null
+        "display_value": "Backlog"
       },
       {
         "gid": "1211632506130433",
-        "enum_value": null,
+        "enum_value": {
+          "gid": "1211843164552615"
+        },
         "name": "KB Stage",
-        "display_value": null
+        "display_value": "Backlog"
       },
       {
         "gid": "1211632504010030",
@@ -40935,15 +40951,19 @@
       },
       {
         "gid": "1211632501491612",
-        "enum_value": null,
+        "enum_value": {
+          "gid": "1211843164552618"
+        },
         "name": "R-Notes Stage",
-        "display_value": null
+        "display_value": "Backlog"
       },
       {
         "gid": "1211632506130433",
-        "enum_value": null,
+        "enum_value": {
+          "gid": "1211843164552615"
+        },
         "name": "KB Stage",
-        "display_value": null
+        "display_value": "Backlog"
       },
       {
         "gid": "1211632504010030",

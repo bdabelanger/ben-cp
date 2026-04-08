@@ -1,0 +1,34 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "14781",
+  "self": "https://casecommons.atlassian.net/rest/api/3/issue/14781",
+  "key": "CBP-1593",
+  "fields": {
+    "summary": "2024 KirkpatrickPrice penetration testing",
+    "issuetype": {
+      "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+      "id": "10000",
+      "description": "A roadmapped initiative",
+      "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+      "name": "Project",
+      "subtask": false,
+      "hierarchyLevel": 1
+    },
+    "timespent": null,
+    "timeoriginalestimate": null,
+    "status": {
+      "self": "https://casecommons.atlassian.net/rest/api/3/status/10052",
+      "description": "Released to Production environment (US and CA)",
+      "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+      "name": "Released",
+      "id": "10052",
+      "statusCategory": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    }
+  }
+}

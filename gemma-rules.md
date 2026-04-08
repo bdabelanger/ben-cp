@@ -39,8 +39,8 @@
 - If a tool call fails, say so — do not say "I have completed" if you haven't
 - If you are unsure where a file belongs, ask Ben before creating it
 
-### Rule 7: Wrap Up Every Session
-- At the end of every session, list every file you created or changed
-- Use full absolute paths
+### Rule 7: Log Every Session
+- At the end of every session, follow the changelog procedure: `skills/changelog/index.md`
+- Write subdirectory changelog(s) first — full detail, exact paths and values
+- Then write a summary entry to root `changelog.md` with pointers back down
 - List any steps you could not complete and why
-- Write the wrap-up to: `skills/gemma-wrap-up-latest.md`

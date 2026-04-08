@@ -20,7 +20,11 @@ Gemma handles high-volume, repetitive, or mechanical tasks such as:
 Load in this order before doing any work:
 1. `AGENTS.md` — universal vault contract
 2. `gemma-rules.md` — Gemma-specific simplified rules
-3. `skills/gemma-wrap-up-latest.md` — last session's handoff (if it exists)
+3. `get_changelog` — call with the scope Ben specifies, or ask if not specified
+
+Ben will tell you which changelog scope is relevant (e.g., `skills/okr-reporting`
+for KR work, `root` for vault-wide context). Pull that scope to understand what
+was done recently before starting.
 
 ## SOPs Relevant to Gemma
 
@@ -29,6 +33,7 @@ Load in this order before doing any work:
 | `skills/okr-reporting/procedure.md` | OKR measurement runbook |
 | `skills/okr-reporting/index.md` | File map for okr-reporting directory |
 | `skills/crypt-keeper/procedure.md` | Vault quality watchdog — Gemma can run checks |
+| `skills/changelog/index.md` | Multi-level changelog procedure |
 
 ## Hard Limits
 
@@ -40,7 +45,6 @@ Load in this order before doing any work:
 
 ## Session Wrap-Up (Required)
 
-At end of every session, write a wrap-up to:
-`skills/gemma-wrap-up-latest.md`
-
-Include: files created, files modified, blockers, next task, KR state snapshot.
+At end of every session, use `write_changelog_entry` to log the session.
+Write subdirectory entry first (full detail), then root entry (summary + pointer).
+Follow the procedure at `skills/changelog/index.md` if unsure of format.

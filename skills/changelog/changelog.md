@@ -1,6 +1,6 @@
-# Wrap-Up Skill Changelog
+# Changelog Skill Log
 
-This log tracks every execution of the Context Audit & Handoff Procedure.
+This log tracks structural changes to the changelog procedure itself.
 
 ## [Unreleased]
 

@@ -4,6 +4,50 @@ This log tracks major architectural, process, and documentation standard changes
 
 ## [Unreleased]
 
+## [1.1.0] - Vault Quality Layer & Infrastructure Overhaul (2026-04-08)
+
+**Changes:**
+- `AGENTS.md` — rebuilt as slim agent dispatch table with universal rules
+- `agents/claude.md` — Cowork architect role instructions
+- `agents/claude-code.md` — implementer role instructions
+- `agents/gemma.md` — executor role instructions
+- `agents/index.md` — TOC for agent role directory
+- `gemma-rules.md` — updated; references `agents/gemma.md` as primary role file
+- `gemma-rules.md` Rule 7 — now points to `skills/wrap-up/index.md` procedure
+- `crypt-keeper.md` — replaced with redirect stub → `skills/crypt-keeper/procedure.md`
+- `vault-cleanup.md` — redirect stub (points to crypt-keeper.md)
+- `skills/wrap-up/index.md` — rewritten; new 5-stage changelog-first procedure
+- `skills/wrap-up/changelog_entry_template.md` — created; template for all future entries
+- `skills/okr-reporting/procedure.md` — split into evergreen runbook (v1.1, no quarterly content)
+- `skills/okr-reporting/2026-q2-kr-reference.md` — created; Q2 KR baseline status migrated from Google Doc
+- `skills/okr-reporting/notes_datagrid_shortcuts.md` — restored after Gemma overwrite damage
+- `skills/okr-reporting/notes_quick_entry.md` — created; full KR measurement SOP
+- `skills/okr-reporting/index.md` — created; TOC with file type guide
+- `skills/crypt-keeper/procedure.md` — created; 7-check vault quality watchdog
+- `skills/crypt-keeper/report-template.md` — created; structured report template
+- `skills/crypt-keeper/index.md` — created
+- `src/ben-cp.ts` — added `write_gemma_wrap_up` and `get_gemma_wrap_up` MCP tools
+- `sop/` → `skills/` — directory renamed; all path references updated across vault
+
+**KR State:**
+- Notes Quick Entry (Outside UOW): ✅ Ready — baseline ~32%, target 40%
+- Notes Datagrid Navigation Shortcuts: ⏳ Pending — first GA pull scheduled after 2026-04-09 GA launch
+- Notes WLV Adoption: 🛑 Blocked — feature not live
+- Service Plan Datagrid Shortcuts: 🛑 Blocked — GA 2026-05-28
+- Portal KRs (×3): 🛑 Blocked — data model unstable
+
+**Blockers:**
+- `notes_datagrid_shortcuts.md` — overwrite damage from Gemma; canonical sections missing; needs restoration from source of truth
+
+**Next Tasks:**
+1. Pull Notes Datagrid baseline from GA after first full month post-2026-04-09 launch
+2. Confirm `EngageWLVAddNote` event context (inside UOW or outside?) — update `notes_quick_entry.md` numerator once confirmed
+3. Update `skills/okr-reporting/data_sources.md` — currently a stub; cross-reference all KR SOPs to populate
+
+**Observations:**
+- Gemma's `write_file`-on-existing-file failure pattern was the primary driver for the `AGENTS.md` / `gemma-rules.md` quality layer
+- `sop/` → `skills/` rename required updates across 15+ files; `git mv` preserved history cleanly
+
 ## [1.0.0] - Initial skill-builder framework (2026-04-08)
 
 **Changes:**

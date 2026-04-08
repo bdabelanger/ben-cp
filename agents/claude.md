@@ -36,5 +36,6 @@ Claude (Cowork) is the highest-trust agent in this vault. It:
 When handing off to Claude Code, write or update:
 `CLAUDE_CODE_IMPLEMENTATION_PLAN.md` at vault root.
 
-When handing off to Gemma, write a wrap-up to:
-`skills/gemma-wrap-up-latest.md` (use the gemma-wrap-up Cowork skill).
+When handing off to any agent, follow the changelog procedure at
+`skills/changelog/index.md`. Write subdirectory entries first (full detail),
+then a summary entry to root `changelog.md`.

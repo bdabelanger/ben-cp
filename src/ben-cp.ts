@@ -37,14 +37,23 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
       inputSchema: { type: "object", properties: {} }
     },
     {
-      name: "write_gemma_wrap_up",
-      description: "Write a structured session wrap-up for Gemma to load at the start of the next session. Call this at the end of every Gemma session.",
+      name: "write_changelog_entry",
+      description: "Write a structured changelog entry at the end of a session. Writes a detailed entry to a subdirectory changelog first (if subdirectory provided), then a summary entry to root changelog.md. Call this at the end of every session.",
       inputSchema: {
         type: "object",
         properties: {
           session_goal: {
             type: "string",
             description: "One sentence: what was this session trying to accomplish?"
+          },
+          subdirectory: {
+            type: "string",
+            description: "The skills/ subdirectory primarily worked in this session (e.g. 'okr-reporting'). If provided, a detailed entry is written to skills/[subdirectory]/changelog.md first."
+          },
+          version_bump: {
+            type: "string",
+            enum: ["patch", "minor", "major"],
+            description: "How to increment the root changelog version. patch=routine work, minor=structural changes/new skills, major=vault-wide rearchitecture. Defaults to patch."
           },
           completed_work: {
             type: "array",
@@ -61,20 +70,20 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
           },
           failed_actions: {
             type: "array",
-            description: "Writes denied, failed, or left incomplete — critical for preventing Gemma repeating mistakes",
+            description: "Writes denied, failed, or left incomplete — critical for preventing repeat mistakes",
             items: {
               type: "object",
               properties: {
                 attempted: { type: "string" },
                 happened: { type: "string" },
-                recommendation: { type: "string", description: "What Gemma should do instead (or avoid)" }
+                recommendation: { type: "string", description: "What to do instead (or avoid)" }
               },
               required: ["attempted", "happened", "recommendation"]
             }
           },
           kr_state: {
             type: "array",
-            description: "State of any KR or task in progress",
+            description: "State of any KR or task in progress (okr-reporting sessions)",
             items: {
               type: "object",
               properties: {
@@ -88,29 +97,30 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
               required: ["kr_name", "file_path", "blocker_status", "next_action"]
             }
           },
-          do_not_touch: {
+          blockers: {
             type: "array",
-            description: "Files Gemma must not modify without explicit instruction from Ben",
+            description: "Unresolved blockers at session end",
             items: {
               type: "object",
               properties: {
-                path: { type: "string" },
-                reason: { type: "string" }
+                description: { type: "string" },
+                needed_to_unblock: { type: "string" }
               },
-              required: ["path", "reason"]
+              required: ["description", "needed_to_unblock"]
             }
           },
-          next_task: {
-            type: "string",
-            description: "One clear, specific task Gemma should propose at the start of the next session — written as a directive she can read aloud"
+          next_tasks: {
+            type: "array",
+            description: "Ordered list of next tasks for the following session",
+            items: { type: "string" }
           }
         },
-        required: ["session_goal", "completed_work", "next_task"]
+        required: ["session_goal", "completed_work", "next_tasks"]
       }
     },
     {
-      name: "get_gemma_wrap_up",
-      description: "Load the most recent Gemma session wrap-up. Call this at the start of every Gemma session to restore context from the previous session.",
+      name: "get_changelog",
+      description: "Read the root changelog.md. Call this at the start of a session to load context from previous sessions.",
       inputSchema: { type: "object", properties: {} }
     }
   ]
@@ -138,82 +148,104 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
       return { content: [{ type: "text", text: files.join("\n") }] };
     }
-    if (name === "write_gemma_wrap_up") {
+    if (name === "write_changelog_entry") {
       const a = args as any;
       const date = new Date().toISOString().split('T')[0];
+      const rootChangelogPath = path.resolve(__dirname, "../changelog.md");
+      const written: string[] = [];
 
-      const completedSection = (a.completed_work ?? []).length > 0
-        ? (a.completed_work as any[]).map((w: any) =>
-            `- \`${w.path}\` — ${w.change} ${w.status}`
-          ).join("\n")
-        : "_None_";
+      // --- Build reusable sections ---
+      const changesLines = (a.completed_work as any[]).map((w: any) =>
+        `- \`${w.path}\` — ${w.change} ${w.status}`
+      ).join("\n");
 
-      const failedSection = (a.failed_actions ?? []).length > 0
+      const failedLines = (a.failed_actions ?? []).length > 0
         ? (a.failed_actions as any[]).map((f: any) =>
             `- **Attempted:** ${f.attempted}\n  **Happened:** ${f.happened}\n  **Recommendation:** ${f.recommendation}`
           ).join("\n")
-        : "_None_";
+        : null;
 
-      const krSection = (a.kr_state ?? []).length > 0
+      const krLines = (a.kr_state ?? []).length > 0
         ? (a.kr_state as any[]).map((k: any) =>
-            `- **${k.kr_name}** (\`${k.file_path}\`)\n` +
-            (k.baseline ? `  - Baseline: ${k.baseline}\n` : "") +
-            (k.target ? `  - Target: ${k.target}\n` : "") +
-            `  - Blocker: ${k.blocker_status}\n` +
-            `  - Next action: ${k.next_action}`
+            `- **${k.kr_name}** (\`${k.file_path}\`): ${k.blocker_status}` +
+            (k.baseline ? ` — baseline ${k.baseline}` : "") +
+            (k.target ? `, target ${k.target}` : "") +
+            `\n  Next: ${k.next_action}`
           ).join("\n")
-        : "_None_";
+        : null;
 
-      const doNotTouchSection = (a.do_not_touch ?? []).length > 0
-        ? (a.do_not_touch as any[]).map((d: any) =>
-            `- \`${d.path}\` — ${d.reason}`
+      const blockerLines = (a.blockers ?? []).length > 0
+        ? (a.blockers as any[]).map((b: any) =>
+            `- ${b.description} — ${b.needed_to_unblock}`
           ).join("\n")
-        : "_None_";
+        : null;
 
-      const directive = `## 🔒 Directive Reminder
-- Read AGENTS.md at /Users/benbelanger/GitHub/ben-cp/AGENTS.md before any action
-- Read gemma-rules.md at /Users/benbelanger/GitHub/ben-cp/gemma-rules.md before any action
-- ALWAYS read a file before writing or editing it
-- Use edit_file for changes to existing files; write_file for NEW files only
-- All SOP files go in /Users/benbelanger/GitHub/ben-cp/skills/
-- OKR KR files go in /Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/
-- After creating any file, update the parent directory's index.md
-- End every session by invoking the write_gemma_wrap_up tool`;
+      const nextLines = (a.next_tasks as string[]).map((t, i) =>
+        `${i + 1}. ${t}`
+      ).join("\n");
 
-      const content = `# Gemma Session Wrap-Up — ${date}
+      // --- Stage 1: Subdirectory changelog (if provided) ---
+      if (a.subdirectory) {
+        const subDir = String(a.subdirectory).replace(/[^a-z0-9\-_]/gi, "");
+        const subPath = path.resolve(skillsPath, subDir, "changelog.md");
+        let subContent: string;
+        try {
+          subContent = await fs.readFile(subPath, "utf-8");
+        } catch {
+          const skillName = subDir.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+          subContent = `# ${skillName} Changelog\n\n> Detail log for \`skills/${subDir}/\`. See root \`changelog.md\` for version history.\n\n---\n\n## [Unreleased]\n`;
+        }
 
-## Session Goal
-${a.session_goal}
+        let subEntry = `## ${date} — ${a.session_goal}\n\n**Files changed:**\n${changesLines}\n`;
+        if (krLines) subEntry += `\n**KR State:**\n${krLines}\n`;
+        if (failedLines) subEntry += `\n**Failed actions:**\n${failedLines}\n`;
+        if (blockerLines) subEntry += `\n**Blockers:**\n${blockerLines}\n`;
+        subEntry += `\n**Next:** ${(a.next_tasks as string[])[0] ?? "—"}\n`;
 
-## Completed Work
-${completedSection}
+        const updatedSub = subContent.replace("## [Unreleased]", `## [Unreleased]\n\n${subEntry}`);
+        await fs.writeFile(subPath, updatedSub, "utf-8");
+        written.push(subPath);
+      }
 
-## Failed or Incomplete Actions
-${failedSection}
+      // --- Stage 2: Root changelog ---
+      const rootContent = await fs.readFile(rootChangelogPath, "utf-8");
 
-## Current KR / Task State
-${krSection}
+      // Auto-increment version
+      const versionMatch = rootContent.match(/## \[(\d+)\.(\d+)\.(\d+)\]/);
+      let newVersion = "1.0.0";
+      if (versionMatch) {
+        const [maj, min, pat] = [parseInt(versionMatch[1]), parseInt(versionMatch[2]), parseInt(versionMatch[3])];
+        const bump = a.version_bump ?? "patch";
+        newVersion = bump === "major" ? `${maj + 1}.0.0`
+          : bump === "minor" ? `${maj}.${min + 1}.0`
+          : `${maj}.${min}.${pat + 1}`;
+      }
 
-## Files Gemma Must NOT Touch
-${doNotTouchSection}
+      // Root entry: one-liner per file + pointer to subdirectory if applicable
+      const rootChanges = (a.completed_work as any[]).map((w: any) =>
+        `- \`${w.path}\` — ${w.change}`
+      ).join("\n");
+      const subPointer = a.subdirectory
+        ? `\n> Full detail: see \`skills/${a.subdirectory}/changelog.md\``
+        : "";
 
-## Immediate Next Task (Suggested)
-${a.next_task}
+      let rootEntry = `## [${newVersion}] — ${a.session_goal} (${date})${subPointer}\n\n**Changes:**\n${rootChanges}\n`;
+      if (blockerLines) rootEntry += `\n**Blockers:**\n${blockerLines}\n`;
+      rootEntry += `\n**Next Tasks:**\n${nextLines}\n`;
 
-${directive}
-`;
+      const updatedRoot = rootContent.replace("## [Unreleased]", `## [Unreleased]\n\n${rootEntry}`);
+      await fs.writeFile(rootChangelogPath, updatedRoot, "utf-8");
+      written.push(rootChangelogPath);
 
-      const wrapUpPath = path.resolve(skillsPath, "gemma-wrap-up-latest.md");
-      await fs.writeFile(wrapUpPath, content, "utf-8");
-      return { content: [{ type: "text", text: `Wrap-up written to ${wrapUpPath}` }] };
+      return { content: [{ type: "text", text: `Changelog entries written:\n${written.join("\n")}` }] };
     }
-    if (name === "get_gemma_wrap_up") {
-      const wrapUpPath = path.resolve(skillsPath, "gemma-wrap-up-latest.md");
+    if (name === "get_changelog") {
+      const rootChangelogPath = path.resolve(__dirname, "../changelog.md");
       try {
-        const content = await fs.readFile(wrapUpPath, "utf-8");
+        const content = await fs.readFile(rootChangelogPath, "utf-8");
         return { content: [{ type: "text", text: content }] };
       } catch {
-        return { content: [{ type: "text", text: "No wrap-up found. This appears to be the first session." }] };
+        return { content: [{ type: "text", text: "No changelog found." }] };
       }
     }
     throw new Error(`Tool not found: ${name}`);

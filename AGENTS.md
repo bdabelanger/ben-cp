@@ -18,6 +18,25 @@ Find your role file and read it next:
 
 ---
 
+## MCP Tools
+
+This vault exposes purpose-built MCP tools. Use them instead of raw file reads/writes where available:
+
+| Tool | Purpose |
+| :--- | :--- |
+| `get_changelog` | Read changelog entries — pass a scope (`root`, `skills/okr-reporting`, etc.) to pull relevant recent work |
+| `write_changelog_entry` | Append a new entry — always write deepest level first, then root |
+
+**Session pattern:**
+1. `get_changelog` scoped to the work area → understand recent context
+2. Load `AGENTS.md` + your role file → confirm rules
+3. Do the work
+4. `write_changelog_entry` at subdirectory level → then at root
+
+Ben will tell you which changelog scope is relevant for the session. If not specified, ask before pulling root.
+
+---
+
 ## Vault Structure
 
 ```
@@ -28,6 +47,7 @@ ben-cp/
 │   ├── claude-code.md
 │   └── gemma.md
 ├── gemma-rules.md                   ← Gemma simplified rules (extends agents/gemma.md)
+├── changelog.md                     ← root project changelog (versioned milestones)
 ├── reports/                         ← generated Crypt-Keeper reports (never edit manually)
 │   └── cleanup-report-YYYY-MM-DD.md
 └── skills/                          ← all skill documentation
@@ -37,6 +57,9 @@ ben-cp/
     │   │   └── status_mapping.md
     │   └── styles/
     │       └── emoji_key.md
+    ├── changelog/                   ← changelog skill: procedure + templates
+    │   ├── index.md                 ← multi-level changelog procedure
+    │   └── entry_template.md
     ├── okr-reporting/
     │   ├── index.md
     │   ├── procedure.md
@@ -76,10 +99,11 @@ ben-cp/
 | Status/transform logic | `skills/skill-builder/mappings/` |
 | Visual/emoji standards | `skills/skill-builder/styles/` |
 | Crypt-Keeper watchdog | `skills/crypt-keeper/` |
+| Changelog procedure | `skills/changelog/` |
 | Other skill SOPs | `skills/[skill-name]/` |
 | Cleanup reports | `reports/cleanup-report-[YYYY-MM-DD].md` |
 
-**Never create files at vault root** (except `AGENTS.md`, `gemma-rules.md`).
+**Never create files at vault root** (except `AGENTS.md`, `gemma-rules.md`, `changelog.md`).
 
 ### File Naming
 
@@ -94,7 +118,7 @@ After creating or significantly modifying any file, update `index.md` in the sam
 
 ### Completion Reporting
 
-Every session ends with an explicit summary of files created, modified, and any blockers.
+Every session ends with a changelog entry — use `write_changelog_entry` or follow `skills/changelog/index.md`.
 
 ---
 

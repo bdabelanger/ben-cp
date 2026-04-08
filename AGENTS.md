@@ -86,6 +86,10 @@ ben-cp/
     │   ├── index.md
     │   ├── procedure.md
     │   └── report-template.md
+    ├── lumberjack/                  ← changelog auditing (accuracy, completeness, git cross-check)
+    │   ├── index.md
+    │   ├── procedure.md
+    │   └── reports/
     ├── rovo/
     ├── project-status-reports/   ← self-contained: runbook + scripts + inputs/outputs/logs
     │   ├── index.md

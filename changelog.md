@@ -4,6 +4,20 @@ This log tracks major architectural, process, and documentation standard changes
 
 ## [Unreleased]
 
+## [1.5.0] — Lumberjack Skill Created (2026-04-08)
+
+**Detail logs:**
+- `skills/lumberjack/changelog.md`
+
+**Changes:**
+- `skills/lumberjack/` — new skill: changelog auditing, 7 checks, git-authoritative, flag-only (companion to Crypt-Keeper)
+- `skills/index.md` + `AGENTS.md` — lumberjack added to vault index and structure tree
+- `handoff/2026-04-08-p2-changelog-factcheck.md` — handoff created for tomorrow covering all fact-check fixes
+
+**Next Tasks:**
+1. Execute `2026-04-08-p2-changelog-factcheck.md` — fixes phantom entries, missing entries, stale Next Tasks, wrong counts, complete/ naming
+2. Create `skills/lumberjack/reports/` directory and run first formal Lumberjack audit
+
 ## [1.4.1] — Crypt-Keeper First Run (2026-04-08)
 
 **Detail logs:**

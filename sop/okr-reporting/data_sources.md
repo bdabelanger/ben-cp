@@ -30,6 +30,18 @@ The following items must be gathered before beginning the report generation:
 
 ---
 
+## 📊 Underlying Metric Sources (Platform KRs)
+
+This section inventories the specific tools and events used to calculate metric values for Platform OKRs:
+
+*   **Casebook Admin Reporting:** Used for metrics like Enrollment/Service Note adoption. Acquisition Method: Self-serve dashboard navigation.
+*   **Google Analytics (GA):** Used for user behavior tracking (e.g., Notes Datagrid usage). Key Events include `dashboardAddNoteOpen`, `EngageWLVAddNote`, and the denominator event `noteSubmit`.
+*   **ChurnZero:** Source for NPS and WLV adoption metrics.
+*   **HubSpot/SQL Query:** Used for specific support ticket volume or data entry validation.
+*   **Other Sources:** (e.g., CJIS audit, Chargebee) - Acquisition Method: [To be filled]
+
+---
+
 ## ⚙️ Data Handling Notes
 
 *   **Data Integrity Check:** Before proceeding to the Workflow phase, verify that all required fields listed above are present and non-null for every Objective.

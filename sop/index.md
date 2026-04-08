@@ -31,4 +31,6 @@ This document serves as the primary entry point for all Standard Operating Proce
 
 **Tone Expectation:** Aim for 'witty brevity'—think sharp, not stoic. A little flair goes a long way.
 
-**File Safety:** Before making any edits or writing to any SOP file via the filesystem tools, ALWAYS use 'read_text_file' first to pull a fresh copy of the content. This prevents overwriting recent changes.
+**File Safety:** When referencing files, always use absolute paths starting with /Users/benbelanger/GitHub/ben-cp/... if required by the tool. Before making any edits or writing to any SOP file via the filesystem tools, ALWAYS use 'read_text_file' first to pull a fresh copy of the content. This prevents overwriting recent changes.
+
+**Modification Preference:** Always prefer using `read_text_file` followed by `write_file` for modifications; reserve `edit_file` only for atomic substitutions where context is not lost.

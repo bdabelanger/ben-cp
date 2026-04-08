@@ -42,6 +42,9 @@ High-level summary only — readers go to subdirectory changelogs for detail.
 - `skills/[name]/` — [one-line summary] (see `skills/[name]/changelog.md`)
 _(structural changes at vault level, if any)_
 
+**Handoff:** `handoff/[filename]-COMPLETE.md`
+_(omit if this session was not triggered by a handoff)_
+
 **Blockers:**
 - [description] — [what's needed to unblock]
 _(omit if none)_

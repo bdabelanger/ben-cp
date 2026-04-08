@@ -47,9 +47,14 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
             type: "string",
             description: "One sentence: what was this session trying to accomplish?"
           },
-          subdirectory: {
+          subdirectories: {
+            type: "array",
+            description: "skills/ subdirectories touched this session (e.g. ['okr-reporting', 'crypt-keeper']). A detailed entry is written to each skills/[name]/changelog.md before the root entry.",
+            items: { type: "string" }
+          },
+          handoff: {
             type: "string",
-            description: "The skills/ subdirectory primarily worked in this session (e.g. 'okr-reporting'). If provided, a detailed entry is written to skills/[subdirectory]/changelog.md first."
+            description: "Filename of the handoff that triggered this session (e.g. '2026-04-08-changelog-refactor-COMPLETE.md'). Omit if not handoff-driven. Added to both subdirectory and root entries."
           },
           version_bump: {
             type: "string",
@@ -135,8 +140,16 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "get_changelog",
-      description: "Read the root changelog.md. Call this at the start of a session to load context from previous sessions.",
-      inputSchema: { type: "object", properties: {} }
+      description: "Read a changelog. Pass scope='root' (default) for root changelog.md, or a subdirectory path like 'skills/okr-reporting' for a skill-level changelog. Call at session start to load recent context.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          scope: {
+            type: "string",
+            description: "Which changelog to read. 'root' (default) reads root changelog.md. A subdirectory path like 'skills/okr-reporting' reads skills/okr-reporting/changelog.md."
+          }
+        }
+      }
     }
   ]
 }));
@@ -169,6 +182,13 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const rootChangelogPath = path.resolve(__dirname, "../changelog.md");
       const written: string[] = [];
 
+      // Normalize subdirectories — accept legacy single string or new array
+      const rawSubs: string[] = Array.isArray(a.subdirectories)
+        ? a.subdirectories
+        : a.subdirectory
+          ? [String(a.subdirectory)]
+          : [];
+
       // --- Build reusable sections ---
       const changesLines = (a.completed_work as any[]).map((w: any) =>
         `- \`${w.path}\` — ${w.change} ${w.status}`
@@ -199,9 +219,11 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         `${i + 1}. ${t}`
       ).join("\n");
 
-      // --- Stage 1: Subdirectory changelog (if provided) ---
-      if (a.subdirectory) {
-        const subDir = String(a.subdirectory).replace(/[^a-z0-9\-_]/gi, "");
+      const handoffRef = a.handoff ? `handoff/${String(a.handoff)}` : null;
+
+      // --- Stage 1: Subdirectory changelogs (deepest first) ---
+      for (const rawSub of rawSubs) {
+        const subDir = rawSub.replace(/[^a-z0-9\-_]/gi, "");
         const subPath = path.resolve(skillsPath, subDir, "changelog.md");
         let subContent: string;
         try {
@@ -215,6 +237,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         if (krLines) subEntry += `\n**KR State:**\n${krLines}\n`;
         if (failedLines) subEntry += `\n**Failed actions:**\n${failedLines}\n`;
         if (blockerLines) subEntry += `\n**Blockers:**\n${blockerLines}\n`;
+        if (handoffRef) subEntry += `\n**Handoff:** \`${handoffRef}\`\n`;
         subEntry += `\n**Next:** ${(a.next_tasks as string[])[0] ?? "—"}\n`;
 
         const updatedSub = subContent.replace("## [Unreleased]", `## [Unreleased]\n\n${subEntry}`);
@@ -236,16 +259,19 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
           : `${maj}.${min}.${pat + 1}`;
       }
 
-      // Root entry: one-liner per file + pointer to subdirectory if applicable
+      // Root entry: one-liner per file, pointer(s) to subdirectory changelogs
       const rootChanges = (a.completed_work as any[]).map((w: any) =>
         `- \`${w.path}\` — ${w.change}`
       ).join("\n");
-      const subPointer = a.subdirectory
-        ? `\n> Full detail: see \`skills/${a.subdirectory}/changelog.md\``
+
+      const subPointers = rawSubs.length > 0
+        ? "\n\n**Detail logs:**\n" + rawSubs.map(s => `- \`skills/${s}/changelog.md\``).join("\n")
         : "";
 
-      let rootEntry = `## [${newVersion}] — ${a.session_goal} (${date})${subPointer}\n\n**Changes:**\n${rootChanges}\n`;
+      let rootEntry = `## [${newVersion}] — ${a.session_goal} (${date})${subPointers}\n\n**Changes:**\n${rootChanges}\n`;
+      if (failedLines) rootEntry += `\n**Failed actions:**\n${failedLines}\n`;
       if (blockerLines) rootEntry += `\n**Blockers:**\n${blockerLines}\n`;
+      if (handoffRef) rootEntry += `\n**Handoff:** \`${handoffRef}\`\n`;
       rootEntry += `\n**Next Tasks:**\n${nextLines}\n`;
 
       const updatedRoot = rootContent.replace("## [Unreleased]", `## [Unreleased]\n\n${rootEntry}`);
@@ -273,12 +299,21 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       return { content: [{ type: "text", text: output }] };
     }
     if (name === "get_changelog") {
-      const rootChangelogPath = path.resolve(__dirname, "../changelog.md");
+      const scope = String((args as any)?.scope ?? "root").trim();
+      let changelogPath: string;
+      if (!scope || scope === "root") {
+        changelogPath = path.resolve(__dirname, "../changelog.md");
+      } else {
+        // Accept 'skills/okr-reporting' or just 'okr-reporting'
+        const normalized = scope.startsWith("skills/") ? scope.slice("skills/".length) : scope;
+        const clean = normalized.replace(/[^a-z0-9\-_/]/gi, "");
+        changelogPath = path.resolve(skillsPath, clean, "changelog.md");
+      }
       try {
-        const content = await fs.readFile(rootChangelogPath, "utf-8");
+        const content = await fs.readFile(changelogPath, "utf-8");
         return { content: [{ type: "text", text: content }] };
       } catch {
-        return { content: [{ type: "text", text: "No changelog found." }] };
+        return { content: [{ type: "text", text: `No changelog found at: ${changelogPath}` }] };
       }
     }
     throw new Error(`Tool not found: ${name}`);

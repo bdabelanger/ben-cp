@@ -1,36 +1,19 @@
-# General SOP Index
+# Skills Index
 
-This document serves as the primary entry point for all Standard Operating Procedures (SOPs). Navigate to the relevant subdirectory or specific guide below based on your task.
+> Master index for all skills in this vault.
+> Last updated: 2026-04-08
 
-## 🧭 Core Process Guides
+---
 
-*   **Platform Weekly Status Report:** [Status Report Orchestrator SOP](project-status-reports/index.md)
-    *   ⚡ **Quick Trigger**: If asked to "generate the report", run:
-        ```
-        python3 skills/project-status-reports/scripts/full_run.py --force
-        ```
-        `--force` ensures fresh data each run. Requires `ATLASSIAN_USER_EMAIL` and `ATLASSIAN_API_TOKEN` in the environment (loaded from `.env` at repo root).
-*   **Rovo Issue Management:** [Rovo SOP Guide](rovo/rovo-sop.md)
+## 📂 Skills
 
-## 📂 Sub-Category Guides
-
-*   **Data Modeling & Reporting:** Procedures for SQL join maps, BI modeling strategies, and schema relationships are located here: [Reporting Guide](casebook-reporting/index.md)
-*   **Case Intake:** Guidance on initial case intake procedures (refer to specific file in the reporting subdirectory for details): [Intake Guide](casebook-reporting/casebook-intake.md)
-*   **People Data:** Schema and relationship definitions for client, provider, and subject demographics: [People Data](casebook-reporting/casebook-people.md)
-*   **System Users:** Guides for managing system accounts (caseworkers, admins) scoped to a tenant: [User Management](casebook-reporting/casebook-users.md)
-*   **Tenant Security & Scoping:** Mandatory rules for multi-tenancy architecture and data isolation: [Tenant Rules](casebook-reporting/casebook-tenants.md)
-
-***
-
-## 🔗 Cross-Cutting Concerns
-
-*   **Polymorphic Linking:** The `resource_id` field functions as a polymorphic foreign key, where the actual entity is determined by the accompanying `resource_type`. This allows entities like 'Notes' to link contextually across various core tables (Cases, Intake, People) using a single ID structure.
-*   **Multi-Tenancy Directive:** ALL operational queries MUST include a strict filter on `tenant_id` for data isolation.
-
-## 🛠️ File Management & Tone Guide
-
-**Tone Expectation:** Aim for 'witty brevity'—think sharp, not stoic. A little flair goes a long way.
-
-**File Safety:** When referencing files, always use absolute paths starting with /Users/benbelanger/GitHub/ben-cp/... if required by the tool. Before making any edits or writing to any SOP file via the filesystem tools, ALWAYS use 'read_text_file' first to pull a fresh copy of the content. This prevents overwriting recent changes.
-
-**Modification Preference:** Always prefer using `read_text_file` followed by `write_file` for modifications; reserve `edit_file` only for atomic substitutions where context is not lost.
+| Directory | Purpose |
+| :--- | :--- |
+| `casebook/` | Casebook reference docs, Reveal BI, Admin MCP, Billing MCP |
+| `changelog/` | Multi-level changelog procedure and entry templates |
+| `crypt-keeper/` | Weekly vault quality watchdog — 7 checks, flags only |
+| `handoff/` | Cross-agent handoff protocol and file format |
+| `okr-reporting/` | Platform OKR measurement runbooks and KR SOPs |
+| `project-status-reports/` | Platform Weekly Status Report pipeline and runbook |
+| `rovo/` | Rovo issue management SOP |
+| `skill-builder/` | Reusable standards — emoji keys, status mappings |

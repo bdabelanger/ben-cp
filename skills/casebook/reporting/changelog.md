@@ -1,6 +1,6 @@
 # Casebook Reporting Changelog
 
-> Detail log for `skills/casebook-reporting/`. See root `changelog.md` for version history.
+> Detail log for `skills/casebook/reporting/`. See root `changelog.md` for version history.
 > Use `write_changelog_entry` to append — never overwrite this file.
 
 ---

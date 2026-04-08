@@ -5,6 +5,19 @@
 
 ---
 
+## Handoff Check (Every Session Start)
+
+Before doing any other work, check for outstanding handoffs:
+
+1. List `handoff/` at vault root (root only — not `handoff/complete/`)
+2. Any `.md` file present is an open handoff — completed ones live in `handoff/complete/`
+3. Surface them to Ben immediately: "You have N outstanding handoff(s): [filenames]"
+4. If Ben confirms, execute using the handoff protocol at `skills/handoff/index.md`
+
+Do not proceed with other work until open handoffs are acknowledged by Ben.
+
+---
+
 ## Who Are You?
 
 Find your role file and read it next:
@@ -46,8 +59,10 @@ ben-cp/
 │   ├── claude.md
 │   ├── claude-code.md
 │   └── gemma.md
-├── GEMMA.md                   ← Gemma simplified rules (extends agents/gemma.md)
+├── GEMMA.md                         ← Gemma simplified rules (extends agents/gemma.md)
 ├── changelog.md                     ← root project changelog (versioned milestones)
+├── handoff/                         ← open cross-agent implementation plans (READY)
+│   └── complete/                    ← executed handoffs (COMPLETE) — never edit
 ├── reports/                         ← generated Crypt-Keeper reports (never edit manually)
 │   └── cleanup-report-YYYY-MM-DD.md
 └── skills/                          ← all skill documentation
@@ -82,7 +97,12 @@ ben-cp/
     │   ├── outputs/
     │   ├── logs/
     │   └── tests/
-    └── casebook-reporting/
+    └── casebook/
+        ├── index.md
+        ├── changelog.md
+        ├── reporting/           ← Reveal BI + entity reference docs
+        ├── admin/               ← Casebook Admin MCP skill docs (port 3002)
+        └── subscriptions/      ← Casebook Subscriptions MCP skill docs (port 3003)
 ```
 
 ---

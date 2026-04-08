@@ -2,47 +2,87 @@
 
 > [!NOTE]
 > ⚠️ **PROCESS TYPE:** Manual Workflow (Not API Driven)
-> This document inventories all required inputs for the OKR reporting process. Since this is a manual workflow, 'Data Source' refers to the location or method of data acquisition.
+> This document inventories the tools, systems, and vault references used to
+> acquire metric values for Platform KR measurement.
+> Last updated: 2026-04-08
 
 ---
 
-## 📥 Required Inputs
+## 📊 Metric Sources by System
 
-The following items must be gathered before beginning the report generation:
+### Google Analytics (GA4)
+Self-serve. Used for user behavior tracking across Notes and WLV features.
 
-### 1. Core OKR Data Set
-*   **Source:** [Manual Collection / Specific Tool Export]
-*   **Description:** The raw data containing all active Objectives and Key Results.
-*   **Required Fields:** Objective Name, Target Metric, Current Value, Target Value, Reporting Period Start/End Date.
-*   **Acquisition Method:** *[To be filled: e.g., Export from OKR Platform via CSV]*
+| Event | Used For | KR |
+| :--- | :--- | :--- |
+| `noteSubmit` | Denominator — users who created a note | Notes Quick Entry, Notes Datagrid |
+| `dashboardAddNoteOpen` | Numerator — global entry point | Notes Quick Entry |
+| `EngageWLVAddNote` | Numerator — WLV entry point (UOW context TBC) | Notes Quick Entry |
+| `TrackServiceNoteNew` | Numerator — service note entry point | Notes Quick Entry |
+| `NotesWLVFilterAdded` | Numerator — datagrid shortcut usage | Notes Datagrid |
+| `NotesQuickFilterApplied` | Numerator — datagrid shortcut usage | Notes Datagrid |
+| `NotesWLVColumnToggleHidden` | Numerator — datagrid shortcut usage | Notes Datagrid |
+| `NotesWLVColumnToggleVisible` | Numerator — datagrid shortcut usage | Notes Datagrid |
+| `NotesWLVDensityChange` | Numerator — datagrid shortcut usage | Notes Datagrid |
+| `NotesWLVSort` | ⚠️ NOT INSTRUMENTED — flagged for Engineering | Notes Datagrid |
 
-### 2. Project Status Data (Contextual)
-*   **Source:** [Manual Review / Jira Board]
-*   **Description:** Contextual data on the projects tied to these OKRs, including current stage and completion status.
-*   **Required Fields:** Project Name, Current Stage (e.g., Development, QA), Completion Status (Done/In Progress).
-*   **Acquisition Method:** *[To be filled: e.g., Reviewing Jira Board Filter]*
-
-### 3. Reporting Period Metadata
-*   **Source:** [Manual Input]
-*   **Description:** The specific date range the report covers.
-*   **Required Fields:** Report Start Date, Report End Date.
-*   **Acquisition Method:** *[To be filled: e.g., User input into a template]*
-
----
-
-## 📊 Underlying Metric Sources (Platform KRs)
-
-This section inventories the specific tools and events used to calculate metric values for Platform OKRs:
-
-*   **Casebook Admin Reporting:** Used for metrics like Enrollment/Service Note adoption. Acquisition Method: Self-serve dashboard navigation.
-*   **Google Analytics (GA):** Used for user behavior tracking (e.g., Notes Datagrid usage). Key Events include `dashboardAddNoteOpen`, `EngageWLVAddNote`, and the denominator event `noteSubmit`.
-*   **ChurnZero:** Source for NPS and WLV adoption metrics.
-*   **HubSpot/SQL Query:** Used for specific support ticket volume or data entry validation.
-*   **Other Sources:** (e.g., CJIS audit, Chargebee) - Acquisition Method: [To be filled]
+**GA property:** All one property. Tenant ID available as a dimension.
+**Pull instructions:** See individual KR SOPs in `skills/okr-reporting/`.
 
 ---
 
-## ⚙️ Data Handling Notes
+### Casebook Admin Reporting / Reveal BI
+Self-serve SQL-style queries via Reveal BI. Used for service/enrollment adoption metrics.
 
-*   **Data Integrity Check:** Before proceeding to the Workflow phase, verify that all required fields listed above are present and non-null for every Objective.
-*   **Versioning:** If the source data changes significantly between runs, note the version or date of the input file in the final report's metadata.
+**Reference docs:** `skills/casebook/reporting/` — consult these before writing any query:
+
+| File | Covers |
+| :--- | :--- |
+| `casebook-cases.md` | Case entity schema and key fields |
+| `casebook-intake.md` | Intake entity schema |
+| `casebook-people.md` | Person entity schema |
+| `casebook-tenants.md` | Tenant entity schema — use for tenant segmentation |
+| `casebook-users.md` | User entity schema — use for user-level metrics |
+| `reveal_bi_syntax.md` | Query syntax reference for Reveal BI |
+| `reveal_bi_visualizations.md` | Visualization and output formatting |
+
+**KRs that use this source:**
+- Service Notes — Roster Association (`cbp_service_notes` + `cbp_services`, join on `service_id`)
+- Locked/Signed Notes — high-confidentiality tenant segment (validate with Margaux's sheet)
+- Service Notes / Enrollments — Data Entry Shortcuts (baseline pullable from prod)
+
+---
+
+### ChurnZero
+Used for tenant-level adoption and NPS metrics. Acquisition: self-serve dashboard.
+
+**KRs that use this source:**
+- Notes WLV Adoption (post-launch)
+- Locked/Signed Notes (post-launch, alongside SQL)
+
+---
+
+### CX Ops (Cierra)
+Manual — request from Cierra. Used for migration/import volume data.
+
+**KRs that use this source:**
+- Bulk Import for Notes — paid migration volume comp
+
+---
+
+### SQL via Data team (Path B)
+Delegated query. Used when self-serve sources don't cover the needed dimension.
+
+**KRs that use this source:**
+- Portal KRs (×3) — blocked pending data model confirmation
+- Any metric requiring `external_user_invitations` or session-level data
+
+---
+
+## ⚠️ Gaps and TODOs
+
+- [ ] `EngageWLVAddNote` — confirm UOW vs. non-UOW context via dev tools; update Notes Quick Entry numerator
+- [ ] Additional Notes Quick Entry entry point events — Ben to discover via dev tools
+- [ ] Zapier Insights — explore with Engineering for Zapier Custom Fields KR
+- [ ] Super Admin `API Access` flag — verify in tenants table for Zapier entitlement
+- [ ] Portal data model — all three Portal KRs unblock together once confirmed

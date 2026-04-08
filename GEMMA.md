@@ -1,6 +1,7 @@
 # GEMMA.md — Gemma Simplified Rules
 
 > **Load order:** `AGENTS.md` → `agents/gemma.md` → this file
+> **Handoff check:** after loading, list `handoff/` root — any `.md` file there is open (completed ones live in `handoff/complete/`), flag to Ben before proceeding
 > These rules are a simplified, reinforced subset of the universal contract.
 > Last updated: 2026-04-08
 

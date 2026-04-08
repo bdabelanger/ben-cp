@@ -4,6 +4,55 @@ This log tracks major architectural, process, and documentation standard changes
 
 ## [Unreleased]
 
+## [1.4.0] — Casebook MCP Tools Fully Wired (2026-04-08)
+
+**Detail logs:**
+- `skills/casebook/changelog.md`
+
+**Changes:**
+- `casebook-admin-mcp` — 3 new tools: `list_form_configurations`, `get_form_configuration`, `update_form_configuration`
+- `casebook-billing-mcp` — 3 new tools: `fetch_subscription_companies`, `update_subscription_items`, `generate_usage_pivot_table`
+- Skill docs updated to reflect all tools now wired
+
+**Next Tasks:**
+1. Add SOPs to `skills/casebook/admin/` and `skills/casebook/subscriptions/` as workflows are documented
+
+## [1.3.0] — Casebook Admin and Subscriptions Documented (2026-04-08)
+
+**Detail logs:**
+- `skills/casebook/changelog.md`
+
+**Changes:**
+- `skills/casebook/admin/` — renamed from `admin-mcp/`; fully documented (auth, 7 MCP tools, unexposed API layer)
+- `skills/casebook/subscriptions/` — renamed from `billing-mcp/`; fully documented (Chargebee usage fetch, unexposed write op flagged)
+- `skills/casebook/index.md` — updated names and added port column
+- `AGENTS.md` — vault tree updated
+
+**Next Tasks:**
+1. Add SOPs to `skills/casebook/admin/` and `skills/casebook/subscriptions/` as workflows are documented
+2. Decide whether to expose form config functions or `chargebeeUpdateSubscriptionItems` as MCP tools
+
+## [1.2.0] — Casebook Skill Consolidated (2026-04-08)
+
+**Detail logs:**
+- `skills/casebook/changelog.md`
+- `skills/casebook/reporting/changelog.md`
+
+**Changes:**
+- `skills/casebook-reporting/` → `skills/casebook/reporting/` — 9 files moved via git mv
+- `skills/casebook/admin-mcp/index.md` — stub created, points to external repo
+- `skills/casebook/billing-mcp/index.md` — stub created, points to external repo
+- `skills/casebook/index.md` — TOC for all Casebook skill content
+- `skills/casebook/changelog.md` — created
+- `AGENTS.md` — vault tree updated to reflect new casebook/ structure
+- `skills/index.md` — 5 casebook-reporting/ links updated to casebook/reporting/
+
+**Handoff:** `handoff/complete/2026-04-08-consolidate-casebook-into-skills-COMPLETE.md`
+
+**Next Tasks:**
+1. Populate `skills/casebook/admin-mcp/index.md` with tool descriptions and SOPs
+2. Populate `skills/casebook/billing-mcp/index.md` with tool descriptions and SOPs
+
 ## [1.1.0] - Vault Quality Layer & Infrastructure Overhaul (2026-04-08)
 
 **Changes:**

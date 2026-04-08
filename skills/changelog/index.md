@@ -59,6 +59,7 @@ determine the bump:
 Prepend a new entry to root `changelog.md`:
 - One-line summary per subdirectory touched
 - Pointer to each subdirectory changelog: `See skills/[name]/changelog.md`
+- If this session was triggered by a handoff, include: `**Handoff:** handoff/[filename]-COMPLETE.md`
 - Blockers and next tasks at vault level only — not granular KR detail
 
 **Rule:** Use `edit_file` — never `write_file` on `changelog.md`.

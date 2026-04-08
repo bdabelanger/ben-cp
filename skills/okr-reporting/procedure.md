@@ -12,7 +12,7 @@
 Populate the `Baseline` and `Target` columns in the Work Planning Register for
 any Platform KR currently showing `X%`, `Needs baseline`, `In progress`, or a
 blank value, so that the status mapping logic in
-`sop/skill-builder/mappings/status_mapping.md` can be applied consistently going forward.
+`skills/skill-builder/mappings/status_mapping.md` can be applied consistently going forward.
 
 ---
 
@@ -139,7 +139,7 @@ Once the baseline is confirmed:
 ### Step 4: Apply Status Mapping
 
 With Baseline and Target both populated, apply health logic from
-`sop/skill-builder/mappings/status_mapping.md`:
+`skills/skill-builder/mappings/status_mapping.md`:
 
 - Pull the most recent actual value from the current period column
 - Calculate progress: `Current ÷ Target`
@@ -170,5 +170,5 @@ With Baseline and Target both populated, apply health logic from
 - Quarterly KR reference: `okr-reporting/2026-q2-kr-reference.md`
 - Data source inventory: `okr-reporting/data_sources.md`
 - KR-specific measurement SOPs: `okr-reporting/notes_datagrid_shortcuts.md`, `okr-reporting/notes_quick_entry.md`
-- Status logic: `sop/skill-builder/mappings/status_mapping.md`
-- Visual standards: `sop/skill-builder/styles/emoji_key.md`
+- Status logic: `skills/skill-builder/mappings/status_mapping.md`
+- Visual standards: `skills/skill-builder/styles/emoji_key.md`

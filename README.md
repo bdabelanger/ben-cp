@@ -13,7 +13,7 @@ A local [Model Context Protocol](https://modelcontextprotocol.io) server that ex
 **Tools exposed:**
 | Tool | Description |
 |---|---|
-| `get_sop` | Read a SOP or skill template by path relative to `/sop` |
+| `get_skill` | Read a SOP or skill template by path relative to `/skills` |
 | `list_vault` | List all files available in the SOP vault |
 
 **Run locally:**
@@ -21,7 +21,7 @@ A local [Model Context Protocol](https://modelcontextprotocol.io) server that ex
 npm start
 ```
 
-**SOPs live in:** `sop/` — organized by tool/workflow (e.g. `sop/project-status-reports/`)
+**SOPs live in:** `skills/` — organized by tool/workflow (e.g. `skills/project-status-reports/`)
 
 ---
 
@@ -58,4 +58,4 @@ ATLASSIAN_USER_EMAIL=...
 ATLASSIAN_API_TOKEN=...
 ```
 
-Full SOP: [`sop/project-status-reports/index.md`](sop/project-status-reports/index.md)
+Full SOP: [`skills/project-status-reports/index.md`](skills/project-status-reports/index.md)

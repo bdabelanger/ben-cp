@@ -35,5 +35,5 @@
 ## 🔗 References
 
 - Universal agent contract: `/Users/benbelanger/GitHub/ben-cp/AGENTS.md`
-- Status logic: `/Users/benbelanger/GitHub/ben-cp/sop/skill-builder/mappings/status_mapping.md`
-- Visual standards: `/Users/benbelanger/GitHub/ben-cp/sop/skill-builder/styles/emoji_key.md`
+- Status logic: `/Users/benbelanger/GitHub/ben-cp/skills/skill-builder/mappings/status_mapping.md`
+- Visual standards: `/Users/benbelanger/GitHub/ben-cp/skills/skill-builder/styles/emoji_key.md`

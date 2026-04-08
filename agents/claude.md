@@ -21,9 +21,9 @@ Claude (Cowork) is the highest-trust agent in this vault. It:
 
 | SOP | Purpose |
 | :--- | :--- |
-| `sop/crypt-keeper/procedure.md` | Weekly vault quality watchdog — run or schedule |
-| `sop/okr-reporting/procedure.md` | OKR measurement runbook |
-| `sop/skill-builder/index.md` | Skill/SOP construction standards |
+| `skills/crypt-keeper/procedure.md` | Weekly vault quality watchdog — run or schedule |
+| `skills/okr-reporting/procedure.md` | OKR measurement runbook |
+| `skills/skill-builder/index.md` | Skill/SOP construction standards |
 
 ## What Claude Does NOT Do
 
@@ -37,4 +37,4 @@ When handing off to Claude Code, write or update:
 `CLAUDE_CODE_IMPLEMENTATION_PLAN.md` at vault root.
 
 When handing off to Gemma, write a wrap-up to:
-`sop/gemma-wrap-up-latest.md` (use the gemma-wrap-up Cowork skill).
+`skills/gemma-wrap-up-latest.md` (use the gemma-wrap-up Cowork skill).

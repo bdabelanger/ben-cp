@@ -2,7 +2,7 @@
 
 > **Run by:** Crypt-Keeper (scheduled Claude task)
 > **Vault:** `/Users/benbelanger/GitHub/ben-cp`
-> **Procedure:** `sop/crypt-keeper/procedure.md`
+> **Procedure:** `skills/crypt-keeper/procedure.md`
 > **Action required:** Review flags below and confirm any fixes with Claude Code or Gemma
 
 ---

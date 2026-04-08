@@ -26,8 +26,8 @@ Claude Code is the precision implementation agent. It:
 
 | SOP | Purpose |
 | :--- | :--- |
-| `sop/skill-builder/index.md` | Skill/SOP structure standards |
-| `sop/crypt-keeper/procedure.md` | Vault quality checks (reference for validation tasks) |
+| `skills/skill-builder/index.md` | Skill/SOP structure standards |
+| `skills/crypt-keeper/procedure.md` | Vault quality checks (reference for validation tasks) |
 
 ## Constraints
 

@@ -20,8 +20,8 @@
 - NEVER use `write_file` on a file that already exists
 
 ### Rule 3: Check the Path First
-- All SOP files go in `sop/`
-- OKR KR files go in `sop/okr-reporting/`
+- All SOP files go in `skills/`
+- OKR KR files go in `skills/okr-reporting/`
 - When unsure, call `list_directory` to check what's already there
 - NEVER create a file at the vault root
 
@@ -43,4 +43,4 @@
 - At the end of every session, list every file you created or changed
 - Use full absolute paths
 - List any steps you could not complete and why
-- Write the wrap-up to: `sop/gemma-wrap-up-latest.md`
+- Write the wrap-up to: `skills/gemma-wrap-up-latest.md`

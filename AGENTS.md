@@ -23,7 +23,6 @@ Find your role file and read it next:
 ```
 ben-cp/
 ├── AGENTS.md                        ← this file — read first, always
-├── CLAUDE_CODE_IMPLEMENTATION_PLAN.md
 ├── agents/                          ← role-specific instructions per agent
 │   ├── claude.md
 │   ├── claude-code.md
@@ -31,7 +30,7 @@ ben-cp/
 ├── gemma-rules.md                   ← Gemma simplified rules (extends agents/gemma.md)
 ├── reports/                         ← generated Crypt-Keeper reports (never edit manually)
 │   └── cleanup-report-YYYY-MM-DD.md
-└── sop/                             ← all SOP/Skill documentation
+└── skills/                          ← all skill documentation
     ├── skill-builder/
     │   ├── index.md
     │   ├── mappings/
@@ -70,17 +69,17 @@ ben-cp/
 
 | Content type | Correct location |
 | :--- | :--- |
-| KR-specific measurement SOP | `sop/okr-reporting/[name].md` |
-| Master OKR runbook (evergreen) | `sop/okr-reporting/procedure.md` |
-| Quarterly KR reference | `sop/okr-reporting/[year]-[quarter]-kr-reference.md` |
-| Data source inventory | `sop/okr-reporting/data_sources.md` |
-| Status/transform logic | `sop/skill-builder/mappings/` |
-| Visual/emoji standards | `sop/skill-builder/styles/` |
-| Crypt-Keeper watchdog | `sop/crypt-keeper/` |
-| Other skill SOPs | `sop/[skill-name]/` |
+| KR-specific measurement SOP | `skills/okr-reporting/[name].md` |
+| Master OKR runbook (evergreen) | `skills/okr-reporting/procedure.md` |
+| Quarterly KR reference | `skills/okr-reporting/[year]-[quarter]-kr-reference.md` |
+| Data source inventory | `skills/okr-reporting/data_sources.md` |
+| Status/transform logic | `skills/skill-builder/mappings/` |
+| Visual/emoji standards | `skills/skill-builder/styles/` |
+| Crypt-Keeper watchdog | `skills/crypt-keeper/` |
+| Other skill SOPs | `skills/[skill-name]/` |
 | Cleanup reports | `reports/cleanup-report-[YYYY-MM-DD].md` |
 
-**Never create files at vault root** (except `AGENTS.md`, `gemma-rules.md`, `CLAUDE_CODE_IMPLEMENTATION_PLAN.md`).
+**Never create files at vault root** (except `AGENTS.md`, `gemma-rules.md`).
 
 ### File Naming
 

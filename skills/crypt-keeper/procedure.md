@@ -31,7 +31,7 @@ Before running any checks:
 ## 🗺️ Checks (Run in Order)
 
 ### Check 1 — Orphaned Files
-List all `.md` files under `sop/`. For each file, verify it is referenced in
+List all `.md` files under `skills/`. For each file, verify it is referenced in
 its parent directory's `index.md`. Flag any file that has no index entry.
 
 **Output:** file path + suggested index.md entry text
@@ -39,7 +39,7 @@ its parent directory's `index.md`. Flag any file that has no index entry.
 ---
 
 ### Check 2 — Misplaced Files
-List `.md` files sitting directly at `sop/` root (not inside a subdirectory).
+List `.md` files sitting directly at `skills/` root (not inside a subdirectory).
 Flag any that appear to be KR-specific SOPs or skill documents — they should
 be in a subdirectory.
 
@@ -48,7 +48,7 @@ be in a subdirectory.
 ---
 
 ### Check 3 — Missing `index.md`
-For each subdirectory under `sop/`, confirm `index.md` exists. Report any
+For each subdirectory under `skills/`, confirm `index.md` exists. Report any
 subdirectory missing one. Draft a starter `index.md` for each gap found and
 include it in the report as a suggested fix (do not write it — Ben approves
 first).
@@ -86,7 +86,7 @@ launch date has passed but status has not been updated.
 ---
 
 ### Check 6 — `data_sources.md` Sync
-Read `/Users/benbelanger/GitHub/ben-cp/sop/okr-reporting/data_sources.md`.
+Read `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/data_sources.md`.
 Cross-reference against all KR-specific SOPs in `okr-reporting/`. Flag any
 data source, GA event, or tool mentioned in a KR SOP that is missing from the
 master inventory.
@@ -111,7 +111,7 @@ For each, verify:
 Write the completed report to:
 `/Users/benbelanger/GitHub/ben-cp/reports/cleanup-report-[YYYY-MM-DD].md`
 
-Use the template in `sop/crypt-keeper/report-template.md`.
+Use the template in `skills/crypt-keeper/report-template.md`.
 
 ---
 
@@ -131,4 +131,4 @@ Use the template in `sop/crypt-keeper/report-template.md`.
 - Universal agent contract: `/Users/benbelanger/GitHub/ben-cp/AGENTS.md`
 - Vault structure: `AGENTS.md` Section 1
 - Naming conventions: `AGENTS.md` Section 4
-- Report template: `sop/crypt-keeper/report-template.md`
+- Report template: `skills/crypt-keeper/report-template.md`

@@ -13,15 +13,15 @@ const server = new Server(
   { capabilities: { tools: {} } }
 );
 
-// Automatically find the 'sop' folder relative to this file's location
+// Automatically find the 'skills' folder relative to this file's location
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const sopPath = path.resolve(__dirname, "../sop");
+const skillsPath = path.resolve(__dirname, "../skills");
 
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
   tools: [
     {
-      name: "get_sop",
+      name: "get_skill",
       description: "Read a Casebook SOP or Skill template from the repo",
       inputSchema: {
         type: "object",
@@ -119,11 +119,11 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
 server.setRequestHandler(CallToolRequestSchema, async (request) => {
   const { name, arguments: args } = request.params;
   try {
-    if (name === "get_sop") {
-      const fullPath = path.resolve(sopPath, String(args?.relativePath));
+    if (name === "get_skill") {
+      const fullPath = path.resolve(skillsPath, String(args?.relativePath));
       
-      // Prevent path traversal outside of the sopPath
-      if (!fullPath.startsWith(path.resolve(sopPath))) {
+      // Prevent path traversal outside of the skillsPath
+      if (!fullPath.startsWith(path.resolve(skillsPath))) {
         throw new Error("Access denied: Invalid path");
       }
 
@@ -131,10 +131,10 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       return { content: [{ type: "text", text: content }] };
     }
     if (name === "list_vault") {
-      const allItems = await fs.readdir(sopPath, { recursive: true, withFileTypes: true });
+      const allItems = await fs.readdir(skillsPath, { recursive: true, withFileTypes: true });
       const files = allItems
         .filter(dirent => dirent.isFile() && !dirent.name.startsWith('.'))
-        .map(dirent => path.join(dirent.parentPath, dirent.name).replace(sopPath + path.sep, ''));
+        .map(dirent => path.join(dirent.parentPath, dirent.name).replace(skillsPath + path.sep, ''));
 
       return { content: [{ type: "text", text: files.join("\n") }] };
     }
@@ -175,8 +175,8 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 - Read gemma-rules.md at /Users/benbelanger/GitHub/ben-cp/gemma-rules.md before any action
 - ALWAYS read a file before writing or editing it
 - Use edit_file for changes to existing files; write_file for NEW files only
-- All SOP files go in /Users/benbelanger/GitHub/ben-cp/sop/
-- OKR KR files go in /Users/benbelanger/GitHub/ben-cp/sop/okr-reporting/
+- All SOP files go in /Users/benbelanger/GitHub/ben-cp/skills/
+- OKR KR files go in /Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/
 - After creating any file, update the parent directory's index.md
 - End every session by invoking the write_gemma_wrap_up tool`;
 
@@ -203,12 +203,12 @@ ${a.next_task}
 ${directive}
 `;
 
-      const wrapUpPath = path.resolve(sopPath, "gemma-wrap-up-latest.md");
+      const wrapUpPath = path.resolve(skillsPath, "gemma-wrap-up-latest.md");
       await fs.writeFile(wrapUpPath, content, "utf-8");
       return { content: [{ type: "text", text: `Wrap-up written to ${wrapUpPath}` }] };
     }
     if (name === "get_gemma_wrap_up") {
-      const wrapUpPath = path.resolve(sopPath, "gemma-wrap-up-latest.md");
+      const wrapUpPath = path.resolve(skillsPath, "gemma-wrap-up-latest.md");
       try {
         const content = await fs.readFile(wrapUpPath, "utf-8");
         return { content: [{ type: "text", text: content }] };

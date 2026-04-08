@@ -7,7 +7,7 @@ This document serves as the primary entry point for all Standard Operating Proce
 *   **Platform Weekly Status Report:** [Status Report Orchestrator SOP](project-status-reports/index.md)
     *   ⚡ **Quick Trigger**: If asked to "generate the report", run:
         ```
-        python3 project-status-reports/scripts/full_run.py --force
+        python3 skills/project-status-reports/scripts/full_run.py --force
         ```
         `--force` ensures fresh data each run. Requires `ATLASSIAN_USER_EMAIL` and `ATLASSIAN_API_TOKEN` in the environment (loaded from `.env` at repo root).
 *   **Rovo Issue Management:** [Rovo SOP Guide](rovo/rovo-sop.md)

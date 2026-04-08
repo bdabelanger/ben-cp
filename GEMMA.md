@@ -1,4 +1,4 @@
-# gemma-rules.md — Gemma Simplified Rules
+# GEMMA.md — Gemma Simplified Rules
 
 > **Load order:** `AGENTS.md` → `agents/gemma.md` → this file
 > These rules are a simplified, reinforced subset of the universal contract.

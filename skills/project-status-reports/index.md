@@ -5,12 +5,12 @@
 >
 > **Fresh weekly run (always use this):**
 > ```
-> python3 project-status-reports/scripts/full_run.py --force
+> python3 skills/project-status-reports/scripts/full_run.py --force
 > ```
 >
 > **Re-render only (Jira data already fresh, just re-generate the report):**
 > ```
-> python3 project-status-reports/scripts/full_run.py
+> python3 skills/project-status-reports/scripts/full_run.py
 > ```
 >
 > `--force` wipes stale Jira cache and resets the manifest before running. Without it, the pipeline skips re-fetching if processed data already exists from a previous run.
@@ -115,7 +115,7 @@ The `_epic.json` file contains the epic-level `timeoriginalestimate` used by the
 - **Team selection**: Pass `--team <name>` to filter by a different team's custom field value. Default is `platform`.
 
 ```
-python3 project-status-reports/scripts/full_run.py --force --team reporting
+python3 skills/project-status-reports/scripts/full_run.py --force --team reporting
 ```
 
 **Team GIDs** (custom `Team` field on Asana projects — the overarching Asana "Product" team GID `1208693459152259` never changes):
@@ -225,7 +225,7 @@ Appears once per report run in the Data Quality sidebar.
 ## 🔄 Execution Macro (Summary)
 
 ```
-python3 project-status-reports/scripts/full_run.py --force
+python3 skills/project-status-reports/scripts/full_run.py --force
 ```
 
 The orchestrator handles the entire pipeline autonomously end-to-end:

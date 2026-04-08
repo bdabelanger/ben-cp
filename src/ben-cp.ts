@@ -7,6 +7,7 @@ import {
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { execFile } from "node:child_process";
 
 const server = new Server(
   { name: "ben-cp", version: "2.0.0" },
@@ -116,6 +117,20 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
           }
         },
         required: ["session_goal", "completed_work", "next_tasks"]
+      }
+    },
+    {
+      name: "run_status_report",
+      description: "Run the Platform Weekly Status Report pipeline. Executes full_run.py --force for the specified team and returns the output path when complete.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          team: {
+            type: "string",
+            enum: ["platform", "reporting"],
+            description: "Team to run the report for. Defaults to 'platform'."
+          }
+        }
       }
     },
     {
@@ -238,6 +253,24 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       written.push(rootChangelogPath);
 
       return { content: [{ type: "text", text: `Changelog entries written:\n${written.join("\n")}` }] };
+    }
+    if (name === "run_status_report") {
+      const team = String((args as any)?.team ?? "platform");
+      if (!["platform", "reporting"].includes(team)) {
+        throw new Error(`Invalid team: '${team}'. Must be 'platform' or 'reporting'.`);
+      }
+      const scriptPath = path.resolve(skillsPath, "project-status-reports/scripts/full_run.py");
+      const cwd = path.resolve(__dirname, "..");
+      const cmdArgs = ["--force", "--team", team];
+
+      const output = await new Promise<string>((resolve, reject) => {
+        execFile("python3", [scriptPath, ...cmdArgs], { cwd, timeout: 300_000 }, (err, stdout, stderr) => {
+          if (err) reject(new Error(stderr || err.message));
+          else resolve(stdout || "Pipeline completed with no output.");
+        });
+      });
+
+      return { content: [{ type: "text", text: output }] };
     }
     if (name === "get_changelog") {
       const rootChangelogPath = path.resolve(__dirname, "../changelog.md");

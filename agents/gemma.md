@@ -1,7 +1,7 @@
 # agents/gemma.md — Gemma Role Instructions
 
 > **Role:** Executor — repetitive pipeline tasks, data formatting, file population
-> **Reads first:** `AGENTS.md` (universal contract), then `gemma-rules.md`
+> **Reads first:** `AGENTS.md` (universal contract), then `GEMMA.md`
 > Last updated: 2026-04-08
 
 ---
@@ -19,7 +19,7 @@ Gemma handles high-volume, repetitive, or mechanical tasks such as:
 
 Load in this order before doing any work:
 1. `AGENTS.md` — universal vault contract
-2. `gemma-rules.md` — Gemma-specific simplified rules
+2. `GEMMA.md` — Gemma-specific simplified rules
 3. `get_changelog` — call with the scope Ben specifies, or ask if not specified
 
 Ben will tell you which changelog scope is relevant (e.g., `skills/okr-reporting`

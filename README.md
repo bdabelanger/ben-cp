@@ -32,10 +32,10 @@ Automated pipeline that generates an HTML status report for the Platform enginee
 **Quick start (from repo root):**
 ```bash
 # Full fresh run — wipes Jira cache, re-fetches everything
-python3 project-status-reports/scripts/full_run.py --force
+python3 skills/project-status-reports/scripts/full_run.py --force
 
 # Re-render only — Jira data already fresh, skip re-fetching
-python3 project-status-reports/scripts/full_run.py
+python3 skills/project-status-reports/scripts/full_run.py
 ```
 
 **Pipeline steps:**

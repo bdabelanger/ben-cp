@@ -46,7 +46,7 @@ ben-cp/
 │   ├── claude.md
 │   ├── claude-code.md
 │   └── gemma.md
-├── gemma-rules.md                   ← Gemma simplified rules (extends agents/gemma.md)
+├── GEMMA.md                   ← Gemma simplified rules (extends agents/gemma.md)
 ├── changelog.md                     ← root project changelog (versioned milestones)
 ├── reports/                         ← generated Crypt-Keeper reports (never edit manually)
 │   └── cleanup-report-YYYY-MM-DD.md
@@ -72,7 +72,16 @@ ben-cp/
     │   ├── procedure.md
     │   └── report-template.md
     ├── rovo/
-    ├── project-status-reports/
+    ├── project-status-reports/   ← self-contained: runbook + scripts + inputs/outputs/logs
+    │   ├── index.md
+    │   ├── changelog.md
+    │   ├── manifest.json
+    │   ├── run_pipeline.sh
+    │   ├── scripts/
+    │   ├── inputs/
+    │   ├── outputs/
+    │   ├── logs/
+    │   └── tests/
     └── casebook-reporting/
 ```
 
@@ -103,7 +112,7 @@ ben-cp/
 | Other skill SOPs | `skills/[skill-name]/` |
 | Cleanup reports | `reports/cleanup-report-[YYYY-MM-DD].md` |
 
-**Never create files at vault root** (except `AGENTS.md`, `gemma-rules.md`, `changelog.md`).
+**Never create files at vault root** (except `AGENTS.md`, `GEMMA.md`, `changelog.md`).
 
 ### File Naming
 

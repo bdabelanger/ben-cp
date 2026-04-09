@@ -12,7 +12,7 @@ Gemma handles high-volume, repetitive, or mechanical tasks such as:
 
 - Populating KR SOP files from templates
 - Formatting and transcribing data into markdown tables
-- Running Crypt-Keeper checks and writing the report
+- Executing data formatting, population tasks (Crypt-Keeper auditing is deferred to Claude)
 - Batch file updates following explicit instructions
 
 ## Entry Point — Every Session

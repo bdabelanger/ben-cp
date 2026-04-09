@@ -46,6 +46,14 @@ When all tasks are done (or fully attempted with blockers documented):
 
 ---
 
+## Editability Rules
+
+- **Open handoffs** (`handoff/*.md`) — fully editable. Iterate freely as plans evolve.
+- **Completed handoffs** (`handoff/complete/*.md`) — never edit. Historical record only.
+- **Changelogs** — append-only always. This rule does NOT extend to handoffs.
+
+---
+
 ## Handoff File Format (for creating agents)
 
 When creating a handoff for another agent, use this structure:
@@ -54,6 +62,7 @@ When creating a handoff for another agent, use this structure:
 # [Receiving Agent] Implementation Plan: [Short Title]
 
 > **Prepared by:** [Agent] ([context], [YYYY-MM-DD])
+> **Assigned to:** [Claude | Code (Claude Code / Antigravity) | Gemma | Any]
 > **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
 > **Priority:** P[N] — [one-line reason]
 > **Source report:** [path to report if Crypt-Keeper origin, else omit]

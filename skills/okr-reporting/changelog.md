@@ -7,6 +7,48 @@
 
 ## [Unreleased]
 
+## 2026-04-09 — Drafted the Enrollment Data Entry Shortcuts SOP by adapting the Notes Quick Entry template, moving both Service Notes and Enrollments toward completion.
+
+**Files changed:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/service_notes_data_entry_shortcuts.md` — Refined SOP to v0.2, explicitly cross-referencing the GA event discovery process from notes_quick_entry.md. ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/enrollments_data_entry_shortcuts.md` — Drafted new SOP (v0.1) by adapting Notes Quick Entry template, focusing on Tenant-level Enrollment metrics and using placeholders for GA event discovery. ✅ Complete
+
+**Next:** Populate skills/okr-reporting/data_sources.md by cross-referencing all KR SOPs in this directory.
+
+
+## 2026-04-09 — Cross-referenced all KR SOPs against data_sources.md to verify source coverage and identify outstanding data path gaps.
+
+**Files changed:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/data_sources.md` — Verified that existing KR SOPs reference documented sources; confirmed the inventory itself contains all known outstanding data path gaps (e.g., UOW context for EngageWLVAddNote). ✅ Complete
+
+**Next:** Investigate 'EngageWLVAddNote' UOW vs non-UOW context using dev tools, or flag this as a blocker for Ben.
+
+
+## 2026-04-09 — Implement a dedicated time-boxed directory (q2-2026) within okr-reporting/ for tracking quarterly deliverables.
+
+**Files changed:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/index.md` — Created placeholder TOC file for Q2 2026 deliverables. ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/changelog.md` — Created placeholder changelog file for Q2 2026 tracking. ✅ Complete
+
+**Next:** Populate skills/okr-reporting/data_sources.md by cross-referencing all KR SOPs in this directory.
+
+
+## 2026-04-09 — Refine the KR SOP for Service Notes — Data Entry Shortcuts by updating its status and cross-referencing discovery methodology.
+
+**Files changed:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/service_notes_data_entry_shortcuts.md` — Updated SOP to v0.2, explicitly cross-referencing the GA event discovery process from notes_quick_entry.md. ✅ Complete
+
+**Next:** Populate skills/okr-reporting/data_sources.md by cross-referencing all KR SOPs in this directory.
+
+
+## 2026-04-09 — Formalized the measurement procedure for Service Notes — Roster Association by creating a new KR SOP.
+
+**Files changed:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/service_notes_roster_association.md` — Created new KR SOP for Service Notes Roster Association, detailing Reveal BI query path and measurement logic. ✅ Complete
+
+**Next:** Draft the KR SOP for Service Notes — Data Entry Shortcuts based on established patterns.
+
+
 ## 2026-04-09 — Execute all 7 outstanding handoffs from 2026-04-08: fix orphaned index entries, fix casebook/reporting/index.md, create skill-builder subdirectory indexes, add Portal data sources + SKILL.md naming exemption, move reports/ into crypt-keeper, document root-level exemptions, and fix changelog fact-check issues.
 
 **Files changed:**

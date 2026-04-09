@@ -1,7 +1,7 @@
 # AGENTS.md — Vault Agent Dispatch
 
 > **All agents working in this vault must read this file before taking any action.**
-> Last updated: 2026-04-08
+> Last updated: 2026-04-10
 
 ---
 
@@ -27,6 +27,8 @@ Before doing any other work, check for outstanding handoffs:
 3. Surface them to Ben immediately: "You have N outstanding handoff(s): [filenames]"
 4. If Ben confirms, execute using the handoff protocol at `skills/handoff/index.md`
 
+> **Note:** Open handoffs are living documents — they may be edited and iterated before execution. Only completed handoffs (in `handoff/complete/`) are immutable.
+
 Do not proceed with other work until open handoffs are acknowledged by Ben.
 
 ---
@@ -40,7 +42,8 @@ Find your role file and read it next:
 | Claude (Cowork) | `agents/claude.md` | Architect, session lead, skill builder |
 | Claude Code | `agents/claude-code.md` | Implementer, code executor, file engineer |
 | Gemma | `agents/gemma.md` | Executor, pipeline tasks, data formatting |
-| *(future)* Antigravity | `agents/antigravity.md` | TBD |
+| Antigravity | `agents/antigravity.md` | Peer implementer (Gemini) — full peer to Claude Code; mutual PR review |
+| Robert | `agents/robert.md` | Mission Integrity Observer — watches AGENTS.md for Creed drift |
 
 ---
 
@@ -69,9 +72,11 @@ Ben will tell you which changelog scope is relevant for the session. If not spec
 ben-cp/
 ├── AGENTS.md                        ← this file — read first, always
 ├── agents/                          ← role-specific instructions per agent
+│   ├── antigravity.md
 │   ├── claude.md
 │   ├── claude-code.md
-│   └── gemma.md
+│   ├── gemma.md
+│   └── robert.md
 ├── GEMMA.md                         ← Gemma simplified rules (extends agents/gemma.md)
 ├── changelog.md                     ← root project changelog (versioned milestones)
 ├── handoff/                         ← open cross-agent implementation plans (READY)
@@ -107,6 +112,11 @@ ben-cp/
     │   ├── procedure.md
     │   └── reports/
     ├── rovo/
+    ├── robert/
+    │   ├── index.md
+    │   ├── diff_checker.md
+    │   ├── art.md
+    │   └── changelog.md
     ├── project-status-reports/   ← self-contained: runbook + scripts + inputs/outputs/logs
     │   ├── index.md
     │   ├── changelog.md
@@ -165,7 +175,7 @@ ben-cp/
 
 ### Index Maintenance
 
-After creating or significantly modifying any file, update `index.md` in the same directory.
+After creating or significantly modifying any file, update `index.md` in the same directory. If the directory has an `art.md`, Robert may add to it — but no other agent should write to `art.md` without Ben's direction.
 
 ### Completion Reporting
 

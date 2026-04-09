@@ -18,8 +18,7 @@ Self-serve. Used for user behavior tracking across Notes and WLV features.
 | `noteSubmit` | Denominator — users who created a note | Notes Quick Entry, Notes Datagrid |
 | `dashboardAddNoteOpen` | Numerator — global entry point | Notes Quick Entry |
 | `EngageWLVAddNote` | Numerator — WLV entry point (UOW context TBC) | Notes Quick Entry |
-| `TrackServiceNoteNew` | Numerator — service note entry point | Notes Quick Entry |
-| `NotesWLVFilterAdded` | Numerator — datagrid shortcut usage | Notes Datagrid |
+| `TrackServiceNoteNew` | Numerator — service note entry point | Notes Quick Entry || `NotesWLVFilterAdded` | Numerator — datagrid shortcut usage | Notes Datagrid |
 | `NotesQuickFilterApplied` | Numerator — datagrid shortcut usage | Notes Datagrid |
 | `NotesWLVColumnToggleHidden` | Numerator — datagrid shortcut usage | Notes Datagrid |
 | `NotesWLVColumnToggleVisible` | Numerator — datagrid shortcut usage | Notes Datagrid |

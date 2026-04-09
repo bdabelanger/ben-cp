@@ -10,6 +10,7 @@
   "main": "index.js",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
+    "@modelcontextprotocol/server-filesystem": "^2026.1.14",
     "express": "^4.21.1"
   },
   "devDependencies": {

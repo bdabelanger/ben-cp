@@ -5,6 +5,19 @@
 
 ---
 
+## The Agent's Creed (Mission Statement)
+
+The Agent's mission is precision through iteration:
+
+Code builds the structure true,
+Gemma executes the plan;
+Claude guides the journey through.
+
+When paths diverge or tools may fail,
+We read, we pause, we learn the strain;
+Then build anew without the veil.
+
+---
 ## Handoff Check (Every Session Start)
 
 Before doing any other work, check for outstanding handoffs:

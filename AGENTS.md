@@ -63,8 +63,6 @@ ben-cp/
 ├── changelog.md                     ← root project changelog (versioned milestones)
 ├── handoff/                         ← open cross-agent implementation plans (READY)
 │   └── complete/                    ← executed handoffs (COMPLETE) — never edit
-├── reports/                         ← generated Crypt-Keeper reports (never edit manually)
-│   └── cleanup-report-YYYY-MM-DD.md
 └── skills/                          ← all skill documentation
     ├── skill-builder/
     │   ├── index.md
@@ -83,9 +81,14 @@ ben-cp/
     │   ├── notes_quick_entry.md
     │   └── [kr-specific].md
     ├── crypt-keeper/
+    │   ├── SKILL.md
     │   ├── index.md
     │   ├── procedure.md
-    │   └── report-template.md
+    │   ├── report-template.md
+    │   ├── changelog.md
+    │   └── reports/
+    │       ├── cleanup-report-YYYY-MM-DD.md
+    │       └── archive/
     ├── lumberjack/                  ← changelog auditing (accuracy, completeness, git cross-check)
     │   ├── index.md
     │   ├── procedure.md
@@ -134,7 +137,7 @@ ben-cp/
 | Crypt-Keeper watchdog | `skills/crypt-keeper/` |
 | Changelog procedure | `skills/changelog/` |
 | Other skill SOPs | `skills/[skill-name]/` |
-| Cleanup reports | `reports/cleanup-report-[YYYY-MM-DD].md` |
+| Cleanup reports | `skills/crypt-keeper/reports/cleanup-report-[YYYY-MM-DD].md` |
 
 **Never create files at vault root** (except `AGENTS.md`, `GEMMA.md`, `changelog.md`, `CLAUDE.md`, `README.md`).
 
@@ -144,6 +147,8 @@ ben-cp/
 - KR SOPs: `[feature]_[metric_type].md`
 - Quarterly references: `[year]-[quarter]-kr-reference.md`
 - No spaces, no camelCase
+- `SKILL.md` and `AGENTS.md` are exempt from the underscore convention — all-caps
+  filenames are valid for vault contracts and Cowork skill descriptors
 
 ### Index Maintenance
 

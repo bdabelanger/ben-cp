@@ -4,7 +4,11 @@
 > **Source:** Crypt-Keeper report `reports/cleanup-report-2026-04-08.md` flags 3.1, 3.2, 3.3
 > **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
 > **v1.0**
-> **STATUS: 🔲 READY**
+> **STATUS: ✅ COMPLETE — 2026-04-09**
+
+`skills/skill-builder/mappings/index.md` and `skills/skill-builder/styles/index.md` created as proper directory TOCs. `skills/skill-builder/rules/` confirmed empty and removed via `rmdir` (no git-tracked files, so `git rm -r` had nothing to remove; `rmdir` completed cleanly).
+
+**Changelog:** 1.6.0 — 2026-04-09 (see root `changelog.md`)
 
 ---
 

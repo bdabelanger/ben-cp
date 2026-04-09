@@ -4,7 +4,7 @@
 > ⚙️ **STATUS:** Active — v1.0 (2026-04-08)
 > **Run by:** Claude (Cowork), scheduled every Monday at 9am
 > **Does not auto-fix** — produces a flagged report only
-> **Output:** `/Users/benbelanger/GitHub/ben-cp/reports/cleanup-report-[YYYY-MM-DD].md`
+> **Output:** `/Users/benbelanger/GitHub/ben-cp/skills/crypt-keeper/reports/cleanup-report-[YYYY-MM-DD].md`
 
 ---
 
@@ -22,9 +22,11 @@ Before running any checks:
 
 1. Read `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — confirms current vault
    structure and naming rules
-2. Confirm `/Users/benbelanger/GitHub/ben-cp/reports/` directory exists —
+2. Confirm `/Users/benbelanger/GitHub/ben-cp/skills/crypt-keeper/reports/` directory exists —
    create it if not (write a `.gitkeep` stub)
-3. Note today's date for the report filename
+3. If a previous `cleanup-report-*.md` exists in `skills/crypt-keeper/reports/`, move it
+   to `skills/crypt-keeper/reports/archive/` using `git mv` before writing the new report
+4. Note today's date for the report filename
 
 ---
 
@@ -109,7 +111,7 @@ For each, verify:
 ## 📊 Report Output
 
 Write the completed report to:
-`/Users/benbelanger/GitHub/ben-cp/reports/cleanup-report-[YYYY-MM-DD].md`
+`/Users/benbelanger/GitHub/ben-cp/skills/crypt-keeper/reports/cleanup-report-[YYYY-MM-DD].md`
 
 Use the template in `skills/crypt-keeper/report-template.md`.
 

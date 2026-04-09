@@ -25,6 +25,9 @@ Self-serve. Used for user behavior tracking across Notes and WLV features.
 | `NotesWLVColumnToggleVisible` | Numerator — datagrid shortcut usage | Notes Datagrid |
 | `NotesWLVDensityChange` | Numerator — datagrid shortcut usage | Notes Datagrid |
 | `NotesWLVSort` | ⚠️ NOT INSTRUMENTED — flagged for Engineering | Notes Datagrid |
+| `/portal` page view (proxy) | Proxy — portal login confirmation (URL-based, not a formal GA event) | Portal — Invitation Acceptance |
+
+> ⚠️ Confirm with Engineering whether this is a trackable GA event or URL-only signal before using as a formal metric.
 
 **GA property:** All one property. Tenant ID available as a dimension.
 **Pull instructions:** See individual KR SOPs in `skills/okr-reporting/`.
@@ -76,6 +79,17 @@ Delegated query. Used when self-serve sources don't cover the needed dimension.
 **KRs that use this source:**
 - Portal KRs (×3) — blocked pending data model confirmation
 - Any metric requiring `external_user_invitations` or session-level data
+
+---
+
+### Database (Direct) — Portal KRs
+Delegated query via Data team. All three Portal KRs share the same architectural
+blocker — they unblock together once the data model is confirmed.
+
+| Table / Source | Used For | KR | Status |
+| :--- | :--- | :--- | :--- |
+| `external_user_invitations` | Invitation sent/accepted counts | Portal — Invitations Sent, Invitation Acceptance | 🛑 Blocked — data model unstable |
+| Session data (TBD) | Person login confirmation | Portal — Invitation Acceptance | 🛑 Blocked |
 
 ---
 

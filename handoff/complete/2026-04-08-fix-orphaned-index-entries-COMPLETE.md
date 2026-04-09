@@ -4,7 +4,11 @@
 > **Source:** Crypt-Keeper report `reports/cleanup-report-2026-04-08.md` flags 1.1, 1.2, 1.3, 4.1
 > **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
 > **v1.0**
-> **STATUS: 🔲 READY**
+> **STATUS: ✅ COMPLETE — 2026-04-09**
+
+All three tasks executed. `skills/crypt-keeper/index.md` updated with SKILL.md, changelog.md, and reports/ entries. `skills/okr-reporting/index.md` updated with changelog.md entry. `crypt-keeper.md` root stub deleted via `git rm` (confirmed as redirect-only). `vault-cleanup.md` was not present at root — no action needed.
+
+**Changelog:** 1.6.0 — 2026-04-09 (see root `changelog.md`)
 
 ---
 

@@ -18,6 +18,7 @@
 | `2026-q2-kr-reference.md` | Q2 2026 — per-KR baseline status, confirmed values, targets, next steps |
 | `notes_datagrid_shortcuts.md` | KR SOP: Notes Datagrid Navigation Shortcuts |
 | `notes_quick_entry.md` | KR SOP: Notes Quick Entry (Outside UOW) |
+| `changelog.md` | Detail log for this skill — all structural changes |
 
 ---
 

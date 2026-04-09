@@ -4,7 +4,11 @@
 > **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
 > **Priority:** P2 — structural consolidation, Crypt-Keeper owns its reports
 > **v1.0**
-> **STATUS: 🔲 READY**
+> **STATUS: ✅ COMPLETE — 2026-04-09**
+
+`skills/crypt-keeper/reports/` and its `archive/` subdirectory were already created in a prior session. The root `reports/` directory was removed via `git rm -r`. `skills/crypt-keeper/procedure.md` updated: output path changed to `skills/crypt-keeper/reports/`, Pre-Flight updated with archive step. `AGENTS.md` vault tree updated: root `reports/` removed, `crypt-keeper/` section expanded with SKILL.md, changelog.md, and `reports/` (with `archive/`). File Placement table updated. `crypt-keeper/index.md` reports/ entry and stale reference updated (done as part of handoff 1). `SKILL.md` was already correct — no change needed.
+
+**Changelog:** 1.6.0 — 2026-04-09 (see root `changelog.md`)
 
 ---
 

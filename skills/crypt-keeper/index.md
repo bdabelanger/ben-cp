@@ -14,13 +14,16 @@
 | File | Description |
 | :--- | :--- |
 | `index.md` | This file — overview and table of contents |
+| `SKILL.md` | Cowork/scheduled task skill descriptor — entry point for automated runs |
 | `procedure.md` | Full check spec — what Crypt-Keeper runs each session |
 | `report-template.md` | Output template for cleanup reports |
+| `changelog.md` | Detail log for this skill — all structural changes |
+| `reports/` | Generated cleanup reports — current run + archive/ |
 
 ---
 
 ## 🔗 References
 
 - Universal agent contract: `/Users/benbelanger/GitHub/ben-cp/AGENTS.md`
-- Reports output directory: `/Users/benbelanger/GitHub/ben-cp/reports/`
+- Reports output directory: `/Users/benbelanger/GitHub/ben-cp/skills/crypt-keeper/reports/`
 - Vault structure reference: `AGENTS.md` Section 1

@@ -4,7 +4,11 @@
 > **Source:** Crypt-Keeper report `reports/cleanup-report-2026-04-08.md` flags 6.1, 6.2, 7.1 naming note
 > **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
 > **v1.0**
-> **STATUS: 🔲 READY — low urgency, batch with other work**
+> **STATUS: ✅ COMPLETE — 2026-04-09**
+
+`skills/okr-reporting/data_sources.md` updated: added "Database (Direct) — Portal KRs" section after SQL via Data team, and added `/portal` page view proxy row to the GA table with an engineering confirmation note. `AGENTS.md` updated with SKILL.md/AGENTS.md naming exemption in the File Naming section.
+
+**Changelog:** 1.6.0 — 2026-04-09 (see root `changelog.md`)
 
 ---
 

@@ -4,19 +4,95 @@ This log tracks major architectural, process, and documentation standard changes
 
 ## [Unreleased]
 
-## [1.5.0] — Lumberjack Skill Created (2026-04-08)
+## [1.6.2] — First formal Lumberjack audit — 7 checks across root changelog and all 9 subdirectory changelogs, validated against 7-day git log. (2026-04-09)
 
 **Detail logs:**
 - `skills/lumberjack/changelog.md`
 
 **Changes:**
-- `skills/lumberjack/` — new skill: changelog auditing, 7 checks, git-authoritative, flag-only (companion to Crypt-Keeper)
-- `skills/index.md` + `AGENTS.md` — lumberjack added to vault index and structure tree
-- `handoff/2026-04-08-p2-changelog-factcheck.md` — handoff created for tomorrow covering all fact-check fixes
+- `/Users/benbelanger/GitHub/ben-cp/skills/lumberjack/reports/lumberjack-report-2026-04-09.md` — First formal Lumberjack audit — 16 flags across 6 checks (Check 7 clean); 10 handoffs cross-referenced; key finding: write_changelog_entry tool behavior copies identical content to all subdirectory changelogs
 
 **Next Tasks:**
-1. Execute `2026-04-08-p2-changelog-factcheck.md` — fixes phantom entries, missing entries, stale Next Tasks, wrong counts, complete/ naming
-2. Create `skills/lumberjack/reports/` directory and run first formal Lumberjack audit
+1. Create handoff 2026-04-09-p2-lumberjack-changelog-fixes.md per report recommendations (Ben to confirm)
+2. Fix write_changelog_entry tool behavior: scope completed_work per subdirectory OR document call-per-skill pattern in AGENTS.md
+3. Pull Notes Datagrid April baseline from GA (feature live 2026-04-09)
+
+
+## [1.6.1] — Run Crypt-Keeper post-handoff verification (2026-04-09): confirm all prior P1/P2 flags resolved, identify remaining structural issues. (2026-04-09)
+
+**Detail logs:**
+- `skills/crypt-keeper/changelog.md`
+
+**Changes:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/crypt-keeper/reports/archive/cleanup-report-2026-04-08.md` — Archived prior report via git mv before writing new run
+- `/Users/benbelanger/GitHub/ben-cp/skills/crypt-keeper/reports/cleanup-report-2026-04-09.md` — Crypt-Keeper run complete — 53 files scanned, 10 flags across 3 checks (Checks 2/4/5/7 clean)
+
+**Next Tasks:**
+1. P1: Create skills/project-status-reports/scripts/index.md (draft in report)
+2. P2: Add Contents table to index.md files that are currently procedure docs (changelog/, skill-builder/, rovo/, project-status-reports/)
+3. P2: Add casebook/changelog.md to casebook/index.md
+4. P2: Add AGENTS.md carve-out for operational pipeline subdirs (inputs/, logs/, outputs/, tests/) to prevent Check 3 false positives
+5. P3: Add Zapier Insights + Super Admin API Access flag to data_sources.md
+6. Pull Notes Datagrid April baseline from GA (feature live today 2026-04-09)
+
+
+## [1.6.0] — Execute all 7 outstanding handoffs from 2026-04-08: fix orphaned index entries, fix casebook/reporting/index.md, create skill-builder subdirectory indexes, add Portal data sources + SKILL.md naming exemption, move reports/ into crypt-keeper, document root-level exemptions, and fix changelog fact-check issues. (2026-04-09)
+
+**Detail logs:**
+- `skills/crypt-keeper/changelog.md`
+- `skills/okr-reporting/changelog.md`
+- `skills/casebook/changelog.md`
+- `skills/skill-builder/changelog.md`
+- `skills/lumberjack/changelog.md`
+
+**Changes:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/crypt-keeper/index.md` — Added SKILL.md, changelog.md, and reports/ entries to contents table; fixed stale reports path reference
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/index.md` — Added changelog.md entry to contents table
+- `/Users/benbelanger/GitHub/ben-cp/crypt-keeper.md` — Deleted root redirect stub via git rm
+- `/Users/benbelanger/GitHub/ben-cp/skills/casebook/reporting/schema_joins.md` — Created — moved schema joins content from index.md with fixed paths (casebook-reporting/ → casebook/reporting/)
+- `/Users/benbelanger/GitHub/ben-cp/skills/casebook/reporting/index.md` — Replaced schema joins doc with proper directory TOC listing all 9 files
+- `/Users/benbelanger/GitHub/ben-cp/skills/skill-builder/mappings/index.md` — Created — new directory TOC for mappings/
+- `/Users/benbelanger/GitHub/ben-cp/skills/skill-builder/styles/index.md` — Created — new directory TOC for styles/
+- `/Users/benbelanger/GitHub/ben-cp/skills/skill-builder/rules/` — Removed empty directory
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/data_sources.md` — Added Database (Direct) — Portal KRs section + /portal GA proxy row with engineering note
+- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Added SKILL.md/AGENTS.md naming exemption; updated vault tree (removed root reports/, added crypt-keeper/reports/); updated File Placement table; root exemptions already had CLAUDE.md and README.md
+- `/Users/benbelanger/GitHub/ben-cp/reports/` — Removed root reports/ directory (git rm -r); content already existed in skills/crypt-keeper/reports/
+- `/Users/benbelanger/GitHub/ben-cp/skills/crypt-keeper/procedure.md` — Updated output path from reports/ to skills/crypt-keeper/reports/; added archive step to Pre-Flight
+- `/Users/benbelanger/GitHub/ben-cp/handoff/complete/2026-04-08-changelog-refactor-COMPLETE.md` — Renamed from 2026-04-08-changelog-refactor.md (added -COMPLETE suffix)
+- `/Users/benbelanger/GitHub/ben-cp/handoff/complete/2026-04-09-consolidate-project-status-reports-COMPLETE.md` — Renamed from 2026-04-09-consolidate-project-status-reports.md (added -COMPLETE suffix)
+- `/Users/benbelanger/GitHub/ben-cp/changelog.md` — Fixed 1.4.1 phantom reports/archive/ path; expanded 1.5.0 with missing infrastructure changes; annotated stale Next Tasks in 1.2.0 and 1.3.0
+- `/Users/benbelanger/GitHub/ben-cp/skills/casebook/changelog.md` — Fixed 1.1.0 wrong count: 4 unexposed → 3 unexposed API functions for subscriptions
+
+**Handoff:** `handoff/2026-04-08-p2-changelog-factcheck-COMPLETE.md`
+
+**Next Tasks:**
+1. Run Crypt-Keeper to verify all P1/P2 flags from 2026-04-08 report are resolved
+2. Pull Notes Datagrid April baseline from GA (feature went live 2026-04-09)
+3. Run first formal Lumberjack audit after this multi-handoff session
+4. Rename casebook-billing-mcp GitHub repo → casebook-subscriptions-mcp, then mv local dir
+
+
+## [1.5.0] — Lumberjack Skill + Infrastructure Cleanup (2026-04-08)
+
+**Detail logs:**
+- `skills/lumberjack/changelog.md`
+
+**Changes:**
+- `skills/lumberjack/` — new skill created: changelog auditing (7 checks, flag-only, companion to Crypt-Keeper)
+- `skills/index.md` + `AGENTS.md` — lumberjack added to vault index and structure tree
+- `skills/handoff/index.md` + `skills/changelog/index.md` + `skills/changelog/entry_template.md` — bidirectional handoff ↔ changelog cross-reference added
+- `src/ben-cp.ts` — `write_changelog_entry` upgraded: `subdirectories` array (replaces single `subdirectory`), `handoff` param, `get_changelog` scope param, `failed_actions` surfaced at root level
+- `src/ben-cp.ts` — `package.json` build script fixed: `tsc -p tsconfig.json` (was broken inline flags)
+- `handoff/complete/` — subdirectory created; all COMPLETE handoffs migrated out of root
+- `casebook-admin-mcp/src/casebook-mcp.ts` — server name corrected: `casebook-admin-api` → `casebook-admin-mcp`
+- `casebook-billing-mcp/src/casebook-mcp.ts` — server name corrected: `casebook-billing-api` → `casebook-subscriptions-mcp`
+- `casebook-billing-mcp/package.json` — name updated: `casebook-billing-mcp` → `casebook-subscriptions-mcp`
+- Both `package.json` descriptions corrected: SSE/Express, not stdio
+- `handoff/2026-04-08-p2-changelog-factcheck.md` — handoff created for next session covering all fact-check fixes
+
+**Next Tasks:**
+1. Run Lumberjack after each multi-skill session
+2. Rename `casebook-billing-mcp` GitHub repo → `casebook-subscriptions-mcp`, then mv local dir
 
 ## [1.4.1] — Crypt-Keeper First Run (2026-04-08)
 
@@ -27,7 +103,7 @@ This log tracks major architectural, process, and documentation standard changes
 - Crypt-Keeper scheduled run completed — 7 checks across 46 .md files
 - 13 total flags across 6 checks (Check 5 clean); 2 new flags (CLAUDE.md, README.md) not in prior session
 - Report written to `skills/crypt-keeper/reports/cleanup-report-2026-04-08.md`
-- `skills/crypt-keeper/reports/` and `reports/archive/` directories created
+- `skills/crypt-keeper/reports/` and `skills/crypt-keeper/reports/archive/` directories created
 - 1 new handoff created: `handoff/2026-04-08-p2-crypt-keeper-root-exemptions.md`
 - 5 prior handoffs remain open — all flagged in report for next run verification
 
@@ -62,7 +138,7 @@ This log tracks major architectural, process, and documentation standard changes
 
 **Next Tasks:**
 1. Add SOPs to `skills/casebook/admin/` and `skills/casebook/subscriptions/` as workflows are documented
-2. Decide whether to expose form config functions or `chargebeeUpdateSubscriptionItems` as MCP tools
+2. Decide whether to expose form config functions or `chargebeeUpdateSubscriptionItems` as MCP tools _(completed in 1.4.0)_
 
 ## [1.2.0] — Casebook Skill Consolidated (2026-04-08)
 
@@ -82,8 +158,8 @@ This log tracks major architectural, process, and documentation standard changes
 **Handoff:** `handoff/complete/2026-04-08-consolidate-casebook-into-skills-COMPLETE.md`
 
 **Next Tasks:**
-1. Populate `skills/casebook/admin-mcp/index.md` with tool descriptions and SOPs
-2. Populate `skills/casebook/billing-mcp/index.md` with tool descriptions and SOPs
+1. Populate `skills/casebook/admin-mcp/index.md` with tool descriptions and SOPs _(completed in 1.3.0 as admin/ and subscriptions/)_
+2. Populate `skills/casebook/billing-mcp/index.md` with tool descriptions and SOPs _(completed in 1.3.0 as admin/ and subscriptions/)_
 
 ## [1.1.0] - Vault Quality Layer & Infrastructure Overhaul (2026-04-08)
 

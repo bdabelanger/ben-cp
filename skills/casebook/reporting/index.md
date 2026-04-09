@@ -1,23 +1,20 @@
-# Schema Relationships & Data Joins
+# Skill: Casebook Reporting
 
-This document serves as a quick reference for spinning up SQL joins or BI tool data models based on the Joining Guide.
+> Reveal BI reference docs and Casebook entity schemas.
+> Last updated: 2026-04-09
 
-## Core Join Map
-* **Cases + Intake:** `Cases` <-(Case Assignees)-> `Intake` (Key: `report_id`)
-* **Cases + People:** `Cases` <-(Case Involvements)-> `People` (Key: `person_id`)
-* **Cases + Resources:** `Cases` <-> `Resource Labels` (Key: `resource_id`)
-* **Contextual Notes:** `Notes` <-(Note Resources)-> `Cases` OR `Intake` OR `Providers`
+---
 
-## BI Tool Modeling Strategy
-When importing this into a tool like Tableau, PowerBI, or Looker:
-1.  Use **People** as your central fact table.
-2.  Ensure that bridge/junction tables are used to prevent Cartesian explosion (many-to-many duplication) when aggregating counts.
-3.  Implement the "Correct Concat" logic at the view/query level for Resource Labels so visualizations read cleanly.
+## 📋 Contents
 
-## 🔗 BI Syntax References
-For specific syntax guides, see:
-* Reveal BI Syntax: [reveal_bi_syntax.md](/Users/benbelanger/GitHub/ben-cp/skills/casebook-reporting/reveal_bi_syntax.md)
-* Visualization Examples: [reveal_bi_visualizations.md](/Users/benbelanger/GitHub/ben-cp/skills/casebook-reporting/reveal_bi_visualizations.md)
-
-## 🛠️ File Management Best Practice
-Before making any edits or writing to any SOP file via the filesystem tools, ALWAYS use 'read_text_file' first to pull a fresh copy of the content. This prevents overwriting recent changes.
+| File | Description |
+| :--- | :--- |
+| `schema_joins.md` | Core join map and BI modeling strategy |
+| `reveal_bi_syntax.md` | Query syntax reference for Reveal BI |
+| `reveal_bi_visualizations.md` | Visualization and output formatting |
+| `casebook-cases.md` | Case entity schema and key fields |
+| `casebook-intake.md` | Intake entity schema |
+| `casebook-people.md` | Person entity schema |
+| `casebook-tenants.md` | Tenant entity schema — use for tenant segmentation |
+| `casebook-users.md` | User entity schema — use for user-level metrics |
+| `changelog.md` | Detail log for this subdirectory |

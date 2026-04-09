@@ -5,7 +5,11 @@
 > **Priority:** P2 — structural violation (AGENTS.md compliance)
 > **Source report:** `skills/crypt-keeper/reports/cleanup-report-2026-04-08.md`
 > **v1.0**
-> **STATUS: 🔲 READY — pick up when handling P2 work**
+> **STATUS: ✅ COMPLETE — 2026-04-09**
+
+On reading `AGENTS.md`, the exemption list already contained `CLAUDE.md` and `README.md` — the update was applied in a prior session. `CLAUDE.md` contains unique Claude Code–specific guidance (handoff check protocol), so it is retained and correctly listed in exemptions. No file edits or deletions were needed; handoff is complete as found.
+
+**Changelog:** 1.6.0 — 2026-04-09 (see root `changelog.md`)
 
 ---
 

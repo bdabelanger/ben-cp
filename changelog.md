@@ -4,6 +4,48 @@ This log tracks major architectural, process, and documentation standard changes
 
 ## [Unreleased]
 
+## [1.9.5] — Run Robert nightly mission integrity audit and update art.md. (2026-04-10)
+
+**Detail logs:**
+- `skills/robert/changelog.md`
+
+**Changes:**
+- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Executed AGENTS.md mission integrity audit; no drift detected.
+- `/Users/benbelanger/GitHub/ben-cp/skills/robert/art.md` — Added commemorative 'The Dream Sequence' entry to art.md.
+
+**Next Tasks:**
+1. Continue monitoring AGENTS.md for foundation drift.
+
+
+## [1.9.4] — Run Lumberjack nightly changelog audit. (2026-04-10)
+
+**Detail logs:**
+- `skills/lumberjack/changelog.md`
+
+**Changes:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/lumberjack/reports/archive/lumberjack-report-2026-04-09.md` — Archived lumberjack-report-2026-04-09.md and created archive/ directory.
+- `/Users/benbelanger/GitHub/ben-cp/skills/lumberjack/reports/lumberjack-report-2026-04-10.md` — Executed changelog audit against git history and written report lumberjack-report-2026-04-10.md.
+- `/Users/benbelanger/GitHub/ben-cp/skills/lumberjack/reports/lumberjack-report-2026-04-10.md` — Identified alignment gaps in skills/handoff/changelog.md and okr-reporting log nesting.
+
+**Next Tasks:**
+1. Address handoff/2026-04-10-p2-lumberjack-changelog-alignment-fixes.md
+
+
+## [1.9.3] — Run Crypt-Keeper nightly structural audit. (2026-04-10)
+
+**Detail logs:**
+- `skills/crypt-keeper/changelog.md`
+
+**Changes:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/crypt-keeper/reports/archive/cleanup-report-2026-04-09.md` — Archived cleanup-report-2026-04-09.md to archive/ directory.
+- `/Users/benbelanger/GitHub/ben-cp/skills/crypt-keeper/reports/cleanup-report-2026-04-10.md` — Executed 7-point structural audit and written report cleanup-report-2026-04-10.md.
+- `/Users/benbelanger/GitHub/ben-cp/skills/crypt-keeper/reports/cleanup-report-2026-04-10.md` — Identified orphaned index entry for notes_quick_entry.md and data_sources.md sync gaps.
+
+**Next Tasks:**
+1. Address handoff/2026-04-10-p1-crypt-keeper-orphaned-and-sync-gaps.md
+2. Address handoff/2026-04-10-p2-crypt-keeper-conventions-and-redundancy.md
+
+
 ## [1.9.2] — Refine vault reporting protocols to eliminate redundant changelog entries when a handoff is the primary output. (2026-04-10)
 
 **Detail logs:**

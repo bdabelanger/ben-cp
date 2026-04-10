@@ -7,6 +7,16 @@
 
 ## [Unreleased]
 
+## 2026-04-10 — Run Lumberjack nightly changelog audit.
+
+**Files changed:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/lumberjack/reports/archive/lumberjack-report-2026-04-09.md` — Archived lumberjack-report-2026-04-09.md and created archive/ directory. ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/skills/lumberjack/reports/lumberjack-report-2026-04-10.md` — Executed changelog audit against git history and written report lumberjack-report-2026-04-10.md. ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/skills/lumberjack/reports/lumberjack-report-2026-04-10.md` — Identified alignment gaps in skills/handoff/changelog.md and okr-reporting log nesting. ✅ Complete
+
+**Next:** Address handoff/2026-04-10-p2-lumberjack-changelog-alignment-fixes.md
+
+
 ## 2026-04-10 — Establish the Quartermaster convention to handle upfront implementation planning and dependency tracking.
 
 **Files changed:**

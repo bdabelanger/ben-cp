@@ -7,6 +7,16 @@
 
 ## [Unreleased]
 
+## 2026-04-10 — Run Crypt-Keeper nightly structural audit.
+
+**Files changed:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/crypt-keeper/reports/archive/cleanup-report-2026-04-09.md` — Archived cleanup-report-2026-04-09.md to archive/ directory. ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/skills/crypt-keeper/reports/cleanup-report-2026-04-10.md` — Executed 7-point structural audit and written report cleanup-report-2026-04-10.md. ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/skills/crypt-keeper/reports/cleanup-report-2026-04-10.md` — Identified orphaned index entry for notes_quick_entry.md and data_sources.md sync gaps. ✅ Complete
+
+**Next:** Address handoff/2026-04-10-p1-crypt-keeper-orphaned-and-sync-gaps.md
+
+
 ## 2026-04-09 — Run Crypt-Keeper post-handoff verification (2026-04-09): confirm all prior P1/P2 flags resolved, identify remaining structural issues.
 
 **Files changed:**

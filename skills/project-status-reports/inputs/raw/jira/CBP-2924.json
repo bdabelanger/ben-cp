@@ -57,16 +57,16 @@
       "timespent": null,
       "timeoriginalestimate": 43200,
       "assignee": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=5c1d45e4ab1c1d35825c3156",
-        "accountId": "5c1d45e4ab1c1d35825c3156",
-        "emailAddress": "jordan.jan@casebook.net",
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Ae715f612-98cd-4680-b8d8-410006257c59",
+        "accountId": "712020:e715f612-98cd-4680-b8d8-410006257c59",
+        "emailAddress": "tuan.nguyen@casebook.net",
         "avatarUrls": {
-          "48x48": "https://secure.gravatar.com/avatar/c7cbac1ad59bab21cb9263515cba2523?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJJ-3.png",
-          "24x24": "https://secure.gravatar.com/avatar/c7cbac1ad59bab21cb9263515cba2523?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJJ-3.png",
-          "16x16": "https://secure.gravatar.com/avatar/c7cbac1ad59bab21cb9263515cba2523?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJJ-3.png",
-          "32x32": "https://secure.gravatar.com/avatar/c7cbac1ad59bab21cb9263515cba2523?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FJJ-3.png"
+          "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/48",
+          "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/24",
+          "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/16",
+          "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/712020:e715f612-98cd-4680-b8d8-410006257c59/92d4f6c7-537a-4f8f-a98e-57f30627f68a/32"
         },
-        "displayName": "Jordan Jan",
+        "displayName": "Tuan Nguyen",
         "active": true,
         "timeZone": "America/New_York",
         "accountType": "atlassian"
@@ -78,7 +78,7 @@
         "name": "P1",
         "id": "2"
       },
-      "updated": "2026-04-07T13:41:32.312-0400",
+      "updated": "2026-04-09T18:50:57.251-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
         "description": "Ready for development in DEV environment",
@@ -387,304 +387,6 @@
         "id": "3"
       },
       "updated": "2026-03-31T10:56:50.669-0400",
-      "status": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
-        "description": "Development in progress in DEV environment",
-        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
-        "name": "In development",
-        "id": "3",
-        "statusCategory": {
-          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
-          "id": 4,
-          "key": "indeterminate",
-          "colorName": "yellow",
-          "name": "In Progress"
-        }
-      }
-    }
-  },
-  {
-    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
-    "id": "48812",
-    "self": "https://casecommons.atlassian.net/rest/api/3/issue/48812",
-    "key": "CBP-3141",
-    "fields": {
-      "summary": "Service Notes - \"Link\" action for service interaction people",
-      "issuetype": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
-        "id": "10057",
-        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
-        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
-        "name": "User Story",
-        "subtask": false,
-        "avatarId": 10306,
-        "hierarchyLevel": 0
-      },
-      "parent": {
-        "id": "40375",
-        "key": "CBP-2924",
-        "self": "https://casecommons.atlassian.net/rest/api/3/issue/40375",
-        "fields": {
-          "summary": "Notes - Services section in new Note dialog",
-          "status": {
-            "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
-            "description": "Development in progress in DEV environment",
-            "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
-            "name": "In development",
-            "id": "3",
-            "statusCategory": {
-              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
-              "id": 4,
-              "key": "indeterminate",
-              "colorName": "yellow",
-              "name": "In Progress"
-            }
-          },
-          "priority": {
-            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
-            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
-            "name": "P2",
-            "id": "3"
-          },
-          "issuetype": {
-            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
-            "id": "10000",
-            "description": "A roadmapped initiative",
-            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
-            "name": "Project",
-            "subtask": false,
-            "hierarchyLevel": 1
-          }
-        }
-      },
-      "created": "2026-03-25T22:56:21.164-0400",
-      "timespent": null,
-      "timeoriginalestimate": null,
-      "assignee": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=5c01b9616c48883c8637a828",
-        "accountId": "5c01b9616c48883c8637a828",
-        "emailAddress": "bisoye.atolagbe@casebook.net",
-        "avatarUrls": {
-          "48x48": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
-          "24x24": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
-          "16x16": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
-          "32x32": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png"
-        },
-        "displayName": "Bisoye Atolagbe",
-        "active": true,
-        "timeZone": "America/New_York",
-        "accountType": "atlassian"
-      },
-      "fixVersions": [],
-      "priority": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
-        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
-        "name": "P2",
-        "id": "3"
-      },
-      "updated": "2026-03-30T08:20:14.072-0400",
-      "status": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
-        "description": "Development in progress in DEV environment",
-        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
-        "name": "In development",
-        "id": "3",
-        "statusCategory": {
-          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
-          "id": 4,
-          "key": "indeterminate",
-          "colorName": "yellow",
-          "name": "In Progress"
-        }
-      }
-    }
-  },
-  {
-    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
-    "id": "47165",
-    "self": "https://casecommons.atlassian.net/rest/api/3/issue/47165",
-    "key": "CBP-3113",
-    "fields": {
-      "summary": "Service Notes - Rostering in new Note dialog",
-      "issuetype": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
-        "id": "10057",
-        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
-        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
-        "name": "User Story",
-        "subtask": false,
-        "avatarId": 10306,
-        "hierarchyLevel": 0
-      },
-      "parent": {
-        "id": "40375",
-        "key": "CBP-2924",
-        "self": "https://casecommons.atlassian.net/rest/api/3/issue/40375",
-        "fields": {
-          "summary": "Notes - Services section in new Note dialog",
-          "status": {
-            "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
-            "description": "Development in progress in DEV environment",
-            "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
-            "name": "In development",
-            "id": "3",
-            "statusCategory": {
-              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
-              "id": 4,
-              "key": "indeterminate",
-              "colorName": "yellow",
-              "name": "In Progress"
-            }
-          },
-          "priority": {
-            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
-            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
-            "name": "P2",
-            "id": "3"
-          },
-          "issuetype": {
-            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
-            "id": "10000",
-            "description": "A roadmapped initiative",
-            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
-            "name": "Project",
-            "subtask": false,
-            "hierarchyLevel": 1
-          }
-        }
-      },
-      "created": "2026-03-11T22:00:41.538-0400",
-      "timespent": null,
-      "timeoriginalestimate": null,
-      "assignee": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=5c01b9616c48883c8637a828",
-        "accountId": "5c01b9616c48883c8637a828",
-        "emailAddress": "bisoye.atolagbe@casebook.net",
-        "avatarUrls": {
-          "48x48": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
-          "24x24": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
-          "16x16": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
-          "32x32": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png"
-        },
-        "displayName": "Bisoye Atolagbe",
-        "active": true,
-        "timeZone": "America/New_York",
-        "accountType": "atlassian"
-      },
-      "fixVersions": [],
-      "priority": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
-        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
-        "name": "P2",
-        "id": "3"
-      },
-      "updated": "2026-04-07T08:46:07.334-0400",
-      "status": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
-        "description": "Development in progress in DEV environment",
-        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
-        "name": "In development",
-        "id": "3",
-        "statusCategory": {
-          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
-          "id": 4,
-          "key": "indeterminate",
-          "colorName": "yellow",
-          "name": "In Progress"
-        }
-      }
-    }
-  },
-  {
-    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
-    "id": "47156",
-    "self": "https://casecommons.atlassian.net/rest/api/3/issue/47156",
-    "key": "CBP-3108",
-    "fields": {
-      "summary": "Service Note - Autocompleter freeze causes same person to be added multiple times",
-      "issuetype": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10011",
-        "id": "10011",
-        "description": "",
-        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10303?size=medium",
-        "name": "Bug",
-        "subtask": false,
-        "avatarId": 10303,
-        "hierarchyLevel": 0
-      },
-      "parent": {
-        "id": "40375",
-        "key": "CBP-2924",
-        "self": "https://casecommons.atlassian.net/rest/api/3/issue/40375",
-        "fields": {
-          "summary": "Notes - Services section in new Note dialog",
-          "status": {
-            "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
-            "description": "Development in progress in DEV environment",
-            "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
-            "name": "In development",
-            "id": "3",
-            "statusCategory": {
-              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
-              "id": 4,
-              "key": "indeterminate",
-              "colorName": "yellow",
-              "name": "In Progress"
-            }
-          },
-          "priority": {
-            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
-            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
-            "name": "P2",
-            "id": "3"
-          },
-          "issuetype": {
-            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
-            "id": "10000",
-            "description": "A roadmapped initiative",
-            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
-            "name": "Project",
-            "subtask": false,
-            "hierarchyLevel": 1
-          }
-        }
-      },
-      "created": "2026-03-11T21:18:43.150-0400",
-      "timespent": null,
-      "timeoriginalestimate": null,
-      "assignee": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=5c01b9616c48883c8637a828",
-        "accountId": "5c01b9616c48883c8637a828",
-        "emailAddress": "bisoye.atolagbe@casebook.net",
-        "avatarUrls": {
-          "48x48": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
-          "24x24": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
-          "16x16": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
-          "32x32": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png"
-        },
-        "displayName": "Bisoye Atolagbe",
-        "active": true,
-        "timeZone": "America/New_York",
-        "accountType": "atlassian"
-      },
-      "fixVersions": [
-        {
-          "self": "https://casecommons.atlassian.net/rest/api/3/version/12494",
-          "id": "12494",
-          "description": "",
-          "name": "Platform-2026-4-2",
-          "archived": false,
-          "released": false,
-          "releaseDate": "2026-04-23"
-        }
-      ],
-      "priority": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/priority/4",
-        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/low.svg",
-        "name": "P3",
-        "id": "4"
-      },
-      "updated": "2026-04-07T08:46:03.267-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
         "description": "Development in progress in DEV environment",
@@ -1233,6 +935,198 @@
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "48812",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/48812",
+    "key": "CBP-3141",
+    "fields": {
+      "summary": "Service Notes - \"Link\" action for service interaction people",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
+        "id": "10057",
+        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
+        "name": "User Story",
+        "subtask": false,
+        "avatarId": 10306,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "40375",
+        "key": "CBP-2924",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/40375",
+        "fields": {
+          "summary": "Notes - Services section in new Note dialog",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
+            "description": "Development in progress in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
+            "name": "In development",
+            "id": "3",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+              "id": 4,
+              "key": "indeterminate",
+              "colorName": "yellow",
+              "name": "In Progress"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2026-03-25T22:56:21.164-0400",
+      "timespent": null,
+      "timeoriginalestimate": null,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=5c01b9616c48883c8637a828",
+        "accountId": "5c01b9616c48883c8637a828",
+        "emailAddress": "bisoye.atolagbe@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
+          "24x24": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
+          "16x16": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
+          "32x32": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png"
+        },
+        "displayName": "Bisoye Atolagbe",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2026-04-09T14:54:10.714-0400",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
+        "description": "QA review in progress in QA environment",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+        "name": "In QA",
+        "id": "10010",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+          "id": 4,
+          "key": "indeterminate",
+          "colorName": "yellow",
+          "name": "In Progress"
+        }
+      }
+    }
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "47165",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/47165",
+    "key": "CBP-3113",
+    "fields": {
+      "summary": "Service Notes - Rostering in new Note dialog",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
+        "id": "10057",
+        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
+        "name": "User Story",
+        "subtask": false,
+        "avatarId": 10306,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "40375",
+        "key": "CBP-2924",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/40375",
+        "fields": {
+          "summary": "Notes - Services section in new Note dialog",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
+            "description": "Development in progress in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
+            "name": "In development",
+            "id": "3",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+              "id": 4,
+              "key": "indeterminate",
+              "colorName": "yellow",
+              "name": "In Progress"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2026-03-11T22:00:41.538-0400",
+      "timespent": null,
+      "timeoriginalestimate": null,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=5c01b9616c48883c8637a828",
+        "accountId": "5c01b9616c48883c8637a828",
+        "emailAddress": "bisoye.atolagbe@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
+          "24x24": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
+          "16x16": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
+          "32x32": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png"
+        },
+        "displayName": "Bisoye Atolagbe",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2026-04-09T14:54:13.974-0400",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
+        "description": "QA review in progress in QA environment",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+        "name": "In QA",
+        "id": "10010",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+          "id": 4,
+          "key": "indeterminate",
+          "colorName": "yellow",
+          "name": "In Progress"
+        }
+      }
+    }
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
     "id": "47164",
     "self": "https://casecommons.atlassian.net/rest/api/3/issue/47164",
     "key": "CBP-3112",
@@ -1427,6 +1321,112 @@
         "id": "4"
       },
       "updated": "2026-03-27T02:23:54.918-0400",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
+        "description": "QA review in progress in QA environment",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+        "name": "In QA",
+        "id": "10010",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+          "id": 4,
+          "key": "indeterminate",
+          "colorName": "yellow",
+          "name": "In Progress"
+        }
+      }
+    }
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "47156",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/47156",
+    "key": "CBP-3108",
+    "fields": {
+      "summary": "Service Note - Autocompleter freeze causes same person to be added multiple times",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10011",
+        "id": "10011",
+        "description": "",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10303?size=medium",
+        "name": "Bug",
+        "subtask": false,
+        "avatarId": 10303,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "40375",
+        "key": "CBP-2924",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/40375",
+        "fields": {
+          "summary": "Notes - Services section in new Note dialog",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
+            "description": "Development in progress in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
+            "name": "In development",
+            "id": "3",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+              "id": 4,
+              "key": "indeterminate",
+              "colorName": "yellow",
+              "name": "In Progress"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2026-03-11T21:18:43.150-0400",
+      "timespent": null,
+      "timeoriginalestimate": null,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=5c01b9616c48883c8637a828",
+        "accountId": "5c01b9616c48883c8637a828",
+        "emailAddress": "bisoye.atolagbe@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
+          "24x24": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
+          "16x16": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
+          "32x32": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png"
+        },
+        "displayName": "Bisoye Atolagbe",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12494",
+          "id": "12494",
+          "description": "",
+          "name": "Platform-2026-4-2",
+          "archived": false,
+          "released": false,
+          "releaseDate": "2026-04-23"
+        }
+      ],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/4",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/low.svg",
+        "name": "P3",
+        "id": "4"
+      },
+      "updated": "2026-04-09T14:54:17.260-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
         "description": "QA review in progress in QA environment",

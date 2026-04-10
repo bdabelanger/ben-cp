@@ -22,7 +22,7 @@
 | Field | Value |
 | :--- |
 | Data Source | Casebook Admin Reporting / Reveal BI (via `cbp_enrollments` table) |
-| Scope | All tenants, filtered to engaged/active only |
+| Scope | Tenants with at least one Enrollment record in the collection period (The eligible population pool) |
 | Granularity | Tenant-level (This KR measures % of tenants, not % of users) |
 | Window | Q3 2026 (July 1 – Sept 30) |
 
@@ -88,9 +88,8 @@ This KR is an **additive metric** — the baseline grows as more shortcut types 
 
 ## 🎯 Target Setting
 
-- **Q3 target:** Set after initial baseline is confirmed; aim for modest adoption growth.
-- **Target format**: Use a specific **%** once denominator population is large enough.
-
+- **Target Setting Protocol (Per Procedure):** Target must be set *after* the initial baseline pull. If no explicit goal exists, propose a target based on reasonable growth assumptions (e.g., 10-20% improvement over baseline) and flag for stakeholder sign-off.
+- **Target format**: Use a specific **%** once denominator population is large enough to support statistical significance.
 ---
 
 ## ⚠️ Known Issues & Gaps

@@ -7,6 +7,77 @@
 
 ## [Unreleased]
 
+## 2026-04-10 — Finalize the documentation for the Locked and Signed Notes KR SOP and create a P2 handoff to address the next outstanding OKR measurement SOP.
+
+**Files changed:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md` — Updated SOP with March 2026 proxy baseline (18 tenants) and integrated Margaux's Google Sheet link into Data Sources for segmentation validation. ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/procedure.md` — Added 'Metric Qualification Standards (N & D)' section, defining strict inclusion criteria for Numerator and Denominator populations to ensure measurement consistency across all KRs. ✅ Complete
+
+**Handoff:** `handoff/2026-04-10-p2-finalize-enrollments-data-entry-shortcuts-baseline.md`
+
+**Next:** Execute the handoff: 2026-04-10-p2-finalize-enrollments-data-entry-shortcuts-baseline.md
+
+
+## 2026-04-10 — Formalize and document the rigorous qualification standards for Numerator and Denominator metrics within the OKR measurement procedure.
+
+**Files changed:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/procedure.md` — Added 'Metric Qualification Standards (N & D)' section, defining strict inclusion criteria for Numerator and Denominator populations to ensure measurement consistency across all KRs. ✅ Complete
+
+**Next:** Review the remaining unblocked KRs in Q2 2026 to determine next documentation priority.
+
+
+## 2026-04-10 — Finalize documentation for the Locked and Signed Notes KR SOP by documenting the March 2026 proxy baseline and integrating Margaux's segmentation sheet.
+
+**Files changed:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md` — Updated SOP to reflect March 2026 proxy baseline (18 tenants) and integrated Margaux's Google Sheet link into Data Sources for segmentation validation. ✅ Complete
+
+**Next:** Review remaining unblocked KRs in Q2 2026 to determine next documentation priority.
+
+
+## 2026-04-10 — Finalize outstanding KR baselines from March 2026 and update the relevant SOPs for Q2 2026 initiatives by documenting baseline data and source caveats.
+
+**Files changed:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/service_notes_data_entry_shortcuts.md` — Updated SOP to v0.2, inserting the March 2026 baseline (31.5%) and updating the data source link with a caveat regarding Roster-only scope due to GA delays. ✅ Complete
+
+**Next:** Finalize Locked and Signed Notes SOP by inputting Q2 proxy baseline and target.
+
+
+## 2026-04-10 — Finalize outstanding KR baselines from March 2026 and update the relevant SOPs for Q2 2026 initiatives.
+
+**Files changed:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/service_notes_data_entry_shortcuts.md` — Updated SOP to v0.2, explicitly cross-referencing the GA event discovery process from notes_quick_entry.md and detailing Reveal BI pull path for baseline calculation. ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md` — Finalized SOP v1.0, establishing Locked Notes as a proxy baseline for High-Confidentiality tenants due to Signed Notes not yet being live. ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/data_sources.md` — Updated the description for Casebook Admin Reporting / Reveal BI to explicitly state its role in serving as a primary source for Denominators in shortcut metrics, improving data lineage clarity. ✅ Complete
+
+**Next:** Execute baseline pull for Service Notes — Roster Association using Reveal BI (Path A).
+
+
+## 2026-04-10 — Populate the Data Source Inventory by cross-referencing all KR SOPs to ensure comprehensive coverage of data sources.
+
+**Files changed:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/data_sources.md` — Updated the description for Casebook Admin Reporting / Reveal BI to explicitly state its role in serving as a primary source for Denominators in shortcut metrics, improving data lineage clarity. ✅ Complete
+
+**Next:** Execute baseline pull for Service Notes — Roster Association using Reveal BI (Path A).
+
+
+## 2026-04-10 — Finalize outstanding KR baselines from March 2026 and update the relevant SOPs for Q2 2026 initiatives.
+
+**Files changed:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/service_notes_data_entry_shortcuts.md` — Updated SOP to v0.2, explicitly cross-referencing the GA event discovery process from notes_quick_entry.md and detailing Reveal BI pull path for baseline calculation. ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md` — Finalized SOP v1.0, establishing Locked Notes as a proxy baseline for High-Confidentiality tenants due to Signed Notes not yet being live. ✅ Complete
+
+**Next:** Execute baseline pull for Service Notes — Roster Association using Reveal BI (Path A).
+
+
+## 2026-04-10 — Finalize outstanding KR baselines from March 2026 and update the relevant SOPs for Q2 2026 initiatives.
+
+**Files changed:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/service_notes_data_entry_shortcuts.md` — Updated SOP to v0.2, explicitly cross-referencing the GA event discovery process from notes_quick_entry.md and detailing Reveal BI pull path for baseline calculation. ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md` — Finalized SOP v1.0, establishing Locked Notes as a proxy baseline for High-Confidentiality tenants due to Signed Notes not yet being live. ✅ Complete
+
+**Next:** Execute baseline pull for Service Notes — Roster Association using Reveal BI (Path A).
+
+
 ## 2026-04-10 — Create and link the Locked and Signed Notes OKR measurement SOP.
 
 **Files changed:**

@@ -37,7 +37,7 @@ The non-UOW distinction is determined by **which entry point fired the Note crea
 | GA Event | Entry Point | Status |
 | :--- | :--- | :--- |
 | `EngageWLVAddNote` | Engage WLV | ✅ Instrumented (Baseline established) |
-| `TrackServiceNoteNew` | Services Track view | ✅ Instrumented (Baseline established) |
+| 
 
 > **Exclusions:** `dashboardAddNoteOpen` is excluded from the current baseline calculation as it was disabled during testing. Future pulls will decide on its inclusion.
 

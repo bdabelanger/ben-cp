@@ -154,7 +154,23 @@ Wrong bump: [X.Y.Z] — [description suggests minor/major but bumped as patch]
 
 ---
 
-## Output
+## Check 8 — Lingering Quartermaster Files
+ 
+ **Question:** Are there `quartermaster.md` files present without an active, uncommitted session?
+ 
+ Steps:
+ 1. Check all `skills/` subdirectories for `quartermaster.md` files.
+ 2. Cross-reference against the current session state (e.g., if running at end-of-day).
+ 3. Flag any lingering files as "Field Notes" for deletion. These are intended to be ephemeral.
+ 
+ **Flag format:**
+ ```
+ Lingering Plan: skills/[name]/quartermaster.md — Session completed or inactive; file should be deleted.
+ ```
+ 
+ ---
+ 
+ ## Output
 
 Write a report to `skills/lumberjack/reports/lumberjack-report-YYYY-MM-DD.md` using the template:
 

@@ -39,8 +39,8 @@
 
 ## 🛠️ Data Sources & Tools
 
-- **Segmentation**: ChurnZero + Margaux's Master Tenant Sheet (Excel/Shared Drive).
-- **Proxy Baseline**: Reveal BI (Platform Dashboard → Notes Tab → Locked Notes).
+- **Segmentation**: ChurnZero + Margaux's Master Tenant Sheet (Google Sheet: https://docs.google.com/spreadsheets/d/1Lh0linGLJO9Oz_qBpJCZuOeV4RNtb_-AvkXWORSRJMw/edit?gid=1186385427#gid=1186385427).
+- **Proxy Baseline**: Reveal BI (Platform Dashboard → Notes Tab → Locked Notes) AND Margaux's Sheet for validation.
 - **Exact Pull**: SQL Query (Data Team request) for signed + locked cross-segmentation.
 
 ---
@@ -51,7 +51,7 @@ Because "Signed Notes" is a late-Q2/Q3 launch (Beta 7/27, GA 8/24), the current 
 
 | Pull date | Metric type | Baseline value |
 | :--- | :--- | :--- |
-| April 2026 | Proxy (Locked only) | TBD (Pull via Reveal BI) |
+| March 2026 | Proxy (Locked only) | 18 Tenants |
 
 ---
 

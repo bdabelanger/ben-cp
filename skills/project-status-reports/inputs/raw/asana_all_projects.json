@@ -12976,7 +12976,7 @@
       {
         "gid": "1210909305830092",
         "name": "Release Date(s)",
-        "display_value": "4/9/2026, 3/27/2026, 3/17/2026, 11/24/2025, 11/6/2025, 10/27/2025"
+        "display_value": "4/13/2026, 3/27/2026, 3/17/2026, 11/24/2025, 11/6/2025, 10/27/2025"
       },
       {
         "gid": "1210909549820601",
@@ -22558,7 +22558,7 @@
       {
         "gid": "1210909305830092",
         "name": "Release Date(s)",
-        "display_value": "4/9/2026, 3/27/2026, 2/4/2026"
+        "display_value": "4/13/2026, 3/27/2026, 2/4/2026"
       },
       {
         "gid": "1210909549820601",
@@ -26498,10 +26498,10 @@
   {
     "gid": "1211481583590706",
     "current_status_update": {
-      "gid": "1213902455162841",
+      "gid": "1213991589408964",
       "status_type": "on_track",
-      "text": "Summary\n\nThis initiative is looking to estimate closer to 20 days at this time, so I've needed to reschedule and reorganize some other things to accommodate. It also is delayed in getting kicked off due to significant reporting usage increase. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
-      "title": "GP - Services - Apr 2"
+      "text": "Summary\n\nLeaving as on track for now even though it's moving 1 release. I think we can squeeze in this work with only a little delay while Feyi delivers more value based work earlier in the quarter. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
+      "title": "GP - Services - Apr 9"
     },
     "custom_fields": [
       {
@@ -26600,12 +26600,12 @@
       {
         "gid": "1210909305830092",
         "name": "Release Date(s)",
-        "display_value": "5/28/2026"
+        "display_value": "6/11/2026"
       },
       {
         "gid": "1210909549820601",
         "name": "GA Month",
-        "display_value": "May 26"
+        "display_value": "Jun 26"
       },
       {
         "gid": "1210191417850167",
@@ -28754,10 +28754,10 @@
   {
     "gid": "1211641799513053",
     "current_status_update": {
-      "gid": "1213558700011573",
-      "status_type": "on_track",
-      "text": "Summary\n\nI will set up a spike in the next sprint to have Ahmed start to plan this out. \n\n----------------------------------------\n\n\n",
-      "title": "Web applications - React upgrade (16.9/17 -> 19.2) - Mar 5"
+      "gid": "1213991589408980",
+      "status_type": "at_risk",
+      "text": "Summary\n\nI think the smartest thing for React would be to break it into bite sized chunks and break down the initiative. I will work with Ahmed to do that since the current dev estimate is 35 days and deliver a new plan. \n\n----------------------------------------\n\n\n",
+      "title": "Web applications - React upgrade (16.9/17 -> 19.2) - Apr 9"
     },
     "custom_fields": [
       {
@@ -29310,7 +29310,7 @@
       {
         "gid": "1210909305830092",
         "name": "Release Date(s)",
-        "display_value": "4/9/2026"
+        "display_value": "4/13/2026"
       },
       {
         "gid": "1210909549820601",
@@ -30454,7 +30454,7 @@
       {
         "gid": "1210909305830092",
         "name": "Release Date(s)",
-        "display_value": "4/9/2026"
+        "display_value": "4/13/2026"
       },
       {
         "gid": "1210909549820601",
@@ -31526,10 +31526,10 @@
   {
     "gid": "1211839375492286",
     "current_status_update": {
-      "gid": "1213902455162734",
+      "gid": "1213984539419202",
       "status_type": "on_track",
-      "text": "Summary\n\nLeaving as on track because it only moved 1 release. QA completed half of their test cases and found enough bugs that I was worried we wouldn't be able to rework, retest, and be ready for release. So I deprioritized this work in favor of UoW linking and WF Triggers because they are lighter testing efforts and have a better chance of getting out the door. That allows us time to complete this for the next release. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
-      "title": "Cascading Values - Apr 2"
+      "text": "Summary\n\nThis feature is still getting bugs tended to. I will admit there are a complicated series of conditions for showing and ending statuses, so want to give grace. It also cascades into many object. We were able to start QA on this earlier and so have a reduced timeline to get through the rest of it. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
+      "title": "Cascading Values - Apr 9"
     },
     "custom_fields": [
       {
@@ -31541,20 +31541,14 @@
       {
         "gid": "1208818118032458",
         "name": "Beta Start",
-        "display_value": "2026-04-09T00:00:00.000Z",
-        "date_value": {
-          "date": "2026-04-09",
-          "date_time": null
-        }
+        "display_value": null,
+        "date_value": null
       },
       {
         "gid": "1208818124273418",
         "name": "GA",
-        "display_value": "2026-04-23T00:00:00.000Z",
-        "date_value": {
-          "date": "2026-04-23",
-          "date_time": null
-        }
+        "display_value": null,
+        "date_value": null
       },
       {
         "gid": "1208818118276550",
@@ -32222,10 +32216,10 @@
   {
     "gid": "1211982734413498",
     "current_status_update": {
-      "gid": "1213902455162774",
+      "gid": "1213991589408917",
       "status_type": "on_track",
-      "text": "Summary\n\nDR is going well on this and I will need to check in with customers next. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
-      "title": "WF - Assign WF Task to Case Person - Apr 2"
+      "text": "Summary\n\nWith some quick pivoting by Feyi I think I can leave this on track for now. He was able to pick up immediately and get running when we deprioritized Services Permissions. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
+      "title": "WF - Assign WF Task to Case Person - Apr 9"
     },
     "custom_fields": [
       {
@@ -32322,7 +32316,7 @@
       {
         "gid": "1210860558531904",
         "name": "Engineering Assignee(s)",
-        "display_value": "Ahmed, Jay"
+        "display_value": "Ahmed, Feyi"
       },
       {
         "gid": "1210909305830092",
@@ -33046,10 +33040,10 @@
   {
     "gid": "1212301034946059",
     "current_status_update": {
-      "gid": "1213902232620317",
+      "gid": "1213984539419195",
       "status_type": "on_track",
-      "text": "Summary\n\nI'm leaving status on track but this will likely move to 4/23. We are still having difficulty getting this stood up in QA. I'm digging into more details about why but it's looking unlikely for UAT tomorrow. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
-      "title": "AI - Supervisor Tools - Case workload overview - Apr 2"
+      "text": "Summary\n\nI've begun basic QA on this tool and demoed it extensively. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
+      "title": "AI - Supervisor Tools - Case workload overview - Apr 9"
     },
     "custom_fields": [
       {
@@ -33251,10 +33245,10 @@
   {
     "gid": "1212301034946069",
     "current_status_update": {
-      "gid": "1213902232620310",
+      "gid": "1213984539419172",
       "status_type": "on_track",
-      "text": "Summary\n\nI did some reprioritizing this week. I refocused QA to deliver this work over Cascade Values so it is on track for release. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
-      "title": "WF - Case Involvement & Labels Triggers - Apr 2"
+      "text": "Summary\n\nThis is both rocking and rolling and ready for release. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
+      "title": "WF - Case Involvement & Labels Triggers - Apr 9"
     },
     "custom_fields": [
       {
@@ -33318,10 +33312,10 @@
       {
         "gid": "1208822149019495",
         "enum_value": {
-          "gid": "1209847080766035"
+          "gid": "1209847080766036"
         },
         "name": "Stage",
-        "display_value": "In QA"
+        "display_value": "In UAT"
       },
       {
         "gid": "1209127915359058",
@@ -33356,7 +33350,7 @@
       {
         "gid": "1210909305830092",
         "name": "Release Date(s)",
-        "display_value": "4/9/2026"
+        "display_value": "4/13/2026"
       },
       {
         "gid": "1210909549820601",
@@ -34541,7 +34535,7 @@
       {
         "gid": "1210909305830092",
         "name": "Release Date(s)",
-        "display_value": "5/14/2026, 4/23/2026, 4/9/2026"
+        "display_value": "5/14/2026, 4/23/2026, 4/13/2026"
       },
       {
         "gid": "1210909549820601",
@@ -34734,7 +34728,7 @@
       {
         "gid": "1210909305830092",
         "name": "Release Date(s)",
-        "display_value": "4/9/2026"
+        "display_value": "4/13/2026"
       },
       {
         "gid": "1210909549820601",
@@ -35123,7 +35117,7 @@
       {
         "gid": "1210909305830092",
         "name": "Release Date(s)",
-        "display_value": "4/9/2026"
+        "display_value": "4/13/2026"
       },
       {
         "gid": "1210909549820601",
@@ -36839,10 +36833,10 @@
   {
     "gid": "1212825593665311",
     "current_status_update": {
-      "gid": "1213902232620303",
+      "gid": "1213984456827231",
       "status_type": "on_track",
-      "text": "Summary\n\nI did some reprioritizing this week. I refocused QA to deliver this work over Cascade Values so it is on track for release. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
-      "title": "UoW Linking from Reporting - Apr 2"
+      "text": "Summary\n\nThis is in UAT with no bugs and ready for release\n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
+      "title": "UoW Linking from Reporting - Apr 9"
     },
     "custom_fields": [
       {
@@ -36906,10 +36900,10 @@
       {
         "gid": "1208822149019495",
         "enum_value": {
-          "gid": "1209847080766035"
+          "gid": "1209847080766036"
         },
         "name": "Stage",
-        "display_value": "In QA"
+        "display_value": "In UAT"
       },
       {
         "gid": "1209127915359058",
@@ -36944,7 +36938,7 @@
       {
         "gid": "1210909305830092",
         "name": "Release Date(s)",
-        "display_value": "4/9/2026"
+        "display_value": "4/13/2026"
       },
       {
         "gid": "1210909549820601",
@@ -37416,10 +37410,10 @@
   {
     "gid": "1213218414627700",
     "current_status_update": {
-      "gid": "1213902455162727",
+      "gid": "1213984539419209",
       "status_type": "on_track",
-      "text": "Summary\n\nBE is delivered. Hector has some rework to do on Cascade Values that may impact timeline on this, but I'll monitor. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
-      "title": "Configurable Relationship Type - Apr 2"
+      "text": "Summary\n\nLeaving on track since it's only moving 1 release. This is getting bumped out due to the delay in BE work as well as the complicated nature of Cascade Values and a series of P1 bugs coming through. Feyi has officially delivered the BE work and migration that will unblock Hector as soon as he surfaces off Cascade Values. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
+      "title": "Configurable Relationship Type - Apr 9"
     },
     "custom_fields": [
       {
@@ -37536,17 +37530,17 @@
       {
         "gid": "1210860558531904",
         "name": "Engineering Assignee(s)",
-        "display_value": "Hector, Jay"
+        "display_value": "Feyi, Hector"
       },
       {
         "gid": "1210909305830092",
         "name": "Release Date(s)",
-        "display_value": "4/23/2026"
+        "display_value": "5/14/2026"
       },
       {
         "gid": "1210909549820601",
         "name": "GA Month",
-        "display_value": "Apr 26"
+        "display_value": "May 26"
       },
       {
         "gid": "1211631943113717",
@@ -37618,10 +37612,10 @@
   {
     "gid": "1213222092578363",
     "current_status_update": {
-      "gid": "1213902455162762",
-      "status_type": "on_track",
-      "text": "Summary\n\nTurns out WF steps statuses are FE magic \u2728\ud83e\ude84. Still minimal work but will also pull in FE/GQL. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
-      "title": "WF - Update Step and Tasks statuses when ending a WF early - Apr 2"
+      "gid": "1213991492075614",
+      "status_type": "off_track",
+      "text": "Summary\n\nI'm going to move this as a 'nice to have' in June. It requires more FE research to establish the consistent status behavior logic and as a 5% item is lower on the priority list. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
+      "title": "WF - Update Step and Tasks statuses when ending a WF early - Apr 9"
     },
     "custom_fields": [
       {
@@ -37715,17 +37709,17 @@
       {
         "gid": "1210860558531904",
         "name": "Engineering Assignee(s)",
-        "display_value": "Jay"
+        "display_value": null
       },
       {
         "gid": "1210909305830092",
         "name": "Release Date(s)",
-        "display_value": "5/14/2026"
+        "display_value": "6/25/2026"
       },
       {
         "gid": "1210909549820601",
         "name": "GA Month",
-        "display_value": "May 26"
+        "display_value": "Jun 26"
       },
       {
         "gid": "1210191417850167",
@@ -37820,10 +37814,10 @@
   {
     "gid": "1213222092578370",
     "current_status_update": {
-      "gid": "1213902455162828",
+      "gid": "1213991589408953",
       "status_type": "on_track",
-      "text": "Summary\n\nThis is set, just need to get some customer validation. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
-      "title": "WF - Improve Approvals - Apr 2"
+      "text": "Summary\n\nThe team and I have met and groomed this work, just need to write up the tickets. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
+      "title": "WF - Improve Approvals - Apr 9"
     },
     "custom_fields": [
       {
@@ -38025,10 +38019,10 @@
   {
     "gid": "1213222092578382",
     "current_status_update": {
-      "gid": "1213902455162750",
-      "status_type": "on_track",
-      "text": "Summary\n\nLooks like there's some conditional logic formatting updates 1.8.0 \u2192 1.8.4 and redis caching I need to look into. If BE on other initiatives run long this will be the thing I move, but I'll keep an eye on it. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
-      "title": "Reveal Upgrade (1.8.4) - Apr 2"
+      "gid": "1213991492075605",
+      "status_type": "on_hold",
+      "text": "Summary\n\nThe biggest improvement out customers might use, imo, is the date filter improvements. This includes:\n    Support for multiple date filters in a single dashboard\n    Hide filters\n    Set filters to read-only\nI really like that but I'm not sure we have the capacity to get that out the door until we get a new hire in place. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
+      "title": "Reveal Upgrade (1.8.4) - Apr 9"
     },
     "custom_fields": [
       {
@@ -38092,10 +38086,10 @@
       {
         "gid": "1208822149019495",
         "enum_value": {
-          "gid": "1208822149019498"
+          "gid": "1211633294655726"
         },
         "name": "Stage",
-        "display_value": "Discovery"
+        "display_value": "On hold"
       },
       {
         "gid": "1209127915359058",
@@ -38122,7 +38116,7 @@
       {
         "gid": "1210860558531904",
         "name": "Engineering Assignee(s)",
-        "display_value": "Jay"
+        "display_value": null
       },
       {
         "gid": "1210909305830092",
@@ -38418,10 +38412,10 @@
   {
     "gid": "1213222092578424",
     "current_status_update": {
-      "gid": "1213902455162816",
+      "gid": "1213991589408944",
       "status_type": "on_track",
-      "text": "Summary\n\nI had a good chat with Anthony today getting rolling on this. I will continue to chunk out time to work on it. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
-      "title": "Analytics Package - Tasks & Work - Apr 2"
+      "text": "Summary\n\nStill trying to prioritize this work for myself. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
+      "title": "Analytics Package - Tasks & Work - Apr 9"
     },
     "custom_fields": [
       {
@@ -38605,10 +38599,10 @@
   {
     "gid": "1213222092578435",
     "current_status_update": {
-      "gid": "1213902455162741",
+      "gid": "1213984539419216",
       "status_type": "on_track",
-      "text": "Summary\n\nDR went well and I will get this in grooming tomorrow if we have time\n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
-      "title": "Audit Log - Follow the Person - Apr 2"
+      "text": "Summary\n\nThis is a one ticket initiative - We groomed it and I will put it in sprint as soon as some space frees up. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
+      "title": "Audit Log - Follow the Person - Apr 9"
     },
     "custom_fields": [
       {
@@ -38726,8 +38720,8 @@
       {
         "gid": "1211632504010030",
         "name": "PRD",
-        "display_value": null,
-        "text_value": null
+        "display_value": "https://casecommons.atlassian.net/wiki/spaces/PROD/pages/4493836289/Audit+Log+Intent-Based+Query+Experience",
+        "text_value": "https://casecommons.atlassian.net/wiki/spaces/PROD/pages/4493836289/Audit+Log+Intent-Based+Query+Experience"
       },
       {
         "gid": "1211632748689814",
@@ -38971,10 +38965,10 @@
   {
     "gid": "1213222092578459",
     "current_status_update": {
-      "gid": "1213902455162848",
+      "gid": "1213991589408971",
       "status_type": "on_track",
-      "text": "Summary\n\nPierre has a rough first pass at this, he and I have spoken about it briefly but need to do more digging before we're ready to bring to DR. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
-      "title": "WF - Integrated Tasks Datagrid - Apr 2"
+      "text": "Summary\n\nWe had a good DR about this. It has a significant QA cost so will need to start early in May to hope to get out in time for the quarter. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
+      "title": "WF - Integrated Tasks Datagrid - Apr 9"
     },
     "custom_fields": [
       {
@@ -39054,10 +39048,10 @@
       {
         "gid": "1210199689431979",
         "enum_value": {
-          "gid": "1210201175462577"
+          "gid": "1210199689431984"
         },
         "name": "Current Discovery Stage",
-        "display_value": "Not Started / Just Starting"
+        "display_value": "50%"
       },
       {
         "gid": "1210319522464926",
@@ -39127,10 +39121,10 @@
       {
         "gid": "1210199693442470",
         "enum_value": {
-          "gid": "1210199693442473"
+          "gid": "1210199693442476"
         },
         "name": "Target Discovery Stage",
-        "display_value": "Initial PRD Shareout"
+        "display_value": "75%"
       },
       {
         "gid": "1210191417850169",
@@ -39367,10 +39361,10 @@
   {
     "gid": "1213246452539768",
     "current_status_update": {
-      "gid": "1213902455162786",
+      "gid": "1213991492075623",
       "status_type": "on_track",
-      "text": "Summary\n\nGrooming this with the team tomorrow. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
-      "title": "WF - Add Attachments & Forms to UoW before ending a WF - Apr 2"
+      "text": "Summary\n\nThis brought up some really good conversation around driving consistency in tasks and I think we can get to this in time. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
+      "title": "WF - Add Attachments & Forms to UoW before ending a WF - Apr 9"
     },
     "custom_fields": [
       {
@@ -39453,10 +39447,10 @@
       {
         "gid": "1210199689431979",
         "enum_value": {
-          "gid": "1210201162196333"
+          "gid": "1210199689431986"
         },
         "name": "Current Discovery Stage",
-        "display_value": "Demo"
+        "display_value": "100%"
       },
       {
         "gid": "1210319522464926",
@@ -39467,7 +39461,7 @@
       {
         "gid": "1210860558531904",
         "name": "Engineering Assignee(s)",
-        "display_value": "Jay"
+        "display_value": "Feyi"
       },
       {
         "gid": "1210909305830092",
@@ -39482,9 +39476,9 @@
       {
         "gid": "1210191417850167",
         "name": "Next DR Date",
-        "display_value": "2026-02-18T00:00:00.000Z",
+        "display_value": "2026-04-08T00:00:00.000Z",
         "date_value": {
-          "date": "2026-02-18",
+          "date": "2026-04-08",
           "date_time": null
         }
       },
@@ -39526,10 +39520,10 @@
       {
         "gid": "1210199693442470",
         "enum_value": {
-          "gid": "1210199693442477"
+          "gid": "1211642193630509"
         },
         "name": "Target Discovery Stage",
-        "display_value": "100%"
+        "display_value": "Demo"
       },
       {
         "gid": "1210191417850169",
@@ -39941,10 +39935,10 @@
   {
     "gid": "1213406580664275",
     "current_status_update": {
-      "gid": "1213902455162720",
+      "gid": "1213984539419186",
       "status_type": "on_track",
-      "text": "Summary\n\nCode complete and in the QA queue. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
-      "title": "Accessibility - VPAT Critical Issues - Access  - Apr 2"
+      "text": "Summary\n\nI have let QA know this is the bottom of the priority list for the next release, so it may get bumped in favor of customer bugs. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
+      "title": "Accessibility - VPAT Critical Issues - Access  - Apr 9"
     },
     "custom_fields": [
       {
@@ -40250,9 +40244,9 @@
       {
         "gid": "1210191417850167",
         "name": "Next DR Date",
-        "display_value": "2026-04-08T00:00:00.000Z",
+        "display_value": "2026-04-15T00:00:00.000Z",
         "date_value": {
-          "date": "2026-04-08",
+          "date": "2026-04-15",
           "date_time": null
         }
       },
@@ -40897,9 +40891,11 @@
       },
       {
         "gid": "1210199693442470",
-        "enum_value": null,
+        "enum_value": {
+          "gid": "1210201158825294"
+        },
         "name": "Target Discovery Stage",
-        "display_value": null
+        "display_value": "N/A"
       },
       {
         "gid": "1210191417850167",
@@ -40933,7 +40929,7 @@
       {
         "gid": "1210909305830092",
         "name": "Release Date(s)",
-        "display_value": "4/23/2026, 4/9/2026"
+        "display_value": "4/23/2026, 4/13/2026"
       },
       {
         "gid": "1210909549820601",

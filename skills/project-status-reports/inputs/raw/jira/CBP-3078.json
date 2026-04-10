@@ -193,102 +193,6 @@
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
-    "id": "48806",
-    "self": "https://casecommons.atlassian.net/rest/api/3/issue/48806",
-    "key": "CBP-3138",
-    "fields": {
-      "summary": "Text Message Syncing - Delete individual text messages and entire threads",
-      "issuetype": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
-        "id": "10057",
-        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
-        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
-        "name": "User Story",
-        "subtask": false,
-        "avatarId": 10306,
-        "hierarchyLevel": 0
-      },
-      "parent": {
-        "id": "46233",
-        "key": "CBP-3078",
-        "self": "https://casecommons.atlassian.net/rest/api/3/issue/46233",
-        "fields": {
-          "summary": "Communications - Text message syncing bugs",
-          "status": {
-            "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
-            "description": "Ready for development in DEV environment",
-            "iconUrl": "https://casecommons.atlassian.net/",
-            "name": "To do",
-            "id": "10007",
-            "statusCategory": {
-              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
-              "id": 2,
-              "key": "new",
-              "colorName": "blue-gray",
-              "name": "To Do"
-            }
-          },
-          "priority": {
-            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
-            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
-            "name": "P2",
-            "id": "3"
-          },
-          "issuetype": {
-            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
-            "id": "10000",
-            "description": "A roadmapped initiative",
-            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
-            "name": "Project",
-            "subtask": false,
-            "hierarchyLevel": 1
-          }
-        }
-      },
-      "created": "2026-03-25T22:11:29.705-0400",
-      "timespent": null,
-      "timeoriginalestimate": null,
-      "assignee": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Adf2710dd-2823-4ec1-a057-888994b32158",
-        "accountId": "712020:df2710dd-2823-4ec1-a057-888994b32158",
-        "emailAddress": "duc.vu@casebook.net",
-        "avatarUrls": {
-          "48x48": "https://secure.gravatar.com/avatar/5bc21669211cc15b321aab7a1a620c3b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FDV-3.png",
-          "24x24": "https://secure.gravatar.com/avatar/5bc21669211cc15b321aab7a1a620c3b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FDV-3.png",
-          "16x16": "https://secure.gravatar.com/avatar/5bc21669211cc15b321aab7a1a620c3b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FDV-3.png",
-          "32x32": "https://secure.gravatar.com/avatar/5bc21669211cc15b321aab7a1a620c3b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FDV-3.png"
-        },
-        "displayName": "Duc Vu",
-        "active": true,
-        "timeZone": "America/New_York",
-        "accountType": "atlassian"
-      },
-      "fixVersions": [],
-      "priority": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
-        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
-        "name": "P2",
-        "id": "3"
-      },
-      "updated": "2026-04-07T11:14:13.128-0400",
-      "status": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
-        "description": "Development in progress in DEV environment",
-        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
-        "name": "In development",
-        "id": "3",
-        "statusCategory": {
-          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
-          "id": 4,
-          "key": "indeterminate",
-          "colorName": "yellow",
-          "name": "In Progress"
-        }
-      }
-    }
-  },
-  {
-    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
     "id": "48810",
     "self": "https://casecommons.atlassian.net/rest/api/3/issue/48810",
     "key": "CBP-3140",
@@ -377,6 +281,112 @@
         "id": "3"
       },
       "updated": "2026-04-01T10:54:23.459-0400",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10011",
+        "description": "Ready for QA review in QA environment",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+        "name": "Merged to QA",
+        "id": "10011",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+          "id": 4,
+          "key": "indeterminate",
+          "colorName": "yellow",
+          "name": "In Progress"
+        }
+      }
+    }
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "48806",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/48806",
+    "key": "CBP-3138",
+    "fields": {
+      "summary": "Text Message Syncing - Delete individual text messages and entire threads",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
+        "id": "10057",
+        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
+        "name": "User Story",
+        "subtask": false,
+        "avatarId": 10306,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "46233",
+        "key": "CBP-3078",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/46233",
+        "fields": {
+          "summary": "Communications - Text message syncing bugs",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
+            "description": "Ready for development in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/",
+            "name": "To do",
+            "id": "10007",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
+              "id": 2,
+              "key": "new",
+              "colorName": "blue-gray",
+              "name": "To Do"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2026-03-25T22:11:29.705-0400",
+      "timespent": null,
+      "timeoriginalestimate": null,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Adf2710dd-2823-4ec1-a057-888994b32158",
+        "accountId": "712020:df2710dd-2823-4ec1-a057-888994b32158",
+        "emailAddress": "duc.vu@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/5bc21669211cc15b321aab7a1a620c3b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FDV-3.png",
+          "24x24": "https://secure.gravatar.com/avatar/5bc21669211cc15b321aab7a1a620c3b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FDV-3.png",
+          "16x16": "https://secure.gravatar.com/avatar/5bc21669211cc15b321aab7a1a620c3b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FDV-3.png",
+          "32x32": "https://secure.gravatar.com/avatar/5bc21669211cc15b321aab7a1a620c3b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FDV-3.png"
+        },
+        "displayName": "Duc Vu",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12494",
+          "id": "12494",
+          "description": "",
+          "name": "Platform-2026-4-2",
+          "archived": false,
+          "released": false,
+          "releaseDate": "2026-04-23"
+        }
+      ],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2026-04-09T03:59:12.541-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10011",
         "description": "Ready for QA review in QA environment",

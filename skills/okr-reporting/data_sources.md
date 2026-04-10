@@ -7,7 +7,7 @@ This document serves as the authoritative map for all data sources used to calcu
 ## 🌐 Primary Data Sources
 
 1.  **Google Analytics (GA4):** The primary source for user behavior, event tracking, and adoption metrics across various entry points.
-2.  **Casebook Admin Reporting / Reveal BI:** Used for querying transactional data from the core Casebook database (e.g., Service Note creation counts, Enrollment records).
+2.  **Casebook Admin Reporting / Reveal BI:** Used for querying transactional data from the core Casebook database (e.g., Service Note creation counts, Enrollment records) AND serving as the primary source for Denominators in shortcut metrics.
 3.  **ChurnZero/SQL:** Used for high-confidentiality tenant segmentation and external validation.
 
 ---

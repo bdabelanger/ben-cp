@@ -37,7 +37,9 @@ subdirectory gets its own changelog entry before the root entry is written.
 
 ### Stage 2 — Write Subdirectory Changelog Entries (Deepest First)
 
-For each active subdirectory (e.g., `skills/okr-reporting/`):
+**Handoff Exemption:** If the work performed in a subdirectory is already fully detailed in a newly created READY handoff file, you SHOULD skip Stage 2 for that subdirectory. Instead, ensure the root entry in Stage 3 points directly to the handoff.
+ 
+ For each active subdirectory (e.g., `skills/okr-reporting/`):
 
 1. Check if `skills/[name]/changelog.md` exists
    - If yes: read it first, then use `edit_file` to prepend a new entry

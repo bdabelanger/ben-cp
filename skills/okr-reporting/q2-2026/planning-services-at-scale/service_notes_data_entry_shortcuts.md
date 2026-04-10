@@ -33,6 +33,7 @@
 **Tenants where at least one user associated with a Service Note fired a Data Entry Shortcut event.**
 
 | GA Event | Shortcut Type | Status |
+> **BASELINE (March 2026):** 31.5% (69/218)
 | :--- | :--- | :--- |
 | [EVENT_NAME_1] | [Shortcut Description 1] | [Status] |
 > *Note: Specific GA events must be discovered via DevTools, following the process in notes_quick_entry.md.*
@@ -80,7 +81,7 @@ See master inventory: `../../data_sources.md`
 
 | Source | Usage | Link |
 | :--- | :--- | :--- |
-| Google Analytics / Reveal BI | Primary — shortcut event tracking and Service Note denominator | [GA4 Analysis](https://analytics.google.com/analytics/web/#/analysis/a122185697p384028779/edit/aK7_-dWoRZSgOlSAKdeIRQ) |
+| Google Analytics / Reveal BI | Primary — shortcut event tracking and Service Note denominator (Currently Roster-only due to GA delay for Service Groups) | [Casebook Report](https://admin.casebook.net/reporting/reports/1e34a5ca-d367-43ce-8471-b105e24d4df3) |
 
 ---
 

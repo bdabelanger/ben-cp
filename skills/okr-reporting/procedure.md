@@ -54,6 +54,39 @@ feature is not yet shipped.
 proceed to Step 1. If a proxy baseline approach has been agreed (see quarterly
 reference), proceed to Step 2A or 2B using the proxy method noted there.
 
+### Metric Qualification Standards (N & D)
+
+This section defines the auditable criteria for qualifying tenants and actions, ensuring consistency across all KR SOPs:
+
+**1. Denominator Qualification Strategy (The Population Pool):**
+*   **Core Definition:** The denominator must represent the universe of tenants *eligible* to participate in this security validation KR during Q2 2026.
+*   **Inclusion Criteria (Must meet ALL):**
+    *   Tenant Segment = "High-Confidentiality" (Verified via Margaux's Sheet).
+    *   Activity = Tenant has created $\ge 1$ Note in Casebook within the Q2 window.
+    *   **Refinement:** The note must be associated with a Service Entity or fall under the Services Track scope to ensure relevance to the KR's purpose (security validation *of services data*).
+
+**2. Numerator Qualification Strategy (The Success Count):**
+*   **Core Definition:** The numerator counts tenants from the qualified Denominator pool who successfully completed the required security action on a relevant note.
+*   **Inclusion Criteria (Must meet ALL):**
+    *   Tenant is in the Qualified Denominator Pool.
+    *   Action = Tenant has performed **Note Locked OR Note Signed**.
+    *   **Refinement:** The specific Note involved *must* contain or reference Services data, as defined by either a Service Entity link or the 'Services Track' metadata tag.
+
+---
+
+### Step 1: Identify the Acquisition Path
+
+Check the `Data Source` column and route accordingly:
+
+| Data Source | Path |
+| :--- | :--- |
+| Casebook Admin Reporting / Reveal BI | **Path A** → Self-serve (Step 2A) |
+| ChurnZero | **Path A** → Self-serve (Step 2A) |
+| HubSpot | **Path A** → Self-serve (Step 2A) |
+| Google Analytics | **Path A** → Self-serve (Step 2A) |
+| SQL query | **Path B** → Delegated to Data team (Step 2B) |
+| Multiple sources listed | Run each source independently; combine values |
+| No source listed | Stop — define source before proceeding |
 ---
 
 ### Step 1: Identify the Acquisition Path

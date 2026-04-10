@@ -1,6 +1,6 @@
 {
     "project": "Platform Weekly Status",
-    "last_run": "2026_04_07",
+    "last_run": "2026_04_09",
     "config": {
         "processed_dir": "inputs/processed",
         "archive_dir": "inputs/archive"

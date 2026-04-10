@@ -1,112 +1,6 @@
 [
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
-    "id": "43151",
-    "self": "https://casecommons.atlassian.net/rest/api/3/issue/43151",
-    "key": "CBP-3006",
-    "fields": {
-      "summary": "Update core components to MUI v7",
-      "issuetype": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
-        "id": "10057",
-        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
-        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
-        "name": "User Story",
-        "subtask": false,
-        "avatarId": 10306,
-        "hierarchyLevel": 0
-      },
-      "parent": {
-        "id": "40263",
-        "key": "CBP-2917",
-        "self": "https://casecommons.atlassian.net/rest/api/3/issue/40263",
-        "fields": {
-          "summary": "Material UI v7 upgrade",
-          "status": {
-            "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
-            "description": "Ready for development in DEV environment",
-            "iconUrl": "https://casecommons.atlassian.net/",
-            "name": "To do",
-            "id": "10007",
-            "statusCategory": {
-              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
-              "id": 2,
-              "key": "new",
-              "colorName": "blue-gray",
-              "name": "To Do"
-            }
-          },
-          "priority": {
-            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
-            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
-            "name": "P2",
-            "id": "3"
-          },
-          "issuetype": {
-            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
-            "id": "10000",
-            "description": "A roadmapped initiative",
-            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
-            "name": "Project",
-            "subtask": false,
-            "hierarchyLevel": 1
-          }
-        }
-      },
-      "created": "2026-02-06T11:17:36.979-0500",
-      "timespent": null,
-      "timeoriginalestimate": null,
-      "assignee": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3A041e56ef-092e-4238-9d54-004beba24d1e",
-        "accountId": "712020:041e56ef-092e-4238-9d54-004beba24d1e",
-        "emailAddress": "sodiq.onawale@casebook.net",
-        "avatarUrls": {
-          "48x48": "https://secure.gravatar.com/avatar/a06f16a161b3d1b4ae3e8582974d3730?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSO-4.png",
-          "24x24": "https://secure.gravatar.com/avatar/a06f16a161b3d1b4ae3e8582974d3730?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSO-4.png",
-          "16x16": "https://secure.gravatar.com/avatar/a06f16a161b3d1b4ae3e8582974d3730?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSO-4.png",
-          "32x32": "https://secure.gravatar.com/avatar/a06f16a161b3d1b4ae3e8582974d3730?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSO-4.png"
-        },
-        "displayName": "Sodiq Onawale",
-        "active": true,
-        "timeZone": "America/New_York",
-        "accountType": "atlassian"
-      },
-      "fixVersions": [
-        {
-          "self": "https://casecommons.atlassian.net/rest/api/3/version/12461",
-          "id": "12461",
-          "description": "",
-          "name": "Platform-2026-4-1",
-          "archived": false,
-          "released": false,
-          "releaseDate": "2026-04-09"
-        }
-      ],
-      "priority": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
-        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
-        "name": "P2",
-        "id": "3"
-      },
-      "updated": "2026-04-03T10:44:33.923-0400",
-      "status": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/status/10011",
-        "description": "Ready for QA review in QA environment",
-        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
-        "name": "Merged to QA",
-        "id": "10011",
-        "statusCategory": {
-          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
-          "id": 4,
-          "key": "indeterminate",
-          "colorName": "yellow",
-          "name": "In Progress"
-        }
-      }
-    }
-  },
-  {
-    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
     "id": "43148",
     "self": "https://casecommons.atlassian.net/rest/api/3/issue/43148",
     "key": "CBP-3004",
@@ -194,13 +88,119 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-03T10:25:12.459-0400",
+      "updated": "2026-04-08T10:29:14.088-0400",
       "status": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/status/10066",
-        "description": "Additional development required in QA environment",
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10011",
+        "description": "Ready for QA review in QA environment",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
-        "name": "QA revise",
-        "id": "10066",
+        "name": "Merged to QA",
+        "id": "10011",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+          "id": 4,
+          "key": "indeterminate",
+          "colorName": "yellow",
+          "name": "In Progress"
+        }
+      }
+    }
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "43151",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/43151",
+    "key": "CBP-3006",
+    "fields": {
+      "summary": "Update core components to MUI v7",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
+        "id": "10057",
+        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
+        "name": "User Story",
+        "subtask": false,
+        "avatarId": 10306,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "40263",
+        "key": "CBP-2917",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/40263",
+        "fields": {
+          "summary": "Material UI v7 upgrade",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
+            "description": "Ready for development in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/",
+            "name": "To do",
+            "id": "10007",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
+              "id": 2,
+              "key": "new",
+              "colorName": "blue-gray",
+              "name": "To Do"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2026-02-06T11:17:36.979-0500",
+      "timespent": null,
+      "timeoriginalestimate": null,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3A041e56ef-092e-4238-9d54-004beba24d1e",
+        "accountId": "712020:041e56ef-092e-4238-9d54-004beba24d1e",
+        "emailAddress": "sodiq.onawale@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/a06f16a161b3d1b4ae3e8582974d3730?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSO-4.png",
+          "24x24": "https://secure.gravatar.com/avatar/a06f16a161b3d1b4ae3e8582974d3730?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSO-4.png",
+          "16x16": "https://secure.gravatar.com/avatar/a06f16a161b3d1b4ae3e8582974d3730?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSO-4.png",
+          "32x32": "https://secure.gravatar.com/avatar/a06f16a161b3d1b4ae3e8582974d3730?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSO-4.png"
+        },
+        "displayName": "Sodiq Onawale",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12461",
+          "id": "12461",
+          "description": "",
+          "name": "Platform-2026-4-1",
+          "archived": false,
+          "released": false,
+          "releaseDate": "2026-04-09"
+        }
+      ],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2026-04-08T02:23:11.908-0400",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10040",
+        "description": "Product review in progress in QA environment",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+        "name": "Product review",
+        "id": "10040",
         "statusCategory": {
           "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
           "id": 4,
@@ -300,19 +300,19 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-06T10:38:38.429-0400",
+      "updated": "2026-04-09T09:36:58.251-0400",
       "status": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/status/10059",
-        "description": "Product approved in QA environment, ready for UAT",
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10051",
+        "description": "QA approved in UAT environment, ready for release",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
-        "name": "Product approved",
-        "id": "10059",
+        "name": "UAT approved",
+        "id": "10051",
         "statusCategory": {
-          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
-          "id": 4,
-          "key": "indeterminate",
-          "colorName": "yellow",
-          "name": "In Progress"
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/3",
+          "id": 3,
+          "key": "done",
+          "colorName": "green",
+          "name": "Done"
         }
       }
     }

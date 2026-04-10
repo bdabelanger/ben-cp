@@ -71,5 +71,8 @@ Load in this order:
 ## Session Wrap-Up
 
 If you made writes, edits, or structural changes, use `write_changelog_entry` to log the session. Read-only sessions with no new insights may skip the changelog.
-When logging: Write the subdirectory entry first (full detail), then the root entry (summary + pointer).
-Follow the procedure at `skills/changelog/index.md` if unsure of format.
+
+**Handoff Exemption:** If your primary output is a new handoff (READY), do not repeat the handoff details in a subdirectory changelog. Write a concise one-line pointer in the root `changelog.md` only.
+ 
+ When logging: Write the subdirectory entry first (full detail), then the root entry (summary + pointer).
+ Follow the procedure at `skills/changelog/index.md` if unsure of format.

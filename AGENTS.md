@@ -59,8 +59,10 @@ This vault exposes purpose-built MCP tools. Use them instead of raw file reads/w
 **Session pattern:**
 1. `get_changelog` scoped to the work area → understand recent context
 2. Load `AGENTS.md` + your role file → confirm rules
-3. Do the work
-4. `write_changelog_entry` at subdirectory level → then at root
+3. **Quartermaster Planning:** If writes are intended, create/update `quartermaster.md` in the target `skills/` subdirectory using the template at `skills/quartermaster/quartermaster_template.md`.
+4. Do the work
+5. `write_changelog_entry` at subdirectory level → then at root
+6. **Cleanup:** Delete the `quartermaster.md` file after successful changelog entry.
 
 Ben will tell you which changelog scope is relevant for the session. If not specified, ask before pulling root.
 
@@ -191,6 +193,8 @@ After creating or significantly modifying any file, update `index.md` in the sam
 ### Completion Reporting
 
 Every session that involves writing, editing, or structural modification must end with a changelog entry — use `write_changelog_entry` or follow `skills/changelog/index.md`. Read-only or discovery sessions do not require a changelog unless a significant insight or blocker was identified.
+
+**Handoff Exemption:** If a session's primary output is a newly created READY handoff (`handoff/[name].md`) and no other significant SOP or structural changes occurred, the agent SHOULD skip the detailed subdirectory changelog. In this case, the root `changelog.md` entry should be a concise one-line pointer to the handoff.
 
 **Resilience Rule:** For "meta-observations" (observations about the vault, tools, or procedures) or when subdirectory logging is persistently blocked by tool errors, root-only reporting is acceptable. Provide a full explanation of any blocked subdirectory logs in the root entry.
 

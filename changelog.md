@@ -4,6 +4,46 @@ This log tracks major architectural, process, and documentation standard changes
 
 ## [Unreleased]
 
+## [1.7.23] — Create and link the Locked and Signed Notes OKR measurement SOP. (2026-04-10)
+
+**Detail logs:**
+- `skills/okr-reporting/changelog.md`
+
+**Changes:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md` — Created Locked and Signed Notes measurement SOP.
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/index.md` — Linked 'Locked / Signed Notes' SOP in initiative index.
+
+**Next Tasks:**
+1. Pull initial proxy baseline for High-Conf tenants after verifying segment via Margaux's sheet.
+2. Transition Numerator to include Signed Notes events after the July Beta launch.
+
+
+## [1.7.22] — Finalize the Notes Quick Entry OKR baseline and target. (2026-04-10)
+
+**Detail logs:**
+- `skills/okr-reporting/changelog.md`
+
+**Changes:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/notes_quick_entry.md` — Updated Notes Quick Entry OKR with 49% baseline (174/357) and 50% target.
+
+**Next Tasks:**
+1. Monitor for Notes WLV event shipping in Q3 to expand the denominator population.
+
+
+## [1.7.21] — Reinforce 'Read → Write' protocols with mandatory stop-gaps to prevent edit failures. (2026-04-10)
+
+**Detail logs:**
+- `skills/changelog/changelog.md`
+
+**Changes:**
+- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Implemented universal 'Rule of Recency' and 'Mental Check' for edit tools.
+- `/Users/benbelanger/GitHub/ben-cp/agents/gemma.md` — Added strict 'Just-in-Time' read and 'Fail-Safe' re-read rules for Gemma.
+
+**Next Tasks:**
+1. Monitor Gemma for compliance with the new 'Mental Check' thought block requirement.
+2. Consider implementing similar strict thresholds for Claude Code if context drift occurs.
+
+
 ## [1.7.20] — Consolidate Claude instructions into specific agent files. (2026-04-10)
 
 **Detail logs:**

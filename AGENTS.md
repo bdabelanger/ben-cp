@@ -142,11 +142,13 @@ ben-cp/
 
 ### Read → Write Protocol (MANDATORY)
 
-1. **Before editing an existing file:** read it first with `read_text_file`
-2. **Before creating a new file:** list the parent directory to confirm it doesn't exist
-3. **For targeted changes:** use `edit_file`, never `write_file` on existing files
-4. **`write_file` is for net-new files only** — using it on an existing file is a destructive overwrite
-5. **If a read fails:** stop and report — do not proceed with a write
+1. **Rule of Context:** You MUST read a file with `read_text_file` in the current session before calling `edit_file` or `write_file`.
+2. **Rule of Recency:** If your last read of a file was more than 5 tool calls ago, you MUST re-read it to ensure your line numbers and content context are fresh.
+3. **Rule of Creation:** Before creating a new file, list the parent directory to confirm it doesn't exist.
+4. **Targeted Changes:** Use `edit_file` for targeted changes. NEVER use `write_file` on existing files (it is a destructive overwrite).
+5. **Read Failure:** If a read fails, stop and report — do not guess or proceed with a write.
+
+**Mental Check:** Before every edit, state in your `<thought>` block: "Verification: I have read [file] in step [N] of this session."
 
 ### Course Correction Protocol
 

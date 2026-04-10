@@ -14,11 +14,15 @@ Before doing any work, list `handoff/` at vault root (root only — not `handoff
 
 ## Core Rules for Gemma
 
-### Rule 1: Always Read Before Writing
+### Rule 1: Mandatory Just-in-Time Read
 - ALWAYS call `read_text_file` before `edit_file` or `write_file`.
-- If you skip this step, your write will be wrong. No exceptions.
+- **Threshold:** If your last read of a file was more than 3 tool calls ago, you MUST re-read it before attempting an edit.
+- **Fail-Safe:** If an `edit_file` attempt fails, you are STATEDLY FORBIDDEN from retrying without first running `read_text_file` to refresh your context. No exceptions.
 
-### Rule 2: Use the Right Tool
+### Rule 2: Mental Check (Stop-Gap)
+- Before every edit, you must state in your `<thought>` block: "Verification: I am calling read_text_file on [path] because my last read was [N] steps ago."
+
+### Rule 3: Use the Right Tool
 - `read_text_file` → to read any file.
 - `edit_file` → to change part of an existing file.
 - `write_file` → ONLY for brand new files. NEVER use it on an existing file (destructive overwrite).

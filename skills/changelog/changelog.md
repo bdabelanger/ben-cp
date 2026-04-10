@@ -4,6 +4,15 @@ This log tracks structural changes to the changelog procedure itself.
 
 ## [Unreleased]
 
+## 2026-04-10 — Reinforce 'Read → Write' protocols with mandatory stop-gaps to prevent edit failures.
+
+**Files changed:**
+- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Implemented universal 'Rule of Recency' and 'Mental Check' for edit tools. ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/agents/gemma.md` — Added strict 'Just-in-Time' read and 'Fail-Safe' re-read rules for Gemma. ✅ Complete
+
+**Next:** Monitor Gemma for compliance with the new 'Mental Check' thought block requirement.
+
+
 ## 2026-04-10 — Consolidate Claude instructions into specific agent files.
 
 **Files changed:**

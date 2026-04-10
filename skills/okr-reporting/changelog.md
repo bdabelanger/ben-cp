@@ -7,6 +7,23 @@
 
 ## [Unreleased]
 
+## 2026-04-10 — Create and link the Locked and Signed Notes OKR measurement SOP.
+
+**Files changed:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md` — Created Locked and Signed Notes measurement SOP. ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/index.md` — Linked 'Locked / Signed Notes' SOP in initiative index. ✅ Complete
+
+**Next:** Pull initial proxy baseline for High-Conf tenants after verifying segment via Margaux's sheet.
+
+
+## 2026-04-10 — Finalize the Notes Quick Entry OKR baseline and target.
+
+**Files changed:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/notes_quick_entry.md` — Updated Notes Quick Entry OKR with 49% baseline (174/357) and 50% target. ✅ Complete
+
+**Next:** Monitor for Notes WLV event shipping in Q3 to expand the denominator population.
+
+
 ## 2026-04-10 — Perform comprehensive reference update across the vault following structural changes. Cory
 
 **Files changed:**

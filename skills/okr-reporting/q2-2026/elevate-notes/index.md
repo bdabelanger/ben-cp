@@ -11,7 +11,7 @@
 | :--- | :--- | :--- | :--- | :--- |
 | **Notes WLV Adoption** | 🛑 Blocked | Pending launch | Proxy Comp | *(pending)* |
 | **Notes Quick Entry** | ✅ Confirmed | ~32% (GA) | 40% | [SOP](../planning-services-at-scale/notes_quick_entry.md) |
-| **Locked / Signed Notes** | 🟡 Proxy | High-conf proxy | TBD | *(pending)* |
+| **Locked / Signed Notes** | 🟡 Proxy | High-conf proxy | TBD | [SOP](./locked_and_signed_notes.md) |
 | **Bulk Import for Notes** | 🟡 Partial | Blocked (CX ops) | 🛑 Blocked | *(pending)* |
 
 ---

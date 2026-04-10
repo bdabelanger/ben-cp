@@ -76,7 +76,7 @@
 
 ## 📊 Data Sources
 
-See master inventory: `okr-reporting/data_sources.md`
+See master inventory: `../../data_sources.md`
 
 | Source | Usage | Link |
 | :--- | :--- | :--- |
@@ -86,6 +86,6 @@ See master inventory: `okr-reporting/data_sources.md`
 
 ## 🔗 References
 
-- Parent procedure: `okr-reporting/procedure.md`
-- Status logic: `skills/skill-builder/mappings/status_mapping.md`
-- Visual standards: `skills/skill-builder/styles/emoji_key.md`
+- Parent procedure: `../../procedure.md`
+- Status logic: `../../../skill-builder/mappings/status_mapping.md`
+- Visual standards: `../../../skill-builder/styles/emoji_key.md`

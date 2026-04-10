@@ -126,7 +126,7 @@ ship. Each pull should note which entry points were live at time of measurement.
 
 ## 🔗 References
 
-- Parent procedure: `okr-reporting/procedure.md`
-- Notes datagrid SOP: `okr-reporting/notes_datagrid_shortcuts.md`
-- Status logic: `skill-builder/mappings/status_mapping.md`
-- Visual standards: `skill-builder/styles/emoji_key.md`
+- Parent procedure: `../../procedure.md`
+- Notes datagrid SOP: `./notes_datagrid_shortcuts.md`
+- Status logic: `../../../skill-builder/mappings/status_mapping.md`
+- Visual standards: `../../../skill-builder/styles/emoji_key.md`

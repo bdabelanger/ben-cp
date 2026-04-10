@@ -20,10 +20,11 @@ the subdirectory entry should be complete enough to reconstruct what happened.
 
 ## When to Run
 
-- At the natural end of a work session
-- When context window is approaching limit
-- When handing off to a different agent (Gemma → Claude, Claude → Claude Code)
+- At the natural end of a work session **if writes, edits, or structural changes occurred**
+- When context window is approaching limit (to preserve state of work-in-progress)
+- When handing off to a different agent (to bridge the context gap)
 - After any significant structural change to the vault
+- **Optional:** Read-only sessions that produce a significant new insight or blocker
 
 ---
 

@@ -77,7 +77,6 @@ ben-cp/
 │   ├── claude-code.md
 │   ├── gemma.md
 │   └── robert.md
-├── GEMMA.md                         ← Gemma simplified rules (extends agents/gemma.md)
 ├── changelog.md                     ← root project changelog (versioned milestones)
 ├── handoff/                         ← open cross-agent implementation plans (READY)
 │   └── complete/                    ← executed handoffs (COMPLETE) — never edit
@@ -95,9 +94,11 @@ ben-cp/
     │   ├── index.md
     │   ├── procedure.md
     │   ├── data_sources.md
-    │   ├── notes_datagrid_shortcuts.md
-    │   ├── notes_quick_entry.md
-    │   └── [kr-specific].md
+    │   └── q2-2026/                       ← initiative-specific quarterly nesting
+    │       ├── index.md                   ← Master Q2 Status Dashboard
+    │       └── planning-services-at-scale/
+    │           ├── index.md
+    │           └── [feature]_[metric].md
     ├── crypt-keeper/
     │   ├── SKILL.md
     │   ├── index.md
@@ -159,9 +160,9 @@ If a required tool call fails (e.g., `write_changelog_entry`, `edit_file`, or pa
 
 | Content type | Correct location |
 | :--- | :--- |
-| KR-specific measurement SOP | `skills/okr-reporting/[name].md` |
+| KR-specific measurement SOP | `skills/okr-reporting/[quarter]/[initiative]/[name].md` |
 | Master OKR runbook (evergreen) | `skills/okr-reporting/procedure.md` |
-| Quarterly KR reference | `skills/okr-reporting/[year]-[quarter]-kr-reference.md` |
+| Quarterly KR reference | `skills/okr-reporting/[quarter]/index.md` |
 | Data source inventory | `skills/okr-reporting/data_sources.md` |
 | Status/transform logic | `skills/skill-builder/mappings/` |
 | Visual/emoji standards | `skills/skill-builder/styles/` |
@@ -170,7 +171,7 @@ If a required tool call fails (e.g., `write_changelog_entry`, `edit_file`, or pa
 | Other skill SOPs | `skills/[skill-name]/` |
 | Cleanup reports | `skills/crypt-keeper/reports/cleanup-report-[YYYY-MM-DD].md` |
 
-**Never create files at vault root** (except `AGENTS.md`, `GEMMA.md`, `changelog.md`, `CLAUDE.md`, `README.md`).
+**Never create files at vault root** (except `AGENTS.md`, `changelog.md`, `README.md`).
 
 ### File Naming
 
@@ -187,7 +188,7 @@ After creating or significantly modifying any file, update `index.md` in the sam
 
 ### Completion Reporting
 
-Every session ends with a changelog entry — use `write_changelog_entry` or follow `skills/changelog/index.md`.
+Every session that involves writing, editing, or structural modification must end with a changelog entry — use `write_changelog_entry` or follow `skills/changelog/index.md`. Read-only or discovery sessions do not require a changelog unless a significant insight or blocker was identified.
 
 **Resilience Rule:** For "meta-observations" (observations about the vault, tools, or procedures) or when subdirectory logging is persistently blocked by tool errors, root-only reporting is acceptable. Provide a full explanation of any blocked subdirectory logs in the root entry.
 

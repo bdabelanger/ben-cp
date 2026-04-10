@@ -1,8 +1,12 @@
-# agents/claude-code.md — Claude Code Role Instructions
-
 > **Role:** Implementer, code executor, file engineer
 > **Reads first:** `AGENTS.md` (universal contract)
-> Last updated: 2026-04-08
+> Last updated: 2026-04-10
+
+---
+
+## Handoff Check (Mandatory Start)
+
+Before doing any work, list `handoff/` at vault root (root only — not `handoff/complete/`). Any `.md` file present is an open handoff. Report these to Ben immediately before proceeding.
 
 ---
 
@@ -20,7 +24,8 @@ Claude Code is the precision implementation agent. It:
 
 **Always start a session by reading:**
 1. `AGENTS.md` — universal vault contract
-2. `CLAUDE_CODE_IMPLEMENTATION_PLAN.md` — current task list
+2. The Handoff Check section above
+3. `CLAUDE_CODE_IMPLEMENTATION_PLAN.md` — current task list
 
 ## SOPs Relevant to Claude Code
 

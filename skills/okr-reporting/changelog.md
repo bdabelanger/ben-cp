@@ -7,6 +7,72 @@
 
 ## [Unreleased]
 
+## 2026-04-10 — Perform comprehensive reference update across the vault following structural changes. Cory
+
+**Files changed:**
+- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Updated AGENTS.md, procedure.md, data_sources.md, and GEMMA.md with all new nested paths and dashboard links Cory ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/procedure.md` — Performed vault-wide audit to ensure no dangling references to deprecated 2026-q2-kr-reference.md remained Cory ✅ Complete
+
+**Next:** Review changelog for any other indirect references that might need cleanup (e.g. past entries).
+
+
+## 2026-04-10 — Migrate Q2 KR reference content to initiative indices and deprecate source file. Cory
+
+**Files changed:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/index.md` — Created elevate-notes and reduce-admin-burden initiative indices for Q2 2026 ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/index.md` — Migrated all KR reference content (baselines, targets, next steps) into initiative-specific indices ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/index.md` — Reconstructed main Q2 index as a master status dashboard ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/2026-q2-kr-reference.md` — Deprecated and deleted 2026-q2-kr-reference.md ✅ Complete
+
+**Next:** Ensure all links in the new dashboard correctly point to their respective initiative SOPs.
+
+
+## 2026-04-10 — Move additional Service Notes SOP files to Q2 2026 sub-directory and resolve references.
+
+**Files changed:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/` — Moved service_notes_data_entry_shortcuts.md and service_notes_roster_association.md to planning-services-at-scale/ subdirectory ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/index.md` — Updated Planning Services sub-index with additional Service Notes SOPs ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/index.md` — Updated Q2 index with nested path for roster association SOP ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/service_notes_roster_association.md` — Resolved internal links in the second batch of moved SOPs ✅ Complete
+
+**Next:** Verify all 5 SOPs in the new directory for link consistency.
+
+
+## 2026-04-10 — Move KR SOP files to Q2 2026 sub-directory and resolve references.
+
+**Files changed:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/index.md` — Created skills/okr-reporting/q2-2026/planning-services-at-scale/index.md ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/` — Moved enrollments_data_entry_shortcuts.md, notes_datagrid_shortcuts.md, and notes_quick_entry.md to new Q2 subdirectory ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/index.md` — Updated skills/okr-reporting/index.md and q2-2026/index.md lists ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/enrollments_data_entry_shortcuts.md` — Resolved relative link references in moved SOP files ✅ Complete
+
+**Next:** Audit remaining Q2 SOPs for similar categorization needs.
+
+
+## 2026-04-10 — To identify and prioritize actionable KR baselines from Q2 2026 to move towards finalizing outstanding metrics.
+
+**Files changed:**
+- `skills/okr-reporting/service_notes_roster_association.md` — Reviewed SOP for Service Notes Roster Association, confirming Path A (Reveal BI) is viable for baseline pull. ✅ Complete ✅ Complete
+- `skills/okr-reporting/enrollments_data_entry_shortcuts.md` — Reviewed SOP for Enrollments Data Entry Shortcuts, confirming Path A (Casebook Admin Reporting) is viable for baseline pull. ✅ Complete ✅ Complete
+- `skills/okr-reporting/notes_quick_entry.md` — Confirmed Notes Quick Entry Baseline (~32%) and Target (40%) from Q2 2026 reference file. ✅ Complete ✅ Complete
+- `skills/okr-reporting/notes_datagrid_shortcuts.md` — Reviewed SOP for Notes Datagrid Shortcuts, noting the 'NotesWLVSort' instrumentation gap. ✅ Complete ✅ Complete
+
+**Next:** Execute baseline pull for Service Notes — Roster Association using Reveal BI (Path A).
+
+
+## 2026-04-10 — Formalized an environmental blocker as a P1 handoff to unblock data source population for okr-reporting.
+
+**Files changed:**
+- `handoff/2026-04-10-p1-okr-reporting-data-source-population-blocked.md` — Created P1 handoff to document and escalate the file system access denial blocking data source population in okr-reporting. ✅ Complete
+
+**Blockers:**
+- No blockers remain for this session, as the primary blocker was escalated via a new handoff. — N/A
+
+**Handoff:** `handoff/2026-04-10-p1-okr-reporting-data-source-population-blocked.md`
+
+**Next:** Monitor for resolution of P1 handoff; upon access restoration, resume work on skills/okr-reporting/data_sources.md.
+
+
 ## 2026-04-09 — Drafted the Enrollment Data Entry Shortcuts SOP by adapting the Notes Quick Entry template, moving both Service Notes and Enrollments toward completion.
 
 **Files changed:**

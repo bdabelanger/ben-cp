@@ -23,7 +23,7 @@ a separate quarterly file — not here. This keeps the runbook evergreen.
 
 | Quarter | File |
 | :--- | :--- |
-| Q2 2026 | `okr-reporting/2026-q2-kr-reference.md` |
+| Q2 2026 | `okr-reporting/q2-2026/index.md` |
 
 > When a new quarter begins, create `[year]-[quarter]-kr-reference.md` and
 > add it to the table above. Archive the previous quarter's file in place.
@@ -167,8 +167,8 @@ With Baseline and Target both populated, apply health logic from
 
 ## 🔗 References
 
-- Quarterly KR reference: `okr-reporting/2026-q2-kr-reference.md`
+- Quarterly KR reference: `okr-reporting/q2-2026/index.md`
 - Data source inventory: `okr-reporting/data_sources.md`
-- KR-specific measurement SOPs: `okr-reporting/notes_datagrid_shortcuts.md`, `okr-reporting/notes_quick_entry.md`
+- KR-specific measurement SOPs: `okr-reporting/q2-2026/planning-services-at-scale/notes_datagrid_shortcuts.md`, `okr-reporting/q2-2026/planning-services-at-scale/notes_quick_entry.md`
 - Status logic: `skills/skill-builder/mappings/status_mapping.md`
 - Visual standards: `skills/skill-builder/styles/emoji_key.md`

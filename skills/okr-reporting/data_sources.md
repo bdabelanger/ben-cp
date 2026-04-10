@@ -1,101 +1,49 @@
-# Data Sources Inventory: OKR Reporting Skill
+# Data Source Inventory
 
-> [!NOTE]
-> ⚠️ **PROCESS TYPE:** Manual Workflow (Not API Driven)
-> This document inventories the tools, systems, and vault references used to
-> acquire metric values for Platform KR measurement.
-> Last updated: 2026-04-08
+This document serves as the authoritative map for all data sources used to calculate Key Results (KRs) within the OKR Reporting skill. It details where each metric's components (Denominator and Numerator) are sourced.
 
 ---
 
-## 📊 Metric Sources by System
+## 🌐 Primary Data Sources
 
-### Google Analytics (GA4)
-Self-serve. Used for user behavior tracking across Notes and WLV features.
-
-| Event | Used For | KR |
-| :--- | :--- | :--- |
-| `noteSubmit` | Denominator — users who created a note | Notes Quick Entry, Notes Datagrid |
-| `dashboardAddNoteOpen` | Numerator — global entry point | Notes Quick Entry |
-| `EngageWLVAddNote` | Numerator — WLV entry point (UOW context TBC) | Notes Quick Entry |
-| `TrackServiceNoteNew` | Numerator — service note entry point | Notes Quick Entry || `NotesWLVFilterAdded` | Numerator — datagrid shortcut usage | Notes Datagrid |
-| `NotesQuickFilterApplied` | Numerator — datagrid shortcut usage | Notes Datagrid |
-| `NotesWLVColumnToggleHidden` | Numerator — datagrid shortcut usage | Notes Datagrid |
-| `NotesWLVColumnToggleVisible` | Numerator — datagrid shortcut usage | Notes Datagrid |
-| `NotesWLVDensityChange` | Numerator — datagrid shortcut usage | Notes Datagrid |
-| `NotesWLVSort` | ⚠️ NOT INSTRUMENTED — flagged for Engineering | Notes Datagrid |
-| `/portal` page view (proxy) | Proxy — portal login confirmation (URL-based, not a formal GA event) | Portal — Invitation Acceptance |
-
-> ⚠️ Confirm with Engineering whether this is a trackable GA event or URL-only signal before using as a formal metric.
-
-**GA property:** All one property. Tenant ID available as a dimension.
-**Pull instructions:** See individual KR SOPs in `skills/okr-reporting/`.
+1.  **Google Analytics (GA4):** The primary source for user behavior, event tracking, and adoption metrics across various entry points.
+2.  **Casebook Admin Reporting / Reveal BI:** Used for querying transactional data from the core Casebook database (e.g., Service Note creation counts, Enrollment records).
+3.  **ChurnZero/SQL:** Used for high-confidentiality tenant segmentation and external validation.
 
 ---
 
-### Casebook Admin Reporting / Reveal BI
-Self-serve SQL-style queries via Reveal BI. Used for service/enrollment adoption metrics.
+## 📊 KR Metric Mapping
 
-**Reference docs:** `skills/casebook/reporting/` — consult these before writing any query:
+### 1. Notes Quick Entry (Outside UOW)
+*   **KR Definition:** % of Users with at least one Note created from a global entry point.
+*   **Denominator Source:** GA4 (`noteSubmit` event). Counts unique users in the collection period.
+*   **Numerator Source:** GA4. Union of specific, confirmed non-UOW events (e.g., `dashboardAddNoteOpen`, `EngageWLVAddNote`).
+*   **SOP Reference:** `q2-2026/planning-services-at-scale/notes_quick_entry.md`
 
-| File | Covers |
-| :--- | :--- |
-| `casebook-cases.md` | Case entity schema and key fields |
-| `casebook-intake.md` | Intake entity schema |
-| `casebook-people.md` | Person entity schema |
-| `casebook-tenants.md` | Tenant entity schema — use for tenant segmentation |
-| `casebook-users.md` | User entity schema — use for user-level metrics |
-| `reveal_bi_syntax.md` | Query syntax reference for Reveal BI |
-| `reveal_bi_visualizations.md` | Visualization and output formatting |
+### 2. Service Notes — Data Entry Shortcuts
+*   **KR Definition:** % of Tenants with a Service Note who used a shortcut.
+*   **Denominator Source:** Reveal BI / Casebook DB (`cbp_service_notes`). Counts unique tenants with at least one Service Note.
+*   **Numerator Source:** GA4 / Reveal BI. Tracks specific Data Entry Shortcut events fired by users associated with those notes.
+*   **SOP Reference:** `q2-2026/planning-services-at-scale/service_notes_data_entry_shortcuts.md`
 
-**KRs that use this source:**
-- Service Notes — Roster Association (`cbp_service_notes` + `cbp_services`, join on `service_id`)
-- Locked/Signed Notes — high-confidentiality tenant segment (validate with Margaux's sheet)
-- Service Notes / Enrollments — Data Entry Shortcuts (baseline pullable from prod)
+### 3. Enrollments — Data Entry Shortcuts
+*   **KR Definition:** % of Tenants with an Enrollment who used a shortcut.
+*   **Denominator Source:** Reveal BI / Casebook DB (`cbp_enrollments`). Counts unique tenants with at least one Enrollment record.
+*   **Numerator Source:** GA4 / Reveal BI. Tracks specific Data Entry Shortcut events fired by users associated with those enrollments.
+*   **SOP Reference:** `q2-2026/planning-services-at-scale/enrollments_data_entry_shortcuts.md`
 
----
+### 4. Service Notes — Roster Association
+*   **KR Definition:** % of Tenants with a Service Note whose user is in the Roster.
+*   **Denominator Source:** Reveal BI / Casebook DB (`cbp_service_notes`). Counts unique tenants with at least one Service Note.
+*   **Numerator Source:** Reveal BI (Complex Join). Requires joining `cbp_service_notes` to roster tables via service/user mapping to confirm user existence in the Roster.
+*   **SOP Reference:** `q2-2026/planning-services-at-scale/service_notes_roster_association.md`
 
-### ChurnZero
-Used for tenant-level adoption and NPS metrics. Acquisition: self-serve dashboard.
-
-**KRs that use this source:**
-- Notes WLV Adoption (post-launch)
-- Locked/Signed Notes (post-launch, alongside SQL)
-
----
-
-### CX Ops (Cierra)
-Manual — request from Cierra. Used for migration/import volume data.
-
-**KRs that use this source:**
-- Bulk Import for Notes — paid migration volume comp
+### 5. Q2 KR Baselines (General)
+*   **Source:** `q2-2026/index.md`. This dashboard aggregates status and baseline values, referencing the specific SOPs above for measurement methodology.
 
 ---
 
-### SQL via Data team (Path B)
-Delegated query. Used when self-serve sources don't cover the needed dimension.
+## ⚠️ Data Integrity Notes
 
-**KRs that use this source:**
-- Portal KRs (×3) — blocked pending data model confirmation
-- Any metric requiring `external_user_invitations` or session-level data
-
----
-
-### Database (Direct) — Portal KRs
-Delegated query via Data team. All three Portal KRs share the same architectural
-blocker — they unblock together once the data model is confirmed.
-
-| Table / Source | Used For | KR | Status |
-| :--- | :--- | :--- | :--- |
-| `external_user_invitations` | Invitation sent/accepted counts | Portal — Invitations Sent, Invitation Acceptance | 🛑 Blocked — data model unstable |
-| Session data (TBD) | Person login confirmation | Portal — Invitation Acceptance | 🛑 Blocked |
-
----
-
-## ⚠️ Gaps and TODOs
-
-- [ ] `EngageWLVAddNote` — confirm UOW vs. non-UOW context via dev tools; update Notes Quick Entry numerator
-- [ ] Additional Notes Quick Entry entry point events — Ben to discover via dev tools
-- [ ] Zapier Insights — explore with Engineering for Zapier Custom Fields KR
-- [ ] Super Admin `API Access` flag — verify in tenants table for Zapier entitlement
-- [ ] Portal data model — all three Portal KRs unblock together once confirmed
+*   **Event Discovery:** For all shortcut metrics (2 & 3), event names must be confirmed via DevTools before final implementation. 
+*   **Portal KRs:** All Portal-related KRs are currently blocked pending data model confirmation.

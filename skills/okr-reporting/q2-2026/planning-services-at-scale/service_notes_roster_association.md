@@ -34,9 +34,7 @@
 
 | Data Source | Logic | Status |
 | :--- | :--- | :--- |
-| Reveal BI (Join)
-| Join `cbp_service_notes` to `cbp_services`, then join to `cbp_users` via service/user mapping. Count unique tenants where the joined user record exists. |
-| **Status** | ✅ Defined by Schema Reference in `data_sources.md` |
+| Reveal BI (Join) | Join `cbp_service_notes` to `cbp_services`, then join to `cbp_users` via service/user mapping. Count unique tenants where the joined user record exists. | ✅ Defined by Schema Reference in `../../data_sources.md` |
 
 > **Note:** This requires a specific, complex SQL-style query within Reveal BI that joins multiple entity tables.
 
@@ -55,7 +53,7 @@
 7. Record in Work Planning Register:
    - Enter % in current period column (e.g., `July 2026`)
    - If first pull, enter in `Baseline` column
-   - Add note: `Baseline pulled [date] from Reveal BI query. Schema reference: casebook/reporting/`
+   - Add note: `Baseline pulled [date] from Reveal BI query. Schema reference: ../../../casebook/reporting/`
 
 ---
 

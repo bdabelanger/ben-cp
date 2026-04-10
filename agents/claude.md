@@ -1,8 +1,12 @@
-# agents/claude.md — Claude (Cowork) Role Instructions
-
 > **Role:** Architect, designer, session lead
 > **Reads first:** `AGENTS.md` (universal contract)
-> Last updated: 2026-04-08
+> Last updated: 2026-04-10
+
+---
+
+## Handoff Check (Mandatory Start)
+
+Before doing any work, list `handoff/` at vault root (root only — not `handoff/complete/`). Any `.md` file present is an open handoff. Report these to Ben immediately before proceeding.
 
 ---
 

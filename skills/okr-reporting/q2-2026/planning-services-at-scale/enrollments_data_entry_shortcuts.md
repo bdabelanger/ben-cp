@@ -104,7 +104,7 @@ This KR is an **additive metric** — the baseline grows as more shortcut types 
 
 ## 📊 Data Sources
 
-See master inventory: `okr-reporting/data_sources.md`
+See master inventory: `../../data_sources.md`
 
 | Source | Usage | Link |
 | :--- | :--- | :--- |
@@ -114,7 +114,7 @@ See master inventory: `okr-reporting/data_sources.md`
 
 ## 🔗 References
 
-- Parent procedure: `okr-reporting/procedure.md`
-- Notes quick entry SOP: `okr-reporting/notes_quick_entry.md`
-- Status logic: `skill-builder/mappings/status_mapping.md`
-- Visual standards: `skill-builder/styles/emoji_key.md`
+- Parent procedure: `../../procedure.md`
+- Notes quick entry SOP: `./notes_quick_entry.md`
+- Status logic: `../../../skill-builder/mappings/status_mapping.md`
+- Visual standards: `../../../skill-builder/styles/emoji_key.md`

@@ -74,7 +74,7 @@
 ## 🎯 Target Setting
 
 - **Beta baseline** (pre-GA): directional only — beta cohort not representative
-- **GA baseline** (April 1, 2026+): use first full-month pull as the official baseline
+- **Official Baseline:** March 2026 established at 39% based on beta cohort usage. Future pulls will confirm this trend.
 - **Q2 target**: set after first full-month GA baseline is in hand; aim for
   modest adoption growth given early-stage feature
 - **Target format**: use a specific **%** once denominator population is large
@@ -94,7 +94,7 @@
 
 ## 📊 Data Sources
 
-See master inventory: `okr-reporting/data_sources.md`
+See master inventory: `../../data_sources.md`
 
 | Source | Usage | Link |
 | :--- | :--- | :--- |
@@ -104,6 +104,6 @@ See master inventory: `okr-reporting/data_sources.md`
 
 ## 🔗 References
 
-- Parent procedure: `okr-reporting/procedure.md`
-- Status logic: `skill-builder/mappings/status_mapping.md`
-- Visual standards: `skill-builder/styles/emoji_key.md`
+- Parent procedure: `../../procedure.md`
+- Status logic: `../../../skill-builder/mappings/status_mapping.md`
+- Visual standards: `../../../skill-builder/styles/emoji_key.md`

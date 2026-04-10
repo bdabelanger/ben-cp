@@ -4,6 +4,161 @@ This log tracks major architectural, process, and documentation standard changes
 
 ## [Unreleased]
 
+## [1.7.20] — Consolidate Claude instructions into specific agent files. (2026-04-10)
+
+**Detail logs:**
+- `skills/changelog/changelog.md`
+
+**Changes:**
+- `/Users/benbelanger/GitHub/ben-cp/agents/claude.md` — Consolidated CLAUDE.md into agents/claude.md and agents/claude-code.md.
+- `/Users/benbelanger/GitHub/ben-cp/agents/claude-code.md` — Updated startup protocols to include mandatory handoff checks in Claude role files.
+- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Cleaned up root-level file exceptions.
+- `/Users/benbelanger/GitHub/ben-cp/CLAUDE.md` — Deleted redundant CLAUDE.md root file.
+
+**Next Tasks:**
+1. Monitor Claude agent startup behavior to ensure handoff checks are performed.
+
+
+## [1.7.19] — Consolidate Gemma instructions into a single role file. (2026-04-10)
+
+**Detail logs:**
+- `skills/changelog/changelog.md`
+
+**Changes:**
+- `/Users/benbelanger/GitHub/ben-cp/agents/gemma.md` — Consolidated GEMMA.md into agents/gemma.md to streamline agent orientation.
+- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Removed GEMMA.md reference from vault structure tree.
+- `/Users/benbelanger/GitHub/ben-cp/GEMMA.md` — Deleted redundant GEMMA.md root file.
+
+**Next Tasks:**
+1. Ensure future agent role additions follow the agents/[name].md pattern instead of root-level files.
+
+
+## [1.7.18] — Make vault changelog logging conditional on write/edit actions to reduce noise. (2026-04-10)
+
+**Detail logs:**
+- `skills/changelog/changelog.md`
+
+**Changes:**
+- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Updated Completion Reporting to be conditional on write/edit activity.
+- `/Users/benbelanger/GitHub/ben-cp/GEMMA.md` — Updated Rule 7 to 'Log Write-Active Sessions'.
+- `/Users/benbelanger/GitHub/ben-cp/agents/gemma.md` — Updated Session Wrap-Up to be conditional.
+- `/Users/benbelanger/GitHub/ben-cp/skills/changelog/index.md` — Updated triggers to exclude read-only discovery.
+
+**Next Tasks:**
+1. Monitor Gemma sessions to ensure 'empty' changelogs are no longer produced.
+2. Audit AGENTS.md for any other 'blindly iterative' instructions.
+
+
+## [1.7.17] — Perform comprehensive reference update across the vault following structural changes. Cory (2026-04-10)
+
+**Detail logs:**
+- `skills/okr-reporting/changelog.md`
+
+**Changes:**
+- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Updated AGENTS.md, procedure.md, data_sources.md, and GEMMA.md with all new nested paths and dashboard links Cory
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/procedure.md` — Performed vault-wide audit to ensure no dangling references to deprecated 2026-q2-kr-reference.md remained Cory
+
+**Next Tasks:**
+1. Review changelog for any other indirect references that might need cleanup (e.g. past entries).
+
+
+## [1.7.16] — Migrate Q2 KR reference content to initiative indices and deprecate source file. Cory (2026-04-10)
+
+**Detail logs:**
+- `skills/okr-reporting/changelog.md`
+
+**Changes:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/index.md` — Created elevate-notes and reduce-admin-burden initiative indices for Q2 2026
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/index.md` — Migrated all KR reference content (baselines, targets, next steps) into initiative-specific indices
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/index.md` — Reconstructed main Q2 index as a master status dashboard
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/2026-q2-kr-reference.md` — Deprecated and deleted 2026-q2-kr-reference.md
+
+**Next Tasks:**
+1. Ensure all links in the new dashboard correctly point to their respective initiative SOPs.
+
+
+## [1.7.15] — Move additional Service Notes SOP files to Q2 2026 sub-directory and resolve references. (2026-04-10)
+
+**Detail logs:**
+- `skills/okr-reporting/changelog.md`
+
+**Changes:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/` — Moved service_notes_data_entry_shortcuts.md and service_notes_roster_association.md to planning-services-at-scale/ subdirectory
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/index.md` — Updated Planning Services sub-index with additional Service Notes SOPs
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/index.md` — Updated Q2 index with nested path for roster association SOP
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/service_notes_roster_association.md` — Resolved internal links in the second batch of moved SOPs
+
+**Next Tasks:**
+1. Verify all 5 SOPs in the new directory for link consistency.
+
+
+## [1.7.14] — Move KR SOP files to Q2 2026 sub-directory and resolve references. (2026-04-10)
+
+**Detail logs:**
+- `skills/okr-reporting/changelog.md`
+
+**Changes:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/index.md` — Created skills/okr-reporting/q2-2026/planning-services-at-scale/index.md
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/` — Moved enrollments_data_entry_shortcuts.md, notes_datagrid_shortcuts.md, and notes_quick_entry.md to new Q2 subdirectory
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/index.md` — Updated skills/okr-reporting/index.md and q2-2026/index.md lists
+- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/enrollments_data_entry_shortcuts.md` — Resolved relative link references in moved SOP files
+
+**Next Tasks:**
+1. Audit remaining Q2 SOPs for similar categorization needs.
+
+
+## [1.7.13] — To identify and prioritize actionable KR baselines from Q2 2026 to move towards finalizing outstanding metrics. (2026-04-10)
+
+**Detail logs:**
+- `skills/okr-reporting/changelog.md`
+
+**Changes:**
+- `skills/okr-reporting/service_notes_roster_association.md` — Reviewed SOP for Service Notes Roster Association, confirming Path A (Reveal BI) is viable for baseline pull. ✅ Complete
+- `skills/okr-reporting/enrollments_data_entry_shortcuts.md` — Reviewed SOP for Enrollments Data Entry Shortcuts, confirming Path A (Casebook Admin Reporting) is viable for baseline pull. ✅ Complete
+- `skills/okr-reporting/notes_quick_entry.md` — Confirmed Notes Quick Entry Baseline (~32%) and Target (40%) from Q2 2026 reference file. ✅ Complete
+- `skills/okr-reporting/notes_datagrid_shortcuts.md` — Reviewed SOP for Notes Datagrid Shortcuts, noting the 'NotesWLVSort' instrumentation gap. ✅ Complete
+
+**Next Tasks:**
+1. Execute baseline pull for Service Notes — Roster Association using Reveal BI (Path A).
+2. Execute baseline pull for Enrollments — All Data Entry Shortcuts using Casebook Admin Reporting (Path A).
+3. Address the 'EngageWLVAddNote' UOW context issue in notes_quick_entry.md to finalize Q2 baselines.
+4. Begin drafting KR SOPs for Service Notes Roster Association and Enrollments Data Entry Shortcuts based on successful baseline pulls.
+
+
+## [1.7.12] — Formalized an environmental blocker as a P1 handoff to unblock data source population for okr-reporting. (2026-04-10)
+
+**Detail logs:**
+- `skills/okr-reporting/changelog.md`
+
+**Changes:**
+- `handoff/2026-04-10-p1-okr-reporting-data-source-population-blocked.md` — Created P1 handoff to document and escalate the file system access denial blocking data source population in okr-reporting.
+
+**Blockers:**
+- No blockers remain for this session, as the primary blocker was escalated via a new handoff. — N/A
+
+**Handoff:** `handoff/2026-04-10-p1-okr-reporting-data-source-population-blocked.md`
+
+**Next Tasks:**
+1. Monitor for resolution of P1 handoff; upon access restoration, resume work on skills/okr-reporting/data_sources.md.
+
+
+## [1.7.11] — Populate skills/okr-reporting/data_sources.md by cross-referencing all KR SOPs in that directory. (2026-04-10)
+
+**Changes:**
+- `skills/okr-reporting/data_sources.md` — Attempted to populate data sources inventory based on existing KR SOPs.
+
+**Failed actions:**
+- **Attempted:** Read all KR SOP files in skills/okr-reporting/
+  **Happened:** Access denied by the execution environment for path: /skills/okr-reporting/
+  **Recommendation:** Ben must grant read access to the entire skills directory or provide the content of the necessary source SOPs directly.
+
+**Blockers:**
+- Cannot read any files within skills/okr-reporting/ (e.g., service_notes_data_entry_shortcuts.md) due to persistent 'Access denied' errors from file system tools. — Environment permission change or manual content provision by Ben.
+
+**Next Tasks:**
+1. Wait for environment access to skills/okr-reporting/ to proceed with data source population.
+
+
 ## [1.7.10] — Perform Robert's first official Mission Integrity Audit. (2026-04-10)
 
 **Detail logs:**

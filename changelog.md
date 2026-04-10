@@ -4,6 +4,48 @@ This log tracks major architectural, process, and documentation standard changes
 
 ## [Unreleased]
 
+## [1.7.10] — Perform Robert's first official Mission Integrity Audit. (2026-04-10)
+
+**Detail logs:**
+- `skills/robert/changelog.md`
+
+**Changes:**
+- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Performed first official Mission Integrity Audit of AGENTS.md. No drift detected.
+
+**Next Tasks:**
+1. Continue monitoring AGENTS.md for foundation drift.
+
+
+## [1.7.9] — Triage context loading and logging complexity with resilience rules. (2026-04-10)
+
+**Changes:**
+- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Added Course Correction Protocol to AGENTS.md.
+- `/Users/benbelanger/GitHub/ben-cp/skills/handoff/index.md` — Updated Handoff Protocol (skills/handoff/index.md) with logging resilience rules.
+- `/Users/benbelanger/GitHub/ben-cp/agents/robert.md` — Updated Robert's monitors (agents/robert.md).
+
+**Handoff:** `handoff/complete/2026-04-10-p2-context-loading-triage-COMPLETE.md`
+
+**Next Tasks:**
+1. Ensure all agents are aware of the Course Correction Protocol.
+
+
+## [1.7.8] — Implement session resilience and Course Correction protocols for vault agents. (2026-04-10)
+
+**Detail logs:**
+- `skills/handoff/changelog.md`
+
+**Changes:**
+- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Integrated Course Correction Protocol and Resonance rules into AGENTS.md.
+- `/Users/benbelanger/GitHub/ben-cp/skills/handoff/index.md` — Updated Handoff Protocol with resilience policies for logging failures.
+- `/Users/benbelanger/GitHub/ben-cp/agents/robert.md` — Added Course Correction Protocol to Robert's monitoring scope.
+
+**Handoff:** `handoff/2026-04-10-p2-context-loading-triage.md`
+
+**Next Tasks:**
+1. Agents to apply Course Correction Protocol when encountering tool errors.
+2. Monitor root changelogs for [META] flags or escalated logging notes.
+
+
 ## [1.7.7] — Clean up context handoff after Robert creation. (2026-04-09)
 
 **Changes:**

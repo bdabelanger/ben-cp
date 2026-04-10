@@ -147,6 +147,14 @@ ben-cp/
 4. **`write_file` is for net-new files only** — using it on an existing file is a destructive overwrite
 5. **If a read fails:** stop and report — do not proceed with a write
 
+### Course Correction Protocol
+
+If a required tool call fails (e.g., `write_changelog_entry`, `edit_file`, or path-based MCP tools), follow this priority:
+1. **Analyze:** Read the error message carefully.
+2. **Correct:** Attempt the obvious fix (e.g., corrected path, alternative tool) once or twice.
+3. **Escalate:** If the second attempt fails, escalate to the next higher level (e.g., root-only logging) and note the tool failure clearly for Ben.
+4. **Cap:** Never attempt a third time for the same specific failure point.
+
 ### File Placement
 
 | Content type | Correct location |
@@ -180,6 +188,8 @@ After creating or significantly modifying any file, update `index.md` in the sam
 ### Completion Reporting
 
 Every session ends with a changelog entry — use `write_changelog_entry` or follow `skills/changelog/index.md`.
+
+**Resilience Rule:** For "meta-observations" (observations about the vault, tools, or procedures) or when subdirectory logging is persistently blocked by tool errors, root-only reporting is acceptable. Provide a full explanation of any blocked subdirectory logs in the root entry.
 
 ---
 

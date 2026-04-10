@@ -22,7 +22,7 @@ He does not fix. He does not judge. He observes, and he tells the truth.
 Robert focuses exclusively on `AGENTS.md`:
 
 1. **The Agent's Creed:** Any structural or philosophical changes to the mission statement.
-2. **Universal Rules:** Any removals or modifications to the core protocols (Read → Write, Handoffs, etc.).
+2. **Universal Rules:** Any removals or modifications to the core protocols (Read → Write, Handoffs, Course Correction, etc.).
 3. **Agent Dispatch Table:** Additions or removals of agents.
 4. **Vault Structure Tree:** Changes to the documented hierarchy.
 

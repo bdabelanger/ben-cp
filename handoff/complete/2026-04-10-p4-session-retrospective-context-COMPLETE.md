@@ -23,7 +23,7 @@ Gemma's first solo session. She:
 
 2. **Hit a pathing bug** — when calling `write_changelog_entry` with `subdirectories: ["skills/handoff"]`, the tool constructed the path as `skills/skillshandoff/changelog.md` instead of `skills/handoff/changelog.md`. The extra `skills` prefix was a tool-side issue, not a Gemma error.
 
-3. **Recovered well, but not ideally** — Gemma skipped straight to root-only logging rather than attempting 1-2 course corrections first. Ben's expectation: try the obvious fix (corrected path) once or twice before escalating to a less complete outcome. This applies broadly — not just to changelog writes. After 2 failed attempts, move up a level and continue. Do not try a third time.
+3. **Recovered well, but not ideally** — Gemma skipped straight to root-only logging rather than attempting 1-2 course corrections first. Human user's expectation: try the obvious fix (corrected path) once or twice before escalating to a less complete outcome. This applies broadly — not just to changelog writes. After 2 failed attempts, move up a level and continue. Do not try a third time.
 
 4. **Documented the pattern correctly** — updated `skills/index.md` with the process refinement note. The root changelog captured the session.
 

@@ -3,11 +3,11 @@
 > **Prepared by:** Claude Code (2026-04-08)
 > **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
 > **Priority:** P2 — changelog inaccuracies mislead agents loading session context
-> **Source report:** manual fact-check; Lumberjack skill created at `skills/lumberjack/`
+> **Source report:** manual fact-check; Changelog Auditor skill created at `skills/changelog/`
 > **v1.0**
 > **STATUS: ✅ COMPLETE — 2026-04-09**
 
-All 8 tasks executed. `handoff/complete/` naming fixed for 2 files (added -COMPLETE suffix). `p2-crypt-keeper-root-exemptions` confirmed already done. Root changelog 1.4.1 phantom path corrected (`reports/archive/` → `skills/crypt-keeper/reports/archive/`). Root 1.5.0 expanded with missing infrastructure changes. Casebook changelog 1.1.0 count corrected (4 → 3 unexposed). Stale Next Tasks annotated in 1.2.0 and 1.3.0. `skills/index.md` and `AGENTS.md` already had lumberjack entries — Task 7 was pre-done. Changelog entries written via `write_changelog_entry` (root 1.6.0 + 5 subdirectory logs).
+All 8 tasks executed. `handoff/complete/` naming fixed for 2 files (added -COMPLETE suffix). `p2-crypt-keeper-root-exemptions` confirmed already done. Root changelog 1.4.1 phantom path corrected (`reports/archive/` → `skills/knowledge/reports/archive/`). Root 1.5.0 expanded with missing infrastructure changes. Casebook changelog 1.1.0 count corrected (4 → 3 unexposed). Stale Next Tasks annotated in 1.2.0 and 1.3.0. `skills/index.md` and `AGENTS.md` already had lumberjack entries — Task 7 was pre-done. Changelog entries written via `write_changelog_entry` (root 1.6.0 + 5 subdirectory logs).
 
 **Changelog:** 1.6.0 — 2026-04-09 (see root `changelog.md`)
 
@@ -15,7 +15,7 @@ All 8 tasks executed. `handoff/complete/` naming fixed for 2 files (added -COMPL
 
 ## Context
 
-A manual changelog audit (Lumberjack's first informal run) found 6 categories of issues
+A manual changelog audit (Changelog Auditor's first informal run) found 6 categories of issues
 in root `changelog.md` and `skills/casebook/changelog.md`. None are P1 (agent navigation
 is fine), but stale tool names and phantom entries will mislead agents loading session
 context. Also: 2 files in `handoff/complete/` are missing the `-COMPLETE` suffix, and
@@ -73,7 +73,7 @@ root exemptions list.
 ## Task 3: Fix Phantom reports/archive/ Entry
 
 Root changelog `1.4.1` states:
-> `skills/crypt-keeper/reports/` and `reports/archive/` directories created
+> `skills/knowledge/reports/` and `reports/archive/` directories created
 
 `reports/archive/` does not exist on disk. Two options:
 
@@ -99,14 +99,14 @@ current highest version (should be 1.4.1), bump to 1.5.0 (minor — new skill + 
 Entry to prepend below `## [Unreleased]`:
 
 ```markdown
-## [1.5.0] — Lumberjack Skill + Infrastructure Cleanup (2026-04-08)
+## [1.5.0] — Changelog Auditor Skill + Infrastructure Cleanup (2026-04-08)
 
 **Detail logs:**
-- `skills/lumberjack/changelog.md`
+- `skills/changelog/changelog.md`
 - `skills/changelog/changelog.md` (if exists)
 
 **Changes:**
-- `skills/lumberjack/` — new skill created: changelog auditing (7 checks, flag-only, companion to Crypt-Keeper)
+- `skills/changelog/` — new skill created: changelog auditing (7 checks, flag-only, companion to Vault Auditor)
 - `skills/handoff/index.md` + `skills/changelog/index.md` + `skills/changelog/entry_template.md` — bidirectional handoff ↔ changelog cross-reference added
 - `src/ben-cp.ts` — `write_changelog_entry` upgraded: `subdirectories` array (replaces single `subdirectory`), `handoff` param, `get_changelog` scope param, `failed_actions` surfaced at root level
 - `src/ben-cp.ts` — `package.json` build script fixed: `tsc -p tsconfig.json` (was broken inline flags)
@@ -117,7 +117,7 @@ Entry to prepend below `## [Unreleased]`:
 - Both `package.json` descriptions corrected: SSE/Express, not stdio
 
 **Next Tasks:**
-1. Run Lumberjack after each multi-skill session
+1. Run Changelog Auditor after each multi-skill session
 2. Rename `casebook-billing-mcp` GitHub repo → `casebook-subscriptions-mcp`, then mv local dir
 ```
 
@@ -153,7 +153,7 @@ Read `changelog.md` before any edits.
 
 ---
 
-## Task 7: Update skills/index.md and AGENTS.md for Lumberjack
+## Task 7: Update skills/index.md and AGENTS.md for Changelog Auditor
 
 **Read `skills/index.md` first.** Add lumberjack row to the Skills table:
 ```
@@ -170,7 +170,7 @@ Read `changelog.md` before any edits.
 ## Task 8: Changelog + Completion
 
 Write changelog entries:
-- `skills/lumberjack/changelog.md` — note this handoff was executed, tasks completed
+- `skills/changelog/changelog.md` — note this handoff was executed, tasks completed
 - Root `changelog.md` — already handled in Task 4 (1.5.0 entry covers the lumberjack creation)
 
 Then mark this file complete:

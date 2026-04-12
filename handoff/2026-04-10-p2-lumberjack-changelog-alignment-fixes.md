@@ -10,7 +10,7 @@
 ---
 
 ### Missing Handoff Log Entry
-- **Issue:** `skills/handoff/changelog.md` is missing the 2026-04-10 entry for the Quartermaster convention (referenced in root 1.9.1).
+- **Issue:** `skills/handoff/changelog.md` is missing the 2026-04-10 entry for the Strategic PM convention (referenced in root 1.9.1).
 - **Action:** Backfill the entry.
 
 ### OKR Logging Policy

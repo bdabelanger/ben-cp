@@ -1,0 +1,15 @@
+{
+  "skill_name": "intelligence/analysis/synthesize",
+  "preferred_agent": "Synthesis Lead",
+  "cadence": "daily",
+  "run_order": 5,
+  "output_envelope_schema": {
+    "agent": "string",
+    "skill": "string",
+    "run_at": "iso8601",
+    "status": "ok | warn | error",
+    "summary": "string",
+    "findings": "array",
+    "flags": "array"
+  }
+}

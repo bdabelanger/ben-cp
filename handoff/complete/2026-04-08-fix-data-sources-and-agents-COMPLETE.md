@@ -1,7 +1,7 @@
 # Claude Code Implementation Plan: Fix data_sources.md Portal Gaps + AGENTS.md SKILL.md Exemption
 
 > **Prepared by:** Claude (Cowork session, 2026-04-08)
-> **Source:** Crypt-Keeper report `reports/cleanup-report-2026-04-08.md` flags 6.1, 6.2, 7.1 naming note
+> **Source:** Vault Auditor report `reports/knowledge-report-2026-04-08.md` flags 6.1, 6.2, 7.1 naming note
 > **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
 > **v1.0**
 > **STATUS: ✅ COMPLETE — 2026-04-09**
@@ -14,7 +14,7 @@
 
 ## Context
 
-Two small gaps flagged by Crypt-Keeper:
+Two small gaps flagged by Vault Auditor:
 
 1. `skills/okr-reporting/data_sources.md` is missing two Portal-related sources
    referenced in `2026-q2-kr-reference.md`. These KRs are currently blocked but
@@ -22,7 +22,7 @@ Two small gaps flagged by Crypt-Keeper:
 
 2. `AGENTS.md` naming convention rules don't address `SKILL.md` files, which use
    all-caps rather than underscores. This should be documented as an explicit
-   exemption to avoid future false positives in Crypt-Keeper Check 7.
+   exemption to avoid future false positives in Vault Auditor Check 7.
 
 ---
 

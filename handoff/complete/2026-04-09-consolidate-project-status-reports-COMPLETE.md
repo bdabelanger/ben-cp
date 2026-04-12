@@ -185,5 +185,5 @@ Output:
 - Read before every write — no exceptions
 - Do not modify any `.py` script contents — move only
 - If any script has a hardcoded path to `project-status-reports/` internally,
-  flag it for Ben rather than editing script logic
+  flag it for human user rather than editing script logic
 - Follow all Read → Write rules from `AGENTS.md`

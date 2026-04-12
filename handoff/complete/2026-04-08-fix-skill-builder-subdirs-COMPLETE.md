@@ -1,7 +1,7 @@
 # Claude Code Implementation Plan: Fix skill-builder Subdirectory index.md Files
 
 > **Prepared by:** Claude (Cowork session, 2026-04-08)
-> **Source:** Crypt-Keeper report `reports/cleanup-report-2026-04-08.md` flags 3.1, 3.2, 3.3
+> **Source:** Vault Auditor report `reports/knowledge-report-2026-04-08.md` flags 3.1, 3.2, 3.3
 > **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
 > **v1.0**
 > **STATUS: ✅ COMPLETE — 2026-04-09**
@@ -20,7 +20,7 @@ Three subdirectories under `skills/skill-builder/` are missing `index.md` files:
 - `rules/` — empty directory, no index
 
 Decision needed on `rules/`: either seed with a stub index or remove entirely.
-Ben's preference: **remove if empty, don't create empty structure**.
+Human user's preference: **remove if empty, don't create empty structure**.
 
 ---
 

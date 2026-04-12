@@ -67,6 +67,10 @@ async function writeChangelogInternal(a: any, skillsPath: string, date: string):
   for (const rawSub of rawSubs) {
     const subDir = rawSub.replace(/[^a-z0-9\-_]/gi, "");
     const subPath = path.resolve(skillsPath, subDir, "changelog.md");
+    
+    // Ensure the skill subdirectory exists before writing
+    await fs.mkdir(path.dirname(subPath), { recursive: true });
+
     let subContent: string;
     try {
       subContent = await fs.readFile(subPath, "utf-8");
@@ -338,7 +342,9 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
   const { name, arguments: args } = request.params;
   try {
     if (name === "get_skill") {
-      const fullPath = path.resolve(skillsPath, String(args?.relativePath));
+      const rel = String(args?.relativePath);
+      const normalized = rel.startsWith("skills/") ? rel.slice(7) : rel.startsWith("sop/") ? rel.slice(4) : rel;
+      const fullPath = path.resolve(skillsPath, normalized);
       
       // Prevent path traversal outside of the skillsPath
       if (!fullPath.startsWith(path.resolve(skillsPath))) {
@@ -440,7 +446,8 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     }
     if (name === "read_handoff") {
       const { path: relPath } = args as any;
-      const fullPath = path.resolve(handoffPath, relPath);
+      const normalized = String(relPath).startsWith("handoff/") ? String(relPath).slice(8) : relPath;
+      const fullPath = path.resolve(handoffPath, normalized);
       if (!fullPath.startsWith(handoffPath)) throw new Error("Access denied: Invalid path");
       
       const content = await fs.readFile(fullPath, "utf-8");
@@ -466,7 +473,8 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     }
     if (name === "edit_handoff") {
       const { path: relPath, content } = args as any;
-      const fullPath = path.resolve(handoffPath, relPath);
+      const normalized = String(relPath).startsWith("handoff/") ? String(relPath).slice(8) : relPath;
+      const fullPath = path.resolve(handoffPath, normalized);
       if (!fullPath.startsWith(handoffPath)) throw new Error("Access denied: Invalid path");
 
       await fs.writeFile(fullPath, content, "utf-8");
@@ -475,7 +483,8 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     if (name === "complete_handoff") {
       const a = args as any;
       const relPath = String(a.path);
-      const sourcePath = path.resolve(handoffPath, relPath);
+      const normalized = relPath.startsWith("handoff/") ? relPath.slice(8) : relPath;
+      const sourcePath = path.resolve(handoffPath, normalized);
       if (!sourcePath.startsWith(handoffPath)) throw new Error("Access denied: Invalid path");
 
       const date = new Date().toISOString().split('T')[0];

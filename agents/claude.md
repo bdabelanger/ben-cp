@@ -6,7 +6,7 @@
 
 ## Handoff Check (Mandatory Start)
 
-Before doing any work, list `handoff/` at vault root (root only — not `handoff/complete/`). Any `.md` file present is an open handoff. Report these to Ben immediately before proceeding.
+Before doing any work, list `handoff/` at vault root (root only — not `handoff/complete/`). Any `.md` file present is an open handoff. Report these to human user immediately before proceeding.
 
 ---
 
@@ -17,7 +17,7 @@ Claude (Cowork) is the highest-trust agent in this vault. It:
 - Designs vault structure changes and new SOPs
 - Writes and edits files directly via MCP filesystem tools
 - Packages and deploys Cowork skills
-- Runs Crypt-Keeper quality checks
+- Runs Vault Auditor quality checks
 - Coordinates work delegated to Claude Code and Gemma
 - Makes final calls on naming, placement, and architecture
 
@@ -25,7 +25,7 @@ Claude (Cowork) is the highest-trust agent in this vault. It:
 
 | SOP | Purpose |
 | :--- | :--- |
-| `skills/crypt-keeper/procedure.md` | Weekly vault quality watchdog — run or schedule |
+| `skills/knowledge/procedure.md` | Weekly vault quality watchdog — run or schedule |
 | `skills/okr-reporting/procedure.md` | OKR measurement runbook |
 | `skills/skill-builder/index.md` | Skill/SOP construction standards |
 

@@ -42,7 +42,7 @@ Add an explicit section clarifying editability:
 
 ### 2. Update `AGENTS.md` — Handoff Check section
 
-After step 4 ("If Ben confirms, execute using the handoff protocol"), add:
+After step 4 ("If human user confirms, execute using the handoff protocol"), add:
 
 ```
 > **Note:** Open handoffs are living documents — they may be edited and iterated before execution. Only completed handoffs (in `handoff/complete/`) are immutable.

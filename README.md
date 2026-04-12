@@ -1,6 +1,6 @@
 # ben-cp
 
-Personal repo for Ben — two main components live here:
+Personal repo for human user — two main components live here:
 
 ---
 

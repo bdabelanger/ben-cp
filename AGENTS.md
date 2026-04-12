@@ -1,7 +1,7 @@
 # AGENTS.md — Vault Agent Dispatch
 
 > **All agents working in this vault must read this file before taking any action.**
-> Last updated: 2026-04-10
+> Last updated: 2026-04-12
 
 ---
 
@@ -18,18 +18,28 @@ We read, we pause, we learn the strain;
 Then build anew without the veil.
 
 ---
+## Global Tone & Schema Directive
+
+**All agents must assume the explicitly mapped persona of the domain they are operating within.**
+Before executing a procedure against `skills/[skill_name]/`, an agent MUST sequentially read:
+1. `SKILL.md` (To learn *how* to execute the boundary).
+2. `character.md` (To learn *who* they are during execution).
+
+**Fallback Rule:** If a target workspace explicitly lacks a local `character.md`, the agent MUST default to parsing `/Users/benbelanger/GitHub/ben-cp/character.md` (The Vault Fallback). No generalized fluffy assistant speak is allowed inside the repo boundary.
+
+---
 ## Handoff Check (Every Session Start)
 
 Before doing any other work, check for outstanding handoffs:
 
 1. List `handoff/` at vault root (root only — not `handoff/complete/`)
 2. Any `.md` file present is an open handoff — completed ones live in `handoff/complete/`
-3. Surface them to Ben immediately: "You have N outstanding handoff(s): [filenames]"
-4. If Ben confirms, execute using the handoff protocol at `skills/handoff/index.md`
+3. Surface them to human user immediately: "You have N outstanding handoff(s): [filenames]"
+4. If human user confirms, execute using the handoff protocol at `skills/collaboration/handoff/index.md`
 
 > **Note:** Open handoffs are living documents — they may be edited and iterated before execution. Only completed handoffs (in `handoff/complete/`) are immutable.
 
-Do not proceed with other work until open handoffs are acknowledged by Ben.
+Do not proceed with other work until open handoffs are acknowledged by human user.
 
 ---
 
@@ -43,7 +53,27 @@ Find your role file and read it next:
 | Claude Code | `agents/claude-code.md` | Implementer, code executor, file engineer |
 | Gemma | `agents/gemma.md` | Executor, pipeline tasks, data formatting |
 | Antigravity | `agents/antigravity.md` | Peer implementer (Gemini) — full peer to Claude Code; mutual PR review |
-| Robert | `agents/robert.md` | Mission Integrity Observer — watches AGENTS.md for Creed drift |
+| Robert | `agents/robert.md` | Mission Integrity Lead — watches AGENTS.md for compliance drift |
+| Access Auditor | `skills/access/SKILL.md` | Access Auditor — nightly violation and oops reports |
+| Vault Auditor | `skills/memory/character.md` | Memory Auditor — guards mappings, indexes memory, and conducts audits |
+
+---
+
+## Directory Boundaries
+
+> See `skills/shared/separation-policy.md` for the full policy.
+
+The vault is organized into five distinct layers. Writing data files, scripts, or run artifacts into `skills/` is a violation.
+
+| Layer | Lives in | Contents |
+| :--- | :--- | :--- |
+| Skill logic | `skills/` | `SKILL.md`, `character.md`, `index.md`, `changelog.md`, templates, report specs |
+| Execution tooling | `tools/` | Scripts, pipeline runners, automation harnesses |
+| Live data / WIP | `inputs/` | Raw API responses, processed JSON, `manifest.json` |
+| Outputs | `outputs/` | Final reports, HTML, archives |
+| Vault source of truth | `intelligence/` | Logic stubs, status rules, domain knowledge — gitignored optional |
+
+**Hard constraint:** Any agent writing data files, scripts (`*.py`, `*.sh`), `manifest.json`, archived reports, or session logs into `skills/` is in violation of this policy. Flag the violation in a handoff rather than proceeding.
 
 ---
 
@@ -53,18 +83,18 @@ This vault exposes purpose-built MCP tools. Use them instead of raw file reads/w
 
 | Tool | Purpose |
 | :--- | :--- |
-| `get_changelog` | Read changelog entries — pass a scope (`root`, `skills/okr-reporting`, etc.) to pull relevant recent work |
+| `get_changelog` | Read changelog entries — pass a scope (`root`, `skills/product/okr-reporting`, etc.) to pull relevant recent work |
 | `write_changelog_entry` | Append a new entry — always write deepest level first, then root |
 
 **Session pattern:**
 1. `get_changelog` scoped to the work area → understand recent context
 2. Load `AGENTS.md` + your role file → confirm rules
-3. **Quartermaster Planning:** If writes are intended, create/update `quartermaster.md` in the target `skills/` subdirectory using the template at `skills/quartermaster/quartermaster_template.md`.
+3. **Session Planning:** If writes are intended, create/update `notes.md` in the target `skills/` subdirectory using the template at `skills/product/report.md`.
 4. Do the work
 5. `write_changelog_entry` at subdirectory level → then at root
-6. **Cleanup:** Delete the `quartermaster.md` file after successful changelog entry.
+6. **Cleanup:** Delete the `notes.md` file after successful changelog entry.
 
-Ben will tell you which changelog scope is relevant for the session. If not specified, ask before pulling root.
+The human user will tell you which changelog scope is relevant for the session. If not specified, ask before pulling root.
 
 ---
 
@@ -82,60 +112,30 @@ ben-cp/
 ├── changelog.md                     ← root project changelog (versioned milestones)
 ├── handoff/                         ← open cross-agent implementation plans (READY)
 │   └── complete/                    ← executed handoffs (COMPLETE) — never edit
-└── skills/                          ← all skill documentation
-    ├── skill-builder/
-    │   ├── index.md
-    │   ├── mappings/
-    │   │   └── status_mapping.md
-    │   └── styles/
-    │       └── emoji_key.md
-    ├── changelog/                   ← changelog skill: procedure + templates
-    │   ├── index.md                 ← multi-level changelog procedure
-    │   └── entry_template.md
-    ├── okr-reporting/
-    │   ├── index.md
-    │   ├── procedure.md
-    │   ├── data_sources.md
-    │   └── q2-2026/                       ← initiative-specific quarterly nesting
-    │       ├── index.md                   ← Master Q2 Status Dashboard
-    │       └── planning-services-at-scale/
-    │           ├── index.md
-    │           └── [feature]_[metric].md
-    ├── crypt-keeper/
-    │   ├── SKILL.md
-    │   ├── index.md
-    │   ├── procedure.md
-    │   ├── report-template.md
-    │   ├── changelog.md
-    │   └── reports/
-    │       ├── cleanup-report-YYYY-MM-DD.md
-    │       └── archive/
-    ├── lumberjack/                  ← changelog auditing (accuracy, completeness, git cross-check)
-    │   ├── index.md
-    │   ├── procedure.md
-    │   └── reports/
-    ├── rovo/
-    ├── robert/
-    │   ├── index.md
-    │   ├── diff_checker.md
-    │   ├── art.md
-    │   └── changelog.md
-    ├── project-status-reports/   ← self-contained: runbook + scripts + inputs/outputs/logs
-    │   ├── index.md
-    │   ├── changelog.md
-    │   ├── manifest.json
-    │   ├── run_pipeline.sh
-    │   ├── scripts/
-    │   ├── inputs/
-    │   ├── outputs/
-    │   ├── logs/
-    │   └── tests/
-    └── casebook/
-        ├── index.md
-        ├── changelog.md
-        ├── reporting/           ← Reveal BI + entity reference docs
-        ├── admin/               ← Casebook Admin MCP skill docs (port 3002)
-        └── subscriptions/      ← Casebook Subscriptions MCP skill docs (port 3003)
+├── intelligence/                    ← vault source of truth (gitignored optional)
+│   ├── mapping/             ← logic stubs, status rules, and data transformation
+│   └── casebook/            ← Casebook domain knowledge and schema reference
+├── tools/                           ← execution scripts and pipeline runners
+├── inputs/                          ← live run data (raw API responses, manifests)
+├── outputs/                         ← generated reports, audit logs, session artifacts
+└── skills/                          ← all skill SOPs and procedures
+    ├── orchestration/       ← execution engine (Coordination, Tracking, and Governance)
+    │   ├── communication/   ← human-in-the-loop intelligence (notes + cross-agent notes)
+    │   ├── handoff/         ← cross-agent handoff protocol and file format
+    │   ├── access/          ← permission & access auditing
+    │   └── changelog/       ← changelog auditing — accuracy, completeness, git cross-reference
+    ├── intelligence/        ← consolidated cognitive domain (Lifecycle: Memory → Analysis → Report → Dream)
+    │   ├── memory/          ← central store of strategic & structural truth (Learn/Recall/Audit)
+    │   ├── analysis/        ← strategic synthesis and pragmatic foresight (Synthesize/Predict)
+    │   ├── report/          ← nightly Digest (Daily Progress Summary) orchestration
+    │   └── dream/           ← nightly report orchestrator — assembles all skill outputs
+    ├── product/             ← PM-facing skills under the Strategic PM mindset
+    │   ├── status-reports/  ← Platform Weekly Status Report pipeline (SOP only)
+    │   ├── okr-reporting/   ← Platform OKR measurement runbooks and KR SOPs
+    │   └── shared/          ← shared data sources across product sub-skills
+    ├── rovo/                ← Rovo issue management SOP
+    ├── shared/              ← cross-cutting vault governance docs (separation policy, etc.)
+    └── styles/              ← visual syntax authority — emoji glossary and nomenclature
 ```
 
 ---
@@ -152,43 +152,54 @@ ben-cp/
 
 **Mental Check:** Before every edit, state in your `<thought>` block: "Verification: I have read [file] in step [N] of this session."
 
+### notes.md Write Policy
+
+`notes.md` files are open collaborative scratchpads. Any agent — including sub-agents — may write to any `notes.md` in the vault. All entries are equal regardless of author. Rules:
+
+1. **Always sign your entry** with agent name and timestamp: `[Your Name — YYYY-MM-DD HH:MM]`
+2. **Append only** — never edit or remove another agent's or human user's entries.
+3. **Edit only your own entries** — corrections should be added inline as `[Correction — YYYY-MM-DD]`.
+4. **`skills/orchestration/communication/notes.md` is the primary channel** — read before any planning or OKR work. The user's entries supersede inferred context.
+5. **Ephemeral vs. persistent:** `skills/orchestration/communication/notes.md` is persistent (never deleted). Session planning `notes.md` in other skill directories are ephemeral — delete after changelog is written (see `skills/product/SKILL.md`).
+
 ### Course Correction Protocol
 
 If a required tool call fails (e.g., `write_changelog_entry`, `edit_file`, or path-based MCP tools), follow this priority:
 1. **Analyze:** Read the error message carefully.
 2. **Correct:** Attempt the obvious fix (e.g., corrected path, alternative tool) once or twice.
-3. **Escalate:** If the second attempt fails, escalate to the next higher level (e.g., root-only logging) and note the tool failure clearly for Ben.
+3. **Escalate:** If the second attempt fails, escalate to the next higher level (e.g., root-only logging) and note the tool failure clearly for human user.
 4. **Cap:** Never attempt a third time for the same specific failure point.
 
 ### File Placement
 
 | Content type | Correct location |
 | :--- | :--- |
-| KR-specific measurement SOP | `skills/okr-reporting/[quarter]/[initiative]/[name].md` |
-| Master OKR runbook (evergreen) | `skills/okr-reporting/procedure.md` |
-| Quarterly KR reference | `skills/okr-reporting/[quarter]/index.md` |
-| Data source inventory | `skills/okr-reporting/data_sources.md` |
-| Status/transform logic | `skills/skill-builder/mappings/` |
-| Visual/emoji standards | `skills/skill-builder/styles/` |
-| Crypt-Keeper watchdog | `skills/crypt-keeper/` |
-| Changelog procedure | `skills/changelog/` |
-| Other skill SOPs | `skills/[skill-name]/` |
-| Cleanup reports | `skills/crypt-keeper/reports/cleanup-report-[YYYY-MM-DD].md` |
+| KR-specific measurement SOP | `skills/product/okr-reporting/[quarter]/[initiative]/[name].md` |
+| Master OKR runbook (evergreen) | `skills/product/okr-reporting/procedure.md` |
+| Quarterly KR reference | `skills/product/okr-reporting/[quarter]/index.md` |
+| Shared data source inventory | `skills/product/shared/data_sources.md` |
+| status/transform logic | `intelligence/mapping/` |
+| visual/emoji standards | `skills/styles/` |
+| memory store / audit   | `skills/intelligence/memory/` |
+| synthesis / analysis   | `skills/intelligence/analysis/` |
+| nightly orchestration  | `skills/intelligence/dream/` |
+| changelog procedure    | `skills/orchestration/changelog/` |
+| other skill sops       | `skills/[skill-name]/` |
+| audit reports          | `outputs/memory/audit/audit-report-[TARGET]-[YYYY-MM-DD].md` |
+| Access audit reports   | `outputs/access/access-report-[YYYY-MM-DD].md` |
 
 **Never create files at vault root** (except `AGENTS.md`, `changelog.md`, `README.md`).
 
 ### File Naming
 
-- Underscores for word separation: `notes_datagrid_shortcuts.md`
-- KR SOPs: `[feature]_[metric_type].md`
-- Quarterly references: `[year]-[quarter]-kr-reference.md`
-- No spaces, no camelCase
-- `SKILL.md` and `AGENTS.md` are exempt from the underscore convention — all-caps
-  filenames are valid for vault contracts and Cowork skill descriptors
+- **Use hyphens** (`-`) for separating words in document titles (e.g., `handoff/2026-04-12-p1-sprint-plan.md`, `changelog.md`).
+- Scripts or specific code files requiring underscores by native language formats (e.g., Python `run_pipeline.py`) are exempt, but general knowledge markdown defaults to hyphens.
+- Keep names short and descriptive. No camelCase.
+- `SKILL.md` and `AGENTS.md` are exempt from the convention — all-caps filenames are valid for vault contracts and Cowork skill descriptors.
 
 ### Index Maintenance
 
-After creating or significantly modifying any file, update `index.md` in the same directory. If the directory has an `art.md`, Robert may add to it — but no other agent should write to `art.md` without Ben's direction.
+After creating or significantly modifying any file, update `index.md` in the same directory. If the directory has an `art.md`, Robert may add to it — but no other agent should write to `art.md` without human user's direction.
 
 ### Completion Reporting
 
@@ -196,10 +207,27 @@ Every session that involves writing, editing, or structural modification must en
 
 **Handoff Exemption:** If a session's primary output is a newly created READY handoff (`handoff/[name].md`) and no other significant SOP or structural changes occurred, the agent SHOULD skip the detailed subdirectory changelog. In this case, the root `changelog.md` entry should be a concise one-line pointer to the handoff.
 
-**Resilience Rule:** For "meta-observations" (observations about the vault, tools, or procedures) or when subdirectory logging is persistently blocked by tool errors, root-only reporting is acceptable. Provide a full explanation of any blocked subdirectory logs in the root entry.
+### Artifact-First Workflow (MANDATORY)
+
+To ensure human oversight and safety, agents should primarily interact with specialized artifacts as their interface for work:
+1. **Plan first:** All non-trivial changes require an `implementation_plan.md` artifact approved by human user.
+2. **Execute via Tasks:** Use the `task.md` artifact to track progress and state.
+3. **Walkthrough:** Finalize every complex session with a `walkthrough.md`.
+
+The access skill will flag sessions that bypass this artifact-led workflow as violations.
+
+### Operational Meta-Agent Handoffs
+As meta-agents analyze the vault over their nightly cycles, they are actively encouraged to generate new `handoff/` artifacts containing ideas for operational improvements, workflow coordinations, or structural delegations.
+
+**Rules for Meta-Agent Ideation:**
+1. These ideation handoffs MUST be assigned to the specific agent who makes the most functional sense for the task.
+2. **The Consensus Rule:** Every agent in the vault MUST be asked to weigh in on operational changes proposed by other agents.
+3. Final execution of the handoff MUST require explicit, final approval by **human user** AND the access auditor after the other agents have reviewed.
+
+### Resilience Rule: For "meta-observations" (observations about the vault, tools, or procedures) or when subdirectory logging is persistently blocked by tool errors, root-only reporting is acceptable. Provide a full explanation of any blocked subdirectory logs in the root entry.
 
 ---
 
 ## When in Doubt
 
-Ask Ben rather than improvising structure. Do not delete files — flag for review.
+Ask human user rather than improvising structure. Do not delete files — flag for review.

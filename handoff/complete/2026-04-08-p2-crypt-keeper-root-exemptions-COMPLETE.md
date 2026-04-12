@@ -1,9 +1,9 @@
 # Claude Code Implementation Plan: Document Root-Level File Exemptions in AGENTS.md
 
-> **Prepared by:** Crypt-Keeper (scheduled run, 2026-04-08)
+> **Prepared by:** Vault Auditor (scheduled run, 2026-04-08)
 > **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
 > **Priority:** P2 — structural violation (AGENTS.md compliance)
-> **Source report:** `skills/crypt-keeper/reports/cleanup-report-2026-04-08.md`
+> **Source report:** `skills/knowledge/reports/knowledge-report-2026-04-08.md`
 > **v1.0**
 > **STATUS: ✅ COMPLETE — 2026-04-09**
 
@@ -15,7 +15,7 @@ On reading `AGENTS.md`, the exemption list already contained `CLAUDE.md` and `RE
 
 ## Context
 
-Crypt-Keeper Check 2 flagged two files at vault root that are not listed in
+Vault Auditor Check 2 flagged two files at vault root that are not listed in
 AGENTS.md's explicit exemptions: `CLAUDE.md` and `README.md`. The current rule
 reads: "Never create files at vault root (except `AGENTS.md`, `GEMMA.md`,
 `changelog.md`)."
@@ -23,7 +23,7 @@ reads: "Never create files at vault root (except `AGENTS.md`, `GEMMA.md`,
 - `README.md` is standard GitHub convention — it belongs at root and should be
   permanently exempted in AGENTS.md.
 - `CLAUDE.md` appears to be a Claude Code agent directive stub (parallel to
-  `GEMMA.md` for Gemma). Ben needs to confirm intent: if it's intentional,
+  `GEMMA.md` for Gemma). Human user needs to confirm intent: if it's intentional,
   add it to the exemption list; if it duplicates `AGENTS.md`, delete it.
 
 No file moves or deletions here — this is purely an AGENTS.md documentation
@@ -89,13 +89,13 @@ If retaining, skip this task.
 
 Write changelog entries using `write_changelog_entry`:
 
-**Subdirectory level** (`skills/crypt-keeper/changelog.md`):
-- Note: AGENTS.md root exemption list updated per Crypt-Keeper flag 2.2–2.3
+**Subdirectory level** (`skills/knowledge/changelog.md`):
+- Note: AGENTS.md root exemption list updated per Vault Auditor flag 2.2–2.3
 - Include disposition of CLAUDE.md (retained or deleted)
 
 **Root level** (`changelog.md`):
 - One-liner: `AGENTS.md root exemptions updated — README.md and CLAUDE.md clarified`
-- Pointer: `See skills/crypt-keeper/changelog.md`
+- Pointer: `See skills/knowledge/changelog.md`
 
 Then mark this file complete:
 1. Update STATUS line to `✅ COMPLETE — [date]`
@@ -109,5 +109,5 @@ Then mark this file complete:
 - Read before every write — no exceptions
 - Do not modify `CLAUDE.md` content — only assess and optionally delete
 - The exemption list update is a targeted `edit_file` on one line in AGENTS.md
-- If unsure about CLAUDE.md intent, retain it and add to exemptions — Ben can
+- If unsure about CLAUDE.md intent, retain it and add to exemptions — human user can
   decide to delete later

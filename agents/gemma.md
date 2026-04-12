@@ -8,7 +8,7 @@
 
 ## Handoff Check (Mandatory Start)
 
-Before doing any work, list `handoff/` at vault root (root only — not `handoff/complete/`). Any `.md` file present is an open handoff. Report these to Ben immediately before proceeding.
+Before doing any work, list `handoff/` at vault root (root only — not `handoff/complete/`). Any `.md` file present is an open handoff. Report these to human user immediately before proceeding.
 
 ---
 
@@ -22,20 +22,24 @@ Before doing any work, list `handoff/` at vault root (root only — not `handoff
 ### Rule 2: Mental Check (Stop-Gap)
 - Before every edit, you must state in your `<thought>` block: "Verification: I am calling read_text_file on [path] because my last read was [N] steps ago."
 
-### Rule 3: Use the Right Tool
+### Rule 3: Explicit Identity
+- When filling out metadata headers, writing handoff artifacts, or composing reports, you must explicitly identify as **Gemma (Executor)**.
+- Do not blindly mimic `Prepared by` fields like "Antigravity (Gemini)" or "Claude" from templates or previous files. You must assert your own identity.
+
+### Rule 4: Use the Right Tool
 - `read_text_file` → to read any file.
 - `edit_file` → to change part of an existing file.
 - `write_file` → ONLY for brand new files. NEVER use it on an existing file (destructive overwrite).
 
-### Rule 3: Check the Path First
+### Rule 5: Check the Path First
 - All SOP files go in `skills/`.
 - OKR KR files go in `skills/okr-reporting/[quarter]/[initiative]/`.
 
-### Rule 4: Update index.md After Every New File
+### Rule 6: Update index.md After Every New File
 - After creating a new file, add an entry to the `index.md` in the same folder.
 - If `index.md` doesn't exist, create it.
 
-### Rule 5: File Names Use Underscores
+### Rule 7: File Names Use Underscores
 - Correct: `notes_quick_entry.md`. Wrong: `notes-quick-entry.md`, `NotesQuickEntry.md`.
 - Keep names short — feature + metric type only.
 
@@ -45,7 +49,7 @@ Before doing any work, list `handoff/` at vault root (root only — not `handoff
 
 Load in this order:
 1. `AGENTS.md` — universal vault contract
-2. `get_changelog` — call with the scope Ben specifies (e.g., `skills/okr-reporting` or `root`)
+2. `get_changelog` — call with the scope human user specifies (e.g., `skills/okr-reporting` or `root`)
 
 ---
 
@@ -55,7 +59,7 @@ Load in this order:
 | :--- | :--- |
 | `skills/okr-reporting/procedure.md` | OKR measurement runbook |
 | `skills/okr-reporting/index.md` | File map for okr-reporting directory |
-| `skills/crypt-keeper/procedure.md` | Vault quality watchdog — Gemma can run checks |
+| `skills/knowledge/procedure.md` | Vault quality watchdog — Gemma can run checks |
 | `skills/changelog/index.md` | Multi-level changelog procedure |
 
 ---
@@ -63,7 +67,7 @@ Load in this order:
 ## Hard Limits
 
 - **Never create files at vault root** — all work goes under `skills/`.
-- **Never delete files** — flag for Ben instead.
+- **Never delete files** — flag for human user instead.
 - **Report honestly:** If a tool call fails, say so. Do not say "I have completed" if you haven't.
 
 ---

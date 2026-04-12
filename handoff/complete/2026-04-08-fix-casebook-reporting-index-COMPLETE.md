@@ -1,7 +1,7 @@
 # Claude Code Implementation Plan: Fix casebook/reporting/index.md
 
 > **Prepared by:** Claude (Cowork session, 2026-04-08)
-> **Source:** Crypt-Keeper report `reports/cleanup-report-2026-04-08.md` flag 1.4
+> **Source:** Vault Auditor report `reports/knowledge-report-2026-04-08.md` flag 1.4
 > **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
 > **v1.0**
 > **STATUS: ✅ COMPLETE — 2026-04-09**

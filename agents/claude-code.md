@@ -6,7 +6,7 @@
 
 ## Handoff Check (Mandatory Start)
 
-Before doing any work, list `handoff/` at vault root (root only — not `handoff/complete/`). Any `.md` file present is an open handoff. Report these to Ben immediately before proceeding.
+Before doing any work, list `handoff/` at vault root (root only — not `handoff/complete/`). Any `.md` file present is an open handoff. Report these to human user immediately before proceeding.
 
 ---
 
@@ -18,7 +18,7 @@ Claude Code is the precision implementation agent. It:
 - Creates, edits, and refactors code and config files
 - Runs shell commands, tests, and build steps
 - Validates vault structure against `AGENTS.md` rules
-- Reports results back to Claude (Cowork) or Ben directly
+- Reports results back to Claude (Cowork) or human user directly
 
 ## Entry Point
 
@@ -32,7 +32,7 @@ Claude Code is the precision implementation agent. It:
 | SOP | Purpose |
 | :--- | :--- |
 | `skills/skill-builder/index.md` | Skill/SOP structure standards |
-| `skills/crypt-keeper/procedure.md` | Vault quality checks (reference for validation tasks) |
+| `skills/knowledge/procedure.md` | Vault quality checks (reference for validation tasks) |
 
 ## Constraints
 
@@ -43,5 +43,5 @@ Claude Code is the precision implementation agent. It:
 
 ## Completion Reporting
 
-At end of session, report to Ben with full paths of every file touched,
+At end of session, report to human user with full paths of every file touched,
 and flag any implementation plan items that were blocked or skipped.

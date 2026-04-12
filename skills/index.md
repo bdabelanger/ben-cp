@@ -1,7 +1,7 @@
 # Skills Index
 
 > Master index for all skills in this vault.
-> Last updated: 2026-04-08
+> Last updated: 2026-04-12
 
 ---
 
@@ -9,12 +9,20 @@
 
 | Directory | Purpose |
 | :--- | :--- |
-| `casebook/` | Casebook reference docs, Reveal BI, Admin MCP, Billing MCP |
-| `changelog/` | Multi-level changelog procedure and entry templates |
-| `crypt-keeper/` | Weekly vault quality watchdog — 7 checks, flags only |
-| `handoff/` | Cross-agent handoff protocol and file format (Updated: Added context on error handling during logging) |
-| `lumberjack/` | Changelog auditing — accuracy, completeness, cross-reference checks |
-| `okr-reporting/` | Platform OKR measurement runbooks and KR SOPs |
-| `project-status-reports/` | Platform Weekly Status Report pipeline and runbook |
+| `orchestration/` | The execution engine: manages Communication (Notes), Handoff, Tracking (Changelog), and Governance (Access) |
+| `intelligence/` | The cognitive core: Memory (Truth), Analysis (Synthesize/Predict), Report (Digest), Dream (Nightly orchestration) |
+| `product/` | PM-facing skills: weekly status reports, OKR reporting, Strategic PM mindset |
 | `rovo/` | Rovo issue management SOP |
-| `skill-builder/` | Reusable standards — emoji keys, status mappings |
+| `shared/` | Cross-cutting vault governance docs (separation policy, etc.) |
+| `styles/` | Visual syntax authority — emoji glossary, vault nomenclature, and global CSS |
+
+---
+
+## 🏛️ Central Stores
+
+| Store | Purpose |
+| :--- | :--- |
+| [`intelligence/`](../intelligence/mapping/status_mapping.md) | Vault source of truth: logic stubs, status rules, domain knowledge (gitignored optional) |
+| [`tools/`](../tools/) | Execution scripts and pipeline runners for all skills |
+| [`inputs/`](../inputs/) | Live run data: raw API responses, processed JSON, manifest state |
+| [`outputs/`](../outputs/) | Centralized repository for all skill session reports and logs |

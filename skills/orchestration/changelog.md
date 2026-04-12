@@ -6,6 +6,26 @@
 
 ## [Unreleased]
 
+## 2026-04-12 — Build vault-native CRU tools for notes.md so agents never need shell or filesystem access to read, write, or correct notes.
+
+**Files changed:**
+- `/Users/benbelanger/GitHub/ben-cp/src/ben-cp.ts` — Added read_notes, append_note, edit_note tools with NOTES_DOMAIN_MAP and server-side ownership enforcement ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/dist/` — Rebuilt — tsc compile clean ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/skills/orchestration/communication/SKILL.md` — Rewrote to document new tools with copy-paste examples, removed all shell_exec patterns ✅ Complete
+
+**Next:** Restart ben-cp MCP server so new tools are live (read_notes, append_note, edit_note)
+
+
+## 2026-04-12 — Give agents concrete, low-ambiguity CRU tool patterns for notes.md so they stop relying on absolute path guessing or fabricating non-existent tool names.
+
+**Files changed:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/orchestration/communication/SKILL.md` — Rewrote as Notes & Context skill with explicit CRU tool patterns, Notes Map table, and ownership rule ✅ Complete
+
+**Handoff:** `handoff/complete/2026-04-12-p2-refactor-communication-to-notes-skill-COMPLETE.md`
+
+**Next:** Update the 3 hardcoded skills/orchestration/communication/ path references in predict/SKILL.md, synthesize/audit.md, and shared/separation-policy.md if naming ever changes
+
+
 ## 2026-04-12 — Verify structural integrity of intelligence/ and orchestration/ domains post-refactor, and clean up side-effects from prior agent session.
 
 **Files changed:**

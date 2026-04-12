@@ -43,6 +43,15 @@ When human user asks for peer review between Antigravity and Claude Code:
 
 ---
 
+## Known Environment Constraints
+
+### Gemini Brain Directory (`~/.gemini/antigravity/brain/`)
+The `replace_file_content` (edit) tool consistently fails with `context canceled` when targeting files inside the Gemini brain directory. This is a Gemini CLI client-layer constraint — not an OS or MCP permission issue.
+
+**Workaround:** Use `write_to_file` (overwrite) instead of `replace_file_content` for any writes to `~/.gemini/antigravity/`. Confirmed working as of 2026-04-12.
+
+---
+
 ## Session Start
 
 Same as all agents — read `AGENTS.md` first, check `handoff/` for open handoffs, surface to human user before proceeding.

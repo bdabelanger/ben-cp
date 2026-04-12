@@ -5,7 +5,12 @@
 > **Vault root:** /Users/benbelanger/GitHub/ben-cp
 > **Priority:** P1
 > **v1.0**
-> **STATUS: 🔲 READY — pick up 2026-04-10**
+> **STATUS: ✅ COMPLETE — 2026-04-12**
+
+Already resolved. The server runs via `npx tsx` directly from source — no persistent build artifact is needed. The path normalization and fs.mkdir fixes referenced in this handoff were already present and working. Additionally, today's session successfully ran `npm run build` (tsc clean compile) while adding the notes CRU tools. No further action required.
+
+**Changelog:** (see root changelog.md)
+
 
 ---
 

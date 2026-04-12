@@ -32,8 +32,8 @@ Before executing a procedure against `skills/[skill_name]/`, an agent MUST seque
 
 Before doing any other work, check for outstanding handoffs:
 
-1. List `handoff/` at vault root (root only — not `handoff/complete/`)
-2. Any `.md` file present is an open handoff — completed ones live in `handoff/complete/`
+1. List `orchestration/handoff/` at vault root (root only — not `handoff/complete/`)
+2. Any `.md` file present is an open handoff — completed ones live in `orchestration/handoff/complete/`
 3. Surface them to human user immediately: "You have N outstanding handoff(s): [filenames]"
 4. If human user confirms, execute using the handoff protocol at `skills/collaboration/handoff/index.md`
 
@@ -54,8 +54,8 @@ Find your role file and read it next:
 | Gemma | `agents/gemma.md` | Executor, pipeline tasks, data formatting |
 | Antigravity | `agents/antigravity.md` | Peer implementer (Gemini) — full peer to Claude Code; mutual PR review |
 | Robert | `agents/robert.md` | Mission Integrity Lead — watches AGENTS.md for compliance drift |
-| Access Auditor | `skills/access/SKILL.md` | Access Auditor — nightly violation and oops reports |
-| Vault Auditor | `skills/memory/character.md` | Memory Auditor — guards mappings, indexes memory, and conducts audits |
+| Access Auditor | `skills/orchestration/access/SKILL.md` | Access Auditor — nightly violation and oops reports |
+| Vault Auditor | `skills/intelligence/memory/SKILL.md` | Memory Auditor — guards mappings, indexes memory, and conducts audits |
 
 ---
 
@@ -110,8 +110,9 @@ ben-cp/
 │   ├── gemma.md
 │   └── robert.md
 ├── changelog.md                     ← root project changelog (versioned milestones)
-├── handoff/                         ← open cross-agent implementation plans (READY)
-│   └── complete/                    ← executed handoffs (COMPLETE) — never edit
+├── orchestration/                   ← execution domain (active work & state)
+│   └── handoff/                     ← open cross-agent implementation plans (READY)
+│       └── complete/                ← executed handoffs (COMPLETE) — never edit
 ├── intelligence/                    ← vault source of truth (gitignored optional)
 │   ├── mapping/             ← logic stubs, status rules, and data transformation
 │   └── casebook/            ← Casebook domain knowledge and schema reference

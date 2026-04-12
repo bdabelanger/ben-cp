@@ -11,6 +11,7 @@ This log tracks major architectural, process, and documentation standard changes
 - `Orchestration` — Normalized Communication, Changelog (Lumberjack), and Handoff (Baton) systems.
 - `Styles` — Consolidated the local emoji glossary into the Styles reporting standard.
 - `Hygiene` — Cleaned skills tree of over 10 deprecated documentation files.
+- `Handoff` — [2026-04-12-p1-resolve-gemini-root-edit-block.md](orchestration/handoff/2026-04-12-p1-resolve-gemini-root-edit-block.md) — Established P1 mission to resolve agent permission blocks.
 
 ## [1.18.0] — Unified and Normalized Vault Architecture: Established domain-driven hierarchy (Intelligence / Orchestration / Product) and professionalized nomenclature. (2026-04-12)
 

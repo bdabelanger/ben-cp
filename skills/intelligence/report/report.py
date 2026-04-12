@@ -20,6 +20,7 @@ import os
 import re
 import glob
 import argparse
+import subprocess
 from datetime import datetime
 
 SKILLS_DIR   = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
@@ -107,67 +108,55 @@ def get_report_specs():
 
 
 # ---------------------------------------------------------------------------
-# Mock skill execution (placeholder until agent-python-wrappers)
+# Skill execution
 # ---------------------------------------------------------------------------
 
-# In the real system, each skill reads its SKILL.md + character.md, runs its
-# procedure against live vault state, and returns a structured envelope.
-# These stubs stand in so we can validate pipeline structure end-to-end.
-# Note: mock content uses generic placeholders — actual agent voice comes
-# from live skill execution at runtime.
+def execute_skill(spec, phase="draft", draft_pool=None):
+    """
+    Executes a skill's automated report.py script.
+    If the script is missing, falls back to a mock envelope.
+    """
+    skill_name = spec.get("skill_name", "unknown")
+    spec_path  = spec.get("_path")
+    skill_dir  = os.path.dirname(spec_path)
+    script_path = os.path.join(skill_dir, "report.py")
 
-MOCK_DRAFT_SUMMARIES = {
-    "product":   "Session planning complete. No open blockers detected.",
-    "changelog": "Audit complete. No ghost entries or drift in git diffs.",
-    "intelligence/memory": "Structural scan clean. No drift since last audit.",
-    "access":    "Zero violations. One omission flagged. No credential exposure.",
-    "intelligence/analysis/synthesize": "Cross-skill threads converge on a single insight — momentum building.",
-    "intelligence/analysis/predict":   "Current velocity on track. One dependency item elevated to watch status.",
-}
+    if not os.path.exists(script_path):
+        # Fallback to mock for v1 rollout
+        return {
+            "skill":          skill_name,
+            "preferred_agent": spec.get("preferred_agent", "unknown"),
+            "run_at":         datetime.utcnow().isoformat() + "Z",
+            "status":         "ok",
+            "phase":          phase,
+            "summary":        f"[MOCK] {skill_name}: draft assessment complete.",
+            "findings":       ["[MOCK] Live report.py not found — using placeholder."],
+            "flags":          [],
+        }
 
-MOCK_REVISION_NOTES = {
-    "product":   "Changelog skill's clean scan confirms no drift. Plan holds.",
-    "changelog": "Access skill omission flag noted — will cross-reference next Check 9.",
-    "intelligence/memory": "Synthesis read aligns with structural scan. No revisions needed.",
-    "access":    "Intelligence analysis cross-references with access scope. Watch status elevated.",
-    "intelligence/analysis/synthesize": "Pragmatic Analyst sees the same pattern. Revised closing accordingly.",
-    "intelligence/analysis/predict":   "Access omission flag adds a data point. Confidence adjusted to medium.",
-}
-
-MOCK_EDITORIAL_EXCERPTS = {
-    "product":   ("Plan holds. No blockers.", None),
-    "changelog": (None, '"No ghost entries or drift in git diffs."'),
-    "intelligence/memory": ("Structural scan clean.", None),
-    "access":    ("One omission flagged. No violations.", None),
-    "intelligence/analysis/synthesize": (None, '"Momentum building."'),
-    "intelligence/analysis/predict":   ("Velocity on track. One dependency item to watch.", None),
-}
-
-
-def mock_execute_skill(spec, phase="draft", draft_pool=None):
-    skill = spec.get("skill_name", "unknown")
-
-    if phase == "draft":
-        summary  = MOCK_DRAFT_SUMMARIES.get(skill, f"{skill}: draft assessment complete.")
-        findings = ["[MOCK] Draft finding — replace with live skill output"]
-        flags    = []
-    else:
-        base     = MOCK_DRAFT_SUMMARIES.get(skill, "")
-        revision = MOCK_REVISION_NOTES.get(skill, "No revisions after peer review.")
-        summary  = f"{base} | Revised: {revision}"
-        findings = ["[MOCK] Revised finding after peer review"]
-        flags    = []
-
-    return {
-        "skill":          skill,
-        "preferred_agent": spec.get("preferred_agent", "unknown"),
-        "run_at":         datetime.utcnow().isoformat() + "Z",
-        "status":         "ok",
-        "phase":          phase,
-        "summary":        summary,
-        "findings":       findings,
-        "flags":          flags,
-    }
+    try:
+        # Pass the draft pool as JSON if in revision phase
+        env = os.environ.copy()
+        if draft_pool:
+            env["DREAM_DRAFTS"] = json.dumps(draft_pool)
+        
+        result = subprocess.run(
+            ["python3", script_path, "--phase", phase],
+            capture_output=True, text=True, check=True, env=env
+        )
+        return json.loads(result.stdout)
+    except Exception as e:
+        print(f"  [ERROR] {skill_name} failed: {e}")
+        return {
+            "skill":          skill_name,
+            "preferred_agent": spec.get("preferred_agent", "unknown"),
+            "run_at":         datetime.utcnow().isoformat() + "Z",
+            "status":         "error",
+            "phase":          phase,
+            "summary":        f"Audit failed to execute for {skill_name}.",
+            "findings":       [],
+            "flags":          [f"Execution Error: {str(e)}"],
+        }
 
 
 def editorialize(envelope):
@@ -180,7 +169,9 @@ def editorialize(envelope):
     For now, uses mock excerpts.
     """
     skill = envelope["skill"]
-    context, quote = MOCK_EDITORIAL_EXCERPTS.get(skill, (envelope["summary"], None))
+    # context, quote = MOCK_EDITORIAL_EXCERPTS.get(skill, (envelope["summary"], None))
+    context = envelope["summary"]
+    quote = None
 
     excerpt = ""
     if context:
@@ -204,7 +195,7 @@ def process_draft_phase(specs):
     drafts = []
     for spec in specs:
         print(f"  → {spec.get('skill_name')} (agent: {spec.get('preferred_agent')})")
-        drafts.append(mock_execute_skill(spec, phase="draft"))
+        drafts.append(execute_skill(spec, phase="draft"))
     return drafts
 
 
@@ -213,7 +204,7 @@ def process_revision_phase(specs, draft_pool):
     finals = []
     for spec in specs:
         print(f"  → {spec.get('skill_name')}")
-        finals.append(mock_execute_skill(spec, phase="final", draft_pool=draft_pool))
+        finals.append(execute_skill(spec, phase="final", draft_pool=draft_pool))
     return finals
 
 
@@ -323,8 +314,10 @@ def build_report_html(envelopes, date_str, run_ts, char):
         html += f'    {content}\n'
         if env.get("flags"):
             for flag in env["flags"]:
-                sev = flag.get("severity", "oops").lower()
-                html += f'    <div class="flag-card flag-{sev}">{flag.get("message", flag)}</div>\n'
+                # Handle both string flags (Gazette v1) and legacy object flags
+                msg = flag.get("message", flag) if isinstance(flag, dict) else flag
+                sev = flag.get("severity", "flag").lower() if isinstance(flag, dict) else "flag"
+                html += f'    <div class="flag-card flag-{sev}">{msg}</div>\n'
         html += "  </div>\n"
 
     html += f'  <footer class="vault-footer">{char["footer"]}</footer>\n'

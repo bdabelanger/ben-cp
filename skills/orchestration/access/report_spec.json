@@ -1,15 +1,1 @@
-{
-  "skill_name": "orchestration/access",
-  "preferred_agent": "Access Auditor",
-  "cadence": "daily",
-  "run_order": 4,
-  "output_envelope_schema": {
-    "agent": "string",
-    "skill": "string",
-    "run_at": "iso8601",
-    "status": "ok | warn | error",
-    "summary": "string",
-    "findings": "array",
-    "flags": "array"
-  }
-}
+{ "skill_name": "orchestration/access", "preferred_agent": "Access Auditor (Roz)", "cadence": "daily", "run_order": 3 }

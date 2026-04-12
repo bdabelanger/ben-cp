@@ -1,15 +1,6 @@
 {
   "skill_name": "intelligence/memory",
-  "preferred_agent": "Vault Auditor",
-  "cadence": "weekly",
-  "run_order": 3,
-  "output_envelope_schema": {
-    "agent": "string",
-    "skill": "string",
-    "run_at": "iso8601",
-    "status": "ok | warn | error",
-    "summary": "string",
-    "findings": "array",
-    "flags": "array"
-  }
+  "preferred_agent": "Vault Auditor (Antigravity)",
+  "cadence": "daily",
+  "run_order": 1
 }

@@ -6,7 +6,7 @@
 
 ## Connections
 - **Input:** Unresolved blockers, in-progress implementation plans, and terminal session state.
-- **Output:** Structured handoff files in the central `handoff/` directory.
+- **Output:** Structured handoff files in the central `orchestration/handoff/` directory.
 
 ## Tool Utility
 - **mcp_ben-cp_write_handoff**: Primary tool for creating the persistent context for the next agent.

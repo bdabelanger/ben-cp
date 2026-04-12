@@ -21,6 +21,35 @@ const skillsPath = path.resolve(__dirname, "../skills");
 const rootChangelogPath = path.resolve(__dirname, "../changelog.md");
 const handoffPath = path.resolve(__dirname, "../handoff");
 
+// Notes domain map — agents use the shorthand key, tool resolves the path
+const NOTES_DOMAIN_MAP: Record<string, string> = {
+  "primary":                      "orchestration/communication/notes.md",
+  "communication":                "orchestration/communication/notes.md",
+  "orchestration/communication":  "orchestration/communication/notes.md",
+  "handoff":                      "orchestration/handoff/notes.md",
+  "orchestration/handoff":        "orchestration/handoff/notes.md",
+  "changelog":                    "orchestration/changelog/notes.md",
+  "orchestration/changelog":      "orchestration/changelog/notes.md",
+  "access":                       "orchestration/access/notes.md",
+  "orchestration/access":         "orchestration/access/notes.md",
+  "memory":                       "intelligence/memory/notes.md",
+  "intelligence/memory":          "intelligence/memory/notes.md",
+  "synthesize":                   "intelligence/analysis/synthesize/notes.md",
+  "intelligence/analysis/synthesize": "intelligence/analysis/synthesize/notes.md",
+  "predict":                      "intelligence/analysis/predict/notes.md",
+  "intelligence/analysis/predict": "intelligence/analysis/predict/notes.md",
+  "product":                      "product/notes.md",
+};
+
+function resolveNotesPath(domain: string | undefined): string {
+  const key = (domain ?? "primary").trim().toLowerCase();
+  const rel = NOTES_DOMAIN_MAP[key];
+  if (!rel) throw new Error(
+    `Unknown notes domain: '${key}'. Valid options: ${Object.keys(NOTES_DOMAIN_MAP).join(", ")}`
+  );
+  return path.resolve(skillsPath, rel);
+}
+
 async function writeChangelogInternal(a: any, skillsPath: string, date: string): Promise<string[]> {
   const written: string[] = [];
 
@@ -144,6 +173,83 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
       name: "list_vault",
       description: "List all files available in the SOP vault",
       inputSchema: { type: "object", properties: {} }
+    },
+    {
+      name: "read_notes",
+      description: "Read a notes.md file from the vault. Use domain shorthand instead of constructing paths. Defaults to the vault-wide primary notes (orchestration/communication). Always call this before planning or OKR work.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          domain: {
+            type: "string",
+            description: "Which notes to read. Options: 'primary' (default), 'communication', 'handoff', 'changelog', 'access', 'memory', 'synthesize', 'predict', 'product'. Full paths like 'orchestration/communication' also accepted."
+          }
+        }
+      }
+    },
+    {
+      name: "append_note",
+      description: "Append a signed entry to a notes.md file. Handles formatting, timestamp, and signature automatically. Use this instead of shell commands to write notes.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          domain: {
+            type: "string",
+            description: "Which notes file to write to. Same options as read_notes. Defaults to 'primary'."
+          },
+          agent: {
+            type: "string",
+            description: "Your agent name — used as the entry signature."
+          },
+          title: {
+            type: "string",
+            description: "Short title for the note entry (e.g. 'Session Complete', 'Blocker Identified')."
+          },
+          status: {
+            type: "string",
+            description: "Optional status emoji + label (e.g. '✅ Done', '🟡 In Progress', '🛑 Blocked'). Omit if not applicable."
+          },
+          body: {
+            type: "string",
+            description: "The note content. Plain text or markdown."
+          }
+        },
+        required: ["agent", "title", "body"]
+      }
+    },
+    {
+      name: "edit_note",
+      description: "Edit your own previously written note entry. Only entries signed by your agent name may be edited. Appends a visible correction rather than silently overwriting, unless replace=true is set.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          domain: {
+            type: "string",
+            description: "Which notes file the entry lives in. Same options as read_notes. Defaults to 'primary'."
+          },
+          agent: {
+            type: "string",
+            description: "Your agent name. Must match the signature of the entry being edited."
+          },
+          entry_date: {
+            type: "string",
+            description: "The date of the entry to edit, in YYYY-MM-DD format."
+          },
+          entry_title: {
+            type: "string",
+            description: "The title of the entry to edit (matched against the ### heading)."
+          },
+          new_body: {
+            type: "string",
+            description: "The corrected note content."
+          },
+          replace: {
+            type: "boolean",
+            description: "If true, replaces the entry body in-place. If false (default), appends a visible correction block beneath the original."
+          }
+        },
+        required: ["agent", "entry_date", "entry_title", "new_body"]
+      }
     },
     {
       name: "write_changelog_entry",
@@ -345,29 +451,88 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const rel = String(args?.relativePath);
       const normalized = rel.startsWith("skills/") ? rel.slice(7) : rel.startsWith("sop/") ? rel.slice(4) : rel;
       const fullPath = path.resolve(skillsPath, normalized);
-      
-      // Prevent path traversal outside of the skillsPath
-      if (!fullPath.startsWith(path.resolve(skillsPath))) {
-        throw new Error("Access denied: Invalid path");
-      }
-
+      if (!fullPath.startsWith(path.resolve(skillsPath))) throw new Error("Access denied: Invalid path");
       const content = await fs.readFile(fullPath, "utf-8");
       return { content: [{ type: "text", text: content }] };
     }
+
     if (name === "list_vault") {
       const allItems = await fs.readdir(skillsPath, { recursive: true, withFileTypes: true });
       const files = allItems
         .filter(dirent => dirent.isFile() && !dirent.name.startsWith('.'))
         .map(dirent => path.join(dirent.parentPath, dirent.name).replace(skillsPath + path.sep, ''));
-
       return { content: [{ type: "text", text: files.join("\n") }] };
     }
+
+    if (name === "read_notes") {
+      const fullPath = resolveNotesPath((args as any)?.domain);
+      if (!fullPath.startsWith(skillsPath)) throw new Error("Access denied: Invalid path");
+      try {
+        const content = await fs.readFile(fullPath, "utf-8");
+        return { content: [{ type: "text", text: content }] };
+      } catch {
+        return { content: [{ type: "text", text: `No notes file found at: ${fullPath}` }] };
+      }
+    }
+
+    if (name === "append_note") {
+      const { domain, agent, title, status, body } = args as any;
+      const fullPath = resolveNotesPath(domain);
+      if (!fullPath.startsWith(skillsPath)) throw new Error("Access denied: Invalid path");
+
+      const date = new Date().toISOString().split('T')[0];
+      const statusLine = status ? `**Status:** ${status}\n` : "";
+      const entry = `\n### [${date}] ${title}\n**Agent:** ${agent}\n${statusLine}\n${body}\n`;
+
+      await fs.appendFile(fullPath, entry, "utf-8");
+      return { content: [{ type: "text", text: `Note appended to ${path.relative(skillsPath, fullPath)}` }] };
+    }
+
+    if (name === "edit_note") {
+      const { domain, agent, entry_date, entry_title, new_body, replace = false } = args as any;
+      const fullPath = resolveNotesPath(domain);
+      if (!fullPath.startsWith(skillsPath)) throw new Error("Access denied: Invalid path");
+
+      const content = await fs.readFile(fullPath, "utf-8");
+
+      // Find the entry block: starts with ### [entry_date] entry_title, ends before next ### or EOF
+      const escapedDate = entry_date.replace(/[-]/g, "\\-");
+      const escapedTitle = entry_title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const headerPattern = new RegExp(
+        `(### \\[${escapedDate}\\] ${escapedTitle}\\n\\*\\*Agent:\\*\\* ([^\\n]+)\\n)([\\s\\S]*?)(?=\\n###|$)`,
+        "m"
+      );
+
+      const match = headerPattern.exec(content);
+      if (!match) {
+        throw new Error(`Entry not found: [${entry_date}] ${entry_title}. Check date, title, and domain.`);
+      }
+
+      const entryAgent = match[2].trim();
+      if (entryAgent !== agent) {
+        throw new Error(`Ownership violation: entry is signed by '${entryAgent}', not '${agent}'. You may only edit your own entries.`);
+      }
+
+      let updatedContent: string;
+      if (replace) {
+        updatedContent = content.replace(headerPattern, `$1${new_body}\n`);
+      } else {
+        const today = new Date().toISOString().split('T')[0];
+        const correction = `\n> **[${today}] Correction by ${agent}:** ${new_body}\n`;
+        updatedContent = content.replace(headerPattern, `$&${correction}`);
+      }
+
+      await fs.writeFile(fullPath, updatedContent, "utf-8");
+      return { content: [{ type: "text", text: `Note ${replace ? "replaced" : "correction appended"} in ${path.relative(skillsPath, fullPath)}` }] };
+    }
+
     if (name === "write_changelog_entry") {
       const a = args as any;
       const date = new Date().toISOString().split('T')[0];
       const written = await writeChangelogInternal(a, skillsPath, date);
       return { content: [{ type: "text", text: `Changelog entries written:\n${written.join("\n")}` }] };
     }
+
     if (name === "run_status_report") {
       const team = String((args as any)?.team ?? "platform");
       if (!["platform", "reporting"].includes(team)) {
@@ -376,23 +541,21 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const scriptPath = path.resolve(skillsPath, "project-status-reports/scripts/full_run.py");
       const cwd = path.resolve(__dirname, "..");
       const cmdArgs = ["--force", "--team", team];
-
       const output = await new Promise<string>((resolve, reject) => {
         execFile("python3", [scriptPath, ...cmdArgs], { cwd, timeout: 300_000 }, (err, stdout, stderr) => {
           if (err) reject(new Error(stderr || err.message));
           else resolve(stdout || "Pipeline completed with no output.");
         });
       });
-
       return { content: [{ type: "text", text: output }] };
     }
+
     if (name === "get_changelog") {
       const scope = String((args as any)?.scope ?? "root").trim();
       let changelogPath: string;
       if (!scope || scope === "root") {
         changelogPath = path.resolve(__dirname, "../changelog.md");
       } else {
-        // Accept 'skills/okr-reporting' or just 'okr-reporting'
         const normalized = scope.startsWith("skills/") ? scope.slice("skills/".length) : scope;
         const clean = normalized.replace(/[^a-z0-9\-_/]/gi, "");
         changelogPath = path.resolve(skillsPath, clean, "changelog.md");
@@ -404,14 +567,13 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         return { content: [{ type: "text", text: `No changelog found at: ${changelogPath}` }] };
       }
     }
+
     if (name === "list_handoffs") {
       const { status = "READY", limit } = args as any;
       const results: any[] = [];
       const dirs: string[] = [];
-      
       if (status === "READY" || status === "ALL") dirs.push(path.join(handoffPath));
       if (status === "COMPLETE" || status === "ALL") dirs.push(path.join(handoffPath, "complete"));
-
       for (const dir of dirs) {
         try {
           const files = await fs.readdir(dir);
@@ -419,12 +581,9 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
             if (!file.endsWith(".md")) continue;
             const fullPath = path.join(dir, file);
             const content = await fs.readFile(fullPath, "utf-8");
-            
-            // Basic metadata extraction
             const priorityMatch = content.match(/> \*\*Priority:\*\* (P\d)/);
             const statusMatch = content.match(/> \*\*STATUS:\*\* (.*?)$/m);
             const dateMatch = file.match(/^(\d{4}-\d{2}-\d{2})/);
-
             results.push({
               file,
               path: path.relative(path.resolve(handoffPath, ".."), fullPath),
@@ -437,28 +596,25 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
           // Ignore directory missing
         }
       }
-
-      // Sort by date desc, then priority
       results.sort((a, b) => b.date.localeCompare(a.date) || a.priority.localeCompare(b.priority));
       const finalResults = limit ? results.slice(0, limit) : results;
-      
       return { content: [{ type: "text", text: JSON.stringify(finalResults, null, 2) }] };
     }
+
     if (name === "read_handoff") {
       const { path: relPath } = args as any;
       const normalized = String(relPath).startsWith("handoff/") ? String(relPath).slice(8) : relPath;
       const fullPath = path.resolve(handoffPath, normalized);
       if (!fullPath.startsWith(handoffPath)) throw new Error("Access denied: Invalid path");
-      
       const content = await fs.readFile(fullPath, "utf-8");
       return { content: [{ type: "text", text: content }] };
     }
+
     if (name === "write_handoff") {
       const { title, priority, content, assigned_to = "Any" } = args as any;
       const date = new Date().toISOString().split('T')[0];
       const filename = `${date}-${priority.toLowerCase()}-${title.replace(/\s+/g, '-')}.md`;
       const fullPath = path.join(handoffPath, filename);
-
       const header = `# Implementation Plan: ${title}\n\n` +
         `> **Prepared by:** Antigravity (Gemini) (${date})\n` +
         `> **Assigned to:** ${assigned_to}\n` +
@@ -467,51 +623,40 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         `> **v1.0**\n` +
         `> **STATUS: 🔲 READY — pick up ${date}**\n\n` +
         `---\n\n`;
-
       await fs.writeFile(fullPath, header + content, "utf-8");
       return { content: [{ type: "text", text: `Handoff created: ${filename}` }] };
     }
+
     if (name === "edit_handoff") {
       const { path: relPath, content } = args as any;
       const normalized = String(relPath).startsWith("handoff/") ? String(relPath).slice(8) : relPath;
       const fullPath = path.resolve(handoffPath, normalized);
       if (!fullPath.startsWith(handoffPath)) throw new Error("Access denied: Invalid path");
-
       await fs.writeFile(fullPath, content, "utf-8");
       return { content: [{ type: "text", text: `Handoff updated: ${relPath}` }] };
     }
+
     if (name === "complete_handoff") {
       const a = args as any;
       const relPath = String(a.path);
       const normalized = relPath.startsWith("handoff/") ? relPath.slice(8) : relPath;
       const sourcePath = path.resolve(handoffPath, normalized);
       if (!sourcePath.startsWith(handoffPath)) throw new Error("Access denied: Invalid path");
-
       const date = new Date().toISOString().split('T')[0];
       const filename = path.basename(relPath, ".md");
       const targetFilename = `${filename}-COMPLETE.md`;
       const targetPath = path.join(handoffPath, "complete", targetFilename);
-
-      // 1. Read and update the file content
       const content = await fs.readFile(sourcePath, "utf-8");
       const summaryHeader = `> **STATUS: ✅ COMPLETE — ${date}**\n\n${a.summary}\n\n**Changelog:** (see root changelog.md)\n`;
-      
       const updatedContent = content.replace(/> \*\*STATUS: 🔲 READY.*$/m, summaryHeader);
-      
-      // 2. Move and Save
       await fs.mkdir(path.join(handoffPath, "complete"), { recursive: true });
       await fs.writeFile(targetPath, updatedContent, "utf-8");
       await fs.unlink(sourcePath);
-
-      // 3. Trigger Changelog
-      const changelogArgs = {
-        ...a,
-        handoff: `complete/${targetFilename}`
-      };
+      const changelogArgs = { ...a, handoff: `complete/${targetFilename}` };
       const written = await writeChangelogInternal(changelogArgs, skillsPath, date);
-
       return { content: [{ type: "text", text: `Handoff marked complete and moved to ${targetFilename}.\nChangelog entries written:\n${written.join("\n")}` }] };
     }
+
     throw new Error(`Tool not found: ${name}`);
   } catch (error: any) {
     return { content: [{ type: "text", text: `Error: ${error.message}` }], isError: true };

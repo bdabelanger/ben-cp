@@ -1,25 +1,23 @@
-# SKILL: Memory Learn
+# Skill: Memory Learn
 
-> **Role:** Information Intake and Encoding
-> **Entry point:** `skills/memory/learn/SKILL.md`
-> **Status:** Procedural (v1.0)
+> **Description:** Standardized procedure for capturing significant findings and patterns into persistent memory.
+> **Preferred Agent:** Vault Auditor
+> **Cadence:** Post-session / Daily Digest completion
 
----
+## Connections
+- **Input:** Ephemeral session notes, dream outputs, and user strategic pivots.
+- **Output:** Knowledge Items (KIs), updated mappings, and memory ledger entries.
 
-## Purpose
-Standardized procedure for an agent to capture a significant structural finding or pattern and move it from ephemeral scratchpads into the persistent **Memory Store**.
+## Tool Utility
+- **write_to_file**: Encoding structured metadata into the knowledge domain.
+- **grep_search**: Verifying existing pattern recurrence before encoding new logic.
 
-## Procedure
+## Workflow Summary
+1. **Intake:** Scanning ephemeral sources for candidates of persistent value.
+2. **Identification:** Isolating architectural rules, status thresholds, or repeated failures.
+3. **Encoding:** Formatting findings into structured Knowledge Items (KIs) or central mappings.
+4. **Finalization:** Updating the memory ledger (changelog.md).
 
-1. **Scan Source**: Read `dream/outputs/gazette-[DATE].md` and `collaboration/notes.md`.
-2. **identify Candidates**:
-    - New mapping rules (e.g., a new status emoji or metric threshold).
-    - Strategic pivots in human user's notes.
-    - Repeated structural failures flagged by the Watchdog.
-3. **Format Knowledge**: convert the finding into a structured [Knowledge Item (KI)](/Users/benbelanger/GitHub/ben-cp/skills/knowledge/outputs/reports/) or update a file in `mapping/`.
-4. **Sign & Ledger**: Record the addition in `memory/changelog.md`.
-
----
-
-## Tool Interface (Future)
-When wired to Python, this will use `memory_learn(content, tags)` to auto-archive findings.
+## Constraints
+- Focused on "Persistent Value": Only encode information that survives the specific session context.
+- Requires signature and ledger recording for every memory ingestion.

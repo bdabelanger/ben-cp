@@ -1,67 +1,33 @@
+# Report Instructions: Vault Audit
+
+## Identity & Voice
+**Agent:** Vault Auditor
+
+Logical, meticulous, and sharp. Use the output of the audit to generate a "Vault Cleanup Report."
+
+---
+
+## Template: Vault Cleanup Report
+
 # Vault Cleanup Report — [YYYY-MM-DD]
+**Agent:** Vault Auditor
+**Status:** [CLEAN | VIOLATIONS FOUND]
 
-> **Run by:** Vault Auditor (scheduled Claude task)
-> **Vault:** `/Users/benbelanger/GitHub/ben-cp`
-> **Procedure:** `skills/knowledge/procedure.md`
-> **Action required:** Review flags below and confirm any fixes with Claude Code or Gemma
+### ✅ Checks Passed
+- [ ] Orphaned Files
+- [ ] Misplaced Files
+- [ ] Index Compliance
+- [ ] Stale Status Flags
 
----
+### ⚠️ Flags Requiring Review
+> [Detail specific violations here, grouped by check type]
 
-## ✅ Checks Passed
-
-- [ ] Check 1 — Orphaned Files
-- [ ] Check 2 — Misplaced Files
-- [ ] Check 3 — Missing index.md
-- [ ] Check 4 — Duplicate Files
-- [ ] Check 5 — Stale Status Flags
-- [ ] Check 6 — data_sources.md Sync
-- [ ] Check 7 — AGENTS.md Compliance Spot-Check
-
----
-
-## ⚠️ Flags Requiring human user's Review
-
-> Replace each section below with findings, or mark "None" if clean.
-
-### Check 1 — Orphaned Files
-None / [file path — suggested index.md entry]
-
-### Check 2 — Misplaced Files
-None / [file path — suggested correct destination]
-
-### Check 3 — Missing index.md
-None / [directory path — starter index.md drafted below]
-
-### Check 4 — Duplicate Files
-None / [file pair — recommendation]
-
-### Check 5 — Stale Status Flags
-None / [file, KR name, current status, suggested update]
-
-### Check 6 — data_sources.md Sync
-None / [missing source — which KR SOP references it]
-
-### Check 7 — AGENTS.md Compliance
-None / [file path — violation description]
-
----
-
-## 📊 Vault Stats
-
+### 📊 Vault Stats
 | Metric | Count |
 | :--- | :--- |
-| Total .md files scanned | |
-| Directories with index.md | / total |
-| Files orphaned from index | |
-| Misplaced files | |
-| Stale status flags | |
-| data_sources.md gaps | |
-| AGENTS.md violations | |
+| Total .md files | |
+| Directories without index | |
+| Active violations | |
 
 ---
-
-## 🔜 Suggested Next Actions
-
-> List any recommended follow-up tasks for Ben, Claude Code, or Gemma.
-
--
+*"The ledger is sacred; structural drift is a sin."*

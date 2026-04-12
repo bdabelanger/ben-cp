@@ -1,25 +1,23 @@
----
-name: styles
-description: Visual syntax authority for the vault. Manages emoji glossary, nomenclature conventions, and visual formatting standards used across all skill domains.
----
+# Skill: Styles
 
-# SKILL: Styles
+> **Description:** Visual syntax authority and aesthetic gatekeeper for the vault.
+> **Preferred Agent:** Peer Team (Joint Operating Environment)
+> **Cadence:** Universal / Per-report generation
 
-> **Role:** Vault-wide visual syntax authority
-> **Owner:** No single agent — referenced universally
-> Last updated: 2026-04-12
+## Connections
+- **Input:** Global emoji glossary, CSS tokens, and nomenclature conventions.
+- **Output:** Consistent visual health indicators and aesthetic formatting across all skill reports.
 
----
+## Tool Utility
+- **vault.css**: Central styling repository for all HTML-rendered reports.
+- **emoji_key.md**: Canonical reference for status icons and section markers.
 
-## Contents
+## Workflow Summary
+1. **Reference:** Checking the visual glossary before choosing status icons or markers.
+2. **Standardization:** Enforcing a uniform visual language to reduce cognitive load across the Digest.
+3. **Refinement:** Continuous iteration on visual tokens to maintain a "Premium" vault aesthetic.
 
-| File | Purpose |
-| :--- | :--- |
-| `emoji_key.md` | Canonical emoji glossary for all vault documents |
-| `vault.css` | Global CSS styles for vault HTML reports |
-
----
-
-## Usage
-
-Any agent generating reports or documentation should reference `emoji_key.md` before choosing status icons, section markers, or visual cues. Consistency in visual language reduces cognitive load across the Digest and all skill outputs.
+## Constraints
+- **Consistency is King:** Never introduce a status emoji that isn't defined in the central glossary.
+- **Aesthetic Excellence:** Prioritize modern, harmonious color palettes and typography.
+- **Generic Applicability:** Logic must work across all skill outputs regardless of domain.

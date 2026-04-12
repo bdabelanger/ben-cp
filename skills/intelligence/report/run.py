@@ -25,7 +25,7 @@ from datetime import datetime
 SKILLS_DIR   = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 ROOT_DIR     = os.path.abspath(os.path.join(SKILLS_DIR, ".."))
 OUTPUTS_DIR  = os.path.join(ROOT_DIR, "outputs", "dream")
-CHARACTER_MD = os.path.join(os.path.dirname(__file__), "character.md")
+REPORT_MD    = os.path.join(os.path.dirname(__file__), "report.md")
 VAULT_CSS    = os.path.join(SKILLS_DIR, "styles", "vault.css")
 
 
@@ -58,11 +58,11 @@ def load_character():
         "footer":            "End of report.",
         "editorial_note":    "Columns are editorial excerpts from each skill's full report.",
     }
-    if not os.path.exists(CHARACTER_MD):
-        print("[WARN] character.md not found — using generic display defaults.")
+    if not os.path.exists(REPORT_MD):
+        print("[WARN] report.md not found — using generic display defaults.")
         return defaults
 
-    with open(CHARACTER_MD, "r") as f:
+    with open(REPORT_MD, "r") as f:
         content = f.read()
 
     match = re.search(r"## Report Config\s+```json\s+(\{.*?\})\s+```", content, re.DOTALL)

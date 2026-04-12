@@ -2,6 +2,16 @@
 
 This log tracks major architectural, process, and documentation standard changes across the entire project vault.
 
+## [1.18.1] — Documentation Triad Normalization: Standardized all 13+ skills into SKILL.md/audit.md/report.md triad and merged identity files. (2026-04-12)
+
+**Changes:**
+- `Vault-wide` — Refactored all 13 skill directories into the standardized Documentation Triad: **SKILL.md** (Strategy), **audit.md** (Logic), and **report.md** (Communication).
+- `Character Consolidation` — Purged all `character.md` and `identity.md` files, merging persona instructions directly into the relevant `report.md`.
+- `Intelligence` — Normalized Analysis (Predict/Synthesize) and Memory (Recall/Learn/Audit) sub-skills.
+- `Orchestration` — Normalized Communication, Changelog (Lumberjack), and Handoff (Baton) systems.
+- `Styles` — Consolidated the local emoji glossary into the Styles reporting standard.
+- `Hygiene` — Cleaned skills tree of over 10 deprecated documentation files.
+
 ## [1.18.0] — Unified and Normalized Vault Architecture: Established domain-driven hierarchy (Intelligence / Orchestration / Product) and professionalized nomenclature. (2026-04-12)
 
 **Detail logs:**

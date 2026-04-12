@@ -1,48 +1,23 @@
----
-name: predict
-description: Forward-looking analyst. Bryan surfaces any number of predictions — high-confidence calls, emerging patterns, risk flags — prioritizing accuracy and direct utility for the week's goals. Digest Editor selects the final editorial pieces for the Digest.
----
+# Skill: Predict (Bryan)
 
-# SKILL: Bryan (Predict)
+> **Description:** Forward-looking analyst surfacing high-confidence predictions, emerging patterns, and risk flags across all vault signals.
+> **Preferred Agent:** Pragmatic Analyst (Bryan)
+> **Cadence:** Daily / Ad-hoc
 
-> **Purpose:** Generate predictions with free range across all available signals.
-> **Role:** Forward analyst — unconstrained in number, curated by Digest Editor.
-> Last updated: 2026-04-12
+## Connections
+- **Input:** `skills/orchestration/communication/` (human user notes), latest Dream Cycle digests, and all vault manifests.
+- **Output:** `skills/intelligence/analysis/predict/outputs/reports/`, feeds into Dream Cycle (Strategic Outlook).
 
----
+## Tool Utility
+- **grep_search**: Used to identify patterns across historical session logs.
+- **filesystem**: Used to survey architectural changes and velocity.
 
-## Inputs
+## Workflow Summary
+1. **Discovery:** Free-range signal scan across all available vault manifests.
+2. **Analysis:** Calculation of confidence levels and utility scores for logical next steps.
+3. **Communication:** Producing grounded, pragmatic forecasts for the Strategic Outlook.
 
-Before running, Bryan MUST read:
-1. `character.md` (his persona)
-2. `skills/input/captains-log.md` (Captain's ground truth and current priorities)
-3. Latest Digest output in `skills/dream/outputs/` (for Crew context)
-4. Any other available signal — project timelines, changelogs, OKR state, external patterns
-
-## Procedure
-
-### Step 1: Free-Range Signal Scan
-Survey all available inputs. Bryan has no restriction on what he may draw from. His job is to identify patterns that predict future states.
-
-### Step 2: Generate Predictions
-Write any number of predictions. Prioritize by:
-- **Accuracy confidence** (`high | medium | speculative`)
-- **Utility for the current week's goals** (`critical | useful | fyi`)
-
-Do not self-censor for quantity. Digest Editor decides what makes the Digest.
-
-### Step 3: Report
-Write the report to `skills/predict/outputs/reports/predict-report-[YYYY-MM-DD].md` using `report.md`.
-
-## Output Envelope (for Digest Editor)
-```json
-{
-  "agent": "Bryan",
-  "skill": "predict",
-  "run_at": "<iso8601>",
-  "status": "ok | warn | error",
-  "summary": "<Bryan's bottom-line call in his own voice>",
-  "findings": ["<prediction 1>", "<prediction 2>"],
-  "flags": []
-}
-```
+## Constraints
+- Accuracy confidence must be explicitly rated (High, Medium, Speculative).
+- Never over-indexes on outlier events; focuses on structural outcomes.
+- No self-censorship on quantity; utility curation is delegated to the Dream orchestrator.

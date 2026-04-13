@@ -2,38 +2,16 @@
 
 - **GID:** 1211757637943244
 - **Permalink:** https://app.asana.com/1/1123317448830974/project/1211757637943244
-- **Team:** N/A
+- **Team:** Platform
 - **Stage:** In QA
 - **Status:** on_track
 - **Jira Link:** https://casecommons.atlassian.net/browse/CBP-2924
-
-## Current Status Update
-**Title:** Notes - Bulk Service Notes - Apr 10
-**Text:**
-Summary
-
-New note dialog is looking GREAT
-All AC implemented and up-leveled by Bisoye + Russell, entering QA after 4-1 release
-    Rosters!
-    Resource linking!
-    🐻 Bears! Oh my!
-    Note: exceptionally poor data quality on actuals/estimates, can't come close to an accurate burndown
-
-----------------------------------------
-
-Next steps
-
-QA may find issues, this is a ton of new work to test
-
-## Custom Fields
 - **Discovery Start:** null
 - **Dev Start:** 2026-02-04T00:00:00.000Z
 - **Beta Start:** 2026-04-27T00:00:00.000Z
 - **GA:** 2026-06-01T00:00:00.000Z
 - **JIRA Link:** https://casecommons.atlassian.net/browse/CBP-2924
-- **Team:** Platform
 - **Release Quarter:** Q2 2026
-- **Stage:** In QA
 - **Type:** Strategic
 - **Current Discovery Stage:** 75%
 - **Target Discovery Stage:** 100%
@@ -53,3 +31,9 @@ QA may find issues, this is a ton of new work to test
 - **Roadmap:** Strengthen Core Case Management
 - **Product Assignee:** Ben Belanger, Pierre Klein
 
+## Overview
+Notes have been upgraded to streamline bulk data entry, centralizing inline data entry into a tabbed canvas and introducing data entry shortcuts like Service Groups.
+
+## 🗣️ Key Narrative Points (From Shareout)
+- **Headline:** Intuitive notes authoring: Reduce clicks and save time.
+- **Quote (Path of Life):** "Case managers input bulk notes so that they don't have to write the same thing five to eight times".

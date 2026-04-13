@@ -2,38 +2,16 @@
 
 - **GID:** 1211838817183809
 - **Permalink:** https://app.asana.com/1/1123317448830974/project/1211838817183809
-- **Team:** N/A
+- **Team:** Platform
 - **Stage:** Beta
 - **Status:** on_track
 - **Jira Link:** https://casecommons.atlassian.net/browse/CBP-2752
-
-## Current Status Update
-**Title:** Notes - Bulk "General Notes" - Apr 10
-**Text:**
-No update - all remains well.  Copy/pasting last week's update:
-
-Summary
-
-Remains released to 4 tenants.  No feedback thus far.
-
-----------------------------------------
-
-Next steps
-
-No other work planned for General Notes currently.
-This will get a much more significant text once Service Notes/Locked Notes roll out in 4/23 release
-    Task: Before Service Notes phase I will aim to bring us up to ~10 beta tenants with CSM approval
-
-
-## Custom Fields
 - **Discovery Start:** null
 - **Dev Start:** 2025-10-13T00:00:00.000Z
 - **Beta Start:** 2026-03-18T00:00:00.000Z
 - **GA:** 2026-05-18T00:00:00.000Z
 - **JIRA Link:** https://casecommons.atlassian.net/browse/CBP-2752
-- **Team:** Platform
 - **Release Quarter:** Q2 2026
-- **Stage:** Beta
 - **Type:** Strategic
 - **Current Discovery Stage:** Done
 - **Target Discovery Stage:** Done
@@ -53,3 +31,9 @@ This will get a much more significant text once Service Notes/Locked Notes roll 
 - **Roadmap:** Strengthen Core Case Management
 - **Product Assignee:** Ben Belanger, Pierre Klein
 
+## Overview
+Notes have been upgraded to streamline bulk data entry, centralizing inline data entry into a tabbed canvas and introducing data entry shortcuts like Service Groups.
+
+## 🗣️ Key Narrative Points (From Shareout)
+- **Headline:** Intuitive notes authoring: Reduce clicks and save time.
+- **Quote (Path of Life):** "Case managers input bulk notes so that they don't have to write the same thing five to eight times".

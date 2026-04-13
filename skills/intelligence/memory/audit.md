@@ -12,12 +12,12 @@
 ### 1. Learn Protocol (Encoding)
 1. **Saturation:** Scan `dream/outputs/` and `collaboration/notes.md`.
 2. **Identification:** Extract new mapping rules, strategic pivots, or repeated failures.
-3. **Encoding:** Update `mapping/` or create a [Knowledge Item (KI)](/Users/benbelanger/GitHub/ben-cp/knowledge/).
+3. **Encoding:** Update `intelligence/` (mappings, Knowledge Items, or domain context).
 4. **Finalization:** Sign the `memory/changelog.md`.
 
 ### 2. Recall Protocol (Retrieval)
 1. **Scoping:** Identify keywords/domain paths for the active task.
-2. **Querying:** Scan `mapping/`, `outputs/reports/`, and recent `notes.md`.
+2. **Querying:** Scan `intelligence/` broadly (guided by local `index.md` files), `outputs/reports/`, and recent `notes.md`.
 3. **Injection:** Write a "Context Brief" to the agent's ephemeral `scratchpad` or `notes.md`.
 
 ### 3. Structural Audit (Watchdog)

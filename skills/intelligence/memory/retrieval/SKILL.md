@@ -1,6 +1,6 @@
-# Skill: Memory Recall
+# Skill: Memory Retrieval
 
-> **Description:** Standardized procedure for contextual retrieval and context injection.
+> **Description:** Standardized procedure for contextual retrieval, pattern matching, and context injection using `read_notes` and `search_intelligence`.
 > **Preferred Agent:** Vault Auditor
 > **Cadence:** Pre-session / Planning phase
 
@@ -9,8 +9,9 @@
 - **Output:** Synthesized "Context Brief" injected into the active session.
 
 ## Tool Utility
-- **grep_search**: Mining past records for task-relevant patterns.
-- **read_multiple_files**: Consolidating context from mapping/, watchdog reports, and user notes.
+- **mcp_ben-cp_read_notes**: Primary tool for retrieving domain-specific note context.
+- **mcp_ben-cp_search_intelligence**: Mining intelligence files for task-relevant patterns (GIDs, names).
+- **mcp_ben-cp_parse_intelligence**: Extracting structured metadata for programmatic analysis.
 
 ## Workflow Summary
 1. **Scoping:** Identifying relevant keywords and historical domains.

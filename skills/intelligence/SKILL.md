@@ -8,7 +8,7 @@ preferred_agent: Vault Auditor
 
 > **Purpose:** Oversees the vault's cognitive architecture. 
 > **Preferred Agent:** Vault Auditor
-> **Domain Tree:** `memory/`, `analysis/`, `report/`
+> **Domain Tree:** `memory/`, `analysis/`
 
 ---
 

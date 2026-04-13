@@ -14,12 +14,13 @@ const server = new Server(
   { capabilities: { tools: {} } }
 );
 
-// Automatically find the 'skills' folder relative to this file's location
+// Automatically find the vault root relative to this file's location
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const skillsPath = path.resolve(__dirname, "../skills");
-const rootChangelogPath = path.resolve(__dirname, "../changelog.md");
-const handoffPath = path.resolve(__dirname, "../orchestration/handoff");
+const rootPath = path.resolve(__dirname, "..");
+const skillsPath = path.resolve(rootPath, "skills");
+const rootChangelogPath = path.resolve(rootPath, "changelog.md");
+const handoffPath = path.resolve(rootPath, "orchestration/handoff");
 
 // Notes domain map — agents use the shorthand key, tool resolves the path
 const NOTES_DOMAIN_MAP: Record<string, string> = {
@@ -38,7 +39,8 @@ const NOTES_DOMAIN_MAP: Record<string, string> = {
   "intelligence/analysis/synthesize": "intelligence/analysis/synthesize/notes.md",
   "predict":                      "intelligence/analysis/predict/notes.md",
   "intelligence/analysis/predict": "intelligence/analysis/predict/notes.md",
-  "product":                      "product/notes.md",
+  "product":                      "intelligence/product/notes.md",
+  "intelligence/product":         "intelligence/product/notes.md",
 };
 
 function resolveNotesPath(domain: string | undefined): string {
@@ -47,7 +49,7 @@ function resolveNotesPath(domain: string | undefined): string {
   if (!rel) throw new Error(
     `Unknown notes domain: '${key}'. Valid options: ${Object.keys(NOTES_DOMAIN_MAP).join(", ")}`
   );
-  return path.resolve(skillsPath, rel);
+  return path.resolve(rootPath, rel);
 }
 
 async function writeChangelogInternal(a: any, skillsPath: string, date: string): Promise<string[]> {
@@ -440,6 +442,119 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         required: ["path", "summary", "session_goal", "completed_work", "next_tasks"]
       }
+    },
+    {
+      name: "list_intelligence",
+      description: "List intelligence files and sub-domains (e.g. 'product/projects'). Returns metadata and paths. Now supports discovery of nested domains.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          domain: { type: "string", description: "The intelligence domain path (relative to intelligence/)." },
+          include_directories: { type: "boolean", description: "Whether to include sub-domains (folders) in the results." }
+        },
+        required: ["domain"]
+      }
+    },
+    {
+      name: "read_intelligence",
+      description: "Read the markdown content of an intelligence file directly (e.g. 'product/projects/q2/accessibility-audit.md').",
+      inputSchema: {
+        type: "object",
+        properties: {
+          path: { type: "string", description: "The path relative to intelligence/." }
+        },
+        required: ["path"]
+      }
+    },
+    {
+      name: "search_intelligence",
+      description: "Search for a keyword or GID across all intelligence files in a specific domain.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          query: { type: "string", description: "The keyword or pattern to search for." },
+          domain: { type: "string", description: "Optional domain to limit search (e.g. 'product/projects'). Defaults to root." }
+        },
+        required: ["query"]
+      }
+    },
+    {
+      name: "write_intelligence",
+      description: "Create or update an intelligence record (e.g. Project or KI). Enforces metadata structure and domain-based pathing.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          domain: { type: "string", description: "The intelligence domain (e.g. 'product/projects/q2')." },
+          name: { type: "string", description: "The kebab-case filename (without .md)." },
+          title: { type: "string", description: "The human-readable title for the H1 header." },
+          metadata: { type: "object", description: "Key-value pairs for the metadata block (e.g. GID, Status)." },
+          content: { type: "string", description: "The primary markdown content/body of the record." }
+        },
+        required: ["domain", "name", "title", "content"]
+      }
+    },
+    {
+      name: "parse_intelligence",
+      description: "Read and parse a structured intelligence file (Project, OKR, etc) into JSON metadata.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          path: { type: "string", description: "The vault-relative path to the markdown file." }
+        },
+        required: ["path"]
+      }
+    },
+    {
+      name: "synthesize_intelligence",
+      description: "Perform high-level synthesis to identify technical truths and drift. Methodology 'diff_checker' focuses on AGENTS.md audit.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          methodology: { type: "string", enum: ["diff_checker", "distillation", "connection_audit"] },
+          targets: { type: "array", items: { type: "string" }, description: "Specific files or domains to target." }
+        },
+        required: ["methodology"]
+      }
+    },
+    {
+      name: "predict_intelligence",
+      description: "Generate pragmatic forecasts and risk assessments for a domain or project.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          methodology: { type: "string", enum: ["risk_assessment", "logical_next_steps", "velocity_analysis"] },
+          context: { type: "string", description: "The domain or project GID to analyze context for." }
+        },
+        required: ["methodology"]
+      }
+    },
+    {
+      name: "list_reports",
+      description: "List all generated reports (Dream Cycle) from the outputs/dream directory.",
+      inputSchema: { type: "object", properties: {} }
+    },
+    {
+      name: "generate_report",
+      description: "Execute the Daily Report Orchestrator (Dream Cycle) to compile skill reports into a Gazette publication.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          date: { type: "string", description: "Override target date in YYYY-MM-DD format." },
+          dry_run: { type: "boolean", description: "If true, simulate the run without writing files." }
+        }
+      }
+    },
+    {
+      name: "audit_intelligence",
+      description: "Perform a structural audit of an intelligence domain to identify missing metadata, broken links, or stale indices.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          domain: { type: "string", description: "The intelligence domain path (e.g. 'product/projects/q2')." },
+          criteria: { type: "array", items: { type: "string" }, description: "Specific fields to check for (e.g. ['GID', 'Jira Link'])." }
+        },
+        required: ["domain"]
+      }
     }
   ]
 }));
@@ -655,6 +770,224 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const changelogArgs = { ...a, handoff: `complete/${targetFilename}` };
       const written = await writeChangelogInternal(changelogArgs, skillsPath, date);
       return { content: [{ type: "text", text: `Handoff marked complete and moved to ${targetFilename}.\nChangelog entries written:\n${written.join("\n")}` }] };
+    }
+
+    if (name === "list_intelligence") {
+      const { domain, include_directories = true } = args as any;
+      const fullPath = path.resolve(rootPath, "intelligence", domain);
+      if (!fullPath.startsWith(path.resolve(rootPath, "intelligence"))) throw new Error("Access denied");
+      
+      const files = await fs.readdir(fullPath, { withFileTypes: true });
+      const items = files
+        .filter(f => !f.name.startsWith('.'))
+        .filter(f => {
+          if (f.isDirectory()) return include_directories;
+          return f.name.endsWith(".md") && f.name !== "index.md";
+        })
+        .map(f => ({
+          name: f.name.replace(/\.md$/, ""),
+          type: f.isDirectory() ? "domain" : "file",
+          path: path.join("intelligence", domain, f.name)
+        }));
+      return { content: [{ type: "text", text: JSON.stringify(items, null, 2) }] };
+    }
+
+    if (name === "read_intelligence") {
+      const { path: relPath } = args as any;
+      const normalized = String(relPath).startsWith("intelligence/") ? String(relPath).slice(13) : relPath;
+      const fullPath = path.resolve(rootPath, "intelligence", normalized);
+      if (!fullPath.startsWith(path.resolve(rootPath, "intelligence"))) throw new Error("Access denied");
+      
+      const content = await fs.readFile(fullPath, "utf-8");
+      return { content: [{ type: "text", text: content }] };
+    }
+
+    if (name === "search_intelligence") {
+      const { query, domain = "" } = args as any;
+      const searchPath = path.resolve(rootPath, "intelligence", domain);
+      if (!searchPath.startsWith(path.resolve(rootPath, "intelligence"))) throw new Error("Access denied");
+
+      const { stdout } = await new Promise<{ stdout: string; stderr: string }>((resolve, reject) => {
+        // Use grep to search for the query in markdown files
+        const cmd = `grep -rli "${query.replace(/"/g, '\\"')}" "${searchPath}" --include="*.md"`;
+        const shell = process.platform === "win32" ? "cmd.exe" : "/bin/sh";
+        const child = execFile(shell, [process.platform === "win32" ? "/c" : "-c", cmd], (err, stdout, stderr) => {
+          if (err && err.code !== 1) reject(err); // code 1 means no match
+          else resolve({ stdout, stderr });
+        });
+      });
+
+      const paths = stdout.split('\n')
+        .filter(p => p.trim())
+        .map(p => path.relative(rootPath, p));
+
+      return { content: [{ type: "text", text: JSON.stringify(paths, null, 2) }] };
+    }
+
+    if (name === "synthesize_intelligence") {
+      const { methodology, targets = [] } = args as any;
+      
+      if (methodology === "diff_checker") {
+        // Implementation of Robert's Mission Integrity Audit
+        const agentsPath = path.resolve(rootPath, "AGENTS.md");
+        const policyPath = path.resolve(rootPath, "skills/shared/separation-policy.md");
+        
+        const { stdout: log } = await new Promise<{ stdout: string; stderr: string }>((res) => {
+          execFile("git", ["log", "--oneline", "-5", "--", agentsPath], { cwd: rootPath }, (err, stdout, stderr) => res({ stdout, stderr }));
+        });
+        const { stdout: diff } = await new Promise<{ stdout: string; stderr: string }>((res) => {
+          execFile("git", ["diff", "HEAD~5", "--", agentsPath], { cwd: rootPath }, (err, stdout, stderr) => res({ stdout, stderr }));
+        });
+        
+        let agentsContent = "";
+        let policyContent = "";
+        try { agentsContent = await fs.readFile(agentsPath, "utf-8"); } catch {}
+        try { policyContent = await fs.readFile(policyPath, "utf-8"); } catch {}
+
+        return { 
+          content: [{ 
+            type: "text", 
+            text: `### Robert Diff Checker Context\n\n**Recent Logs:**\n${log}\n\n**Diff (HEAD~5):**\n${diff}\n\n**Current AGENTS.md Segment (Mission/Rules):**\n${agentsContent.slice(0, 2000)}\n\n**Separation Policy Comparison:**\n${policyContent.slice(0, 1000)}` 
+          }] 
+        };
+      }
+
+      if (methodology === "distillation") {
+        // Gather latest changelogs and notes for distillation
+        const rootChangelog = await fs.readFile(rootChangelogPath, "utf-8");
+        const primaryNotes = await fs.readFile(resolveNotesPath("primary"), "utf-8");
+        return {
+          content: [{
+            type: "text",
+            text: `### Distillation Context\n\n**Latest Root Changelog:**\n${rootChangelog.slice(0, 1500)}\n\n**Recent Notes:**\n${primaryNotes.slice(-1500)}`
+          }]
+        };
+      }
+
+      return { content: [{ type: "text", text: `Methodology ${methodology} not yet fully automated. Please use manual discovery.` }] };
+    }
+
+    if (name === "write_intelligence") {
+      const { domain, name: fileName, title, metadata = {}, content } = args as any;
+      const domainPath = path.resolve(rootPath, "intelligence", domain);
+      if (!domainPath.startsWith(path.resolve(rootPath, "intelligence"))) throw new Error("Access denied");
+
+      await fs.mkdir(domainPath, { recursive: true });
+
+      let metaBlock = "";
+      for (const [key, value] of Object.entries(metadata)) {
+        metaBlock += `- **${key}:** ${value}\n`;
+      }
+
+      const fullContent = `# ${title}\n\n${metaBlock}\n${content}\n`;
+      const fullPath = path.join(domainPath, `${fileName}.md`);
+      
+      await fs.writeFile(fullPath, fullContent, "utf-8");
+      return { content: [{ type: "text", text: `Intelligence record created: ${path.relative(rootPath, fullPath)}` }] };
+    }
+
+    if (name === "predict_intelligence") {
+      const { methodology, context } = args as any;
+      const notesPath = resolveNotesPath("primary");
+      const notes = await fs.readFile(notesPath, "utf-8");
+      
+      let projectContext = "";
+      if (context) {
+        const searchResults = await new Promise<string>((res) => {
+          const cmd = `grep -ri "${context}" "${path.join(rootPath, "intelligence")}" --include="*.md" | head -n 3`;
+          const shell = process.platform === "win32" ? "cmd.exe" : "/bin/sh";
+          execFile(shell, [process.platform === "win32" ? "/c" : "-c", cmd], (err, stdout) => res(stdout));
+        });
+        projectContext = `\n\n**Project Intelligence Match:**\n${searchResults}`;
+      }
+
+      return {
+        content: [{
+          type: "text",
+          text: `### Prediction Analysis (${methodology})\n\n**Context (from Notes):**\n${notes.slice(-2000)}${projectContext}`
+        }]
+      };
+    }
+
+    if (name === "list_reports") {
+      const reportDir = path.resolve(rootPath, "outputs/dream");
+      try {
+        const files = await fs.readdir(reportDir);
+        const list = files.filter(f => !f.startsWith('.') && (f.endsWith(".md") || f.endsWith(".html")));
+        return { content: [{ type: "text", text: list.join("\n") }] };
+      } catch {
+        return { content: [{ type: "text", text: "Report directory (outputs/dream) not found or empty." }] };
+      }
+    }
+
+    if (name === "generate_report") {
+      const { date, dry_run = false } = args as any;
+      const scriptPath = path.resolve(skillsPath, "intelligence/analysis/report/report.py");
+      const cmdArgs = [];
+      if (date) cmdArgs.push("--date", date);
+      if (dry_run) cmdArgs.push("--dry-run");
+
+      const output = await new Promise<string>((resolve, reject) => {
+        execFile("python3", [scriptPath, ...cmdArgs], { cwd: rootPath }, (err, stdout, stderr) => {
+          if (err) reject(new Error(stderr || err.message));
+          else resolve(stdout || "Report generated successfully.");
+        });
+      });
+      return { content: [{ type: "text", text: output }] };
+    }
+
+    if (name === "parse_intelligence") {
+      const { path: relPath } = args as any;
+      const fullPath = path.resolve(rootPath, relPath);
+      if (!fullPath.startsWith(rootPath)) throw new Error("Access denied");
+      
+      const content = await fs.readFile(fullPath, "utf-8");
+      
+      // Generic regex extraction for any **Key:** Value pattern
+      const metadata: Record<string, string> = {};
+      const matches = content.matchAll(/- \*\*([^:]+):\*\* (.*)/g);
+      for (const match of matches) {
+        metadata[match[1]] = match[2].trim();
+      }
+      
+      return { 
+        content: [{ 
+          type: "text", 
+          text: JSON.stringify({ 
+            path: relPath,
+            title: content.split('\n')[0].replace(/^# /, ''),
+            metadata,
+            raw_content: content 
+          }, null, 2) 
+        }] 
+      };
+    }
+
+    if (name === "audit_intelligence") {
+      const { domain, criteria = [] } = args as any;
+      const fullPath = path.resolve(rootPath, "intelligence", domain);
+      if (!fullPath.startsWith(path.resolve(rootPath, "intelligence"))) throw new Error("Access denied");
+      
+      const files = await fs.readdir(fullPath);
+      const results: any[] = [];
+      
+      for (const file of files) {
+        if (!file.endsWith(".md") || file === "index.md") continue;
+        const content = await fs.readFile(path.join(fullPath, file), "utf-8");
+        const missing: string[] = [];
+        
+        for (const criterion of criteria) {
+          if (!content.includes(`**${criterion}:**`)) {
+            missing.push(criterion);
+          }
+        }
+        
+        if (missing.length > 0) {
+          results.push({ file, missing });
+        }
+      }
+      
+      return { content: [{ type: "text", text: results.length > 0 ? JSON.stringify(results, null, 2) : "Audit passed. All criteria met." }] };
     }
 
     throw new Error(`Tool not found: ${name}`);

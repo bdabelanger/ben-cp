@@ -23,7 +23,7 @@ import argparse
 import subprocess
 from datetime import datetime
 
-SKILLS_DIR   = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+SKILLS_DIR   = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
 ROOT_DIR     = os.path.abspath(os.path.join(SKILLS_DIR, ".."))
 OUTPUTS_DIR  = os.path.join(ROOT_DIR, "outputs", "dream")
 REPORT_MD    = os.path.join(os.path.dirname(__file__), "report.md")

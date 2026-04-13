@@ -13,9 +13,9 @@
 - **grep_search**: Used for historical auditing and cross-domain pattern matching.
 
 ## Workflow Summary
-1. **Intake (Learn):** Encoding ephemeral session findings into persistent memory structures (KIs/Mappings).
-2. **Retrieval (Recall):** Contextual injection for active sessions based on task-relevant patterns.
-3. **Guardianship (Audit):** Continuous validation of vault hygiene against the "Source of Truth" (mapping/).
+1. **Intake:** Encoding ephemeral session findings into persistent memory structures (KIs/Mappings) via `append_note`.
+2. **Retrieval:** Standardized context injection and search via `read_notes`, `search_intelligence`, and `parse_intelligence`.
+3. **Guardianship (Audit):** Continuous validation of vault hygiene via `audit_intelligence`.
 
 ## Constraints
 - The mapping/ directory is the absolute Source of Truth.

@@ -6,6 +6,10 @@
 
 ## [Unreleased]
 
+## 2026-04-13 — SOP Expansion (Recall and Learn)
+- Broadened `Recall Protocol` sweep to include the entire `intelligence/` domain (guided by local indices).
+- Broadened `Learn Protocol` encoding target to include all `intelligence/` sub-domains.
+
 ## 2026-04-13 — Resolved P1 handoffs for Python wrappers, agent documentation, and bug triage.
 
 **Files changed:**

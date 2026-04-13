@@ -1,3 +1,15 @@
+## [1.18.3] — Project Intelligence Codification (2026-04-13)
+
+**Changes:**
+- `intelligence/product/projects/` — Created directory and populated with 35 project intelligence files extracted from `asana_active.json`.
+- `intelligence/product/index.md` — Created master index for product intelligence.
+- `intelligence/product/projects/index.md` — Generated project directory index.
+- **Refactoring:** Standardized project filenames to human-readable kebab-case (e.g., `nylas-upgrade-ux-improvements-(1208822133040792).md`).
+- **Hierarchy:** Regrouped active projects into a temporal hierarchy (`intelligence/product/projects/2026/q2/`).
+- **Partitioning:** Established `archive/` for 2025 data and `backlog/` for unscheduled initiatives.
+- **SOP Expansion:** Normalized `Memory Recall` to scan the entire `intelligence/` domain guided by local indices.
+- **Enrichment:** Injected strategic Q2 Shareout context into active project intelligence files (Service Plan, Enrollments).
+
 ## [1.18.2] — Milestone: Vault-wide Structural Alignment (2026-04-12)
 
 > **Sync Operation:** Finalizing the Documentation Triad normalization by bulk-logging path-drift from the last 72 hours. This entry ensures 100% path coverage for the new domain-driven hierarchy.

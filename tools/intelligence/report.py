@@ -281,6 +281,11 @@ def build_report_markdown(envelopes, date_str, run_ts, char):
                 md += f"- {flag}\n"
             md += "\n"
 
+        if env.get("findings"):
+            for find in env["findings"]:
+                md += f"- {find}\n"
+            md += "\n"
+
     md += f"---\n\n*{char['footer']}*\n"
     return md
 
@@ -319,6 +324,16 @@ def build_report_html(envelopes, date_str, run_ts, char):
         html += f'  <div class="column" style="border-left-color:{color};">\n'
         html += f'    <h3>{env["skill"]}</h3>\n'
         html += f'    {content}\n'
+        if env.get("findings"):
+            html += '<div class="findings-list"><ul>'
+            for find in env["findings"]:
+                # Convert markdown links [text](url.md) to HTML <a> and swap to .html for humans
+                rendered_find = re.sub(r'\[([^\]]+)\]\(([^\)]+)\.md\)', r'<a href="\2.html">\1</a>', find)
+                # Also handle non-md links
+                rendered_find = re.sub(r'\[([^\]]+)\]\(([^\)]+)\)', r'<a href="\2">\1</a>', rendered_find)
+                html += f"<li>{rendered_find}</li>"
+            html += '</ul></div>\n'
+
         if env.get("flags"):
             for flag in env["flags"]:
                 # Handle both string flags (Gazette v1) and legacy object flags

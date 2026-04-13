@@ -26,7 +26,7 @@ from datetime import datetime
 SKILLS_DIR   = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "skills"))
 REPO_ROOT    = os.path.abspath(os.path.join(SKILLS_DIR, ".."))
 VAULT_ROOT   = os.path.abspath(os.path.join(REPO_ROOT, "..", ".."))
-OUTPUTS_DIR  = os.path.join(REPO_ROOT, "outputs", "dream")
+OUTPUTS_DIR  = os.path.join(REPO_ROOT, "orchestration", "pipelines", "outputs", "dream")
 REPORT_MD    = os.path.join(os.path.dirname(__file__), "report.md")
 VAULT_CSS    = os.path.join(SKILLS_DIR, "styles", "vault.css")
 
@@ -416,6 +416,9 @@ def main():
         return
 
     specs   = [s for s in all_specs if should_run(s, target_date)]
+    # Sort by run_order (ascending). Skills with no run_order default to 100.
+    specs.sort(key=lambda s: s.get("run_order", 100))
+
     skipped = [s.get("skill_name") for s in all_specs if not should_run(s, target_date)]
     if skipped:
         print(f"[INFO] Skipping (cadence): {skipped}")
@@ -440,6 +443,16 @@ def main():
     md_path  = os.path.join(OUTPUTS_DIR, f"{prefix}-{date_str}.md")
     html_path = os.path.join(OUTPUTS_DIR, f"{prefix}-{date_str}.html")
 
+    # [HOUSEKEEPING] Archive any legacy reports from previous dates to keep root clean
+    print(f"[INFO] Cleaning root output directory...")
+    all_reports = glob.glob(os.path.join(OUTPUTS_DIR, f"{prefix}-*.md")) + \
+                  glob.glob(os.path.join(OUTPUTS_DIR, f"{prefix}-*.html"))
+    for rpath in all_reports:
+        # Move everything that isn't the CURRENT path (handles both same-day overwrites and past-day cleanup)
+        if rpath != md_path and rpath != html_path:
+            archive_if_exists(rpath)
+
+    # Re-verify today's paths just in case they existed and weren't caught in glob (edge case)
     archive_if_exists(md_path)
     archive_if_exists(html_path)
 

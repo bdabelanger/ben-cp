@@ -4,7 +4,12 @@
 > **Assigned to:** Any
 > **Vault root:** /Users/benbelanger/GitHub/ben-cp
 > **Priority:** P2
-> **STATUS: 🔲 READY — pick up 2026-04-13**
+> **STATUS: ✅ COMPLETE — 2026-04-13**
+
+Refactored tools/product/projects/report.py to use the legacy PlatformStatusReport + render_html pipeline for generating the detailed project report. The script now attempts to import platform_report.py and render_html.py from the scripts/ sibling directory, and when Jira data is available (raw/jira_issues.json), generates the full data-rich HTML output — with project cards, Jira burndowns, milestone tracking, engineer data quality tables, and the sidebar — into the Gazette's reports/product-projects.html. Falls back to the simple Asana-only output if Jira data hasn't been harvested yet. The Gazette summary column remains concise (11 active projects) and the "Full Report" link now always lands on the best available data.
+
+**Changelog:** (see root changelog.md)
+
 
 ---
 

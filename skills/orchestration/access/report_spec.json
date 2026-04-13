@@ -1,1 +1,6 @@
-{ "skill_name": "orchestration/access", "preferred_agent": "Access Auditor (Roz)", "cadence": "daily", "run_order": 3 }
+{
+  "skill_name": "orchestration/access",
+  "preferred_agent": "Access Auditor (Roz)",
+  "cadence": "daily",
+  "run_order": 12
+}

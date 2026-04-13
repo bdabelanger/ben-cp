@@ -164,6 +164,7 @@ This vault exposes purpose-built MCP tools. Use them instead of raw file reads/w
 | `get_task` / `list_tasks` | Manage drafting and active deliverables in the root `tasks/` directory |
 | `add_task` / `edit_task` | Create or update active task files — merging metadata automatically |
 | `get_skill` / `list_skills` | Read skill files by path relative to `skills/` |
+| `add_art` / `get_art` / `list_art` | Contribute to and explore the vault's gallery (poems, sketches, etc) |
 | `get_note` / `add_note` | Read and append to notes files by domain shorthand |
 | `get_changelog` | Read changelog entries by scope |
 | `add_changelog` | Append a new entry — always write deepest level first, then root |

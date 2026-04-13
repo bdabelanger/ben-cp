@@ -226,6 +226,24 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     { name: "list_tasks", description: "List files in a task subdomain.", inputSchema: { type: "object", properties: { domain: { type: "string" } }, required: ["domain"] } },
     { name: "get_task", description: "Read a task file by relative path.", inputSchema: { type: "object", properties: { path: { type: "string" } }, required: ["path"] } },
 
+    // --- ART & MEDIA ---
+    {
+      name: "add_art",
+      description: "Contribute a new piece of digital art (poem, sketch, prompt, etc) to the vault's art domain.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          name: { type: "string", description: "Safe filename (no .md suffix, e.g. 'the-agent-creed')" },
+          title: { type: "string" },
+          agent: { type: "string", description: "Name of the contributing agent or user" },
+          content: { type: "string", description: "The artistic content (markdown supported)" }
+        },
+        required: ["name", "title", "agent", "content"]
+      }
+    },
+    { name: "list_art", description: "List all art pieces in the vault.", inputSchema: { type: "object" } },
+    { name: "get_art", description: "Read an art piece by name.", inputSchema: { type: "object", properties: { path: { type: "string" } }, required: ["path"] } },
+
     // --- INTELLIGENCE & ANALYSIS ---
     {
       name: "add_intelligence",
@@ -529,6 +547,53 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const tasksRoot = path.resolve(rootPath, "tasks");
       const normalized = String(relPath).startsWith("tasks/") ? String(relPath).slice(6) : relPath;
       const fullPath = path.resolve(tasksRoot, normalized);
+      const content = await fs.readFile(fullPath, "utf-8");
+      return { content: [{ type: "text", text: content }] };
+    }
+
+    // --- ART & MEDIA ---
+    if (name === "add_art") {
+      const { name: fileName, title, agent, content } = args as any;
+      const artRoot = path.resolve(rootPath, "art");
+      await fs.mkdir(artRoot, { recursive: true });
+      const fullPath = path.join(artRoot, `${fileName}.md`);
+      const date = new Date().toISOString().split('T')[0];
+      const fullContent = `# ${title}\n\n> **Artist:** ${agent}\n> **Date:** ${date}\n\n${content}\n`;
+      await fs.writeFile(fullPath, fullContent, "utf-8");
+      
+      // Update Index
+      const indexPath = path.join(artRoot, "index.md");
+      let indexContent = "# Vault Art Gallery\n\n";
+      try { indexContent = await fs.readFile(indexPath, "utf-8"); } catch {}
+      if (!indexContent.includes(`[${title}]`)) {
+        indexContent += `- [${title}](${fileName}.md) — by ${agent} (${date})\n`;
+        await fs.writeFile(indexPath, indexContent, "utf-8");
+      }
+
+      // Update Changelog
+      const changelogPath = path.join(artRoot, "changelog.md");
+      let logContent = "# Art Changelog\n\n";
+      try { logContent = await fs.readFile(changelogPath, "utf-8"); } catch {}
+      logContent += `- **${date}**: ${agent} contributed "${title}"\n`;
+      await fs.writeFile(changelogPath, logContent, "utf-8");
+
+      return { content: [{ type: "text", text: `Art piece "${title}" added to gallery.` }] };
+    }
+
+    if (name === "list_art") {
+      const artRoot = path.resolve(rootPath, "art");
+      const entries = await fs.readdir(artRoot, { withFileTypes: true });
+      const files = entries
+        .filter(e => !e.name.startsWith(".") && e.name.endsWith(".md") && e.name !== "index.md" && e.name !== "changelog.md")
+        .map(e => e.name);
+      return { content: [{ type: "text", text: JSON.stringify(files, null, 2) }] };
+    }
+
+    if (name === "get_art") {
+      const { path: relPath } = args as any;
+      const artRoot = path.resolve(rootPath, "art");
+      const normalized = String(relPath).startsWith("art/") ? String(relPath).slice(4) : relPath;
+      const fullPath = path.resolve(artRoot, normalized);
       const content = await fs.readFile(fullPath, "utf-8");
       return { content: [{ type: "text", text: content }] };
     }

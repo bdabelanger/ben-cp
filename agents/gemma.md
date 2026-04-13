@@ -65,6 +65,7 @@ Every vault domain has its own purpose-built MCP tool. Always use these — **ne
 | **Active Task/Deliverable** | `get_task` / `edit_task` | Use for drafting deliverables (e.g. `q2-shareout/notes-authoring-ux.md`). Relative to `tasks/` |
 | Listing files in a domain | `list_intelligence` or `list_tasks` | Pass subdomain (e.g. `product/projects/q1` or `q2-shareout`). |
 | A skill or SKILL.md | `get_skill` | Path relative to `skills/` (e.g. `orchestration/handoff/SKILL.md`) |
+| **Art & Media** | `add_art` / `get_art` | For creative contributions (poems, sketches, etc). |
 | A notes file | `get_note` | Domain shorthand (e.g. `primary`, `orchestration/notes`) |
 | A changelog | `get_changelog` | Scope string |
 

@@ -1,5 +1,12 @@
 # Bug Triage Report: CBP-2573
-**Issue Title:** Duplicate Service interactions when adding multiple services on a note (intermittently)
+
+> **Prepared by:** Code (Gemini) (2026-04-12)
+> **Assigned to:** Human (The User)
+> **Vault root:** /Users/benbelanger/GitHub/ben-cp
+> **Priority:** P1
+> **STATUS: 🔲 READY — pick up 2026-04-12**
+
+---
 **Project Context:** CBP-2924 (Notes - Bulk Service Notes)
 **Status:** Sub-task / Bug under CBP-2924
 **Date:** 2026-04-12

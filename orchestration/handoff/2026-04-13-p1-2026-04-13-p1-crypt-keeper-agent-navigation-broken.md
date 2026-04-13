@@ -1,7 +1,7 @@
 # Implementation Plan: 2026-04-13-p1-crypt-keeper-agent-navigation-broken
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-13)
-> **Assigned to:** Any
+> **Assigned to:** Claude
 > **Vault root:** /Users/benbelanger/GitHub/ben-cp
 > **Priority:** P1
 > **v1.0**

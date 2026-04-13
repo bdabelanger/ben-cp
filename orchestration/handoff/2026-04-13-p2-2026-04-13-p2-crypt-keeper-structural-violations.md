@@ -1,7 +1,7 @@
 # Implementation Plan: 2026-04-13-p2-crypt-keeper-structural-violations
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-13)
-> **Assigned to:** Any
+> **Assigned to:** Claude
 > **Vault root:** /Users/benbelanger/GitHub/ben-cp
 > **Priority:** P2
 > **v1.0**

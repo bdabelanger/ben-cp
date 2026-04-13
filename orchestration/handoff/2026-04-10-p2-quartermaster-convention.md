@@ -1,7 +1,7 @@
 # Any Agent Implementation Plan: Establish Strategic PM Convention
 
 > **Prepared by:** Antigravity (Initial Concept, 2026-04-10)
-> **Assigned to:** Any
+> **Assigned to:** Claude
 > **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
 > **Priority:** P2 — Process refinement
 > **v1.3**

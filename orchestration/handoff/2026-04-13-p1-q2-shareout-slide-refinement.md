@@ -1,6 +1,10 @@
 # Q2 2026 Product Shareout — Slide Refinement
 
-**Context:** Ben is finalizing the Q2 2026 Product Shareout deck (43 slides). Nine slides still need work per Ben's manager notes (captured verbatim below). The full background OKR/roadmap intelligence is in `handoff/complete/2026-04-13-p1-q2-2026-product-shareout.md`.
+> **Prepared by:** Code (Gemini) (2026-04-13)
+> **Assigned to:** Claude
+> **Vault root:** /Users/benbelanger/GitHub/ben-cp
+> **Priority:** P1
+> **STATUS: 🔲 READY — pick up 2026-04-13**
 
 ---
 

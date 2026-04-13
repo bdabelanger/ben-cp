@@ -1,7 +1,7 @@
 # Implementation Plan: 2026-04-13-p3-crypt-keeper-data-quality-gaps
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-13)
-> **Assigned to:** Any
+> **Assigned to:** Gemma
 > **Vault root:** /Users/benbelanger/GitHub/ben-cp
 > **Priority:** P3
 > **v1.0**

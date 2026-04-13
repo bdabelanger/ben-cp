@@ -1,7 +1,7 @@
 # Implementation Plan: mapping-manager-skill-formalization
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)
-> **Assigned to:** Claude (Cowork) / Claude Code
+> **Assigned to:** Claude
 > **Vault root:** /Users/benbelanger/GitHub/ben-cp
 > **Priority:** P3
 > **v1.0**

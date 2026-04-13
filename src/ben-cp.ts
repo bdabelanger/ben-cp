@@ -105,9 +105,22 @@ async function writeChangelogInternal(a: any, skillsPath: string, date: string):
 
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
   tools: [
+    // --- AGENT ROLES & GOVERNANCE ---
+    {
+      name: "get_agent_info",
+      description: "Retrieve central governance (AGENTS.md) and specific agent role documentation. Use this at the start of every session to establish your persona and rules. Defaults to returning AGENTS.md + the specified agent documentation.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          agent_id: { type: "string", description: "The ID of the agent to fetch role docs for (e.g. 'gemma', 'code', 'human'). If omitted, only AGENTS.md is returned." }
+        }
+      }
+    },
+
     // --- SKILLS & CAPABILITIES ---
     { name: "list_skills", description: "List all files available in the skills domain", inputSchema: { type: "object", properties: {} } },
     { name: "get_skill", description: "Read a Skill documentation or template from the repo", inputSchema: { type: "object", properties: { relativePath: { type: "string" } }, required: ["relativePath"] } },
+
 
     // --- NOTES & MEMORY ---
     {
@@ -158,8 +171,8 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         required: ["title", "priority", "content"]
       }
     },
-    { name: "list_handoffs", description: "List handoffs", inputSchema: { type: "object", properties: { status: { type: "string", enum: ["READY", "COMPLETE", "ALL"] }, limit: { type: "number" } } } },
-    { name: "get_handoff", description: "Read a handoff", inputSchema: { type: "object", properties: { path: { type: "string" } }, required: ["path"] } },
+    { name: "list_handoffs", description: "List handoffs. Use assigned_to to filter to your agent name (e.g. 'Gemma'). Returns file, path, priority, status, date, assigned_to.", inputSchema: { type: "object", properties: { status: { type: "string", enum: ["READY", "COMPLETE", "ALL"] }, limit: { type: "number" }, assigned_to: { type: "string", description: "Filter by assigned agent name. Pass your own agent name to see only your handoffs." } } } },
+    { name: "get_handoff", description: "Read a handoff file by filename (e.g. '2026-04-13-p1-q2-2026-product-shareout.md'). Omit the leading 'handoff/' prefix — the tool resolves it automatically. For COMPLETE handoffs, include 'complete/' prefix.", inputSchema: { type: "object", properties: { path: { type: "string", description: "Filename or 'complete/filename.md', NOT a full path" } }, required: ["path"] } },
     {
       name: "edit_handoff",
       description: "Modify an existing handoff. Can also mark as complete (which moves file and logs).",
@@ -180,15 +193,15 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
       }
     },
 
-    // --- INTELLIGENCE & ANALYSIS ---
+    // --- DELIVERABLES & TASKS ---
     {
-      name: "add_intelligence",
-      description: "Create an intelligence record.",
+      name: "add_task",
+      description: "Create a new task file in the root tasks/ directory. Use this for drafting deliverables or staging work before final codification.",
       inputSchema: {
         type: "object",
         properties: {
-          domain: { type: "string" },
-          name: { type: "string" },
+          domain: { type: "string", description: "Subdirectory under tasks/ (e.g. 'q2-shareout')" },
+          name: { type: "string", description: "Filename (no .md suffix)" },
           title: { type: "string" },
           metadata: { type: "object" },
           content: { type: "string" }
@@ -196,14 +209,61 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         required: ["domain", "name", "title", "content"]
       }
     },
-    { name: "list_intelligence", description: "List intelligence files.", inputSchema: { type: "object", properties: { domain: { type: "string" }, include_directories: { type: "boolean" } }, required: ["domain"] } },
+    {
+      name: "edit_task",
+      description: "Update an existing task deliverable. Supports merging metadata and body replacement.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          path: { type: "string", description: "Path relative to tasks/ (e.g. 'q2-shareout/notes-authoring-ux.md')" },
+          title: { type: "string" },
+          metadata: { type: "object" },
+          content: { type: "string" }
+        },
+        required: ["path"]
+      }
+    },
+    { name: "list_tasks", description: "List files in a task subdomain.", inputSchema: { type: "object", properties: { domain: { type: "string" } }, required: ["domain"] } },
+    { name: "get_task", description: "Read a task file by relative path.", inputSchema: { type: "object", properties: { path: { type: "string" } }, required: ["path"] } },
+
+    // --- INTELLIGENCE & ANALYSIS ---
+    {
+      name: "add_intelligence",
+      description: "Create a brand new intelligence record. Automatically adds the record to the domain's index.md. Errors if the file already exists (use edit_intelligence for updates).",
+      inputSchema: {
+        type: "object",
+        properties: {
+          domain: { type: "string", description: "Subdirectory under intelligence/ (e.g. 'product/projects')" },
+          name: { type: "string", description: "Filename (no .md suffix)" },
+          title: { type: "string" },
+          metadata: { type: "object", description: "Key-value pairs for metadata block" },
+          content: { type: "string" }
+        },
+        required: ["domain", "name", "title", "content"]
+      }
+    },
+    {
+      name: "edit_intelligence",
+      description: "Update an existing intelligence record. Errors if the file does not exist (use add_intelligence for new records). Automatically preserves/updates the metadata block and title.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          path: { type: "string", description: "Path relative to intelligence/ (e.g. 'product/projects/shareout/q2/notes-authoring-ux.md')" },
+          title: { type: "string", description: "New title (optional)" },
+          metadata: { type: "object", description: "Metadata keys to update/add (optional)" },
+          content: { type: "string", description: "New body content (optional)" }
+        },
+        required: ["path"]
+      }
+    },
+    { name: "list_intelligence", description: "List intelligence files in a domain or subdomain. Pass a domain like 'product/projects/shareout/q2' to drill into subdirectories. Returns all files including non-.md source files in source/ subdirectories.", inputSchema: { type: "object", properties: { domain: { type: "string" }, include_directories: { type: "boolean" } }, required: ["domain"] } },
     { 
       name: "get_intelligence", 
-      description: "Read intelligence file content. Can optionally parse metadata into JSON.", 
+      description: "Read an intelligence file by path relative to the intelligence/ directory. Works for .md, .txt, .pdf, and any other file type. Example: 'product/projects/shareout/q2/source/Q2 2026 Product Shareout.txt'. The 'intelligence/' prefix is optional — strip it or leave it.", 
       inputSchema: { 
         type: "object", 
         properties: { 
-          path: { type: "string" },
+          path: { type: "string", description: "Path relative to intelligence/ directory (e.g. 'product/projects/shareout/q2/notes-authoring-ux.md')" },
           parse: { type: "boolean", description: "If true, returns parsed metadata instead of raw markdown." }
         }, 
         required: ["path"] 
@@ -258,6 +318,22 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
 server.setRequestHandler(CallToolRequestSchema, async (request) => {
   const { name, arguments: args } = request.params;
   try {
+    // --- AGENT ROLES & GOVERNANCE ---
+    if (name === "get_agent_info") {
+      const { agent_id } = args as any;
+      const agentsMd = await fs.readFile(path.resolve(rootPath, "AGENTS.md"), "utf-8");
+      let agentDoc = "";
+      if (agent_id) {
+        try {
+          const agentPath = path.resolve(rootPath, "agents", `${agent_id.toLowerCase()}.md`);
+          agentDoc = await fs.readFile(agentPath, "utf-8");
+        } catch {
+          agentDoc = `\n\n> **Note:** No specific documentation found for agent '${agent_id}'.`;
+        }
+      }
+      return { content: [{ type: "text", text: `# Vault Governance & Role Data\n\n${agentsMd}\n\n---\n\n# Agent Role: ${agent_id || "Unspecified"}\n\n${agentDoc}` }] };
+    }
+
     // --- SKILLS & CAPABILITIES ---
     if (name === "list_skills") {
       const skills = await fs.readdir(skillsPath, { withFileTypes: true });
@@ -274,6 +350,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const content = await fs.readFile(fullPath, "utf-8");
       return { content: [{ type: "text", text: content }] };
     }
+
 
     // --- NOTES & MEMORY ---
     if (name === "add_note") {
@@ -313,7 +390,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const filename = `${date}-${priority.toLowerCase()}-${title.replace(/\s+/g, '-')}.md`;
       const fullPath = path.join(handoffPath, filename);
       const header = `# Implementation Plan: ${title}\n\n` +
-        `> **Prepared by:** Antigravity (Gemini) (${date})\n` +
+        `> **Prepared by:** Code (Gemini) (${date})\n` +
         `> **Assigned to:** ${assigned_to}\n` +
         `> **Vault root:** /Users/benbelanger/GitHub/ben-cp\n` +
         `> **Priority:** ${priority}\n` +
@@ -323,7 +400,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     }
 
     if (name === "list_handoffs") {
-      const { status = "READY", limit } = args as any;
+      const { status = "READY", limit, assigned_to } = args as any;
       const results: any[] = [];
       const dirs: string[] = [];
       if (status === "READY" || status === "ALL") dirs.push(path.join(handoffPath));
@@ -338,12 +415,20 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
             const priorityMatch = content.match(/> \*\*Priority:\*\* (P\d)/);
             const statusMatch = content.match(/> \*\*STATUS:\*\* (.*?)$/m);
             const dateMatch = file.match(/^(\d{4}-\d{2}-\d{2})/);
+            const assignedMatch = content.match(/> \*\*Assigned to:\*\* (.*?)$/m);
+            const assignee = assignedMatch ? assignedMatch[1].trim() : "Any";
+
+            if (assigned_to && assigned_to.toLowerCase() !== 'any' && assignee.toLowerCase() !== 'any' && !assignee.toLowerCase().includes(assigned_to.toLowerCase())) {
+              continue;
+            }
+
             results.push({
               file,
               path: path.relative(path.resolve(handoffPath, ".."), fullPath),
               priority: priorityMatch ? priorityMatch[1] : "TBD",
               status: statusMatch ? statusMatch[1].trim() : (dir.endsWith("complete") ? "COMPLETE" : "READY"),
-              date: dateMatch ? dateMatch[1] : "unknown"
+              date: dateMatch ? dateMatch[1] : "unknown",
+              assigned_to: assignee
             });
           }
         } catch (e) {}
@@ -384,15 +469,85 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       }
     }
 
+    // --- DELIVERABLES & TASKS ---
+    if (name === "add_task") {
+      const { domain, name: fileName, title, metadata = {}, content } = args as any;
+      const tasksRoot = path.resolve(rootPath, "tasks");
+      const domainPath = path.resolve(tasksRoot, domain);
+      await fs.mkdir(domainPath, { recursive: true });
+      const fullPath = path.join(domainPath, `${fileName}.md`);
+      try {
+        await fs.access(fullPath);
+        throw new Error(`Task '${fileName}.md' already exists. Use edit_task to update.`);
+      } catch (e: any) {
+         if (e.message && e.message.includes("already exists")) throw e;
+      }
+      let metaBlock = "";
+      if (metadata) {
+        for (const [key, value] of Object.entries(metadata)) { metaBlock += `- **${key}:** ${value}\n`; }
+      }
+      const fullContent = `# ${title}\n\n${metaBlock}\n${content}\n`;
+      await fs.writeFile(fullPath, fullContent, "utf-8");
+      return { content: [{ type: "text", text: "Task created." }] };
+    }
+
+    if (name === "edit_task") {
+      const { path: relPath, title, metadata = {}, content } = args as any;
+      const tasksRoot = path.resolve(rootPath, "tasks");
+      const normalized = String(relPath).startsWith("tasks/") ? String(relPath).slice(6) : relPath;
+      const fullPath = path.resolve(tasksRoot, normalized);
+      let existingContent = await fs.readFile(fullPath, "utf-8");
+      const lines = existingContent.split('\n');
+      let currentTitle = lines[0].replace(/^# /, '');
+      if (title) currentTitle = title;
+      const currentMetadata: Record<string, string> = {};
+      const metaMatches = existingContent.matchAll(/- \*\*([^:]+):\*\* (.*)/g);
+      for (const match of metaMatches) { currentMetadata[match[1]] = match[2].trim(); }
+      if (metadata) Object.assign(currentMetadata, metadata);
+      let currentBody = existingContent.split('\n\n').slice(2).join('\n\n');
+      if (content) currentBody = content;
+      let metaBlock = "";
+      for (const [key, value] of Object.entries(currentMetadata)) { metaBlock += `- **${key}:** ${value}\n`; }
+      const newContent = `# ${currentTitle}\n\n${metaBlock}\n${currentBody}`;
+      await fs.writeFile(fullPath, newContent, "utf-8");
+      return { content: [{ type: "text", text: "Task updated." }] };
+    }
+
+    if (name === "list_tasks") {
+      const { domain } = args as any;
+      const tasksRoot = path.resolve(rootPath, "tasks");
+      const domainPath = path.resolve(tasksRoot, domain);
+      const entries = await fs.readdir(domainPath, { withFileTypes: true });
+      const files = entries
+        .filter(e => !e.name.startsWith("."))
+        .map(e => ({ name: e.name, type: e.isDirectory() ? "directory" : "file" }));
+      return { content: [{ type: "text", text: JSON.stringify(files, null, 2) }] };
+    }
+
+    if (name === "get_task") {
+      const { path: relPath } = args as any;
+      const tasksRoot = path.resolve(rootPath, "tasks");
+      const normalized = String(relPath).startsWith("tasks/") ? String(relPath).slice(6) : relPath;
+      const fullPath = path.resolve(tasksRoot, normalized);
+      const content = await fs.readFile(fullPath, "utf-8");
+      return { content: [{ type: "text", text: content }] };
+    }
+
     // --- INTELLIGENCE & ANALYSIS ---
     if (name === "add_intelligence") {
       const { domain, name: fileName, title, metadata = {}, content } = args as any;
       const domainPath = path.resolve(rootPath, "intelligence", domain);
       await fs.mkdir(domainPath, { recursive: true });
+      const fullPath = path.join(domainPath, `${fileName}.md`);
+      try {
+        await fs.access(fullPath);
+        throw new Error(`File '${fileName}.md' already exists in '${domain}'. Use edit_intelligence to update it.`);
+      } catch (e: any) {
+        if (e.message.includes("already exists")) throw e;
+      }
       let metaBlock = "";
       for (const [key, value] of Object.entries(metadata)) { metaBlock += `- **${key}:** ${value}\n`; }
       const fullContent = `# ${title}\n\n${metaBlock}\n${content}\n`;
-      const fullPath = path.join(domainPath, `${fileName}.md`);
       await fs.writeFile(fullPath, fullContent, "utf-8");
       try {
         const indexPath = path.join(domainPath, "index.md");
@@ -407,12 +562,54 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       return { content: [{ type: "text", text: "Intelligence record created." }] };
     }
 
+    if (name === "edit_intelligence") {
+      const { path: relPath, title, metadata = {}, content } = args as any;
+      const normalized = String(relPath).startsWith("intelligence/") ? String(relPath).slice(13) : relPath;
+      const fullPath = path.resolve(rootPath, "intelligence", normalized);
+      let existingContent = await fs.readFile(fullPath, "utf-8");
+      
+      const lines = existingContent.split('\n');
+      let currentTitle = lines[0].replace(/^# /, '');
+      if (title) currentTitle = title;
+
+      const currentMetadata: Record<string, string> = {};
+      const metaMatches = existingContent.matchAll(/- \*\*([^:]+):\*\* (.*)/g);
+      for (const match of metaMatches) { currentMetadata[match[1]] = match[2].trim(); }
+      Object.assign(currentMetadata, metadata);
+
+      let currentBody = existingContent.split('\n\n').slice(2).join('\n\n');
+      if (content) currentBody = content;
+
+      let metaBlock = "";
+      for (const [key, value] of Object.entries(currentMetadata)) { metaBlock += `- **${key}:** ${value}\n`; }
+      const newContent = `# ${currentTitle}\n\n${metaBlock}\n${currentBody}`;
+      
+      await fs.writeFile(fullPath, newContent, "utf-8");
+      return { content: [{ type: "text", text: `Intelligence record ${relPath} updated.` }] };
+    }
+
     if (name === "list_intelligence") {
       const { domain, include_directories = true } = args as any;
       const fullPath = path.resolve(rootPath, "intelligence", domain);
       const files = await fs.readdir(fullPath, { withFileTypes: true });
-      const items = files.filter(f => !f.name.startsWith('.')).filter(f => f.isDirectory() ? include_directories : (f.name.endsWith(".md") && f.name !== "index.md"))
-        .map(f => ({ name: f.name.replace(/\.md$/, ""), type: f.isDirectory() ? "domain" : "file", path: path.join("intelligence", domain, f.name) }));
+      const items: any[] = [];
+      for (const f of files) {
+        if (f.name.startsWith('.')) continue;
+        if (f.isDirectory()) {
+          if (include_directories) items.push({ name: f.name, type: "directory", path: path.join("intelligence", domain, f.name) });
+          // Also recurse one level into source/ to expose source files
+          if (f.name === "source" || f.name === "outputs") {
+            try {
+              const sub = await fs.readdir(path.join(fullPath, f.name), { withFileTypes: true });
+              for (const sf of sub) {
+                if (!sf.isDirectory()) items.push({ name: sf.name, type: "file", path: path.join("intelligence", domain, f.name, sf.name) });
+              }
+            } catch {}
+          }
+        } else if (f.name !== "index.md") {
+          items.push({ name: f.name, type: "file", path: path.join("intelligence", domain, f.name) });
+        }
+      }
       return { content: [{ type: "text", text: JSON.stringify(items, null, 2) }] };
     }
 

@@ -1,7 +1,7 @@
 # Implementation Plan: Video Production: Notes Table Filtering & Preview Demo
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-13)
-> **Assigned to:** [Your Name/Team]
+> **Assigned to:** Human (The User)
 > **Vault root:** /Users/benbelanger/GitHub/ben-cp
 > **Priority:** P1
 > **STATUS: 🔲 READY — pick up 2026-04-13**

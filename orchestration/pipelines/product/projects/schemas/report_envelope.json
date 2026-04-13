@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Skill Report Envelope (Gazette v1)",
+  "type": "object",
+  "required": ["agent", "skill", "run_at", "status", "summary"],
+  "properties": {
+    "agent": {
+      "type": "string",
+      "description": "The preferred agent name from character.md"
+    },
+    "skill": {
+      "type": "string",
+      "description": "The normalized skill path (e.g., orchestration/changelog)"
+    },
+    "run_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO8601 timestamp"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["ok", "warn", "error"],
+      "description": "Outcome of the audit/scan"
+    },
+    "summary": {
+      "type": "string",
+      "description": "Character-voiced narrative for the Gazette"
+    },
+    "findings": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Structured facts discovered during the run"
+    },
+    "flags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Specific violations or omissions"
+    }
+  }
+}

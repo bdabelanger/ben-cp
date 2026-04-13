@@ -1,0 +1,672 @@
+Product Shareout
+Q2 2026
+
+Today’s agenda
+Strategy Updates
+1
+Q1 Highlight Reel
+2
+Strengthen Case Mgmt.
+3
+Simplify Reporting
+4
+Security & Compliance Enablers
+5
+Ease Navigation Burdens
+6
+Enhance Core Configurability
+7
+Enhance our Workflow Engine
+8
+Indiana
+9
+Wrap-up
+10
+
+Strategy Updates
+
+Changes to our Q2 plan compared to January
+Start client portal sooner to make a bigger impact on revenue & retention in 2026
+Boost the foundation for dynamic pages and further enhance the notes user experience
+Make room to address surge in service outcome tracking  
+1
+2
+3
+4
+
+A closer look at Q1 and Q2
+1
+Strengthen Core Case Management
+2
+Simplify Reporting
+3
+Security & Compliance Enablers
+4
+Ease Navigation Burdens
+5
+Enhance Core Configurability
+6
+Enhance our Workflow Engine
+Faster Notes Nav + Authoring UX
+Cascaded status updates
+Wkflw triggers: labels + involvements
+AI-powered supervisor tools
+Bring permissions to reports
+Bulk tools for service plans
+Workforce Analytics
+Service outcomes tracking
+Audit log improvements
+Sign notes/lock service notes
+Import notes + faster UX
+Global Notes WLV
+Client Portal
+Q1
+Q2
+Zapier: custom fields for intakes + people
+Config’ relationship types
+External people in workflows
+Collapse Tasks/workflows UX
+Overhauled wkflw approvals
+UoW linking in reporting
+Speaker: Anthony
+
+5
+
+Q1 Highlights
+
+Notes optimized for faster data entry
+CAPABILITIES
+Enter notes in upgraded user experience that prioritizes streamlined bulk data entry
+Start/end dates on datagrid for sorting/filtering and on all note types
+KEY BENEFITS
+Save time by reducing redundant data entry
+Streamlined Note form written to support Dynamic Pages
+Optimized bulk data entry for each section
+Q1
+Supports service groups and service rosters
+Case Management
+Note start and end dates with sort and filter
+Find and review notes wicked fast:
+Notes datagrid
+“The ability to sort by the two types of dates has been very helpful… the chronological view as to what was going on in that student's life. That's been very positive - that's been appreciated.”
+– North Cook ISC
+
+Reporting
+Q1
+Cascading Closure: Data That Closes the Loop
+
+
+CAPABILITIES
+Cascades closure from Case or Intake to all open work
+Transparent confirmation with real-time impact preview
+Ends enrollments, involvements & workflows automatically
+Introduces “Skip” for standalone tasks (consistent task handling)
+Real-time counts of impacted records
+Checkboxes checked by default
+“A customer said this. "
+– Customer
+KEY BENEFITS
+⏱️ Less manual cleanup & fewer closure checklists
+📊 Cleaner, more reliable reporting
+🔒 Greater trust in system data
+Driving consistency in task handling
+
+Q1
+CUSTOMER VALUE
+⚡ Automate program entry: Start workflows when participants join.
+🚩 Labels trigger action: Turn flags into automated processes.
+🔍 More consistent operations: Ensure steps happen every time.
+SUPPORT FOR MORE USE CASES
+A case involvement is added (based on involvement type)
+A person is added to a case with a specific person role (based on role type)
+A label is applied to any unit of work
+Workflow
+Expanded Workflow Triggers: Involvements & Labels
+3 new event trigger options
+Workflows can now start when important actions happen inside a record.
+“I like [adding labels]. [...] we use labels for like IEP which would be really great. Saying, hey, don't forget to get the updated one for this.."
+– Rainbow Village
+
+AI-Powered Case Summaries in Action
+Generate high-level summaries of caseloads using AI — powered by real Casebook data
+Claude Demo 4/3 - Watch Video
+10
+
+Getting Started with AI in Casebook (Alpha - α)
+SIMPLE SETUP
+Enable via Incoming Integrations in Admin
+Connect to an AI assistant using generated credentials
+Start with read-only, role-based access
+ALPHA INCLUDES
+Caseload Summaries for high-level, supervisor workload insight
+Case Handoff Briefs for faster transitions and coverage
+HOW WE’LL LEARN
+Launch with a small set of engaged customers
+Gather feedback on setup, usefulness, and desired next capabilities
+Use alpha learnings to shape beta direction
+
+Bringing Permissions to Reporting
+
+CAPABILITIES
+Add Access Lists to reporting records
+Access list modal supports allow + deny lists
+Users and teams can be added, just like in Engage, Intake, and People
+Works with Limited Access role setup
+KEY BENEFITS
+🔐 Extends granular permissions to reporting, closing a major gap
+✅ Consistency: reporting now follows the same access patterns as other UoWs
+📈 Extend your Casebook ecosystem: Include leadership and external stakeholders in reporting without exposing sensitive data or data entry access
+Updated Action Column for more than 3 icons, including “Edit Access” option
+Consistent Access List Experience
+“[…] on a very positive note. I love the access to reports. […] It was perfect. […] the minute it came out, I was like, yes, and I just set it up and I told everyone else like here it is. And they were just like, my God, they love it too…”
+- Los Alamos JJAB
+
+Any 5% items like:
+Filterable provider column on Services WLV
+Renamable column headers in WLVs
+“Drill” back to UoW from reporting
+Polish That Powers the Experience
+ 
+ 
+Clarity & Navigation
+
+Dynamic Workload View headers improve scanability + context
+Direct linking from reports → units of work speeds up action
+Accessibility & Usability
+
+Addressed key VPAT gaps (screen reader, keyboard navigation, modal behavior)
+Links take you where you need to go!
+
+Q2 Roadmap
+
+Strengthen Core Case Management
+Becoming a first-class service delivery planning and note-tracking system
+15
+
+Notes optimized for faster data entry
+CAPABILITIES
+Notes have been upgraded to streamline bulk data entry
+Centralizes inline data entry into a tabbed canvas
+Introduces data entry shortcuts like Service Groups 
+Save time by reducing redundant data entry
+Streamlined Note form written to support Dynamic Pages
+Optimized bulk data entry for each section
+Q2
+Supports service groups and service rosters
+“Cse managers input bulk notes so that they don't have to write the same thing five to eight times.”
+– Path of Life (Discovery call)
+Intuitive notes authoring: Reduce clicks and save time
+Compliance
+Case Management
+
+Sort, filter, and enrollment shortcuts:Service Plan + Services WLV
+
+Filter and sort on enrollment fields
+See all enrollments without leaving a unit of work
+CAPABILITIES
+A new Service Plan datagrid will help users locate enrollments  immediately with keyword search, filter, and sort
+Quickly filter, sort, search, and page through enrollments without leaving the page you’re working on
+“Create service note”, “End enrollments”, and “Delete enrollments” bulk actions will be released to the Service Plan and the Services WLV
+Case Management
+Q2
+“Can I bulk [add] the service enrollments? Like … all five of them go on?”
+– Arc of the Capital
+17
+
+Simplify Reporting
+Deliver more out-of-the-box reporting experiences and more consistent data behavior
+18
+
+Q2
+Reporting packages: Understand Work and Workflow Performance
+
+What it shows
+Makes workload and task ownership visible at a glance
+How much work individuals and teams are managing and where workload is concentrated
+What kinds of work are filling their time, and how complex that work is
+Where processes are slowing down, breaking down, or falling out of compliance
+Reporting
+“A customer said this. "
+– Customer
+
+Q2
+Reporting packages: Understand Service Delivery and Outcomes
+
+What it shows
+Brings visibility to service activity and progress
+How much service is being delivered — and where it’s happening across programs and providers
+Who is being served, and how service delivery varies across populations
+What outcomes are being achieved, and how they differ across services and providers
+“...the number of service plan enrollments for that week… kind of current enrollments, but then that would be able to break down … here's, this service provider, and this is the number of … hours they billed. This is the amount of money they billed for and be able to see that."
+– Lighthouse for the Blind of Fort Worth
+Reporting
+
+A new dose of Reporting features!
+Q2
+✨ EMBEDDED ANALYTICS, LEVELED UP
+Highlight insights instantly with smarter formatting
+Faster, more reliable dashboards for real-world usage
+More control over how users explore and filter data
+Expanded integrations to meet customers where their data lives
+Cleaner, more intuitive dashboard experiences
+21
+
+Security & Compliance Enablers
+Enable our HIPAA and CJIS-minded customers the features they need to operate compliantly
+22
+
+KEY BENEFITS
+🔍 Investigate behavior across all areas of the system
+⚡ Eliminate manual record-by-record searching
+🔐 Stronger audit readiness + compliance confidence
+WHAT’S HAPPENING
+Today: Audit logs require selecting a specific record → Q2: Filter audit logs by user OR record
+Enables cross-platform visibility into user activity
+Audit log: Follow the work or follow the user 
+
+Clear guidance to walk users through the right choice
+Consistency from the previous experience
+Compliance
+Q2
+“This looks fantastic and the user audit inclusion is exciting."
+– The Albertas
+23
+
+Upgrade compliance and data governance: 
+Locked and signed notes
+“If one of the staff writes a note, they can go in and edit it at any time which is super unethical and dangerous."
+– Grafton County, NH
+Sign a note to lock it for editing
+CAPABILITIES
+Sign a note to lock it for editing, preventing you or others from editing it after it is completed
+And finally - lock sensitive Service Notes
+KEY BENEFITS
+Enables healthcare-minded orgs to be more HIPAA compliant
+Compliance
+Restrict editing of signed notes
+Lock sensitive service notes
+Case Management
+Q2
+24
+
+Ease Navigation Burdens
+Reduce navigation complexity and offer more options to reduce redundant data entry
+
+25
+
+Get off to a great start: Bulk import notes
+Q2
+Navigation
+CAPABILITIES
+Get started in Casebook with all of the historical data from your legacy system
+Import General Notes along with historical data import
+KEY BENEFITS
+Save customers from paying for pricey custom imports
+“If we can't import into notes… if we can only have narrative… do I need to basically also shrink down these notes?”
+- Kentucky Humane Society
+Import notes any time in Admin
+26
+
+All your notes in one place: Notes WLV
+“I don't want them to have to go into 12 cases or people in order to write their notes. What I'd like is one central place… where all the notes are just in one area."
+– Wellmet Project
+CAPABILITIES
+It’s time for a Casebook Notes app!
+See, sort, and filter notes across every Unit of Work without the need to navigate into individual cases
+Quick filter content that you’ve written and keyword search on relevant fields
+KEY BENEFITS
+See content from all UOWs that you have access to in one place
+Navigation
+Focus this slide on the global WLV we’re focused on in Q2.
+Q2
+27
+
+Collaborative data entry: Client Portal
+Q2
+“Is there a client portal? Do clients have any interaction with the system?”
+- Sparta, WI Police Department
+CAPABILITIES
+Invite any person to the portal naturally from Engage, Intake, Track, or People
+Collaborate with portal users to complete form and upload tasks
+KEY BENEFITS
+Save time by reducing redundant data entry
+Clients get access to historical submissions
+Introduce a new portal for external users
+Surface important actions assigned to people
+Eventually leverage this portal for self check-ins to service events
+Navigation
+Focus this slide on the v1 scope of client portal
+28
+
+Enhance Core Configurability
+Expand the ways Casebook can be personalized to best suit a customer’s needs
+29
+
+Better no-code automations - Zapier
+Q2
+Configurability
+“I could not really work on Zapier by myself because I know that setting up APIs… I need a developer or someone with me because I tried to do that on my own but I wasn't able to."
+– North Cook ISD
+CREATE A PERSON
+Populate custom fields directly
+Add Line items like Address, Phone number and Email address
+CREATE AN INTAKE REPORT
+Populate custom fields directly - outside of the Narrative
+Link any number of people to an intake report
+30
+
+Configurable Relationship Types
+WHAT CUSTOMERS ARE ASKING FOR…
+Sponsor
+APS Investigator
+Detective ↔ Victim
+Mentor
+DSS Worker
+Ex-Partner
+Animal Owner / Companion
+Camp Counselor v Counselor
+“The options on the relationship type are those values that we can add or delete?"
+– Western CT Area Agency on Aging
+26 Customers | $262k ARR
+Moves one-off relationship requests into tenant configuration
+Configurability
+Because one relationship list doesn’t fit every organization
+Q2
+31
+
+Enhance our Workflow Engine
+More triggers, better assignment flexibility and a more refined user experience in workflow
+32
+
+Stop jumping between Tasks and Workflows
+Q2
+What’s Changing
+All tasks in one place — workflow and standalone tasks shown together
+See what’s next instantly — including all tasks and approvals, without opening workflows
+Tasks section upgraded to a datagrid for easier scanning and filtering
+“We don’t use workflow for our intake process… because most of what they do is note creation. And if I created a workflow, they’d just be going again back and forth between the referral and the workflow.”
+– A Child's Place
+All the perks of datagrids!
+Workflow data surfaced with Standalone Tasks
+Workflow
+Gives users a single, consolidated view of everything they need to do.
+33
+
+Workflows that reach beyond your team
+Q2
+KEY BENEFITS
+Eliminates manual task workarounds by letting workflows assign work to the right people automatically.
+Workflow tasks (including form tasks) can now route to external parties automatically
+Choose which case person gets the task
+Workflow
+CAPABILITIES
+Assign workflow tasks to people on the record:
+Case persons (Engage)
+Intake persons
+Provider staff (not clients)
+Option to assign to:
+One, multiple, or all relevant people
+Optional auto-send notifications for assigned tasks
+Quick ability to send to one, multiple, or All
+Clear visual indicator of attention required to complete sending tasks
+“A customer said this. "
+– Customer
+34
+
+No more missed approvals
+Q2
+KEY BENEFITS
+🔒 Clear ownership at every stage of review
+👀 Proactive visibility into approvals that need action
+🔁 Supports real-world approval chains without fragile user-specific setup
+Approvals surfaced where users already work
+Workflow
+CAPABILITIES
+Sequential reviewers support structured, multi-level approval flows
+Reviewers can be assigned by team, role, or supervisors of the primary assignee
+Active approvals are surfaced through the Home dashboard, in-app notifications, and email when applicable
+2 New reviewer options
+Sequential reviewers for multi-level approvals
+“The biggest pain point we have… is finding them… we sometimes miss some of the review.”
+– CAP Canada
+We’re replacing passive, role-based approvals with a more structured model that gives each stage of review a clear owner, clear visibility, and a defined sequence.
+35
+
+Technology
+Building for stability, performance, and modernity
+36
+
+Consolidating to a Unified API Foundation
+
+Q2+
+Replacing unsupported legacy infrastructure to reduce platform risk
+Migrating core services to a modern architecture to improve reliability and performance
+Standardizing foundational systems to enable faster, more scalable development
+37
+
+Indiana
+Keeping our partnership strong with one of our marquis customers
+38
+
+2026 Indiana Roadmap
+Q1 2026
+Q2 2026
+Q3 2026
+Q4 2026
+Initiatives
+New EC2 hardware on all production database servers
+New Postgres version on all production database
+
+Upgrade application server software
+Upgrade search version and software
+Maintain browser version
+Security Vulnerability upgrade
+Disaster Recovery readiness
+Maintain monthly security updates
+
+TechMod
+Upgrade production master & read database EC2 
+Upgrade production master and read Postgres version
+Upgrade production replica database EC2 server
+Upgrade production replica Postgres version
+Release Rails 3.2
+Replace ElasticSearch and release OpenSearch 2.3
+
+Test newest Chrome & Firefox version with CircleCI automation Tests
+Perform east-west DR test
+Upgrade Resque library
+Perform Disaster Recovery exercise
+Update
+
+Wrap-up
+40
+
+2026 CBP Roadmap
+Q1 2026
+Q2 2026
+Q3 2026
+Q4 2026
+Initiatives
+AI - Supervisor Tools
+Cascading Values
+Reporting - Service Groups
+Navigation Menu - Link to Casebook Community
+Notes - New data grid
+Service enrollments - Bulk actions
+Service notes - Service Groups
+Services WLV - Bulk actions
+Workflows - Label + case involvement triggers
+AI - Facesheet
+Audit Log - Follow the person
+Client Portal v1
+Data import - Bulk import for Notes
+Granular Permissions - Services
+Notes - Global Notes WLV v1
+Notes - New authoring UX
+Notes - Signing/Service Note Lock v1
+People - Config relationship type
+Reporting - Tasks/Work package
+Service Plan - New datagrid
+Service Plan - New service enrollment datagrid
+Services - Bulk end enrollment
+Services - Outcomes Tracking v1
+SMS - routing improvements
+Tasks - Workflows + ad-hoc tasks, together
+Workflows - Approval Improvements
+Workflows - Assign WF Tasks to External Users
+Zap - custom fields -> intake/people
+Admin - Undelete in Admin
+Audit Logs - Track “View” events
+Automated Tenant Creation
+Cascading Deletes
+Cases - Forms from linked Intakes
+Client Portal v2
+Dynamic Pages - Notes
+Dynamic Pages - Multi-select fields
+Notes - Link UOWs without Enrollments
+Notes - Anonymous service notes
+Notes - Global Notes WLV v2
+Notes - Signing/Service Note Lock v2
+Service Plan - show non-enrolled services
+Services - Outcomes Tracking v2
+Workflows - date-based triggers
+Attachments - Attachments WLV
+Audit Logs - Track “View” events
+Cases - Attachments from linked Intakes
+Cases - Notes from linked Intakes
+Dynamic Pages - Attachments
+Dynamic Pages - Custom Tables
+Forms - Pre-populated fields with Person data
+Reporting - Financial package
+Security - Configurable Timeout limit
+Services - Multiple Rosters
+Subscriptions - Manage subscription in Admin
+Workflows - Recurrence Pattern improvements
+Likely moving out of 2026:
+Data import - Clearer IDs
+Dynamic Pages - Providers
+Forms - Form Submissions WLV
+Funding - Budgets for services
+Security - Expanded MFA
+Services - Link Enrollments to Involvements
+Services - Service Offerings without Providers
+Services - Service Offerings w/many Providers
+Workflow - Assign to team/supervisor
+TechMod
+CRNK Replacement
+Compliance - Eliminate XSS Vulnerability (KPP)
+Material UI upgrade
+CRNK Replacement
+Dynamic pages stablization
+CRNK Replacement
+Kafka synchronization
+CRNK Replacement
+BAU
+Gitlab Scalability
+Apollo Upgrade
+React Upgrade
+Reporting Performance
+Reveal Upgrade
+Dynamic Pages - stablilize
+Reporting Performance
+GQL Performance Improvements
+Form.io upgrade
+Reveal Upgrade
+Apollo Upgrade
+GQL Performance Improvements
+
+2026 CBP Roadmap
+Q1 2026
+Q2 2026
+Q3 2026
+Q4 2026
+Initiatives
+AI - Supervisor Tools
+Cascading Values
+Reporting - Service Groups
+Navigation Menu - Link to Casebook Community
+Notes - New data grid
+Service enrollments - Bulk actions
+Service notes - Service Groups
+Services WLV - Bulk actions
+Workflows - Label + case involvement triggers
+AI - Facesheet
+Audit Log - Follow the person
+Client Portal v1
+Data import - Bulk import for Notes
+Granular Permissions - Services
+Notes - Global Notes WLV v1
+Notes - New authoring UX
+Notes - Signing/Service Note Lock v1
+People - Config relationship type
+Reporting - Tasks/Work package
+Service Plan - New datagrid
+Service Plan - New service enrollment datagrid
+Services - Bulk end enrollment
+Services - Outcomes Tracking v1
+SMS - routing improvements
+Tasks - Workflows + ad-hoc tasks, together
+Workflows - Approval Improvements
+Workflows - Assign WF Tasks to External Users
+Zap - custom fields -> intake/people
+Admin - Undelete in Admin
+Audit Logs - Track “View” events
+Automated Tenant Creation
+Cascading Deletes
+Cases - Forms from linked Intakes
+Client Portal v2
+Dynamic Pages - Notes
+Dynamic Pages - Multi-select fields
+Notes - Link UOWs without Enrollments
+Notes - Anonymous service notes
+Notes - Global Notes WLV v2
+Notes - Signing/Service Note Lock v2
+Service Plan - show non-enrolled services
+Services - Outcomes Tracking v2
+Workflows - date-based triggers
+Attachments - Attachments WLV
+Audit Logs - Track “View” events
+Cases - Attachments from linked Intakes
+Cases - Notes from linked Intakes
+Dynamic Pages - Attachments
+Dynamic Pages - Custom Tables
+Forms - Pre-populated fields with Person data
+Reporting - Financial package
+Security - Configurable Timeout limit
+Services - Multiple Rosters
+Subscriptions - Manage subscription in Admin
+Workflows - Recurrence Pattern improvements
+Likely moving out of 2026:
+Data import - Clearer IDs
+Dynamic Pages - Providers
+Forms - Form Submissions WLV
+Funding - Budgets for services
+Security - Expanded MFA
+Services - Link Enrollments to Involvements
+Services - Service Offerings without Providers
+Services - Service Offerings w/many Providers
+Workflow - Assign to team/supervisor
+TechMod
+CRNK Replacement
+Compliance - Eliminate XSS Vulnerability (KPP)
+Material UI upgrade
+CRNK Replacement
+Dynamic pages stablization
+CRNK Replacement
+Kafka synchronization
+CRNK Replacement
+BAU
+Gitlab Scalability
+Apollo Upgrade
+React Upgrade
+Reporting Performance
+Reveal Upgrade
+Reporting Performance
+GQL Performance Improvements
+Form.io upgrade
+Reveal Upgrade
+Apollo Upgrade
+GQL Performance Improvements
+
+Thank You!
+43

@@ -199,6 +199,7 @@ ben-cp/
 │   └── pipelines/                   ← consolidated pipeline domain
 │       ├── inputs/                  ← live run data (raw API responses, manifests)
 │       └── outputs/                 ← generated reports, audit logs, session artifacts
+├── tasks/                           ← active deliverables and project WIP (FLAT)
 ├── intelligence/                    ← vault source of truth (gitignored optional)
 │   ├── mapping/                     ← logic stubs, status rules, and data transformation
 │   ├── casebook/                    ← Casebook domain knowledge and schema reference

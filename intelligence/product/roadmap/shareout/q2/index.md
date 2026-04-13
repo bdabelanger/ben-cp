@@ -12,3 +12,4 @@
 ## Navigation
 - [**Product Roadmap Root**](../../index.md)
 - [**Active Projects (Tactical)**](../../../projects/q2/index.md)
+- [Q2 2026 Product Roadmap Shareout Speaker Notes Draft](speaker-notes-draft.md)

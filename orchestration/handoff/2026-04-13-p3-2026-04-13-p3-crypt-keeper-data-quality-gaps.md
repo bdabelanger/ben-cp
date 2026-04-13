@@ -1,18 +1,7 @@
-# Implementation Plan: 2026-04-13-p3-crypt-keeper-data-quality-gaps
-
-> **Prepared by:** Antigravity (Gemini) (2026-04-13)
-> **Assigned to:** Gemma
-> **Vault root:** /Users/benbelanger/GitHub/ben-cp
-> **Priority:** P3
-> **v1.0**
-> **STATUS: 🔲 READY — pick up 2026-04-13**
-
----
-
-# Any Agent Implementation Plan: P3 Crypt-Keeper — Data Quality Gaps
+# Implementation Plan: Crypt-Keeper — Data Quality Gaps
 
 > **Prepared by:** Claude (Cowork) (Crypt-Keeper scheduled run, 2026-04-13)
-> **Assigned to:** Any
+> **Assigned to:** Gemma
 > **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
 > **Priority:** P3 — Data quality gaps (missing KR SOP files, data_sources.md sync, stale migration debt flags)
 > **Source report:** `skills/knowledge/outputs/reports/knowledge-report-2026-04-13.md`
@@ -55,7 +44,7 @@ Also referenced: `q2-2026/index.md` — does not exist.
 ```
 git log --oneline --all -- skills/product/projects/q2-2026/
 ```
-If they were never created: flag for human user as Q2 OKR documentation debt — do not fabricate content. If they existed and were removed: restore from git. Note that Gemma's 2026-04-13 session note indicates documentation is "In Progress" for the Notes Datagrid Shortcut KR specifically.
+If they were never created: flag for Ben as Q2 OKR documentation debt — do not fabricate content. If they existed and were removed: restore from git. Note that session notes indicate documentation is "In Progress" for the Notes Datagrid Shortcut KR specifically.
 
 ---
 
@@ -69,7 +58,7 @@ Verify whether `run.py` still exists at `intelligence/report/run.py` (it is not 
 git log --oneline --all -- skills/intelligence/report/run.py
 ls tools/intelligence-report/
 ```
-If migration is complete: mark ✅ in `shared/separation-policy.md`. If not: create a sub-handoff or flag for the appropriate agent.
+If migration is complete: mark ✅ in `shared/separation-policy.md`. If not: flag for the appropriate agent.
 
 ---
 
@@ -78,7 +67,7 @@ If migration is complete: mark ✅ in `shared/separation-policy.md`. If not: cre
 `product/projects/data_sources.md` states:
 > "Portal KRs: All Portal-related KRs are currently blocked pending data model confirmation."
 
-This entry has no date. Verify current status with human user or check recent notes for Portal data model updates. If the blocker is resolved, update the data_sources.md entry with a resolved date and new status. If still blocked, add a date stamp so future audits can track age.
+This entry has no date. Verify current status with Ben or check recent notes for Portal data model updates. If the blocker is resolved, update the data_sources.md entry with a resolved date and new status. If still blocked, add a date stamp so future audits can track age.
 
 ---
 
@@ -89,6 +78,6 @@ Write changelog entries (subdirectory `knowledge` first, then root), then mark t
 ---
 
 ## Notes for This Agent
-- Do not fabricate KR SOP content — flag as debt for human user to provide
+- Do not fabricate KR SOP content — flag as debt for Ben to provide
 - Read before every write — no exceptions
 - Task 1 is the highest-value action in this handoff; prioritize it

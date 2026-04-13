@@ -1,25 +1,23 @@
-# Implementation Plan: q2-shareout-intelligence-refresh
+# Implementation Plan: Q2 Shareout — Intelligence Refresh from Updated Deck
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-13)
 > **Assigned to:** Gemma
-> **Vault root:** /Users/benbelanger/GitHub/ben-cp
+> **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
 > **Priority:** P2
 > **v1.0**
 > **STATUS: 🔲 READY — pick up 2026-04-13**
 
 ---
 
-# Q2 Shareout — Intelligence Refresh from Updated Deck
+## Context
 
-**Context:** Ben has uploaded an updated version of the Q2 2026 Product Shareout deck. The slides you worked on previously have been refined and the manager notes are now gone — replaced with actual slide content. Your intelligence files in `intelligence/product/roadmap/shareout/q2/` still reflect the old state (gaps, todos, placeholder notes). This handoff asks you to read the updated source files and refresh the intelligence store to match the current deck.
+Ben has uploaded an updated version of the Q2 2026 Product Shareout deck. The slides worked on previously have been refined and the manager notes are now gone — replaced with actual slide content. The intelligence files in `intelligence/product/roadmap/shareout/q2/` still reflect the old state (gaps, todos, placeholder notes). This handoff asks you to read the updated source files and refresh the intelligence store to match the current deck.
 
-**Do not touch the PPTX.** Ben wants to keep you out of it — source files only.
+**Do not touch the PPTX.** Source files only.
 
 ---
 
 ## Updated Source Files
-
-Both files are now in the vault:
 
 | File | Path |
 |------|------|
@@ -29,8 +27,6 @@ Both files are now in the vault:
 ---
 
 ## What Changed in the New Deck
-
-Reading the updated TXT against the old version, here's what's different per slide:
 
 ### Slide 16 — Notes Authoring UX
 **Old:** Copy/paste of old notes table slide with manager notes embedded.
@@ -52,7 +48,7 @@ Reading the updated TXT against the old version, here's what's different per sli
 **Old:** Manager note about scope decision still open.
 **New:** Scoped down cleanly:
 - New title: "Upgrade compliance and data governance: Locked and signed notes"
-- Capabilities: Sign a note to lock it, "And finally - lock sensitive Service Notes" (note: signing + locking both present, service notes called out as the highlight)
+- Capabilities: Sign a note to lock it, "And finally - lock sensitive Service Notes" (signing + locking both present, service notes called out as the highlight)
 - Manager note removed
 - Grafton County, NH quote still present
 
@@ -75,27 +71,27 @@ Reading the updated TXT against the old version, here's what's different per sli
 - Manager note still present ("Focus this slide on the global WLV we're focused on in Q2") — flag this, may not have been removed
 
 ### Slide 28 — Client Portal
-**Old:** Included future-state scope (self check-ins, etc.), manager note to narrow.
+**Old:** Included future-state scope, manager note to narrow.
 **New:** Mostly tightened but still has some future-state language:
 - New title: "Collaborative data entry: Client Portal"
 - Capabilities: Invite any person to portal from Engage/Intake/Track/People, collaborate on form and upload tasks
-- Key benefits include "Eventually leverage this portal for self check-ins" — this future-state line may still need removal
+- "Eventually leverage this portal for self check-ins" still present — may need removal
 - Sparta, WI Police Department quote updated: "Is there a client portal? Do clients have any interaction with the system?"
 - Manager note still present — flag this
 
 ### Slide 30 — Zapier
 **Old:** Listed general trigger/action counts, manager note to narrow to confirmed Q2 scope.
-**New:** Substantially changed — now shows specific confirmed deliverables with visual breakdown:
+**New:** Substantially changed — now shows specific confirmed deliverables:
 - "CREATE A PERSON: Populate custom fields directly, Add Line items like Address, Phone number and Email address"
 - "CREATE AN INTAKE REPORT: Populate custom fields directly - outside of the Narrative, Link any number of people to an intake report"
 - North Cook ISD quote kept
 - Manager note removed — this looks finalized
 
 ### Slide 34 — External People in Workflows
-**New TXT:** No changes visible — placeholder quote "A customer said this." still present. Still needs a real quote.
+No changes visible — placeholder quote "A customer said this." still present. Still needs a real quote.
 
 ### Full Roadmap (Slides 41-42)
-**New:** The full 2026 CBP Roadmap slide is now visible in the TXT with Q3/Q4 initiatives listed. This is new intelligence — capture it.
+The full 2026 CBP Roadmap slide is now visible in the TXT with Q3/Q4 initiatives listed. This is new intelligence — capture it.
 
 ---
 
@@ -104,10 +100,9 @@ Reading the updated TXT against the old version, here's what's different per sli
 ### 1. Update each intelligence file to reflect current slide state
 
 For each file in `intelligence/product/roadmap/shareout/q2/`:
-
 - Remove "Needs Work" status flags where the slide is now clean
 - Update the "Overview" and capabilities to match new slide copy verbatim
-- Update or remove internal gap notes that have been resolved
+- Remove internal gap notes that have been resolved
 - Mark any remaining issues (slides 27, 28 still have manager notes; slide 34 still needs a quote)
 - Update status: `✅ Complete`, `🟡 In Progress`, or `⚠️ Blocked` as appropriate
 
@@ -117,7 +112,7 @@ For each file in `intelligence/product/roadmap/shareout/q2/`:
 
 ### 3. Capture the full roadmap as new intelligence
 
-The updated TXT now shows the complete 2026 CBP roadmap with Q3 and Q4 initiatives. Check whether `intelligence/product/projects/shareout/` has a roadmap file — if not, create one at:
+The updated TXT now shows the complete 2026 CBP roadmap with Q3 and Q4 initiatives. Check whether `intelligence/product/roadmap/shareout/` has a roadmap file — if not, create one at:
 
 `intelligence/product/roadmap/shareout/q2/roadmap-2026.md`
 

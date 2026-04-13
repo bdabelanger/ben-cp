@@ -1,9 +1,9 @@
-# Any Agent Implementation Plan: Establish Strategic PM Convention
+# Implementation Plan: Establish Strategic PM Convention
 
-> **Prepared by:** Antigravity (Initial Concept, 2026-04-10)
+> **Prepared by:** Antigravity (Gemini) (2026-04-10), updated Claude (Cowork) (2026-04-12)
 > **Assigned to:** Claude
 > **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
-> **Priority:** P2 — Process refinement
+> **Priority:** P2
 > **v1.3**
 > **STATUS: 🔲 READY — pick up 2026-04-10**
 
@@ -11,67 +11,45 @@
 
 ## Context
 
-We are spinning up a new concept called **"Strategic PM"** to handle session-specific implementation planning and dependency tracking. This replaces the previous habit of agents writing "planning" entries into the changelog upfront. The session planning artifact is an ephemeral `notes.md` file that should only exist during active work.
+The **"product"** skill (officially named `product` in all skill references and paths) handles session-specific implementation planning and dependency tracking. It replaces the old habit of agents writing planning entries into the changelog upfront. The session planning artifact is an ephemeral `notes.md` file that lives only during active work, then gets deleted after the changelog entry is written.
 
 > **Naming convention (enforced):**
-> - The skill is named **"product"** — this is the official skill reference name used in all skill calls, paths, and documentation.
-> - "Quartermaster" is a character/report style name only — used in narrative or Digest context, never in skill references, file paths, or AGENTS.md rules.
+> - The skill is named **"product"** — used in all skill calls, paths, and documentation.
+> - "Quartermaster" is a character/report style name only — never used in skill references, file paths, or AGENTS.md rules.
 > - Example: `mcp__ben-cp__get_skill("product")` — not `quartermaster`.
 
 ---
 
-## The Claude Perspective
-> **Injected by:** Claude (Cowork) (2026-04-12)
+## Session Pattern (Plan → Work → Log → Delete)
 
-This convention is clean and worth enforcing strictly. A few observations:
-
-**On the ephemeral lifecycle:**
-The Plan → Work → Log → Delete pattern is sound, but the deletion step is the most failure-prone — sessions can end unexpectedly (timeout, crash, user closes app). I'd recommend the access audit procedure (Roz) also checks for lingering `notes.md` files as a secondary safety net, not just the changelog skill. Two independent checks reduces the risk of orphaned field notes accumulating silently.
-
-**On Strategic PM as future MCP tool:**
-When this graduates to MCP-level, the natural shape is a session-scoped key/value store: `product.set(key, value)` / `product.get(key)` / `product.close()` (which auto-writes the changelog entry and self-destructs). The current file-based convention maps cleanly onto that future interface — worth designing the template with that migration in mind so the fields translate directly.
-
-**On the Digest integration:**
-Once Digest Editor's daily cycle is running, lingering `notes.md` files at Digest compile time could be a useful signal — they indicate a session that started work but didn't complete its cleanup. Digest Editor should surface these as a flag in the Digest rather than silently ignoring them.
-
-**On naming:**
-The session planning artifact is named `notes.md`. The skill is officially named **"product"**. Character/report style names (e.g., "Quartermaster") are never used in skill references.
+1. At session start: create `notes.md` in the target skill directory using the template in `skills/product/report.md`
+2. Work: use `notes.md` as the live scratchpad
+3. At session end: write the changelog entry from `notes.md`
+4. Delete `notes.md` **before** ending the session
 
 ---
 
-## Execution Order
+## Execution Steps
 
-1. **Verify Infrastructure** — Check `skills/product/index.md` and `AGENTS.md` for the new rules.
-2. **Rename artifact** — Update `product/index.md` and `product/report.md` to reference `notes.md` instead of any prior artifact name throughout.
-3. **First Load-Out** — In the next work-active session, create a `notes.md` in the target skill directory using the template.
-4. **Execution & Cleanup** — Follow the new Session Pattern in `AGENTS.md`: Plan → Work → Log → Delete Plan.
-5. **Audit Verification** — Run the changelog skill audit (including Check 8) on a directory with a decoy `notes.md` to ensure it is flagged.
-6. **Cross-register with access audit** — Add lingering `notes.md` detection to the access audit procedure as a secondary safety net.
-7. **Digest hook** — Note in `skills/dream/run.py` that lingering `notes.md` files at compile time should surface as a flag in the Digest output.
-
----
-
-## Task 1: Verify Skill & Rules
-Confirm the following files exist and match the intended convention:
-- `skills/product/index.md`
-- `skills/product/report.md`
-- `AGENTS.md` (Check Step 3 and Step 6 of the Session Pattern)
-
-All references to the skill should use the name **"product"**. Character names are never used in skill references or paths.
+1. **Verify Infrastructure** — Confirm `skills/product/index.md` and `AGENTS.md` contain the new rules. All references must use the name **"product"**.
+2. **Rename artifact references** — Update `product/index.md` and `product/report.md` to reference `notes.md` consistently throughout (not any prior artifact name).
+3. **Audit Check** — Run the changelog skill procedure (including Check 8) on a directory with a decoy `notes.md` to confirm it gets flagged.
+4. **Cross-register with access audit** — Add lingering `notes.md` detection to the access audit procedure (Roz) as a secondary safety net. Two independent checks reduces risk of orphaned notes accumulating silently.
+5. **Digest hook** — Note in `skills/dream/run.py` that lingering `notes.md` files at compile time should surface as a flag in the Digest output. This catches sessions that started work but didn't complete cleanup.
+6. **Changelog + Completion** — Write changelog entries, then mark this file complete.
 
 ---
 
-## Task 2: Audit Check
-Run the changelog skill procedure (now including Check 8) on a directory with a decoy `notes.md` to ensure it is flagged.
+## Design Notes (for future MCP migration)
 
----
+When this graduates to MCP-level, the natural shape is a session-scoped key/value store:
+- `product.set(key, value)` / `product.get(key)` / `product.close()` — which auto-writes the changelog entry and self-destructs
 
-## Task 3: Changelog + Completion
-Write changelog entries (subdirectory first, then root), then mark this file complete and move to `handoff/complete/`.
+The current file-based convention maps cleanly onto that future interface. Design the template fields with that migration in mind so they translate directly.
 
 ---
 
 ## Notes for This Agent
-- The skill name is **"product"** — always use this in skill references, paths, and AGENTS.md. "Quartermaster" is a character/report style name only.
-- Strategic PM is intended to eventually become an MCP-level tool. Design the template fields with that future interface in mind (`product.set` / `product.get` / `product.close`).
-- Always delete the `notes.md` file *after* the changelog is written but *before* ending the session.
+- The skill name is **"product"** — always. Character/report style names are never used in skill references.
+- Always delete `notes.md` *after* the changelog is written but *before* ending the session.
+- If `notes.md` is found lingering anywhere at session start: read it, incorporate any useful context into the changelog, then delete it before beginning new work.

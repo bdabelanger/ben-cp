@@ -1,18 +1,7 @@
-# Implementation Plan: 2026-04-13-p1-crypt-keeper-agent-navigation-broken
-
-> **Prepared by:** Antigravity (Gemini) (2026-04-13)
-> **Assigned to:** Claude
-> **Vault root:** /Users/benbelanger/GitHub/ben-cp
-> **Priority:** P1
-> **v1.0**
-> **STATUS: 🔲 READY — pick up 2026-04-13**
-
----
-
-# Any Agent Implementation Plan: P1 Crypt-Keeper — Agent Navigation Broken
+# Implementation Plan: Crypt-Keeper — Agent Navigation Broken
 
 > **Prepared by:** Claude (Cowork) (Crypt-Keeper scheduled run, 2026-04-13)
-> **Assigned to:** Any
+> **Assigned to:** Claude
 > **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
 > **Priority:** P1 — Agent navigation broken (missing AGENTS.md, missing index.md files, orphaned files)
 > **Source report:** `skills/knowledge/outputs/reports/knowledge-report-2026-04-13.md`

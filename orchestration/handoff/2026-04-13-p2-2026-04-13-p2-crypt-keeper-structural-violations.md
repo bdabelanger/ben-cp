@@ -1,18 +1,7 @@
-# Implementation Plan: 2026-04-13-p2-crypt-keeper-structural-violations
-
-> **Prepared by:** Antigravity (Gemini) (2026-04-13)
-> **Assigned to:** Claude
-> **Vault root:** /Users/benbelanger/GitHub/ben-cp
-> **Priority:** P2
-> **v1.0**
-> **STATUS: 🔲 READY — pick up 2026-04-13**
-
----
-
-# Any Agent Implementation Plan: P2 Crypt-Keeper — Structural Violations
+# Implementation Plan: Crypt-Keeper — Structural Violations
 
 > **Prepared by:** Claude (Cowork) (Crypt-Keeper scheduled run, 2026-04-13)
-> **Assigned to:** Any
+> **Assigned to:** Claude
 > **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
 > **Priority:** P2 — Structural violations (duplicates, misplaced files, lingering notes.md, AGENTS.md compliance gaps)
 > **Source report:** `skills/knowledge/outputs/reports/knowledge-report-2026-04-13.md`
@@ -56,7 +45,7 @@ Two files cover overlapping territory:
 Steps:
 1. Read `product/shared/shared/vault.css` and `styles/vault.css` — confirm they are identical
 2. If identical: delete `product/shared/shared/vault.css` and the empty `product/shared/shared/` directory
-3. If different: flag the diff for human user review before deleting
+3. If different: flag the diff for Ben's review before deleting
 4. Update `product/shared/separation-policy.md` to mark this item ✅
 
 ---
@@ -82,7 +71,7 @@ Note: `shared/separation-policy.md` also lists `skills/product/notes.md` — ver
 
 ## Task 4: AGENTS.md Compliance Spot-Check
 
-This task depends on P1 handoff (AGENTS.md restoration) being complete first. Once AGENTS.md exists:
+This task depends on the P1 handoff (AGENTS.md restoration) being complete first. Once AGENTS.md exists:
 
 Identify the 3 most recently modified files in the vault (excluding knowledge outputs/reports). For each verify:
 - Correct path per AGENTS.md directory boundaries

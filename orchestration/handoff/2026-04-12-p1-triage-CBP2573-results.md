@@ -1,26 +1,29 @@
-# Bug Triage Report: CBP-2573
+# Bug Triage: CBP-2573
 
-> **Prepared by:** Code (Gemini) (2026-04-12)
-> **Assigned to:** Human (The User)
-> **Vault root:** /Users/benbelanger/GitHub/ben-cp
+> **Prepared by:** Antigravity (Gemini) (2026-04-12)
+> **Assigned to:** Ben
+> **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
 > **Priority:** P1
 > **STATUS: 🔲 READY — pick up 2026-04-12**
 
 ---
+
 **Project Context:** CBP-2924 (Notes - Bulk Service Notes)
-**Status:** Sub-task / Bug under CBP-2924
-**Date:** 2026-04-12
+**Bug:** CBP-2573 — intermittent failure when adding multiple services to a single note
 
 ## Findings
-- **Intermittency**: The bug is flagged as intermittent, suggesting a race condition or state synchronization issue during the "bulk" creation phase of service notes.
-- **Scope**: Exclusive to the addition of *multiple* services on a single note. This likely points to the loop logic or the API batch processing in the frontend or backend related to CBP-2924 development.
-- **Project Affiliation**: Strongly tied to CBP-2924. It is not an independent regression but a maturing bug within the active development of the Bulk Service Notes feature.
 
-## Recommended Actions
-1. **Developer Triage**: Assigned developer for CBP-2924 should inspect the `service_interaction` payload generation.
-2. **Reproduction**: Attempt to trigger the bug by adding 5+ services rapidly to a note in the dev/QA environment.
-3. **Tracking**: Maintain as a sub-task of CBP-2924; do not split into a separate initiative as it blocks the primary GA criteria for that project.
+- **Intermittency**: Suggests a race condition or state synchronization issue during the bulk service note creation phase.
+- **Scope**: Exclusive to adding *multiple* services on a single note — points to the loop logic or API batch processing in the frontend/backend for CBP-2924.
+- **Project Affiliation**: Not an independent regression — a maturing bug within active development of Bulk Service Notes. Should stay as a sub-task of CBP-2924.
 
-## Verification
-- Search of vault `jira_issues.json` confirms parentage and status.
-- No direct source code for the service creation logic found in this vault repository (appears to be an external dependency or sibling project).
+## Recommended Actions for Ben
+
+1. **Developer Triage**: The assigned developer for CBP-2924 should inspect the `service_interaction` payload generation logic.
+2. **Reproduction**: Attempt to trigger the bug by adding 5+ services rapidly to a note in dev/QA.
+3. **Tracking**: Keep as a sub-task of CBP-2924 — do not split into a separate initiative, as this blocks the primary GA criteria for that project.
+
+## Verification Notes
+
+- Vault `jira_issues.json` confirms parentage and status.
+- No direct source code for service creation logic found in this vault (external dependency or sibling project).

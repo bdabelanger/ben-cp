@@ -202,13 +202,12 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
       inputSchema: {
         type: "object",
         properties: {
-          domain: { type: "string", description: "Subdirectory under tasks/ (e.g. 'q2-shareout')" },
           name: { type: "string", description: "Filename (no .md suffix)" },
           title: { type: "string" },
           metadata: { type: "object" },
           content: { type: "string" }
         },
-        required: ["domain", "name", "title", "content"]
+        required: ["name", "title", "content"]
       }
     },
     {
@@ -225,8 +224,8 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         required: ["path"]
       }
     },
-    { name: "list_tasks", description: "List files in a task subdomain.", inputSchema: { type: "object", properties: { domain: { type: "string" } }, required: ["domain"] } },
-    { name: "get_task", description: "Read a task file by relative path from the tasks/ directory. Use this STRICTLY for files in the tasks/ domain (e.g. project deliverables). For research or source data, use get_intelligence.", inputSchema: { type: "object", properties: { path: { type: "string" } }, required: ["path"] } },
+    { name: "list_tasks", description: "List all active task files.", inputSchema: { type: "object", properties: {} } },
+    { name: "get_task", description: "Read a task file by filename (e.g. 'notes-authoring-ux.md'). Use this STRICTLY for files in the root tasks/ domain.", inputSchema: { type: "object", properties: { path: { type: "string" } }, required: ["path"] } },
 
     // --- ART & MEDIA ---
     {
@@ -516,11 +515,10 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
     // --- DELIVERABLES & TASKS ---
     if (name === "add_task") {
-      const { domain, name: fileName, title, metadata = {}, content } = args as any;
+      const { name: fileName, title, metadata = {}, content } = args as any;
       const tasksRoot = path.resolve(rootPath, "tasks");
-      const domainPath = path.resolve(tasksRoot, domain);
-      await fs.mkdir(domainPath, { recursive: true });
-      const fullPath = path.join(domainPath, `${fileName}.md`);
+      await fs.mkdir(tasksRoot, { recursive: true });
+      const fullPath = path.join(tasksRoot, `${fileName}.md`);
       try {
         await fs.access(fullPath);
         throw new Error(`Task '${fileName}.md' already exists. Use edit_task to update.`);
@@ -559,10 +557,8 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     }
 
     if (name === "list_tasks") {
-      const { domain } = args as any;
       const tasksRoot = path.resolve(rootPath, "tasks");
-      const domainPath = path.resolve(tasksRoot, domain);
-      const entries = await fs.readdir(domainPath, { withFileTypes: true });
+      const entries = await fs.readdir(tasksRoot, { withFileTypes: true });
       const files = entries
         .filter(e => !e.name.startsWith("."))
         .map(e => ({ name: e.name, type: e.isDirectory() ? "directory" : "file" }));

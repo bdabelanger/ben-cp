@@ -1,8 +1,8 @@
-# Q2 2026 Product Shareout — Slide Refinement
+# Implementation Plan: Q2 2026 Product Shareout — Slide Refinement
 
-> **Prepared by:** Code (Gemini) (2026-04-13)
-> **Assigned to:** Claude
-> **Vault root:** /Users/benbelanger/GitHub/ben-cp
+> **Prepared by:** Antigravity (Gemini) (2026-04-13)
+> **Assigned to:** Gemma
+> **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
 > **Priority:** P1
 > **STATUS: 🔲 READY — pick up 2026-04-13**
 
@@ -21,7 +21,7 @@ Run `python3 tools/product/projects/report.py` to refresh live project status be
 
 ---
 
-## Tools Available in Cowork
+## Tools Available
 
 ### PPTX Skill
 - Extract text: `python -m markitdown "orchestration/pipelines/outputs/dream/Q2 2026 Product Shareout.pptx"`
@@ -56,7 +56,7 @@ These are Ben's verbatim manager notes captured from the deck. Treat these as th
 > "@margaux.troiano@casebook.net (and @ben.belanger@casebook.net if you have anything you'd like to highlight here)"
 
 **Current content:** Talks about Dynamic WLV headers, drill-back from reports, VPAT/accessibility gaps. Has a quote from Los Alamos JJAB.
-**Action:** Ping Ben and Margaux — this slide needs their input. Flag it as blocked pending their response. Don't edit the slide content without their direction.
+**Action:** This slide is blocked — flag it and don't edit content without direction from Ben and Margaux.
 
 ---
 
@@ -166,11 +166,11 @@ Remove "eventually tasks", self check-ins, and any other future-state language. 
 
 ## Recommended Order of Operations
 
-1. **Read the TXT** — `orchestration/pipelines/outputs/dream/Q2 2026 Product Shareout.txt` — already done above, use this as your slide reference
+1. **Read the TXT** — `orchestration/pipelines/outputs/dream/Q2 2026 Product Shareout.txt` — use this as your slide reference
 2. **Refresh live status** — `python3 tools/product/projects/report.py` → read `reports/product-projects.md`
 3. **Check Jira for CBP-498 (slide 26), CBP-2923 (slide 24), Zapier epic (slide 30)** — verify scope before writing
 4. **Search Confluence for quotes** — slides 19 and 34
-5. **Draft all 9 slides** — show Ben before/after for each
+5. **Draft all 9 slides** — show before/after for each
 6. **Confirm with Ben:** slide 13 input from Margaux, slide 17 screenshots, scope calls on 24/28/30
 7. **Edit the PPTX** — one slide at a time via pptx skill
 8. **Visual QA** — convert to images, inspect, fix, re-verify each edited slide

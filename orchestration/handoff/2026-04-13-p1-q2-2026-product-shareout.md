@@ -1,15 +1,13 @@
-# Implementation Plan: q2-2026-product-shareout
+# Implementation Plan: Q2 2026 Product Shareout — Full Slide Intelligence
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-13)
 > **Assigned to:** Gemma
-> **Vault root:** /Users/benbelanger/GitHub/ben-cp
+> **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
 > **Priority:** P1
 > **v1.0**
 > **STATUS: 🔲 READY — pick up 2026-04-13**
 
 ---
-
-# Q2 2026 Product Shareout — Full Slide Intelligence
 
 **Source:** Q2 2026 Product Shareout.pdf (43 slides), ingested 2026-04-12
 **Status:** Ben is actively working on this deck. Several slides have internal commentary/red annotations indicating slides still need work — flagged below.

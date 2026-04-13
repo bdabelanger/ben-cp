@@ -23,7 +23,7 @@ For each flag in Check 9, cross-reference against changelog entries and git log.
 - explicitly flag overly broad tool permission grants (e.g. `Bash(*)`) or orphaned project entries referencing deleted repos.
 
 ### Step 2 — Separation Policy Scan (ALWAYS RUN)
-1. Read `skills/shared/separation-policy.md` § Known Migration Debt.
+1. Read `skills/orchestration/separation-policy.md` § Known Migration Debt.
 2. Walk `skills/` and flag any violation of the four-layer architecture (scripts, data, or logs in skill subdirectories) that is not already tracked in the debt list.
 3. Scan for stale `notes.md` files in `skills/` subdirectories.
 

@@ -1,14 +1,17 @@
 # Product Intelligence
 
-> Vault source of truth for Platform Product domains.
+> Vault source of truth for the Product Roadmap domain.
+
+## Primary Domain
+- [**Roadmap**](roadmap/index.md) — Unified hub for Strategic (Shareout), Tactical (Projects), and Governance (OKRs) layers.
 
 ## Structure & Discovery Protocol
-This domain is organized into three complementary layers. Agents should traverse them in the following order when performing synthesis:
+Agents should traverse the roadmap hierarchy to understand the relationship between vision and execution:
+1.  **[Shareout](roadmap/shareout/q2/index.md)**: The "Why" and "What" (Strategic narrative).
+2.  **[Projects](roadmap/projects/q2/index.md)**: The "Who" and "When" (Tactical execution).
+3.  **[OKRs](roadmap/okrs/q2/index.md)**: The "Impact" (Governance and measurement).
 
-1.  **[Tasks](../../tasks/q2-shareout/index.md)** (Execution Layer): Start here for active Q2 shareout deliverables.
-2.  **[Projects](projects/index.md)** (Tactical Layer): Use this to find technical status, GIDs, and engineering leads for individual initiatives.
-3.  **[OKRs](okrs/index.md)** (Measurement Layer): Use this to understand the high-level goals and how projects map to specific KRs.
-
-## Quick Links
-- **Current Cycle:** [Q2 2026 Shareout](../../tasks/q2-shareout/index.md)
-- **Active Projects:** [Projects/Q2](projects/q2/index.md)
+## Navigation
+- **Current Cycle:** [Q2 2026 Roadmap Shareout](roadmap/shareout/q2/index.md)
+- **Active Initiatives:** [Q2 Projects](roadmap/projects/q2/index.md)
+- **Performance:** [Q2 OKR Dashboard](roadmap/okrs/q2/index.md)

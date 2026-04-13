@@ -18,13 +18,18 @@ Task Capture classifies work items by type and destination, applies the correct 
 | :--- | :--- |
 | `index.md` | This file — purpose, scope, usage |
 | `procedure.md` | Full routing logic, classification rules, metadata, confirmation steps |
-| `references/asana-custom-fields.md` | All Asana field and value GIDs |
-| `references/user-story-template.md` | Jira User Story template |
-| `references/task-template.md` | Jira Task template |
-| `references/bug-template.md` | Jira Bug template |
-| `references/cx-bug-template.md` | Jira CX Bug template |
-| `references/research-template.md` | Jira Research/Spike template |
 | `changelog.md` | Change history |
+
+---
+
+## Intelligence & Mapping
+
+Reference data for this skill has been consolidated into the `intelligence/` domain:
+
+| Item | Location |
+| :--- | :--- |
+| Data Sources Map | `intelligence/product/projects/data_sources.md` |
+| Asana/Jira Templates | `intelligence/product/projects/source/` (Pending Restoration) |
 
 ---
 

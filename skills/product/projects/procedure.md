@@ -32,7 +32,7 @@ Work items fall into two destinations, sometimes both:
 
 ### Asana Custom Field GIDs
 
-See `references/asana-custom-fields.md` for full GID table. Key fields:
+See `intelligence/product/projects/data_sources.md` for full GID table mapping. Key fields:
 
 | Field | GID |
 | :--- | :--- |

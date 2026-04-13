@@ -24,9 +24,11 @@ const handoffPath = path.resolve(rootPath, "orchestration/handoff");
 
 // Notes domain map — agents use the shorthand key, tool resolves the path
 const NOTES_DOMAIN_MAP: Record<string, string> = {
-  "primary":                      "skills/orchestration/communication/notes.md",
-  "communication":                "skills/orchestration/communication/notes.md",
-  "orchestration/communication":  "skills/orchestration/communication/notes.md",
+  "primary":                      "skills/orchestration/notes/notes.md",
+  "communication":                "skills/orchestration/notes/notes.md",
+  "orchestration/communication":  "skills/orchestration/notes/notes.md",
+  "notes":                        "skills/orchestration/notes/notes.md",
+  "orchestration/notes":          "skills/orchestration/notes/notes.md",
   "handoff":                      "skills/orchestration/handoff/notes.md",
   "orchestration/handoff":        "skills/orchestration/handoff/notes.md",
   "changelog":                    "skills/orchestration/changelog/notes.md",
@@ -35,12 +37,12 @@ const NOTES_DOMAIN_MAP: Record<string, string> = {
   "orchestration/access":         "skills/orchestration/access/notes.md",
   "memory":                       "skills/intelligence/memory/notes.md",
   "intelligence/memory":          "skills/intelligence/memory/notes.md",
-  "synthesize":                   "skills/intelligence/analysis/synthesize/notes.md",
-  "intelligence/analysis/synthesize": "skills/intelligence/analysis/synthesize/notes.md",
-  "predict":                      "skills/intelligence/analysis/predict/notes.md",
-  "intelligence/analysis/predict": "skills/intelligence/analysis/predict/notes.md",
-  "product":                      "skills/intelligence/product/notes.md",
-  "intelligence/product":         "skills/intelligence/product/notes.md",
+  "synthesize":                   "skills/intelligence/analyze/synthesize/notes.md",
+  "intelligence/analyze/synthesize": "skills/intelligence/analyze/synthesize/notes.md",
+  "predict":                      "skills/intelligence/analyze/predict/notes.md",
+  "intelligence/analyze/predict": "skills/intelligence/analyze/predict/notes.md",
+  "product":                      "skills/product/notes.md",
+  "intelligence/product":         "skills/product/notes.md",
 };
 
 function resolveNotesPath(domain: string | undefined): string {
@@ -108,11 +110,11 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     // --- AGENT ROLES & GOVERNANCE ---
     {
       name: "get_agent_info",
-      description: "Retrieve central governance (AGENTS.md) and specific agent role documentation. Use this at the start of every session to establish your persona and rules. Defaults to returning AGENTS.md + the specified agent documentation.",
+      description: "Retrieve central governance (AGENTS.md) and all agent role documentation. Use this at the start of every session to establish your persona and rules. Returns AGENTS.md and ALL role files in one fetch.",
       inputSchema: {
         type: "object",
         properties: {
-          agent_id: { type: "string", description: "The ID of the agent to fetch role docs for (e.g. 'gemma', 'code', 'human'). If omitted, only AGENTS.md is returned." }
+          agent_id: { type: "string", description: "The ID of the agent to highlight at the end of the response (e.g. 'gemma', 'code')." }
         }
       }
     },
@@ -224,7 +226,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
       }
     },
     { name: "list_tasks", description: "List files in a task subdomain.", inputSchema: { type: "object", properties: { domain: { type: "string" } }, required: ["domain"] } },
-    { name: "get_task", description: "Read a task file by relative path.", inputSchema: { type: "object", properties: { path: { type: "string" } }, required: ["path"] } },
+    { name: "get_task", description: "Read a task file by relative path from the tasks/ directory. Use this STRICTLY for files in the tasks/ domain (e.g. project deliverables). For research or source data, use get_intelligence.", inputSchema: { type: "object", properties: { path: { type: "string" } }, required: ["path"] } },
 
     // --- ART & MEDIA ---
     {
@@ -277,7 +279,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     { name: "list_intelligence", description: "List intelligence files in a domain or subdomain. Pass a domain like 'product/projects/shareout/q2' to drill into subdirectories. Returns all files including non-.md source files in source/ subdirectories.", inputSchema: { type: "object", properties: { domain: { type: "string" }, include_directories: { type: "boolean" } }, required: ["domain"] } },
     { 
       name: "get_intelligence", 
-      description: "Read an intelligence file by path relative to the intelligence/ directory. Works for .md, .txt, .pdf, and any other file type. Example: 'product/projects/shareout/q2/source/Q2 2026 Product Shareout.txt'. The 'intelligence/' prefix is optional — strip it or leave it.", 
+      description: "Read an intelligence file by path relative to the intelligence/ directory. Use this for both .md records AND source data documents (txt, pdf, etc.) in source/ folders. Example: 'product/projects/source/data.txt'. The 'intelligence/' prefix is optional and will be handled automatically.", 
       inputSchema: { 
         type: "object", 
         properties: { 
@@ -340,16 +342,41 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     if (name === "get_agent_info") {
       const { agent_id } = args as any;
       const agentsMd = await fs.readFile(path.resolve(rootPath, "AGENTS.md"), "utf-8");
-      let agentDoc = "";
+      
+      // Load all role documentation from agents/*.md for a single-fetch baseline
+      const agentsDir = path.resolve(rootPath, "agents");
+      const files = await fs.readdir(agentsDir);
+      const roleDocs: string[] = [];
+      
+      for (const file of files) {
+        if (file.endsWith(".md") && !file.startsWith(".") && file !== "index.md") {
+          const content = await fs.readFile(path.join(agentsDir, file), "utf-8");
+          const roleName = path.basename(file, ".md");
+          roleDocs.push(`## Role: ${roleName}\n\n${content}`);
+        }
+      }
+      
+      const allRolesDoc = roleDocs.join("\n\n---\n\n");
+      let requestingAgentDoc = "";
+      
       if (agent_id) {
         try {
           const agentPath = path.resolve(rootPath, "agents", `${agent_id.toLowerCase()}.md`);
-          agentDoc = await fs.readFile(agentPath, "utf-8");
+          requestingAgentDoc = await fs.readFile(agentPath, "utf-8");
         } catch {
-          agentDoc = `\n\n> **Note:** No specific documentation found for agent '${agent_id}'.`;
+          requestingAgentDoc = `\n\n> **Note:** No specific documentation found for agent '${agent_id}'.`;
         }
       }
-      return { content: [{ type: "text", text: `# Vault Governance & Role Data\n\n${agentsMd}\n\n---\n\n# Agent Role: ${agent_id || "Unspecified"}\n\n${agentDoc}` }] };
+      
+      let finalContent = `# Vault Governance & Role Data\n\n${agentsMd}\n\n---\n\n# All Agent Roles\n\n${allRolesDoc}`;
+      
+      if (agent_id) {
+        finalContent += `\n\n---\n\n# Requesting Agent Role: ${agent_id}\n\n${requestingAgentDoc}`;
+      } else {
+        finalContent += `\n\n---\n\n# Requesting Agent Role: Unspecified\n\n> **Note:** Call with 'agent_id' to highlight your specific role at the end of this document.`;
+      }
+      
+      return { content: [{ type: "text", text: finalContent }] };
     }
 
     // --- SKILLS & CAPABILITIES ---
@@ -547,6 +574,12 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const tasksRoot = path.resolve(rootPath, "tasks");
       const normalized = String(relPath).startsWith("tasks/") ? String(relPath).slice(6) : relPath;
       const fullPath = path.resolve(tasksRoot, normalized);
+      
+      // Safety check: ensure the resolved path is still inside the tasksRoot
+      if (!fullPath.startsWith(tasksRoot)) {
+        throw new Error("Access denied: path must be within the tasks/ directory.");
+      }
+      
       const content = await fs.readFile(fullPath, "utf-8");
       return { content: [{ type: "text", text: content }] };
     }

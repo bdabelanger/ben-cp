@@ -11,7 +11,7 @@
 
 # Q2 Shareout — Intelligence Refresh from Updated Deck
 
-**Context:** Ben has uploaded an updated version of the Q2 2026 Product Shareout deck. The slides you worked on previously have been refined and the manager notes are now gone — replaced with actual slide content. Your intelligence files in `intelligence/product/projects/shareout/q2/` still reflect the old state (gaps, todos, placeholder notes). This handoff asks you to read the updated source files and refresh the intelligence store to match the current deck.
+**Context:** Ben has uploaded an updated version of the Q2 2026 Product Shareout deck. The slides you worked on previously have been refined and the manager notes are now gone — replaced with actual slide content. Your intelligence files in `intelligence/product/roadmap/shareout/q2/` still reflect the old state (gaps, todos, placeholder notes). This handoff asks you to read the updated source files and refresh the intelligence store to match the current deck.
 
 **Do not touch the PPTX.** Ben wants to keep you out of it — source files only.
 
@@ -23,8 +23,8 @@ Both files are now in the vault:
 
 | File | Path |
 |------|------|
-| **TXT (read this)** | `intelligence/product/projects/shareout/q2/source/Q2 2026 Product Shareout.txt` |
-| **PDF (reference)** | `intelligence/product/projects/shareout/q2/source/Q2 2026 Product Shareout.pdf` |
+| **TXT (read this)** | `intelligence/product/roadmap/shareout/q2/source/Q2 2026 Product Shareout.txt` |
+| **PDF (reference)** | `intelligence/product/roadmap/shareout/q2/source/Q2 2026 Product Shareout.pdf` |
 
 ---
 
@@ -103,7 +103,7 @@ Reading the updated TXT against the old version, here's what's different per sli
 
 ### 1. Update each intelligence file to reflect current slide state
 
-For each file in `intelligence/product/projects/shareout/q2/`:
+For each file in `intelligence/product/roadmap/shareout/q2/`:
 
 - Remove "Needs Work" status flags where the slide is now clean
 - Update the "Overview" and capabilities to match new slide copy verbatim
@@ -119,13 +119,13 @@ For each file in `intelligence/product/projects/shareout/q2/`:
 
 The updated TXT now shows the complete 2026 CBP roadmap with Q3 and Q4 initiatives. Check whether `intelligence/product/projects/shareout/` has a roadmap file — if not, create one at:
 
-`intelligence/product/projects/shareout/q2/roadmap-2026.md`
+`intelligence/product/roadmap/shareout/q2/roadmap-2026.md`
 
 Capture: Q1 delivered, Q2 initiatives, Q3 planned, Q4 planned, and "Likely moving out of 2026" items.
 
 ### 4. Update the index
 
-`intelligence/product/projects/shareout/q2/index.md` has broken file:// links (wrong paths). Fix to relative paths and add any new files created.
+`intelligence/product/roadmap/shareout/q2/index.md` has broken file:// links (wrong paths). Fix to relative paths and add any new files created.
 
 ---
 

@@ -9,11 +9,10 @@
 
 | Directory | Purpose |
 | :--- | :--- |
-| `orchestration/` | The execution engine: manages Communication (Notes), Handoff, Tracking (Changelog), and Governance (Access) |
+| `orchestration/` | The execution engine: manages Communication (Notes), Handoff, Tracking (Changelog), and Governance (Access/Separation Policy) |
 | `intelligence/` | The cognitive core: Memory (Truth), Analysis (Synthesize/Predict), Report (Digest), Dream (Nightly orchestration) |
 | `product/` | PM-facing skills: weekly status reports, OKR reporting, task capture, DoD helper, Strategic PM mindset |
 | `rovo/` | Rovo issue management SOP |
-| `shared/` | Cross-cutting vault governance docs (separation policy, etc.) |
 | `styles/` | Visual syntax authority — emoji glossary, vault nomenclature, and global CSS |
 
 ---

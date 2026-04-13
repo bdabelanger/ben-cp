@@ -3,7 +3,7 @@
 > Masters mapping of tactical project files across all cycles.
 
 ## Usage Protocol
-- **Discovery:** Use `mcp_ben-cp_list_intelligence(domain='product/projects/q2')` to find active initiatives.
+- **Discovery:** Use `mcp_ben-cp_list_intelligence(domain='product/roadmap/projects/q2')` to find active initiatives.
 - **Parsing:** Use `mcp_ben-cp_parse_intelligence(path='...')` to extract GIDs and Permalinks.
 
 ## Active Projects (Q2)
@@ -15,5 +15,6 @@
 - [Zapier Improvements](q2/integrations-zapier-improvements-(1213496879668016).md)
 
 ## Navigation
+- [**Roadmap Root**](../index.md) — Strategic shareouts and vision.
 - [**Backlog**](backlog/index.md) — Projects deferred to future quarters.
 - [**Archive**](archive/index.md) — Historical project records.

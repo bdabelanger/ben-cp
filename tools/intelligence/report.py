@@ -36,7 +36,7 @@ def load_vault_css():
     if os.path.exists(VAULT_CSS):
         with open(VAULT_CSS, "r") as f:
             return f.read()
-    print("[WARN] skills/shared/vault.css not found — falling back to minimal inline styles.")
+    print("[WARN] skills/styles/vault.css not found — falling back to minimal inline styles.")
     return "body { font-family: Georgia, serif; max-width: 820px; margin: 2rem auto; padding: 0 1rem; }"
 
 
@@ -365,8 +365,9 @@ def archive_if_exists(path):
         archive_dir = os.path.join(OUTPUTS_DIR, "archive")
         os.makedirs(archive_dir, exist_ok=True)
         name, ext = os.path.splitext(os.path.basename(path))
+        date_str = datetime.utcnow().strftime("%Y-%m-%d")
         ts = datetime.utcnow().strftime("%H%M%S")
-        dest = os.path.join(archive_dir, f"{name}-{ts}{ext}")
+        dest = os.path.join(archive_dir, f"{name}-{date_str}-{ts}{ext}")
         os.rename(path, dest)
         print(f"  [ARCHIVE] Previous report moved → {dest}")
 
@@ -440,8 +441,8 @@ def main():
 
     os.makedirs(OUTPUTS_DIR, exist_ok=True)
     prefix   = char["output_prefix"]
-    md_path  = os.path.join(OUTPUTS_DIR, f"{prefix}-{date_str}.md")
-    html_path = os.path.join(OUTPUTS_DIR, f"{prefix}-{date_str}.html")
+    md_path  = os.path.join(OUTPUTS_DIR, f"{prefix}.md")
+    html_path = os.path.join(OUTPUTS_DIR, f"{prefix}.html")
 
     # [HOUSEKEEPING] Archive any legacy reports from previous dates to keep root clean
     print(f"[INFO] Cleaning root output directory...")

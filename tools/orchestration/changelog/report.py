@@ -87,19 +87,28 @@ def main():
         # HTML version
         html_path = os.path.join(DETAILED_REPORT_DIR, "orchestration-changelog.html")
         with open(html_path, "w") as hf:
-            hf.write(f'''<!DOCTYPE html>
+            hf.write(f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <style>{css}</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Changelog Auditor — {datetime.now().strftime('%Y-%m-%d')}</title>
+  <style>
+{css}
+  </style>
 </head>
 <body class="gazette-body">
 <div class="container">
-<h1>Detailed Changelog Status — {datetime.now().strftime('%Y-%m-%d')}</h1>
-<div class="lede">
-    <p><strong>Total Modifications:</strong> {uncommitted} files waiting to be documented.</p>
-</div>
-''')
+  <h1>Changelog Auditor — {datetime.now().strftime('%Y-%m-%d')}</h1>
+  <div class="gazette-meta">Agent: Yukon Cornelius &nbsp;|&nbsp; Version: v{current_version} &nbsp;|&nbsp; Published: {datetime.utcnow().isoformat() + "Z"}</div>
+  
+  <div class="lede">
+    <p><strong>Registry Status:</strong> {summary}</p>
+    <p class="stat-row">Drafted unreleased updates: {unreleased_count}</p>
+  </div>
+
+  <h2>Undocumented Files ({uncommitted})</h2>
+""")
             # Group by directories for the UI
             grouped_files = defaultdict(list)
             for line in git_changes:
@@ -111,15 +120,27 @@ def main():
                 
             for group_name in sorted(grouped_files.keys()):
                 files = grouped_files[group_name]
-                hf.write(f'<div class="column" style="border-left-color:#f59e0b; margin-bottom: 2rem;">\n')
-                hf.write(f'  <h3>📁 {group_name} ({len(files)})</h3>\n')
-                hf.write(f'  <pre style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 4px; overflow-x: auto;">\n')
+                hf.write(f'  <div class="column" style="border-left-color:var(--warn);">\n')
+                hf.write(f'    <h3>📁 {group_name} ({len(files)})</h3>\n')
+                hf.write(f'    <ul class="issue-list">\n')
                 for f in files:
-                    hf.write(f"{f}\n")
-                hf.write(f'  </pre>\n')
-                hf.write(f'</div>\n')
+                    # git status --short output is typically "XY filename"
+                    # We need to split carefully to keep the full filename
+                    parts = f.split(maxsplit=1)
+                    if len(parts) < 2: continue
+                    
+                    mode = parts[0]
+                    filename = parts[1]
+                    
+                    # Simple color coding for git status
+                    class_name = "badge-p1" if "D" in mode else ("badge-p3" if "A" in mode or "??" in mode else "badge-p2")
+                    label = "DELETED" if "D" in mode else ("NEW" if "A" in mode or "??" in mode else "MODIFIED")
+                    
+                    hf.write(f'      <li><span class="badge {class_name}">{label}</span> <code>{filename}</code></li>\n')
+                hf.write(f'    </ul>\n')
+                hf.write(f'  </div>\n')
 
-            hf.write('<footer class="vault-footer">End of Detailed Report</footer>\n')
+            hf.write('  <footer class="vault-footer">End of Project Continuity Audit</footer>\n')
             hf.write("</div>\n</body></html>")
 
         findings.append("Full Report: [View Details](reports/orchestration-changelog.md)")

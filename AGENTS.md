@@ -134,7 +134,7 @@ The user-cp is not currently connected on mobile. Dispatch cannot read vault fil
 
 ## Directory Boundaries
 
-> See `skills/shared/separation-policy.md` for the full policy.
+> See `skills/orchestration/separation-policy.md` for the full policy.
 
 The vault is organized into five distinct layers. Writing data files, scripts, or run artifacts into `skills/` is a violation.
 
@@ -143,7 +143,7 @@ The vault is organized into five distinct layers. Writing data files, scripts, o
 | Skill logic | `skills/` | `SKILL.md`, `character.md`, `index.md`, `changelog.md`, templates, report specs |
 | Execution tooling | `tools/` | Scripts, pipeline runners, automation harnesses |
 | Live data / WIP | `inputs/` | Raw API responses, processed JSON, `manifest.json` |
-| Outputs | `outputs/` | Final reports, HTML, archives |
+| Outputs | `orchestration/pipelines/outputs/` | Final reports, HTML, archives |
 | Vault source of truth | `intelligence/` | Logic stubs, status rules, domain knowledge — gitignored optional |
 | Reference source files | `intelligence/<domain>/<topic>/source/` | Raw input files (PDFs, TXTs, exports) tied to active work |
 
@@ -194,15 +194,16 @@ ben-cp/
 │   └── gemma.md
 ├── changelog.md                     ← root project changelog (versioned milestones)
 ├── orchestration/                   ← execution domain (active work & state)
-│   └── handoff/                     ← open cross-agent implementation plans (READY)
-│       └── complete/                ← executed handoffs (COMPLETE) — never edit
+│   ├── handoff/                     ← open cross-agent implementation plans (READY)
+│   │   └── complete/                ← executed handoffs (COMPLETE) — never edit
+│   └── pipelines/                   ← consolidated pipeline domain
+│       ├── inputs/                  ← live run data (raw API responses, manifests)
+│       └── outputs/                 ← generated reports, audit logs, session artifacts
 ├── intelligence/                    ← vault source of truth (gitignored optional)
-│   ├── mapping/             ← logic stubs, status rules, and data transformation
-│   ├── casebook/            ← Casebook domain knowledge and schema reference
+│   ├── mapping/                     ← logic stubs, status rules, and data transformation
+│   ├── casebook/                    ← Casebook domain knowledge and schema reference
 │   └── product/projects/shareout/q2/source/  ← example: reference files for active work
 ├── tools/                           ← execution scripts and pipeline runners
-├── inputs/                          ← live run data (raw API responses, manifests)
-├── outputs/                         ← generated reports, audit logs, session artifacts
 └── skills/                          ← all skill SOPs and procedures
     ├── orchestration/       ← execution engine (Coordination, Tracking, and Governance)
     │   ├── notes/           ← human-in-the-loop intelligence (notes + cross-agent notes)
@@ -278,7 +279,7 @@ If a required tool call fails (e.g., `add_changelog`, `edit_file`, or path-based
 | KR-specific measurement SOP | `skills/product/okr-reporting/[quarter]/[initiative]/[name].md` |
 | Master OKR runbook (evergreen) | `skills/product/okr-reporting/procedure.md` |
 | Quarterly KR reference | `skills/product/okr-reporting/[quarter]/index.md` |
-| Shared data source inventory | `skills/product/shared/data_sources.md` |
+| Shared data source inventory | `intelligence/product/projects/data_sources.md` |
 | Reference source files (PDFs, TXTs) | `intelligence/<domain>/<topic>/source/` |
 | status/transform logic | `intelligence/mapping/` |
 | visual/emoji standards | `skills/styles/` |
@@ -287,8 +288,8 @@ If a required tool call fails (e.g., `add_changelog`, `edit_file`, or path-based
 | nightly orchestration | `skills/intelligence/dream/` |
 | changelog procedure | `skills/orchestration/changelog/` |
 | other skill sops | `skills/[skill-name]/` |
-| audit reports | `outputs/memory/audit/audit-report-[TARGET]-[YYYY-MM-DD].md` |
-| Access audit reports | `outputs/access/access-report-[YYYY-MM-DD].md` |
+| audit reports | `orchestration/pipelines/outputs/memory/audit/audit-report-[TARGET]-[YYYY-MM-DD].md` |
+| Access audit reports | `orchestration/pipelines/outputs/access/access-report-[YYYY-MM-DD].md` |
 
 **Never create files at vault root** (except `AGENTS.md`, `changelog.md`, `README.md`).
 

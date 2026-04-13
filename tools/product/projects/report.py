@@ -6,19 +6,22 @@ import glob
 import subprocess
 from datetime import datetime
 
-REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
+# Standard Vault Paths
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
 SKILLS_DIR = os.path.join(REPO_ROOT, "skills")
 INTEL_DIR = os.path.join(REPO_ROOT, "intelligence/product/projects")
-PIPELINE_ROOT = os.path.dirname(os.path.abspath(__file__))
-DATA_FILE = os.path.join(PIPELINE_ROOT, "inputs", "status-reports", "processed", "asana_active.json")
-JIRA_FILE = os.path.join(PIPELINE_ROOT, "inputs", "status-reports", "raw", "jira_issues.json")
-JIRA_RAW_DIR = os.path.join(PIPELINE_ROOT, "inputs", "status-reports", "raw", "jira")
-DETAILED_REPORT_DIR = os.path.join(REPO_ROOT, "outputs", "dream", "reports")
+
+# Data & Pipeline Paths (remain in orchestration domain)
+PIPELINE_DATA_ROOT = os.path.join(REPO_ROOT, "orchestration", "pipelines", "product", "projects")
+DATA_FILE = os.path.join(PIPELINE_DATA_ROOT, "inputs", "status-reports", "processed", "asana_active.json")
+JIRA_FILE = os.path.join(PIPELINE_DATA_ROOT, "inputs", "status-reports", "raw", "jira_issues.json")
+JIRA_RAW_DIR = os.path.join(PIPELINE_DATA_ROOT, "inputs", "status-reports", "raw", "jira")
+SCRIPTS_DIR = os.path.join(PIPELINE_DATA_ROOT, "pipeline")
+
+# Output Paths (centralized outputs domain)
+DETAILED_REPORT_DIR = os.path.join(REPO_ROOT, "orchestration", "pipelines", "outputs", "dream", "reports")
 DETAILED_REPORT_URL = "reports/product-projects.md"
 VAULT_CSS = os.path.join(SKILLS_DIR, "styles", "vault.css")
-
-# Legacy analytics engine lives in pipeline/ sibling directory
-SCRIPTS_DIR = os.path.join(PIPELINE_ROOT, "pipeline")
 
 ACTIVE_STAGES = {"Development", "In QA", "In UAT", "Beta", "GA"}
 
@@ -97,36 +100,52 @@ def _generate_simple_detailed_report(active_list, total_intel, live_active):
                 status_text = p.get('current_status_update', {}).get('text', 'No status update.')
                 rf.write(f"{status_text}\n\n")
 
-    # Themed HTML Version (simple)
+    # Themed HTML Version (Gazette Premium)
     css = load_css()
-    with open(os.path.join(DETAILED_REPORT_DIR, "product-projects.html"), "w") as hf:
+    with open(os.path.join(DETAILED_REPORT_DIR, "product-projects.html"), "utf-8") as hf:
         hf.write(f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <style>{css}</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Status — {datetime.now().strftime('%Y-%m-%d')}</title>
+  <style>
+{css}
+  </style>
 </head>
 <body class="gazette-body">
 <div class="container">
-<h1>Detailed Project Status — {datetime.now().strftime('%Y-%m-%d')}</h1>
-<div class="lede">
+  <h1>Project Status — {datetime.now().strftime('%Y-%m-%d')}</h1>
+  <div class="gazette-meta">Agent: Strategic PM &nbsp;|&nbsp; Coverage: {total_intel} records &nbsp;|&nbsp; Published: {datetime.utcnow().isoformat() + "Z"}</div>
+
+  <div class="lede">
     <p><strong>Intelligence Coverage:</strong> {total_intel} / <strong>Live Harvest:</strong> {live_active}</p>
-    <p class="stat-row">Jira data not yet available — run <code>full_run.py --force</code> for full analytics.</p>
-</div>
+    <p class="stat-row">Sync Status: {report_source}</p>
+  </div>
+
+  <h2>Active Initiative Scorecard</h2>
 """)
         if active_list:
+            # Sort: Off Track > At Risk > On Track
             sorted_list = sorted(active_list, key=lambda x: (x.get("status") or "on_track") != "on_track", reverse=True)
             for p in sorted_list:
                 p_status = (p.get("status") or p.get("last_status_type") or "").lower()
-                emoji = "🔴" if "off" in p_status else ("🟡" if "risk" in p_status else "🟢")
+                
+                # Map status to aesthetics
                 sev = "error" if "off" in p_status else ("warn" if "risk" in p_status else "ok")
+                color = "var(--danger)" if sev == "error" else ("var(--warn)" if sev == "warn" else "var(--done)")
+                badge_class = "badge-p1" if sev == "error" else ("badge-p2" if sev == "warn" else "badge-p3")
+                label = p_status.upper().replace("_", " ")
+                
                 status_text = p.get('current_status_update', {}).get('text', 'No status update.').replace("\n", "<br>")
-                color = "#ef4444" if sev == "error" else ("#f59e0b" if sev == "warn" else "#22c55e")
-                hf.write(f'  <div class="column" style="border-left-color:{color}; margin-bottom: 2rem;">\n')
-                hf.write(f'    <h3>{emoji} {p.get("name")} ({p.get("stage")})</h3>\n')
+                
+                hf.write(f'  <div class="column" style="border-left-color:{color};">\n')
+                hf.write(f'    <h3>{p.get("name")} <span class="badge {badge_class}" style="float:right;">{label}</span></h3>\n')
+                hf.write(f'    <div class="gazette-meta" style="margin-bottom: 0.5rem;">Stage: {p.get("stage")}</div>\n')
                 hf.write(f'    <p>{status_text}</p>\n')
                 hf.write(f'  </div>\n')
-        hf.write('  <footer class="vault-footer">End of Detailed Report</footer>\n')
+        
+        hf.write('  <footer class="vault-footer">End of Strategic Status Report</footer>\n')
         hf.write("</div>\n</body></html>")
 
 

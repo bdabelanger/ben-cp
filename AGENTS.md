@@ -101,15 +101,18 @@ This vault exposes purpose-built MCP tools. Use them instead of raw file reads/w
 
 | Tool | Purpose |
 | :--- | :--- |
-| `get_changelog` | Read changelog entries — pass a scope (`root`, `skills/product/okr-reporting`, etc.) to pull relevant recent work |
-| `write_changelog_entry` | Append a new entry — always write deepest level first, then root |
+| `get_changelog` | Read changelog entries — pass a scope (`root`, `skills/product/okr-reporting`, etc.) to pull recent context |
+| `add_changelog` | Append a new entry — always write deepest level first, then root |
+| `generate_report` | Generate a strategic or platform report (e.g. `platform`, `dream`) |
+| `list_skills` | List all available files and domains in the `skills/` directory |
+| `edit_handoff` | Update a handoff or mark it as complete (archives to complete/ folder) |
 
 **Session pattern:**
 1. `get_changelog` scoped to the work area → understand recent context
 2. Load `AGENTS.md` + your role file → confirm rules
 3. **Session Planning:** If writes are intended, create/update `notes.md` in the target `skills/` subdirectory using the template at `skills/product/report.md`.
 4. Do the work
-5. `write_changelog_entry` at subdirectory level → then at root
+5. `add_changelog` at subdirectory level → then at root
 6. **Cleanup:** Delete the `notes.md` file after successful changelog entry.
 
 The human user will tell you which changelog scope is relevant for the session. If not specified, ask before pulling root.
@@ -143,15 +146,15 @@ ben-cp/
     │   ├── handoff/         ← cross-agent handoff protocol and file format
     │   ├── access/          ← permission & access auditing
     │   └── changelog/       ← changelog auditing — accuracy, completeness, git cross-reference
-    ├── intelligence/        ← consolidated cognitive domain (Lifecycle: Memory → Analysis → Report → Dream)
-    │   ├── memory/          ← central store of strategic & structural truth (Learn/Recall/Audit)
-    │   │   ├── recall/      ← pattern recognition and context retrieval
-    │   │   ├── learn/       ← experience assimilation and indexing
+    ├── intelligence/        ← consolidated cognitive domain (Lifecycle: Memory → Analysis → Digest)
+    │   ├── memory/          ← central store of strategic & structural truth (Intake/Retrieval/Audit)
+    │   │   ├── intake/      ← experience assimilation and indexing
+    │   │   ├── retrieval/   ← pattern recognition and context retrieval
     │   │   └── audit/       ← structural and triad compliance checking
     │   ├── analysis/        ← strategic synthesis and pragmatic foresight (Synthesize/Predict)
     │   │   ├── synthesize/  ← deep conceptual integration
-    │   │   └── predict/     ← scenario modeling and trend forecasting
-    │   ├── report/          ← nightly Digest (Daily Progress Summary) orchestration
+    │   │   ├── predict/     ← scenario modeling and trend forecasting
+    │   │   └── report/      ← nightly Gazette (Daily Progress Summary) orchestration
     │   └── dream/           ← nightly report orchestrator — assembles all skill outputs
     ├── product/             ← PM-facing skills under the Strategic PM mindset
     │   ├── status-reports/  ← Platform Weekly Status Report pipeline (SOP only)
@@ -170,7 +173,7 @@ ben-cp/
 | :--- | :--- | :--- | :--- |
 | `intelligence/memory` | Vault Auditor | Structural & factual integrity | Daily |
 | `intelligence/analysis` | Pragmatic Analyst | Trend and risk synthesis | Daily |
-| `intelligence/report` | Orchestrator | Nightly Gazette assembly | Daily |
+| `intelligence/analysis/report` | Orchestrator | Nightly Gazette assembly | Daily |
 | `orchestration/changelog` | Yukon Cornelius | Project integrity & git drift audit | On-Change |
 | `orchestration/access` | Roz | Permission and safety monitor | Continuous |
 | `orchestration/handoff` | Baton | Task state & plan management | On-Demand |
@@ -206,7 +209,7 @@ ben-cp/
 
 ### Course Correction Protocol
 
-If a required tool call fails (e.g., `write_changelog_entry`, `edit_file`, or path-based MCP tools), follow this priority:
+If a required tool call fails (e.g., `add_changelog`, `edit_file`, or path-based MCP tools), follow this priority:
 1. **Analyze:** Read the error message carefully.
 2. **Correct:** Attempt the obvious fix (e.g., corrected path, alternative tool) once or twice.
 3. **Escalate:** If the second attempt fails, escalate to the next higher level (e.g., root-only logging) and note the tool failure clearly for human user.
@@ -245,7 +248,7 @@ After creating or significantly modifying any file, update `index.md` in the sam
 
 ### Completion Reporting
 
-Every session that involves writing, editing, or structural modification must end with a changelog entry — use `write_changelog_entry` or follow `skills/changelog/index.md`. Read-only or discovery sessions do not require a changelog unless a significant insight or blocker was identified.
+Every session that involves writing, editing, or structural modification must end with a changelog entry — use `add_changelog` or follow `skills/changelog/index.md`. Read-only or discovery sessions do not require a changelog unless a significant insight or blocker was identified.
 
 **Handoff Exemption:** If a session's primary output is a newly created READY handoff (`handoff/[name].md`) and no other significant SOP or structural changes occurred, the agent SHOULD skip the detailed subdirectory changelog. In this case, the root `changelog.md` entry should be a concise one-line pointer to the handoff.
 

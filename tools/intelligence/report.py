@@ -23,9 +23,10 @@ import argparse
 import subprocess
 from datetime import datetime
 
-SKILLS_DIR   = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
-ROOT_DIR     = os.path.abspath(os.path.join(SKILLS_DIR, ".."))
-OUTPUTS_DIR  = os.path.join(ROOT_DIR, "outputs", "dream")
+SKILLS_DIR   = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "skills"))
+REPO_ROOT    = os.path.abspath(os.path.join(SKILLS_DIR, ".."))
+VAULT_ROOT   = os.path.abspath(os.path.join(REPO_ROOT, "..", ".."))
+OUTPUTS_DIR  = os.path.join(REPO_ROOT, "outputs", "dream")
 REPORT_MD    = os.path.join(os.path.dirname(__file__), "report.md")
 VAULT_CSS    = os.path.join(SKILLS_DIR, "styles", "vault.css")
 
@@ -119,7 +120,13 @@ def execute_skill(spec, phase="draft", draft_pool=None):
     skill_name = spec.get("skill_name", "unknown")
     spec_path  = spec.get("_path")
     skill_dir  = os.path.dirname(spec_path)
-    script_path = os.path.join(skill_dir, "report.py")
+    # Try to find the script in the tools/ mirror path first
+    rel_path = os.path.relpath(skill_dir, SKILLS_DIR)
+    script_path = os.path.join(REPO_ROOT, "tools", rel_path, "report.py")
+
+    if not os.path.exists(script_path):
+        # Fallback to the legacy skill-dir report.py (usually for migration/testing)
+        script_path = os.path.join(skill_dir, "report.py")
 
     if not os.path.exists(script_path):
         # Fallback to mock for v1 rollout

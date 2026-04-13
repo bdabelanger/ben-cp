@@ -2,7 +2,7 @@
   "skill_name": "product",
   "preferred_agent": "Strategic PM",
   "cadence": "daily",
-  "run_order": 1,
+  "run_order": 99,
   "output_envelope_schema": {
     "agent": "string",
     "skill": "string",

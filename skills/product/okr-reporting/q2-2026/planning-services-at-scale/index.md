@@ -1,61 +1,68 @@
 # Initiative: Planning Services at Scale — Index
 
-> This directory contains KR SOPs and measurement documentation specific to the
-> "Planning Services at Scale" initiative for Q2 2026.
->
-> **All agents:** read `AGENTS.md` at the vault root before modifying any file here.
+> **Period:** Q2 2026
+> **Objective:** Planning/delivering services at scale
+> Last updated: 2026-04-12 from Work Planning Register
 
 ---
 
 ## 📋 KR Status Dashboard
 
-| KR | Status | Baseline | Target | SOP |
+| KR | Status | Baseline | Target | Data Source |
 | :--- | :--- | :--- | :--- | :--- |
-| **Service Notes — Roster Assoc.** | ✅ Unblocked | Queryable (Reveal) | ⏳ TBD | [SOP](./service_notes_roster_association.md) |
-| **Notes Datagrid Shortcuts** | ⏳ Pending | Pending April pull | ⏳ TBD | [SOP](./notes_datagrid_shortcuts.md) |
-| **Service Plan Shortcuts** | 🛑 Blocked | Pending launch | 🛑 Blocked | *(pending)* |
-| **Service Notes Shortcuts** | 🟡 Partial | Pullable | 🟡 Estimated | [SOP](./service_notes_data_entry_shortcuts.md) |
-| **Enrollments Shortcuts** | 🟡 Partial | Pullable | 🟡 Estimated | [SOP](./enrollments_data_entry_shortcuts.md) |
-| **Notes Quick Entry** | ✅ Baseline Set | 49% (March 2026) | 50% | [SOP](./notes_quick_entry.md) |
+| **Service Plan Datagrid Shortcuts** | Pending release | 0% | 40% | TBD |
+| **Create Enrollment Shortcuts** | Pending release | - | - | Casebook Admin Reporting |
+| **Notes Datagrid Shortcuts** | Monitoring through beta → GA | 38.8% | 40% | TBD |
+| **Create Note Shortcuts** | Pending release | 31.7% | 40% | Casebook Admin Reporting |
+| **Notes Quick Entry** | Pending release | 48.5% | 50% | ChurnZero, GA, HubSpot |
 
 ---
 
-## 🛠️ Detailed Metadata & Next Steps
+## 🛠️ KR Details
 
-### 1. Service Notes — Roster Association
-- **Sources:** Casebook Admin Reporting / Reveal BI
-- **Next steps:**
-  - Pull baseline in Reveal BI — join `cbp_service_notes` + `cbp_services` on `service_id`, filter `rostering = true`.
-  - Set target once baseline is in hand.
+### 1. Service Plan Datagrid Shortcuts
+**KR:** 40% of tenants who have ever used the Service Plan datagrid have at least one user who has used at least one new navigation shortcut in the Service Plan datagrid.
+- **Baseline:** 0%
+- **Target:** 40%
+- **Navigation shortcuts:** Sort, filter, or search
+- **Projects:** Service Plan - Datagrid (GA 5/28)
+- **Next steps:** Create KR measurement SOP at launch; Blessing picks up 4/9
 
-### 2. Notes Datagrid Navigation Shortcuts
-- **Sources:** Google Analytics (tenant_id confirmed available)
-- **Next steps:**
-  - Pull April baseline from GA — see SOP for full instructions.
-  - Flag `NotesWLVSort` gap to Engineering.
+### 2. Create Enrollment Shortcuts
+**KR:** X% of tenants with at least one Enrollment created within the measurement period have at least one user who has used at least one data entry shortcut for creating new Enrollments.
+- **Baseline:** - (pending)
+- **Target:** - (pending)
+- **Data entry shortcuts:** Service Groups, Service Rosters, Bulk actions/buttons
+- **Projects:** Enrollments - Save Service Groups, Services WLV - Bulk actions, Service Plan datagrid - Bulk actions (GA 5/28)
+- **Next steps:** Pull prod baseline for currently-live shortcuts; identify comp feature for target
 
-### 3. Service Plan Datagrid Navigation Shortcuts
-- **Sources:** TBD — GA / ChurnZero at launch (GA 5/28)
-- **Next steps:**
-  - Create KR measurement SOP at launch.
+### 3. Notes Datagrid Shortcuts
+**KR:** 40% of tenants who have ever used the Notes datagrid have at least one user who has used at least one new navigation shortcut in the Notes datagrid.
+- **Baseline:** 38.8% (March 2026)
+- **Target:** 40%
+- **Navigation shortcuts:** Sort, filter, or search
+- **Projects:** Notes - Datagrid (GA 5/14)
+- **Next steps:** Pull April baseline from GA; flag `NotesWLVSort` gap to Engineering
 
-### 4. Data Entry Shortcuts (Service Notes & Enrollments)
-- **Sources:** GA, ChurnZero, Casebook Admin Reporting.
-- **Next steps:**
-  - Pull prod baseline for currently-live shortcuts.
-  - Identify comp feature for targets.
+### 4. Create Note Shortcuts
+**KR:** 40% of tenants with at least one Service Note created within the measurement period have at least one user who has used at least one data entry shortcut for creating new Service Notes.
+- **Baseline:** 31.7% (March 2026)
+- **Target:** 40%
+- **Data entry shortcuts:** Service Groups, Service Rosters
+- **Projects:** Service Notes - Populate Service Notes with Service Groups, Service Notes - Save Service Groups
+- **Next steps:** Pull prod baseline for currently-live shortcuts
 
-### 5. Notes Quick Entry (Outside UOW)
-- **Sources:** Google Analytics (GA4)
-- **Next steps:**
-  - Pull first April baseline.
-  - Monitor for Notes WLV event shipping in Q3.
+### 5. Global Entry for Notes (Outside UOW)
+**KR:** X% of users with at least one Note created within collection period have created a Note from a global entry point (outside UOW).
+- **Baseline:** 48.5% (March 2026)
+- **Target:** 50%
+- **Entry points:** Dashboard, Notes WLV, Engage WLV, Intake WLV, Providers WLV, Services WLV
+- **Projects:** Notes - Notes WLV (GA 5/14 bundle)
+- **Note:** Also tracked under Elevate Notes initiative
 
 ---
 
 ## 🔗 References
 
 - Parent Q2 Index: `../index.md`
-- Master OKR Index: `../../index.md`
-- Status logic: `../../../skill-builder/mappings/status_mapping.md`
-- Visual standards: `../../../skill-builder/styles/emoji_key.md`
+- Master OKR runbook: `../../procedure.md`

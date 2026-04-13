@@ -7,6 +7,37 @@
 
 ## [Unreleased]
 
+## 2026-04-13 — Close out crypt-keeper data-and-index-gaps handoff: add missing Locked/Signed Notes KR to data_sources.md and invalidate stale tasks.
+
+**Files changed:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/product/okr-reporting/data_sources.md` — Added KR #6 Locked/Signed Notes — ChurnZero/SQL denominator, Reveal BI numerator, SOP at q2-2026/elevate-notes/locked_and_signed_notes.md. ✅ Complete
+
+**Handoff:** `handoff/complete/2026-04-12-p3-crypt-keeper-data-and-index-gaps-COMPLETE.md`
+
+**Next:** No further action required
+
+
+## 2026-04-13 — Close out crypt-keeper data-and-index-gaps handoff: add missing Locked/Signed Notes KR to data_sources.md and invalidate stale tasks.
+
+**Files changed:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/product/okr-reporting/data_sources.md` — Added KR #6 Locked/Signed Notes — ChurnZero/SQL denominator, Reveal BI numerator, SOP at q2-2026/elevate-notes/locked_and_signed_notes.md. Inserted between #5 and #16; non-sequential numbering preserved. ✅ Complete
+
+**Handoff:** `handoff/2026-04-12-p3-crypt-keeper-data-and-index-gaps.md`
+
+**Next:** No further action required — handoff complete
+
+
+## 2026-04-13 — Update Q2 2026 OKR vault files with finalized baselines and targets from the Work Planning Register.
+
+**Files changed:**
+- `/Users/benbelanger/GitHub/ben-cp/skills/product/okr-reporting/q2-2026/index.md` — Rewrote master KR table with all 12 finalized Q2 Platform KRs from register — baselines, targets, status, and projects. ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/skills/product/okr-reporting/q2-2026/elevate-notes/index.md` — Updated all 4 KRs with finalized baselines/targets: Notes WLV Adoption (0→5 tenants), Global Entry (48.5%→50%), Bulk Import (0→1), Locked/Signed Notes (18**→TBD). ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/skills/product/okr-reporting/q2-2026/planning-services-at-scale/index.md` — Updated all 5 KRs with finalized data: Service Plan Datagrid Shortcuts (0%→40%), Enrollment Shortcuts (pending), Notes Datagrid Shortcuts (38.8%→40%), Note Shortcuts (31.7%→40%), Global Entry (48.5%→50%). ✅ Complete
+- `/Users/benbelanger/GitHub/ben-cp/skills/product/okr-reporting/q2-2026/reduce-admin-burden/index.md` — Updated all 4 Portal/Zapier KRs with finalized targets: Zapier (0→5), Invite (0→5), Login (0→3), Update Profile (0→1). Added risk flags for Zapier contractor and Portal scoping. ✅ Complete
+
+**Next:** Set Locked/Signed Notes target once Locked Notes GAs 5/14 — pull from Margaux's high-conf tenant sheet
+
+
 ## 2026-04-10 — Finalize the documentation for the Locked and Signed Notes KR SOP and create a P2 handoff to address the next outstanding OKR measurement SOP.
 
 **Files changed:**

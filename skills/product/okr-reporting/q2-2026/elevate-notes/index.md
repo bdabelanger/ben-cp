@@ -1,46 +1,49 @@
 # Initiative: Elevate Notes to a First-Class Experience — Index
 
 > **Period:** Q2 2026
-> Focus on making the Notes feature a central, reliable part of the Platform experience.
+> **Objective:** Elevate Notes to first-class experience
+> Last updated: 2026-04-12 from Work Planning Register
 
 ---
 
 ## 📋 KR Status Dashboard
 
-| KR | Status | Baseline | Target | SOP |
+| KR | Status | Baseline | Target | Data Source |
 | :--- | :--- | :--- | :--- | :--- |
-| **Notes WLV Adoption** | 🛑 Blocked | Pending launch | Proxy Comp | *(pending)* |
-| **Notes Quick Entry** | ✅ Confirmed | ~32% (GA) | 40% | [SOP](../planning-services-at-scale/notes_quick_entry.md) |
-| **Locked / Signed Notes** | 🟡 Proxy | High-conf proxy | TBD | [SOP](./locked_and_signed_notes.md) |
-| **Bulk Import for Notes** | 🟡 Partial | Blocked (CX ops) | 🛑 Blocked | *(pending)* |
+| **Notes WLV Adoption** | Pending release | 0 | 5 tenants | ChurnZero, GA, HubSpot |
+| **Global Entry for Notes** | Pending release | 48.5% | 50% | ChurnZero, GA, HubSpot |
+| **Bulk Import Notes** | Pending release | 0 | 1 customer | ChurnZero, GA, HubSpot |
+| **Locked and Signed Notes** | Pending release | 18** | To do | ChurnZero, SQL |
 
 ---
 
-## 🛠️ Detailed Metadata & Next Steps
+## 🛠️ KR Details
 
 ### 1. Notes WLV Adoption
-- **Sources:** GA, ChurnZero (post-launch)
-- **Next steps:**
-  - Confirm GA events fire with tenant ID on launch (Beta 6/25, GA 7/27)
-  - Pull Services WLV baseline as directional comp
-  - Create KR measurement SOP at launch
+**KR:** 5 tenants with at least one Note created within collection period have at least one user with usage in the Global Notes WLV to validate users are navigating to note content faster.
+- **Usage definition:** Filter, sort, search
+- **Projects:** Notes - Notes WLV (GA 7/9)
+- **Next steps:** Confirm GA events fire with tenant ID at launch; pull Services WLV baseline as directional comp
 
-### 2. Notes Quick Entry (Outside UOW)
-- **Sources:** Google Analytics
-- **Next steps:**
-  - Confirm `EngageWLVAddNote` UOW vs. non-UOW context via dev tools
-  - Discover additional live entry point events via dev tools
-  - Set Q3 additive target once Notes WLV ships (Beta 7/13, GA 8/10)
+### 2. Global Entry for Notes (Outside UOW)
+**KR:** X% of users with at least one Note created within collection period have created a Note from a global entry point (outside UOW).
+- **Baseline:** 48.5% (March 2026)
+- **Target:** 50%
+- **Entry points:** Dashboard, Notes WLV, Engage WLV, Intake WLV, Providers WLV, Services WLV
+- **Projects:** Notes - Notes WLV (GA 5/14 bundle)
+- **Next steps:** Pull April baseline from GA; confirm `EngageWLVAddNote` UOW vs. non-UOW context
 
-### 3. Locked / Signed Notes (High-Confidentiality Tenants)
-- **Sources:** ChurnZero, SQL (via Data team)
-- **Next steps:**
-  - Pull proxy baseline — locked note data for high-conf tenants in Reveal BI
-  - Validate high-conf tenant segment with Margaux's sheet
-  - Wait for Signed Notes launch (Beta 7/27, GA 8/24)
+### 3. Bulk Import Notes
+**KR:** At least 1 customer uses Notes bulk import in Q2 to validate that fewer customers need to pay for import.
+- **Baseline:** 0
+- **Target:** 1 (any user, including internal Onboarding users)
+- **Projects:** Bulk import - Notes (GA 5/14)
+- **Next steps:** Check with Cierra on current paid migration volume for Notes
 
-### 4. Bulk Import for Notes (New Tenants)
-- **Sources:** CX ops (Cierra), GA / ChurnZero post-launch
-- **Next steps:**
-  - Check with Cierra on current paid migration volume for Notes
-  - Move measurement window to Q3
+### 4. Locked and Signed Notes
+**KR:** X% of high-confidentiality tenants with at least one Note have created a locked or signed note with Services data.
+- **Baseline:** 18** (proxy — high-conf tenant count, pending Margaux's sheet validation)
+- **Target:** To do (set once Locked Notes GA 5/14 and Signing GA 7/23)
+- **High-conf definition:** Matches Margaux's tenant sheet
+- **Projects:** Notes - New note writing experience
+- **Next steps:** Pull proxy baseline in Reveal BI; validate high-conf segment with Margaux; set target after 5/14 GA

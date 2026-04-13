@@ -41,6 +41,12 @@ This document serves as the authoritative map for all data sources used to calcu
 ### 5. Q2 KR Baselines (General)
 *   **Source:** `q2-2026/index.md`. This dashboard aggregates status and baseline values, referencing the specific SOPs above for measurement methodology.
 
+### 6. Locked / Signed Notes
+*   **KR Definition:** % of high-confidentiality tenants using locked or signed notes.
+*   **Denominator Source:** ChurnZero / SQL — high-confidentiality tenant segment (validated via Margaux's sheet).
+*   **Numerator Source:** Reveal BI — locked note count for high-conf tenants.
+*   **SOP Reference:** `q2-2026/elevate-notes/locked_and_signed_notes.md`
+
 ### 16. Notes Datagrid Shortcuts
 *   **KR Definition:** % of Users navigating to Notes via the datagrid shortcuts.
 *   **Denominator Source:** GA4. Unique users on Notes landing page.

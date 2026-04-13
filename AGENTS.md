@@ -56,6 +56,24 @@ Find your role file and read it next:
 | Robert | `agents/robert.md` | Mission Integrity Lead — watches AGENTS.md for compliance drift |
 | Access Auditor | `skills/orchestration/access/SKILL.md` | Access Auditor — nightly violation and oops reports |
 | Vault Auditor | `skills/intelligence/memory/SKILL.md` | Memory Auditor — guards mappings, indexes memory, and conducts audits |
+| Dispatch | — | Proxy Messenger — mobile relay (no vault access) |
+
+---
+## The Proxy: Dispatch
+
+**Dispatch** is Claude running on mobile (iOS/Android) in the Dispatch tab of the Claude app. It acts as a proxy messenger — relaying human user's instructions from mobile into active desktop Cowork sessions or Claude Code sessions. It is not a vault agent and does not read or write vault files directly.
+
+Key behavioral rules for all agents when receiving a Dispatch message:
+
+- Treat it with the same authority as a direct message from human user.
+- Expect brevity — messages are typed on mobile, often short or casual.
+- Apply Dispatch messages as mid-task corrections or additions, not new tasks requiring a restart.
+- Keep responses that will be relayed back via Dispatch concise and mobile-friendly.
+- Flag anything that requires desktop tools to proceed, but proceed with what's possible.
+
+When Dispatch introduces itself in a fresh session or task, it should identify as a proxy: "Message from human user via Dispatch: [message]" or "human user is on mobile via Dispatch — [context]. Here's what he'd like: [message]".
+
+The user-cp is not currently connected on mobile. Dispatch cannot read vault files or run skills directly. Until that changes, Dispatch relies on handoff files and session context to carry continuity between mobile and desktop sessions.
 
 ---
 
@@ -127,7 +145,12 @@ ben-cp/
     │   └── changelog/       ← changelog auditing — accuracy, completeness, git cross-reference
     ├── intelligence/        ← consolidated cognitive domain (Lifecycle: Memory → Analysis → Report → Dream)
     │   ├── memory/          ← central store of strategic & structural truth (Learn/Recall/Audit)
+    │   │   ├── recall/      ← pattern recognition and context retrieval
+    │   │   ├── learn/       ← experience assimilation and indexing
+    │   │   └── audit/       ← structural and triad compliance checking
     │   ├── analysis/        ← strategic synthesis and pragmatic foresight (Synthesize/Predict)
+    │   │   ├── synthesize/  ← deep conceptual integration
+    │   │   └── predict/     ← scenario modeling and trend forecasting
     │   ├── report/          ← nightly Digest (Daily Progress Summary) orchestration
     │   └── dream/           ← nightly report orchestrator — assembles all skill outputs
     ├── product/             ← PM-facing skills under the Strategic PM mindset
@@ -138,6 +161,24 @@ ben-cp/
     ├── shared/              ← cross-cutting vault governance docs (separation policy, etc.)
     └── styles/              ← visual syntax authority — emoji glossary and nomenclature
 ```
+
+---
+
+## Skill Registry
+
+| Skill Path | Preferred Agent | Purpose | Cadence |
+| :--- | :--- | :--- | :--- |
+| `intelligence/memory` | Vault Auditor | Structural & factual integrity | Daily |
+| `intelligence/analysis` | Pragmatic Analyst | Trend and risk synthesis | Daily |
+| `intelligence/report` | Orchestrator | Nightly Gazette assembly | Daily |
+| `orchestration/changelog` | Yukon Cornelius | Project integrity & git drift audit | On-Change |
+| `orchestration/access` | Roz | Permission and safety monitor | Continuous |
+| `orchestration/handoff` | Baton | Task state & plan management | On-Demand |
+| `orchestration/communication` | Sea Shanty | Human/Agent context bridge (notes.md) | On-Demand |
+| `product/status-reports` | Strategic PM | External stakeholder updates | Weekly |
+| `product/okr-reporting` | Strategic PM | KR measurement and strategy | Weekly |
+
+---
 
 ---
 

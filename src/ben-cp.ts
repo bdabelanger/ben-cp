@@ -19,7 +19,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const skillsPath = path.resolve(__dirname, "../skills");
 const rootChangelogPath = path.resolve(__dirname, "../changelog.md");
-const handoffPath = path.resolve(__dirname, "../handoff");
+const handoffPath = path.resolve(__dirname, "../orchestration/handoff");
 
 // Notes domain map — agents use the shorthand key, tool resolves the path
 const NOTES_DOMAIN_MAP: Record<string, string> = {
@@ -94,7 +94,7 @@ async function writeChangelogInternal(a: any, skillsPath: string, date: string):
 
   // --- Stage 1: Subdirectory changelogs (deepest first) ---
   for (const rawSub of rawSubs) {
-    const subDir = rawSub.replace(/[^a-z0-9\-_]/gi, "");
+    const subDir = rawSub.replace(/[^a-z0-9\-_/]/gi, "");
     const subPath = path.resolve(skillsPath, subDir, "changelog.md");
     
     // Ensure the skill subdirectory exists before writing

@@ -22,30 +22,50 @@ def run_integrity_scan():
         content = f.read()
 
     # 1. Extract official skill list from AGENTS.md
-    # Look for the skills/ layout section
-    structure_match = re.search(r"└── skills/(.*?)(?=\n---|\n#|$)", content, re.DOTALL)
-    if not structure_match:
-        return "warn", ["Could not parse Vault Structure in AGENTS.md."], ["Navigation schema missing."]
-
-    structure_content = structure_match.group(0)
-    # Extract relative paths like orchestration/changelog
-    official_paths = re.findall(r"├── (.*?)[\s│]", structure_content)
-    official_paths += re.findall(r"└── (.*?)[\s│]", structure_content)
+    # Look for any skill path in the Vault Structure section (line 104+)
+    structure_start = content.find("## Vault Structure")
+    if structure_start == -1:
+        return "warn", ["Could not find Vault Structure in AGENTS.md."], ["Missing section."]
     
-    # Process sub-skills (nested one level deeper)
-    nested_paths = re.findall(r"│\s+├── (.*?)[\s│]", structure_content)
-    nested_paths += re.findall(r"│\s+└── (.*?)[\s│]", structure_content)
+    structure_block = content[structure_start:]
+    # Find all patterns that look like skills/path/to/thing
+    # This also catches parenthetical sub-skills like (Synthesize/Predict)
+    all_hits = re.findall(r"(skills/[\w/-]+)", structure_block)
+    # Clean up hits and normalize
+    unique_official = set()
+    for h in all_hits:
+        cleaned = h.replace("skills/", "").strip("/").lower()
+        if cleaned:
+            unique_official.add(cleaned)
     
-    # This regex is a bit brittle, so let's use a simpler heuristic: 
-    # Find all lines inside the structure block that mention a directory slash.
-    all_paths = []
-    for line in structure_content.splitlines():
-        match = re.search(r"(\w+/[\w-]+/?)", line)
-        if match:
-            all_paths.append(match.group(1).rstrip("/"))
-    
-    unique_official = set(all_paths)
     findings.append(f"Identified {len(unique_official)} official skill domains in AGENTS.md.")
+
+    # 1b. Orphan Check: Walk physical skills/ and find things NOT in the list
+    skills_dir = os.path.join(VAULT_ROOT, "skills")
+    physical_dirs = []
+    # Directories that are just containers for other skills or known administrative folders
+    known_paths = {
+        "intelligence", "orchestration", "product", 
+        "intelligence/analysis", "intelligence/memory",
+        "intelligence/casebook", "orchestration/handoff",
+        "shared", "rovo", "styles"
+    }
+    
+    for root, dirs, files in os.walk(skills_dir):
+        # We only care about directories that contain a SKILL.md (actual skills)
+        if "SKILL.md" in files:
+            rel = os.path.relpath(root, skills_dir)
+            if rel == ".": continue
+            rel_lower = rel.lower()
+            if rel_lower not in unique_official and rel_lower not in known_paths:
+                if "agent-roots" not in rel:
+                    physical_dirs.append(rel_lower)
+    
+    orphans = set(physical_dirs)
+    if orphans:
+        status = "warn"
+        for o in orphans:
+            flags.append(f"Orphan Skill: '{o}' exists on disk but is unmapped in AGENTS.md.")
 
     # 2. Verify Triad Existence for each official skill
     triad_violations = []

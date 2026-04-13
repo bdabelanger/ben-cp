@@ -12,6 +12,9 @@
 | :--- | :--- |
 | [`status-reports/`](status-reports/index.md) | Weekly platform status report pipeline (Asana-driven) |
 | [`okr-reporting/`](okr-reporting/index.md) | Q2 OKR measurement and dashboard |
+| [`weekly-status/`](weekly-status/index.md) | Platform weekly status report — Asana + Jira card format (Cowork skill) |
+| [`task-capture/`](task-capture/index.md) | Captures work items and routes to Asana or Jira with correct metadata |
+| [`dod-helper/`](dod-helper/index.md) | Interviews Ben and writes a Definition of Done back to a task |
 | [`shared/`](shared/data_sources.md) | Shared data sources used across all product sub-skills |
 
 ---
@@ -21,6 +24,7 @@
 These skills measure the same thing from different angles:
 - `status-reports/` asks: *what shipped this week and what's at risk?*
 - `okr-reporting/` asks: *are we moving the needle on the metrics that matter?*
+- `weekly-status/` asks: *what's the full card-level picture across all Platform projects?*
 
 All product work is done through the **Strategic PM** lens — see `character.md`.
 

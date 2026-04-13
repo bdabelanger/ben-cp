@@ -34,13 +34,15 @@ def run_audit():
     
     # 2. Extract file paths
     # Matches patterns like - `path` or - [path](...)
-    paths = re.findall(r"- [`\[]?(.*?)[\s`\]]", version_content)
+    # We capture the potential path and filter out category headers in Python
+    raw_hits = re.findall(r"- [\[`]?([\w/.*-]+)[\]`]?[\s\n]", version_content)
     
     unique_paths = set()
-    for p in paths:
-        # Clean up markdown links if present
-        p = p.split("](")[0].strip("`[]")
-        if p and p != "Vault-wide" and p != "Character Consolidation":
+    for p in raw_hits:
+        # Clean up and normalize
+        p = p.strip("`[]").strip()
+        # Ignore category headers (starting with **) or generic text
+        if p and not p.startswith("*") and not p.startswith("["):
             unique_paths.add(p)
 
     # 3. Verify existence

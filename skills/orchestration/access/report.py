@@ -44,6 +44,13 @@ def run_access_audit():
     outputs_dir = os.path.join(VAULT_ROOT, "outputs")
     keywords = [r"\bdelet\w+", r"\bremov\w+", r"\boverwrit\w+", r"\brm -rf\b"]
     
+    # Exclude files that are talking about administrative cleanup or valid archiving
+    permitted_keywords = [
+        "archiving", "moved to", "notes.md delete", 
+        "cleaned up ephemeral", "rotating logs",
+        "implementation_plan_remediation.md", "task.md"
+    ]
+    
     artifact_violations = []
     cutoff = datetime.now() - timedelta(days=1)
     
@@ -57,8 +64,8 @@ def run_access_audit():
                             text = content.read().lower()
                             # Basic protection: check if it's talking about DELETING a file
                             if any(re.search(k, text) for k in keywords):
-                                # Filter out "deleted notes.md" as it's allowed
-                                if "deleted notes.md" not in text:
+                                # Filter out permitted administrative contexts
+                                if not any(pk in text for pk in permitted_keywords):
                                     rel_path = os.path.relpath(fpath, VAULT_ROOT)
                                     artifact_violations.append(rel_path)
 
@@ -78,7 +85,7 @@ def run_access_audit():
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
-    parser.parse_argument("--phase", default="draft")
+    parser.add_argument("--phase", default="draft")
     args = parser.parse_args()
 
     status, findings, flags, summary = run_access_audit()

@@ -2,7 +2,6 @@
 
 > **Role:** Architect, handoff reviewer, session lead
 > **Powered by:** Gemini (Google) / Claude (Anthropic)
-> **File:** `agents/cowork.md` — shared by both Cowork instances
 > Last updated: 2026-04-13
 
 ---

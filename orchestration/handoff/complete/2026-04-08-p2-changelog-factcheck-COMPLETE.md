@@ -1,7 +1,7 @@
 # Claude Code Implementation Plan: Changelog Fact-Check Fixes
 
 > **Prepared by:** Claude Code (2026-04-08)
-> **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
+> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P2 — changelog inaccuracies mislead agents loading session context
 > **Source report:** manual fact-check; Changelog Auditor skill created at `skills/changelog/`
 > **v1.0**
@@ -79,7 +79,7 @@ Root changelog `1.4.1` states:
 
 **Option A (preferred):** Create the directory so the entry is accurate:
 ```
-mkdir /Users/benbelanger/GitHub/ben-cp/reports/archive
+mkdir /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/reports/archive
 ```
 Add a `.gitkeep` if needed to track in git.
 

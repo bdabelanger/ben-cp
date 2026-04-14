@@ -1,7 +1,7 @@
 # Claude Code Implementation Plan: Handoff Editability Rule
 
 > **Prepared by:** Claude (Cowork) (2026-04-10)
-> **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
+> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P1 — Corrects a rule ambiguity that blocks iterative handoff development.
 > **v1.0**
 > **STATUS: READY — pick up 2026-04-10**

@@ -2,7 +2,7 @@
 
 > **Prepared by:** Claude via Cowork/Dispatch (2026-04-11)
 > **Assigned to:** Claude (desktop)
-> **Vault root:** /Users/benbelanger/GitHub/ben-cp
+> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P1 — introduces the nightly automation system for the vault
 > **v1.1**
 > **STATUS: ✅ COMPLETE — 2026-04-12**

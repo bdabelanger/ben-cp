@@ -2,7 +2,7 @@
 
 > **Prepared by:** Claude (Cowork) via knowledge skill run (2026-04-12)
 > **Assigned to:** Claude Code
-> **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
+> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P1 — agent navigation broken
 > **Source report:** `skills/knowledge/outputs/reports/knowledge-report-2026-04-12.md`
 > **v1.0**

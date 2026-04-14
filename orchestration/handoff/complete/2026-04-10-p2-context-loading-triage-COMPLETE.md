@@ -1,7 +1,7 @@
 # Claude Code Implementation Plan: Context Loading Complexity Triage
 
 > **Prepared by:** Gemma (Executor) (Context Audit, 2026-04-10)
-> **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
+> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P2 — Structural violation of expected workflow efficiency during meta-documentation.
 > **Source report:** Omit
 > **v1.0**

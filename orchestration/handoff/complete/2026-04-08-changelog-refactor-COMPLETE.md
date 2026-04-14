@@ -1,7 +1,7 @@
 # Claude Code Implementation Plan: Wrap-Up & Changelog Refactor
 
 > **Prepared by:** Claude (Cowork session, 2026-04-08)
-> **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
+> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **v1.0**
 > **STATUS: ✅ COMPLETE — executed by Claude Code, 2026-04-08**
 

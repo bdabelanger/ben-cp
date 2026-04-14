@@ -2,7 +2,7 @@
 
 > **Prepared by:** Claude (Cowork) via knowledge skill run (2026-04-12)
 > **Assigned to:** Claude Code
-> **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
+> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P2 — structural violations
 > **Source report:** `skills/knowledge/outputs/reports/knowledge-report-2026-04-12.md`
 > **v1.0**
@@ -27,7 +27,7 @@ The knowledge skill run on 2026-04-12 identified three skill directories missing
 
 ## Task 1: Add index.md to skills/dream/
 
-Create `/Users/benbelanger/GitHub/ben-cp/skills/dream/index.md`:
+Create `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/dream/index.md`:
 
 ```markdown
 # Skill: Dream (Orchestrator)
@@ -54,7 +54,7 @@ The dream skill is the Editor-in-Chief of the nightly Digest cycle. It reads eac
 
 ## Task 2: Add index.md to skills/predict/
 
-Create `/Users/benbelanger/GitHub/ben-cp/skills/predict/index.md`:
+Create `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/predict/index.md`:
 
 ```markdown
 # Skill: Predict
@@ -75,7 +75,7 @@ Create `/Users/benbelanger/GitHub/ben-cp/skills/predict/index.md`:
 
 ## Task 3: Add index.md to skills/changelog/lumberjack/
 
-Create `/Users/benbelanger/GitHub/ben-cp/skills/changelog/lumberjack/index.md`:
+Create `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/changelog/lumberjack/index.md`:
 
 ```markdown
 # Skill: Changelog / Changelog Auditor (Character)

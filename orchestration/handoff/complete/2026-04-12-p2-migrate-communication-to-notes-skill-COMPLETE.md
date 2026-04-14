@@ -2,7 +2,7 @@
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)
 > **Assigned to:** Any
-> **Vault root:** /Users/benbelanger/GitHub/ben-cp
+> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **v1.0**
 > **STATUS: ✅ COMPLETE — 2026-04-12**
@@ -22,6 +22,6 @@ Successfully migrated the communication skill logic from its old location to a s
 3. **Update References:** Systematically search and replace all references to `/orchestration/communication/` within other domain indexes (`intelligence/index.md`, etc.) with `/orchestration/notes/`.
 4. **Finalize Skill:** Update `orchestration/notes/SKILL.md` to reflect its new, singular focus.
 
-**Critical Context for Execution:** The Platform Weekly Status Report pipeline requires environment variables defined in the root `.env` file: `/Users/benbelanger/GitHub/ben-cp/.env`. This must be provisioned before any report execution can succeed.
+**Critical Context for Execution:** The Platform Weekly Status Report pipeline requires environment variables defined in the root `.env` file: `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/.env`. This must be provisioned before any report execution can succeed.
 
 **Deliverables:** New `orchestration/notes/SKILL.md`, updated cross-references, and a decision on whether to deprecate the old `communication` directory structure.

@@ -2,7 +2,7 @@
 
 > **Prepared by:** Antigravity (Initial Concept, 2026-04-10) — updated by Claude via Dispatch (2026-04-11, 2026-04-12)
 > **Assigned to:** Claude
-> **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
+> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P1 — Process refinement and new agent definition
 > **v1.3**
 > **STATUS: ✅ COMPLETE — 2026-04-12**
@@ -60,7 +60,7 @@ Confirm the following files exist and match the intended convention:
 
 ## Task 2: Artifact Scoping and Access Control Policy
 
-**Goal:** Restrict agent access to only necessary files while granting full read/write capability within `/Users/benbelanger/GitHub/ben-cp`. Agents should primarily interact with designated artifact types (Tasks, Implementation Plans, Walkthroughs) when performing work. Human user maintains ultimate control via manual commits and merges as a safety net.
+**Goal:** Restrict agent access to only necessary files while granting full read/write capability within `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`. Agents should primarily interact with designated artifact types (Tasks, Implementation Plans, Walkthroughs) when performing work. Human user maintains ultimate control via manual commits and merges as a safety net.
 
 **Action:** Define and write this policy into `AGENTS.md` as a formal section. It should specify:
 - Which artifact types agents may create and modify autonomously

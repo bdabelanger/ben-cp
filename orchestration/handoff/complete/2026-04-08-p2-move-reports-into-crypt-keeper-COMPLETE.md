@@ -1,7 +1,7 @@
 # Claude Code Implementation Plan: Move reports/ into skills/knowledge/
 
 > **Prepared by:** Claude (Cowork session, 2026-04-08)
-> **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
+> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P2 — structural consolidation, Vault Auditor owns its reports
 > **v1.0**
 > **STATUS: ✅ COMPLETE — 2026-04-09**
@@ -77,11 +77,11 @@ git rm -r reports/
 
 In the **Report Output** section, replace:
 ```
-`/Users/benbelanger/GitHub/ben-cp/reports/knowledge-report-[YYYY-MM-DD].md`
+`/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/reports/knowledge-report-[YYYY-MM-DD].md`
 ```
 With:
 ```
-`/Users/benbelanger/GitHub/ben-cp/skills/knowledge/reports/knowledge-report-[YYYY-MM-DD].md`
+`/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/reports/knowledge-report-[YYYY-MM-DD].md`
 ```
 
 Also add an **Archiving** step at the end of the Report Output section:
@@ -105,11 +105,11 @@ This keeps `reports/` showing only the current run, with full history in `archiv
 
 Replace all occurrences of:
 ```
-/Users/benbelanger/GitHub/ben-cp/reports/
+/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/reports/
 ```
 With:
 ```
-/Users/benbelanger/GitHub/ben-cp/skills/knowledge/reports/
+/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/reports/
 ```
 
 ---

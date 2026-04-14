@@ -3,7 +3,7 @@ import subprocess
 import os
 from collections import defaultdict
 
-VAULT_ROOT = "/Users/benbelanger/GitHub/ben-cp"
+VAULT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 def generate_sync_entry():
     # Run the changelog report to get the raw list

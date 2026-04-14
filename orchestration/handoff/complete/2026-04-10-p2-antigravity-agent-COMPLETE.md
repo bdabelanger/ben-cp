@@ -1,7 +1,7 @@
 # Claude Code Implementation Plan: Agent 'Antigravity' (Gemini)
 
 > **Prepared by:** Claude (Cowork) (2026-04-10)
-> **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
+> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P2 — Adds Antigravity as a full peer implementer alongside Claude Code.
 > **v1.0**
 > **STATUS: READY — pick up 2026-04-10**

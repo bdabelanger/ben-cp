@@ -2,7 +2,7 @@
 
 > **Prepared by:** Claude (Cowork session, 2026-04-08)
 > **Source:** Vault Auditor report `reports/knowledge-report-2026-04-08.md` flag 1.4
-> **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
+> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **v1.0**
 > **STATUS: ✅ COMPLETE — 2026-04-09**
 
@@ -53,13 +53,13 @@ in `index.md`, but fix the broken path references:
 
 Replace:
 ```
-/Users/benbelanger/GitHub/ben-cp/skills/casebook-reporting/reveal_bi_syntax.md
-/Users/benbelanger/GitHub/ben-cp/skills/casebook-reporting/reveal_bi_visualizations.md
+/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/casebook-reporting/reveal_bi_syntax.md
+/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/casebook-reporting/reveal_bi_visualizations.md
 ```
 With:
 ```
-/Users/benbelanger/GitHub/ben-cp/skills/casebook/reporting/reveal_bi_syntax.md
-/Users/benbelanger/GitHub/ben-cp/skills/casebook/reporting/reveal_bi_visualizations.md
+/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/casebook/reporting/reveal_bi_syntax.md
+/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/casebook/reporting/reveal_bi_visualizations.md
 ```
 
 Also remove the "File Management Best Practice" section at the bottom — that

@@ -64,7 +64,7 @@ When creating a handoff for another agent, use this structure:
 
 > **Prepared by:** [Agent] ([context], [YYYY-MM-DD])
 > **Assigned to:** [Claude | Code (Claude Code / Antigravity) | Gemma | Any]
-> **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
+> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P[N] — [one-line reason]
 > **Source report:** [path to report if Vault Auditor origin, else omit]
 > **v1.0**

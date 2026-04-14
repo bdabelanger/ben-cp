@@ -2,7 +2,7 @@
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-13)
 > **Assigned to:** Ben
-> **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
+> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P1
 > **STATUS: 🔲 READY — pick up 2026-04-13**
 

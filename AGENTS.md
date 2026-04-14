@@ -94,7 +94,7 @@ Find your role file and read it next:
 Before executing a procedure against `skills/[skill_name]/`, an agent MUST sequentially read:
 1. `SKILL.md` (To learn *how* to execute the boundary).
 
-Agents MUST default to parsing `/Users/benbelanger/GitHub/ben-cp/character.md` for tone and voice. No generalized fluffy assistant speak is allowed inside the repo boundary.
+Agents MUST default to parsing `./character.md` for tone and voice. No generalized fluffy assistant speak is allowed inside the repo boundary.
 
 ---
 

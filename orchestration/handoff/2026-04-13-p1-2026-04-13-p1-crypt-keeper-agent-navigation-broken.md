@@ -2,7 +2,7 @@
 
 > **Prepared by:** Claude (Cowork) (Intelligence (Memory) scheduled run, 2026-04-13)
 > **Assigned to:** Claude
-> **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
+> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P1 — Agent navigation broken (missing AGENTS.md, missing index.md files, orphaned files)
 > **Source report:** `skills/knowledge/outputs/reports/knowledge-report-2026-04-13.md`
 > **v1.0**
@@ -33,7 +33,7 @@ The 2026-04-13 Intelligence (Memory) run identified critical P1 structural issue
 
 ## Task 1: Restore AGENTS.md
 
-AGENTS.md is referenced throughout the vault as the authoritative governance document — agent dispatch table, directory boundaries, universal rules, the Agent's Creed. It does not exist at `/Users/benbelanger/GitHub/ben-cp/AGENTS.md`. Check git history to see if it was accidentally deleted:
+AGENTS.md is referenced throughout the vault as the authoritative governance document — agent dispatch table, directory boundaries, universal rules, the Agent's Creed. It does not exist at `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md`. Check git history to see if it was accidentally deleted:
 
 ```
 git log --oneline --all -- AGENTS.md

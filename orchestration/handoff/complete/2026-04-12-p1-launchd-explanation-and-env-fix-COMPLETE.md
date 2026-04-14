@@ -2,7 +2,7 @@
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)
 > **Assigned to:** Antigravity / Claude Code
-> **Vault root:** /Users/benbelanger/GitHub/ben-cp
+> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P1
 > **v1.0**
 > **STATUS: ✅ COMPLETE — 2026-04-12**
@@ -16,7 +16,7 @@ Elaborated on the Bash environment sourcing bug caused by `//` comments. Correct
 
 ## Context
 During the design phase of `Daily Progress Digest` (Dream Cycles), we identified an error in human user's existing `launchd.log` file:
-`/Users/benbelanger/GitHub/ben-cp/.env: line 1: //: is a directory`
+`/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/.env: line 1: //: is a directory`
 
 ## Task
 Human user requested an elaboration on this error. 

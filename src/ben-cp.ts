@@ -436,7 +436,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const header = `# Implementation Plan: ${title}\n\n` +
         `> **Prepared by:** Code (Gemini) (${date})\n` +
         `> **Assigned to:** ${assigned_to}\n` +
-        `> **Vault root:** /Users/benbelanger/GitHub/ben-cp\n` +
+        `> **Vault root:** ${rootPath}\n` +
         `> **Priority:** ${priority}\n` +
         `> **STATUS: 🔲 READY — pick up ${date}**\n\n---\n\n`;
       await fs.writeFile(fullPath, header + content, "utf-8");

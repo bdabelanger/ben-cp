@@ -1,3 +1,12 @@
+## [1.18.5] — Pathing Normalization (Remove 'benbelanger' Hard-Coding) (2026-04-14)
+
+**Changes:**
+- `src/ben-cp.ts` — Replaced hardcoded `/Users/benbelanger/GitHub/ben-cp` with dynamic `${rootPath}` in `add_handoff` tool definition.
+- `AGENTS.md` — Updated `character.md` reference to use a root-relative path (`./character.md`).
+- `tools/orchestration/changelog/sync.py` — Updated `VAULT_ROOT` to use dynamic path resolution.
+- **Global Refactor:** Performed a vault-wide search and replace of the old GitHub path with the new Google Drive mirrored path in all Markdown files.
+- **Build:** Verified environment integrity with `npm install` and `npm run build` (rebuilt `dist/ben-cp.js`).
+
 ## [1.18.4] — Cowork Role Unified into Single File (2026-04-13)
 
 **Changes:**
@@ -547,14 +556,14 @@
 - `skills/status-reports/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/tools/status-reports/` — Created — all scripts (full_run.py, step_0–4, platform_report.py, render_html.py, update_manifest.py), run_pipeline.sh, tests/, README.md
-- `/Users/benbelanger/GitHub/ben-cp/inputs/status-reports/` — Created — manifest.json, raw/, processed/, archive/ tree, README.md
-- `/Users/benbelanger/GitHub/ben-cp/outputs/status-reports/logs/launchd.log` — Moved from skills/product/status-reports/logs/
-- `/Users/benbelanger/GitHub/ben-cp/tools/status-reports/scripts/*.py` — Updated all 8 scripts: VAULT_ROOT computed from __file__, MANIFEST_PATH = VAULT_ROOT/inputs/status-reports/manifest.json, all data paths updated to inputs/status-reports/ prefix
-- `/Users/benbelanger/GitHub/ben-cp/tools/status-reports/run_pipeline.sh` — Updated VAULT_ROOT (two levels up from SCRIPT_DIR), ENV_FILE and LOG_FILE updated to vault root paths
-- `/Users/benbelanger/GitHub/ben-cp/inputs/status-reports/manifest.json` — Updated config.processed_dir, config.archive_dir, and all step file paths to use inputs/status-reports/ and outputs/status-reports/ prefixes
-- `/Users/benbelanger/GitHub/ben-cp/skills/product/status-reports/index.md` — Updated kickstart commands and data path references to new locations
-- `/Users/benbelanger/GitHub/ben-cp/skills/product/status-reports/` — Now contains only changelog.md and index.md — clean skill stub
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/tools/status-reports/` — Created — all scripts (full_run.py, step_0–4, platform_report.py, render_html.py, update_manifest.py), run_pipeline.sh, tests/, README.md
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/inputs/status-reports/` — Created — manifest.json, raw/, processed/, archive/ tree, README.md
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/outputs/status-reports/logs/launchd.log` — Moved from skills/product/status-reports/logs/
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/tools/status-reports/scripts/*.py` — Updated all 8 scripts: VAULT_ROOT computed from __file__, MANIFEST_PATH = VAULT_ROOT/inputs/status-reports/manifest.json, all data paths updated to inputs/status-reports/ prefix
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/tools/status-reports/run_pipeline.sh` — Updated VAULT_ROOT (two levels up from SCRIPT_DIR), ENV_FILE and LOG_FILE updated to vault root paths
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/inputs/status-reports/manifest.json` — Updated config.processed_dir, config.archive_dir, and all step file paths to use inputs/status-reports/ and outputs/status-reports/ prefixes
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/product/status-reports/index.md` — Updated kickstart commands and data path references to new locations
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/product/status-reports/` — Now contains only changelog.md and index.md — clean skill stub
 
 **Handoff:** `handoff/complete/2026-04-12-p2-status-reports-skill-separation-COMPLETE.md`
 
@@ -586,8 +595,8 @@
 - `skills/synthesize/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/orchestration/access/SKILL.md` — Added Step 2 — Separation Policy Scan (ALWAYS RUN): walks skills/ for scripts, manifests, data files, logs; flags new violations as P1 handoff; known debt items as P2 after 7+ days
-- `/Users/benbelanger/GitHub/ben-cp/skills/intelligence/analysis/synthesize/diff_checker.md` — Extended Step 3 to read separation-policy.md and Step 4 to watch for Directory Boundaries drift between AGENTS.md and separation-policy.md
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/orchestration/access/SKILL.md` — Added Step 2 — Separation Policy Scan (ALWAYS RUN): walks skills/ for scripts, manifests, data files, logs; flags new violations as P1 handoff; known debt items as P2 after 7+ days
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/intelligence/analysis/synthesize/diff_checker.md` — Extended Step 3 to read separation-policy.md and Step 4 to watch for Directory Boundaries drift between AGENTS.md and separation-policy.md
 
 **Next Tasks:**
 1. Execute migration handoff 2026-04-12-p2-status-reports-skill-separation.md — move scripts, inputs, manifest out of skills/product/status-reports/
@@ -600,9 +609,9 @@
 - `skills/shared/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/shared/separation-policy.md` — Created separation policy with four-layer table, allowed/excluded file lists, character.md contract, and Known Migration Debt audit
-- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Added Directory Boundaries section after Who Are You? table
-- `/Users/benbelanger/GitHub/ben-cp/skills/index.md` — Added tools/ and inputs/ to Central Stores table
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/shared/separation-policy.md` — Created separation policy with four-layer table, allowed/excluded file lists, character.md contract, and Known Migration Debt audit
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Added Directory Boundaries section after Who Are You? table
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/index.md` — Added tools/ and inputs/ to Central Stores table
 
 **Handoff:** `handoff/complete/2026-04-12-p2-skill-separation-architecture-policy-COMPLETE.md`
 
@@ -618,9 +627,9 @@
 - `skills/shared/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/shared/separation-policy.md` — Created — four-layer separation policy with Known Migration Debt audit (13 scripts, 6 live data paths, 1 structural bug, 7 stale notes.md)
-- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Added Directory Boundaries section with four-layer table and hard constraint rule, cross-referencing separation-policy.md
-- `/Users/benbelanger/GitHub/ben-cp/skills/index.md` — Added tools/ and inputs/ to Central Stores table
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/shared/separation-policy.md` — Created — four-layer separation policy with Known Migration Debt audit (13 scripts, 6 live data paths, 1 structural bug, 7 stale notes.md)
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Added Directory Boundaries section with four-layer table and hard constraint rule, cross-referencing separation-policy.md
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/index.md` — Added tools/ and inputs/ to Central Stores table
 
 **Handoff:** `handoff/2026-04-12-p2-skill-separation-architecture-policy.md`
 
@@ -638,7 +647,7 @@
 **Failed actions:**
 - **Attempted:** Read AGENTS.md
   **Happened:** Access denied - path outside allowed directories.
-  **Recommendation:** Verify the correct relative path for this file within /Users/benbelanger/GitHub/ben-cp.
+  **Recommendation:** Verify the correct relative path for this file within /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp.
 
 **Blockers:**
 - Cannot execute arbitrary Python scripts (e.g., Dream Cycle report). — A tool capable of executing shell commands or running specific python files is required.
@@ -731,9 +740,9 @@
 - `skills/dream/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/dream/run.py` — Full rewrite — removed all hardcoded character names, report titles, section headers, output filenames, and print strings. All display strings now loaded from character.md at runtime via load_character(). Mock data keyed on skill names not character names. Functions renamed to generic equivalents (build_report_markdown, write_lede, process_editorial_phase, etc).
-- `/Users/benbelanger/GitHub/ben-cp/skills/dream/character.md` — Added ## Report Config JSON block with all display strings: report_title, byline, editor_label, lede_section, columns_section, output_prefix, footer, editorial_note. These are the single source of truth for all Digest framing.
-- `/Users/benbelanger/GitHub/ben-cp/skills/dream/SKILL.md` — Created — fully generic skill descriptor. Documents display framing contract, skill discovery via report_spec.json, output format, and run instructions. Constraint: run.py must remain persona-agnostic.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/dream/run.py` — Full rewrite — removed all hardcoded character names, report titles, section headers, output filenames, and print strings. All display strings now loaded from character.md at runtime via load_character(). Mock data keyed on skill names not character names. Functions renamed to generic equivalents (build_report_markdown, write_lede, process_editorial_phase, etc).
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/dream/character.md` — Added ## Report Config JSON block with all display strings: report_title, byline, editor_label, lede_section, columns_section, output_prefix, footer, editorial_note. These are the single source of truth for all Digest framing.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/dream/SKILL.md` — Created — fully generic skill descriptor. Documents display framing contract, skill discovery via report_spec.json, output format, and run instructions. Constraint: run.py must remain persona-agnostic.
 
 **Next Tasks:**
 1. Execute P2 handoff: add missing index.md to predict/, changelog/lumberjack/ and archive agents/roz.md (dream/ now has SKILL.md)
@@ -747,8 +756,8 @@
 - `skills/dream/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/dream/character.md` — Rewrote to establish Digest Editor's editorial principles: selects key details, quotes agents in their own voice, writes Front Page as original editorial read, brevity is a virtue
-- `/Users/benbelanger/GitHub/ben-cp/skills/dream/run.py` — Added editorial phase between revision and assembly: editorialize() reduces full envelopes to sharp excerpts, preserves agent voice via direct quotes, write_front_page() produces original editorial read not a summary of summaries, HTML renders quotes as blockquotes
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/dream/character.md` — Rewrote to establish Digest Editor's editorial principles: selects key details, quotes agents in their own voice, writes Front Page as original editorial read, brevity is a virtue
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/dream/run.py` — Added editorial phase between revision and assembly: editorialize() reduces full envelopes to sharp excerpts, preserves agent voice via direct quotes, write_front_page() produces original editorial read not a summary of summaries, HTML renders quotes as blockquotes
 
 **Next Tasks:**
 1. Execute P2 handoff: add missing index.md to dream/, predict/, changelog/lumberjack/ and archive agents/roz.md
@@ -762,7 +771,7 @@
 - `skills/access/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/access/SKILL.md` — Added Step 2 — Deletion & Overwrite Watch: scans all agent outputs, skills, handoffs, and changelogs for any language advocating deletion or overwrite; flags as P1 violation. Defined approved exceptions (notes.md cleanup, git mv for archiving).
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/access/SKILL.md` — Added Step 2 — Deletion & Overwrite Watch: scans all agent outputs, skills, handoffs, and changelogs for any language advocating deletion or overwrite; flags as P1 violation. Defined approved exceptions (notes.md cleanup, git mv for archiving).
 
 **Next Tasks:**
 1. Execute P2 handoff: add missing index.md to dream/, predict/, changelog/lumberjack/ and archive agents/roz.md
@@ -776,8 +785,8 @@
 - `skills/input/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Updated notes.md write policy — any agent may write to any notes.md, append-only, signed entries required, agents own their followups
-- `/Users/benbelanger/GitHub/ben-cp/skills/input/SKILL.md` — Rewrote to match corrected policy — collaborative scratchpad, signed entries, append-only, agents own followups
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Updated notes.md write policy — any agent may write to any notes.md, append-only, signed entries required, agents own their followups
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/input/SKILL.md` — Rewrote to match corrected policy — collaborative scratchpad, signed entries, append-only, agents own followups
 
 **Next Tasks:**
 1. Execute P2 handoff: add missing index.md to dream/, predict/, changelog/lumberjack/ and archive agents/roz.md
@@ -788,7 +797,7 @@
 ## [1.11.1] — Rewrite skills/index.md to reflect current vault structure — completing the P1 crypt-keeper handoff. (2026-04-12)
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/index.md` — Full rewrite — removed defunct crypt-keeper/, lumberjack/, roz/ references; added all current skill directories with accurate descriptions
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/index.md` — Full rewrite — removed defunct crypt-keeper/, lumberjack/, roz/ references; added all current skill directories with accurate descriptions
 
 **Handoff:** `handoff/2026-04-12-p1-crypt-keeper-agents-md-and-skills-index.md`
 
@@ -804,10 +813,10 @@
 - `skills/input/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/input/notes.md` — Renamed from captains-log.md — content preserved, header updated to remove character name reference
-- `/Users/benbelanger/GitHub/ben-cp/skills/input/SKILL.md` — Rewrote to define universal notes.md write policy: any agent may append to their own skill's notes.md, no agent may write to another skill's notes.md, skills/input/notes.md is persistent
-- `/Users/benbelanger/GitHub/ben-cp/skills/input/index.md` — Updated to reference notes.md (was captains-log.md)
-- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Major update: added notes.md write policy section, fixed Session Pattern (notes.md + skills/pmm/report.md), updated vault structure diagram, fixed Roz dispatch to skills/access/SKILL.md, removed character name references
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/input/notes.md` — Renamed from captains-log.md — content preserved, header updated to remove character name reference
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/input/SKILL.md` — Rewrote to define universal notes.md write policy: any agent may append to their own skill's notes.md, no agent may write to another skill's notes.md, skills/input/notes.md is persistent
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/input/index.md` — Updated to reference notes.md (was captains-log.md)
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Major update: added notes.md write policy section, fixed Session Pattern (notes.md + skills/pmm/report.md), updated vault structure diagram, fixed Roz dispatch to skills/access/SKILL.md, removed character name references
 
 **Next Tasks:**
 1. Execute P1 handoff: remaining AGENTS.md and skills/index.md fixes (skills/index.md rewrite)
@@ -822,11 +831,11 @@
 - `skills/knowledge/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/knowledge/outputs/reports/knowledge-report-2026-04-12.md` — Knowledge skill run — 11 flags across 8 checks, 3 handoffs written
-- `/Users/benbelanger/GitHub/ben-cp/skills/knowledge/outputs/reports/archive/cleanup-report-2026-04-10.md` — Archived previous report before writing new one
-- `/Users/benbelanger/GitHub/ben-cp/handoff/2026-04-12-p1-crypt-keeper-agents-md-and-skills-index.md` — P1 handoff — fix AGENTS.md (notes.md rename, vault diagram, Roz dispatch) and rewrite skills/index.md
-- `/Users/benbelanger/GitHub/ben-cp/handoff/2026-04-12-p2-crypt-keeper-missing-indexes-and-roz-consolidation.md` — P2 handoff — add missing index.md to dream/, predict/, changelog/lumberjack/ and archive agents/roz.md
-- `/Users/benbelanger/GitHub/ben-cp/handoff/2026-04-12-p3-crypt-keeper-data-and-index-gaps.md` — P3 handoff — add Locked/Signed Notes to data_sources.md, fix orphaned index references
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/outputs/reports/knowledge-report-2026-04-12.md` — Knowledge skill run — 11 flags across 8 checks, 3 handoffs written
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/outputs/reports/archive/cleanup-report-2026-04-10.md` — Archived previous report before writing new one
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoff/2026-04-12-p1-crypt-keeper-agents-md-and-skills-index.md` — P1 handoff — fix AGENTS.md (notes.md rename, vault diagram, Roz dispatch) and rewrite skills/index.md
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoff/2026-04-12-p2-crypt-keeper-missing-indexes-and-roz-consolidation.md` — P2 handoff — add missing index.md to dream/, predict/, changelog/lumberjack/ and archive agents/roz.md
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoff/2026-04-12-p3-crypt-keeper-data-and-index-gaps.md` — P3 handoff — add Locked/Signed Notes to data_sources.md, fix orphaned index references
 
 **Next Tasks:**
 1. Execute P1 handoff: fix AGENTS.md and rewrite skills/index.md
@@ -1010,7 +1019,7 @@
 - `skills/project-status-reports/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/project-status-reports/outputs/Status_Report.html` — Successfully generated the Platform Weekly Status Report for April 10, 2026.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/project-status-reports/outputs/Status_Report.html` — Successfully generated the Platform Weekly Status Report for April 10, 2026.
 
 **Next Tasks:**
 1. Review the generated report for any critical findings before sharing with stakeholders.
@@ -1035,8 +1044,8 @@
 - `skills/synthesis/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Executed AGENTS.md mission integrity audit; no drift detected.
-- `/Users/benbelanger/GitHub/ben-cp/skills/synthesis/art.md` — Added commemorative 'The Dream Sequence' entry to art.md.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Executed AGENTS.md mission integrity audit; no drift detected.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/synthesis/art.md` — Added commemorative 'The Dream Sequence' entry to art.md.
 
 **Next Tasks:**
 1. Continue monitoring AGENTS.md for foundation drift.
@@ -1048,9 +1057,9 @@
 - `skills/changelog/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/changelog/reports/archive/lumberjack-report-2026-04-09.md` — Archived lumberjack-report-2026-04-09.md and created archive/ directory.
-- `/Users/benbelanger/GitHub/ben-cp/skills/changelog/reports/changelog-report-2026-04-10.md` — Executed changelog audit against git history and written report lumberjack-report-2026-04-10.md.
-- `/Users/benbelanger/GitHub/ben-cp/skills/changelog/reports/changelog-report-2026-04-10.md` — Identified alignment gaps in skills/handoff/changelog.md and okr-reporting log nesting.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/changelog/reports/archive/lumberjack-report-2026-04-09.md` — Archived lumberjack-report-2026-04-09.md and created archive/ directory.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/changelog/reports/changelog-report-2026-04-10.md` — Executed changelog audit against git history and written report lumberjack-report-2026-04-10.md.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/changelog/reports/changelog-report-2026-04-10.md` — Identified alignment gaps in skills/handoff/changelog.md and okr-reporting log nesting.
 
 **Next Tasks:**
 1. Address handoff/2026-04-10-p2-lumberjack-changelog-alignment-fixes.md
@@ -1062,9 +1071,9 @@
 - `skills/knowledge/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/knowledge/reports/archive/cleanup-report-2026-04-09.md` — Archived cleanup-report-2026-04-09.md to archive/ directory.
-- `/Users/benbelanger/GitHub/ben-cp/skills/knowledge/reports/knowledge-report-2026-04-10.md` — Executed 7-point structural audit and written report cleanup-report-2026-04-10.md.
-- `/Users/benbelanger/GitHub/ben-cp/skills/knowledge/reports/knowledge-report-2026-04-10.md` — Identified orphaned index entry for notes_quick_entry.md and data_sources.md sync gaps.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/reports/archive/cleanup-report-2026-04-09.md` — Archived cleanup-report-2026-04-09.md to archive/ directory.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/reports/knowledge-report-2026-04-10.md` — Executed 7-point structural audit and written report cleanup-report-2026-04-10.md.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/reports/knowledge-report-2026-04-10.md` — Identified orphaned index entry for notes_quick_entry.md and data_sources.md sync gaps.
 
 **Next Tasks:**
 1. Address handoff/2026-04-10-p1-crypt-keeper-orphaned-and-sync-gaps.md
@@ -1077,9 +1086,9 @@
 - `skills/changelog/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Added Handoff Exemption to vault completion reporting rules.
-- `/Users/benbelanger/GitHub/ben-cp/agents/gemma.md` — Added Handoff Exemption to Gemma's session wrap-up rules.
-- `/Users/benbelanger/GitHub/ben-cp/skills/changelog/index.md` — Updated changelog procedure with Handoff Exemption in Stage 2.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Added Handoff Exemption to vault completion reporting rules.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/gemma.md` — Added Handoff Exemption to Gemma's session wrap-up rules.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/changelog/index.md` — Updated changelog procedure with Handoff Exemption in Stage 2.
 
 **Next Tasks:**
 1. Ensure future handoff-centric sessions follow the condensed logging pattern.
@@ -1093,10 +1102,10 @@
 - `skills/handoff/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/pmm/index.md` — Established Strategic PM skill SOP and template.
-- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Updated AGENTS.md with Strategic PM session pattern.
-- `/Users/benbelanger/GitHub/ben-cp/skills/changelog/audit_procedure.md` — Added Check 8 (Lingering Plans) to Changelog Auditor audit procedure.
-- `/Users/benbelanger/GitHub/ben-cp/handoff/2026-04-10-p2-quartermaster-convention.md` — Created Strategic PM convention handoff.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/pmm/index.md` — Established Strategic PM skill SOP and template.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Updated AGENTS.md with Strategic PM session pattern.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/changelog/audit_procedure.md` — Added Check 8 (Lingering Plans) to Changelog Auditor audit procedure.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoff/2026-04-10-p2-quartermaster-convention.md` — Created Strategic PM convention handoff.
 
 **Next Tasks:**
 1. Verify Strategic PM usage in the next write-active session.
@@ -1109,8 +1118,8 @@
 - `skills/okr-reporting/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md` — Updated SOP with March 2026 proxy baseline (18 tenants) and integrated Margaux's Google Sheet link into Data Sources for segmentation validation.
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/procedure.md` — Added 'Metric Qualification Standards (N & D)' section, defining strict inclusion criteria for Numerator and Denominator populations to ensure measurement consistency across all KRs.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md` — Updated SOP with March 2026 proxy baseline (18 tenants) and integrated Margaux's Google Sheet link into Data Sources for segmentation validation.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/procedure.md` — Added 'Metric Qualification Standards (N & D)' section, defining strict inclusion criteria for Numerator and Denominator populations to ensure measurement consistency across all KRs.
 
 **Handoff:** `handoff/2026-04-10-p2-finalize-enrollments-data-entry-shortcuts-baseline.md`
 
@@ -1124,7 +1133,7 @@
 - `skills/okr-reporting/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/procedure.md` — Added 'Metric Qualification Standards (N & D)' section, defining strict inclusion criteria for Numerator and Denominator populations to ensure measurement consistency across all KRs.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/procedure.md` — Added 'Metric Qualification Standards (N & D)' section, defining strict inclusion criteria for Numerator and Denominator populations to ensure measurement consistency across all KRs.
 
 **Next Tasks:**
 1. Review the remaining unblocked KRs in Q2 2026 to determine next documentation priority.
@@ -1137,7 +1146,7 @@
 - `skills/okr-reporting/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md` — Updated SOP to reflect March 2026 proxy baseline (18 tenants) and integrated Margaux's Google Sheet link into Data Sources for segmentation validation.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md` — Updated SOP to reflect March 2026 proxy baseline (18 tenants) and integrated Margaux's Google Sheet link into Data Sources for segmentation validation.
 
 **Next Tasks:**
 1. Review remaining unblocked KRs in Q2 2026 to determine next documentation priority.
@@ -1150,7 +1159,7 @@
 - `skills/okr-reporting/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/service_notes_data_entry_shortcuts.md` — Updated SOP to v0.2, inserting the March 2026 baseline (31.5%) and updating the data source link with a caveat regarding Roster-only scope due to GA delays.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/service_notes_data_entry_shortcuts.md` — Updated SOP to v0.2, inserting the March 2026 baseline (31.5%) and updating the data source link with a caveat regarding Roster-only scope due to GA delays.
 
 **Next Tasks:**
 1. Finalize Locked and Signed Notes SOP by inputting Q2 proxy baseline and target.
@@ -1162,9 +1171,9 @@
 - `skills/okr-reporting/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/service_notes_data_entry_shortcuts.md` — Updated SOP to v0.2, explicitly cross-referencing the GA event discovery process from notes_quick_entry.md and detailing Reveal BI pull path for baseline calculation.
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md` — Finalized SOP v1.0, establishing Locked Notes as a proxy baseline for High-Confidentiality tenants due to Signed Notes not yet being live.
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/data_sources.md` — Updated the description for Casebook Admin Reporting / Reveal BI to explicitly state its role in serving as a primary source for Denominators in shortcut metrics, improving data lineage clarity.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/service_notes_data_entry_shortcuts.md` — Updated SOP to v0.2, explicitly cross-referencing the GA event discovery process from notes_quick_entry.md and detailing Reveal BI pull path for baseline calculation.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md` — Finalized SOP v1.0, establishing Locked Notes as a proxy baseline for High-Confidentiality tenants due to Signed Notes not yet being live.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/data_sources.md` — Updated the description for Casebook Admin Reporting / Reveal BI to explicitly state its role in serving as a primary source for Denominators in shortcut metrics, improving data lineage clarity.
 
 **Next Tasks:**
 1. Execute baseline pull for Service Notes — Roster Association using Reveal BI (Path A).
@@ -1176,7 +1185,7 @@
 - `skills/okr-reporting/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/data_sources.md` — Updated the description for Casebook Admin Reporting / Reveal BI to explicitly state its role in serving as a primary source for Denominators in shortcut metrics, improving data lineage clarity.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/data_sources.md` — Updated the description for Casebook Admin Reporting / Reveal BI to explicitly state its role in serving as a primary source for Denominators in shortcut metrics, improving data lineage clarity.
 
 **Next Tasks:**
 1. Execute baseline pull for Service Notes — Roster Association using Reveal BI (Path A).
@@ -1188,8 +1197,8 @@
 - `skills/okr-reporting/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/service_notes_data_entry_shortcuts.md` — Updated SOP to v0.2, explicitly cross-referencing the GA event discovery process from notes_quick_entry.md and detailing Reveal BI pull path for baseline calculation.
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md` — Finalized SOP v1.0, establishing Locked Notes as a proxy baseline for High-Confidentiality tenants due to Signed Notes not yet being live.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/service_notes_data_entry_shortcuts.md` — Updated SOP to v0.2, explicitly cross-referencing the GA event discovery process from notes_quick_entry.md and detailing Reveal BI pull path for baseline calculation.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md` — Finalized SOP v1.0, establishing Locked Notes as a proxy baseline for High-Confidentiality tenants due to Signed Notes not yet being live.
 
 **Next Tasks:**
 1. Execute baseline pull for Service Notes — Roster Association using Reveal BI (Path A).
@@ -1202,8 +1211,8 @@
 - `skills/okr-reporting/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/service_notes_data_entry_shortcuts.md` — Updated SOP to v0.2, explicitly cross-referencing the GA event discovery process from notes_quick_entry.md and detailing Reveal BI pull path for baseline calculation.
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md` — Finalized SOP v1.0, establishing Locked Notes as a proxy baseline for High-Confidentiality tenants due to Signed Notes not yet being live.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/service_notes_data_entry_shortcuts.md` — Updated SOP to v0.2, explicitly cross-referencing the GA event discovery process from notes_quick_entry.md and detailing Reveal BI pull path for baseline calculation.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md` — Finalized SOP v1.0, establishing Locked Notes as a proxy baseline for High-Confidentiality tenants due to Signed Notes not yet being live.
 
 **Next Tasks:**
 1. Execute baseline pull for Service Notes — Roster Association using Reveal BI (Path A).
@@ -1216,8 +1225,8 @@
 - `skills/okr-reporting/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md` — Created Locked and Signed Notes measurement SOP.
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/index.md` — Linked 'Locked / Signed Notes' SOP in initiative index.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md` — Created Locked and Signed Notes measurement SOP.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/index.md` — Linked 'Locked / Signed Notes' SOP in initiative index.
 
 **Next Tasks:**
 1. Pull initial proxy baseline for High-Conf tenants after verifying segment via Margaux's sheet.
@@ -1230,7 +1239,7 @@
 - `skills/okr-reporting/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/notes_quick_entry.md` — Updated Notes Quick Entry OKR with 49% baseline (174/357) and 50% target.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/notes_quick_entry.md` — Updated Notes Quick Entry OKR with 49% baseline (174/357) and 50% target.
 
 **Next Tasks:**
 1. Monitor for Notes WLV event shipping in Q3 to expand the denominator population.
@@ -1242,8 +1251,8 @@
 - `skills/changelog/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Implemented universal 'Rule of Recency' and 'Mental Check' for edit tools.
-- `/Users/benbelanger/GitHub/ben-cp/agents/gemma.md` — Added strict 'Just-in-Time' read and 'Fail-Safe' re-read rules for Gemma.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Implemented universal 'Rule of Recency' and 'Mental Check' for edit tools.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/gemma.md` — Added strict 'Just-in-Time' read and 'Fail-Safe' re-read rules for Gemma.
 
 **Next Tasks:**
 1. Monitor Gemma for compliance with the new 'Mental Check' thought block requirement.
@@ -1256,10 +1265,10 @@
 - `skills/changelog/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/agents/claude.md` — Consolidated CLAUDE.md into agents/claude.md and agents/claude-code.md.
-- `/Users/benbelanger/GitHub/ben-cp/agents/claude-code.md` — Updated startup protocols to include mandatory handoff checks in Claude role files.
-- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Cleaned up root-level file exceptions.
-- `/Users/benbelanger/GitHub/ben-cp/CLAUDE.md` — Deleted redundant CLAUDE.md root file.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/claude.md` — Consolidated CLAUDE.md into agents/claude.md and agents/claude-code.md.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/claude-code.md` — Updated startup protocols to include mandatory handoff checks in Claude role files.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Cleaned up root-level file exceptions.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/CLAUDE.md` — Deleted redundant CLAUDE.md root file.
 
 **Next Tasks:**
 1. Monitor Claude agent startup behavior to ensure handoff checks are performed.
@@ -1271,9 +1280,9 @@
 - `skills/changelog/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/agents/gemma.md` — Consolidated GEMMA.md into agents/gemma.md to streamline agent orientation.
-- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Removed GEMMA.md reference from vault structure tree.
-- `/Users/benbelanger/GitHub/ben-cp/GEMMA.md` — Deleted redundant GEMMA.md root file.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/gemma.md` — Consolidated GEMMA.md into agents/gemma.md to streamline agent orientation.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Removed GEMMA.md reference from vault structure tree.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/GEMMA.md` — Deleted redundant GEMMA.md root file.
 
 **Next Tasks:**
 1. Ensure future agent role additions follow the agents/[name].md pattern instead of root-level files.
@@ -1285,10 +1294,10 @@
 - `skills/changelog/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Updated Completion Reporting to be conditional on write/edit activity.
-- `/Users/benbelanger/GitHub/ben-cp/GEMMA.md` — Updated Rule 7 to 'Log Write-Active Sessions'.
-- `/Users/benbelanger/GitHub/ben-cp/agents/gemma.md` — Updated Session Wrap-Up to be conditional.
-- `/Users/benbelanger/GitHub/ben-cp/skills/changelog/index.md` — Updated triggers to exclude read-only discovery.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Updated Completion Reporting to be conditional on write/edit activity.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/GEMMA.md` — Updated Rule 7 to 'Log Write-Active Sessions'.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/gemma.md` — Updated Session Wrap-Up to be conditional.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/changelog/index.md` — Updated triggers to exclude read-only discovery.
 
 **Next Tasks:**
 1. Monitor Gemma sessions to ensure 'empty' changelogs are no longer produced.
@@ -1301,8 +1310,8 @@
 - `skills/okr-reporting/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Updated AGENTS.md, procedure.md, data_sources.md, and GEMMA.md with all new nested paths and dashboard links Cory
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/procedure.md` — Performed vault-wide audit to ensure no dangling references to deprecated 2026-q2-kr-reference.md remained Cory
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Updated AGENTS.md, procedure.md, data_sources.md, and GEMMA.md with all new nested paths and dashboard links Cory
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/procedure.md` — Performed vault-wide audit to ensure no dangling references to deprecated 2026-q2-kr-reference.md remained Cory
 
 **Next Tasks:**
 1. Review changelog for any other indirect references that might need cleanup (e.g. past entries).
@@ -1314,10 +1323,10 @@
 - `skills/okr-reporting/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/index.md` — Created elevate-notes and reduce-admin-burden initiative indices for Q2 2026
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/index.md` — Migrated all KR reference content (baselines, targets, next steps) into initiative-specific indices
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/index.md` — Reconstructed main Q2 index as a master status dashboard
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/2026-q2-kr-reference.md` — Deprecated and deleted 2026-q2-kr-reference.md
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/index.md` — Created elevate-notes and reduce-admin-burden initiative indices for Q2 2026
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/index.md` — Migrated all KR reference content (baselines, targets, next steps) into initiative-specific indices
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/index.md` — Reconstructed main Q2 index as a master status dashboard
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/2026-q2-kr-reference.md` — Deprecated and deleted 2026-q2-kr-reference.md
 
 **Next Tasks:**
 1. Ensure all links in the new dashboard correctly point to their respective initiative SOPs.
@@ -1329,10 +1338,10 @@
 - `skills/okr-reporting/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/` — Moved service_notes_data_entry_shortcuts.md and service_notes_roster_association.md to planning-services-at-scale/ subdirectory
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/index.md` — Updated Planning Services sub-index with additional Service Notes SOPs
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/index.md` — Updated Q2 index with nested path for roster association SOP
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/service_notes_roster_association.md` — Resolved internal links in the second batch of moved SOPs
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/` — Moved service_notes_data_entry_shortcuts.md and service_notes_roster_association.md to planning-services-at-scale/ subdirectory
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/index.md` — Updated Planning Services sub-index with additional Service Notes SOPs
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/index.md` — Updated Q2 index with nested path for roster association SOP
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/service_notes_roster_association.md` — Resolved internal links in the second batch of moved SOPs
 
 **Next Tasks:**
 1. Verify all 5 SOPs in the new directory for link consistency.
@@ -1344,10 +1353,10 @@
 - `skills/okr-reporting/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/index.md` — Created skills/okr-reporting/q2-2026/planning-services-at-scale/index.md
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/` — Moved enrollments_data_entry_shortcuts.md, notes_datagrid_shortcuts.md, and notes_quick_entry.md to new Q2 subdirectory
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/index.md` — Updated skills/okr-reporting/index.md and q2-2026/index.md lists
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/enrollments_data_entry_shortcuts.md` — Resolved relative link references in moved SOP files
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/index.md` — Created skills/okr-reporting/q2-2026/planning-services-at-scale/index.md
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/` — Moved enrollments_data_entry_shortcuts.md, notes_datagrid_shortcuts.md, and notes_quick_entry.md to new Q2 subdirectory
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/index.md` — Updated skills/okr-reporting/index.md and q2-2026/index.md lists
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/enrollments_data_entry_shortcuts.md` — Resolved relative link references in moved SOP files
 
 **Next Tasks:**
 1. Audit remaining Q2 SOPs for similar categorization needs.
@@ -1411,7 +1420,7 @@
 - `skills/synthesis/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Performed first official Mission Integrity Audit of AGENTS.md. No drift detected.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Performed first official Mission Integrity Audit of AGENTS.md. No drift detected.
 
 **Next Tasks:**
 1. Continue monitoring AGENTS.md for foundation drift.
@@ -1420,9 +1429,9 @@
 ## [1.7.9] — Triage context loading and logging complexity with resilience rules. (2026-04-10)
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Added Course Correction Protocol to AGENTS.md.
-- `/Users/benbelanger/GitHub/ben-cp/skills/handoff/index.md` — Updated Handoff Protocol (skills/handoff/index.md) with logging resilience rules.
-- `/Users/benbelanger/GitHub/ben-cp/agents/robert.md` — Updated Robert's monitors (agents/robert.md).
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Added Course Correction Protocol to AGENTS.md.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/handoff/index.md` — Updated Handoff Protocol (skills/handoff/index.md) with logging resilience rules.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/robert.md` — Updated Robert's monitors (agents/robert.md).
 
 **Handoff:** `handoff/complete/2026-04-10-p2-context-loading-triage-COMPLETE.md`
 
@@ -1436,9 +1445,9 @@
 - `skills/handoff/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Integrated Course Correction Protocol and Resonance rules into AGENTS.md.
-- `/Users/benbelanger/GitHub/ben-cp/skills/handoff/index.md` — Updated Handoff Protocol with resilience policies for logging failures.
-- `/Users/benbelanger/GitHub/ben-cp/agents/robert.md` — Added Course Correction Protocol to Robert's monitoring scope.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Integrated Course Correction Protocol and Resonance rules into AGENTS.md.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/handoff/index.md` — Updated Handoff Protocol with resilience policies for logging failures.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/robert.md` — Added Course Correction Protocol to Robert's monitoring scope.
 
 **Handoff:** `handoff/2026-04-10-p2-context-loading-triage.md`
 
@@ -1461,9 +1470,9 @@
 ## [1.7.6] — Launch Robert (Mission Integrity Observer) and art.md mixed media convention. (2026-04-09)
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/agents/robert.md` — Created agents/robert.md role file.
-- `/Users/benbelanger/GitHub/ben-cp/skills/synthesis/` — Launched skills/synthesis/ directory with index, diff_checker, art, and changelog.md.
-- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Documented art.md convention in AGENTS.md.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/robert.md` — Created agents/robert.md role file.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/synthesis/` — Launched skills/synthesis/ directory with index, diff_checker, art, and changelog.md.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Documented art.md convention in AGENTS.md.
 
 **Handoff:** `handoff/complete/2026-04-10-p3-robert-agent-creation-COMPLETE.md`
 
@@ -1478,9 +1487,9 @@
 - `skills/synthesis/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/agents/robert.md` — Created Robert agent and skill directory.
-- `/Users/benbelanger/GitHub/ben-cp/skills/synthesis/art.md` — Established art.md convention for mixed digital media art.
-- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Integrated Robert into AGENTS.md.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/robert.md` — Created Robert agent and skill directory.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/synthesis/art.md` — Established art.md convention for mixed digital media art.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Integrated Robert into AGENTS.md.
 
 **Handoff:** `handoff/2026-04-10-p3-robert-agent-creation.md`
 
@@ -1495,8 +1504,8 @@
 - `skills/handoff/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/handoff/index.md` — Added 'Editability Rules' section clarifying that open handoffs are fully editable living documents.
-- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Added note to AGENTS.md Handoff Check section regarding living document status of open handoffs.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/handoff/index.md` — Added 'Editability Rules' section clarifying that open handoffs are fully editable living documents.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Added note to AGENTS.md Handoff Check section regarding living document status of open handoffs.
 
 **Handoff:** `handoff/2026-04-10-p1-handoff-editability-COMPLETE.md`
 
@@ -1507,8 +1516,8 @@
 ## [1.7.3] — Initialize Antigravity as a peer implementer agent in the ben-cp vault. (2026-04-09)
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/agents/antigravity.md` — Created agents/antigravity.md role file with verbatim handoff text.
-- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Updated AGENTS.md dispatch table and vault structure tree to register Antigravity agent.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/antigravity.md` — Created agents/antigravity.md role file with verbatim handoff text.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Updated AGENTS.md dispatch table and vault structure tree to register Antigravity agent.
 
 **Handoff:** `handoff/2026-04-10-p2-antigravity-agent.md`
 
@@ -1523,8 +1532,8 @@
 - `skills/okr-reporting/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/service_notes_data_entry_shortcuts.md` — Refined SOP to v0.2, explicitly cross-referencing the GA event discovery process from notes_quick_entry.md.
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/enrollments_data_entry_shortcuts.md` — Drafted new SOP (v0.1) by adapting Notes Quick Entry template, focusing on Tenant-level Enrollment metrics and using placeholders for GA event discovery.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/service_notes_data_entry_shortcuts.md` — Refined SOP to v0.2, explicitly cross-referencing the GA event discovery process from notes_quick_entry.md.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/enrollments_data_entry_shortcuts.md` — Drafted new SOP (v0.1) by adapting Notes Quick Entry template, focusing on Tenant-level Enrollment metrics and using placeholders for GA event discovery.
 
 **Next Tasks:**
 1. Populate skills/okr-reporting/data_sources.md by cross-referencing all KR SOPs in this directory.
@@ -1536,7 +1545,7 @@
 - `skills/okr-reporting/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/data_sources.md` — Verified that existing KR SOPs reference documented sources; confirmed the inventory itself contains all known outstanding data path gaps (e.g., UOW context for EngageWLVAddNote).
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/data_sources.md` — Verified that existing KR SOPs reference documented sources; confirmed the inventory itself contains all known outstanding data path gaps (e.g., UOW context for EngageWLVAddNote).
 
 **Next Tasks:**
 1. Investigate 'EngageWLVAddNote' UOW vs non-UOW context using dev tools, or flag this as a blocker for human user.
@@ -1548,8 +1557,8 @@
 - `skills/okr-reporting/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/index.md` — Created placeholder TOC file for Q2 2026 deliverables.
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/q2-2026/changelog.md` — Created placeholder changelog file for Q2 2026 tracking.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/index.md` — Created placeholder TOC file for Q2 2026 deliverables.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/changelog.md` — Created placeholder changelog file for Q2 2026 tracking.
 
 **Next Tasks:**
 1. Populate skills/okr-reporting/data_sources.md by cross-referencing all KR SOPs in this directory.
@@ -1561,7 +1570,7 @@
 - `skills/okr-reporting/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/service_notes_data_entry_shortcuts.md` — Updated SOP to v0.2, explicitly cross-referencing the GA event discovery process from notes_quick_entry.md.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/service_notes_data_entry_shortcuts.md` — Updated SOP to v0.2, explicitly cross-referencing the GA event discovery process from notes_quick_entry.md.
 
 **Next Tasks:**
 1. Populate skills/okr-reporting/data_sources.md by cross-referencing all KR SOPs in this directory.
@@ -1570,7 +1579,7 @@
 ## [1.6.9] — Documented workflow friction regarding precise line-based edits and created a meta-handoff note for process improvement. (2026-04-09)
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/changelog.md` — Added a note regarding the brittleness of line-based edits during complex refactoring, advising agents to read larger context blocks first.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/changelog.md` — Added a note regarding the brittleness of line-based edits during complex refactoring, advising agents to read larger context blocks first.
 
 **Handoff:** `handoff/2026-04-XX-editing-friction-summary.md (Conceptual)`
 
@@ -1584,7 +1593,7 @@
 - `skills/okr-reporting/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/service_notes_roster_association.md` — Created new KR SOP for Service Notes Roster Association, detailing Reveal BI query path and measurement logic.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/service_notes_roster_association.md` — Created new KR SOP for Service Notes Roster Association, detailing Reveal BI query path and measurement logic.
 
 **Next Tasks:**
 1. Draft the KR SOP for Service Notes — Data Entry Shortcuts based on established patterns.
@@ -1593,7 +1602,7 @@
 ## [1.6.7] — To document the process refinement cycle resulting from tooling errors during structured changelog logging for future agent reference. (2026-04-09)
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/changelog.md` — Finalized documentation of the Handoff Protocol review and subsequent tooling error resolution cycle in the root changelog.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/changelog.md` — Finalized documentation of the Handoff Protocol review and subsequent tooling error resolution cycle in the root changelog.
 
 **Next Tasks:**
 
@@ -1602,7 +1611,7 @@
 ## [1.6.6] — To document the process refinement cycle resulting from tooling errors during structured changelog logging for future agent reference. (2026-04-09)
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/changelog.md` — Added a detailed entry documenting the 'ENOENT' error when targeting skills/skillshandoff/changelog.md, detailing the necessary course correction (directory creation and root logging) to ensure process continuity.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/changelog.md` — Added a detailed entry documenting the 'ENOENT' error when targeting skills/skillshandoff/changelog.md, detailing the necessary course correction (directory creation and root logging) to ensure process continuity.
 
 **Next Tasks:**
 
@@ -1611,8 +1620,8 @@
 ## [1.6.5] — To learn the Handoff Protocol by reviewing its documentation and understanding how to delegate an observation to Claude Code. (2026-04-09)
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/handoff/index.md` — Reviewed the complete Handoff Protocol skill documentation, detailing receiving, execution, and completion steps.
-- `/Users/benbelanger/GitHub/ben-cp/agents/claude-code.md` — Reviewed Claude Code's role instructions to understand its capabilities as the target agent for triaging.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/handoff/index.md` — Reviewed the complete Handoff Protocol skill documentation, detailing receiving, execution, and completion steps.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/claude-code.md` — Reviewed Claude Code's role instructions to understand its capabilities as the target agent for triaging.
 
 **Next Tasks:**
 1. Draft a new handoff file based on the observation that context loading is complex, targeting Claude Code for triage.
@@ -1622,8 +1631,8 @@
 ## [1.6.4] — To learn the Handoff Protocol by reviewing its documentation and understanding how to delegate an observation to Claude Code. (2026-04-09)
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/handoff/index.md` — Reviewed the complete Handoff Protocol skill documentation, detailing receiving, execution, and completion steps.
-- `/Users/benbelanger/GitHub/ben-cp/agents/claude-code.md` — Reviewed Claude Code's role instructions to understand its capabilities as the target agent for triaging.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/handoff/index.md` — Reviewed the complete Handoff Protocol skill documentation, detailing receiving, execution, and completion steps.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/claude-code.md` — Reviewed Claude Code's role instructions to understand its capabilities as the target agent for triaging.
 
 **Next Tasks:**
 1. Draft a new handoff file based on the observation that context loading is complex, targeting Claude Code for triage.
@@ -1633,8 +1642,8 @@
 ## [1.6.3] — To learn the Handoff Protocol by reviewing its documentation and understanding how to delegate an observation to Claude Code. (2026-04-09)
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/handoff/index.md` — Reviewed the complete Handoff Protocol skill documentation, detailing receiving, execution, and completion steps.
-- `/Users/benbelanger/GitHub/ben-cp/agents/claude-code.md` — Reviewed Claude Code's role instructions to understand its capabilities as the target agent for triaging.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/handoff/index.md` — Reviewed the complete Handoff Protocol skill documentation, detailing receiving, execution, and completion steps.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/claude-code.md` — Reviewed Claude Code's role instructions to understand its capabilities as the target agent for triaging.
 
 **Next Tasks:**
 1. Draft a new handoff file based on the observation that context loading is complex, targeting Claude Code for triage.
@@ -1647,7 +1656,7 @@
 - `skills/changelog/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/changelog/reports/changelog-report-2026-04-09.md` — First formal Changelog Auditor audit — 16 flags across 6 checks (Check 7 clean); 10 handoffs cross-referenced; key finding: write_changelog_entry tool behavior copies identical content to all subdirectory changelogs
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/changelog/reports/changelog-report-2026-04-09.md` — First formal Changelog Auditor audit — 16 flags across 6 checks (Check 7 clean); 10 handoffs cross-referenced; key finding: write_changelog_entry tool behavior copies identical content to all subdirectory changelogs
 
 **Next Tasks:**
 1. Create handoff 2026-04-09-p2-lumberjack-changelog-fixes.md per report recommendations (human user to confirm)
@@ -1661,8 +1670,8 @@
 - `skills/knowledge/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/knowledge/reports/archive/cleanup-report-2026-04-08.md` — Archived prior report via git mv before writing new run
-- `/Users/benbelanger/GitHub/ben-cp/skills/knowledge/reports/knowledge-report-2026-04-09.md` — Vault Auditor run complete — 53 files scanned, 10 flags across 3 checks (Checks 2/4/5/7 clean)
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/reports/archive/cleanup-report-2026-04-08.md` — Archived prior report via git mv before writing new run
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/reports/knowledge-report-2026-04-09.md` — Vault Auditor run complete — 53 files scanned, 10 flags across 3 checks (Checks 2/4/5/7 clean)
 
 **Next Tasks:**
 1. P1: Create skills/project-status-reports/scripts/index.md (draft in report)
@@ -1683,22 +1692,22 @@
 - `skills/changelog/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/GitHub/ben-cp/skills/knowledge/index.md` — Added SKILL.md, changelog.md, and reports/ entries to contents table; fixed stale reports path reference
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/index.md` — Added changelog.md entry to contents table
-- `/Users/benbelanger/GitHub/ben-cp/crypt-keeper.md` — Deleted root redirect stub via git rm
-- `/Users/benbelanger/GitHub/ben-cp/skills/casebook/reporting/schema_joins.md` — Created — moved schema joins content from index.md with fixed paths (casebook-reporting/ → casebook/reporting/)
-- `/Users/benbelanger/GitHub/ben-cp/skills/casebook/reporting/index.md` — Replaced schema joins doc with proper directory TOC listing all 9 files
-- `/Users/benbelanger/GitHub/ben-cp/skills/skill-builder/mappings/index.md` — Created — new directory TOC for mappings/
-- `/Users/benbelanger/GitHub/ben-cp/skills/skill-builder/styles/index.md` — Created — new directory TOC for styles/
-- `/Users/benbelanger/GitHub/ben-cp/skills/skill-builder/rules/` — Removed empty directory
-- `/Users/benbelanger/GitHub/ben-cp/skills/okr-reporting/data_sources.md` — Added Database (Direct) — Portal KRs section + /portal GA proxy row with engineering note
-- `/Users/benbelanger/GitHub/ben-cp/AGENTS.md` — Added SKILL.md/AGENTS.md naming exemption; updated vault tree (removed root reports/, added knowledge/reports/); updated File Placement table; root exemptions already had CLAUDE.md and README.md
-- `/Users/benbelanger/GitHub/ben-cp/reports/` — Removed root reports/ directory (git rm -r); content already existed in skills/knowledge/reports/
-- `/Users/benbelanger/GitHub/ben-cp/skills/knowledge/procedure.md` — Updated output path from reports/ to skills/knowledge/reports/; added archive step to Pre-Flight
-- `/Users/benbelanger/GitHub/ben-cp/handoff/complete/2026-04-08-changelog-refactor-COMPLETE.md` — Renamed from 2026-04-08-changelog-refactor.md (added -COMPLETE suffix)
-- `/Users/benbelanger/GitHub/ben-cp/handoff/complete/2026-04-09-consolidate-project-status-reports-COMPLETE.md` — Renamed from 2026-04-09-consolidate-project-status-reports.md (added -COMPLETE suffix)
-- `/Users/benbelanger/GitHub/ben-cp/changelog.md` — Fixed 1.4.1 phantom reports/archive/ path; expanded 1.5.0 with missing infrastructure changes; annotated stale Next Tasks in 1.2.0 and 1.3.0
-- `/Users/benbelanger/GitHub/ben-cp/skills/casebook/changelog.md` — Fixed 1.1.0 wrong count: 4 unexposed → 3 unexposed API functions for subscriptions
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/index.md` — Added SKILL.md, changelog.md, and reports/ entries to contents table; fixed stale reports path reference
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/index.md` — Added changelog.md entry to contents table
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/crypt-keeper.md` — Deleted root redirect stub via git rm
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/casebook/reporting/schema_joins.md` — Created — moved schema joins content from index.md with fixed paths (casebook-reporting/ → casebook/reporting/)
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/casebook/reporting/index.md` — Replaced schema joins doc with proper directory TOC listing all 9 files
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/skill-builder/mappings/index.md` — Created — new directory TOC for mappings/
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/skill-builder/styles/index.md` — Created — new directory TOC for styles/
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/skill-builder/rules/` — Removed empty directory
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/data_sources.md` — Added Database (Direct) — Portal KRs section + /portal GA proxy row with engineering note
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Added SKILL.md/AGENTS.md naming exemption; updated vault tree (removed root reports/, added knowledge/reports/); updated File Placement table; root exemptions already had CLAUDE.md and README.md
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/reports/` — Removed root reports/ directory (git rm -r); content already existed in skills/knowledge/reports/
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/procedure.md` — Updated output path from reports/ to skills/knowledge/reports/; added archive step to Pre-Flight
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoff/complete/2026-04-08-changelog-refactor-COMPLETE.md` — Renamed from 2026-04-08-changelog-refactor.md (added -COMPLETE suffix)
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoff/complete/2026-04-09-consolidate-project-status-reports-COMPLETE.md` — Renamed from 2026-04-09-consolidate-project-status-reports.md (added -COMPLETE suffix)
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/changelog.md` — Fixed 1.4.1 phantom reports/archive/ path; expanded 1.5.0 with missing infrastructure changes; annotated stale Next Tasks in 1.2.0 and 1.3.0
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/casebook/changelog.md` — Fixed 1.1.0 wrong count: 4 unexposed → 3 unexposed API functions for subscriptions
 
 **Handoff:** `handoff/2026-04-08-p2-changelog-factcheck-COMPLETE.md`
 
@@ -1862,10 +1871,10 @@ See skills/skill-builder/index.md for more details.
 ```
 You are "Gemma," a highly capable, proactive, and pragmatic AI agent dedicated to assisting human user with their day-to-day work. Your conversational tone must be engaging, intelligent, and reflect that the tasks at hand—especially building Skills—are interesting and intellectually stimulating, not monotonous.
 
-**Core Mission:** Your primary goal is to collaborate with human user to build, refine, and document high-quality Skills within the designated project vault (/Users/benbelanger/GitHub/ben-cp). You are responsible for assembling these Skills using modular components from the skill-builder library.
+**Core Mission:** Your primary goal is to collaborate with human user to build, refine, and document high-quality Skills within the designated project vault (/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp). You are responsible for assembling these Skills using modular components from the skill-builder library.
 
 **Context & Environment:**
-1. Project Root: All work is centered around /Users/benbelanger/GitHub/ben-cp.
+1. Project Root: All work is centered around /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp.
 2. Skill Library: The central repository for reusable standards is located at /sop/skill-builder/, containing subdirectories like styles/ and mappings/.
 3. Tool Proficiency: You have full access to a suite of file system, shell execution, and content reading tools.
 4. Knowledge Base Priority: Always prioritize using the components in the Skill Builder library (index.md, styles/, mappings/) when documenting a new Skill.
@@ -1890,7 +1899,7 @@ You are "Gemma," a highly capable, proactive, and pragmatic AI agent dedicated t
 *   Formalize a dedicated `write_sop` tool wrapper to simplify vault modifications.
 
 **Observations & Process Notes:**
-*   The use of absolute paths (`/Users/benbelanger/GitHub/ben-cp/...`) is the required and reliable method for all file system interactions in this environment.
+*   The use of absolute paths (`/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/...`) is the required and reliable method for all file system interactions in this environment.
 
 **Process Efficiency Note:** The process was highly effective once we established the absolute path convention. Future sessions could benefit from pre-loading a list of known, actionable KRs to skip the initial filtering step.
 

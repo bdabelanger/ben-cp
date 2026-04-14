@@ -16,5 +16,5 @@ When importing this into a tool like Tableau, PowerBI, or Looker:
 
 ## 🔗 BI Syntax References
 For specific syntax guides, see:
-* Reveal BI Syntax: [reveal_bi_syntax.md](/Users/benbelanger/GitHub/ben-cp/skills/casebook/reporting/reveal_bi_syntax.md)
-* Visualization Examples: [reveal_bi_visualizations.md](/Users/benbelanger/GitHub/ben-cp/skills/casebook/reporting/reveal_bi_visualizations.md)
+* Reveal BI Syntax: [reveal_bi_syntax.md](/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/casebook/reporting/reveal_bi_syntax.md)
+* Visualization Examples: [reveal_bi_visualizations.md](/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/casebook/reporting/reveal_bi_visualizations.md)

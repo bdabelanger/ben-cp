@@ -2,7 +2,7 @@
 
 > **Prepared by:** Claude (Cowork) (Intelligence (Memory) scheduled run, 2026-04-13)
 > **Assigned to:** Gemma
-> **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
+> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P3 — Data quality gaps (missing KR SOP files, data_sources.md sync, stale migration debt flags)
 > **Source report:** `skills/knowledge/outputs/reports/knowledge-report-2026-04-13.md`
 > **v1.0**

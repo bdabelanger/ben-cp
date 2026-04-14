@@ -2,7 +2,7 @@
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)
 > **Assigned to:** Claude (Cowork) / Claude Code
-> **Vault root:** /Users/benbelanger/GitHub/ben-cp
+> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **v1.1**
 > **STATUS: ✅ COMPLETE — 2026-04-12**

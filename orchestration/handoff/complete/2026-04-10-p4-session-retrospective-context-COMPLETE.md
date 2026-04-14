@@ -1,7 +1,7 @@
 # Context Package: Gemma Session Retrospective (2026-04-09)
 
 > **Prepared by:** Gemma (Executor) + Claude (Cowork) (2026-04-10)
-> **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
+> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P4 — Context only. No execution needed.
 > **Source:** Full Gemma conversational transcript, 2026-04-09.
 > **v1.1**

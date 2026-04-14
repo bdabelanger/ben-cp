@@ -1,7 +1,7 @@
 # Claude Code Implementation Plan: Agent 'Robert' Creation
 
 > **Prepared by:** Gemma (Executor) + Claude (Cowork) (2026-04-10)
-> **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
+> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P1 — Establishing a self-monitoring layer for core documentation integrity.
 > **Source:** Internal Mission Alignment Review (AGENTS.md Creed).
 > **v1.2**

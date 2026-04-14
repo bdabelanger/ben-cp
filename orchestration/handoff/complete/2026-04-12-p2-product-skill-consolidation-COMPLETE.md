@@ -2,7 +2,7 @@
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)
 > **Assigned to:** Claude
-> **Vault root:** /Users/benbelanger/GitHub/ben-cp
+> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **v1.0**
 > **STATUS: ✅ COMPLETE — 2026-04-12**
@@ -18,7 +18,7 @@ Created skills/product/ as a new peer-level domain. Moved project-status-reports
 
 > **Prepared by:** Claude via Cowork/Dispatch (2026-04-11)
 > **Assigned to:** Claude (desktop)
-> **Vault root:** /Users/benbelanger/GitHub/ben-cp
+> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2 — vault reorganization, no urgency but improves agent navigation
 > **v1.0**
 > **STATUS: 🔲 READY — pick up on desktop**

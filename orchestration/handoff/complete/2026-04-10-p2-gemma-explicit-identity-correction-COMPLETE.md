@@ -2,7 +2,7 @@
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-10)
 > **Assigned to:** Gemma (Executor)
-> **Vault root:** /Users/benbelanger/GitHub/ben-cp
+> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **v1.0**
 > **STATUS: ✅ COMPLETE — 2026-04-12**
@@ -28,4 +28,4 @@ This likely occurs because Gemma is copying headers from previous handoffs or te
 
 ## Reference
 
-- [2026-04-10-p1-agent-permission-and-behavior-refinement.md](file:///Users/benbelanger/GitHub/ben-cp/handoff/2026-04-10-p1-agent-permission-and-behavior-refinement.md) (misidentified as Antigravity).
+- [2026-04-10-p1-agent-permission-and-behavior-refinement.md](file:///Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoff/2026-04-10-p1-agent-permission-and-behavior-refinement.md) (misidentified as Antigravity).

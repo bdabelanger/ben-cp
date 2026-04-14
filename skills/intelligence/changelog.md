@@ -9,10 +9,10 @@
 ## 2026-04-12 — Verify structural integrity of intelligence/ and orchestration/ domains post-refactor, and clean up side-effects from prior agent session.
 
 **Files changed:**
-- `/Users/benbelanger/GitHub/ben-cp/orchestration/notes/` — Deleted rogue directory created at repo root by prior agent (Gemma) — was not in vault path ✅ Complete
-- `/Users/benbelanger/GitHub/ben-cp/skills/orchestration/index.md` — Fixed broken link: collaboration/index.md → communication/index.md ✅ Complete
-- `/Users/benbelanger/GitHub/ben-cp/skills/intelligence/index.md` — Verified clean — no corruption from prior agent's failed shell commands ✅ Complete
-- `/Users/benbelanger/GitHub/ben-cp/skills/orchestration/communication/notes.md` — Verified readable at correct vault-relative path (smoke test step 3 had wrong path in handoff) ✅ Complete
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/orchestration/notes/` — Deleted rogue directory created at repo root by prior agent (Gemma) — was not in vault path ✅ Complete
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/orchestration/index.md` — Fixed broken link: collaboration/index.md → communication/index.md ✅ Complete
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/intelligence/index.md` — Verified clean — no corruption from prior agent's failed shell commands ✅ Complete
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/orchestration/communication/notes.md` — Verified readable at correct vault-relative path (smoke test step 3 had wrong path in handoff) ✅ Complete
 
 **Handoff:** `handoff/complete/2026-04-12-p4-intelligence-smoke-test-fresh-chat-COMPLETE.md`
 

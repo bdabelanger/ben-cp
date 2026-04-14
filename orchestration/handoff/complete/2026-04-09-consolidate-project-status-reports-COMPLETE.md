@@ -1,7 +1,7 @@
 # Claude Code Implementation Plan: Consolidate Project Status Reports Pipeline into skills/
 
 > **Prepared by:** Claude (Cowork session, 2026-04-08)
-> **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
+> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **v1.0**
 > **STATUS: ✅ COMPLETE — 2026-04-09**
 
@@ -39,11 +39,11 @@ Run tasks in sequence. Read before every write — no exceptions.
 ## Task 1: Audit Both Directories
 
 Read and list the full contents of both:
-1. `list_directory` on `/Users/benbelanger/GitHub/ben-cp/project-status-reports/`
-2. `list_directory` on `/Users/benbelanger/GitHub/ben-cp/project-status-reports/scripts/`
-3. `list_directory` on `/Users/benbelanger/GitHub/ben-cp/skills/project-status-reports/`
-4. `list_directory` on `/Users/benbelanger/GitHub/ben-cp/skills/project-status-reports/scripts/` (confirm empty)
-5. `list_directory` on `/Users/benbelanger/GitHub/ben-cp/skills/project-status-reports/outputs/` (confirm empty)
+1. `list_directory` on `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/project-status-reports/`
+2. `list_directory` on `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/project-status-reports/scripts/`
+3. `list_directory` on `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/project-status-reports/`
+4. `list_directory` on `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/project-status-reports/scripts/` (confirm empty)
+5. `list_directory` on `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/project-status-reports/outputs/` (confirm empty)
 
 Report any unexpected files before proceeding.
 

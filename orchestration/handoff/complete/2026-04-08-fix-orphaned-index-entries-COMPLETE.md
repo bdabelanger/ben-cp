@@ -2,7 +2,7 @@
 
 > **Prepared by:** Claude (Cowork session, 2026-04-08)
 > **Source:** Vault Auditor report `reports/knowledge-report-2026-04-08.md` flags 1.1, 1.2, 1.3, 4.1
-> **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
+> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **v1.0**
 > **STATUS: ✅ COMPLETE — 2026-04-09**
 
@@ -63,12 +63,12 @@ Add one row to the contents table:
 
 If confirmed as stub, delete it:
 ```
-git rm /Users/benbelanger/GitHub/ben-cp/crypt-keeper.md
+git rm /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/crypt-keeper.md
 ```
 
 Also check `vault-cleanup.md` at vault root — if it is similarly a dead redirect stub, delete it too:
 ```
-git rm /Users/benbelanger/GitHub/ben-cp/vault-cleanup.md
+git rm /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/vault-cleanup.md
 ```
 
 ---

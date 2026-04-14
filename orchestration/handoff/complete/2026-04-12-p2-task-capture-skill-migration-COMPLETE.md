@@ -2,7 +2,7 @@
 
 > **Prepared by:** Claude via Dispatch (2026-04-12)
 > **Assigned to:** Claude
-> **Vault root:** /Users/benbelanger/GitHub/ben-cp
+> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2 — skill migration, no urgency but improves vault completeness
 > **v1.0**
 > **STATUS: ✅ COMPLETE — 2026-04-13**

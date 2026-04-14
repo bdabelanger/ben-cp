@@ -2,7 +2,7 @@
 
 > **Prepared by:** Claude (Cowork) (Intelligence (Memory) scheduled run, 2026-04-13)
 > **Assigned to:** Claude
-> **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
+> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P2 — Structural violations (duplicates, misplaced files, lingering notes.md, AGENTS.md compliance gaps)
 > **Source report:** `skills/knowledge/outputs/reports/knowledge-report-2026-04-13.md`
 > **v1.0**

@@ -20,4 +20,4 @@
 ## Constraints
 - Read before every write — no exceptions.
 - Never delete, move, or modify vault files (produces flags only).
-- Use absolute paths starting with `/Users/benbelanger/GitHub/ben-cp/`.
+- Use absolute paths starting with `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/`.

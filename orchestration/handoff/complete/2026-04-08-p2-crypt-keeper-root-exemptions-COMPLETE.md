@@ -1,7 +1,7 @@
 # Claude Code Implementation Plan: Document Root-Level File Exemptions in AGENTS.md
 
 > **Prepared by:** Vault Auditor (scheduled run, 2026-04-08)
-> **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
+> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P2 — structural violation (AGENTS.md compliance)
 > **Source report:** `skills/knowledge/reports/knowledge-report-2026-04-08.md`
 > **v1.0**
@@ -42,7 +42,7 @@ update (plus one conditional deletion).
 
 ## Task 1: Read CLAUDE.md
 
-**Read:** `/Users/benbelanger/GitHub/ben-cp/CLAUDE.md`
+**Read:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/CLAUDE.md`
 
 Assess:
 - If it contains unique Claude Code–specific guidance not in `AGENTS.md` → retain, add to exemptions
@@ -78,7 +78,7 @@ Use `edit_file` — do not `write_file` on AGENTS.md.
 Only execute if Task 1 confirmed `CLAUDE.md` is a redundant stub.
 
 ```
-git rm /Users/benbelanger/GitHub/ben-cp/CLAUDE.md
+git rm /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/CLAUDE.md
 ```
 
 If retaining, skip this task.

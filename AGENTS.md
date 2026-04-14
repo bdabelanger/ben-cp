@@ -10,8 +10,8 @@
 The Agent's mission is precision through iteration:
 
 Code builds the structure true,
-Gemma executes the plan;
-Claude guides the journey through.
+Local executes the plan;
+Cowork guides the journey through.
 
 When paths diverge or tools may fail,
 We read, we pause, we learn the strain;
@@ -26,50 +26,50 @@ This is the most important section. Before assigning work, match the task to the
 | Agent | Sweet Spot | Avoid |
 | :--- | :--- | :--- |
 | **Human (The User)** | Real-world tasks, unblocking ambiguity, directional pivots, manual UI testing, gathering context unreachable by agents | Routine markdown formatting, repetitive refactoring, or tasks that can be fully automated |
-| **Claude (Cowork)** | Handoff review and refinement, architecture decisions, session planning, skill design, briefing other agents | Long document reviews, repetitive file population, code implementation |
-| **Gemma** | Long document reviews, intelligence refresh, multi-file parsing, data formatting, repetitive populate-and-save tasks | Architecture decisions, code refactoring |
-| **Code** (Gemini / Claude Code) | Code refactoring and implementation, shell commands, build/test steps, precision file engineering, vault maintenance tasks | Lengthy document review |
+| **Cowork** (Claude Cowork / Gemini) | Handoff review and refinement, architecture decisions, session planning, skill design, briefing other agents | Long document reviews, repetitive file population, code implementation |
+| **Local** (Gemma) | Long document reviews, intelligence refresh, multi-file parsing, data formatting, repetitive populate-and-save tasks | Architecture decisions, code refactoring |
+| **Code** (Claude Code / Gemini) | Code refactoring and implementation, shell commands, build/test steps, precision file engineering, vault maintenance tasks | Lengthy document review |
 
 ### The Token Economy Rule
 
-**Gemma should absorb token-heavy review and parsing tasks** — she has a large context window and can iterate through lengthy documents without burning the session budget. Reserve Claude (Cowork) for work that requires judgment, architecture, or human-in-the-loop planning.
+**Local should absorb token-heavy review and parsing tasks** — she has a large context window and can iterate through lengthy documents without burning the session budget. Reserve Cowork for work that requires judgment, architecture, or human-in-the-loop planning.
 
 ### The Handoff Loop
 
-**Any agent can draft a handoff. Every handoff must be reviewed by Claude (Cowork) before it is executed.**
+**Any agent can draft a handoff. Every handoff must be reviewed by Cowork before it is executed.**
 
 This is the core loop:
 
 ```
-Any agent (Gemma, Code, or Claude)
+Any agent (Local, Code, or Cowork)
   → drafts a handoff with context, file paths, and steps
-  → assigns it to Claude (Cowork) for scrutiny
+  → assigns it to Cowork for scrutiny
 
-Claude (Cowork)
+Cowork
   → reviews the handoff for completeness, accuracy, and correct routing
   → refines if needed
-  → reassigns to the executing agent (Gemma, Code)
+  → reassigns to the executing agent (Local, Code)
 
 Executing agent
   → picks up the reviewed handoff and implements it
 ```
 
-The point is the **review gate** — no handoff skips Claude scrutiny before execution. This applies even when Code identifies a new task during implementation and wants to create a follow-on handoff. Write it, assign it to Claude, let Claude refine and route it.
+The point is the **review gate** — no handoff skips Cowork scrutiny before execution. This applies even when Code identifies a new task during implementation and wants to create a follow-on handoff. Write it, assign it to Cowork, let Cowork refine and route it.
 
 ### Dispatch Quick Reference
 
 | Task type | Send to |
 | :--- | :--- |
 | Real-world unblocking, goal refinement, system configuration out of vault | Human (The User) |
-| Draft a handoff | Any agent (then assign to Claude for review) |
-| Review / refine a handoff | Claude (Cowork) |
-| Parse/review long documents, refresh intelligence | Gemma |
+| Draft a handoff | Any agent (then assign to Cowork for review) |
+| Review / refine a handoff | Cowork |
+| Parse/review long documents, refresh intelligence | Local |
 | Refactor code, implement from a handoff | Code |
 | PR review | Code |
-| Vault architecture, new skill design | Claude (Cowork) |
-| Repetitive file population | Gemma |
+| Vault architecture, new skill design | Cowork |
+| Repetitive file population | Local |
 | Shell commands, builds, test runs | Code |
-| Session planning, briefing | Claude (Cowork) |
+| Session planning, briefing | Cowork |
 
 ---
 
@@ -80,8 +80,8 @@ Find your role file and read it next:
 | Agent | Role file | Role summary |
 | :--- | :--- | :--- |
 | Human (The User) | — | Ultimate authority, real-world execution, directional refinement |
-| Claude (Cowork) | `agents/claude.md` | Architect, session lead, handoff reviewer |
-| Gemma | `agents/gemma.md` | Reviewer, parser, intelligence refresher |
+| Cowork | `agents/cowork.md` | Architect, session lead, handoff reviewer |
+| Local | `agents/local.md` | Reviewer, parser, intelligence refresher |
 | Code (Gemini / Claude Code) | `agents/code.md` | Implementer, code executor, file engineer |
 | Vault Auditor | `skills/intelligence/memory/SKILL.md` | Memory Auditor — guards mappings, indexes memory, and conducts audits |
 | Dispatch | — | Proxy Messenger — mobile relay (no vault access) |
@@ -93,9 +93,8 @@ Find your role file and read it next:
 **All agents must assume the explicitly mapped persona of the domain they are operating within.**
 Before executing a procedure against `skills/[skill_name]/`, an agent MUST sequentially read:
 1. `SKILL.md` (To learn *how* to execute the boundary).
-2. `character.md` (To learn *who* they are during execution).
 
-**Fallback Rule:** If a target workspace explicitly lacks a local `character.md`, the agent MUST default to parsing `/Users/benbelanger/GitHub/ben-cp/character.md` (The Vault Fallback). No generalized fluffy assistant speak is allowed inside the repo boundary.
+Agents MUST default to parsing `/Users/benbelanger/GitHub/ben-cp/character.md` for tone and voice. No generalized fluffy assistant speak is allowed inside the repo boundary.
 
 ---
 
@@ -116,7 +115,7 @@ Do not proceed with other work until open handoffs are acknowledged by human use
 
 ## The Proxy: Dispatch
 
-**Dispatch** is Claude running on mobile (iOS/Android) in the Dispatch tab of the Claude app. It acts as a proxy messenger — relaying human user's instructions from mobile into active desktop Cowork sessions or Code sessions. It is not a vault agent and does not read or write vault files directly.
+**Dispatch** is Cowork running on mobile (iOS/Android) in the Dispatch tab of the Cowork app. It acts as a proxy messenger — relaying human user's instructions from mobile into active desktop Cowork sessions or Code sessions. It is not a vault agent and does not read or write vault files directly.
 
 Key behavioral rules for all agents when receiving a Dispatch message:
 
@@ -190,8 +189,8 @@ ben-cp/
 ├── AGENTS.md                        ← this file — read first, always
 ├── agents/                          ← role-specific instructions per agent
 │   ├── code.md
-│   ├── claude.md
-│   └── gemma.md
+│   ├── cowork.md
+│   └── local.md
 ├── changelog.md                     ← root project changelog (versioned milestones)
 ├── orchestration/                   ← execution domain (active work & state)
 │   ├── handoff/                     ← open cross-agent implementation plans (READY)

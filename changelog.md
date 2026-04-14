@@ -1,3 +1,12 @@
+## [1.18.4] — Cowork Role Unified into Single File (2026-04-13)
+
+**Changes:**
+- `agents/cowork.md` — Created as the canonical, shared role file for both Cowork instances (Claude and Gemini). Merges content from `agents/claude.md`. Naming mirrors the Code agent pattern: `Cowork (Gemini / Claude Cowork)` ↔ `Code (Gemini / Claude Code)`.
+- `agents/claude.md` — Reduced to a redirect stub pointing to `cowork.md`. Pending deletion.
+- `agents/gemini.md` — Reduced to a redirect stub pointing to `cowork.md`. Pending deletion.
+- `agents/index.md` — Consolidated to single `cowork.md` row; corrected `code.md` link (was pointing to nonexistent `claude-code.md`); removed stale `antigravity.md` placeholder.
+- **Note:** `AGENTS.md` requires no permission update — both Cowork instances operate under the existing agent class; no new permission boundary needed.
+
 ## [1.18.3] — Project Intelligence Codification (2026-04-13)
 
 **Changes:**

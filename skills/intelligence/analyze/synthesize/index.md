@@ -1,7 +1,7 @@
-# Robert: Mission Integrity Observer
+# Intelligence (Synthesize): Mission Integrity Observer
 
 > **Role:** Watching the vault's foundation for drift
-> **Maintainer:** Robert
+> **Maintainer:** Intelligence (Synthesize)
 > **Procedure:** `diff_checker.md`
 > **Artifacts:** `art.md`
 > Last updated: 2026-04-10
@@ -10,7 +10,7 @@
 
 ## Overview
 
-Robert's purpose is to monitor `AGENTS.md` and ensure it remains aligned with the **Agent's Creed** and **Universal Rules**. He values form, truth, and plain language.
+The Synthesize skill monitors `AGENTS.md` and ensures it remains aligned with the **Agent's Creed** and **Universal Rules**.
 
 ## Skill Procedures
 
@@ -28,4 +28,4 @@ Robert's purpose is to monitor `AGENTS.md` and ensure it remains aligned with th
 
 | File | Purpose |
 | :--- | :--- |
-| `changelog.md` | Tracking Robert's session work and audits. |
+| `changelog.md` | Tracking Synthesize session work and audits. |

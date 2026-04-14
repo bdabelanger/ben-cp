@@ -1,6 +1,6 @@
-# Audit Procedure: Synthesize (Robert)
+# Audit Procedure: Synthesize
 
-> **Owner:** Synthesis Lead (Robert)
+> **Owner:** Intelligence (Synthesize)
 
 ## Requirements
 - [ ] Non-linear observation: Identify links between disparate domains.
@@ -12,7 +12,7 @@
 ### Step 1: Saturation
 1. Read all `vault/brain/` session summaries.
 2. Review `skills/orchestration/communication/notes.md`.
-3. Read `Predict (Bryan)` output for forward-looking signals.
+3. Read `Intelligence (Predict)` output for forward-looking signals.
 
 ### Step 2: Connection Identification
 Identify connections that aren't stated explicitly. If a backend refactor (Platform) accidentally improved a search feature (Product), that is a synthesis learning.

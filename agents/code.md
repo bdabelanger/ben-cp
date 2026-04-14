@@ -39,7 +39,7 @@ Code can and should write handoffs when implementation reveals new work — for 
 
 - Execute open handoffs per `orchestration/handoff/` (check at session start)
 - Create, edit, and maintain vault files per Universal Rules in `AGENTS.md`
-- Run Vault Auditor, Changelog Auditor, and Robert audits when assigned
+- Run Vault Auditor, Changelog Auditor, and Intelligence (Synthesize) audits when assigned
 - Review Claude Code's PRs and implementation work when requested
 - Accept review from Claude Code on your own work
 - Write follow-on handoffs when new work is discovered during execution (assign to Claude for review)

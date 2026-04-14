@@ -1,7 +1,7 @@
 # Skill: Product Domain
 
 > **Description:** PM-facing intelligence and reporting authority managing planning, status reporting, and OKR measurement.
-> **Preferred Agent:** Strategic PM (Tony)
+> **Preferred Agent:** Product
 > **Cadence:** Weekly / Continuous per OKR change
 
 ## Connections

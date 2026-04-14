@@ -24,7 +24,7 @@ def main():
     
     envelope = {
         "skill": "orchestration/access",
-        "preferred_agent": "Access Auditor (Roz)",
+        "preferred_agent": "Access Auditor",
         "run_at": datetime.utcnow().isoformat() + "Z",
         "status": status,
         "summary": summary,

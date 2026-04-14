@@ -1,6 +1,6 @@
 # Implementation Plan: Crypt-Keeper — Data Quality Gaps
 
-> **Prepared by:** Claude (Cowork) (Crypt-Keeper scheduled run, 2026-04-13)
+> **Prepared by:** Claude (Cowork) (Intelligence (Memory) scheduled run, 2026-04-13)
 > **Assigned to:** Gemma
 > **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
 > **Priority:** P3 — Data quality gaps (missing KR SOP files, data_sources.md sync, stale migration debt flags)
@@ -12,7 +12,7 @@
 
 ## Context
 
-The 2026-04-13 Crypt-Keeper run found that `product/projects/data_sources.md` references 6 KR SOP files that do not exist on disk. It also found `shared/separation-policy.md` migration debt items from 2026-04-12 that are still open (one script migration and 7 ephemeral notes.md files — the notes.md items overlap with P2). These are data integrity gaps that leave agents operating on incomplete references.
+The 2026-04-13 Intelligence (Memory) run found that `product/projects/data_sources.md` references 6 KR SOP files that do not exist on disk. It also found `shared/separation-policy.md` migration debt items from 2026-04-12 that are still open (one script migration and 7 ephemeral notes.md files — the notes.md items overlap with P2). These are data integrity gaps that leave agents operating on incomplete references.
 
 ---
 

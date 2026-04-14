@@ -1,6 +1,6 @@
 # Audit Procedure: Changelog
 
-> **Owner:** Changelog Auditor (Yukon Cornelius)
+> **Owner:** Changelog Auditor
 
 ## Requirements
 - [ ] Log Alignment: Every modified file must have a corresponding changelog entry.
@@ -9,7 +9,7 @@
 
 ## Operating Procedures
 
-### 1. Lumberjack Field Audit
+### 1. Changelog Field Audit
 1. **Saturation:** Read `changelog.md` (root) and active skill-level `changelog.md` files.
 2. **Extraction:** Get the list of files claimed as "Completed" or "Modified."
 3. **Validation:**

@@ -1,6 +1,6 @@
 # Audit Procedure: Access Domain
 
-> **Owner:** Roz (Access Auditor)
+> **Owner:** Access Auditor
 
 ## Requirements
 - [ ] No credential patterns (keys, tokens) in session logs.

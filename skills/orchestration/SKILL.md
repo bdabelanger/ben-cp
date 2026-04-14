@@ -7,7 +7,7 @@ preferred_agent: mission-integrity
 # SKILL: Orchestration Domain
 
 > **Purpose:** Manages the operational standards of the vault.
-> **Preferred Agent:** Mission Integrity (Robert)
+> **Preferred Agent:** Intelligence (Synthesize)
 > **Domain Tree:** `collaboration/`, `changelog/`, `access/`
 
 ---

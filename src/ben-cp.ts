@@ -750,7 +750,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         const ap = path.resolve(rootPath, "AGENTS.md");
         const { stdout: log } = await new Promise<{ stdout: string; stderr: string }>(res => execFile("git", ["log", "--oneline", "-5", "--", ap], { cwd: rootPath }, (e, o, s) => res({ stdout: o, stderr: s })));
         const { stdout: diff } = await new Promise<{ stdout: string; stderr: string }>(res => execFile("git", ["diff", "HEAD~5", "--", ap], { cwd: rootPath }, (e, o, s) => res({ stdout: o, stderr: s })));
-        return { content: [{ type: "text", text: `### Robert Diff Checker\n\n**Log:**\n${log}\n\n**Diff:**\n${diff}` }] };
+        return { content: [{ type: "text", text: `### Intelligence (Synthesize) Diff Checker\n\n**Log:**\n${log}\n\n**Diff:**\n${diff}` }] };
       }
       return { content: [{ type: "text", text: "Manual discovery required." }] };
     }

@@ -1,6 +1,6 @@
-# Audit Procedure: Predict (Bryan)
+# Audit Procedure: Predict
 
-> **Owner:** Pragmatic Analyst (Bryan)
+> **Owner:** Intelligence (Predict)
 
 ## Requirements
 - [ ] Precision over volume: Extract only critical details.

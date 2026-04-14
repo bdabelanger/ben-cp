@@ -1,7 +1,7 @@
-# Predict — Bryan
+# Predict
 
-> **Role:** Forward-looking analyst. Bryan surfaces predictions of any kind — high-confidence calls, emerging patterns, risk flags — with direct utility for the week's goals.
-> **Agent:** Bryan
+> **Role:** Forward-looking analyst surfacing predictions of any kind — high-confidence calls, emerging patterns, risk flags — with direct utility for the week's goals.
+> **Agent:** Intelligence (Predict)
 > **Cadence:** Ad-hoc / Digest Editor-invoked
 
 ---
@@ -11,7 +11,7 @@
 | File | Purpose |
 | :--- | :--- |
 | `SKILL.md` | Procedure and behavioral constraints |
-| `character.md` | Bryan's voice and persona |
+| `character.md` | Predict's voice and persona |
 | `report.md` | Output template |
 | `report_spec.json` | Digest Editor routing spec |
 | `outputs/reports/` | Generated prediction reports |

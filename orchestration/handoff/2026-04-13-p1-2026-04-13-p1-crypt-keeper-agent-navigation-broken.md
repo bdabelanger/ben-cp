@@ -1,6 +1,6 @@
 # Implementation Plan: Crypt-Keeper — Agent Navigation Broken
 
-> **Prepared by:** Claude (Cowork) (Crypt-Keeper scheduled run, 2026-04-13)
+> **Prepared by:** Claude (Cowork) (Intelligence (Memory) scheduled run, 2026-04-13)
 > **Assigned to:** Claude
 > **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
 > **Priority:** P1 — Agent navigation broken (missing AGENTS.md, missing index.md files, orphaned files)
@@ -12,7 +12,7 @@
 
 ## Context
 
-The 2026-04-13 Crypt-Keeper run identified critical P1 structural issues that break agent navigation. Most critically, `AGENTS.md` does not exist at the vault root — this is a hard blocker for any agent attempting to orient itself. Several subdirectories also lack `index.md` files, and orphaned files exist with no index entries. These must be resolved before agents can reliably navigate the vault.
+The 2026-04-13 Intelligence (Memory) run identified critical P1 structural issues that break agent navigation. Most critically, `AGENTS.md` does not exist at the vault root — this is a hard blocker for any agent attempting to orient itself. Several subdirectories also lack `index.md` files, and orphaned files exist with no index entries. These must be resolved before agents can reliably navigate the vault.
 
 ---
 
@@ -58,7 +58,7 @@ If recoverable from git: restore it. If not: reconstruct from references in `sha
 
 | File | Purpose |
 | :--- | :--- |
-| `report_spec.json` | Digest Editor routing spec — preferred agent: Antigravity, cadence: daily |
+| `report_spec.json` | Digest Editor routing spec — cadence: daily |
 
 ## Notes
 - Execution script `run.py` is pending migration to `tools/intelligence-report/` per separation-policy.md

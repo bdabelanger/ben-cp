@@ -9,8 +9,8 @@
 
 | Sub-skill | Agent | Focus |
 | :--- | :--- | :--- |
-| [`synthesize/`](synthesize/index.md) | Robert | Artistic synthesis and creative narrative |
-| [`predict/`](predict/index.md) | Bryan | Strategic prediction and op-ed analysis |
+| [`synthesize/`](synthesize/index.md) | Intelligence (Synthesize) | Artistic synthesis and creative narrative |
+| [`predict/`](predict/index.md) | Intelligence (Predict) | Strategic prediction and op-ed analysis |
 
 ---
 
@@ -18,7 +18,7 @@
 
 The Interpretation domain is where the vault moves from *reporting* to *understanding*. 
 
-- **Synthesize** (Robert) captures the creative essence and qualitative "feel" of the vault's progress.
-- **Predict** (Bryan) captures the quantitative trajectory and identifies upcoming risks or focuses.
+- **Synthesize** captures the creative essence and qualitative "feel" of the vault's progress.
+- **Predict** captures the quantitative trajectory and identifies upcoming risks or focuses.
 
 Together, they provide human user and the agents with the strategic context needed to iterate effectively.

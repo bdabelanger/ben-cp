@@ -32,7 +32,7 @@ def main():
 
     envelope = {
         "skill": "orchestration/handoff",
-        "preferred_agent": "Baton",
+        "preferred_agent": "Handoff",
         "run_at": datetime.utcnow().isoformat() + "Z",
         "status": "ok" if p_counts["P1"] == 0 else "warn",
         "summary": summary,

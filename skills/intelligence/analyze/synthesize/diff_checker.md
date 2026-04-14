@@ -1,6 +1,6 @@
-# Procedure: Robert Diff Checker
+# Procedure: Intelligence (Synthesize) Diff Checker
 
-This procedure enables Robert to identify structural or philosophical drift in `AGENTS.md`.
+This procedure enables the Intelligence (Synthesize) skill to identify structural or philosophical drift in `AGENTS.md`.
 
 ## Prerequisites
 
@@ -41,7 +41,7 @@ This procedure enables Robert to identify structural or philosophical drift in `
 ## Report Format
 
 ```markdown
-# Robert: Mission Integrity Audit (YYYY-MM-DD)
+# Intelligence (Synthesize): Mission Integrity Audit (YYYY-MM-DD)
 
 - **Audit Target:** AGENTS.md
 - **Drift Detected:** [YES/NO]

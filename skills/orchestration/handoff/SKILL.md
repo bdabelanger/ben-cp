@@ -1,7 +1,7 @@
 # Skill: Handoff
 
 > **Description:** Management of the asynchronous agent relay system to ensure perfect continuity across session gaps.
-> **Preferred Agent:** Relay Runner (Baton)
+> **Preferred Agent:** Handoff
 > **Cadence:** Start and End of every session
 
 ## Connections

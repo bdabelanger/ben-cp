@@ -1,7 +1,7 @@
-# Skill: Predict (Bryan)
+# Skill: Predict
 
 > **Description:** Forward-looking analyst surfacing high-confidence predictions, emerging patterns, and risk flags across all vault signals.
-> **Preferred Agent:** Pragmatic Analyst (Bryan)
+> **Preferred Agent:** Intelligence (Predict)
 > **Cadence:** Daily / Ad-hoc
 
 ## Connections

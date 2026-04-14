@@ -231,11 +231,11 @@ ben-cp/
 | Skill Path | Preferred Agent | Purpose | Cadence |
 | :--- | :--- | :--- | :--- |
 | `intelligence/memory` | Vault Auditor | Structural & factual integrity | Daily |
-| `intelligence/analysis` | Pragmatic Analyst | Trend and risk synthesis | Daily |
+| `intelligence/analysis` | Intelligence (Predict) | Trend and risk synthesis | Daily |
 | `intelligence/analysis/report` | Orchestrator | Nightly Gazette assembly | Daily |
-| `orchestration/changelog` | Yukon Cornelius | Project integrity & git drift audit | On-Change |
-| `orchestration/handoff` | Baton | Task state & plan management | On-Demand |
-| `orchestration/notes` | Sea Shanty | Human/Agent context bridge (notes.md) | On-Demand |
+| `orchestration/changelog` | Changelog Auditor | Project integrity & git drift audit | On-Change |
+| `orchestration/handoff` | Handoff | Task state & plan management | On-Demand |
+| `orchestration/notes` | Notes | Human/Agent context bridge (notes.md) | On-Demand |
 | `product/status-reports` | Strategic PM | External stakeholder updates | Weekly |
 | `product/okr-reporting` | Strategic PM | KR measurement and strategy | Weekly |
 

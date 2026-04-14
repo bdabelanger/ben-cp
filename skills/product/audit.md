@@ -1,6 +1,6 @@
 # Audit Procedure: Product Domain
 
-> **Owner:** Strategic PM (Tony)
+> **Owner:** Product
 
 ## Requirements
 - [ ] KR Compliance: Every KR SOP must contain a `target_value` and `current_value`.

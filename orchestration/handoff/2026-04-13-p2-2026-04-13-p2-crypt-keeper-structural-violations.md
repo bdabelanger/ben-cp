@@ -1,6 +1,6 @@
 # Implementation Plan: Crypt-Keeper — Structural Violations
 
-> **Prepared by:** Claude (Cowork) (Crypt-Keeper scheduled run, 2026-04-13)
+> **Prepared by:** Claude (Cowork) (Intelligence (Memory) scheduled run, 2026-04-13)
 > **Assigned to:** Claude
 > **Vault root:** `/Users/benbelanger/GitHub/ben-cp`
 > **Priority:** P2 — Structural violations (duplicates, misplaced files, lingering notes.md, AGENTS.md compliance gaps)
@@ -12,7 +12,7 @@
 
 ## Context
 
-The 2026-04-13 Crypt-Keeper run identified several P2 structural violations: two data_sources.md files in the product domain (likely duplicate coverage), a double-nested `product/shared/shared/` directory with a spurious `vault.css` copy, and 7 lingering ephemeral `notes.md` files that should have been deleted after their respective sessions. These are known in `shared/separation-policy.md` but remain unresolved.
+The 2026-04-13 Intelligence (Memory) run identified several P2 structural violations: two data_sources.md files in the product domain (likely duplicate coverage), a double-nested `product/shared/shared/` directory with a spurious `vault.css` copy, and 7 lingering ephemeral `notes.md` files that should have been deleted after their respective sessions. These are known in `shared/separation-policy.md` but remain unresolved.
 
 ---
 

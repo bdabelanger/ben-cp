@@ -1,6 +1,6 @@
 # Audit Procedure: Handoff
 
-> **Owner:** Relay Runner (Baton)
+> **Owner:** Handoff
 
 ## Requirements
 - [ ] Continuity: Every session must starting with a handoff check and end with a handoff update/creation.
@@ -17,7 +17,7 @@
 ### 2. Transition Protocol (End)
 1. **Status Mapping:** Identify ✅ Complete, 🟡 Partial, and ⚠️ Needs Review items.
 2. **Next Steps:** List the immediate next three commands or files for the following agent.
-3. **Baton Pass:** Write the new handoff file or mark the current one as complete using the `ben-cp` MCP.
+3. **Handoff Pass:** Write the new handoff file or mark the current one as complete using the `ben-cp` MCP.
 
 ### 3. Verification
 Verify that the `assigned_to` field matches the intended model or "anyone" if generic.

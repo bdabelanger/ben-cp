@@ -1,7 +1,7 @@
 # Skill: Changelog
 
 > **Description:** Management of the vault's persistent audit trail and work traceability ledger.
-> **Preferred Agent:** Changelog Auditor (Yukon Cornelius)
+> **Preferred Agent:** Changelog Auditor
 > **Cadence:** Daily / Post-session
 
 ## Connections
@@ -14,7 +14,7 @@
 
 ## Workflow Summary
 1. **Traceability:** Recording every meaningful change, failure, and blocker in a structured format.
-2. **Auditing (Lumberjack):** Validating the alignment between physical vault state and log reporting.
+2. **Auditing (Changelog):** Validating the alignment between physical vault state and log reporting.
 3. **Reporting:** Surface discrepancies to the team to ensure handoff integrity.
 
 ## Constraints

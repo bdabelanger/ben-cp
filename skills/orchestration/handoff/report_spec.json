@@ -1,6 +1,6 @@
 {
   "skill_name": "orchestration/handoff",
-  "preferred_agent": "Baton",
+  "preferred_agent": "Handoff",
   "cadence": "daily",
   "run_order": 5
 }

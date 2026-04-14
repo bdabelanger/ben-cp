@@ -1,7 +1,7 @@
 # Skill: Analysis
 
 > **Description:** Core cognitive hub for predictive modeling and non-linear synthesis.
-> **Preferred Agent:** Analysis Lead (Robert) / Predictive Lead (Bryan)
+> **Preferred Agent:** Intelligence (Synthesize) / Intelligence (Predict)
 > **Cadence:** Daily (Dream Cycle)
 
 ## Connections

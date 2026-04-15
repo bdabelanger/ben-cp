@@ -30,7 +30,17 @@ This is the most important section. Before assigning work, match the task to the
 | **Local** (Gemma) | Long document reviews, intelligence refresh, multi-file parsing, data formatting, repetitive populate-and-save tasks | Architecture decisions, code refactoring |
 | **Code** (Claude Code / Gemini) | Code refactoring and implementation, shell commands, build/test steps, precision file engineering, vault maintenance tasks | Lengthy document review |
 
+### Terminology
+
+To prevent architectural drift and maintain clarity between agentic processes and human goals, the following terms are strictly defined:
+
+| Term | Definition | Primary Location |
+| :--- | :--- | :--- |
+| **Steps** | Executable, agent-led actions defined within an implementation plan or handoff. | `orchestration/handoff/` |
+| **Tasks** | Strategic, human-led deliverables or project work items. Agents do not modify these without explicit direction. | `tasks/` |
+
 ### The Token Economy Rule
+
 
 **Local should absorb token-heavy review and parsing tasks** — she has a large context window and can iterate through lengthy documents without burning the session budget. Reserve Cowork for work that requires judgment, architecture, or human-in-the-loop planning.
 
@@ -322,7 +332,20 @@ Every session that involves writing, editing, or structural modification must en
 
 To ensure human oversight and safety, agents MUST interact with specialized artifacts as their primary interface for work. The level of rigor is determined by the task priority.
 
+### Unified Artifact Standard (P1/P2)
+
+To reduce cognitive load and vault clutter, P1 and P2 workflows follow a **Unified Artifact** model.
+
+1.  **The Unified Handoff**: For most work, the *Handoff* and *Implementation Plan* are merged into a single flat file in `orchestration/handoff/`.
+2.  **Mandatory Schema**: Every unified artifact MUST follow this hierarchy:
+    - **Context**: The problem statement and background.
+    - **Logic**: The proposed technical solution or strategy.
+    - **Execution Steps**: A checklist of agent-led "Steps."
+3.  **Feature Bundles (The Exception)**: Use a sub-directory in `handoff/` (e.g., `handoff/feature-name/`) ONLY when the task requires auxiliary support files (scripts, images, schemas).
+4.  **Root Cleanliness**: All implementation logic resides in `handoff/`. No implementation plans are allowed at the vault root.
+
 #### Complexity Threshold Decision Matrix (Tiered Rigor)
+
 
 | Priority | Lifecycle Requirement | Artifacts Required |
 | :--- | :--- | :--- |

@@ -1,4 +1,13 @@
+## [1.18.7] — Unified Artifact Standard: Consolidating Handoffs and Implementation Plans (2026-04-15)
+
+**Changes:**
+- **AGENTS.md**: Codified the **Unified Artifact Standard** (Context -> Logic -> Execution Steps). Established flat-file handoffs in `orchestration/handoff/` as the P1/P2 default.
+- **AGENTS.md**: Defined explicit terminology for **"Steps"** (agent-led execution) and **"Tasks"** (human-led strategic deliverables) to prevent role-drift.
+- **agents/cowork.md**: Updated the **Handoff Protocol** to reflect the unified standard and formally deprecated root-level `_IMPLEMENTATION_PLAN.md` files.
+- **Vault Hygiene**: Verified the vault root is free of implementation plans, moving all execution logic to the orchestration domain.
+
 ## [1.18.5] — Pathing Normalization (Remove 'benbelanger' Hard-Coding) (2026-04-14)
+
 
 **Changes:**
 - `src/ben-cp.ts` — Replaced hardcoded `/Users/benbelanger/GitHub/ben-cp` with dynamic `${rootPath}` in `add_handoff` tool definition.

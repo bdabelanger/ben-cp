@@ -99,16 +99,13 @@ When receiving a handoff from another agent, review for:
 2. Routing — is this the right agent for this task?
 3. Accuracy — are file paths, content snapshots, and instructions correct?
 
-When handing off to Code, write or update the relevant implementation plan at vault root:
-- Claude instance: `CLAUDE_CODE_IMPLEMENTATION_PLAN.md`
-- Gemini instance: `GEMINI_IMPLEMENTATION_PLAN.md`
+When handing off to any agent, follow the **Unified Artifact Standard** defined in `AGENTS.md`:
+- Merge the context, logic, and execution steps into a single file in `orchestration/handoff/`.
+- **Root plans are deprecated**: Do not write to `GEMINI_IMPLEMENTATION_PLAN.md` or `CLAUDE_CODE_IMPLEMENTATION_PLAN.md` at the vault root.
+- For Local or Code assignments, use the kebab-case naming convention: `orchestration/handoff/YYYY-MM-DD-<priority>-<slug>.md`.
 
-When handing off to Local, write a dated handoff to:
-`orchestration/handoff/YYYY-MM-DD-<priority>-<slug>.md`
+Follow the changelog procedure at `skills/orchestration/changelog/SKILL.md`. Write subdirectory entries first (full detail), then a summary entry to root `changelog.md`.
 
-When handing off to any agent, follow the changelog procedure at
-`skills/orchestration/changelog/SKILL.md`. Write subdirectory entries first (full detail),
-then a summary entry to root `changelog.md`.
 
 ---
 

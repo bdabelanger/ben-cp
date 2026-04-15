@@ -2,6 +2,7 @@
 
 - **GID:** 1209963394727039
 - **Permalink:** https://app.asana.com/1/1123317448830974/project/1209963394727039
+- **OKR Mapping:** [Notes Datagrid Shortcuts](../../okrs/q2/planning-services-at-scale/notes_datagrid_shortcuts.md)
 - **Team:** Platform
 - **Stage:** GA
 - **Status:** on_track

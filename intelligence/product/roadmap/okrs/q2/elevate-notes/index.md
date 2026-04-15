@@ -47,3 +47,13 @@
 - **High-conf definition:** Matches Margaux's tenant sheet
 - **Projects:** Notes - New note writing experience
 - **Next steps:** Pull proxy baseline in Reveal BI; validate high-conf segment with Margaux; set target after 5/14 GA
+
+---
+
+## 🔗 Constituent Projects
+
+- [**Notes WLV / Datagrid**](../../projects/q2/notes-notes-datagrid-(1209963394727039).md)
+- [**Global Notes WLV**](../../projects/q2/notes-global-notes-wlv-(1210368097846960).md)
+- [**Bulk Import Notes**](../../projects/q2/data-import-bulk-import-for-notes-(1210860550580423).md)
+- [**Locked Notes**](../../projects/q2/notes-locked-notes-(1211786365522017).md)
+- [**Signing / Service Note Locking**](../../projects/q2/notes-signing-service-note-locking-(1213685097670626).md)

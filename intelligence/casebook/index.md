@@ -19,5 +19,5 @@
 
 | Skill | Repo path | Port |
 | :--- | :--- | :--- |
-| Admin MCP | `/Users/benbelanger/GitHub/casebook-admin-mcp` | 3002 |
-| Subscriptions MCP | `/Users/benbelanger/GitHub/casebook-billing-mcp` | 3003 |
+| Admin MCP | `../../casebook-admin-mcp` | 3002 |
+| Subscriptions MCP | `../../casebook-billing-mcp` | 3003 |

@@ -85,6 +85,13 @@ See master inventory: `../../data_sources.md`
 
 ---
 
+## 🔗 Constituent Projects
+
+The following initiatives contribute to this KR:
+- [**Notes - Bulk Service Notes**](../../projects/q2/notes-bulk-service-notes-(1211757637943244).md)
+
+---
+
 ## 🔗 References
 
 - Parent procedure: `../../procedure.md`

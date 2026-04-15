@@ -9,8 +9,8 @@ except ImportError:
     requests = None
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-VAULT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../../.."))
-MANIFEST_PATH = os.path.join(VAULT_ROOT, "inputs/status-reports/manifest.json")
+VAULT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../../../../.."))
+MANIFEST_PATH = os.path.abspath(os.path.join(SCRIPT_DIR, "../inputs/status-reports/manifest.json"))
 REPO_ROOT = VAULT_ROOT
 
 # GIDs from the Official Specification
@@ -133,7 +133,8 @@ def filter_platform_projects(input_path, output_path, target_gid=None, team_gid=
         print(f"❌ Error: {str(e)}")
 
 if __name__ == "__main__":
-    INPUT_FILE = os.path.join(VAULT_ROOT, "inputs/status-reports/raw/asana_all_projects.json")
+    JIRA_RAW_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, "../inputs/status-reports/raw/jira"))
+    INPUT_FILE = os.path.abspath(os.path.join(SCRIPT_DIR, "../inputs/status-reports/raw/asana_all_projects.json"))
     OUTPUT_FILE = get_path_from_manifest("1_asana_ingest")
 
     target_gid = None

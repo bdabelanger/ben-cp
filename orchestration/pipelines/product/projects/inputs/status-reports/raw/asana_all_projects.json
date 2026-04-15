@@ -17441,10 +17441,10 @@
       {
         "gid": "1208822149019495",
         "enum_value": {
-          "gid": "1208822011920664"
+          "gid": "1208822149019498"
         },
         "name": "Stage",
-        "display_value": "Backlog"
+        "display_value": "Discovery"
       },
       {
         "gid": "1209127915359058",
@@ -22436,10 +22436,10 @@
   {
     "gid": "1210860550580329",
     "current_status_update": {
-      "gid": "1214003020039657",
-      "status_type": "on_track",
-      "text": "Summary\n\nTuan has finished work however there is a discrepancy between Sindhu/Tuan's reports, reassigned to me for followup.\nCurrent status remains unclear although no blockers have been reported, just no change.\n\n----------------------------------------\n\nNext steps\n\n    Task: https://app.asana.com/1/1123317448830974/profile/1208828066029280 and https://app.asana.com/1/1123317448830974/profile/1208822086109219 to review end-to-end implementation for https://casecommons.atlassian.net/browse/CBP-3008 in UAT and determine actual status for 4-1 release\n\n----------------------------------------\n\nJira status\n\nhttps://casecommons.atlassian.net/browse/CBP-498\n13 done \u00a0\u00b7\u00a0 1 in progress \u00a0\u00b7\u00a0 0 to do\n29.4d estimated \u00a0\u00b7\u00a0 8.0d actual \u00a0\u00b7\u00a0 3.0d remaining (37%)\n    \u2705 QA Start - Mar 27\n    \u2705 UAT Start - Apr 3\n    \u274c GA - Apr 9 (release shifted to next week)\nDone: 13 issues\n26.4d estimated \u00b7 8.0d actual\nIn Progress: 1 issues \u00b7 ~3.0d est remaining\n    https://casecommons.atlassian.net/browse/CBP-3008 \u2014 Bulk import - Return all validation error messages at once \u2014 Ben\n    QA revise \u00b7 3.0d estimated \u00b7 No actual \ud83d\udc40 \u00b7 P2 \u00b7 2026-4-2\n",
-      "title": "Data import - Clearer error messages - Apr 10"
+      "gid": "1214058396063849",
+      "status_type": "complete",
+      "text": "Summary\n\n\n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\nJira status\n\n\n\n----------------------------------------\n",
+      "title": "Data import - Clearer error messages - Apr 14"
     },
     "custom_fields": [
       {
@@ -22497,10 +22497,10 @@
       {
         "gid": "1208822149019495",
         "enum_value": {
-          "gid": "1209847080766036"
+          "gid": "1208822149019501"
         },
         "name": "Stage",
-        "display_value": "In UAT"
+        "display_value": "GA"
       },
       {
         "gid": "1209127915359058",
@@ -29413,8 +29413,11 @@
       {
         "gid": "1208818118032458",
         "name": "Beta Start",
-        "display_value": null,
-        "date_value": null
+        "display_value": "2026-05-18T00:00:00.000Z",
+        "date_value": {
+          "date": "2026-05-18",
+          "date_time": null
+        }
       },
       {
         "gid": "1208818124273418",
@@ -29450,10 +29453,10 @@
       {
         "gid": "1208822149019495",
         "enum_value": {
-          "gid": "1208822149019498"
+          "gid": "1208822149019499"
         },
         "name": "Stage",
-        "display_value": "Discovery"
+        "display_value": "Development"
       },
       {
         "gid": "1209127915359058",
@@ -29996,10 +29999,10 @@
       {
         "gid": "1208822149019495",
         "enum_value": {
-          "gid": "1209847080766035"
+          "gid": "1208822149019499"
         },
         "name": "Stage",
-        "display_value": "In QA"
+        "display_value": "Development"
       },
       {
         "gid": "1209127915359058",
@@ -30028,9 +30031,9 @@
       {
         "gid": "1210191417850167",
         "name": "Next DR Date",
-        "display_value": "2026-04-15T00:00:00.000Z",
+        "display_value": "2026-04-22T00:00:00.000Z",
         "date_value": {
-          "date": "2026-04-15",
+          "date": "2026-04-22",
           "date_time": null
         }
       },
@@ -30063,7 +30066,7 @@
       {
         "gid": "1210909305830092",
         "name": "Release Date(s)",
-        "display_value": "4/23/2026"
+        "display_value": "5/14/2026"
       },
       {
         "gid": "1210909549820601",
@@ -33083,10 +33086,10 @@
   {
     "gid": "1212301034946069",
     "current_status_update": {
-      "gid": "1213984539419172",
-      "status_type": "on_track",
-      "text": "Summary\n\nThis is both rocking and rolling and ready for release. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
-      "title": "WF - Case Involvement & Labels Triggers - Apr 9"
+      "gid": "1214059808871969",
+      "status_type": "complete",
+      "text": "Summary\n\nIt's out! In the world!\n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
+      "title": "WF - Case Involvement & Labels Triggers - Apr 14"
     },
     "custom_fields": [
       {
@@ -33150,10 +33153,10 @@
       {
         "gid": "1208822149019495",
         "enum_value": {
-          "gid": "1209847080766036"
+          "gid": "1208822149019501"
         },
         "name": "Stage",
-        "display_value": "In UAT"
+        "display_value": "GA"
       },
       {
         "gid": "1209127915359058",
@@ -34312,10 +34315,10 @@
       {
         "gid": "1208822149019495",
         "enum_value": {
-          "gid": "1209847080766036"
+          "gid": "1208822149019501"
         },
         "name": "Stage",
-        "display_value": "In UAT"
+        "display_value": "GA"
       },
       {
         "gid": "1209127915359058",
@@ -34441,10 +34444,10 @@
   {
     "gid": "1212555058482954",
     "current_status_update": {
-      "gid": "1214003020039671",
-      "status_type": "on_track",
-      "text": "Summary\n\nIssues have been resolved and moved to UAT.  Looked good in QA in my last check.\n\n----------------------------------------\n\nNext steps\n\n    Task: https://app.asana.com/1/1123317448830974/profile/1208828066029280 and https://app.asana.com/1/1123317448830974/profile/1208822086109219 will confirm that all is well in UAT before shipping this afternoon\n",
-      "title": "Notifications - Eliminate HTML injection/XSS vulnerability (KPP) - Apr 10"
+      "gid": "1214058396063842",
+      "status_type": "complete",
+      "text": "Summary\n\n\n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n",
+      "title": "Notifications - Eliminate HTML injection/XSS vulnerability (KPP) - Apr 14"
     },
     "custom_fields": [
       {
@@ -34502,10 +34505,10 @@
       {
         "gid": "1208822149019495",
         "enum_value": {
-          "gid": "1209847080766036"
+          "gid": "1208822149019501"
         },
         "name": "Stage",
-        "display_value": "In UAT"
+        "display_value": "GA"
       },
       {
         "gid": "1209127915359058",
@@ -34695,10 +34698,10 @@
       {
         "gid": "1208822149019495",
         "enum_value": {
-          "gid": "1208822011920664"
+          "gid": "1208822149019498"
         },
         "name": "Stage",
-        "display_value": "Backlog"
+        "display_value": "Discovery"
       },
       {
         "gid": "1209127915359058",
@@ -36671,10 +36674,10 @@
   {
     "gid": "1212825593665311",
     "current_status_update": {
-      "gid": "1213984456827231",
-      "status_type": "on_track",
-      "text": "Summary\n\nThis is in UAT with no bugs and ready for release\n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
-      "title": "UoW Linking from Reporting - Apr 9"
+      "gid": "1214059873074528",
+      "status_type": "complete",
+      "text": "Summary\n\nReleased!\n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
+      "title": "UoW Linking from Reporting - Apr 14"
     },
     "custom_fields": [
       {
@@ -36738,10 +36741,10 @@
       {
         "gid": "1208822149019495",
         "enum_value": {
-          "gid": "1209847080766036"
+          "gid": "1208822149019501"
         },
         "name": "Stage",
-        "display_value": "In UAT"
+        "display_value": "GA"
       },
       {
         "gid": "1209127915359058",
@@ -37278,9 +37281,9 @@
       {
         "gid": "1208818124273418",
         "name": "GA",
-        "display_value": "2026-04-23T00:00:00.000Z",
+        "display_value": "2026-05-14T00:00:00.000Z",
         "date_value": {
-          "date": "2026-04-23",
+          "date": "2026-05-14",
           "date_time": null
         }
       },
@@ -37959,12 +37962,12 @@
       {
         "gid": "1210909305830092",
         "name": "Release Date(s)",
-        "display_value": "5/14/2026"
+        "display_value": null
       },
       {
         "gid": "1210909549820601",
         "name": "GA Month",
-        "display_value": "May 26"
+        "display_value": "TBD"
       },
       {
         "gid": "1210191417850167",
@@ -38458,9 +38461,9 @@
       {
         "gid": "1208818124273418",
         "name": "GA",
-        "display_value": "2026-04-23T00:00:00.000Z",
+        "display_value": "2026-05-14T00:00:00.000Z",
         "date_value": {
-          "date": "2026-04-23",
+          "date": "2026-05-14",
           "date_time": null
         }
       },
@@ -38915,9 +38918,9 @@
       {
         "gid": "1210191417850167",
         "name": "Next DR Date",
-        "display_value": "2026-04-08T00:00:00.000Z",
+        "display_value": "2026-04-15T00:00:00.000Z",
         "date_value": {
-          "date": "2026-04-08",
+          "date": "2026-04-15",
           "date_time": null
         }
       },
@@ -40276,9 +40279,9 @@
       {
         "gid": "1210191417850167",
         "name": "Next DR Date",
-        "display_value": "2026-04-08T00:00:00.000Z",
+        "display_value": "2026-04-15T00:00:00.000Z",
         "date_value": {
-          "date": "2026-04-08",
+          "date": "2026-04-15",
           "date_time": null
         }
       },
@@ -40650,10 +40653,10 @@
   {
     "gid": "1213880656869265",
     "current_status_update": {
-      "gid": "1214001204273242",
-      "status_type": "on_track",
-      "text": "Summary\n\nMany fixes pushed to UAT, all complete in QA - Duc has moved on to Portal\nWe will wrap up in 4-2 release but lots of great stuff done:\n    Fixes for routing threads without People on them to Unidentified conversations queue instead of syncing to all open cases\n    Fixes/understanding around changing phone numbers for contacts\n    Delete text thread/buttons added for self-service\n\n----------------------------------------\n\nNext steps\n\n    Task: https://app.asana.com/1/1123317448830974/profile/1208828066029280 and https://app.asana.com/1/1123317448830974/profile/1208822086109219 will sync this afternoon to ensure all is well\n    Remaining completed work will be tested in 4-2 release\n",
-      "title": "Communications - Text message syncing routing improvements - Apr 10"
+      "gid": "1214058396063856",
+      "status_type": "complete",
+      "text": "Summary\n\n\n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n",
+      "title": "Communications - Text message syncing routing improvements - Apr 14"
     },
     "custom_fields": [
       {
@@ -40711,10 +40714,10 @@
       {
         "gid": "1208822149019495",
         "enum_value": {
-          "gid": "1209847080766036"
+          "gid": "1208822149019501"
         },
         "name": "Stage",
-        "display_value": "In UAT"
+        "display_value": "GA"
       },
       {
         "gid": "1209127915359058",

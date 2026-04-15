@@ -48,11 +48,11 @@ See `intelligence/product/projects/data_sources.md` for full GID table mapping. 
 
 | Work item | Jira issue type | Template |
 | :--- | :--- | :--- |
-| Feature / Story | User Story | `references/user-story-template.md` |
-| Task / chore | Task | `references/task-template.md` |
-| Internal bug | Bug | `references/bug-template.md` |
-| CX-reported bug | CX Bug | `references/cx-bug-template.md` |
-| Research / Spike | Research | `references/research-template.md` |
+| Feature / Story | User Story | `../../../intelligence/product/projects/source/user-story-template.md` |
+| Task / chore | Task | `../../../intelligence/product/projects/source/task-template.md` |
+| Internal bug | Bug | `../../../intelligence/product/projects/source/bug-template.md` |
+| CX-reported bug | CX Bug | `../../../intelligence/product/projects/source/cx-bug-template.md` |
+| Research / Spike | Research | `../../../intelligence/product/projects/source/research-template.md` |
 
 ---
 
@@ -60,7 +60,7 @@ See `intelligence/product/projects/data_sources.md` for full GID table mapping. 
 
 1. **Classify** the work item using the routing decision tree above.
 2. **Identify destination** — Asana, Jira, or both.
-3. **Select template** from `references/` based on issue type.
+3. **Select template** from `../../../intelligence/product/projects/source/` based on issue type.
 4. **Apply metadata** — assignee, priority, fix version (release), parent epic, custom fields.
 5. **Create the item** via MCP tool (`create_task_preview` for Asana, `createJiraIssue` for Jira).
 6. **Confirm concisely** — one line: item type, key/GID, title. No preamble.

@@ -13,6 +13,7 @@ The Orchestration domain provides the "rules of the road" for the vault. It ensu
 1. **[Communication](communication/index.md)**: The coordination layer. Handles human-in-the-loop notes and structured cross-agent handoffs.
 2. **[Changelog](changelog/index.md)**: The tracking layer. Audits work accuracy, ensures documentation completeness, and maintains the git record.
 3. **[Access](access/index.md)**: The governance layer. Conducts permission audits and ensures compliance with AGENTS.md.
+4. **[Separation Policy](separation-policy.md)**: The architectural layer. Defines the four-layer vault structural rules.
 
 ---
 

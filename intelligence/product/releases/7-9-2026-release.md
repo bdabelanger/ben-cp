@@ -1,0 +1,16 @@
+# Release: 7/9/2026
+
+- **Target Date:** 7/9/2026
+- **Status:** Synced
+- **Theme:** Coordination Snapshot
+
+## Linked Projects
+- [**Notes - Global Notes WLV**](../../roadmap/projects/q2/notes-global-notes-wlv-(1210368097846960).md)
+- [**Data import - Bulk import for Notes**](../../roadmap/projects/q2/data-import-bulk-import-for-notes-(1210860550580423).md)
+
+## Scope Status (Jira Alignment)
+*Note: Jira Fix Version extraction requires ATLASSIAN_API_TOKEN. Currently mapped via Project Metadata.*
+
+## Alignment Risks
+- [ ] **Schedule Slip**: Project target matches release date?
+- [ ] **Orphaned Scope**: Are there non-mapped epics in this release?

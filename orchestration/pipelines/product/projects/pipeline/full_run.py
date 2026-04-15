@@ -13,9 +13,9 @@ from platform_report import PlatformStatusReport
 from render_html import render_html
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-VAULT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../../.."))  # tools/status-reports/scripts/ → vault root
-MANIFEST_PATH = os.path.join(VAULT_ROOT, "inputs/status-reports/manifest.json")
-REPO_ROOT = VAULT_ROOT  # alias — manifest step files are relative to vault root
+VAULT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../../../../.."))
+MANIFEST_PATH = os.path.abspath(os.path.join(SCRIPT_DIR, "../inputs/status-reports/manifest.json"))
+REPO_ROOT = VAULT_ROOT
 
 def _load_dotenv():
     """Load .env from vault root (ben-cp/.env)."""
@@ -78,8 +78,8 @@ def main():
     with open(MANIFEST_PATH, 'r') as f:
         manifest = json.load(f)
 
-    ASANA_RAW      = os.path.join(VAULT_ROOT, "inputs/status-reports/raw/asana_all_projects.json")
-    JIRA_RAW_DIR   = os.path.join(VAULT_ROOT, "inputs/status-reports/raw/jira")
+    ASANA_RAW      = os.path.abspath(os.path.join(SCRIPT_DIR, "../inputs/status-reports/raw/asana_all_projects.json"))
+    JIRA_RAW_DIR   = os.path.abspath(os.path.join(SCRIPT_DIR, "../inputs/status-reports/raw/jira"))
     ASANA_FILTERED = get_path_from_manifest(manifest, "1_asana_ingest")
     JIRA_HARVESTED = get_path_from_manifest(manifest, "4_jira_harvest")
     OUTPUT_PATH    = get_path_from_manifest(manifest, "5_report_generation")

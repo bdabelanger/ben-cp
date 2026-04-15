@@ -59,6 +59,13 @@
 
 ---
 
+## 🔗 Constituent Projects
+
+- [**Zapier Improvements**](../../projects/q2/integrations-zapier-improvements-(1213496879668016).md)
+- [**Portal Client Dashboard**](../../projects/q2/portal-client-dashboard-(1213506659163435).md)
+
+---
+
 ## 🔗 References
 
 - Parent Q2 Index: `../index.md`

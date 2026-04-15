@@ -13,20 +13,22 @@ Before reading the handoff file, load vault context:
 1. Read `AGENTS.md` at vault root — confirms current structure and rules
 2. Read your role file (`agents/[your-agent].md`) if not already loaded
 
-### Step 2 — Read the Handoff File
+### Step 2 — Read and Scrutinize
 Read the full handoff file. Note:
 - **STATUS line** — confirms it's `🔲 READY` (not already complete)
 - **Priority** — P1 first, then P2, P3
+- **Scrutiny Policy**: Treat handoffs as proposals, not mandates. If you identify a structural violation or a more efficient path, discuss it with the human user or propose specific edits to the handoff before proceeding.
 - **Source report** — read it for full context before executing (if present)
 - **Execution Order** — tasks must run in the specified sequence
 - **Notes for This Agent** — read last; contains constraints specific to this plan
 
-### Step 3 — Execute
-Follow the plan's Execution Order exactly. For each task:
-- Read before every write — no exceptions
-- If a task is ambiguous or the prerequisite state doesn't match what the plan
-  expects, stop and flag — do not improvise
-- Report unexpected findings inline as you go
+### Step 3 — The Review Gate
+1. **Tiered Validation**: Use the **Decision Matrix** in `AGENTS.md` to determine if mandatory artifacts (Plan/Walkthrough) are present for the given priority.
+2. **Small Changes**: Minor adjustments or human-approved edits can move directly into execution.
+3. **Automated Workflows / P1-P2**: Any task involving an automated pipeline, complex ingestion, or P1/P2 architectural shifts MUST be assigned back to **Cowork** for a final review gate before physical execution. **P1/P2 handoffs MUST refer to an `implementation_plan.md`.**
+4. **Execution**: Follow the plan's Execution Order exactly after the review gate is clear.
+   - Read before every write — no exceptions
+   - If a task remains ambiguous, stop and flag — do not improvise.
 
 ### Step 4 — Write Changelog
 Before marking complete, write a changelog entry using `write_changelog_entry`:
@@ -103,10 +105,11 @@ complete and move to `handoff/complete/`.
 
 **File naming:** `handoff/YYYY-MM-DD-p[N]-[kebab-title].md`
 
-Priority levels:
-- **P1** — agent navigation broken (orphaned files, missing index.md, misplaced files)
-- **P2** — structural violations (AGENTS.md compliance, root-level stubs, duplicates)
-- **P3** — data quality gaps (data_sources.md sync, stale flags, low-urgency cleanup)
+Priority levels (governed by `AGENTS.md` Thresholds):
+- **P1 (Critical)** — agent navigation broken (orphaned files, missing index.md, misplaced files) or core pipeline logic failure. Requires `implementation_plan.md` + `walkthrough.md`.
+- **P2 (Major)** — structural violations (AGENTS.md compliance, root-level stubs, duplicates). Requires `implementation_plan.md`.
+- **P3 (Minor)** — data quality gaps (data_sources.md sync, stale flags, low-urgency cleanup). Plan included within handoff.
+- **P4 (Trivial)** — Typos, formatting, or atomic dependency updates. No handoff required (Atomic execution).
 
 Examples:
 - `handoff/2026-04-14-p1-crypt-keeper-orphaned-index-entries.md`

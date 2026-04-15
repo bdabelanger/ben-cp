@@ -484,7 +484,18 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     if (name === "get_handoff") {
       const { path: relPath } = args as any;
       const normalized = String(relPath).startsWith("handoff/") ? String(relPath).slice(8) : relPath;
-      const fullPath = path.resolve(handoffPath, normalized);
+      let fullPath = path.resolve(handoffPath, normalized);
+      try {
+        await fs.access(fullPath);
+      } catch {
+        if (!path.extname(fullPath)) {
+          const mdPath = `${fullPath}.md`;
+          try {
+            await fs.access(mdPath);
+            fullPath = mdPath;
+          } catch {}
+        }
+      }
       const content = await fs.readFile(fullPath, "utf-8");
       return { content: [{ type: "text", text: content }] };
     }
@@ -493,7 +504,19 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const a = args as any;
       const relPath = String(a.path);
       const normalized = relPath.startsWith("handoff/") ? relPath.slice(8) : relPath;
-      const sourcePath = path.resolve(handoffPath, normalized);
+      let sourcePath = path.resolve(handoffPath, normalized);
+      
+      try {
+        await fs.access(sourcePath);
+      } catch {
+        if (!path.extname(sourcePath)) {
+          const mdPath = `${sourcePath}.md`;
+          try {
+            await fs.access(mdPath);
+            sourcePath = mdPath;
+          } catch {}
+        }
+      }
       
       if (a.mark_complete) {
         const date = new Date().toISOString().split('T')[0];
@@ -569,13 +592,25 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const { path: relPath } = args as any;
       const tasksRoot = path.resolve(rootPath, "tasks");
       const normalized = String(relPath).startsWith("tasks/") ? String(relPath).slice(6) : relPath;
-      const fullPath = path.resolve(tasksRoot, normalized);
+      let fullPath = path.resolve(tasksRoot, normalized);
       
       // Safety check: ensure the resolved path is still inside the tasksRoot
       if (!fullPath.startsWith(tasksRoot)) {
         throw new Error("Access denied: path must be within the tasks/ directory.");
       }
       
+      try {
+        await fs.access(fullPath);
+      } catch {
+        if (!path.extname(fullPath)) {
+          const mdPath = `${fullPath}.md`;
+          try {
+            await fs.access(mdPath);
+            fullPath = mdPath;
+          } catch {}
+        }
+      }
+
       const content = await fs.readFile(fullPath, "utf-8");
       return { content: [{ type: "text", text: content }] };
     }
@@ -659,7 +694,20 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     if (name === "edit_intelligence") {
       const { path: relPath, title, metadata = {}, content } = args as any;
       const normalized = String(relPath).startsWith("intelligence/") ? String(relPath).slice(13) : relPath;
-      const fullPath = path.resolve(rootPath, "intelligence", normalized);
+      let fullPath = path.resolve(rootPath, "intelligence", normalized);
+
+      try {
+        await fs.access(fullPath);
+      } catch {
+        if (!path.extname(fullPath)) {
+          const mdPath = `${fullPath}.md`;
+          try {
+            await fs.access(mdPath);
+            fullPath = mdPath;
+          } catch {}
+        }
+      }
+
       let existingContent = await fs.readFile(fullPath, "utf-8");
       
       const lines = existingContent.split('\n');
@@ -710,7 +758,20 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     if (name === "get_intelligence") {
       const { path: relPath, parse = false } = args as any;
       const normalized = String(relPath).startsWith("intelligence/") ? String(relPath).slice(13) : relPath;
-      const fullPath = path.resolve(rootPath, "intelligence", normalized);
+      let fullPath = path.resolve(rootPath, "intelligence", normalized);
+
+      try {
+        await fs.access(fullPath);
+      } catch {
+        if (!path.extname(fullPath)) {
+          const mdPath = `${fullPath}.md`;
+          try {
+            await fs.access(mdPath);
+            fullPath = mdPath;
+          } catch {}
+        }
+      }
+
       const content = await fs.readFile(fullPath, "utf-8");
       
       if (parse) {

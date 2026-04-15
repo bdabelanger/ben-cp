@@ -2,6 +2,7 @@
 
 - **GID:** 1210368097846960
 - **Permalink:** https://app.asana.com/1/1123317448830974/project/1210368097846960
+- **OKR Mapping:** [Elevate Notes](../../okrs/q2/elevate-notes/index.md)
 - **Team:** N/A
 - **Stage:** Backlog
 - **Status:** on_track

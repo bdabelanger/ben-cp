@@ -2,6 +2,7 @@
 
 - **GID:** 1211631360190563
 - **Permalink:** https://app.asana.com/1/1123317448830974/project/1211631360190563
+- **OKR Mapping:** [Planning Services at Scale](../../okrs/q2/planning-services-at-scale/index.md)
 - **Team:** N/A
 - **Stage:** Development
 - **Status:** on_track

@@ -29,7 +29,7 @@ Reference data for this skill has been consolidated into the `intelligence/` dom
 | Item | Location |
 | :--- | :--- |
 | Data Sources Map | `intelligence/product/projects/data_sources.md` |
-| Asana/Jira Templates | `intelligence/product/projects/source/` (Pending Restoration) |
+| Asana/Jira Templates | `intelligence/product/projects/source/` |
 
 ---
 

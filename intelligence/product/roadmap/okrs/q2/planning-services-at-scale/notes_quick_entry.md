@@ -108,6 +108,14 @@ This KR has an established baseline based on beta cohort usage:
 
 ---
 
+## 🔗 Constituent Projects
+
+The following initiatives contribute to this KR:
+- [**Notes - Notes WLV / Datagrid**](../../projects/q2/notes-notes-datagrid-(1209963394727039).md)
+- [**Notes - Global Notes WLV**](../../projects/q2/notes-global-notes-wlv-(1210368097846960).md)
+
+---
+
 ## 🔗 References
 
 - Parent procedure: `../../procedure.md`

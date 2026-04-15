@@ -11,8 +11,8 @@ from datetime import datetime
 
 # Manifest path resolution
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-VAULT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../../.."))
-MANIFEST_PATH = os.path.join(VAULT_ROOT, "inputs/status-reports/manifest.json")
+VAULT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../../../../.."))
+MANIFEST_PATH = os.path.abspath(os.path.join(SCRIPT_DIR, "../inputs/status-reports/manifest.json"))
 REPO_ROOT = VAULT_ROOT
 
 def get_path_from_manifest(data, step_id):
@@ -110,11 +110,27 @@ def fetch_missing_atlassian_data():
             issues_batch = data.get("issues", [])
             all_issues.extend(issues_batch)
             
-            total = data.get("total", 0)
-            start_at += len(issues_batch)
+            # Support both old (total) and new (isLast) pagination
+            is_last = data.get("isLast", False)
+            total = data.get("total")
             
-            if start_at >= total or len(issues_batch) == 0:
+            if is_last:
                 break
+            
+            if total is not None:
+                start_at += len(issues_batch)
+                if start_at >= total:
+                    break
+            
+            if len(issues_batch) == 0:
+                break
+                
+            # For new pagination, we might need to use nextPageToken
+            next_token = data.get("nextPageToken")
+            if next_token:
+                params["nextPageToken"] = next_token
+            else:
+                params["startAt"] = start_at + len(issues_batch)
         
         if not all_issues:
             print(f"⚠️  0 child issues found for {key} — saving empty file and continuing.")

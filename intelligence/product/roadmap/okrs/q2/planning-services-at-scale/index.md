@@ -62,6 +62,16 @@
 
 ---
 
+## 🔗 Constituent Projects
+
+- [**Service Plan Datagrid**](../../projects/q2/services-service-plan-datagrid-with-bulk-actions-(1211631360190563).md)
+- [**Enrollment Dialog Bulk Services**](../../projects/q2/enrollment-dialog-bulk-services-section-(1211631356870657).md)
+- [**Services WLV Bulk Actions**](../../projects/q2/services-wlv-bulk-actions-(1211733450555414).md)
+- [**Notes Datagrid**](../../projects/q2/notes-notes-datagrid-(1209963394727039).md)
+- [**Bulk Service Notes**](../../projects/q2/notes-bulk-service-notes-(1211757637943244).md)
+
+---
+
 ## 🔗 References
 
 - Parent Q2 Index: `../index.md`

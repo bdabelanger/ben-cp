@@ -54,7 +54,13 @@ Executing agent
   → picks up the reviewed handoff and implements it
 ```
 
-The point is the **review gate** — no handoff skips Cowork scrutiny before execution. This applies even when Code identifies a new task during implementation and wants to create a follow-on handoff. Write it, assign it to Cowork, let Cowork refine and route it.
+The point is the **review gate** — no handoff skips Cowork scrutiny before execution. 
+
+### The Scrutiny & Discussion Rule
+Executing agents are required to scrutinize every handoff for logical coherence and structural compliance.
+1. **Discuss**: If a plan seems inefficient or violates vault policy, the agent MUST discuss it with the human user before proceeding.
+2. **Edit**: Agents are encouraged to refine handoffs via `edit_handoff` to reflect these discussions.
+3. **Loop Back**: Any automated workflow or significant architectural shift must be assigned back to **Cowork** for a final review gate before physical execution.
 
 ### Dispatch Quick Reference
 
@@ -314,10 +320,24 @@ Every session that involves writing, editing, or structural modification must en
 
 ### Artifact-First Workflow (MANDATORY)
 
-To ensure human oversight and safety, agents should primarily interact with specialized artifacts as their interface for work:
-1. **Plan first:** All non-trivial changes require an `implementation_plan.md` artifact approved by human user.
-2. **Execute via Tasks:** Use the `task.md` artifact to track progress and state.
-3. **Walkthrough:** Finalize every complex session with a `walkthrough.md`.
+To ensure human oversight and safety, agents MUST interact with specialized artifacts as their primary interface for work. The level of rigor is determined by the task priority.
+
+#### Complexity Threshold Decision Matrix (Tiered Rigor)
+
+| Priority | Lifecycle Requirement | Artifacts Required |
+| :--- | :--- | :--- |
+| **P1 (Critical)** | **Full Rigor** | `implementation_plan.md`, `task.md`, `walkthrough.md` |
+| **P2 (Major)** | **Standard** | `implementation_plan.md`, `task.md` |
+| **P3 (Minor)** | **Lightweight** | `task.md` (Plan included as a section) |
+| **P4 (Trivial)** | **Atomic** | Direct execution with `changelog.md` entry only. |
+
+1. **Plan first (`implementation_plan.md`)**: Mandatory for P1/P2. Must be approved by human user or peer agent before code is touched. Focuses on "The Why" and "The Path."
+2. **Execute via Tasks (`task.md`)**: Active deliverable tracker. For P3, this contains the "Proposed Logic" at the top to bypass a separate plan artifact.
+3. **Walkthrough (`walkthrough.md`)**: Mandatory for P1. Summarizes changes, lessons learned, and verification. Optimized for NotebookLM ingestion.
+
+#### Mobile & Voice Optimization
+- **Header Hierarchy**: Handoffs, Plans, and Walkthroughs MUST use standard **H1/H2 headers** to ensure high-fidelity voice summaries on mobile devices (e.g., Gemini/NotebookLM on iPhone).
+- **Transclusion Policy**: For P2/P3 tasks, agents are encouraged to "transclude" (copy-paste) the plan into the final walkthrough to maintain a single source of truth.
 
 The access skill will flag sessions that bypass this artifact-led workflow as violations.
 

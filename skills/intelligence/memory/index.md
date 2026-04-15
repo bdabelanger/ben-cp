@@ -9,10 +9,16 @@
 
 | Sub-skill | Agent | Purpose |
 | :--- | :--- | :--- |
-| [`learn/`](learn/SKILL.md) | Vault Auditor | Tool for writing to long-term memory (indexing Digest/notes) |
-| [`recall/`](recall/SKILL.md) | Vault Auditor | Tool for context retrieval and pattern matching |
-| [`mapping/`](mapping/status_mapping.md) | Vault Auditor | Store for structural logic and health rulebaselines |
-| [`watchdog/`](watchdog/SKILL.md) | Vault Auditor | Weekly structural hygiene and drift audit (legacy Vault Auditor) |
+| [`intake/`](intake/index.md) | Vault Auditor | Tool for writing to long-term memory (indexing findings) |
+| [`retrieval/`](retrieval/index.md) | Vault Auditor | Tool for context retrieval and pattern matching |
+| [`audit/`](audit/index.md) | Vault Auditor | Weekly structural hygiene and drift audit |
+
+---
+
+## 🗺️ Logic & Mapping
+Structural logic and health rulebaselines are stored centrally in the intelligence domain:
+- [**Status Mapping**](../../../intelligence/mapping/status_mapping.md)
+
 
 ---
 

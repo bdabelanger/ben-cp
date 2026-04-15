@@ -111,6 +111,15 @@ See master inventory: `../../data_sources.md`
 
 ---
 
+## 🔗 Constituent Projects
+
+The following initiatives contribute to this KR:
+- [**Enrollment Dialog - Bulk Services Section**](../../projects/q2/enrollment-dialog-bulk-services-section-(1211631356870657).md)
+- [**Services WLV - Bulk Actions**](../../projects/q2/services-wlv-bulk-actions-(1211733450555414).md)
+- [**Service Plan Datagrid - Bulk Actions**](../../projects/q2/services-service-plan-datagrid-with-bulk-actions-(1211631360190563).md)
+
+---
+
 ## 🔗 References
 
 - Parent procedure: `../../procedure.md`

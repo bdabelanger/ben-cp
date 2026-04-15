@@ -9,8 +9,8 @@ except ImportError:
 from datetime import datetime
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-VAULT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../../.."))
-OUTPUT_PATH = os.path.join(VAULT_ROOT, "inputs/status-reports/raw/asana_all_projects.json")
+VAULT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../../../../.."))
+OUTPUT_PATH = os.path.abspath(os.path.join(SCRIPT_DIR, "../inputs/status-reports/raw/asana_all_projects.json"))
 
 ASANA_API_URL = (
     "https://app.asana.com/api/1.0/teams/1208693459152259/projects"

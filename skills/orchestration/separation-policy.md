@@ -40,7 +40,7 @@
 | Raw or processed JSON data files | Live run data | `inputs/` |
 | Archived reports (`.html`, `.md` run outputs) | Run artifacts | `outputs/` |
 | Execution logs | Run artifacts | `outputs/` |
-| Ephemeral `notes.md` session files | Transient WIP — must be deleted after changelog | Delete post-session |
+| Ephemeral session planning | Transient WIP — forbidden in notes.md; use Artifact-Led Workflow | Use `implementation_plan.md` / `task.md` |
 
 `skills/` must be a version-controlled toolset that can be iterated independently of any particular run's data. Files that change with every execution pollute the skill layer and make diffs noisy and meaningless.
 
@@ -63,7 +63,7 @@
 - ✅ `skills/product/status-reports/scripts/` — migrated to `tools/status-reports/scripts/` (2026-04-12)
 - ✅ `skills/product/status-reports/run_pipeline.sh` — migrated to `tools/status-reports/` (2026-04-12)
 - ✅ `skills/product/status-reports/tests/` — migrated to `tools/status-reports/tests/` (2026-04-12)
-- `skills/intelligence/report/run.py` — execution script (→ `tools/intelligence-report/`)
+- ✅ `skills/intelligence/report/run.py` — execution script (migrated to `tools/intelligence-report/`) (2026-04-14)
 
 ### Live Data in `skills/`
 
@@ -73,7 +73,7 @@
 
 ### Structural Bugs
 
-- `skills/product/shared/shared/vault.css` — double-nesting artifact; `product/shared/shared/` is a spurious extra directory layer (→ remove duplicate; `vault.css` canonical copy lives at `skills/styles/vault.css`)
+- ✅ `skills/product/shared/shared/vault.css` — double-nesting artifact; removed (2026-04-14)
 
 ### Stale Ephemeral Session Files
 

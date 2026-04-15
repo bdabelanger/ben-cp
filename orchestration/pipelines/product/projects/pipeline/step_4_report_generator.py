@@ -3,8 +3,8 @@ import os
 from datetime import datetime
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-VAULT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../../.."))
-MANIFEST_PATH = os.path.join(VAULT_ROOT, "inputs/status-reports/manifest.json")
+VAULT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../../../../.."))
+MANIFEST_PATH = os.path.abspath(os.path.join(SCRIPT_DIR, "../inputs/status-reports/manifest.json"))
 REPO_ROOT = VAULT_ROOT
 
 def get_path_from_manifest(step_id):

@@ -3,33 +3,16 @@
 - **GID:** 1211733450555414
 - **Permalink:** https://app.asana.com/1/1123317448830974/project/1211733450555414
 - **OKR Mapping:** [Create Enrollment Shortcuts](../../okrs/q2/planning-services-at-scale/enrollments_data_entry_shortcuts.md)
-- **Team:** N/A
+- **Team:** Platform
 - **Stage:** Discovery
 - **Status:** on_track
 - **Jira Link:** https://casecommons.atlassian.net/browse/CBP-3121
-
-## Current Status Update
-**Title:** Services WLV - Bulk actions - Apr 6
-**Text:**
-Summary
-
-Re-baselined
-
-----------------------------------------
-
-Next steps
-
-Blessing will move on to this work after wrapping Service Plan datagrid
-
-## Custom Fields
 - **Discovery Start:** null
 - **Dev Start:** 2026-04-13T00:00:00.000Z
 - **Beta Start:** null
 - **GA:** 2026-05-18T00:00:00.000Z
 - **JIRA Link:** https://casecommons.atlassian.net/browse/CBP-3121
-- **Team:** Platform
 - **Release Quarter:** Q2 2026
-- **Stage:** Discovery
 - **Type:** Strategic
 - **Current Discovery Stage:** 75%
 - **Target Discovery Stage:** 100%
@@ -48,3 +31,15 @@ Blessing will move on to this work after wrapping Service Plan datagrid
 - **UAT Start:** 2026-04-30T00:00:00.000Z
 - **Roadmap:** Strengthen Core Case Management
 
+# Services WLV Bulk Actions (GID: 1211733450555414)
+
+This view provides the Workload View context for bulk operations, allowing users to manage services at scale.
+
+## 🗣️ Key Narrative Points (From Shareout)
+
+*   **Core Vision**: Achieving "Efficiency at Scale" by centralizing high-volume tasks.
+*   **Bulk Capabilities**: Supports bulk End enrollments, Delete enrollments, and Create service notes directly from the WLV.
+
+## 💬 Strategic Roadmap
+
+**Strategic Prerequisite:** This functionality is a prerequisite for Single-Click Edits (GA 4.2), which will apply across all editable grids.

@@ -1,14 +1,16 @@
 # agents/local.md — Local Role Instructions
 
 > **Role:** Reviewer, parser, intelligence refresher, pipeline executor
-> **Powered by:** Gemma 4 (Google)
-> Last updated: 2026-04-13
+> **Powered by:** Gemma 4 (Google) running within LM Studio
+> Last updated: 2026-04-15
 
 ---
 
-## Handoff Check (Mandatory Start)
+## Handoff Check (Autonomous Session Start Only)
 
-Before doing any work, list `handoff/` at vault root (root only — not `handoff/complete/`). Any `.md` file present is an open handoff. Report these to human user immediately before proceeding.
+**Skip this if the human has told you what to work on.** If a handoff path, file, or task has been specified, go directly to that work.
+
+For undirected session starts only: list `orchestration/handoff/` (root only), surface any open `.md` files to human user, and wait for confirmation before proceeding.
 
 ---
 
@@ -73,10 +75,29 @@ Every vault domain has its own purpose-built MCP tool. Always use these — **ne
 - `write_file` → ONLY for brand new files. NEVER use it on an existing file (destructive overwrite).
 
 ### Rule 5: Check the Path First
-- All SOP files go in `skills/`.
-- OKR KR files go in `skills/okr-reporting/[quarter]/[initiative]/`.
-- Intelligence files go in `intelligence/<domain>/<topic>/`.
-- Reference/source files go in `intelligence/<domain>/<topic>/source/`.
+
+Before writing **any** intelligence file, run the following pre-write check mentally (and in tool calls):
+
+**Step A — Does the file already exist?**
+- Call `list_intelligence` on the target domain (e.g., `product/roadmap/projects/q2`) before calling `add_intelligence`.
+- If a file with the matching GID or feature name is already present, use `edit_intelligence` — do NOT create a duplicate.
+
+**Step B — Is the domain correct?**
+Use this routing table — do not improvise a new path:
+
+| Content | Correct Path |
+| :--- | :--- |
+| Q2 project status & narrative | `intelligence/product/roadmap/projects/q2/[name-(GID)].md` |
+| Q1 (archived) project records | `intelligence/product/roadmap/projects/archive/` |
+| OKR KR measurement files | `intelligence/product/roadmap/okrs/q2/[initiative]/[kr].md` |
+| Casebook domain concepts & schema | `intelligence/casebook/[domain]/` |
+| Reference/source files | `intelligence/<domain>/<topic>/source/` |
+| SOP files | `skills/` *(never write data or changelogs here)* |
+
+**Step C — Confirm `skills/` is never a data target.**
+No changelog, no data file, no run artifact ever goes in `skills/`. If a changelog is needed, it goes in `intelligence/<domain>/changelog.md` or root `changelog.md` via `add_changelog`.
+
+**If any step is ambiguous, stop and ask Cowork before writing.**
 
 ### Rule 6: Update index.md After Every New File
 - After creating a new file, add an entry to the `index.md` in the same folder.

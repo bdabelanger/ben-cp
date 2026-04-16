@@ -30,10 +30,19 @@
 - **UAT Start:** 2026-04-16T00:00:00.000Z
 - **Roadmap:** Strengthen Core Case Management
 - **Product Assignee:** Ben Belanger, Pierre Klein
-
-## Overview
-Notes have been upgraded to streamline bulk data entry, centralizing inline data entry into a tabbed canvas and introducing data entry shortcuts like Service Groups.
-
-## 🗣️ Key Narrative Points (From Shareout)
 - **Headline:** Intuitive notes authoring: Reduce clicks and save time.
 - **Quote (Path of Life):** "Case managers input bulk notes so that they don't have to write the same thing five to eight times".
+
+# Bulk General Notes (GID: 1211838817183809)
+
+This feature introduces the Note Authoring Canvas, a massive leap forward in consistency and professional-grade performance for note creation.
+
+## 🗣️ Key Narrative Points (From Shareout)
+
+*   **Core Vision**: "Speed through note writing." The Canvas provides a standardized, eye-level UI across all note types.
+*   **Customer Validation**: Path of Life noted the efficiency gain: Users will no longer have to "write the same thing five to eight times" when performing bulk actions.
+*   **Team Recognition**: Design by Pierre; Implementation led by Bisoye, Russell, and Tuan.
+
+## 💬 Strategic Roadmap
+
+**Strategic Prerequisite:** The Canvas model prepares the platform for Dynamic Pages (later Q2) — users will eventually add and arrange fields in the top note section.

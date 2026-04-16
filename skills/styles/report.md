@@ -10,24 +10,7 @@ Maintain a precise, aesthetic-conscious, and systems-focused voice. You are the 
 
 ## Visual Glossary: Emoji Indicators
 
-### ✅ Success & Completion
-- **✅ Done/Achieved**: KR has met or exceeded target.
-- **👏 Best Performer**: Highest performing entity.
-
-### ⚠️ Caution & Risk
-- **⚠️ At Risk/Needs Attention**: Poor trend or internal metric approaching threshold.
-- **🟡 Partial/In-Progress**: Significant progress made but not yet complete.
-- **🎯 On Track**: Normal execution / monitored.
-
-### ❌ Failure & Blockers
-- **🛑 Blocked**: External or internal dependency preventing progress.
-- **❌ Missed/Failed**: Performance targets definitively not met.
-
-### 👀 Data Quality
-- **👀 Missing Info**: Required data fields are absent.
-
----
-
+Refer to the canonical [emoji-key.md](file:///Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/styles/emoji-key.md) for all status icons and visual indicators. Never introduce a marker that is not defined in the glossary.
 ## Standard: Documentation Triad
 
 All skills must contain the following three files in their root directory:
@@ -37,3 +20,4 @@ All skills must contain the following three files in their root directory:
 
 ---
 *"Consistency is the bedrock of intelligence."*
+

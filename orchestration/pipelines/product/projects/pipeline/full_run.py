@@ -102,31 +102,26 @@ def main():
         cmd += ["--team", team_arg]
     subprocess.run(cmd)
 
-    # Step 2 (Agent-side): per-epic Jira fetch via searchJiraIssuesUsingJql
-    if not os.path.exists(JIRA_HARVESTED):
-        epic_keys = build_epic_keys_from_asana(ASANA_FILTERED) if os.path.exists(ASANA_FILTERED) else []
-        missing_keys = [k for k in epic_keys if not os.path.exists(os.path.join(JIRA_RAW_DIR, f"{k}.json"))]
+    # Step 2: Fetch Jira data (always fetch as sub-script handles freshness)
+    epic_keys = build_epic_keys_from_asana(ASANA_FILTERED) if os.path.exists(ASANA_FILTERED) else []
+    if epic_keys:
+        print(f"\n📥 Pulse: Fetching/Updating Jira data for {len(epic_keys)} epics...")
+        result = subprocess.run(["python3", os.path.join(script_dir, "step_2_atlassian_fetch.py")])
+        if result.returncode != 0:
+            print("❌ Jira fetch failed. Check step_2_atlassian_fetch.py output above.")
+            sys.exit(1)
 
-        if not epic_keys:
-            print("ℹ️  No Jira epic keys found — skipping Jira fetch and harvest.")
-            # Write an empty harvest file so the report generator has something to read
-            os.makedirs(os.path.dirname(JIRA_HARVESTED), exist_ok=True)
-            with open(JIRA_HARVESTED, "w") as f:
-                json.dump([], f)
-        else:
-            if missing_keys:
-                print(f"\n📥 Fetching raw Jira data for {len(missing_keys)} epic(s)...")
-                result = subprocess.run(["python3", os.path.join(script_dir, "step_2_atlassian_fetch.py")])
-                if result.returncode != 0:
-                    print("❌ Jira fetch failed. Check step_2_atlassian_fetch.py output above.")
-                    sys.exit(1)
-
-            # Raw files present — run harvest automatically
-            print("📥 Raw Jira files found for all epics. Running harvest...")
-            result = subprocess.run(["python3", os.path.join(script_dir, "step_3_jira_harvest.py")])
-            if result.returncode != 0 or not os.path.exists(JIRA_HARVESTED):
-                print("❌ Harvest failed. Check step_3_jira_harvest.py output above.")
-                sys.exit(1)
+        # Step 3: Harvest
+        print("📥 Running harvest...")
+        result = subprocess.run(["python3", os.path.join(script_dir, "step_3_jira_harvest.py")])
+        if result.returncode != 0 or not os.path.exists(JIRA_HARVESTED):
+            print("❌ Harvest failed. Check step_3_jira_harvest.py output above.")
+            sys.exit(1)
+    else:
+        print("ℹ️  No Jira epic keys found — skipping Jira fetch and harvest.")
+        os.makedirs(os.path.dirname(JIRA_HARVESTED), exist_ok=True)
+        with open(JIRA_HARVESTED, "w") as f:
+            json.dump([], f)
 
     # 📊 Final Synthesis
     print("📊 Synthesizing Platform Weekly Status...")

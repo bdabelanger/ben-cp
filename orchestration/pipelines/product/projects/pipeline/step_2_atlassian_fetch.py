@@ -62,16 +62,16 @@ def fetch_missing_atlassian_data():
     os.makedirs(JIRA_RAW_DIR, exist_ok=True)
 
     epic_keys = build_epic_keys_from_asana(ASANA_FILTERED) if os.path.exists(ASANA_FILTERED) else []
-    missing_keys = [k for k in epic_keys if not os.path.exists(os.path.join(JIRA_RAW_DIR, f"{k}.json"))]
+    keys_to_fetch = epic_keys
 
-    if not missing_keys:
-        print("✅ step_2_atlassian_fetch Complete: No missing keys to fetch.")
+    if not keys_to_fetch:
+        print("✅ step_2_atlassian_fetch Complete: No epics to fetch.")
         return
 
-    print(f"📥 Fetchin Atlassian data for {len(missing_keys)} missing epics...")
+    print(f"📥 Fetching Atlassian data for {len(keys_to_fetch)} epics...")
 
-    # 3. Iteratively fetch each missing epic
-    for key in missing_keys:
+    # 3. Iteratively fetch each epic
+    for key in keys_to_fetch:
         save_path = os.path.join(JIRA_RAW_DIR, f"{key}.json")
         # Use parent in (...) — this workspace uses "Project" as the top-level type,
         # not Epic. Child stories have parent.key set directly. "Epic Link" is the
@@ -155,7 +155,7 @@ def fetch_missing_atlassian_data():
         else:
             print(f"  ⚠️  Could not fetch epic {key} ({epic_resp.status_code})")
             
-    print(f"✅ step_2_atlassian_fetch Complete: Successfully fetched {len(missing_keys)} epics.")
+    print(f"✅ step_2_atlassian_fetch Complete: Successfully fetched {len(keys_to_fetch)} epics.")
 
 if __name__ == "__main__":
     fetch_missing_atlassian_data()

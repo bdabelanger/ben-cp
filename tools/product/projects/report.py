@@ -14,7 +14,7 @@ INTEL_DIR = os.path.join(REPO_ROOT, "intelligence/product/roadmap/projects")
 # Data & Pipeline Paths (remain in orchestration domain)
 PIPELINE_DATA_ROOT = os.path.join(REPO_ROOT, "orchestration", "pipelines", "product", "projects")
 DATA_FILE = os.path.join(PIPELINE_DATA_ROOT, "inputs", "status-reports", "processed", "asana_active.json")
-JIRA_FILE = os.path.join(PIPELINE_DATA_ROOT, "inputs", "status-reports", "raw", "jira_issues.json")
+JIRA_FILE = os.path.join(PIPELINE_DATA_ROOT, "inputs", "status-reports", "processed", "jira_issues.json")
 JIRA_RAW_DIR = os.path.join(PIPELINE_DATA_ROOT, "inputs", "status-reports", "raw", "jira")
 SCRIPTS_DIR = os.path.join(PIPELINE_DATA_ROOT, "pipeline")
 

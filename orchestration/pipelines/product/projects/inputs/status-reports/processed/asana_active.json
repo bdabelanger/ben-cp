@@ -310,9 +310,9 @@
     "current_status_update": {
       "gid": "1214003020039650",
       "status_type": "on_track",
-      "text": "Summary\n\nLocked notes are no longer returned to any user without permission in the grid or search\nHowever new reports of lagging experience may require a hotfix or 4-2 release before we want to release to GA\n    \ud83d\uddd3\ufe0f Shifting GA target to 4-2 release, we can move up if hotfixed beforehand\n    Note - estimate/actual data quality has been relatively poor for this project, will share with engineers\n\n----------------------------------------\n\nNext steps\n\n    First step in addressing lagging performance has been pushed to QA\n    Notes/Service interactions synchronization work continues ahead of Notes v2 release in 4-2 release\n    Some outstanding FE cleanup for Locked notes continues\n\n----------------------------------------\n\nJira status\n\nhttps://casecommons.atlassian.net/browse/CBP-2736\n19 done \u00a0\u00b7\u00a0 8 in progress \u00a0\u00b7\u00a0 6 to do\n35.1d estimated \u00a0\u00b7\u00a0 18.2d actual \u00a0\u00b7\u00a0 6.0d remaining (69%)\n    QA Start not set\n    UAT Start not set\n    \ud83c\udfaf GA - Apr 23\nDone: 19 issues\n29.1d estimated \u00b7 18.2d actual\nIn Progress: 8 issues \u00b7 ~6.0d est remaining\n    https://casecommons.atlassian.net/browse/CBP-3183 \u2014 Notes - Lagging Case Details page when page size = 50 \u2014 Bisoye\n    Merged to QA \u00b7 Unestimated \ud83d\udc40 \u00b7 No actual \ud83d\udc40 \u00b7 P2 \u00b7 \ud83d\udc40 Unprioritized\n    https://casecommons.atlassian.net/browse/CBP-3150 \u2014 Notes - Synchronize note_people and service_interaction_people attributes \u2014 Tuan\n    Merged to QA \u00b7 2.0d estimated \u00b7 No actual \ud83d\udc40 \u00b7 P2 \u00b7 2026-4-2\n    https://casecommons.atlassian.net/browse/CBP-3107 \u2014 Notes - Rename date fields for Services section \u2014 Bisoye\n    Merged to QA \u00b7 Unestimated \ud83d\udc40 \u00b7 No actual \ud83d\udc40 \u00b7 P2 \u00b7 2026-4-2\n    https://casecommons.atlassian.net/browse/CBP-3105 \u2014 Notes - Migrate Start/End dates from service interactions to service notes \u2014 Tuan\n    Merged to QA \u00b7 1.0d estimated \u00b7 No actual \ud83d\udc40 \u00b7 P2 \u00b7 2026-4-2\n    https://casecommons.atlassian.net/browse/CBP-3171 \u2014 Notes datagrid - Filter locked notes via GQL query filters \u2014 Blessing\n    In QA \u00b7 1.0d estimated \u00b7 No actual \ud83d\udc40 \u00b7 P2 \u00b7 \ud83d\udc40 Unprioritized\n    https://casecommons.atlassian.net/browse/CBP-3148 \u2014 Notes datagrid - Locked note GQL support \u2014 Blessing\n    Merged to UAT \u00b7 Unestimated \ud83d\udc40 \u00b7 No actual \ud83d\udc40 \u00b7 P2 \u00b7 2026-4-1\n    https://casecommons.atlassian.net/browse/CBP-3126 \u2014 FE - the user with view-only access can still see the edit/delete button for the locked note \u2014 Russell\n    Merged to UAT \u00b7 1.0d estimated \u00b7 No actual \ud83d\udc40 \u00b7 P2 \u00b7 2026-4-1\n    https://casecommons.atlassian.net/browse/CBP-3059 \u2014 Notes - Display Services data in Note preview as structured list \u2014 Blessing\n    Merged to QA \u00b7 1.0d estimated \u00b7 No actual \ud83d\udc40 \u00b7 P4 \u00b7 2026-4-2\nTo Do: 6 issues\n    https://casecommons.atlassian.net/browse/CBP-3191 \u2014 Notes - Synchronize note_resources and service_interaction_people_resources attributes \u2014 Ben\n    To do \u00b7 Unestimated \ud83d\udc40 \u00b7 No actual \ud83d\udc40 \u00b7 P2 \u00b7 2026-4-2\n    https://casecommons.atlassian.net/browse/CBP-3186 \u2014 Notes - Clean up \"Locked Note\" FE handling \u2014 Unassigned\n    To do \u00b7 Unestimated \ud83d\udc40 \u00b7 No actual \ud83d\udc40 \u00b7 P2 \u00b7 \ud83d\udc40 Unprioritized\n    https://casecommons.atlassian.net/browse/CBP-3055 \u2014 Notes - Enable row pinning in Notes Datagrid \u2014 Blessing\n    To do \u00b7 Unestimated \ud83d\udc40 \u00b7 No actual \ud83d\udc40 \u00b7 P2 \u00b7 \ud83d\udc40 Unprioritized\n    https://casecommons.atlassian.net/browse/CBP-3062 \u2014 Notes - Enhance Service(s) column display in Notes Datagrid collapsed state \u2014 Pierre\n    To do \u00b7 Unestimated \ud83d\udc40 \u00b7 No actual \ud83d\udc40 \u00b7 P3 \u00b7 \ud83d\udc40 Unprioritized\n    https://casecommons.atlassian.net/browse/CBP-3060 \u2014 Notes - Evaluate nested DataGrid approach for Services data in Note preview \u2014 Pierre\n    To do \u00b7 Unestimated \ud83d\udc40 \u00b7 No actual \ud83d\udc40 \u00b7 P3 \u00b7 \ud83d\udc40 Unprioritized\n    https://casecommons.atlassian.net/browse/CBP-3054 \u2014 Notes - Enable multi-filter stacking in Notes Datagrid \u2014 Blessing\n    To do \u00b7 Unestimated \ud83d\udc40 \u00b7 No actual \ud83d\udc40 \u00b7 P3 \u00b7 \ud83d\udc40 Unprioritized\n",
+      "text": "> 4-2 release: Rows per page performance issue needs resolution ahead of next GA wave.  Not a release-blocker, but should be addressed ASAP.\n\nSummary\n\nLocked notes are no longer returned to any user without permission in the grid or search\nHowever new reports of lagging experience may require a hotfix or 4-2 release before we want to release to GA\n    \ud83d\uddd3\ufe0f Shifting GA target to 4-2 release, we can move up if hotfixed beforehand\n    Note - estimate/actual data quality has been relatively poor for this project, will share with engineers\n\n----------------------------------------\n\nNext steps\n\n    First step in addressing lagging performance has been pushed to QA\n    Notes/Service interactions synchronization work continues ahead of Notes v2 release in 4-2 release\n    Some outstanding FE cleanup for Locked notes continues\n",
       "title": "Notes - Notes datagrid - Apr 10",
-      "html_text": "<body>\n<strong>Summary</strong>\n\nLocked notes are no longer returned to any user without permission in the grid or search\nHowever new reports of lagging experience may require a hotfix or 4-2 release before we want to release to GA\n<ul><li>\ud83d\uddd3\ufe0f <strong>Shifting GA target to 4-2 release, we can move up if hotfixed beforehand</strong></li><li><em>Note - estimate/actual data quality has been relatively poor for this project, will share with engineers</em></li></ul>\n----------------------------------------\n\n\n\n<strong>Next steps</strong>\n\n<ol><li>First step in addressing lagging performance has been pushed to QA</li><li>Notes/Service interactions synchronization work continues ahead of Notes v2 release in 4-2 release</li><li>Some outstanding FE cleanup for Locked notes continues</li></ol>\n----------------------------------------\n\n\n\n<strong>Jira status</strong>\n\n<strong><a href=\"https://casecommons.atlassian.net/browse/CBP-2736\">CBP-2736</a></strong>\n19 done \u00a0\u00b7\u00a0 8 in progress \u00a0\u00b7\u00a0 6 to do\n35.1d estimated \u00a0\u00b7\u00a0 18.2d actual \u00a0\u00b7\u00a0 6.0d remaining (69%)\n<ul><li>QA Start <em>not set</em></li><li>UAT Start <em>not set</em></li><li>\ud83c\udfaf GA - Apr 23</li></ul><strong>Done:</strong> 19 issues\n29.1d estimated \u00b7 18.2d actual\n<strong>In Progress:</strong> 8 issues \u00b7 ~6.0d est remaining\n<ul><li><a href=\"https://casecommons.atlassian.net/browse/CBP-3183\">CBP-3183</a> \u2014 Notes - Lagging Case Details page when page size = 50 \u2014 Bisoye\nMerged to QA \u00b7 Unestimated \ud83d\udc40 \u00b7 No actual \ud83d\udc40 \u00b7 P2 \u00b7 \ud83d\udc40 Unprioritized</li><li><a href=\"https://casecommons.atlassian.net/browse/CBP-3150\">CBP-3150</a> \u2014 Notes - Synchronize note_people and service_interaction_people attributes \u2014 Tuan\nMerged to QA \u00b7 2.0d estimated \u00b7 No actual \ud83d\udc40 \u00b7 P2 \u00b7 2026-4-2</li><li><a href=\"https://casecommons.atlassian.net/browse/CBP-3107\">CBP-3107</a> \u2014 Notes - Rename date fields for Services section \u2014 Bisoye\nMerged to QA \u00b7 Unestimated \ud83d\udc40 \u00b7 No actual \ud83d\udc40 \u00b7 P2 \u00b7 2026-4-2</li><li><a href=\"https://casecommons.atlassian.net/browse/CBP-3105\">CBP-3105</a> \u2014 Notes - Migrate Start/End dates from service interactions to service notes \u2014 Tuan\nMerged to QA \u00b7 1.0d estimated \u00b7 No actual \ud83d\udc40 \u00b7 P2 \u00b7 2026-4-2</li><li><a href=\"https://casecommons.atlassian.net/browse/CBP-3171\">CBP-3171</a> \u2014 Notes datagrid - Filter locked notes via GQL query filters \u2014 Blessing\nIn QA \u00b7 1.0d estimated \u00b7 No actual \ud83d\udc40 \u00b7 P2 \u00b7 \ud83d\udc40 Unprioritized</li><li><a href=\"https://casecommons.atlassian.net/browse/CBP-3148\">CBP-3148</a> \u2014 Notes datagrid - Locked note GQL support \u2014 Blessing\nMerged to UAT \u00b7 Unestimated \ud83d\udc40 \u00b7 No actual \ud83d\udc40 \u00b7 P2 \u00b7 2026-4-1</li><li><a href=\"https://casecommons.atlassian.net/browse/CBP-3126\">CBP-3126</a> \u2014 FE - the user with view-only access can still see the edit/delete button for the locked note \u2014 Russell\nMerged to UAT \u00b7 1.0d estimated \u00b7 No actual \ud83d\udc40 \u00b7 P2 \u00b7 2026-4-1</li><li><a href=\"https://casecommons.atlassian.net/browse/CBP-3059\">CBP-3059</a> \u2014 Notes - Display Services data in Note preview as structured list \u2014 Blessing\nMerged to QA \u00b7 1.0d estimated \u00b7 No actual \ud83d\udc40 \u00b7 P4 \u00b7 2026-4-2</li></ul><strong>To Do:</strong> 6 issues\n<ul><li><a href=\"https://casecommons.atlassian.net/browse/CBP-3191\">CBP-3191</a> \u2014 Notes - Synchronize note_resources and service_interaction_people_resources attributes \u2014 Ben\nTo do \u00b7 Unestimated \ud83d\udc40 \u00b7 No actual \ud83d\udc40 \u00b7 P2 \u00b7 2026-4-2</li><li><a href=\"https://casecommons.atlassian.net/browse/CBP-3186\">CBP-3186</a> \u2014 Notes - Clean up &quot;Locked Note&quot; FE handling \u2014 Unassigned\nTo do \u00b7 Unestimated \ud83d\udc40 \u00b7 No actual \ud83d\udc40 \u00b7 P2 \u00b7 \ud83d\udc40 Unprioritized</li><li><a href=\"https://casecommons.atlassian.net/browse/CBP-3055\">CBP-3055</a> \u2014 Notes - Enable row pinning in Notes Datagrid \u2014 Blessing\nTo do \u00b7 Unestimated \ud83d\udc40 \u00b7 No actual \ud83d\udc40 \u00b7 P2 \u00b7 \ud83d\udc40 Unprioritized</li><li><a href=\"https://casecommons.atlassian.net/browse/CBP-3062\">CBP-3062</a> \u2014 Notes - Enhance Service(s) column display in Notes Datagrid collapsed state \u2014 Pierre\nTo do \u00b7 Unestimated \ud83d\udc40 \u00b7 No actual \ud83d\udc40 \u00b7 P3 \u00b7 \ud83d\udc40 Unprioritized</li><li><a href=\"https://casecommons.atlassian.net/browse/CBP-3060\">CBP-3060</a> \u2014 Notes - Evaluate nested DataGrid approach for Services data in Note preview \u2014 Pierre\nTo do \u00b7 Unestimated \ud83d\udc40 \u00b7 No actual \ud83d\udc40 \u00b7 P3 \u00b7 \ud83d\udc40 Unprioritized</li><li><a href=\"https://casecommons.atlassian.net/browse/CBP-3054\">CBP-3054</a> \u2014 Notes - Enable multi-filter stacking in Notes Datagrid \u2014 Blessing\nTo do \u00b7 Unestimated \ud83d\udc40 \u00b7 No actual \ud83d\udc40 \u00b7 P3 \u00b7 \ud83d\udc40 Unprioritized</li></ul></body>"
+      "html_text": "<body>\n<i><strong>4-2 release</strong>: Rows per page performance issue needs resolution ahead of next GA wave.  Not a release-blocker, but should be addressed ASAP.</i>\n\n\n<strong>Summary</strong>\n\nLocked notes are no longer returned to any user without permission in the grid or search\nHowever new reports of lagging experience may require a hotfix or 4-2 release before we want to release to GA\n<ul><li>\ud83d\uddd3\ufe0f <strong>Shifting GA target to 4-2 release, we can move up if hotfixed beforehand</strong></li><li><em>Note - estimate/actual data quality has been relatively poor for this project, will share with engineers</em></li></ul>\n----------------------------------------\n\n\n\n<strong>Next steps</strong>\n\n<ol><li>First step in addressing lagging performance has been pushed to QA</li><li>Notes/Service interactions synchronization work continues ahead of Notes v2 release in 4-2 release</li><li>Some outstanding FE cleanup for Locked notes continues</li></ol></body>"
     },
     "custom_fields": [
       {
@@ -330,15 +330,18 @@
       {
         "gid": "1208818118032458",
         "name": "Beta Start",
-        "display_value": null,
-        "date_value": null
+        "display_value": "2026-04-01T00:00:00.000Z",
+        "date_value": {
+          "date": "2026-04-01",
+          "date_time": null
+        }
       },
       {
         "gid": "1208818124273418",
         "name": "GA",
-        "display_value": "2026-04-23T00:00:00.000Z",
+        "display_value": "2026-04-27T00:00:00.000Z",
         "date_value": {
-          "date": "2026-04-23",
+          "date": "2026-04-27",
           "date_time": null
         }
       },
@@ -434,7 +437,7 @@
       {
         "gid": "1210909305830092",
         "name": "Release Date(s)",
-        "display_value": "4/13/2026, 3/27/2026, 3/17/2026, 11/24/2025, 11/6/2025, 10/27/2025"
+        "display_value": "4/24/2026, 4/13/2026, 3/27/2026, 3/17/2026, 11/24/2025, 11/6/2025, 10/27/2025"
       },
       {
         "gid": "1210909549820601",
@@ -507,9 +510,9 @@
     "milestones": {
       "qa_start": null,
       "uat_start": null,
-      "beta_start": null,
+      "beta_start": "2026-04-01",
       "ga_date": null,
-      "ga_target": "2026-04-23"
+      "ga_target": "2026-04-27"
     },
     "stage": "GA",
     "jira_link": "https://casecommons.atlassian.net/browse/CBP-2736"
@@ -1412,9 +1415,9 @@
       {
         "gid": "1210191417850167",
         "name": "Next DR Date",
-        "display_value": "2026-04-22T00:00:00.000Z",
+        "display_value": "2026-05-06T00:00:00.000Z",
         "date_value": {
-          "date": "2026-04-22",
+          "date": "2026-05-06",
           "date_time": null
         }
       },
@@ -1615,9 +1618,9 @@
     "current_status_update": {
       "gid": "1214001204273257",
       "status_type": "on_track",
-      "text": "Summary\n\nLooking good - we're awaiting \"single-click edits\" before shipping to GA in 4-2 release\n\n----------------------------------------\n\nNext steps\n\n    Single-click edits are in progress by Russell, which will be applied to all editable datagrids at once including Enrollments + Notes + Funds\n",
+      "text": "> 5-1 release: Single-click editing is required before we wrap up full GA rollout.\n\nSummary\n\nLooking good - we're awaiting \"single-click edits\" before shipping to GA in 4-2 release\n\n----------------------------------------\n\nNext steps\n\n    Single-click edits are in progress by Russell, which will be applied to all editable datagrids at once including Enrollments + Notes + Funds\n",
       "title": "Enrollment dialog - Bulk Services section - Apr 10",
-      "html_text": "<body>\n<strong>Summary</strong>\n\nLooking good - we're awaiting &quot;single-click edits&quot; before shipping to GA in 4-2 release\n\n----------------------------------------\n\n\n\n<strong>Next steps</strong>\n\n<ol><li>Single-click edits are in progress by Russell, which will be applied to all editable datagrids at once including Enrollments + Notes + Funds</li></ol></body>"
+      "html_text": "<body>\n<i><strong>5-1 release</strong>: Single-click editing is required before we wrap up full GA rollout.</i>\n\n\n<strong>Summary</strong>\n\nLooking good - we're awaiting &quot;single-click edits&quot; before shipping to GA in 4-2 release\n\n----------------------------------------\n\n\n\n<strong>Next steps</strong>\n\n<ol><li>Single-click edits are in progress by Russell, which will be applied to all editable datagrids at once including Enrollments + Notes + Funds</li></ol></body>"
     },
     "custom_fields": [
       {
@@ -1647,9 +1650,9 @@
       {
         "gid": "1208818124273418",
         "name": "GA",
-        "display_value": "2026-04-27T00:00:00.000Z",
+        "display_value": "2026-05-29T00:00:00.000Z",
         "date_value": {
-          "date": "2026-04-27",
+          "date": "2026-05-29",
           "date_time": null
         }
       },
@@ -1742,12 +1745,12 @@
       {
         "gid": "1210909305830092",
         "name": "Release Date(s)",
-        "display_value": "3/17/2026"
+        "display_value": "5/14/2026, 3/17/2026"
       },
       {
         "gid": "1210909549820601",
         "name": "GA Month",
-        "display_value": "Beta, Apr 26"
+        "display_value": "Beta, May 26"
       },
       {
         "gid": "1211631943113717",
@@ -1817,7 +1820,7 @@
       "uat_start": "2026-03-12",
       "beta_start": "2026-03-18",
       "ga_date": null,
-      "ga_target": "2026-04-27"
+      "ga_target": "2026-05-29"
     },
     "stage": "Beta",
     "jira_link": "https://casecommons.atlassian.net/browse/CBP-2992"
@@ -1957,7 +1960,7 @@
       {
         "gid": "1210909305830092",
         "name": "Release Date(s)",
-        "display_value": "5/14/2026"
+        "display_value": "5/28/2026"
       },
       {
         "gid": "1210909549820601",
@@ -1998,8 +2001,8 @@
       {
         "gid": "1211632748689814",
         "name": "Launch Plan",
-        "display_value": null,
-        "text_value": null
+        "display_value": "https://casecommons.atlassian.net/wiki/x/MwB79",
+        "text_value": "https://casecommons.atlassian.net/wiki/x/MwB79"
       },
       {
         "gid": "1210467277124544",
@@ -2075,11 +2078,8 @@
       {
         "gid": "1208818118032458",
         "name": "Beta Start",
-        "display_value": "2026-05-18T00:00:00.000Z",
-        "date_value": {
-          "date": "2026-05-18",
-          "date_time": null
-        }
+        "display_value": null,
+        "date_value": null
       },
       {
         "gid": "1208818124273418",
@@ -2179,7 +2179,7 @@
       {
         "gid": "1210909305830092",
         "name": "Release Date(s)",
-        "display_value": "5/14/2026"
+        "display_value": "5/28/2026"
       },
       {
         "gid": "1210909549820601",
@@ -2220,8 +2220,8 @@
       {
         "gid": "1211632748689814",
         "name": "Launch Plan",
-        "display_value": null,
-        "text_value": null
+        "display_value": "https://casecommons.atlassian.net/wiki/x/MwB79",
+        "text_value": "https://casecommons.atlassian.net/wiki/x/MwB79"
       },
       {
         "gid": "1210467277124544",
@@ -2247,7 +2247,7 @@
     "milestones": {
       "qa_start": "2026-04-20",
       "uat_start": "2026-04-30",
-      "beta_start": "2026-05-18",
+      "beta_start": null,
       "ga_date": null,
       "ga_target": "2026-05-28"
     },
@@ -2259,9 +2259,9 @@
     "current_status_update": {
       "gid": "1214001204273278",
       "status_type": "on_track",
-      "text": "Summary\n\nNew note dialog is looking GREAT\nAll AC implemented and up-leveled by Bisoye + Russell, entering QA after 4-1 release\n    Rosters!\n    Resource linking!\n    \ud83d\udc3b Bears! Oh my!\n    Note: exceptionally poor data quality on actuals/estimates, can't come close to an accurate burndown\n\n----------------------------------------\n\nNext steps\n\nQA may find issues, this is a ton of new work to test",
+      "text": "> 5-1 release: Service types are currently still loading into Service offering field (BE fix required). Afterwards, QA testing + single-click editing is required before we give access to any tenants in beta rollout.\n\nSummary\n\nNew note dialog is looking GREAT\nAll AC implemented and up-leveled by Bisoye + Russell, entering QA after 4-1 release\n    Rosters!\n    Resource linking!\n    \ud83d\udc3b Bears! Oh my!\n    Note: exceptionally poor data quality on actuals/estimates, can't come close to an accurate burndown\n\n----------------------------------------\n\nNext steps\n\nQA may find issues, this is a ton of new work to test",
       "title": "Notes - Bulk Service Notes - Apr 10",
-      "html_text": "<body>\n<strong>Summary</strong>\n\nNew note dialog is looking GREAT\nAll AC implemented and up-leveled by Bisoye + Russell, entering QA after 4-1 release\n<ul><li>Rosters!</li><li>Resource linking!</li><li>\ud83d\udc3b Bears! Oh my!</li><li><em>Note: exceptionally poor data quality on actuals/estimates, can't come close to an accurate burndown</em></li></ul>\n----------------------------------------\n\n\n\n<strong>Next steps</strong>\n\nQA may find issues, this is a ton of new work to test</body>"
+      "html_text": "<body>\n<i><strong>5-1 release</strong>: Service types are currently still loading into Service offering field (BE fix required). Afterwards, QA testing + single-click editing is required before we give access to any tenants in beta rollout.</i>\n\n\n<strong>Summary</strong>\n\nNew note dialog is looking GREAT\nAll AC implemented and up-leveled by Bisoye + Russell, entering QA after 4-1 release\n<ul><li>Rosters!</li><li>Resource linking!</li><li>\ud83d\udc3b Bears! Oh my!</li><li><em>Note: exceptionally poor data quality on actuals/estimates, can't come close to an accurate burndown</em></li></ul>\n----------------------------------------\n\n\n\n<strong>Next steps</strong>\n\nQA may find issues, this is a ton of new work to test</body>"
     },
     "custom_fields": [
       {
@@ -2282,18 +2282,18 @@
       {
         "gid": "1208818118032458",
         "name": "Beta Start",
-        "display_value": "2026-04-28T00:00:00.000Z",
+        "display_value": "2026-05-18T00:00:00.000Z",
         "date_value": {
-          "date": "2026-04-28",
+          "date": "2026-05-18",
           "date_time": null
         }
       },
       {
         "gid": "1208818124273418",
         "name": "GA",
-        "display_value": "2026-05-28T00:00:00.000Z",
+        "display_value": "2026-06-01T00:00:00.000Z",
         "date_value": {
-          "date": "2026-05-28",
+          "date": "2026-06-01",
           "date_time": null
         }
       },
@@ -2462,9 +2462,9 @@
     "milestones": {
       "qa_start": "2026-04-06",
       "uat_start": "2026-04-16",
-      "beta_start": "2026-04-28",
+      "beta_start": "2026-05-18",
       "ga_date": null,
-      "ga_target": "2026-05-28"
+      "ga_target": "2026-06-01"
     },
     "stage": "Development",
     "jira_link": "https://casecommons.atlassian.net/browse/CBP-2924"
@@ -2474,9 +2474,9 @@
     "current_status_update": {
       "gid": "1214001204273271",
       "status_type": "on_track",
-      "text": "Summary\n\nNew note dialog is looking GREAT\nAll AC implemented and up-leveled by Russell, entering QA after 4-1 release\n\n----------------------------------------\n\nNext steps\n\nQA noticed a gap:\n    https://casecommons.atlassian.net/browse/CBP-3186 will clean up mismatched (UOW+People Role/Assignment permissions) x (Note permissions)... always taking the minimum that the user has available\n    Note: Feyi has thoughts here - wants to combine access permissions in BE so as to not handle things like this in FE.\n",
+      "text": "> 4-2 release: Ben will roll out after returning from PTO - QA approval is required for GA release.  This should not be a release blocker if we cannot get it done, we have a feature flag and it can move out if necessary.\n\nSummary\n\nNew note dialog is looking GREAT\nAll AC implemented and up-leveled by Russell, entering QA after 4-1 release\n\n----------------------------------------\n\nNext steps\n\nQA noticed a gap:\n    https://casecommons.atlassian.net/browse/CBP-3186 will clean up mismatched (UOW+People Role/Assignment permissions) x (Note permissions)... always taking the minimum that the user has available\n    Note: Feyi has thoughts here - wants to combine access permissions in BE so as to not handle things like this in FE.\n",
       "title": "Notes - Locked Notes - Apr 10",
-      "html_text": "<body>\n<strong>Summary</strong>\n\nNew note dialog is looking GREAT\nAll AC implemented and up-leveled by Russell, entering QA after 4-1 release\n\n----------------------------------------\n\n\n\n<strong>Next steps</strong>\n\nQA noticed a gap:\n<ol><li><a href=\"https://casecommons.atlassian.net/browse/CBP-3186\">CBP-3186</a> will clean up mismatched (UOW+People Role/Assignment permissions) x (Note permissions)... always taking the <em>minimum</em> that the user has available</li><li><em>Note: Feyi has thoughts here - wants to combine access permissions in BE so as to not handle things like this in FE.</em></li></ol></body>"
+      "html_text": "<body>\n<i><strong>4-2 release</strong>: Ben will roll out after returning from PTO - QA approval is required for GA release.  This should not be a release blocker if we cannot get it done, we have a feature flag and it can move out if necessary.</i>\n\n\n<strong>Summary</strong>\n\nNew note dialog is looking GREAT\nAll AC implemented and up-leveled by Russell, entering QA after 4-1 release\n\n----------------------------------------\n\n\n\n<strong>Next steps</strong>\n\nQA noticed a gap:\n<ol><li><a href=\"https://casecommons.atlassian.net/browse/CBP-3186\">CBP-3186</a> will clean up mismatched (UOW+People Role/Assignment permissions) x (Note permissions)... always taking the <em>minimum</em> that the user has available</li><li><em>Note: Feyi has thoughts here - wants to combine access permissions in BE so as to not handle things like this in FE.</em></li></ol></body>"
     },
     "custom_fields": [
       {
@@ -2569,9 +2569,9 @@
       {
         "gid": "1210191417850167",
         "name": "Next DR Date",
-        "display_value": "2026-04-15T00:00:00.000Z",
+        "display_value": "2026-04-22T00:00:00.000Z",
         "date_value": {
-          "date": "2026-04-15",
+          "date": "2026-04-22",
           "date_time": null
         }
       },
@@ -2601,7 +2601,7 @@
       {
         "gid": "1210909305830092",
         "name": "Release Date(s)",
-        "display_value": "4/23/2026"
+        "display_value": "4/24/2026"
       },
       {
         "gid": "1210909549820601",
@@ -2686,9 +2686,9 @@
     "current_status_update": {
       "gid": "1214001204273264",
       "status_type": "on_track",
-      "text": "No update - all remains well.  Copy/pasting last week's update:\n\nSummary\n\nRemains released to 4 tenants.  No feedback thus far.\n\n----------------------------------------\n\nNext steps\n\nNo other work planned for General Notes currently.\nThis will get a much more significant text once Service Notes/Locked Notes roll out in 4/23 release\n    Task: Before Service Notes phase I will aim to bring us up to ~10 beta tenants with CSM approval\n",
+      "text": "> 5-1 release: Single-click editing is required before we expand to more customers in beta rollout.  We also get attendance toggle + long text handling in Notes.\n\nSummary\n\nNo update - all remains well.  Copy/pasting last week's update:\nRemains released to 4 tenants.  No feedback thus far.\n\n----------------------------------------\n\nNext steps\n\nNo other work planned for General Notes currently.\nThis will get a much more significant text once Service Notes/Locked Notes roll out in 4/23 release\n    Task: Before Service Notes phase I will aim to bring us up to ~10 beta tenants with CSM approval\n",
       "title": "Notes - Bulk \"General Notes\" - Apr 10",
-      "html_text": "<body>No update - all remains well.  Copy/pasting last week's update:\n\n<strong><strong>Summary</strong></strong>\n\nRemains released to 4 tenants.  No feedback thus far.\n\n----------------------------------------\n\n\n\n<strong><strong>Next steps</strong></strong>\n\nNo other work planned for General Notes currently.\nThis will get a much more significant text once Service Notes/Locked Notes roll out in 4/23 release\n<ol><li>Task: Before Service Notes phase I will aim to bring us up to ~10 beta tenants with CSM approval</li></ol></body>"
+      "html_text": "<body>\n<i><strong>5-1 release</strong>: Single-click editing is required before we expand to more customers in beta rollout.  We also get attendance toggle + long text handling in Notes.</i>\n\n\n<strong><strong>Summary</strong></strong>\n\nNo update - all remains well.  Copy/pasting last week's update:\nRemains released to 4 tenants.  No feedback thus far.\n\n----------------------------------------\n\n\n\n<strong><strong>Next steps</strong></strong>\n\nNo other work planned for General Notes currently.\nThis will get a much more significant text once Service Notes/Locked Notes roll out in 4/23 release\n<ol><li>Task: Before Service Notes phase I will aim to bring us up to ~10 beta tenants with CSM approval</li></ol></body>"
     },
     "custom_fields": [
       {
@@ -2709,18 +2709,18 @@
       {
         "gid": "1208818118032458",
         "name": "Beta Start",
-        "display_value": "2026-04-23T00:00:00.000Z",
+        "display_value": "2026-04-01T00:00:00.000Z",
         "date_value": {
-          "date": "2026-04-23",
+          "date": "2026-04-01",
           "date_time": null
         }
       },
       {
         "gid": "1208818124273418",
         "name": "GA",
-        "display_value": "2026-05-14T00:00:00.000Z",
+        "display_value": "2026-06-01T00:00:00.000Z",
         "date_value": {
-          "date": "2026-05-14",
+          "date": "2026-06-01",
           "date_time": null
         }
       },
@@ -2813,12 +2813,12 @@
       {
         "gid": "1210909305830092",
         "name": "Release Date(s)",
-        "display_value": "4/23/2026, 2/4/2026"
+        "display_value": "5/14/2026, 2/4/2026"
       },
       {
         "gid": "1210909549820601",
         "name": "GA Month",
-        "display_value": "Beta, May 26"
+        "display_value": "Beta, Jun 26"
       },
       {
         "gid": "1211631943113717",
@@ -2886,9 +2886,9 @@
     "milestones": {
       "qa_start": "2026-04-06",
       "uat_start": "2026-04-16",
-      "beta_start": "2026-04-23",
+      "beta_start": "2026-04-01",
       "ga_date": null,
-      "ga_target": "2026-05-14"
+      "ga_target": "2026-06-01"
     },
     "stage": "Beta",
     "jira_link": "https://casecommons.atlassian.net/browse/CBP-2752"
@@ -2898,9 +2898,9 @@
     "current_status_update": {
       "gid": "1214003020039664",
       "status_type": "on_track",
-      "text": "Summary\n\nAuth, Intake, and Reporting are UAT-approved and shipping in 4-1 release \ud83c\udf89\nHome has now been updated in QA - Access, Engage, and Track also in this next wave which will be merged up next week\n\n----------------------------------------\n\nNext steps\n\n    Access, Engage, and Track will be updated in QA next week\n",
+      "text": "> 4-2 release: Home web is next up for GA release, would be a release-blocker since we cannot easily revert and there are no feature flags.\n5-1 release: Sodiq can begin merging the next wave next Monday after 4-2 release.\n\n----------------------------------------\n\nSummary\n\n    \u2705 Auth, Intake, and Reporting shipped in 4-1 release \ud83c\udf89\n    \ud83d\udd04 Home has now been updated in QA for 4-2 release\n    Engage, Track, and People for 5-1 release\n    Admin, Internal, Portal (Access), Workflows for 5-2 release (may be separated further)\n\n----------------------------------------\n\nNext steps\n\n    Engage, Track, and People will be updated in QA after 4-2 release UAT merge\n",
       "title": "Web applications - Material UI upgrade (all components) - Apr 10",
-      "html_text": "<body>\n<strong>Summary</strong>\n\nAuth, Intake, and Reporting are UAT-approved and shipping in 4-1 release \ud83c\udf89\nHome has now been updated in QA - Access, Engage, and Track also in this next wave which will be merged up next week\n\n----------------------------------------\n\n\n\n<strong>Next steps</strong>\n\n<ol><li>Access, Engage, and Track will be updated in QA next week</li></ol></body>"
+      "html_text": "<body>\n<i><strong>4-2 release</strong>: Home web is next up for GA release, would be a release-blocker since we cannot easily revert and there are no feature flags.\n<strong>5-1 release</strong>: Sodiq can begin merging the next wave next Monday after 4-2 release.</i>\n\n\n----------------------------------------\n\n\n\n<strong>Summary</strong>\n\n<ol><li>\u2705 Auth, Intake, and Reporting shipped in 4-1 release \ud83c\udf89</li><li>\ud83d\udd04 Home has now been updated in QA for 4-2 release</li><li>Engage, Track, and People for 5-1 release</li><li>Admin, Internal, Portal (Access), Workflows for 5-2 release (may be separated further)</li></ol>\n----------------------------------------\n\n\n\n<strong>Next steps</strong>\n\n<ol><li>Engage, Track, and People will be updated in QA after 4-2 release UAT merge</li></ol></body>"
     },
     "custom_fields": [
       {
@@ -2927,9 +2927,9 @@
       {
         "gid": "1208818124273418",
         "name": "GA",
-        "display_value": "2026-04-13T00:00:00.000Z",
+        "display_value": "2026-06-01T00:00:00.000Z",
         "date_value": {
-          "date": "2026-04-13",
+          "date": "2026-06-01",
           "date_time": null
         }
       },
@@ -3019,12 +3019,12 @@
       {
         "gid": "1210909305830092",
         "name": "Release Date(s)",
-        "display_value": "5/14/2026, 4/23/2026, 4/13/2026"
+        "display_value": "5/28/2026, 5/14/2026, 4/24/2026, 4/13/2026"
       },
       {
         "gid": "1210909549820601",
         "name": "GA Month",
-        "display_value": "Apr 26"
+        "display_value": "May 26"
       },
       {
         "gid": "1211631943113717",
@@ -3089,7 +3089,7 @@
       "uat_start": "2026-04-03",
       "beta_start": null,
       "ga_date": null,
-      "ga_target": "2026-04-13"
+      "ga_target": "2026-06-01"
     },
     "stage": "GA",
     "jira_link": "https://casecommons.atlassian.net/browse/CBP-2917"
@@ -3405,9 +3405,9 @@
       {
         "gid": "1210191417850167",
         "name": "Next DR Date",
-        "display_value": "2026-04-15T00:00:00.000Z",
+        "display_value": "2026-04-29T00:00:00.000Z",
         "date_value": {
-          "date": "2026-04-15",
+          "date": "2026-04-29",
           "date_time": null
         }
       },

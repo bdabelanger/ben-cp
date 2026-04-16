@@ -79,6 +79,16 @@ def harvest():
         status_name = fields.get('status', {}).get('name')
         native_category = fields.get('status', {}).get('statusCategory', {}).get('name')
         i['effective_category'] = OVERRIDES.get(status_name) or native_category
+        
+        i['jira_status'] = status_name
+        versions = fields.get('fixVersions', [])
+        eff_rel_date = None
+        for v in versions:
+            rd = v.get('releaseDate')
+            if rd:
+                if eff_rel_date is None or rd > eff_rel_date:
+                    eff_rel_date = rd
+        i['effective_release_date'] = eff_rel_date
 
         parent_key = fields.get('parent', {}).get('key')
         if i['key'] in valid_keys or parent_key in valid_keys:

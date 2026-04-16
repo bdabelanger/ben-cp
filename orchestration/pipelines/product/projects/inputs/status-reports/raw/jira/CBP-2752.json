@@ -78,7 +78,7 @@
         "name": "P3",
         "id": "4"
       },
-      "updated": "2026-03-27T02:17:35.373-0400",
+      "updated": "2026-04-16T00:19:48.970-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
         "description": "Ready for development in DEV environment",
@@ -153,24 +153,14 @@
       "timespent": null,
       "timeoriginalestimate": null,
       "assignee": null,
-      "fixVersions": [
-        {
-          "self": "https://casecommons.atlassian.net/rest/api/3/version/12494",
-          "id": "12494",
-          "description": "",
-          "name": "Platform-2026-4-2",
-          "archived": false,
-          "released": false,
-          "releaseDate": "2026-04-23"
-        }
-      ],
+      "fixVersions": [],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-01T10:08:08.265-0400",
+      "updated": "2026-04-16T00:19:49.217-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
         "description": "Ready for development in DEV environment",

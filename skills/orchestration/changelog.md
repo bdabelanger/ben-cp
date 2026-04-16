@@ -6,6 +6,16 @@
 
 ## [Unreleased]
 
+## 2026-04-16 — Implement Jira Fix Version Alignment Audit logic in project reporting pipeline
+
+**Files changed:**
+- `orchestration/pipelines/product/projects/pipeline/platform_report.py` — Implemented 4-bucket logic for Jira fix version alignment (Aligned, Stalled, Lagging, Unmapped) Complete
+- `orchestration/pipelines/product/projects/pipeline/step_3_jira_harvest.py` — Added retrieval of missing release date and raw ticket status for use in pipeline logic Complete
+- `orchestration/pipelines/product/projects/pipeline/platform_report.py` — Normalized visual emoji alignment to left-side usage across issues and metadata flags Complete
+
+**Next:** Validate the alignment data mapping against Asana Push corrections
+
+
 ## 2026-04-12 — Build vault-native CRU tools for notes.md so agents never need shell or filesystem access to read, write, or correct notes.
 
 **Files changed:**

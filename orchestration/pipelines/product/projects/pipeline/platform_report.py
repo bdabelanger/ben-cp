@@ -298,11 +298,11 @@ class PlatformStatusReport:
     def _format_versions(self, fields):
         versions = fields.get("fixVersions") or []
         if not versions:
-            return "👀 Unprioritized"
+            return ""
         names = [re.sub(r"^Platform-", "", v.get("name", "")) for v in versions]
         return " / ".join(n for n in names if n)
 
-    def _issue_bullet(self, issue):
+    def _issue_bullet(self, issue, bucket=None):
         key = issue["key"]
         f = issue.get("fields", {})
         summary = (f.get("summary") or "")
@@ -311,20 +311,37 @@ class PlatformStatusReport:
         est = (f.get("timeoriginalestimate") or 0) / 28800
         act = (f.get("timespent") or 0) / 28800
 
-        est_str = f"{est:.1f}d estimated" if est > 0 else "Unestimated 👀"
-        act_str = f"{act:.1f}d actual" if act > 0 else "No actual 👀"
+        assignee_str = assignee if assignee != "Unassigned" else "👀 Unassigned"
+        est_str = f"{est:.1f}d estimated" if est > 0 else "👀 Unestimated"
+        act_str = f"{act:.1f}d actual" if act > 0 else "👀 No actual"
 
         priority = ((f.get("priority") or {}).get("name") or "")
         version = self._format_versions(f)
+        
+        if bucket == "Unmapped":
+            version_display = "👀 No release"
+            symbol = "👀 "
+        elif bucket == "Lagging":
+            version_display = f"Release: {version}"
+            symbol = "🛑 "
+        elif bucket == "Stalled":
+            version_display = f"Release: {version}"
+            symbol = "⚠️ "
+        elif bucket == "Done":
+            version_display = f"Release: {version}" if version else "No release"
+            symbol = "✅ "
+        else:
+            version_display = f"Release: {version}" if version else "No release"
+            symbol = ""
 
-        main = f"[{key}]({self._jira_url(key)}) — {summary} — {assignee}"
-        meta_parts = [status_name, est_str, act_str]
+        main = f"[{key}]({self._jira_url(key)}) — {summary}"
+        meta_parts = [assignee_str, status_name, est_str, act_str]
         if priority:
             meta_parts.append(priority)
-        meta_parts.append(version)
+        meta_parts.append(version_display)
         meta = " · ".join(meta_parts)
 
-        return f"- {main}||{meta}"
+        return f"- {symbol}{main}||{meta}"
 
     # -------------------------------------------------------------------------
     # Flag logic
@@ -443,6 +460,32 @@ class PlatformStatusReport:
         if prd:
             md += f"PRD: {prd}\n"
 
+        # Milestone bullets (Asana dates)
+        m = project.get("milestones", {})
+        ga_target = None
+        for field in ("ga_target", "ga_date"):
+            if m.get(field):
+                try:
+                    ga_target = datetime.strptime(m[field], "%Y-%m-%d").date().strftime("%Y-%m-%d")
+                    break
+                except ValueError:
+                    pass
+
+        prev_missed = False
+        md += "\n**Launch Plan**\n"
+        for label, key in [
+            ("QA Start", "qa_start"),
+            ("UAT Start", "uat_start"),
+            ("Beta Start", "beta_start"),
+            ("GA", "ga_target"),
+        ]:
+            if label == "Beta Start" and not m.get(key):
+                continue  # Beta is optional — omit if not set
+            bullet, missed = self._milestone_bullet(label, key, m.get(key), stage, prev_missed)
+            md += bullet + "\n"
+            if missed:
+                prev_missed = True
+
         # Jira link + warnings (warnings only for active stages where stories are expected)
         if pkey:
             md += f"[jira:{pkey}]\n"
@@ -464,27 +507,51 @@ class PlatformStatusReport:
         md += "\n" + self._progress_bar(issues) + "\n"
         md += "\n" + self._time_bar(issues, pkey) + "\n"
 
-        # Milestone bullets
-        m = project.get("milestones", {})
-        prev_missed = False
-        md += "\n"
-        for label, key in [
-            ("QA Start", "qa_start"),
-            ("UAT Start", "uat_start"),
-            ("Beta Start", "beta_start"),
-            ("GA", "ga_target"),
-        ]:
-            if label == "Beta Start" and not m.get(key):
-                continue  # Beta is optional — omit if not set
-            bullet, missed = self._milestone_bullet(label, key, m.get(key), stage, prev_missed)
-            md += bullet + "\n"
-            if missed:
-                prev_missed = True
+        # Release Alignment Audit
+        stalled_statuses = {"To Do", "Backlog", "Open"}
+        buckets = {"Unmapped": 0, "Lagging": 0, "Stalled": 0, "Aligned": 0, "Done": 0}
+        issue_buckets = {}
+        for i in issues:
+            k = i["key"]
+            if i.get("effective_category") == "Done":
+                buckets["Done"] += 1
+                issue_buckets[k] = "Done"
+                continue
+            
+            erd = i.get("effective_release_date")
+            js = i.get("jira_status")
+            has_version = bool(i.get("fields", {}).get("fixVersions"))
+            
+            if not has_version or not erd:
+                buckets["Unmapped"] += 1
+                issue_buckets[k] = "Unmapped"
+            elif ga_target and erd > ga_target:
+                buckets["Lagging"] += 1
+                issue_buckets[k] = "Lagging"
+            elif js in stalled_statuses:
+                buckets["Stalled"] += 1
+                issue_buckets[k] = "Stalled"
+            else:
+                buckets["Aligned"] += 1
+                issue_buckets[k] = "Aligned"
+
+        active_open_count = len(issues) - buckets["Done"]
+        risk_escalation = ""
+        if active_open_count > 0:
+            pct_bad = (buckets["Lagging"] + buckets["Stalled"]) / active_open_count
+            if pct_bad > 0.15:
+                # Add a strong signal to the text
+                md += f"\n> **🛑 Off Track / ⚠️ At Risk Escalation**: {int(pct_bad*100)}% of open issues are Lagging or Stalled.\n"
+                
+        if len(issues) > 0:
+            md += f"\n**Readiness**\n"
+            md += f"| 🎯 On Track | ⚠️ At Risk | 🛑 Off Track | 👀 Not Set |\n"
+            md += f"|---|---|---|---|\n"
+            md += f"| {buckets['Aligned']} | {buckets['Stalled']} | {buckets['Lagging']} | {buckets['Unmapped']} |\n\n"
 
         # Flags
         flags = self._compute_flags(project, issues)
         if flags:
-            md += "\n"
             for f in flags:
                 md += f + "\n"
 
@@ -493,9 +560,12 @@ class PlatformStatusReport:
         if done_issues:
             d_est = sum((i.get("fields", {}).get("timeoriginalestimate") or 0) for i in done_issues) / 28800
             d_act = sum((i.get("fields", {}).get("timespent") or 0) for i in done_issues) / 28800
-            est_str = f"{d_est:.1f}d estimated" if d_est > 0 else "Unestimated 👀"
-            act_str = f"{d_act:.1f}d actual" if d_act > 0 else "No actual 👀"
-            md += f"\n**Done:** {len(done_issues)} issues\n~~{est_str} · {act_str}\n"
+            if d_est > 0 or d_act > 0:
+                est_str = f"{d_est:.1f}d estimated" if d_est > 0 else "Unestimated"
+                act_str = f"{d_act:.1f}d actual" if d_act > 0 else "No actual"
+                md += f"\n**Done:** {len(done_issues)} issues\n~~{est_str} · {act_str}\n"
+            else:
+                md += f"\n**Done:** {len(done_issues)} issues\n"
 
         # In Progress section
         inp = sorted(
@@ -511,7 +581,7 @@ class PlatformStatusReport:
                 h += f" · ~{remaining:.1f}d est remaining"
             md += f"\n{h}\n"
             for i in inp:
-                md += self._issue_bullet(i) + "\n"
+                md += self._issue_bullet(i, issue_buckets.get(i["key"], "Aligned")) + "\n"
 
         # To Do section
         todo = sorted(
@@ -521,7 +591,7 @@ class PlatformStatusReport:
         if todo:
             md += f"\n**To Do:** {len(todo)} issues\n"
             for i in todo:
-                md += self._issue_bullet(i) + "\n"
+                md += self._issue_bullet(i, issue_buckets.get(i["key"], "Aligned")) + "\n"
 
         return md + "\n"
 
@@ -595,8 +665,8 @@ class PlatformStatusReport:
                 est_c = eng_est.get(eng)
                 if est_c:
                     ep = int(est_c["estimated"] / est_c["total"] * 100) if est_c["total"] else 0
-                    eflag = " 👀" if est_c["estimated"] == 0 or (ep < 20 and est_c["total"] >= 3) else ""
-                    est_cell = f"{est_c['estimated']}/{est_c['total']} ({ep}%){eflag}"
+                    eflag = "👀 " if est_c["estimated"] == 0 or (ep < 20 and est_c["total"] >= 3) else ""
+                    est_cell = f"{eflag}{est_c['estimated']}/{est_c['total']} ({ep}%)"
                 else:
                     est_cell = "—"
 
@@ -604,12 +674,12 @@ class PlatformStatusReport:
                 if act_c:
                     ap = act_c["pct"]
                     if eng == best_name and act_c["logged"] > 0:
-                        aflag = " 👏"
+                        aflag = "👏 "
                     elif act_c["logged"] == 0 or (ap < 20 and act_c["total"] >= 3):
-                        aflag = " 👀"
+                        aflag = "👀 "
                     else:
                         aflag = ""
-                    act_cell = f"{act_c['logged']}/{act_c['total']} ({ap}%){aflag}"
+                    act_cell = f"{aflag}{act_c['logged']}/{act_c['total']} ({ap}%)"
                 else:
                     act_cell = "—"
 
@@ -632,8 +702,8 @@ class PlatformStatusReport:
             md += "| Project | Unprioritized |\n|---|---|\n"
             for proj_name, counts in sorted(proj_unprio.items(), key=lambda x: -x[1]["unprio"]):
                 p = int(counts["unprio"] / counts["total"] * 100) if counts["total"] else 0
-                flag = " 👀" if p == 100 else ""
-                md += f"| {proj_name} | {counts['unprio']}/{counts['total']} ({p}%){flag} |\n"
+                flag = "👀 " if p == 100 else ""
+                md += f"| {proj_name} | {flag}{counts['unprio']}/{counts['total']} ({p}%) |\n"
 
         return md + "\n"
 
@@ -707,7 +777,7 @@ class PlatformStatusReport:
         active_stages = {"Development", "In QA", "In UAT", "Beta", "GA"}
 
         active = [p for p in self.asana_data if p.get("stage") in active_stages]
-        active.sort(key=self._parse_ga_sort_key)
+        active.sort(key=lambda p: (-STAGE_SORT_RANKS.get(p.get("stage", ""), 0), self._parse_ga_sort_key(p)))
 
         # Build Jira lookup maps (active projects only — data quality + summary)
         issues_by_pkey = {}
@@ -725,24 +795,21 @@ class PlatformStatusReport:
         # 1. Summary (active projects only)
         md += self._render_summary(active, issues_by_pkey)
 
-        # 2. Detailed Status — all projects grouped by GA Month
+        # 2. Detailed Status — all projects grouped by Stage
         md += "---\n## 📋 Detailed Status\n\n"
 
         groups = {}
         for p in self.asana_data:
             if p.get("stage") == "On hold":
                 continue
-            gk = self._parse_ga_group(p)
-            groups.setdefault(gk, []).append(p)
+            stage = p.get("stage") or "N/A"
+            groups.setdefault(stage, []).append(p)
 
-        for gk in sorted(groups.keys()):
-            if gk[0] == 1:  # TBD group — no GA date set
-                continue
-            label = self._ga_group_label(gk)
-            md += f"#### {label}\n\n"
+        for stage in sorted(groups.keys(), key=lambda s: -STAGE_SORT_RANKS.get(s, 0)):
+            md += f"#### {stage}\n\n"
             projects_in_group = sorted(
-                groups[gk],
-                key=lambda p: (-STAGE_SORT_RANKS.get(p.get("stage", ""), 0), (p.get("name") or "").lower())
+                groups[stage],
+                key=lambda p: (self._parse_ga_sort_key(p), (p.get("name") or "").lower())
             )
             for p in projects_in_group:
                 pkey = self._get_pkey(p)

@@ -287,8 +287,8 @@ _ICON_JIRA = (
 
 def _add_heading_icons(html):
     """Prepend brand icons before Asana and Jira links (H3 headings only)."""
-    html = re.sub(r'(<a href="https://app\.asana\.com[^"]*">)', _ICON_ASANA + r'\1', html)
-    html = re.sub(r'(<a href="https://casecommons\.atlassian\.net/browse[^"]*">)', _ICON_JIRA + r'\1', html)
+    html = re.sub(r'(<a href="https://app\.asana\.com[^"]*"[^>]*>)', _ICON_ASANA + r'\1', html)
+    html = re.sub(r'(<a href="https://casecommons\.atlassian\.net/browse[^"]*"[^>]*>)', _ICON_JIRA + r'\1', html)
     return html
 
 # ---------------------------------------------------------------------------
@@ -301,8 +301,13 @@ def _md_inline(text):
     text = re.sub(r'\[tw:([^\]]+)\]', r'<span class="tw">\1</span>', text)
     # [stage:Name] → badge pill
     text = re.sub(r'\[stage:([^\]]+)\]', lambda m: _stage_badge(m.group(1)), text)
+    def _link_repl(m):
+        txt, url = m.group(1), m.group(2)
+        tgt = ' target="_blank"' if not url.startswith('#') else ''
+        return f'<a href="{url}"{tgt}>{txt}</a>'
+    
     # [text](url)
-    text = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2">\1</a>', text)
+    text = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', _link_repl, text)
     # **bold**
     text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
     # `code`
@@ -494,7 +499,7 @@ def md_to_html(md: str) -> str:
             if m:
                 key = m.group(1)
                 url = f"https://casecommons.atlassian.net/browse/{key}"
-                html_parts.append(f'<div class="card-jira-row">{_ICON_JIRA}<a href="{url}">{key}</a></div>')
+                html_parts.append(f'<div class="card-jira-row">{_ICON_JIRA}<a href="{url}" target="_blank">{key}</a></div>')
                 i += 1; continue
 
         # H3 — project card header

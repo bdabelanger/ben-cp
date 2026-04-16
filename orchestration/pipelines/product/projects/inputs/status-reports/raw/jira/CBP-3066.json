@@ -71,14 +71,23 @@
         "timeZone": "America/New_York",
         "accountType": "atlassian"
       },
-      "fixVersions": [],
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12626",
+          "id": "12626",
+          "description": "",
+          "name": "Platform-2026-5-1",
+          "archived": false,
+          "released": false
+        }
+      ],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-07T11:12:04.608-0400",
+      "updated": "2026-04-15T23:46:49.149-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
         "description": "Development in progress in DEV environment",
@@ -167,14 +176,23 @@
         "timeZone": "America/New_York",
         "accountType": "atlassian"
       },
-      "fixVersions": [],
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12626",
+          "id": "12626",
+          "description": "",
+          "name": "Platform-2026-5-1",
+          "archived": false,
+          "released": false
+        }
+      ],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-23T19:45:24.308-0400",
+      "updated": "2026-04-15T23:54:12.219-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10011",
         "description": "Ready for QA review in QA environment",
@@ -263,14 +281,23 @@
         "timeZone": "America/New_York",
         "accountType": "atlassian"
       },
-      "fixVersions": [],
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12626",
+          "id": "12626",
+          "description": "",
+          "name": "Platform-2026-5-1",
+          "archived": false,
+          "released": false
+        }
+      ],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-23T19:45:14.981-0400",
+      "updated": "2026-04-15T23:54:03.616-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
         "description": "QA review in progress in QA environment",
@@ -359,14 +386,23 @@
         "timeZone": "America/New_York",
         "accountType": "atlassian"
       },
-      "fixVersions": [],
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12626",
+          "id": "12626",
+          "description": "",
+          "name": "Platform-2026-5-1",
+          "archived": false,
+          "released": false
+        }
+      ],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-23T19:45:14.354-0400",
+      "updated": "2026-04-15T23:53:59.963-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
         "description": "QA review in progress in QA environment",
@@ -455,14 +491,23 @@
         "timeZone": "America/New_York",
         "accountType": "atlassian"
       },
-      "fixVersions": [],
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12626",
+          "id": "12626",
+          "description": "",
+          "name": "Platform-2026-5-1",
+          "archived": false,
+          "released": false
+        }
+      ],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-23T19:45:21.095-0400",
+      "updated": "2026-04-15T23:54:09.041-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
         "description": "QA review in progress in QA environment",
@@ -551,14 +596,23 @@
         "timeZone": "America/New_York",
         "accountType": "atlassian"
       },
-      "fixVersions": [],
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12626",
+          "id": "12626",
+          "description": "",
+          "name": "Platform-2026-5-1",
+          "archived": false,
+          "released": false
+        }
+      ],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-23T19:45:20.241-0400",
+      "updated": "2026-04-15T23:54:06.314-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
         "description": "QA review in progress in QA environment",
@@ -647,14 +701,23 @@
         "timeZone": "America/New_York",
         "accountType": "atlassian"
       },
-      "fixVersions": [],
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12626",
+          "id": "12626",
+          "description": "",
+          "name": "Platform-2026-5-1",
+          "archived": false,
+          "released": false
+        }
+      ],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-23T19:45:13.858-0400",
+      "updated": "2026-04-15T23:53:56.856-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
         "description": "QA review in progress in QA environment",
@@ -743,14 +806,23 @@
         "timeZone": "America/New_York",
         "accountType": "atlassian"
       },
-      "fixVersions": [],
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12626",
+          "id": "12626",
+          "description": "",
+          "name": "Platform-2026-5-1",
+          "archived": false,
+          "released": false
+        }
+      ],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-23T19:45:13.377-0400",
+      "updated": "2026-04-15T23:59:18.249-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
         "description": "QA review in progress in QA environment",

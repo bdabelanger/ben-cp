@@ -1,7 +1,7 @@
 # AGENTS.md — Vault Agent Dispatch
 
 > **All agents working in this vault must read this file before taking any action.**
-> Last updated: 2026-04-13
+> Last updated: 2026-04-15
 
 ---
 
@@ -112,20 +112,25 @@ Before executing a procedure against `skills/[skill_name]/`, an agent MUST seque
 
 Agents MUST default to parsing `./character.md` for tone and voice. No generalized fluffy assistant speak is allowed inside the repo boundary.
 
+**Visual Authority**: All reports must adhere to the visual and nomenclature standards defined in `skills/styles/emoji-key.md`. Check this guide before selecting status icons or formatting markers.
+
+
 ---
 
-## Handoff Check (Every Session Start)
+## Handoff Check (Autonomous Session Start Only)
 
-Before doing any other work, check for outstanding handoffs:
+**This check applies only when starting a session without explicit human direction.**
+If the human has already told you what to work on — by naming a handoff, a file, or a task — skip this check entirely and go directly to that work.
 
-1. List `orchestration/handoff/` at vault root (root only — not `handoff/complete/`)
+For autonomous (undirected) session starts:
+1. List `orchestration/handoff/` (root only — not `handoff/complete/`)
 2. Any `.md` file present is an open handoff — completed ones live in `orchestration/handoff/complete/`
 3. Surface them to human user immediately: "You have N outstanding handoff(s): [filenames]"
 4. If human user confirms, execute using the handoff protocol at `skills/collaboration/handoff/index.md`
 
 > **Note:** Open handoffs are living documents — they may be edited and iterated before execution. Only completed handoffs (in `handoff/complete/`) are immutable.
 
-Do not proceed with other work until open handoffs are acknowledged by human user.
+Do not proceed with other autonomous work until open handoffs are acknowledged by human user.
 
 ---
 

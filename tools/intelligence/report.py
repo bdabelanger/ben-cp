@@ -328,9 +328,9 @@ def build_report_html(envelopes, date_str, run_ts, char):
             html += '<div class="findings-list"><ul>'
             for find in env["findings"]:
                 # Convert markdown links [text](url.md) to HTML <a> and swap to .html for humans
-                rendered_find = re.sub(r'\[([^\]]+)\]\(([^\)]+)\.md\)', r'<a href="\2.html">\1</a>', find)
+                rendered_find = re.sub(r'\[([^\]]+)\]\(([^\)]+)\.md\)', r'<a href="\2.html" target="_blank">\1</a>', find)
                 # Also handle non-md links
-                rendered_find = re.sub(r'\[([^\]]+)\]\(([^\)]+)\)', r'<a href="\2">\1</a>', rendered_find)
+                rendered_find = re.sub(r'\[([^\]]+)\]\(([^\)]+)\)', r'<a href="\2" target="_blank">\1</a>', rendered_find)
                 html += f"<li>{rendered_find}</li>"
             html += '</ul></div>\n'
 

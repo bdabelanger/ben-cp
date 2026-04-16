@@ -57,38 +57,28 @@
       "timespent": null,
       "timeoriginalestimate": null,
       "assignee": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=629dfdc29b728c006a928e90",
-        "accountId": "629dfdc29b728c006a928e90",
-        "emailAddress": "ben.belanger@casebook.net",
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=5f59084b0b6be2006ef441e7",
+        "accountId": "5f59084b0b6be2006ef441e7",
+        "emailAddress": "feyi.olugbenga@casebook.net",
         "avatarUrls": {
-          "48x48": "https://secure.gravatar.com/avatar/56513ae8984eb11e1e971326a665a9fa?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBB-2.png",
-          "24x24": "https://secure.gravatar.com/avatar/56513ae8984eb11e1e971326a665a9fa?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBB-2.png",
-          "16x16": "https://secure.gravatar.com/avatar/56513ae8984eb11e1e971326a665a9fa?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBB-2.png",
-          "32x32": "https://secure.gravatar.com/avatar/56513ae8984eb11e1e971326a665a9fa?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBB-2.png"
+          "48x48": "https://secure.gravatar.com/avatar/850b7ebddd5773ed9e9f14ef5462af6a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FFO-2.png",
+          "24x24": "https://secure.gravatar.com/avatar/850b7ebddd5773ed9e9f14ef5462af6a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FFO-2.png",
+          "16x16": "https://secure.gravatar.com/avatar/850b7ebddd5773ed9e9f14ef5462af6a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FFO-2.png",
+          "32x32": "https://secure.gravatar.com/avatar/850b7ebddd5773ed9e9f14ef5462af6a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FFO-2.png"
         },
-        "displayName": "Ben Belanger",
+        "displayName": "Feyi Olugbenga",
         "active": true,
         "timeZone": "America/New_York",
         "accountType": "atlassian"
       },
-      "fixVersions": [
-        {
-          "self": "https://casecommons.atlassian.net/rest/api/3/version/12494",
-          "id": "12494",
-          "description": "",
-          "name": "Platform-2026-4-2",
-          "archived": false,
-          "released": false,
-          "releaseDate": "2026-04-23"
-        }
-      ],
+      "fixVersions": [],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-09T17:36:15.216-0400",
+      "updated": "2026-04-16T09:29:52.135-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
         "description": "Ready for development in DEV environment",
@@ -104,7 +94,9 @@
         }
       }
     },
-    "effective_category": "To Do"
+    "effective_category": "To Do",
+    "jira_status": "To do",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -178,24 +170,14 @@
         "timeZone": "America/New_York",
         "accountType": "atlassian"
       },
-      "fixVersions": [
-        {
-          "self": "https://casecommons.atlassian.net/rest/api/3/version/12494",
-          "id": "12494",
-          "description": "",
-          "name": "Platform-2026-4-2",
-          "archived": false,
-          "released": false,
-          "releaseDate": "2026-04-23"
-        }
-      ],
+      "fixVersions": [],
       "priority": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
-        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
-        "name": "P2",
-        "id": "3"
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/4",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/low.svg",
+        "name": "P3",
+        "id": "4"
       },
-      "updated": "2026-04-10T11:45:34.982-0400",
+      "updated": "2026-04-16T00:19:51.395-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
         "description": "Ready for development in DEV environment",
@@ -211,7 +193,9 @@
         }
       }
     },
-    "effective_category": "To Do"
+    "effective_category": "To Do",
+    "jira_status": "To do",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -292,7 +276,7 @@
         "name": "P3",
         "id": "4"
       },
-      "updated": "2026-03-27T02:07:02.952-0400",
+      "updated": "2026-04-16T00:19:51.874-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
         "description": "Ready for development in DEV environment",
@@ -308,7 +292,9 @@
         }
       }
     },
-    "effective_category": "To Do"
+    "effective_category": "To Do",
+    "jira_status": "To do",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -389,7 +375,7 @@
         "name": "P3",
         "id": "4"
       },
-      "updated": "2026-03-27T02:07:18.142-0400",
+      "updated": "2026-04-16T00:19:51.640-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
         "description": "Ready for development in DEV environment",
@@ -405,7 +391,9 @@
         }
       }
     },
-    "effective_category": "To Do"
+    "effective_category": "To Do",
+    "jira_status": "To do",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -465,16 +453,16 @@
       "timespent": null,
       "timeoriginalestimate": null,
       "assignee": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Af53fa21c-0d20-46b5-9809-b804160a3a2b",
-        "accountId": "712020:f53fa21c-0d20-46b5-9809-b804160a3a2b",
-        "emailAddress": "blessing.adesina@casebook.net",
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=5c01b9616c48883c8637a828",
+        "accountId": "5c01b9616c48883c8637a828",
+        "emailAddress": "bisoye.atolagbe@casebook.net",
         "avatarUrls": {
-          "48x48": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
-          "24x24": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
-          "16x16": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
-          "32x32": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png"
+          "48x48": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
+          "24x24": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
+          "16x16": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
+          "32x32": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png"
         },
-        "displayName": "Blessing Philips",
+        "displayName": "Bisoye Atolagbe",
         "active": true,
         "timeZone": "America/New_York",
         "accountType": "atlassian"
@@ -486,7 +474,7 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-27T02:06:31.227-0400",
+      "updated": "2026-04-16T00:19:50.850-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
         "description": "Ready for development in DEV environment",
@@ -502,7 +490,9 @@
         }
       }
     },
-    "effective_category": "To Do"
+    "effective_category": "To Do",
+    "jira_status": "To do",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -562,16 +552,16 @@
       "timespent": null,
       "timeoriginalestimate": null,
       "assignee": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Af53fa21c-0d20-46b5-9809-b804160a3a2b",
-        "accountId": "712020:f53fa21c-0d20-46b5-9809-b804160a3a2b",
-        "emailAddress": "blessing.adesina@casebook.net",
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=5c01b9616c48883c8637a828",
+        "accountId": "5c01b9616c48883c8637a828",
+        "emailAddress": "bisoye.atolagbe@casebook.net",
         "avatarUrls": {
-          "48x48": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
-          "24x24": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
-          "16x16": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
-          "32x32": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png"
+          "48x48": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
+          "24x24": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
+          "16x16": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
+          "32x32": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png"
         },
-        "displayName": "Blessing Philips",
+        "displayName": "Bisoye Atolagbe",
         "active": true,
         "timeZone": "America/New_York",
         "accountType": "atlassian"
@@ -583,7 +573,7 @@
         "name": "P3",
         "id": "4"
       },
-      "updated": "2026-03-27T02:05:56.534-0400",
+      "updated": "2026-04-16T00:19:50.549-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
         "description": "Ready for development in DEV environment",
@@ -599,7 +589,9 @@
         }
       }
     },
-    "effective_category": "To Do"
+    "effective_category": "To Do",
+    "jira_status": "To do",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -659,28 +651,38 @@
       "timespent": null,
       "timeoriginalestimate": null,
       "assignee": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=5c01b9616c48883c8637a828",
-        "accountId": "5c01b9616c48883c8637a828",
-        "emailAddress": "bisoye.atolagbe@casebook.net",
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3A9911cefe-8bbb-483f-9f5e-c8fec9983095",
+        "accountId": "712020:9911cefe-8bbb-483f-9f5e-c8fec9983095",
+        "emailAddress": "russell.ward@casebook.net",
         "avatarUrls": {
-          "48x48": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
-          "24x24": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
-          "16x16": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
-          "32x32": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png"
+          "48x48": "https://secure.gravatar.com/avatar/3bb5aa0e1edccac65b036993f6c84782?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRW-2.png",
+          "24x24": "https://secure.gravatar.com/avatar/3bb5aa0e1edccac65b036993f6c84782?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRW-2.png",
+          "16x16": "https://secure.gravatar.com/avatar/3bb5aa0e1edccac65b036993f6c84782?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRW-2.png",
+          "32x32": "https://secure.gravatar.com/avatar/3bb5aa0e1edccac65b036993f6c84782?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRW-2.png"
         },
-        "displayName": "Bisoye Atolagbe",
+        "displayName": "Russell Ward",
         "active": true,
         "timeZone": "America/New_York",
         "accountType": "atlassian"
       },
-      "fixVersions": [],
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12494",
+          "id": "12494",
+          "description": "",
+          "name": "Platform-2026-4-2",
+          "archived": false,
+          "released": false,
+          "releaseDate": "2026-04-23"
+        }
+      ],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-09T14:54:25.718-0400",
+      "updated": "2026-04-16T00:00:01.794-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10011",
         "description": "Ready for QA review in QA environment",
@@ -696,7 +698,9 @@
         }
       }
     },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "Merged to QA",
+    "effective_release_date": "2026-04-23"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -772,13 +776,12 @@
       },
       "fixVersions": [
         {
-          "self": "https://casecommons.atlassian.net/rest/api/3/version/12494",
-          "id": "12494",
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12626",
+          "id": "12626",
           "description": "",
-          "name": "Platform-2026-4-2",
+          "name": "Platform-2026-5-1",
           "archived": false,
-          "released": false,
-          "releaseDate": "2026-04-23"
+          "released": false
         }
       ],
       "priority": {
@@ -787,7 +790,7 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-09T03:31:33.810-0400",
+      "updated": "2026-04-15T23:46:36.918-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10011",
         "description": "Ready for QA review in QA environment",
@@ -803,7 +806,9 @@
         }
       }
     },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "Merged to QA",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -877,24 +882,14 @@
         "timeZone": "America/New_York",
         "accountType": "atlassian"
       },
-      "fixVersions": [
-        {
-          "self": "https://casecommons.atlassian.net/rest/api/3/version/12494",
-          "id": "12494",
-          "description": "",
-          "name": "Platform-2026-4-2",
-          "archived": false,
-          "released": false,
-          "releaseDate": "2026-04-23"
-        }
-      ],
+      "fixVersions": [],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-29T21:54:19.798-0400",
+      "updated": "2026-04-16T00:19:52.146-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10011",
         "description": "Ready for QA review in QA environment",
@@ -910,7 +905,9 @@
         }
       }
     },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "Merged to QA",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -984,24 +981,14 @@
         "timeZone": "America/New_York",
         "accountType": "atlassian"
       },
-      "fixVersions": [
-        {
-          "self": "https://casecommons.atlassian.net/rest/api/3/version/12494",
-          "id": "12494",
-          "description": "",
-          "name": "Platform-2026-4-2",
-          "archived": false,
-          "released": false,
-          "releaseDate": "2026-04-23"
-        }
-      ],
+      "fixVersions": [],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-31T20:36:25.927-0400",
+      "updated": "2026-04-16T00:19:50.284-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10011",
         "description": "Ready for QA review in QA environment",
@@ -1017,7 +1004,9 @@
         }
       }
     },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "Merged to QA",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -1025,7 +1014,7 @@
     "self": "https://casecommons.atlassian.net/rest/api/3/issue/45770",
     "key": "CBP-3059",
     "fields": {
-      "summary": "Notes - Display Services data in Note preview as structured list",
+      "summary": "Notes datagrid - Display Services data in Note preview as structured list",
       "issuetype": {
         "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
         "id": "10057",
@@ -1093,13 +1082,12 @@
       },
       "fixVersions": [
         {
-          "self": "https://casecommons.atlassian.net/rest/api/3/version/12494",
-          "id": "12494",
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12626",
+          "id": "12626",
           "description": "",
-          "name": "Platform-2026-4-2",
+          "name": "Platform-2026-5-1",
           "archived": false,
-          "released": false,
-          "releaseDate": "2026-04-23"
+          "released": false
         }
       ],
       "priority": {
@@ -1108,7 +1096,7 @@
         "name": "P4",
         "id": "5"
       },
-      "updated": "2026-04-06T10:42:19.460-0400",
+      "updated": "2026-04-15T23:52:53.751-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10011",
         "description": "Ready for QA review in QA environment",
@@ -1124,7 +1112,9 @@
         }
       }
     },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "Merged to QA",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -1198,30 +1188,42 @@
         "timeZone": "America/New_York",
         "accountType": "atlassian"
       },
-      "fixVersions": [],
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12461",
+          "id": "12461",
+          "description": "",
+          "name": "Platform-2026-4-1",
+          "archived": false,
+          "released": true,
+          "releaseDate": "2026-04-13"
+        }
+      ],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-03T10:28:47.908-0400",
+      "updated": "2026-04-15T23:45:00.999-0400",
       "status": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
-        "description": "QA review in progress in QA environment",
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10052",
+        "description": "Released to Production environment (US and CA)",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
-        "name": "In QA",
-        "id": "10010",
+        "name": "Released",
+        "id": "10052",
         "statusCategory": {
-          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
-          "id": 4,
-          "key": "indeterminate",
-          "colorName": "yellow",
-          "name": "In Progress"
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/3",
+          "id": 3,
+          "key": "done",
+          "colorName": "green",
+          "name": "Done"
         }
       }
     },
-    "effective_category": "In Progress"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-04-13"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -1312,7 +1314,7 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-14T12:41:46.890-0400",
+      "updated": "2026-04-15T23:44:45.467-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10052",
         "description": "Released to Production environment (US and CA)",
@@ -1328,7 +1330,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-04-13"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -1435,7 +1439,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-04-13"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -1551,7 +1557,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-04-13"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -1658,7 +1666,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-03-17"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -1765,7 +1775,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-03-04"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -1872,7 +1884,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-03-17"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -1979,7 +1993,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-01-15"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -2086,7 +2102,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-01-06"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -2193,7 +2211,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-01-06"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -2300,7 +2320,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-03-17"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -2407,7 +2429,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-03-17"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -2514,7 +2538,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-01-06"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -2611,7 +2637,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -2718,7 +2746,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2025-11-24"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -2825,7 +2855,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2025-11-24"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -2932,7 +2964,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2025-10-07"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -3039,7 +3073,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2025-10-24"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -3146,7 +3182,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2025-10-07"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -3253,7 +3291,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2025-10-07"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -3360,7 +3400,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2025-10-07"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -3467,7 +3509,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Won't do",
+    "effective_release_date": "2025-10-07"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -3548,7 +3592,7 @@
         "name": "P3",
         "id": "4"
       },
-      "updated": "2026-03-27T02:17:35.373-0400",
+      "updated": "2026-04-16T00:19:48.970-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
         "description": "Ready for development in DEV environment",
@@ -3564,7 +3608,9 @@
         }
       }
     },
-    "effective_category": "To Do"
+    "effective_category": "To Do",
+    "jira_status": "To do",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -3671,7 +3717,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-03-17"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -3778,7 +3826,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-02-04"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -3885,7 +3935,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-02-04"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -3992,7 +4044,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-02-04"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -4099,7 +4153,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-02-04"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -4206,7 +4262,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-02-04"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -4313,7 +4371,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-01-15"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -4420,7 +4480,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2025-12-10"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -4527,7 +4589,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-02-04"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -4634,7 +4698,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2025-12-10"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -4731,7 +4797,117 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Won't do",
+    "effective_release_date": null
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "51670",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/51670",
+    "key": "CBP-3221",
+    "fields": {
+      "summary": "SWW occurs on clicking add service note option via new service plan grid",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10011",
+        "id": "10011",
+        "description": "",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10303?size=medium",
+        "name": "Bug",
+        "subtask": false,
+        "avatarId": 10303,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "40263",
+        "key": "CBP-2917",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/40263",
+        "fields": {
+          "summary": "Material UI v7 upgrade",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
+            "description": "Ready for development in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/",
+            "name": "To do",
+            "id": "10007",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
+              "id": 2,
+              "key": "new",
+              "colorName": "blue-gray",
+              "name": "To Do"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2026-04-15T06:15:47.750-0400",
+      "timespent": null,
+      "timeoriginalestimate": null,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Af53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "accountId": "712020:f53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "emailAddress": "blessing.adesina@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "24x24": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "16x16": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "32x32": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png"
+        },
+        "displayName": "Blessing Philips",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12626",
+          "id": "12626",
+          "description": "",
+          "name": "Platform-2026-5-1",
+          "archived": false,
+          "released": false
+        }
+      ],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2026-04-15T12:35:31.782-0400",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
+        "description": "Ready for development in DEV environment",
+        "iconUrl": "https://casecommons.atlassian.net/",
+        "name": "To do",
+        "id": "10007",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
+          "id": 2,
+          "key": "new",
+          "colorName": "blue-gray",
+          "name": "To Do"
+        }
+      }
+    },
+    "effective_category": "To Do",
+    "jira_status": "To do",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -4822,7 +4998,7 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-14T12:41:46.955-0400",
+      "updated": "2026-04-15T23:44:46.281-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10052",
         "description": "Released to Production environment (US and CA)",
@@ -4838,7 +5014,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-04-13"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -4945,7 +5123,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-04-13"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -5052,7 +5232,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-04-13"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -5159,7 +5341,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-03-04"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -5266,7 +5450,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-01-06"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -5373,7 +5559,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-03-04"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -5480,7 +5668,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-01-06"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -5587,7 +5777,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-01-06"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -5694,7 +5886,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Won't do",
+    "effective_release_date": "2026-02-24"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -5785,7 +5979,7 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-31T19:40:02.485-0400",
+      "updated": "2026-04-15T23:49:44.200-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10011",
         "description": "Ready for QA review in QA environment",
@@ -5801,114 +5995,9 @@
         }
       }
     },
-    "effective_category": "In Progress"
-  },
-  {
-    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
-    "id": "42265",
-    "self": "https://casecommons.atlassian.net/rest/api/3/issue/42265",
-    "key": "CBP-2990",
-    "fields": {
-      "summary": "Notes - Search and populate the \"Access\" section",
-      "issuetype": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
-        "id": "10057",
-        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
-        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
-        "name": "User Story",
-        "subtask": false,
-        "avatarId": 10306,
-        "hierarchyLevel": 0
-      },
-      "parent": {
-        "id": "40374",
-        "key": "CBP-2923",
-        "self": "https://casecommons.atlassian.net/rest/api/3/issue/40374",
-        "fields": {
-          "summary": "Notes - Access section in new Note dialog",
-          "status": {
-            "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
-            "description": "Development in progress in DEV environment",
-            "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
-            "name": "In development",
-            "id": "3",
-            "statusCategory": {
-              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
-              "id": 4,
-              "key": "indeterminate",
-              "colorName": "yellow",
-              "name": "In Progress"
-            }
-          },
-          "priority": {
-            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
-            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
-            "name": "P2",
-            "id": "3"
-          },
-          "issuetype": {
-            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
-            "id": "10000",
-            "description": "A roadmapped initiative",
-            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
-            "name": "Project",
-            "subtask": false,
-            "hierarchyLevel": 1
-          }
-        }
-      },
-      "created": "2026-02-01T14:36:53.703-0500",
-      "timespent": null,
-      "timeoriginalestimate": null,
-      "assignee": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3A9911cefe-8bbb-483f-9f5e-c8fec9983095",
-        "accountId": "712020:9911cefe-8bbb-483f-9f5e-c8fec9983095",
-        "emailAddress": "russell.ward@casebook.net",
-        "avatarUrls": {
-          "48x48": "https://secure.gravatar.com/avatar/3bb5aa0e1edccac65b036993f6c84782?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRW-2.png",
-          "24x24": "https://secure.gravatar.com/avatar/3bb5aa0e1edccac65b036993f6c84782?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRW-2.png",
-          "16x16": "https://secure.gravatar.com/avatar/3bb5aa0e1edccac65b036993f6c84782?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRW-2.png",
-          "32x32": "https://secure.gravatar.com/avatar/3bb5aa0e1edccac65b036993f6c84782?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRW-2.png"
-        },
-        "displayName": "Russell Ward",
-        "active": true,
-        "timeZone": "America/New_York",
-        "accountType": "atlassian"
-      },
-      "fixVersions": [
-        {
-          "self": "https://casecommons.atlassian.net/rest/api/3/version/12494",
-          "id": "12494",
-          "description": "",
-          "name": "Platform-2026-4-2",
-          "archived": false,
-          "released": false,
-          "releaseDate": "2026-04-23"
-        }
-      ],
-      "priority": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
-        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
-        "name": "P2",
-        "id": "3"
-      },
-      "updated": "2026-03-31T19:37:03.233-0400",
-      "status": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/status/10011",
-        "description": "Ready for QA review in QA environment",
-        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
-        "name": "Merged to QA",
-        "id": "10011",
-        "statusCategory": {
-          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
-          "id": 4,
-          "key": "indeterminate",
-          "colorName": "yellow",
-          "name": "In Progress"
-        }
-      }
-    },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "Merged to QA",
+    "effective_release_date": "2026-04-23"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -5999,7 +6088,7 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-31T19:36:53.194-0400",
+      "updated": "2026-04-15T23:49:39.185-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10011",
         "description": "Ready for QA review in QA environment",
@@ -6015,7 +6104,118 @@
         }
       }
     },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "Merged to QA",
+    "effective_release_date": "2026-04-23"
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "42265",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/42265",
+    "key": "CBP-2990",
+    "fields": {
+      "summary": "Notes - Search and populate the \"Access\" section",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
+        "id": "10057",
+        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
+        "name": "User Story",
+        "subtask": false,
+        "avatarId": 10306,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "40374",
+        "key": "CBP-2923",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/40374",
+        "fields": {
+          "summary": "Notes - Access section in new Note dialog",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
+            "description": "Development in progress in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
+            "name": "In development",
+            "id": "3",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+              "id": 4,
+              "key": "indeterminate",
+              "colorName": "yellow",
+              "name": "In Progress"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2026-02-01T14:36:53.703-0500",
+      "timespent": null,
+      "timeoriginalestimate": null,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3A9911cefe-8bbb-483f-9f5e-c8fec9983095",
+        "accountId": "712020:9911cefe-8bbb-483f-9f5e-c8fec9983095",
+        "emailAddress": "russell.ward@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/3bb5aa0e1edccac65b036993f6c84782?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRW-2.png",
+          "24x24": "https://secure.gravatar.com/avatar/3bb5aa0e1edccac65b036993f6c84782?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRW-2.png",
+          "16x16": "https://secure.gravatar.com/avatar/3bb5aa0e1edccac65b036993f6c84782?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRW-2.png",
+          "32x32": "https://secure.gravatar.com/avatar/3bb5aa0e1edccac65b036993f6c84782?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRW-2.png"
+        },
+        "displayName": "Russell Ward",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12494",
+          "id": "12494",
+          "description": "",
+          "name": "Platform-2026-4-2",
+          "archived": false,
+          "released": false,
+          "releaseDate": "2026-04-23"
+        }
+      ],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2026-04-16T07:37:50.018-0400",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10066",
+        "description": "Additional development required in QA environment",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+        "name": "QA revise",
+        "id": "10066",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+          "id": 4,
+          "key": "indeterminate",
+          "colorName": "yellow",
+          "name": "In Progress"
+        }
+      }
+    },
+    "effective_category": "In Progress",
+    "jira_status": "QA revise",
+    "effective_release_date": "2026-04-23"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -6112,7 +6312,9 @@
         }
       }
     },
-    "effective_category": "To Do"
+    "effective_category": "To Do",
+    "jira_status": "To do",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -6193,7 +6395,7 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-06T18:27:18.140-0400",
+      "updated": "2026-04-16T00:19:49.560-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
         "description": "Ready for development in DEV environment",
@@ -6209,7 +6411,108 @@
         }
       }
     },
-    "effective_category": "To Do"
+    "effective_category": "To Do",
+    "jira_status": "To do",
+    "effective_release_date": null
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "49669",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/49669",
+    "key": "CBP-3174",
+    "fields": {
+      "summary": "[Data Grid] - Single-click editable mode for MUI DataGridPro",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10064",
+        "id": "10064",
+        "description": "",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10320?size=medium",
+        "name": "Research",
+        "subtask": false,
+        "avatarId": 10320,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "40375",
+        "key": "CBP-2924",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/40375",
+        "fields": {
+          "summary": "Notes - Services section in new Note dialog",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
+            "description": "Development in progress in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
+            "name": "In development",
+            "id": "3",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+              "id": 4,
+              "key": "indeterminate",
+              "colorName": "yellow",
+              "name": "In Progress"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2026-03-31T18:41:27.015-0400",
+      "timespent": null,
+      "timeoriginalestimate": null,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3A9911cefe-8bbb-483f-9f5e-c8fec9983095",
+        "accountId": "712020:9911cefe-8bbb-483f-9f5e-c8fec9983095",
+        "emailAddress": "russell.ward@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/3bb5aa0e1edccac65b036993f6c84782?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRW-2.png",
+          "24x24": "https://secure.gravatar.com/avatar/3bb5aa0e1edccac65b036993f6c84782?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRW-2.png",
+          "16x16": "https://secure.gravatar.com/avatar/3bb5aa0e1edccac65b036993f6c84782?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRW-2.png",
+          "32x32": "https://secure.gravatar.com/avatar/3bb5aa0e1edccac65b036993f6c84782?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRW-2.png"
+        },
+        "displayName": "Russell Ward",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2026-04-16T00:20:19.443-0400",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
+        "description": "Development in progress in DEV environment",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
+        "name": "In development",
+        "id": "3",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+          "id": 4,
+          "key": "indeterminate",
+          "colorName": "yellow",
+          "name": "In Progress"
+        }
+      }
+    },
+    "effective_category": "In Progress",
+    "jira_status": "In development",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -6285,13 +6588,12 @@
       },
       "fixVersions": [
         {
-          "self": "https://casecommons.atlassian.net/rest/api/3/version/12494",
-          "id": "12494",
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12626",
+          "id": "12626",
           "description": "",
-          "name": "Platform-2026-4-2",
+          "name": "Platform-2026-5-1",
           "archived": false,
-          "released": false,
-          "releaseDate": "2026-04-23"
+          "released": false
         }
       ],
       "priority": {
@@ -6300,7 +6602,7 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-14T06:16:16.321-0400",
+      "updated": "2026-04-15T23:46:01.632-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
         "description": "Development in progress in DEV environment",
@@ -6316,7 +6618,9 @@
         }
       }
     },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "In development",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -6392,13 +6696,12 @@
       },
       "fixVersions": [
         {
-          "self": "https://casecommons.atlassian.net/rest/api/3/version/12494",
-          "id": "12494",
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12626",
+          "id": "12626",
           "description": "",
-          "name": "Platform-2026-4-2",
+          "name": "Platform-2026-5-1",
           "archived": false,
-          "released": false,
-          "releaseDate": "2026-04-23"
+          "released": false
         }
       ],
       "priority": {
@@ -6407,7 +6710,7 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-14T06:17:07.420-0400",
+      "updated": "2026-04-15T23:46:26.027-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
         "description": "Development in progress in DEV environment",
@@ -6423,7 +6726,9 @@
         }
       }
     },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "In development",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -6499,13 +6804,12 @@
       },
       "fixVersions": [
         {
-          "self": "https://casecommons.atlassian.net/rest/api/3/version/12494",
-          "id": "12494",
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12626",
+          "id": "12626",
           "description": "",
-          "name": "Platform-2026-4-2",
+          "name": "Platform-2026-5-1",
           "archived": false,
-          "released": false,
-          "releaseDate": "2026-04-23"
+          "released": false
         }
       ],
       "priority": {
@@ -6514,7 +6818,7 @@
         "name": "P3",
         "id": "4"
       },
-      "updated": "2026-03-27T02:23:24.469-0400",
+      "updated": "2026-04-15T23:47:16.832-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10011",
         "description": "Ready for QA review in QA environment",
@@ -6530,114 +6834,9 @@
         }
       }
     },
-    "effective_category": "In Progress"
-  },
-  {
-    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
-    "id": "47158",
-    "self": "https://casecommons.atlassian.net/rest/api/3/issue/47158",
-    "key": "CBP-3109",
-    "fields": {
-      "summary": "Service Note - Error toast \"Please add at least one service interaction\" should be clarified",
-      "issuetype": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10011",
-        "id": "10011",
-        "description": "",
-        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10303?size=medium",
-        "name": "Bug",
-        "subtask": false,
-        "avatarId": 10303,
-        "hierarchyLevel": 0
-      },
-      "parent": {
-        "id": "40375",
-        "key": "CBP-2924",
-        "self": "https://casecommons.atlassian.net/rest/api/3/issue/40375",
-        "fields": {
-          "summary": "Notes - Services section in new Note dialog",
-          "status": {
-            "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
-            "description": "Development in progress in DEV environment",
-            "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
-            "name": "In development",
-            "id": "3",
-            "statusCategory": {
-              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
-              "id": 4,
-              "key": "indeterminate",
-              "colorName": "yellow",
-              "name": "In Progress"
-            }
-          },
-          "priority": {
-            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
-            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
-            "name": "P2",
-            "id": "3"
-          },
-          "issuetype": {
-            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
-            "id": "10000",
-            "description": "A roadmapped initiative",
-            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
-            "name": "Project",
-            "subtask": false,
-            "hierarchyLevel": 1
-          }
-        }
-      },
-      "created": "2026-03-11T21:18:55.136-0400",
-      "timespent": null,
-      "timeoriginalestimate": null,
-      "assignee": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=5c01b9616c48883c8637a828",
-        "accountId": "5c01b9616c48883c8637a828",
-        "emailAddress": "bisoye.atolagbe@casebook.net",
-        "avatarUrls": {
-          "48x48": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
-          "24x24": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
-          "16x16": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
-          "32x32": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png"
-        },
-        "displayName": "Bisoye Atolagbe",
-        "active": true,
-        "timeZone": "America/New_York",
-        "accountType": "atlassian"
-      },
-      "fixVersions": [
-        {
-          "self": "https://casecommons.atlassian.net/rest/api/3/version/12494",
-          "id": "12494",
-          "description": "",
-          "name": "Platform-2026-4-2",
-          "archived": false,
-          "released": false,
-          "releaseDate": "2026-04-23"
-        }
-      ],
-      "priority": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
-        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
-        "name": "P2",
-        "id": "3"
-      },
-      "updated": "2026-03-27T02:23:08.906-0400",
-      "status": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/status/10011",
-        "description": "Ready for QA review in QA environment",
-        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
-        "name": "Merged to QA",
-        "id": "10011",
-        "statusCategory": {
-          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
-          "id": 4,
-          "key": "indeterminate",
-          "colorName": "yellow",
-          "name": "In Progress"
-        }
-      }
-    },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "Merged to QA",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -6728,7 +6927,7 @@
         "name": "P1",
         "id": "2"
       },
-      "updated": "2026-03-27T02:22:27.253-0400",
+      "updated": "2026-04-16T00:08:38.447-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10011",
         "description": "Ready for QA review in QA environment",
@@ -6744,7 +6943,9 @@
         }
       }
     },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "Merged to QA",
+    "effective_release_date": "2026-04-23"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -6835,7 +7036,7 @@
         "name": "P3",
         "id": "4"
       },
-      "updated": "2026-03-31T19:40:10.568-0400",
+      "updated": "2026-04-16T00:08:38.920-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10011",
         "description": "Ready for QA review in QA environment",
@@ -6851,114 +7052,9 @@
         }
       }
     },
-    "effective_category": "In Progress"
-  },
-  {
-    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
-    "id": "42151",
-    "self": "https://casecommons.atlassian.net/rest/api/3/issue/42151",
-    "key": "CBP-2985",
-    "fields": {
-      "summary": "Notes - Search and populate the \"Services\" section",
-      "issuetype": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
-        "id": "10057",
-        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
-        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
-        "name": "User Story",
-        "subtask": false,
-        "avatarId": 10306,
-        "hierarchyLevel": 0
-      },
-      "parent": {
-        "id": "40375",
-        "key": "CBP-2924",
-        "self": "https://casecommons.atlassian.net/rest/api/3/issue/40375",
-        "fields": {
-          "summary": "Notes - Services section in new Note dialog",
-          "status": {
-            "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
-            "description": "Development in progress in DEV environment",
-            "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
-            "name": "In development",
-            "id": "3",
-            "statusCategory": {
-              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
-              "id": 4,
-              "key": "indeterminate",
-              "colorName": "yellow",
-              "name": "In Progress"
-            }
-          },
-          "priority": {
-            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
-            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
-            "name": "P2",
-            "id": "3"
-          },
-          "issuetype": {
-            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
-            "id": "10000",
-            "description": "A roadmapped initiative",
-            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
-            "name": "Project",
-            "subtask": false,
-            "hierarchyLevel": 1
-          }
-        }
-      },
-      "created": "2026-01-29T21:50:25.235-0500",
-      "timespent": 230400,
-      "timeoriginalestimate": 288000,
-      "assignee": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=5c01b9616c48883c8637a828",
-        "accountId": "5c01b9616c48883c8637a828",
-        "emailAddress": "bisoye.atolagbe@casebook.net",
-        "avatarUrls": {
-          "48x48": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
-          "24x24": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
-          "16x16": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
-          "32x32": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png"
-        },
-        "displayName": "Bisoye Atolagbe",
-        "active": true,
-        "timeZone": "America/New_York",
-        "accountType": "atlassian"
-      },
-      "fixVersions": [
-        {
-          "self": "https://casecommons.atlassian.net/rest/api/3/version/12494",
-          "id": "12494",
-          "description": "",
-          "name": "Platform-2026-4-2",
-          "archived": false,
-          "released": false,
-          "releaseDate": "2026-04-23"
-        }
-      ],
-      "priority": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
-        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
-        "name": "P2",
-        "id": "3"
-      },
-      "updated": "2026-03-31T19:36:56.253-0400",
-      "status": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/status/10011",
-        "description": "Ready for QA review in QA environment",
-        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
-        "name": "Merged to QA",
-        "id": "10011",
-        "statusCategory": {
-          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
-          "id": 4,
-          "key": "indeterminate",
-          "colorName": "yellow",
-          "name": "In Progress"
-        }
-      }
-    },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "Merged to QA",
+    "effective_release_date": "2026-04-23"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -7039,7 +7135,7 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-09T14:54:10.714-0400",
+      "updated": "2026-04-16T00:19:49.810-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
         "description": "QA review in progress in QA environment",
@@ -7055,7 +7151,9 @@
         }
       }
     },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "In QA",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -7136,7 +7234,7 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-09T14:54:13.974-0400",
+      "updated": "2026-04-16T00:19:50.051-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
         "description": "QA review in progress in QA environment",
@@ -7152,7 +7250,9 @@
         }
       }
     },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "In QA",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -7243,7 +7343,7 @@
         "name": "P3",
         "id": "4"
       },
-      "updated": "2026-03-27T02:23:39.518-0400",
+      "updated": "2026-04-16T00:00:55.386-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
         "description": "QA review in progress in QA environment",
@@ -7259,7 +7359,9 @@
         }
       }
     },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "In QA",
+    "effective_release_date": "2026-04-23"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -7342,6 +7444,14 @@
           "archived": false,
           "released": false,
           "releaseDate": "2026-04-23"
+        },
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12626",
+          "id": "12626",
+          "description": "",
+          "name": "Platform-2026-5-1",
+          "archived": false,
+          "released": false
         }
       ],
       "priority": {
@@ -7350,7 +7460,7 @@
         "name": "P3",
         "id": "4"
       },
-      "updated": "2026-03-27T02:23:54.918-0400",
+      "updated": "2026-04-16T00:07:20.079-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
         "description": "QA review in progress in QA environment",
@@ -7366,7 +7476,9 @@
         }
       }
     },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "In QA",
+    "effective_release_date": "2026-04-23"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -7442,13 +7554,12 @@
       },
       "fixVersions": [
         {
-          "self": "https://casecommons.atlassian.net/rest/api/3/version/12494",
-          "id": "12494",
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12626",
+          "id": "12626",
           "description": "",
-          "name": "Platform-2026-4-2",
+          "name": "Platform-2026-5-1",
           "archived": false,
-          "released": false,
-          "releaseDate": "2026-04-23"
+          "released": false
         }
       ],
       "priority": {
@@ -7457,7 +7568,7 @@
         "name": "P3",
         "id": "4"
       },
-      "updated": "2026-04-09T14:54:17.260-0400",
+      "updated": "2026-04-15T23:49:05.986-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
         "description": "QA review in progress in QA environment",
@@ -7473,7 +7584,9 @@
         }
       }
     },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "In QA",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -7564,7 +7677,7 @@
         "name": "P3",
         "id": "4"
       },
-      "updated": "2026-03-31T19:37:07.570-0400",
+      "updated": "2026-04-16T00:08:38.714-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
         "description": "QA review in progress in QA environment",
@@ -7580,7 +7693,9 @@
         }
       }
     },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "In QA",
+    "effective_release_date": "2026-04-23"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -7671,7 +7786,7 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-31T19:37:26.533-0400",
+      "updated": "2026-04-16T00:08:40.211-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
         "description": "QA review in progress in QA environment",
@@ -7687,7 +7802,118 @@
         }
       }
     },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "In QA",
+    "effective_release_date": "2026-04-23"
+  },
+  {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "42151",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/42151",
+    "key": "CBP-2985",
+    "fields": {
+      "summary": "Notes - Search and populate the \"Services\" section",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10057",
+        "id": "10057",
+        "description": "Break down a project into component deliverables called User Stories. These should each be an individually releasable deliverable.",
+        "iconUrl": "https://casecommons.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
+        "name": "User Story",
+        "subtask": false,
+        "avatarId": 10306,
+        "hierarchyLevel": 0
+      },
+      "parent": {
+        "id": "40375",
+        "key": "CBP-2924",
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/40375",
+        "fields": {
+          "summary": "Notes - Services section in new Note dialog",
+          "status": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
+            "description": "Development in progress in DEV environment",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
+            "name": "In development",
+            "id": "3",
+            "statusCategory": {
+              "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+              "id": 4,
+              "key": "indeterminate",
+              "colorName": "yellow",
+              "name": "In Progress"
+            }
+          },
+          "priority": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "P2",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+            "id": "10000",
+            "description": "A roadmapped initiative",
+            "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+            "name": "Project",
+            "subtask": false,
+            "hierarchyLevel": 1
+          }
+        }
+      },
+      "created": "2026-01-29T21:50:25.235-0500",
+      "timespent": 230400,
+      "timeoriginalestimate": 288000,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=5c01b9616c48883c8637a828",
+        "accountId": "5c01b9616c48883c8637a828",
+        "emailAddress": "bisoye.atolagbe@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
+          "24x24": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
+          "16x16": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png",
+          "32x32": "https://secure.gravatar.com/avatar/71da271a423b72cbc0d586dd292c8085?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBA-1.png"
+        },
+        "displayName": "Bisoye Atolagbe",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12494",
+          "id": "12494",
+          "description": "",
+          "name": "Platform-2026-4-2",
+          "archived": false,
+          "released": false,
+          "releaseDate": "2026-04-23"
+        }
+      ],
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "updated": "2026-04-16T00:08:40.010-0400",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10066",
+        "description": "Additional development required in QA environment",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+        "name": "QA revise",
+        "id": "10066",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+          "id": 4,
+          "key": "indeterminate",
+          "colorName": "yellow",
+          "name": "In Progress"
+        }
+      }
+    },
+    "effective_category": "In Progress",
+    "jira_status": "QA revise",
+    "effective_release_date": "2026-04-23"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -7778,13 +8004,13 @@
         "name": "P4",
         "id": "5"
       },
-      "updated": "2026-03-27T04:00:44.508-0400",
+      "updated": "2026-04-15T23:44:03.210-0400",
       "status": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/status/10040",
-        "description": "Product review in progress in QA environment",
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10059",
+        "description": "Product approved in QA environment, ready for UAT",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
-        "name": "Product review",
-        "id": "10040",
+        "name": "Product approved",
+        "id": "10059",
         "statusCategory": {
           "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
           "id": 4,
@@ -7794,7 +8020,9 @@
         }
       }
     },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "Product approved",
+    "effective_release_date": "2026-04-23"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -7891,7 +8119,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Won't do",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -7958,7 +8188,7 @@
         "name": "P3",
         "id": "4"
       },
-      "updated": "2026-03-27T02:16:47.487-0400",
+      "updated": "2026-04-14T13:40:44.920-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10302",
         "description": "",
@@ -7974,7 +8204,9 @@
         }
       }
     },
-    "effective_category": "To Do"
+    "effective_category": "To Do",
+    "jira_status": "Blocked - Needs Review",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -8048,24 +8280,14 @@
         "timeZone": "America/New_York",
         "accountType": "atlassian"
       },
-      "fixVersions": [
-        {
-          "self": "https://casecommons.atlassian.net/rest/api/3/version/12494",
-          "id": "12494",
-          "description": "",
-          "name": "Platform-2026-4-2",
-          "archived": false,
-          "released": false,
-          "releaseDate": "2026-04-23"
-        }
-      ],
+      "fixVersions": [],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-10T12:10:38.610-0400",
+      "updated": "2026-04-15T01:49:34.824-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
         "description": "Ready for development in DEV environment",
@@ -8081,7 +8303,9 @@
         }
       }
     },
-    "effective_category": "To Do"
+    "effective_category": "To Do",
+    "jira_status": "To do",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -8155,24 +8379,14 @@
         "timeZone": "America/New_York",
         "accountType": "atlassian"
       },
-      "fixVersions": [
-        {
-          "self": "https://casecommons.atlassian.net/rest/api/3/version/12494",
-          "id": "12494",
-          "description": "",
-          "name": "Platform-2026-4-2",
-          "archived": false,
-          "released": false,
-          "releaseDate": "2026-04-23"
-        }
-      ],
+      "fixVersions": [],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-03T11:52:09.718-0400",
+      "updated": "2026-04-16T00:19:46.677-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
         "description": "Ready for development in DEV environment",
@@ -8188,7 +8402,9 @@
         }
       }
     },
-    "effective_category": "To Do"
+    "effective_category": "To Do",
+    "jira_status": "To do",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -8295,7 +8511,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-03-27"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -8402,7 +8620,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-04-13"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -8509,7 +8729,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-03-27"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -8616,7 +8838,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-03-17"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -8723,7 +8947,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-03-17"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -8830,7 +9056,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-03-17"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -8937,7 +9165,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-03-17"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -9044,7 +9274,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-03-17"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -9151,7 +9383,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-03-17"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -9258,7 +9492,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-03-17"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -9365,7 +9601,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-03-17"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -9472,7 +9710,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-03-17"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -9579,7 +9819,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2025-11-06"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -9686,7 +9928,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2026-03-17"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -9793,7 +10037,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2025-07-01"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -9900,7 +10146,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Released",
+    "effective_release_date": "2025-07-01"
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -9997,7 +10245,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Won't do",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -10094,7 +10344,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Won't do",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -10177,7 +10429,9 @@
         }
       }
     },
-    "effective_category": "Done"
+    "effective_category": "Done",
+    "jira_status": "Won't do",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -10251,14 +10505,23 @@
         "timeZone": "America/New_York",
         "accountType": "atlassian"
       },
-      "fixVersions": [],
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12626",
+          "id": "12626",
+          "description": "",
+          "name": "Platform-2026-5-1",
+          "archived": false,
+          "released": false
+        }
+      ],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-07T11:12:04.608-0400",
+      "updated": "2026-04-15T23:46:49.149-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
         "description": "Development in progress in DEV environment",
@@ -10274,7 +10537,9 @@
         }
       }
     },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "In development",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -10348,14 +10613,23 @@
         "timeZone": "America/New_York",
         "accountType": "atlassian"
       },
-      "fixVersions": [],
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12626",
+          "id": "12626",
+          "description": "",
+          "name": "Platform-2026-5-1",
+          "archived": false,
+          "released": false
+        }
+      ],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-23T19:45:24.308-0400",
+      "updated": "2026-04-15T23:54:12.219-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10011",
         "description": "Ready for QA review in QA environment",
@@ -10371,7 +10645,9 @@
         }
       }
     },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "Merged to QA",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -10445,14 +10721,23 @@
         "timeZone": "America/New_York",
         "accountType": "atlassian"
       },
-      "fixVersions": [],
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12626",
+          "id": "12626",
+          "description": "",
+          "name": "Platform-2026-5-1",
+          "archived": false,
+          "released": false
+        }
+      ],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-23T19:45:14.981-0400",
+      "updated": "2026-04-15T23:54:03.616-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
         "description": "QA review in progress in QA environment",
@@ -10468,7 +10753,9 @@
         }
       }
     },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "In QA",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -10542,14 +10829,23 @@
         "timeZone": "America/New_York",
         "accountType": "atlassian"
       },
-      "fixVersions": [],
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12626",
+          "id": "12626",
+          "description": "",
+          "name": "Platform-2026-5-1",
+          "archived": false,
+          "released": false
+        }
+      ],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-23T19:45:14.354-0400",
+      "updated": "2026-04-15T23:53:59.963-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
         "description": "QA review in progress in QA environment",
@@ -10565,7 +10861,9 @@
         }
       }
     },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "In QA",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -10639,14 +10937,23 @@
         "timeZone": "America/New_York",
         "accountType": "atlassian"
       },
-      "fixVersions": [],
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12626",
+          "id": "12626",
+          "description": "",
+          "name": "Platform-2026-5-1",
+          "archived": false,
+          "released": false
+        }
+      ],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-23T19:45:21.095-0400",
+      "updated": "2026-04-15T23:54:09.041-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
         "description": "QA review in progress in QA environment",
@@ -10662,7 +10969,9 @@
         }
       }
     },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "In QA",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -10736,14 +11045,23 @@
         "timeZone": "America/New_York",
         "accountType": "atlassian"
       },
-      "fixVersions": [],
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12626",
+          "id": "12626",
+          "description": "",
+          "name": "Platform-2026-5-1",
+          "archived": false,
+          "released": false
+        }
+      ],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-23T19:45:20.241-0400",
+      "updated": "2026-04-15T23:54:06.314-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
         "description": "QA review in progress in QA environment",
@@ -10759,7 +11077,9 @@
         }
       }
     },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "In QA",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -10833,14 +11153,23 @@
         "timeZone": "America/New_York",
         "accountType": "atlassian"
       },
-      "fixVersions": [],
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12626",
+          "id": "12626",
+          "description": "",
+          "name": "Platform-2026-5-1",
+          "archived": false,
+          "released": false
+        }
+      ],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-23T19:45:13.858-0400",
+      "updated": "2026-04-15T23:53:56.856-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
         "description": "QA review in progress in QA environment",
@@ -10856,7 +11185,9 @@
         }
       }
     },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "In QA",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -10930,14 +11261,23 @@
         "timeZone": "America/New_York",
         "accountType": "atlassian"
       },
-      "fixVersions": [],
+      "fixVersions": [
+        {
+          "self": "https://casecommons.atlassian.net/rest/api/3/version/12626",
+          "id": "12626",
+          "description": "",
+          "name": "Platform-2026-5-1",
+          "archived": false,
+          "released": false
+        }
+      ],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-23T19:45:13.377-0400",
+      "updated": "2026-04-15T23:59:18.249-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
         "description": "QA review in progress in QA environment",
@@ -10953,7 +11293,9 @@
         }
       }
     },
-    "effective_category": "In Progress"
+    "effective_category": "In Progress",
+    "jira_status": "In QA",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -11036,7 +11378,9 @@
         }
       }
     },
-    "effective_category": "To Do"
+    "effective_category": "To Do",
+    "jira_status": "To do",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -11119,7 +11463,9 @@
         }
       }
     },
-    "effective_category": "To Do"
+    "effective_category": "To Do",
+    "jira_status": "To do",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -11202,7 +11548,9 @@
         }
       }
     },
-    "effective_category": "To Do"
+    "effective_category": "To Do",
+    "jira_status": "To do",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -11285,7 +11633,9 @@
         }
       }
     },
-    "effective_category": "To Do"
+    "effective_category": "To Do",
+    "jira_status": "To do",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -11368,7 +11718,9 @@
         }
       }
     },
-    "effective_category": "To Do"
+    "effective_category": "To Do",
+    "jira_status": "To do",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -11427,7 +11779,21 @@
       "created": "2026-03-29T22:22:42.358-0400",
       "timespent": null,
       "timeoriginalestimate": null,
-      "assignee": null,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Af53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "accountId": "712020:f53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "emailAddress": "blessing.adesina@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "24x24": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "16x16": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "32x32": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png"
+        },
+        "displayName": "Blessing Philips",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
       "fixVersions": [],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
@@ -11435,7 +11801,7 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-29T22:22:42.506-0400",
+      "updated": "2026-04-16T00:26:10.265-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
         "description": "Ready for development in DEV environment",
@@ -11451,7 +11817,9 @@
         }
       }
     },
-    "effective_category": "To Do"
+    "effective_category": "To Do",
+    "jira_status": "To do",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -11510,7 +11878,21 @@
       "created": "2026-03-29T22:22:28.305-0400",
       "timespent": null,
       "timeoriginalestimate": null,
-      "assignee": null,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Af53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "accountId": "712020:f53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "emailAddress": "blessing.adesina@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "24x24": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "16x16": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "32x32": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png"
+        },
+        "displayName": "Blessing Philips",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
       "fixVersions": [],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
@@ -11518,7 +11900,7 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-29T22:22:28.446-0400",
+      "updated": "2026-04-16T00:25:56.039-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
         "description": "Ready for development in DEV environment",
@@ -11534,7 +11916,9 @@
         }
       }
     },
-    "effective_category": "To Do"
+    "effective_category": "To Do",
+    "jira_status": "To do",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -11593,7 +11977,21 @@
       "created": "2026-03-29T22:22:13.394-0400",
       "timespent": null,
       "timeoriginalestimate": null,
-      "assignee": null,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Af53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "accountId": "712020:f53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "emailAddress": "blessing.adesina@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "24x24": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "16x16": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "32x32": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png"
+        },
+        "displayName": "Blessing Philips",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
       "fixVersions": [],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
@@ -11601,7 +11999,7 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-29T22:22:13.592-0400",
+      "updated": "2026-04-16T00:25:52.697-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
         "description": "Ready for development in DEV environment",
@@ -11617,7 +12015,9 @@
         }
       }
     },
-    "effective_category": "To Do"
+    "effective_category": "To Do",
+    "jira_status": "To do",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -11676,7 +12076,21 @@
       "created": "2026-03-29T22:22:00.716-0400",
       "timespent": null,
       "timeoriginalestimate": null,
-      "assignee": null,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Af53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "accountId": "712020:f53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "emailAddress": "blessing.adesina@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "24x24": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "16x16": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "32x32": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png"
+        },
+        "displayName": "Blessing Philips",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
       "fixVersions": [],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
@@ -11684,7 +12098,7 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-29T22:22:00.859-0400",
+      "updated": "2026-04-16T00:25:50.222-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
         "description": "Ready for development in DEV environment",
@@ -11700,7 +12114,9 @@
         }
       }
     },
-    "effective_category": "To Do"
+    "effective_category": "To Do",
+    "jira_status": "To do",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -11759,7 +12175,21 @@
       "created": "2026-03-29T22:20:02.596-0400",
       "timespent": null,
       "timeoriginalestimate": null,
-      "assignee": null,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Af53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "accountId": "712020:f53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "emailAddress": "blessing.adesina@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "24x24": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "16x16": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "32x32": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png"
+        },
+        "displayName": "Blessing Philips",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
       "fixVersions": [],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
@@ -11767,7 +12197,7 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-29T22:20:02.732-0400",
+      "updated": "2026-04-16T00:25:47.602-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
         "description": "Ready for development in DEV environment",
@@ -11783,7 +12213,9 @@
         }
       }
     },
-    "effective_category": "To Do"
+    "effective_category": "To Do",
+    "jira_status": "To do",
+    "effective_release_date": null
   },
   {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
@@ -11864,7 +12296,7 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-03T12:44:42.765-0400",
+      "updated": "2026-04-16T00:19:46.917-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
         "description": "Ready for development in DEV environment",
@@ -11880,6 +12312,8 @@
         }
       }
     },
-    "effective_category": "To Do"
+    "effective_category": "To Do",
+    "jira_status": "To do",
+    "effective_release_date": null
   }
 ]

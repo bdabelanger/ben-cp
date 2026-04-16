@@ -3,33 +3,16 @@
 - **GID:** 1210860550580423
 - **Permalink:** https://app.asana.com/1/1123317448830974/project/1210860550580423
 - **OKR Mapping:** [Elevate Notes](../../okrs/q2/elevate-notes/index.md)
-- **Team:** N/A
+- **Team:** Platform
 - **Stage:** Backlog
 - **Status:** on_track
 - **Jira Link:** None
-
-## Current Status Update
-**Title:** Data import - Bulk import for Notes - Apr 10
-**Text:**
-Summary
-
-Nothin' doin' at the moment but will be prioritized later this quarter, likely with Duc and Tuan to lead through
-
-----------------------------------------
-
-Next steps
-
-None yet
-
-## Custom Fields
 - **Discovery Start:** null
 - **Dev Start:** 2026-05-18T00:00:00.000Z
 - **Beta Start:** null
 - **GA:** 2026-07-13T00:00:00.000Z
 - **JIRA Link:** null
-- **Team:** Platform
 - **Release Quarter:** Q2 2026
-- **Stage:** Backlog
 - **Type:** Strategic
 - **Current Discovery Stage:** 25%
 - **Target Discovery Stage:** 75%
@@ -48,3 +31,16 @@ None yet
 - **UAT Start:** 2026-07-02T00:00:00.000Z
 - **Roadmap:** Enhance Core Configurability
 
+# Bulk Import for Notes (GID: 1210860550580423)
+
+This feature is positioned as an "Implementation Accelerator" to radically simplify the onboarding experience and solve data migration friction.
+
+## 🗣️ Key Narrative Points (From Shareout)
+
+*   **Core Vision**: "Get off to a great start: Bulk import notes." Ensuring customers don't have to "shrink" their historical data to fit into Casebook.
+*   **Customer Validation**: Kentucky Humane Society expressed concern over migration loss: "If we can't import into notes… if we can only have narrative… do I need to basically also shrink down these notes?"
+*   **Key Capabilities**: Enables bulk import of General Notes and features Consolidated Error Feedback, returning all validation errors at once.
+
+## 💬 Strategic Roadmap
+
+This is designated as a **Stretch goal for Q2**, prioritized specifically for onboarding acceleration rather than a firm GA commitment. It provides Admins with self-service power to handle data quality at scale.

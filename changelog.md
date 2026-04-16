@@ -1,4 +1,21 @@
+## [1.18.9] — Jira Data Integrity & Reporting Pipeline Hardening (2026-04-16)
+
+**Changes:**
+- **orchestration/pipelines/.../step_2_atlassian_fetch.py**: Removed the `missing_keys` filter and local cache gating. The pipeline now unconditionally fetches fresh Jira epic data from the Atlassian API on every run.
+- **orchestration/pipelines/.../full_run.py**: Removed conditional gating for the fetch and harvest phases, ensuring local data stale-cache issues are avoided.
+- **tools/product/projects/report.py**: Corrected `JIRA_FILE` path to point to the `processed/` directory instead of the stale `raw/` directory, ensuring Gazette reports reflect fresh data.
+- **orchestration/pipelines/.../render_html.py**: Standardized all external links to open in a new tab (`target="_blank"`) and restored the Asana brand icon in project headers.
+- **Verification**: Confirmed `CBP-2736` correctly shows 33 child issues in both main and dream-cycle reports.
+
+## [1.18.8] — Centralized Styles and Visual Nomenclature (2026-04-15)
+
+**Changes:**
+- **skills/styles/emoji-key.md**: Created the canonical visual glossary for all vault reports and documentation.
+- **skills/styles/**: Refactored `SKILL.md` and `report.md` to point to the new emoji-key reference and removed redundant definitions.
+- **AGENTS.md**: Injected the **Visual Authority** rule, mandating that all agents check `skills/styles/emoji-key.md` before generating content to ensure stylistic consistency.
+
 ## [1.18.7] — Unified Artifact Standard: Consolidating Handoffs and Implementation Plans (2026-04-15)
+
 
 **Changes:**
 - **AGENTS.md**: Codified the **Unified Artifact Standard** (Context -> Logic -> Execution Steps). Established flat-file handoffs in `orchestration/handoff/` as the P1/P2 default.

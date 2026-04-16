@@ -10,7 +10,8 @@
 
 ## Tool Utility
 - **vault.css**: Central styling repository for all HTML-rendered reports.
-- **emoji_key.md**: Canonical reference for status icons and section markers.
+- **emoji-key.md**: Canonical reference for status icons and section markers.
+
 
 ## Workflow Summary
 1. **Reference:** Checking the visual glossary before choosing status icons or markers.

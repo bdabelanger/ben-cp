@@ -56,7 +56,21 @@
       "created": "2026-03-29T22:22:42.358-0400",
       "timespent": null,
       "timeoriginalestimate": null,
-      "assignee": null,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Af53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "accountId": "712020:f53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "emailAddress": "blessing.adesina@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "24x24": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "16x16": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "32x32": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png"
+        },
+        "displayName": "Blessing Philips",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
       "fixVersions": [],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
@@ -64,7 +78,7 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-29T22:22:42.506-0400",
+      "updated": "2026-04-16T00:26:10.265-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
         "description": "Ready for development in DEV environment",
@@ -138,7 +152,21 @@
       "created": "2026-03-29T22:22:28.305-0400",
       "timespent": null,
       "timeoriginalestimate": null,
-      "assignee": null,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Af53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "accountId": "712020:f53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "emailAddress": "blessing.adesina@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "24x24": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "16x16": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "32x32": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png"
+        },
+        "displayName": "Blessing Philips",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
       "fixVersions": [],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
@@ -146,7 +174,7 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-29T22:22:28.446-0400",
+      "updated": "2026-04-16T00:25:56.039-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
         "description": "Ready for development in DEV environment",
@@ -220,7 +248,21 @@
       "created": "2026-03-29T22:22:13.394-0400",
       "timespent": null,
       "timeoriginalestimate": null,
-      "assignee": null,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Af53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "accountId": "712020:f53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "emailAddress": "blessing.adesina@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "24x24": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "16x16": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "32x32": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png"
+        },
+        "displayName": "Blessing Philips",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
       "fixVersions": [],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
@@ -228,7 +270,7 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-29T22:22:13.592-0400",
+      "updated": "2026-04-16T00:25:52.697-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
         "description": "Ready for development in DEV environment",
@@ -302,7 +344,21 @@
       "created": "2026-03-29T22:22:00.716-0400",
       "timespent": null,
       "timeoriginalestimate": null,
-      "assignee": null,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Af53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "accountId": "712020:f53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "emailAddress": "blessing.adesina@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "24x24": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "16x16": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "32x32": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png"
+        },
+        "displayName": "Blessing Philips",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
       "fixVersions": [],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
@@ -310,7 +366,7 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-29T22:22:00.859-0400",
+      "updated": "2026-04-16T00:25:50.222-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
         "description": "Ready for development in DEV environment",
@@ -384,7 +440,21 @@
       "created": "2026-03-29T22:20:02.596-0400",
       "timespent": null,
       "timeoriginalestimate": null,
-      "assignee": null,
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=712020%3Af53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "accountId": "712020:f53fa21c-0d20-46b5-9809-b804160a3a2b",
+        "emailAddress": "blessing.adesina@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "24x24": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "16x16": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png",
+          "32x32": "https://secure.gravatar.com/avatar/a056822bb0062158c50d556251aa29b4?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBP-6.png"
+        },
+        "displayName": "Blessing Philips",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
       "fixVersions": [],
       "priority": {
         "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
@@ -392,7 +462,7 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-03-29T22:20:02.732-0400",
+      "updated": "2026-04-16T00:25:47.602-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
         "description": "Ready for development in DEV environment",

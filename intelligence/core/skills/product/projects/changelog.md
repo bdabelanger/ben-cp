@@ -6,6 +6,16 @@
 
 ## [Unreleased]
 
+## 2026-04-17 — Execute End-to-End Smoke Test for Local Agent Readiness
+
+**Files changed:**
+- `intelligence/product/projects/asana_field_definitions.md` — Created new intelligence record cataloging Asana GIDs from source data. COMPLETE
+
+**Handoff:** `handoff/2026-04-17-p2-Gemma-Local-End-to-End-Smoke-Test.md`
+
+**Next:** Review handoff completion by Cowork.
+
+
 ## 2026-04-16 — Jira Data Integrity & Reporting Pipeline Hardening
 
 Resolved the data discrepancy issue where stale local caches were preventing accurate Jira issue counts.

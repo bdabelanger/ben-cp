@@ -6,7 +6,7 @@ import subprocess
 from collections import defaultdict
 from datetime import datetime
 
-ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
 CHANGELOG_PATH = os.path.join(ROOT_DIR, "changelog.md")
 SKILLS_DIR = os.path.join(ROOT_DIR, "intelligence/core/skills")
 VAULT_CSS = os.path.join(SKILLS_DIR, "styles", "vault.css")
@@ -46,11 +46,8 @@ def main():
     git_changes = get_git_status()
     uncommitted = len(git_changes)
 
-    if unreleased_count == 0 and uncommitted > 0:
-        summary = f"Version {current_version} is active, but you have {uncommitted} modified file(s) that need to be documented."
-    elif unreleased_count > 0:
-        summary = f"Currently drafting {unreleased_count} unreleased update(s) for the next version. Git shows {uncommitted} modified files."
-    else:
+    summary = f"{uncommitted} modified file(s) without changelog (version {current_version})"
+    if uncommitted == 0:
         summary = f"Version {current_version} is cleanly published with no outstanding changes."
 
     group_counts = defaultdict(int)

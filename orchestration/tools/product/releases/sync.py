@@ -6,7 +6,7 @@ import re
 from datetime import datetime
 
 # Standard Vault Paths
-REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
 PROJECTS_BASE_DIR = os.path.join(REPO_ROOT, "intelligence/product/roadmap/projects")
 RELEASE_DIR = os.path.join(REPO_ROOT, "intelligence/product/releases")
 

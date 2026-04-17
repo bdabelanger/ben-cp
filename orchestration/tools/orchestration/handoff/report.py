@@ -5,7 +5,7 @@ import glob
 import re
 from datetime import datetime
 
-REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
 HANDOFF_DIR = os.path.join(REPO_ROOT, "orchestration/handoff")
 
 def main():
@@ -28,7 +28,7 @@ def main():
     total_active = len(active_files)
     p_str = ", ".join([f"{p_counts[k]} {k}" for k in ["P1", "P2", "P3", "P4"] if p_counts[k] > 0])
     
-    summary = f"Handoff Queue: {total_active} active ({p_str})." if total_active > 0 else "Handoff Queue: Clean (0 active)."
+    summary = f"{total_active} active handoffs ({p_str})" if total_active > 0 else "0 active handoffs"
 
     envelope = {
         "skill": "orchestration/handoff",

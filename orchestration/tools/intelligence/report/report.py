@@ -4,8 +4,8 @@ import os
 import glob
 from datetime import datetime
 
-REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
-SKILLS_DIR = os.path.join(REPO_ROOT, "skills")
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
+SKILLS_DIR = os.path.join(REPO_ROOT, "intelligence", "core", "skills")
 OUTPUTS_DIR = os.path.join(REPO_ROOT, "orchestration", "pipelines", "outputs", "dream")
 VAULT_CSS = os.path.join(SKILLS_DIR, "styles", "vault.css")
 
@@ -29,7 +29,7 @@ def main():
     # 3. Theme Audit
     theme_ok = os.path.exists(VAULT_CSS)
 
-    summary = f"Pipeline Integrity Check: {len(valid_specs)} skills registered, outputs online."
+    summary = f"{len(valid_specs)} skills registered, outputs online."
     findings = [
         f"Specs: {len(valid_specs)} verified, {len(broken_specs)} malformed.",
         f"Outputs: {'Connected' if output_ok else 'Disconnected'} at orchestration/pipelines/outputs/dream/",

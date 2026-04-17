@@ -4,8 +4,9 @@ import os
 import glob
 from datetime import datetime
 
-SKILLS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", "intelligence", "core", "skills"))
-INTEL_DIR  = os.path.abspath(os.path.join(SKILLS_DIR, "..", "intelligence"))
+REPO_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
+INTEL_DIR  = os.path.join(REPO_ROOT, "intelligence")
+SKILLS_DIR = os.path.join(INTEL_DIR, "core", "skills")
 
 def main():
     docs = glob.glob(os.path.join(INTEL_DIR, "**", "*.md"), recursive=True)
@@ -23,7 +24,7 @@ def main():
         "preferred_agent": "Vault Auditor (Antigravity)",
         "run_at": datetime.utcnow().isoformat() + "Z",
         "status": "ok",
-        "summary": f"Memory Audit complete: {total_docs} records tracked across {total_indices} domains.",
+        "summary": f"{total_docs} records tracked across {total_indices} domains.",
         "findings": [
             f"Vault contains {total_docs} intelligence records.",
             f"Structural coverage: {total_indices} domain indices verified."

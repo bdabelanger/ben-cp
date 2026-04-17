@@ -27,7 +27,7 @@ SKILLS_DIR   = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..
 REPO_ROOT    = os.path.abspath(os.path.join(SKILLS_DIR, "..", "..", ".."))
 VAULT_ROOT   = os.path.abspath(os.path.join(REPO_ROOT, "..", ".."))
 OUTPUTS_DIR  = os.path.join(REPO_ROOT, "orchestration", "pipelines", "outputs", "dream")
-REPORT_MD    = os.path.join(os.path.dirname(__file__), "report.md")
+REPORT_MD    = os.path.join(SKILLS_DIR, "intelligence", "report", "character.md")
 VAULT_CSS    = os.path.join(SKILLS_DIR, "styles", "vault.css")
 
 
@@ -120,29 +120,28 @@ def execute_skill(spec, phase="draft", draft_pool=None):
     skill_name = spec.get("skill_name", "unknown")
     spec_path  = spec.get("_path")
     skill_dir  = os.path.dirname(spec_path)
-    # Try to find the script in the tools/ mirror path first
+    # Search hierarchy:
+    # 1. orchestration/tools/[skill_path]/report.py
+    # 2. [skill_dir]/report.py (legacy)
     rel_path = os.path.relpath(skill_dir, SKILLS_DIR)
-    script_path = os.path.join(REPO_ROOT, "tools", rel_path, "report.py")
+    script_path = os.path.join(REPO_ROOT, "orchestration", "tools", rel_path, "report.py")
 
     if not os.path.exists(script_path):
-        # Fallback to the legacy skill-dir report.py (usually for migration/testing)
         script_path = os.path.join(skill_dir, "report.py")
 
     if not os.path.exists(script_path):
-        # Fallback to mock for v1 rollout
         return {
             "skill":          skill_name,
             "preferred_agent": spec.get("preferred_agent", "unknown"),
             "run_at":         datetime.utcnow().isoformat() + "Z",
             "status":         "ok",
             "phase":          phase,
-            "summary":        f"[MOCK] {skill_name}: draft assessment complete.",
-            "findings":       ["[MOCK] Live report.py not found — using placeholder."],
+            "summary":        f"Live report.py for {skill_name} is under construction.",
+            "findings":       ["Drafting and synthesis are currently using fallback logic."],
             "flags":          [],
         }
 
     try:
-        # Pass the draft pool as JSON if in revision phase
         env = os.environ.copy()
         if draft_pool:
             env["DREAM_DRAFTS"] = json.dumps(draft_pool)
@@ -151,7 +150,13 @@ def execute_skill(spec, phase="draft", draft_pool=None):
             ["python3", script_path, "--phase", phase],
             capture_output=True, text=True, check=True, env=env
         )
-        return json.loads(result.stdout)
+        
+        # Capture ONLY the last line (the JSON envelope) to allow script debugging on earlier lines
+        output_lines = result.stdout.strip().split('\n')
+        if not output_lines:
+            raise ValueError("No output from script")
+        
+        return json.loads(output_lines[-1])
     except Exception as e:
         print(f"  [ERROR] {skill_name} failed: {e}")
         return {
@@ -259,8 +264,34 @@ def write_lede(envelopes, char):
         return "🟢 All skills reporting clean. Nothing to flag."
 
 
+def format_skill_header(skill_path):
+    """Formats 'intelligence/memory' into 'Memory'."""
+    parts = re.split(r'[/ ]', skill_path)
+    if parts:
+        return parts[-1].capitalize()
+    return skill_path.capitalize()
+
+
+def group_envelopes(envelopes):
+    """Groups envelopes into Intelligence vs Orchestration and sorts alphabetically."""
+    intel_blobs = []
+    orchestra_blobs = []
+    
+    for env in envelopes:
+        skill = env["skill"].lower()
+        if skill.startswith("intelligence") or skill.startswith("product"):
+            intel_blobs.append(env)
+        else:
+            orchestra_blobs.append(env)
+            
+    intel_blobs.sort(key=lambda x: x["skill"])
+    orchestra_blobs.sort(key=lambda x: x["skill"])
+    return intel_blobs, orchestra_blobs
+
+
 def build_report_markdown(envelopes, date_str, run_ts, char):
     lede = write_lede(envelopes, char)
+    intel, orchestra = group_envelopes(envelopes)
 
     md  = f"# {char['report_title']} — {date_str}\n\n"
     md += f"> **{char['editor_label']}:** {char['byline']}  \n"
@@ -269,30 +300,39 @@ def build_report_markdown(envelopes, date_str, run_ts, char):
     md += "---\n\n"
     md += f"## {char['lede_section']}\n\n{lede}\n\n"
     md += "---\n\n"
-    md += f"## {char['columns_section']}\n\n"
 
-    for env in envelopes:
-        icon = {"ok": "🟢", "warn": "🟡", "error": "🔴"}.get(env["status"], "⚪")
-        md += f"### {icon} {env['skill']}\n\n"
-        md += f"{env['excerpt']}\n\n"
-        if env.get("flags"):
-            md += "**Flags:**\n"
-            for flag in env["flags"]:
-                md += f"- {flag}\n"
-            md += "\n"
+    if intel:
+        md += "## 📓 Intelligence\n\n"
+        for env in intel:
+            icon = {"ok": "🟢", "warn": "🟡", "error": "🔴"}.get(env["status"], "⚪")
+            md += f"### {icon} {format_skill_header(env['skill'])}\n\n"
+            md += f"{env['excerpt']}\n\n"
+            if env.get("findings"):
+                for find in env["findings"]:
+                    md += f"- {find}\n"
+                md += "\n"
+        md += "---\n\n"
 
-        if env.get("findings"):
-            for find in env["findings"]:
-                md += f"- {find}\n"
-            md += "\n"
+    if orchestra:
+        md += "## ⚙️ Orchestration\n\n"
+        for env in orchestra:
+            icon = {"ok": "🟢", "warn": "🟡", "error": "🔴"}.get(env["status"], "⚪")
+            md += f"### {icon} {format_skill_header(env['skill'])}\n\n"
+            md += f"{env['excerpt']}\n\n"
+            if env.get("findings"):
+                for find in env["findings"]:
+                    md += f"- {find}\n"
+                md += "\n"
+        md += "---\n\n"
 
-    md += f"---\n\n*{char['footer']}*\n"
+    md += f"*{char['footer']}*\n"
     return md
 
 
 def build_report_html(envelopes, date_str, run_ts, char):
     status_colors = {"ok": "#22c55e", "warn": "#f59e0b", "error": "#ef4444"}
     lede = write_lede(envelopes, char)
+    intel, orchestra = group_envelopes(envelopes)
     css  = load_vault_css()
 
     html = f"""<!DOCTYPE html>
@@ -313,37 +353,49 @@ def build_report_html(envelopes, date_str, run_ts, char):
 """
     html += f'  <div class="lede">{lede}</div>\n'
 
-    for env in envelopes:
-        color   = status_colors.get(env["status"], "#94a3b8")
-        excerpt = env["excerpt"]
-        content = (
-            f'<blockquote>{excerpt}</blockquote>'
-            if excerpt.startswith('"') and excerpt.endswith('"')
-            else f'<p>{excerpt}</p>'
-        )
-        html += f'  <div class="column" style="border-left-color:{color};">\n'
-        html += f'    <h3>{env["skill"]}</h3>\n'
-        html += f'    {content}\n'
-        if env.get("findings"):
-            html += '<div class="findings-list"><ul>'
-            for find in env["findings"]:
-                # Convert markdown links [text](url.md) to HTML <a> and swap to .html for humans
-                rendered_find = re.sub(r'\[([^\]]+)\]\(([^\)]+)\.md\)', r'<a href="\2.html" target="_blank">\1</a>', find)
-                # Also handle non-md links
-                rendered_find = re.sub(r'\[([^\]]+)\]\(([^\)]+)\)', r'<a href="\2" target="_blank">\1</a>', rendered_find)
-                html += f"<li>{rendered_find}</li>"
-            html += '</ul></div>\n'
+    if intel:
+        html += '  <h2 class="section-divider">📓 Intelligence</h2>\n'
+        for env in intel:
+            html += render_env_column(env, status_colors)
 
-        if env.get("flags"):
-            for flag in env["flags"]:
-                # Handle both string flags (Gazette v1) and legacy object flags
-                msg = flag.get("message", flag) if isinstance(flag, dict) else flag
-                sev = flag.get("severity", "flag").lower() if isinstance(flag, dict) else "flag"
-                html += f'    <div class="flag-card flag-{sev}">{msg}</div>\n'
-        html += "  </div>\n"
+    if orchestra:
+        html += '  <h2 class="section-divider">⚙️ Orchestration</h2>\n'
+        for env in orchestra:
+            html += render_env_column(env, status_colors)
 
     html += f'  <footer class="vault-footer">{char["footer"]}</footer>\n'
     html += "</div>\n</body>\n</html>\n"
+    return html
+
+
+def render_env_column(env, status_colors):
+    color   = status_colors.get(env["status"], "#94a3b8")
+    excerpt = env["excerpt"]
+    content = (
+        f'<blockquote>{excerpt}</blockquote>'
+        if excerpt.startswith('"') and excerpt.endswith('"')
+        else f'<p>{excerpt}</p>'
+    )
+    
+    html = f'  <div class="column" style="border-left-color:{color};">\n'
+    html += f'    <h3>{format_skill_header(env["skill"])}</h3>\n'
+    html += f'    {content}\n'
+    
+    if env.get("findings"):
+        html += '<div class="findings-list"><ul>'
+        for find in env["findings"]:
+            rendered_find = re.sub(r'\[([^\]]+)\]\(([^\)]+)\.md\)', r'<a href="\2.html" target="_blank">\1</a>', find)
+            rendered_find = re.sub(r'\[([^\]]+)\]\(([^\)]+)\)', r'<a href="\2" target="_blank">\1</a>', rendered_find)
+            html += f"<li>{rendered_find}</li>"
+        html += '</ul></div>\n'
+
+    if env.get("flags"):
+        for flag in env["flags"]:
+            msg = flag.get("message", flag) if isinstance(flag, dict) else flag
+            sev = flag.get("severity", "flag").lower() if isinstance(flag, dict) else "flag"
+            html += f'    <div class="flag-card flag-{sev}">{msg}</div>\n'
+            
+    html += "  </div>\n"
     return html
 
 

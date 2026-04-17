@@ -7,7 +7,7 @@ import subprocess
 from datetime import datetime
 
 # Standard Vault Paths
-REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
 SKILLS_DIR = os.path.join(REPO_ROOT, "intelligence/core/skills")
 INTEL_DIR = os.path.join(REPO_ROOT, "intelligence/product/projects")
 
@@ -22,7 +22,7 @@ DETAILED_REPORT_DIR = os.path.join(REPO_ROOT, "orchestration", "pipelines", "out
 DETAILED_REPORT_URL = "reports/product-projects.md"
 VAULT_CSS = os.path.join(SKILLS_DIR, "styles", "vault.css")
 
-ACTIVE_STAGES = {"Development", "In QA", "In UAT", "Beta", "GA"}
+ACTIVE_STAGES = {"Study", "Research", "Design", "Dev", "Development", "QA", "In QA", "UAT", "In UAT", "Beta", "GA"}
 
 # Try to import the legacy analytics engine
 try:
@@ -76,15 +76,18 @@ def _generate_rich_detailed_report():
         return False
 
 
-def _generate_simple_detailed_report(active_list, total_intel, live_active):
+def _generate_simple_detailed_report(active_list, total_intel, live_active, report_source):
     """
     Fallback: Asana-status-only HTML report. Used when Jira data is not yet
     available (e.g. the full pipeline hasn't run yet today).
     """
     os.makedirs(DETAILED_REPORT_DIR, exist_ok=True)
 
+    with open(os.path.join(DETAILED_REPORT_DIR, "product-projects-data.json"), "w", encoding="utf-8") as jf:
+        json.dump(active_list, jf, indent=2)
+
     # Markdown Version
-    with open(os.path.join(DETAILED_REPORT_DIR, "product-projects.md"), "w") as rf:
+    with open(os.path.join(DETAILED_REPORT_DIR, "product-projects.md"), "w", encoding="utf-8") as rf:
         rf.write(f"# Detailed Project Status — {datetime.now().strftime('%Y-%m-%d')}\n\n")
         rf.write(f"## Active Scorecard\n")
         rf.write(f"- **Intelligence Records**: {total_intel} (Q2 initiatives)\n")
@@ -101,7 +104,7 @@ def _generate_simple_detailed_report(active_list, total_intel, live_active):
 
     # Themed HTML Version (Gazette Premium)
     css = load_css()
-    with open(os.path.join(DETAILED_REPORT_DIR, "product-projects.html"), "utf-8") as hf:
+    with open(os.path.join(DETAILED_REPORT_DIR, "product-projects.html"), "w", encoding="utf-8") as hf:
         hf.write(f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -157,7 +160,11 @@ def main():
         pass
 
     # 1. Summary of intelligence records
-    q2_files = glob.glob(os.path.join(INTEL_DIR, "q2/*/index.md"))
+    # 1. Summary of intelligence records (catch BOTH flat files and folder-indexes)
+    all_q2 = glob.glob(os.path.join(INTEL_DIR, "q2/*.md")) + \
+             glob.glob(os.path.join(INTEL_DIR, "q2/*/index.md"))
+    # Filter out index.md from root if it exists
+    q2_files = [f for f in all_q2 if not (f.endswith("q2/index.md"))]
     total_intel = len(q2_files)
 
     # 2. Summary of live data from Asana
@@ -178,9 +185,8 @@ def main():
                 elif "off" in status:
                     off_track += 1
 
-    summary = f"Project Health: Tracking {total_intel} Q2 initiatives in intelligence."
-    if live_active:
-        summary += f" Live harvest shows {live_active} active projects ({at_risk} at risk, {off_track} off track)."
+    missing = total_intel - live_active
+    summary = f"{total_intel} active initiatives in intelligence ({at_risk} at risk, {off_track} off track, {missing} missing)"
 
     flags = [f"CRITICAL: {off_track} project(s) reported as OFF TRACK in Asana."] if off_track > 0 else []
     if at_risk > 0:
@@ -188,10 +194,10 @@ def main():
 
     # 3. Generate Detailed Report — prefer rich legacy engine, fall back to simple
     rich = _generate_rich_detailed_report()
-    if not rich:
-        _generate_simple_detailed_report(active_list, total_intel, live_active)
-
     report_source = "platform_report (Jira+Asana)" if rich else "asana_active (Asana only)"
+
+    if not rich:
+        _generate_simple_detailed_report(active_list, total_intel, live_active, report_source)
 
     envelope = {
         "skill": "product/projects",

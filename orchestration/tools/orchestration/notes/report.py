@@ -5,7 +5,7 @@ import glob
 import re
 from datetime import datetime
 
-REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
 TODAY_STR = datetime.now().strftime("%Y-%m-%d")
 
 def find_notes_files():
@@ -50,7 +50,10 @@ def main():
         # Get domain name from path
         rel = os.path.relpath(nf, REPO_ROOT)
         parts = rel.split(os.sep)
-        if len(parts) >= 3 and parts[0] == "skills":
+        # Map legacy skills/ to intelligence/core/skills/ for domain clarity
+        if len(parts) >= 4 and parts[0] == "intelligence" and parts[1] == "core" and parts[2] == "skills":
+            domain = "/".join(parts[3:-1])
+        elif len(parts) >= 3 and parts[0] == "skills":
             domain = "/".join(parts[1:-1])
         else:
             domain = os.path.dirname(rel)
@@ -62,7 +65,7 @@ def main():
     total_entries = sum(len(t) for t in activity.values())
     active_domains = len(activity)
 
-    summary = f"Notes Audit: {total_entries} new entries across {active_domains} domain(s)."
+    summary = f"{total_entries} new entries across {active_domains} domain(s)"
     
     findings = []
     if activity:

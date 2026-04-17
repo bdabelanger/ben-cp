@@ -8,7 +8,7 @@ from datetime import datetime
 
 # Standard Vault Paths
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
-SKILLS_DIR = os.path.join(REPO_ROOT, "skills")
+SKILLS_DIR = os.path.join(REPO_ROOT, "intelligence/core/skills")
 INTEL_DIR = os.path.join(REPO_ROOT, "intelligence/product/roadmap/projects")
 
 # Data & Pipeline Paths (remain in orchestration domain)

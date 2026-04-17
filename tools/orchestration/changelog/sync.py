@@ -3,11 +3,12 @@ import subprocess
 import os
 from collections import defaultdict
 
-VAULT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+SKILLS_DIR = os.path.join(ROOT_DIR, "intelligence/core/skills")
 
 def generate_sync_entry():
     # Run the changelog report to get the raw list
-    report_cmd = ["python3", os.path.join(VAULT_ROOT, "skills/orchestration/changelog/report.py")]
+    report_cmd = ["python3", os.path.join(ROOT_DIR, "tools/orchestration/changelog/report.py")]
     result = subprocess.run(report_cmd, capture_output=True, text=True)
     try:
         data = json.loads(result.stdout)
@@ -28,8 +29,8 @@ def generate_sync_entry():
         parts = f.split("/")
         if len(parts) > 1:
             group = parts[0]
-            if group == "skills" and len(parts) > 2:
-                group = f"skills/{parts[1]}"
+            if group == "intelligence" and len(parts) > 3 and parts[1] == "core" and parts[2] == "skills":
+                group = f"intelligence/core/skills/{parts[3]}"
             grouped[group].append(f)
         else:
             grouped["root"].append(f)

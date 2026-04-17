@@ -36,6 +36,9 @@ _CSS_FALLBACK = """
     --done:      #22c55e;
     --progress:  #4f6ef7;
     --todo:      #e2e2e8;
+    --warn:      #f59e0b;
+    --danger:    #ef4444;
+    --unmapped:  #9ca3af;
     --radius:    10px;
     --shadow:    0 2px 8px rgba(0,0,0,0.07);
 }
@@ -119,9 +122,23 @@ tr:last-child td { border-bottom: none; }
     margin: 0.5rem 0;
     gap: 1px;
 }
-.prog-done     { background: var(--done); }
-.prog-progress { background: var(--progress); }
 .prog-todo     { background: var(--todo); }
+
+/* ---------- readiness bar ---------- */
+.readiness-wrap {
+    display: flex;
+    height: 10px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--todo);
+    margin: 0.5rem 0;
+    gap: 1px;
+}
+.readiness-done     { background: var(--done); }
+.readiness-aligned  { background: var(--progress); }
+.readiness-stalled  { background: var(--warn); }
+.readiness-lagging  { background: var(--danger); }
+.readiness-unmapped { background: var(--unmapped); }
 
 /* ---------- time bar ---------- */
 .time-bar-wrap {
@@ -352,6 +369,44 @@ def _progress_bar_html(bar_text):
     return bar + label
 
 
+def _readiness_bar_html(bar_text):
+    """
+    Parse `Readiness: ▓▓▓▒▒░░! (5 Aligned · 2 Stalled · 1 Lagging · 1 Unmapped · 5 Done)`
+    into an HTML bar + label.
+    Pattern: \d+ Aligned, \d+ Stalled, \d+ Lagging, \d+ Unmapped, \d+ Done (all optional)
+    """
+    def _get_val(label, text):
+        m = re.search(rf'(\d+)\s+{label}', text)
+        return int(m.group(1)) if m else 0
+
+    aligned  = _get_val("Aligned", bar_text)
+    stalled  = _get_val("Stalled", bar_text)
+    lagging  = _get_val("Lagging", bar_text)
+    unmapped = _get_val("Unmapped", bar_text)
+    done     = _get_val("Done", bar_text)
+
+    total = aligned + stalled + lagging + unmapped + done or 1
+    dp, ap, sp, lp, up = [v/total*100 for v in (done, aligned, stalled, lagging, unmapped)]
+
+    bar = (f'<div class="readiness-wrap">'
+           f'<div class="readiness-done" style="width:{dp:.1f}%"></div>'
+           f'<div class="readiness-aligned" style="width:{ap:.1f}%"></div>'
+           f'<div class="readiness-stalled" style="width:{sp:.1f}%"></div>'
+           f'<div class="readiness-lagging" style="width:{lp:.1f}%"></div>'
+           f'<div class="readiness-unmapped" style="width:{up:.1f}%"></div>'
+           f'</div>')
+    
+    parts = []
+    if done:    parts.append(f"{done} Done")
+    if aligned: parts.append(f"{aligned} Aligned")
+    if stalled: parts.append(f"{stalled} Stalled")
+    if lagging: parts.append(f"{lagging} Lagging")
+    if unmapped: parts.append(f"{unmapped} Unmapped")
+    
+    label = f'<span class="stat-row">{" &nbsp;·&nbsp; ".join(parts)}</span>'
+    return bar + label
+
+
 def _time_bar_html(bar_text):
     """
     Parse `60.0d estimated · 10.0d actual · 25.0d remaining (42%)` into a 3-segment HTML bar + label.
@@ -529,10 +584,13 @@ def md_to_html(md: str) -> str:
             i += 1; continue
 
         # Progress bar line (backtick-wrapped containing ▓/▒/░)
-        if line.startswith("`") and any(c in line for c in "▓▒░"):
+        if line.startswith("`") and any(c in line for c in "▓▒░!-"):
             close_ul()
             inner = line.strip("`").strip()
-            html_parts.append(_progress_bar_html(inner))
+            if inner.startswith("Readiness:"):
+                html_parts.append(_readiness_bar_html(inner))
+            else:
+                html_parts.append(_progress_bar_html(inner))
             i += 1; continue
 
         # Generic backtick code line

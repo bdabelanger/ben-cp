@@ -18,50 +18,68 @@ const server = new Server(
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootPath = path.resolve(__dirname, "..");
-const skillsPath = path.resolve(rootPath, "skills");
+const skillsPath = path.resolve(rootPath, "intelligence/core/skills");
 const rootChangelogPath = path.resolve(rootPath, "changelog.md");
 const handoffPath = path.resolve(rootPath, "orchestration/handoff");
 
 // Notes domain map — agents use the shorthand key, tool resolves the path
 const NOTES_DOMAIN_MAP: Record<string, string> = {
-  "primary":                      "skills/orchestration/notes/notes.md",
-  "communication":                "skills/orchestration/notes/notes.md",
-  "orchestration/communication":  "skills/orchestration/notes/notes.md",
-  "notes":                        "skills/orchestration/notes/notes.md",
-  "orchestration/notes":          "skills/orchestration/notes/notes.md",
-  "handoff":                      "skills/orchestration/handoff/notes.md",
-  "orchestration/handoff":        "skills/orchestration/handoff/notes.md",
-  "changelog":                    "skills/orchestration/changelog/notes.md",
-  "orchestration/changelog":      "skills/orchestration/changelog/notes.md",
-  "access":                       "skills/orchestration/access/notes.md",
-  "orchestration/access":         "skills/orchestration/access/notes.md",
-  "memory":                       "skills/intelligence/memory/notes.md",
-  "intelligence/memory":          "skills/intelligence/memory/notes.md",
-  "synthesize":                   "skills/intelligence/analyze/synthesize/notes.md",
-  "intelligence/analyze/synthesize": "skills/intelligence/analyze/synthesize/notes.md",
-  "predict":                      "skills/intelligence/analyze/predict/notes.md",
-  "intelligence/analyze/predict": "skills/intelligence/analyze/predict/notes.md",
-  "product":                      "skills/product/notes.md",
-  "intelligence/product":         "skills/product/notes.md",
+  "primary":                      "intelligence/core/skills/orchestration/notes/notes.md",
+  "communication":                "intelligence/core/skills/orchestration/notes/notes.md",
+  "orchestration/communication":  "intelligence/core/skills/orchestration/notes/notes.md",
+  "notes":                        "intelligence/core/skills/orchestration/notes/notes.md",
+  "orchestration/notes":          "intelligence/core/skills/orchestration/notes/notes.md",
+  "handoff":                      "intelligence/core/skills/orchestration/handoff/notes.md",
+  "orchestration/handoff":        "intelligence/core/skills/orchestration/handoff/notes.md",
+  "changelog":                    "intelligence/core/skills/orchestration/changelog/notes.md",
+  "orchestration/changelog":      "intelligence/core/skills/orchestration/changelog/notes.md",
+  "access":                       "intelligence/core/skills/orchestration/access/notes.md",
+  "orchestration/access":         "intelligence/core/skills/orchestration/access/notes.md",
+  "memory":                       "intelligence/core/skills/intelligence/memory/notes.md",
+  "intelligence/memory":          "intelligence/core/skills/intelligence/memory/notes.md",
+  "synthesize":                   "intelligence/core/skills/intelligence/analyze/synthesize/notes.md",
+  "intelligence/analyze/synthesize": "intelligence/core/skills/intelligence/analyze/synthesize/notes.md",
+  "predict":                      "intelligence/core/skills/intelligence/analyze/predict/notes.md",
+  "intelligence/analyze/predict": "intelligence/core/skills/intelligence/analyze/predict/notes.md",
+  "product":                      "intelligence/core/skills/product/notes.md",
+  "intelligence/product":         "intelligence/core/skills/product/notes.md",
 };
 
 function resolveNotesPath(domain: string | undefined): string {
   const key = (domain ?? "primary").trim().toLowerCase();
-  const rel = NOTES_DOMAIN_MAP[key];
-  if (!rel) throw new Error(
-    `Unknown notes domain: '${key}'. Valid options: ${Object.keys(NOTES_DOMAIN_MAP).join(", ")}`
-  );
-  return path.resolve(rootPath, rel);
+  
+  // 1. Check if it's a shorthand from the map
+  if (NOTES_DOMAIN_MAP[key]) {
+    return path.resolve(rootPath, NOTES_DOMAIN_MAP[key]);
+  }
+  
+  // 2. Otherwise, treat it as a path relative to skills/
+  // Sanitize: remove leading 'skills/' or 'intelligence/core/skills/' if present
+  let sanitized = key.startsWith("skills/") ? key.slice(7) : key;
+  if (sanitized.startsWith("intelligence/core/skills/")) sanitized = sanitized.slice(25);
+  const resolvedPath = path.resolve(skillsPath, sanitized);
+  
+  // Security check
+  if (!resolvedPath.startsWith(skillsPath)) {
+    throw new Error(`Access denied: Domain '${key}' resolves outside the skills directory.`);
+  }
+  
+  // If it's a directory (or looks like one), append notes.md
+  if (path.extname(resolvedPath) === "") {
+    return path.join(resolvedPath, "notes.md");
+  }
+  
+  return resolvedPath;
 }
 
 async function writeChangelogInternal(a: any, skillsPath: string, date: string): Promise<string[]> {
   const written: string[] = [];
   const rawSubs: string[] = Array.isArray(a.subdirectories) ? a.subdirectories : [];
-  const changesLines = (a.completed_work as any[]).map((w: any) => `- \`${w.path}\` — ${w.change} ${w.status}`).join("\n");
+  const changesLines = (a.completed_work ?? []).map((w: any) => `- \`${w.path}\` — ${w.change} ${w.status}`).join("\n");
   const failedLines = (a.failed_actions ?? []).length > 0 ? (a.failed_actions as any[]).map((f: any) => `- **Attempted:** ${f.attempted}\n  **Happened:** ${f.happened}\n  **Recommendation:** ${f.recommendation}`).join("\n") : null;
   const krLines = (a.kr_state ?? []).length > 0 ? (a.kr_state as any[]).map((k: any) => `- **${k.kr_name}** (\`${k.file_path}\`): ${k.blocker_status}${k.baseline ? ` — baseline ${k.baseline}` : ""}${k.target ? `, target ${k.target}` : ""}\n  Next: ${k.next_action}`).join("\n") : null;
   const blockerLines = (a.blockers ?? []).length > 0 ? (a.blockers as any[]).map((b: any) => `- ${b.description} — ${b.needed_to_unblock}`).join("\n") : null;
-  const nextLines = (a.next_tasks as string[]).map((t, i) => `${i + 1}. ${t}`).join("\n");
+  const nextLines = (a.next_tasks ?? []).map((t: any, i: number) => `${i + 1}. ${t}`).join("\n");
   const handoffRef = a.handoff ? `handoff/${String(a.handoff)}` : null;
 
   for (const rawSub of rawSubs) {
@@ -92,7 +110,7 @@ async function writeChangelogInternal(a: any, skillsPath: string, date: string):
     const bump = a.version_bump ?? "patch";
     newVersion = bump === "major" ? `${maj + 1}.0.0` : bump === "minor" ? `${maj}.${min + 1}.0` : `${maj}.${min}.${pat + 1}`;
   }
-  const rootChanges = (a.completed_work as any[]).map((w: any) => `- \`${w.path}\` — ${w.change}`).join("\n");
+  const rootChanges = (a.completed_work ?? []).map((w: any) => `- \`${w.path}\` — ${w.change}`).join("\n");
   const subPointers = rawSubs.length > 0 ? "\n\n**Detail logs:**\n" + rawSubs.map(s => `- \`skills/${s}/changelog.md\``).join("\n") : "";
   let rootEntry = `## [${newVersion}] — ${a.session_goal} (${date})${subPointers}\n\n**Changes:**\n${rootChanges}\n`;
   if (failedLines) rootEntry += `\n**Failed actions:**\n${failedLines}\n`;
@@ -120,7 +138,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
 
     // --- SKILLS & CAPABILITIES ---
-    { name: "list_skills", description: "List all files available in the skills domain", inputSchema: { type: "object", properties: {} } },
+    { name: "list_skills", description: "List all files available in the skills domain", inputSchema: { type: "object", properties: { domain: { type: "string", description: "Optional subdirectory within skills/" } } } },
     { name: "get_skill", description: "Read a Skill documentation or template from the repo", inputSchema: { type: "object", properties: { relativePath: { type: "string" } }, required: ["relativePath"] } },
 
 
@@ -380,7 +398,11 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
     // --- SKILLS & CAPABILITIES ---
     if (name === "list_skills") {
-      const skills = await fs.readdir(skillsPath, { withFileTypes: true });
+      const { domain = "" } = args as any;
+      const targetPath = path.resolve(skillsPath, domain);
+      if (!targetPath.startsWith(skillsPath)) throw new Error("Access denied");
+
+      const skills = await fs.readdir(targetPath, { withFileTypes: true });
       const files = skills
         .filter(f => f.isDirectory() || (f.name.endsWith(".md") && !f.name.startsWith('.')))
         .map(f => ({ name: f.name, type: f.isDirectory() ? "directory" : "file" }));
@@ -400,6 +422,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     if (name === "add_note") {
       const { domain = "primary", agent, title, status, body } = args as any;
       const fullPath = resolveNotesPath(domain);
+      await fs.mkdir(path.dirname(fullPath), { recursive: true });
       const date = new Date().toISOString().split('T')[0];
       const entryTitle = `### ${title}\n`;
       const meta = `> **Date:** ${date}\n> **Agent:** ${agent}\n` + (status ? `> **Status:** ${status}\n` : "");
@@ -438,7 +461,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         `> **Assigned to:** ${assigned_to}\n` +
         `> **Vault root:** ${rootPath}\n` +
         `> **Priority:** ${priority}\n` +
-        `> **STATUS: 🔲 READY — pick up ${date}**\n\n---\n\n`;
+        `> **STATUS**: 🔲 READY — pick up ${date}\n\n---\n\n`;
       await fs.writeFile(fullPath, header + content, "utf-8");
       return { content: [{ type: "text", text: `Handoff created: ${filename}` }] };
     }
@@ -457,7 +480,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
             const fullPath = path.join(dir, file);
             const content = await fs.readFile(fullPath, "utf-8");
             const priorityMatch = content.match(/> \*\*Priority:\*\* (P\d)/);
-            const statusMatch = content.match(/> \*\*STATUS:\*\* (.*?)$/m);
+            const statusMatch = content.match(/> \*\*STATUS\*\*:\s*(.*?)$/m) || content.match(/> \*\*STATUS:?\s*(.*?)$/m);
             const dateMatch = file.match(/^(\d{4}-\d{2}-\d{2})/);
             const assignedMatch = content.match(/> \*\*Assigned to:\*\* (.*?)$/m);
             const assignee = assignedMatch ? assignedMatch[1].trim() : "Any";
@@ -523,7 +546,8 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         const targetFilename = `${path.basename(relPath, ".md")}-COMPLETE.md`;
         const targetPath = path.join(handoffPath, "complete", targetFilename);
         const content = await fs.readFile(sourcePath, "utf-8");
-        const updatedContent = content.replace(/> \*\*STATUS: 🔲 READY.*$/m, `> **STATUS: ✅ COMPLETE — ${date}**\n\n${a.summary}`);
+        const statusRegex = /> \*\*STATUS:?.*$/m;
+        const updatedContent = content.replace(statusRegex, `> **STATUS**: ✅ COMPLETE — ${date}\n\n${a.summary}`);
         await fs.mkdir(path.join(handoffPath, "complete"), { recursive: true });
         await fs.writeFile(targetPath, updatedContent, "utf-8");
         await fs.unlink(sourcePath);
@@ -846,7 +870,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
     if (name === "get_changelog") {
       const scope = String((args as any)?.scope ?? "root").trim();
-      const cp = scope === "root" ? rootChangelogPath : path.resolve(skillsPath, scope.replace("skills/", ""), "changelog.md");
+      const cp = scope === "root" ? rootChangelogPath : path.resolve(skillsPath, scope.replace("skills/", "").replace("intelligence/core/skills/", ""), "changelog.md");
       const content = await fs.readFile(cp, "utf-8");
       return { content: [{ type: "text", text: content }] };
     }

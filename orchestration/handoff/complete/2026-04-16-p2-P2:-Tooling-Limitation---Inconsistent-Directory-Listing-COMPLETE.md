@@ -4,7 +4,9 @@
 > **Assigned to:** Code
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
-> **STATUS: 🔲 READY — pick up 2026-04-16**
+> **STATUS: ✅ COMPLETE — 2026-04-16**
+
+Updated the list_skills tool in the ben-cp MCP server to support an optional domain parameter, enabling programmatic discovery of files in subdirectories.
 
 ---
 

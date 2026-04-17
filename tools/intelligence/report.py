@@ -23,8 +23,8 @@ import argparse
 import subprocess
 from datetime import datetime
 
-SKILLS_DIR   = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "skills"))
-REPO_ROOT    = os.path.abspath(os.path.join(SKILLS_DIR, ".."))
+SKILLS_DIR   = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "intelligence", "core", "skills"))
+REPO_ROOT    = os.path.abspath(os.path.join(SKILLS_DIR, "..", "..", ".."))
 VAULT_ROOT   = os.path.abspath(os.path.join(REPO_ROOT, "..", ".."))
 OUTPUTS_DIR  = os.path.join(REPO_ROOT, "orchestration", "pipelines", "outputs", "dream")
 REPORT_MD    = os.path.join(os.path.dirname(__file__), "report.md")
@@ -36,7 +36,7 @@ def load_vault_css():
     if os.path.exists(VAULT_CSS):
         with open(VAULT_CSS, "r") as f:
             return f.read()
-    print("[WARN] skills/styles/vault.css not found — falling back to minimal inline styles.")
+    print("[WARN] styles/vault.css not found — falling back to minimal inline styles.")
     return "body { font-family: Georgia, serif; max-width: 820px; margin: 2rem auto; padding: 0 1rem; }"
 
 

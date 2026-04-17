@@ -234,7 +234,58 @@ class PlatformStatusReport:
                 bar += "▒"; inp += 1
             else:
                 bar += "░"; todo += 1
-        return f"`{bar} {done} done · {inp} in progress · {todo} to do`"
+        return f"**Status** (Grain: Stories)\n`{bar} {done} done · {inp} in progress · {todo} to do`"
+
+    def _get_readiness_buckets(self, issues, ga_target):
+        stalled_statuses = {"To Do", "Backlog", "Open"}
+        buckets = {"Unmapped": 0, "Lagging": 0, "Stalled": 0, "Aligned": 0, "Done": 0}
+        issue_buckets = {}
+        for i in issues:
+            k = i["key"]
+            if i.get("effective_category") == "Done":
+                buckets["Done"] += 1
+                issue_buckets[k] = "Done"
+                continue
+            
+            erd = i.get("effective_release_date")
+            js = i.get("jira_status")
+            has_version = bool(i.get("fields", {}).get("fixVersions"))
+            
+            if not has_version or not erd:
+                buckets["Unmapped"] += 1
+                issue_buckets[k] = "Unmapped"
+            elif ga_target and erd > ga_target:
+                buckets["Lagging"] += 1
+                issue_buckets[k] = "Lagging"
+            elif js in stalled_statuses:
+                buckets["Stalled"] += 1
+                issue_buckets[k] = "Stalled"
+            else:
+                buckets["Aligned"] += 1
+                issue_buckets[k] = "Aligned"
+        return buckets, issue_buckets
+
+    def _readiness_bar(self, buckets):
+        """
+        Visualizes readiness based on alignment: Aligned, Stalled, Lagging, Unmapped, Done.
+        Done: Green (▓), Aligned: Blue (▒), Stalled: Yellow (░?), Lagging: Red (x?), Unmapped: Gray (-)
+        """
+        # We use standard symbols for markdown fallback, render_html will use colors
+        bar = "▓" * buckets["Done"]
+        bar += "▒" * buckets["Aligned"]
+        bar += "░" * buckets["Stalled"]
+        bar += "!" * buckets["Lagging"]
+        bar += "-" * buckets["Unmapped"]
+
+        label_parts = []
+        if buckets["Aligned"]: label_parts.append(f"{buckets['Aligned']} Aligned")
+        if buckets["Stalled"]: label_parts.append(f"{buckets['Stalled']} Stalled")
+        if buckets["Lagging"]: label_parts.append(f"{buckets['Lagging']} Lagging")
+        if buckets["Unmapped"]: label_parts.append(f"{buckets['Unmapped']} Unmapped")
+        if buckets["Done"]: label_parts.append(f"{buckets['Done']} Done")
+        
+        label = " · ".join(label_parts)
+        return f"**Readiness** (Grain: Stories)\n`Readiness: {bar} ({label})`"
 
     def _time_bar(self, issues, pkey=None):
         # Epic-level original estimate (if available)
@@ -251,16 +302,16 @@ class PlatformStatusReport:
             # Fallback: no epic estimate — use sum of child estimates as the budget
             child_est = sum((i.get("fields", {}).get("timeoriginalestimate") or 0) for i in issues) / 28800
             if child_est == 0 and act == 0:
-                return "[tw:not set]"
+                return "**Estimate** (Grain: Days)\n`not set`"
             if child_est == 0:
-                return f"[tw:not set]"
+                return "**Estimate** (Grain: Days)\n`not set`"
             orig_est = child_est  # treat child sum as the budget and fall through
 
         pct = int((act + rem) / orig_est * 100)
         actual_over   = act > orig_est
         combined_over = (act + rem) > orig_est
         prefix = "❌ " if actual_over else ("⚠️ " if combined_over else ("👀 " if pct >= 90 else ""))
-        return f"`{prefix}{orig_est:.1f}d estimated · {act:.1f}d actual · {rem:.1f}d remaining ({pct}%)`"
+        return f"**Estimate** (Grain: Days)\n`{prefix}{orig_est:.1f}d estimated · {act:.1f}d actual · {rem:.1f}d remaining ({pct}%)`"
 
     # -------------------------------------------------------------------------
     # Milestone bullets
@@ -503,49 +554,24 @@ class PlatformStatusReport:
                 )
             return md + "\n"
 
-        # Progress + time bars
+        # Readiness Buckets
+        buckets, issue_buckets = self._get_readiness_buckets(issues, ga_target)
+
+        # Progress / Readiness / Time bars
         md += "\n" + self._progress_bar(issues) + "\n"
+        md += "\n" + self._readiness_bar(buckets) + "\n"
         md += "\n" + self._time_bar(issues, pkey) + "\n"
 
-        # Release Alignment Audit
-        stalled_statuses = {"To Do", "Backlog", "Open"}
-        buckets = {"Unmapped": 0, "Lagging": 0, "Stalled": 0, "Aligned": 0, "Done": 0}
-        issue_buckets = {}
-        for i in issues:
-            k = i["key"]
-            if i.get("effective_category") == "Done":
-                buckets["Done"] += 1
-                issue_buckets[k] = "Done"
-                continue
-            
-            erd = i.get("effective_release_date")
-            js = i.get("jira_status")
-            has_version = bool(i.get("fields", {}).get("fixVersions"))
-            
-            if not has_version or not erd:
-                buckets["Unmapped"] += 1
-                issue_buckets[k] = "Unmapped"
-            elif ga_target and erd > ga_target:
-                buckets["Lagging"] += 1
-                issue_buckets[k] = "Lagging"
-            elif js in stalled_statuses:
-                buckets["Stalled"] += 1
-                issue_buckets[k] = "Stalled"
-            else:
-                buckets["Aligned"] += 1
-                issue_buckets[k] = "Aligned"
-
+        # Risk Escalation
         active_open_count = len(issues) - buckets["Done"]
-        risk_escalation = ""
         if active_open_count > 0:
             pct_bad = (buckets["Lagging"] + buckets["Stalled"]) / active_open_count
             if pct_bad > 0.15:
-                # Add a strong signal to the text
                 md += f"\n> **🛑 Off Track / ⚠️ At Risk Escalation**: {int(pct_bad*100)}% of open issues are Lagging or Stalled.\n"
                 
         if len(issues) > 0:
-            md += f"\n**Readiness**\n"
-            md += f"| 🎯 On Track | ⚠️ At Risk | 🛑 Off Track | 👀 Not Set |\n"
+            md += f"\n**Readiness Details**\n"
+            md += f"| 🎯 Aligned | ⚠️ Stalled | 🛑 Lagging | 👀 Unmapped |\n"
             md += f"|---|---|---|---|\n"
             md += f"| {buckets['Aligned']} | {buckets['Stalled']} | {buckets['Lagging']} | {buckets['Unmapped']} |\n\n"
 

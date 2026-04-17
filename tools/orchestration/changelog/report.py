@@ -8,7 +8,7 @@ from datetime import datetime
 
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
 CHANGELOG_PATH = os.path.join(ROOT_DIR, "changelog.md")
-SKILLS_DIR = os.path.join(ROOT_DIR, "skills")
+SKILLS_DIR = os.path.join(ROOT_DIR, "intelligence/core/skills")
 VAULT_CSS = os.path.join(SKILLS_DIR, "styles", "vault.css")
 DETAILED_REPORT_DIR = os.path.join(ROOT_DIR, "orchestration", "pipelines", "outputs", "dream", "reports")
 

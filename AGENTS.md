@@ -99,7 +99,7 @@ Find your role file and read it next:
 | Cowork | `agents/cowork.md` | Architect, session lead, handoff reviewer |
 | Local | `agents/local.md` | Reviewer, parser, intelligence refresher |
 | Code (Gemini / Claude Code) | `agents/code.md` | Implementer, code executor, file engineer |
-| Vault Auditor | `skills/intelligence/memory/SKILL.md` | Memory Auditor — guards mappings, indexes memory, and conducts audits |
+| Vault Auditor | `intelligence/core/skills/intelligence/memory/SKILL.md` | Memory Auditor — guards mappings, indexes memory, and conducts audits |
 | Dispatch | — | Proxy Messenger — mobile relay (no vault access) |
 
 ---
@@ -107,12 +107,12 @@ Find your role file and read it next:
 ## Global Tone & Schema Directive
 
 **All agents must assume the explicitly mapped persona of the domain they are operating within.**
-Before executing a procedure against `skills/[skill_name]/`, an agent MUST sequentially read:
+Before executing a procedure against `intelligence/core/skills/[skill_name]/`, an agent MUST sequentially read:
 1. `SKILL.md` (To learn *how* to execute the boundary).
 
 Agents MUST default to parsing `./character.md` for tone and voice. No generalized fluffy assistant speak is allowed inside the repo boundary.
 
-**Visual Authority**: All reports must adhere to the visual and nomenclature standards defined in `skills/styles/emoji-key.md`. Check this guide before selecting status icons or formatting markers.
+**Visual Authority**: All reports must adhere to the visual and nomenclature standards defined in `intelligence/core/skills/styles/emoji-key.md`. Check this guide before selecting status icons or formatting markers.
 
 
 ---
@@ -126,7 +126,7 @@ For autonomous (undirected) session starts:
 1. List `orchestration/handoff/` (root only — not `handoff/complete/`)
 2. Any `.md` file present is an open handoff — completed ones live in `orchestration/handoff/complete/`
 3. Surface them to human user immediately: "You have N outstanding handoff(s): [filenames]"
-4. If human user confirms, execute using the handoff protocol at `skills/collaboration/handoff/index.md`
+4. If human user confirms, execute using the handoff protocol at `intelligence/core/skills/collaboration/handoff/index.md`
 
 > **Note:** Open handoffs are living documents — they may be edited and iterated before execution. Only completed handoffs (in `handoff/complete/`) are immutable.
 
@@ -154,20 +154,21 @@ The user-cp is not currently connected on mobile. Dispatch cannot read vault fil
 
 ## Directory Boundaries
 
-> See `skills/orchestration/separation-policy.md` for the full policy.
+> See `intelligence/core/governance/policy.md` for the full policy.
 
-The vault is organized into five distinct layers. Writing data files, scripts, or run artifacts into `skills/` is a violation.
+The vault is organized into four distinct layers. Writing data files, scripts, or run artifacts into `intelligence/core/skills/` is a violation.
 
 | Layer | Lives in | Contents |
 | :--- | :--- | :--- |
-| Skill logic | `skills/` | `SKILL.md`, `character.md`, `index.md`, `changelog.md`, templates, report specs |
+| Skill logic | `intelligence/core/skills/` | `SKILL.md`, `character.md`, `index.md`, `changelog.md`, templates, report specs |
 | Execution tooling | `tools/` | Scripts, pipeline runners, automation harnesses |
 | Live data / WIP | `inputs/` | Raw API responses, processed JSON, `manifest.json` |
 | Outputs | `orchestration/pipelines/outputs/` | Final reports, HTML, archives |
-| Vault source of truth | `intelligence/` | Logic stubs, status rules, domain knowledge — gitignored optional |
+| Vault source of truth | `intelligence/` | Domain knowledge and strategic core |
+| Core logic / Skills | `intelligence/core/skills/` | Skill SOPs and procedural logic |
 | Reference source files | `intelligence/<domain>/<topic>/source/` | Raw input files (PDFs, TXTs, exports) tied to active work |
 
-**Hard constraint:** Any agent writing data files, scripts (`*.py`, `*.sh`), `manifest.json`, archived reports, or session logs into `skills/` is in violation of this policy. Flag the violation in a handoff rather than proceeding.
+**Hard constraint:** Any agent writing data files, scripts (`*.py`, `*.sh`), `manifest.json`, archived reports, or session logs into `intelligence/core/` is in violation of this policy. Flag the violation in a handoff rather than proceeding.
 
 ---
 
@@ -183,7 +184,7 @@ This vault exposes purpose-built MCP tools. Use them instead of raw file reads/w
 | `add_intelligence` / `edit_intelligence` | Structured record management for the Intelligence domain |
 | `get_task` / `list_tasks` | Manage drafting and active deliverables in the root `tasks/` directory |
 | `add_task` / `edit_task` | Create or update active task files — merging metadata automatically |
-| `get_skill` / `list_skills` | Read skill files by path relative to `skills/` |
+| `get_skill` / `list_skills` | Read skill files by path relative to `intelligence/core/skills/` |
 | `add_art` / `get_art` / `list_art` | Contribute to and explore the vault's gallery (poems, sketches, etc) |
 | `get_note` / `add_note` | Read and append to notes files by domain shorthand |
 | `get_changelog` | Read changelog entries by scope |
@@ -194,7 +195,7 @@ This vault exposes purpose-built MCP tools. Use them instead of raw file reads/w
 **Session pattern:**
 1. `get_agent_info(agent_id='your_name')` → Load `AGENTS.md` + your role file to confirm identity and rules.
 2. `get_changelog` scoped to the work area → understand recent context
-3. **Session Planning:** If writes are intended, create/update `notes.md` in the target `skills/` subdirectory using the template at `skills/product/report.md`.
+3. **Session Planning:** If writes are intended, create/update `notes.md` in the target `intelligence/core/skills/` subdirectory using the template at `intelligence/core/skills/product/report.md`.
 4. Do the work
 5. `add_changelog` at subdirectory level → then at root
 6. **Cleanup:** Delete the `notes.md` file after successful changelog entry.
@@ -220,28 +221,26 @@ ben-cp/
 │       ├── inputs/                  ← live run data (raw API responses, manifests)
 │       └── outputs/                 ← generated reports, audit logs, session artifacts
 ├── tasks/                           ← active deliverables and project WIP (FLAT)
-├── intelligence/                    ← vault source of truth (gitignored optional)
-│   ├── mapping/                     ← logic stubs, status rules, and data transformation
-│   ├── casebook/                    ← Casebook domain knowledge and schema reference
-│   └── product/projects/shareout/q2/source/  ← example: reference files for active work
-├── tools/                           ← execution scripts and pipeline runners
-└── skills/                          ← all skill SOPs and procedures
-    ├── orchestration/       ← execution engine (Coordination, Tracking, and Governance)
-    │   ├── notes/           ← human-in-the-loop intelligence (notes + cross-agent notes)
-    │   ├── handoff/         ← cross-agent handoff protocol and file format
-    │   ├── access/          ← permission & access auditing
-    │   └── changelog/       ← changelog auditing — accuracy, completeness, git cross-reference
-    ├── intelligence/        ← consolidated cognitive domain (Lifecycle: Memory → Analysis → Digest)
-    │   ├── memory/          ← central store of strategic & structural truth (Intake/Retrieval/Audit)
-    │   ├── analysis/        ← strategic synthesis and pragmatic foresight (Synthesize/Predict)
-    │   └── dream/           ← nightly report orchestrator — assembles all skill outputs
-    ├── product/             ← PM-facing skills under the Strategic PM mindset
-    │   ├── status-reports/  ← Platform Weekly Status Report pipeline (SOP only)
-    │   ├── okr-reporting/   ← Platform OKR measurement runbooks and KR SOPs
-    │   └── shared/          ← shared data sources across product sub-skills
-    ├── rovo/                ← Rovo issue management SOP
-    ├── shared/              ← cross-cutting vault governance docs (separation policy, etc.)
-    └── styles/              ← visual syntax authority — emoji glossary and nomenclature
+├── intelligence/                    ← vault source of truth (Unified Domain)
+│   ├── core/                        ← system logic and procedural core
+│   │   ├── skills/                  ← all skill SOPs and procedures
+│   │   │   ├── orchestration/       ← execution engine
+│   │   │   │   ├── notes/           
+│   │   │   │   ├── handoff/         
+│   │   │   │   ├── access/          
+│   │   │   │   └── changelog/       
+│   │   │   ├── intelligence/        ← consolidated cognitive domain
+│   │   │   │   ├── memory/          
+│   │   │   │   ├── analysis/        
+│   │   │   │   └── dream/           
+│   │   │   ├── product/             ← PM-facing skills
+│   │   │   ├── rovo/                
+│   │   │   ├── shared/              
+│   │   │   └── styles/              
+│   │   └── governance/              ← vault logic policies and agent rules
+│   ├── mapping/                     ← logic stubs and status rules
+│   ├── casebook/                    ← Casebook domain knowledge
+│   └── product/projects/            ← product roadmap and strategic data
 ```
 
 ---
@@ -275,7 +274,7 @@ ben-cp/
 
 ### notes.md Write Policy
 
-`notes.md` files are sparingly used collaborative scratchpads tracking human-oriented observations within the `skills/` layer.
+`notes.md` files are sparingly used collaborative scratchpads tracking human-oriented observations within the `intelligence/core/skills/` layer.
 
 1. **Observations Only**: Use `notes.md` strictly for observations about a skill—things we want to keep track of for later review (e.g., structural inconsistencies, project blockers). **DO NOT log operational steps, task completions, or meta-observations here.**
 2. **Never for Logic or Nuances**: If there is a nuance, rule, or logic change that every agent needs to know to be successful, edit it directly into the relevant `SKILL.md` or documentation file and **write a changelog**. Never leave critical system knowledge languishing in a note.
@@ -297,18 +296,18 @@ If a required tool call fails (e.g., `add_changelog`, `edit_file`, or path-based
 
 | Content type | Correct location |
 | :--- | :--- |
-| KR-specific measurement SOP | `skills/product/okr-reporting/[quarter]/[initiative]/[name].md` |
-| Master OKR runbook (evergreen) | `skills/product/okr-reporting/procedure.md` |
-| Quarterly KR reference | `skills/product/okr-reporting/[quarter]/index.md` |
+| KR-specific measurement SOP | `intelligence/core/skills/product/okr-reporting/[quarter]/[initiative]/[name].md` |
+| Master OKR runbook (evergreen) | `intelligence/core/skills/product/okr-reporting/procedure.md` |
+| Quarterly KR reference | `intelligence/core/skills/product/okr-reporting/[quarter]/index.md` |
 | Shared data source inventory | `intelligence/product/projects/data_sources.md` |
 | Reference source files (PDFs, TXTs) | `intelligence/<domain>/<topic>/source/` |
-| status/transform logic | `intelligence/mapping/` |
-| visual/emoji standards | `skills/styles/` |
-| memory store / audit | `skills/intelligence/memory/` |
-| synthesis / analysis | `skills/intelligence/analysis/` |
-| nightly orchestration | `skills/intelligence/dream/` |
-| changelog procedure | `skills/orchestration/changelog/` |
-| other skill sops | `skills/[skill-name]/` |
+| status/transform logic | `intelligence/mapping/` (Legacy) or `intelligence/core/mapping/` |
+| visual/emoji standards | `intelligence/core/skills/styles/` |
+| memory store / audit | `intelligence/core/skills/intelligence/memory/` |
+| synthesis / analysis | `intelligence/core/skills/intelligence/analysis/` |
+| nightly orchestration | `intelligence/core/skills/intelligence/dream/` |
+| changelog procedure | `intelligence/core/skills/orchestration/changelog/` |
+| other skill sops | `intelligence/core/skills/[skill-name]/` |
 | audit reports | `orchestration/pipelines/outputs/memory/audit/audit-report-[TARGET]-[YYYY-MM-DD].md` |
 | Access audit reports | `orchestration/pipelines/outputs/access/access-report-[YYYY-MM-DD].md` |
 
@@ -329,7 +328,7 @@ After creating or significantly modifying any file, update `index.md` in the sam
 
 **Changelogs are strictly for functional, structural, and logic changes to a skill or the vault.** 
 
-Every session that involves writing, editing, or structural modification must end with a changelog entry — use `add_changelog` or follow `skills/changelog/index.md`. Read-only or discovery sessions do not require a changelog unless a significant insight or blocker was identified.
+Every session that involves writing, editing, or structural modification must end with a changelog entry — use `add_changelog` or follow `intelligence/core/skills/orchestration/changelog/index.md`. Read-only or discovery sessions do not require a changelog unless a significant insight or blocker was identified.
 
 **Handoff Exemption:** If a session's primary output is a newly created READY handoff (`handoff/[name].md`) and no other significant SOP or structural changes occurred, the agent SHOULD skip the detailed subdirectory changelog. In this case, the root `changelog.md` entry should be a concise one-line pointer to the handoff.
 

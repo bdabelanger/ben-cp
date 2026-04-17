@@ -43,6 +43,7 @@
   --todo:      #e2e2e8;
   --warn:      #f59e0b;
   --danger:    #ef4444;
+  --unmapped:  #9ca3af;
 
   /* flag severity */
   --p1-bg:     #fef2f2;
@@ -263,6 +264,16 @@ tr:last-child td { border-bottom: none; }
 .prog-done     { background: var(--done); }
 .prog-progress { background: var(--progress); }
 .prog-todo     { background: var(--todo); }
+
+.readiness-wrap {
+  display: flex; height: 10px; border-radius: 6px;
+  overflow: hidden; background: var(--todo); margin: 0.5rem 0; gap: 1px;
+}
+.readiness-done     { background: var(--done); }
+.readiness-aligned  { background: var(--progress); }
+.readiness-stalled  { background: var(--warn); }
+.readiness-lagging  { background: var(--danger); }
+.readiness-unmapped { background: var(--unmapped); }
 
 .time-bar-wrap {
   display: flex; height: 10px; border-radius: 6px;

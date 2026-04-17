@@ -4,7 +4,7 @@ import os
 import glob
 from datetime import datetime
 
-SKILLS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", "skills"))
+SKILLS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", "intelligence", "core", "skills"))
 
 def main():
     violations = []
@@ -29,7 +29,7 @@ def main():
         "status": status,
         "summary": summary,
         "findings": [
-            "Scanning skills/ directory for prohibited file types (Scripts, Manifests, Dynamic Data)."
+            "Scanning intelligence/core/skills/ directory for prohibited file types (Scripts, Manifests, Dynamic Data)."
         ],
         "flags": violations
     }

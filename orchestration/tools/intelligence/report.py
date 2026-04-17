@@ -23,7 +23,7 @@ import argparse
 import subprocess
 from datetime import datetime
 
-SKILLS_DIR   = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "intelligence", "core", "skills"))
+SKILLS_DIR   = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", "intelligence", "core", "skills"))
 REPO_ROOT    = os.path.abspath(os.path.join(SKILLS_DIR, "..", "..", ".."))
 VAULT_ROOT   = os.path.abspath(os.path.join(REPO_ROOT, "..", ".."))
 OUTPUTS_DIR  = os.path.join(REPO_ROOT, "orchestration", "pipelines", "outputs", "dream")

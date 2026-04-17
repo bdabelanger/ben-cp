@@ -1,0 +1,1227 @@
+# PRD: Data import - Clearer IDs
+
+<ac:structured-macro ac:local-id="d2d0caa5-c27b-48c8-84dd-1fa4dbbc31e2" ac:macro-id="d858d8e03b5e1daef385609bd282d5dd" ac:name="details" ac:schema-version="1" data-layout="default">
+ <ac:rich-text-body>
+  <table ac:local-id="59a833c1-eacc-423f-a17a-f3c526d4336d" data-layout="default">
+   <colgroup>
+    <col style="width: 155.0px;"/>
+    <col style="width: 491.0px;"/>
+   </colgroup>
+   <tbody>
+    <tr>
+     <th>
+      <p>
+       <strong>
+        Status
+       </strong>
+      </p>
+     </th>
+     <td>
+      <p>
+       <ac:structured-macro ac:macro-id="4b251e99-e973-486a-a431-5dc36410f147" ac:name="status" ac:schema-version="1">
+        <ac:parameter ac:name="title">
+         To do
+        </ac:parameter>
+       </ac:structured-macro>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      <p>
+       <strong>
+        Epic
+       </strong>
+      </p>
+     </th>
+     <td>
+      <p>
+       <ac:structured-macro ac:macro-id="ae6e7715-6a9d-4230-b532-fbfa28031ffe" ac:name="jira" ac:schema-version="1">
+        <ac:parameter ac:name="key">
+         CBP-498
+        </ac:parameter>
+        <ac:parameter ac:name="serverId">
+         34b2023d-ebcf-320b-87a4-4db8f4ff7bca
+        </ac:parameter>
+        <ac:parameter ac:name="server">
+         System Jira
+        </ac:parameter>
+       </ac:structured-macro>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      <p>
+       <strong>
+        Product Manager
+       </strong>
+      </p>
+     </th>
+     <td>
+      <p>
+       <ac:link>
+        <ri:user ri:account-id="629dfdc29b728c006a928e90" ri:local-id="bd4fb320-8c5a-430e-939f-a634a8134fd9">
+        </ri:user>
+       </ac:link>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      <p>
+       <strong>
+        Designer
+       </strong>
+      </p>
+     </th>
+     <td>
+      <p>
+       <ac:link>
+        <ri:user ri:account-id="5bc4ee57c905d802a7aa0c9b" ri:local-id="3278253a-f234-4f2a-a478-8f0ec99f8663">
+        </ri:user>
+       </ac:link>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      <p>
+       <strong>
+        Engineers
+       </strong>
+      </p>
+     </th>
+     <td>
+      <p>
+       <span style="color: rgb(151,160,175);">
+        @ Engineers
+       </span>
+      </p>
+     </td>
+    </tr>
+    <tr>
+     <th>
+      <p>
+       <strong>
+        QA Engineers
+       </strong>
+      </p>
+     </th>
+     <td>
+      <p>
+       <span style="color: rgb(151,160,175);">
+        @ QA Engineers
+       </span>
+      </p>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </ac:rich-text-body>
+</ac:structured-macro>
+<h1>
+ Problem Definition
+</h1>
+<h2>
+ Context
+</h2>
+<p>
+ During customer onboarding, customers need a mechanism to
+ <strong>
+  import legacy data
+ </strong>
+ into the Casebook platform.
+</p>
+<p>
+ The
+ <strong>
+  Admin → Data
+ </strong>
+ import tool allows both administrators and the Casebook CX team to import data using import templates that can be populated in Google Sheets or Microsoft Excel and uploaded into Casebook.
+</p>
+<p>
+ <strong>
+  Currently, the tool supports importing People, Cases, Providers, and Service offerings
+ </strong>
+ . It does not support Intake Reports, Parent Organizations, or Provider Applications. Other resources such as Forms, Notes, Service Enrollments, Attachments, and Tasks also cannot be imported.
+</p>
+<table ac:local-id="a4e63c1f-d146-40fc-a721-11575f412d81" data-layout="center" data-table-width="1257">
+ <colgroup>
+  <col style="width: 388.0px;"/>
+  <col style="width: 869.0px;"/>
+ </colgroup>
+ <tbody>
+  <tr>
+   <td data-highlight-colour="#998dd9">
+    <p>
+     <strong>
+      <span style="color: rgb(255,255,255);">
+       Persona(s) Engaged
+      </span>
+     </strong>
+    </p>
+   </td>
+   <td data-highlight-colour="#998dd9">
+    <p>
+     <strong>
+      <span style="color: rgb(255,255,255);">
+       Job(s) to be Done
+      </span>
+     </strong>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td data-highlight-colour="#ffffff">
+    <ul>
+     <li>
+      <p>
+       <em>
+        <span style="color: rgb(7,71,166);">
+         Persona = Frontline-worker, Supervisor
+        </span>
+       </em>
+      </p>
+     </li>
+     <li>
+      <p>
+       <em>
+        <span style="color: rgb(7,71,166);">
+         Segment: Police Social Services
+        </span>
+       </em>
+      </p>
+     </li>
+    </ul>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <ul>
+     <li>
+      <p>
+       <em>
+        <span style="color: rgb(7,71,166);">
+         Take notes on customers calling into a hotline lodging a complaint about a domestic violence situation. Part of this is relating complaints to others previously filed.
+        </span>
+       </em>
+      </p>
+     </li>
+    </ul>
+   </td>
+  </tr>
+ </tbody>
+</table>
+<h2>
+ Current state
+</h2>
+<p>
+ Bulk imports are powered by a shared Node application (
+ <a href="https://github.com/Casecommons/cbp-bulks-api-node">
+  cbp-bulks-api-node
+ </a>
+ ) with
+ <strong>
+  configurations defined for five Casebook services: Cases, People, Providers, Services, and Admin
+ </strong>
+ . Additional configurations exist for Attachments and Tasks, but these were never exposed in the UI and may now be stale or out of date.
+</p>
+<p>
+ <strong>
+  Each service’s JSON configuration defines the entities (tables) and enums that can be imported
+ </strong>
+ . These definitions generate the import template, where each entity is represented as a tab and each field as a column.
+</p>
+<ul>
+ <li>
+  <p>
+   <strong>
+    Dynamic fields
+   </strong>
+   : Supported in People and Providers services only. At runtime, dynamic fields are queried and added as columns.
+  </p>
+ </li>
+ <li>
+  <p>
+   <strong>
+    Enums
+   </strong>
+   : Both system-default and custom (“dynamic”) enums are included. Options are stored in a hidden reference sheet in the import template, shown to users as dropdowns in the import sheet.
+  </p>
+ </li>
+</ul>
+<p>
+ Entity relationships can be established using foreign key columns within each entity’s tab.
+</p>
+<p>
+ Imported data is saved directly to its respective service through a
+ <ac:inline-comment-marker ac:ref="3f51680a-6ea1-46c1-b5ac-40a303dd929b">
+  PATCH
+ </ac:inline-comment-marker>
+ request to the service’s /operations endpoint (e.g.,
+ <code>
+  /services/operations
+ </code>
+ ). Validation is based on the configuration and must match the backend; misalignment can result in errors.
+</p>
+<p>
+ Error handling varies by service. Some failures abort the process on the first error, while others allow partial success with row-level error reporting.
+</p>
+<h2>
+ Problems &amp; Impact
+</h2>
+<p>
+ Vetted feature requests which will be addressed fully or partially by this project, ordered by number of companies associated with the request
+</p>
+<ol start="1">
+ <li>
+  <p>
+   <a href="https://app.hubspot.com/contacts/6899772/record/0-5/3056637832?_t=1722541959559">
+    Data Import for Mass Update - Improvement
+   </a>
+   (7 companies, 10 deals)
+  </p>
+ </li>
+ <li>
+  <p>
+   <a href="https://app.hubspot.com/contacts/6899772/record/0-5/1554792849">
+    Bulk import notes and Intakes
+   </a>
+   (5 companies, 3 deals)
+  </p>
+ </li>
+ <li>
+  <p>
+   <a href="https://app.hubspot.com/contacts/6899772/record/0-5/28544962859">
+    Feature Request: One "Step 2: Verify your data" step that includes ALL possible errors that need to be fixed in the download file.
+   </a>
+   (1 company)
+  </p>
+ </li>
+ <li>
+  <p>
+   <a href="https://app.hubspot.com/contacts/6899772/record/0-5/2982582274">
+    Display date of case enrollment on bulk created cases
+   </a>
+   (1 company)
+  </p>
+ </li>
+ <li>
+  <p>
+   <a href="https://app.hubspot.com/contacts/6899772/record/0-5/15931498271">
+    Provider data import for parent organizations
+   </a>
+   (1 company)
+  </p>
+ </li>
+ <li>
+  <p>
+   <a href="https://app.hubspot.com/contacts/6899772/record/0-5/18813187338">
+    Case assignee for data import
+   </a>
+   (1 company)
+  </p>
+ </li>
+ <li>
+  <p>
+   <a href="https://app.hubspot.com/contacts/6899772/record/0-5/299619077">
+    Ability to wipe imported data
+   </a>
+   (1 company)
+  </p>
+ </li>
+ <li>
+  <p>
+   <a href="https://app.hubspot.com/contacts/6899772/record/0-5/2261581901">
+    Tenant Data Export
+   </a>
+   (1 company)
+  </p>
+ </li>
+</ol>
+<p>
+ Bugs
+</p>
+<ul>
+ <li>
+  <p>
+   <ac:structured-macro ac:macro-id="fb9388dc-b530-4efa-be26-a6a9f7c4348a" ac:name="jira" ac:schema-version="1">
+    <ac:parameter ac:name="key">
+     CBP-1532
+    </ac:parameter>
+    <ac:parameter ac:name="serverId">
+     34b2023d-ebcf-320b-87a4-4db8f4ff7bca
+    </ac:parameter>
+    <ac:parameter ac:name="server">
+     System Jira
+    </ac:parameter>
+   </ac:structured-macro>
+  </p>
+ </li>
+</ul>
+<h3>
+ Customer Problem Statement(s)
+</h3>
+<ol start="1">
+ <li>
+  <p>
+   <strong>
+    Bulk import tools are difficult to use for non-technical users
+   </strong>
+   <br/>
+   The bulk import tool is prone to user error, increasing the risk of frustrating failures that require complex manual intervention. This reality can drive Casebook to recommend expensive custom data imports.
+  </p>
+ </li>
+ <li>
+  <p>
+   <strong>
+    <ac:inline-comment-marker ac:ref="5a343057-5069-41bc-8eb4-8376a5cd9370">
+     Self-import instructions are unclear
+    </ac:inline-comment-marker>
+   </strong>
+   <br/>
+   Customers struggle to successfully self-import data due to fragmented import templates, unclear instructions, and complex dependency requirements. Users often have difficulty identifying dependencies between entities, in part because Casebook’s microservice architecture does not align with their conceptual view of each record type. Foreign key relationships require repetitive multi-step uploads, and workarounds like external UUID generators conflict with Casebook’s conventions.
+  </p>
+ </li>
+ <li>
+  <p>
+   <strong>
+    Pre-upload validation does not prevent frequent errors
+   </strong>
+   <br/>
+   Users frequently encounter errors during bulk import. While a validation step is available before upload, it is optional and does not always mirror backend validation rules. Configurations that are incomplete or misaligned with the backend can cause failures even after successful validation, forcing users to manually resolve issues and retry imports.
+  </p>
+ </li>
+ <li>
+  <p>
+   <strong>
+    Source data may require normalization to map into Casebook
+   </strong>
+   <br/>
+   Importing legacy data can result in errors or inconsistencies because source systems are not aligned with Casebook’s data model. Source systems may use structures or relationships that differ from Casebook, requiring customers to normalize their data to Casebook’s service and entity model. Misalignments can lead to orphaned records, incomplete records, or duplicate entries during import.
+  </p>
+ </li>
+ <li>
+  <p>
+   <strong>
+    Key entities like Notes cannot be imported
+   </strong>
+   <br/>
+   Customers may need to import data like Notes, Attachments, and Intake reports but cannot since these entities are not defined in the import configuration or integrated with Casebook Admin.
+  </p>
+ </li>
+</ol>
+<h1>
+ Solution Concepts
+</h1>
+<h2>
+ Overview
+</h2>
+<ac:structured-macro ac:macro-id="6dd1fccd-c69c-4428-9d45-8a82ea62ee26" ac:name="panel" ac:schema-version="1">
+ <ac:parameter ac:name="panelIcon">
+  :bulb:
+ </ac:parameter>
+ <ac:parameter ac:name="panelIconId">
+  1f4a1
+ </ac:parameter>
+ <ac:parameter ac:name="panelIconText">
+  💡
+ </ac:parameter>
+ <ac:parameter ac:name="bgColor">
+  #E3FCEF
+ </ac:parameter>
+ <ac:rich-text-body>
+  <p>
+   <strong>
+    Our solution should make it easier for customers to onboard to Casebook with their historical data.
+   </strong>
+  </p>
+ </ac:rich-text-body>
+</ac:structured-macro>
+<ul>
+ <li>
+  <p>
+   Potential approaches include
+   <strong>
+    improving the usability of existing bulk import tools
+   </strong>
+   with clearer instructions, enhanced validation, and better error handling to reduce mistakes and manual effort.
+  </p>
+ </li>
+ <li>
+  <p>
+   Solutions could also
+   <strong>
+    expand support for additional entities, such as Notes, Attachments, or Intake Reports
+   </strong>
+   , increasing the range of data that can be imported.
+  </p>
+ </li>
+ <li>
+  <p>
+   To ease the technical expertise required, solutions could
+   <strong>
+    provide tools or guidance for mapping and porting data from specific competitor systems
+   </strong>
+   , such as Apricot or CharityTracker.
+  </p>
+ </li>
+</ul>
+<h2>
+ <strong>
+  Hypothesis(es) &amp; Outcomes
+ </strong>
+</h2>
+<h3>
+ Hypotheses
+</h3>
+<p>
+ <strong>
+  Hypothesis 1: Improving usability and reliability will reduce errors and simplify the import process
+ </strong>
+</p>
+<ol start="1">
+ <li>
+  <p>
+   Display accurate labels and instructions in downloaded import templates.
+  </p>
+ </li>
+ <li>
+  <p>
+   Display timely and actionable error messages from validation and upload steps.
+  </p>
+ </li>
+</ol>
+<p>
+ <strong>
+  Hypothesis 2: Increasing capacity and coverage will expand adoption and reduce custom imports
+ </strong>
+</p>
+<ol start="1">
+ <li>
+  <p>
+   Support uploading more than 1,000 rows at a time.
+  </p>
+ </li>
+ <li>
+  <p>
+   Consider supporting bulk import of additional data types, starting with Notes and potentially other high-demand entities (Attachments, Intake Reports).
+  </p>
+ </li>
+</ol>
+<p>
+ <strong>
+  Hypothesis 3: Simplifying data structure will reduce manual effort and save time
+ </strong>
+</p>
+<ol start="1">
+ <li>
+  <p>
+   Consider flattening files to make ID management easier, reducing the need for data normalization expertise or repetitive copy/paste across tabs.
+  </p>
+ </li>
+ <li>
+  <p>
+   Consider segmenting the import process into multiple sheets with guided UX, rather than relying on a single mega workbook.
+  </p>
+ </li>
+</ol>
+<p>
+ <strong>
+  Future concepts
+ </strong>
+</p>
+<ul>
+ <li>
+  <p>
+   <a href="https://www.figma.com/design/Q3FuCNyW4JlKysI0yD1a2G/Bulk-Import-V2---Option-B">
+    Datagrid in-line editing with error handling
+   </a>
+  </p>
+ </li>
+ <li>
+  <p>
+   <a href="https://www.figma.com/design/eOVLHy0G6AV9b8HOOXTOW6/Bulk-import---Improvements?node-id=1-47&amp;t=Wny2WvTGhgG2ZZCf-0">
+    Visual wizard with error handling
+   </a>
+  </p>
+ </li>
+</ul>
+<h3>
+ Outcomes
+</h3>
+<table ac:local-id="9ceafdfb-881a-4a62-8848-f67843ea7c51" data-layout="center" data-table-width="1712">
+ <colgroup>
+  <col style="width: 428.0px;"/>
+  <col style="width: 429.0px;"/>
+  <col style="width: 429.0px;"/>
+  <col style="width: 425.0px;"/>
+ </colgroup>
+ <tbody>
+  <tr>
+   <td data-highlight-colour="#998dd9">
+    <p>
+     <strong>
+      <span style="color: rgb(255,255,255);">
+       Company OKR
+      </span>
+     </strong>
+    </p>
+   </td>
+   <td data-highlight-colour="#998dd9">
+    <p>
+     <strong>
+      <span style="color: rgb(255,255,255);">
+       Yearly OKR
+      </span>
+     </strong>
+    </p>
+   </td>
+   <td data-highlight-colour="#998dd9">
+    <p>
+     <strong>
+      <span style="color: rgb(255,255,255);">
+       Quarterly OKR
+      </span>
+     </strong>
+    </p>
+   </td>
+   <td data-highlight-colour="#998dd9">
+    <p>
+     <strong>
+      <span style="color: rgb(255,255,255);">
+       Linkage Logic
+      </span>
+     </strong>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td data-highlight-colour="#ffffff">
+    <p>
+     <em>
+      <span style="color: rgb(7,71,166);">
+       What top-level company OKR does this work BEST align with?
+      </span>
+     </em>
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+     <em>
+      <span style="color: rgb(7,71,166);">
+       What Prod Dev yearly OKR does this work BEST align with?
+      </span>
+     </em>
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+     <em>
+      <span style="color: rgb(7,71,166);">
+       Which Quarterly OKR?
+      </span>
+     </em>
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+     <em>
+      <span style="color: rgb(7,71,166);">
+       Most importantly, describe here how you see this project moving the needle on the OKRs described to the left of this column.
+      </span>
+     </em>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td data-highlight-colour="#ffffff">
+    <p>
+     Objective:
+    </p>
+    <p>
+     Key Result:
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+     Objective:
+    </p>
+    <p>
+     Key Result:
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+     Objective:
+    </p>
+    <p>
+     Key Result:
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+    </p>
+   </td>
+  </tr>
+ </tbody>
+</table>
+<h2>
+ <strong>
+  Customer Value Proposition
+ </strong>
+</h2>
+<p>
+ By improving the bulk import experience,
+ <strong>
+  customers will experience fewer import failures and spend less time troubleshooting
+ </strong>
+ .
+</p>
+<p>
+ Workflows will be streamlined,
+ <strong>
+  requiring less technical knowledge
+ </strong>
+ , while higher import success rates will
+ <strong>
+  enable faster onboarding and reduce reliance on custom data imports
+ </strong>
+ .
+</p>
+<p>
+ Additionally, customers will gain the ability to
+ <strong>
+  import a broader range of historical data into Casebook
+ </strong>
+ , further supporting a smooth transition to the platform.
+</p>
+<h2>
+ <strong>
+  Scope &amp; Preliminary Estimate
+ </strong>
+</h2>
+<table ac:local-id="11bd946a-3bfd-4aca-b2e5-bdac60a8155c" data-layout="center" data-table-width="1617">
+ <colgroup>
+  <col style="width: 1155.0px;"/>
+  <col style="width: 172.0px;"/>
+  <col style="width: 138.0px;"/>
+  <col style="width: 152.0px;"/>
+ </colgroup>
+ <tbody>
+  <tr>
+   <td data-highlight-colour="#998dd9">
+    <p>
+     <strong>
+      <span style="color: rgb(255,255,255);">
+       What’s In?
+      </span>
+     </strong>
+    </p>
+   </td>
+   <td data-highlight-colour="#998dd9">
+    <p>
+     <strong>
+      <span style="color: rgb(255,255,255);">
+       Design Estimate
+      </span>
+     </strong>
+    </p>
+   </td>
+   <td data-highlight-colour="#998dd9">
+    <p>
+     <strong>
+      <span style="color: rgb(255,255,255);">
+       Dev Estimate
+      </span>
+     </strong>
+    </p>
+   </td>
+   <td data-highlight-colour="#998dd9">
+    <p>
+     <strong>
+      <span style="color: rgb(255,255,255);">
+       QA Estimate
+      </span>
+     </strong>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td data-highlight-colour="#ffffff">
+    <p>
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+    </p>
+   </td>
+  </tr>
+ </tbody>
+</table>
+<table ac:local-id="6e83117d-0389-465e-ba4c-6810859d43df" data-layout="center" data-table-width="1448">
+ <colgroup>
+  <col style="width: 789.0px;"/>
+  <col style="width: 657.0px;"/>
+ </colgroup>
+ <tbody>
+  <tr>
+   <td data-highlight-colour="#998dd9">
+    <p>
+     <strong>
+      <span style="color: rgb(255,255,255);">
+       What’s Out?
+      </span>
+     </strong>
+    </p>
+   </td>
+   <td data-highlight-colour="#998dd9">
+    <p>
+     <strong>
+      <span style="color: rgb(255,255,255);">
+       Why?
+      </span>
+     </strong>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td data-highlight-colour="#ffffff">
+    <p>
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+    </p>
+   </td>
+  </tr>
+ </tbody>
+</table>
+<h2>
+ <strong>
+  Dependencies
+ </strong>
+</h2>
+<table ac:local-id="02a8686e-92ad-4a93-93fd-e4928a1583da" data-layout="center" data-table-width="1231">
+ <colgroup>
+  <col style="width: 485.0px;"/>
+  <col style="width: 745.0px;"/>
+ </colgroup>
+ <tbody>
+  <tr>
+   <td data-highlight-colour="#998dd9">
+    <p>
+     <strong>
+      <span style="color: rgb(255,255,255);">
+       Team
+      </span>
+     </strong>
+    </p>
+   </td>
+   <td data-highlight-colour="#998dd9">
+    <p>
+     <strong>
+      <span style="color: rgb(255,255,255);">
+       What’s Need From Them?
+      </span>
+     </strong>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td data-highlight-colour="#ffffff">
+    <p>
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+    </p>
+   </td>
+  </tr>
+ </tbody>
+</table>
+<h2>
+ <strong>
+  Risk(s) &amp; Mitigation Plan(s)
+ </strong>
+</h2>
+<table ac:local-id="a1320f68-eeb1-47db-9a82-d594e555552f" data-layout="align-start" data-table-width="1231">
+ <colgroup>
+  <col style="width: 485.0px;"/>
+  <col style="width: 745.0px;"/>
+ </colgroup>
+ <tbody>
+  <tr>
+   <td data-highlight-colour="#998dd9">
+    <p>
+     <strong>
+      <span style="color: rgb(255,255,255);">
+       Risk
+      </span>
+     </strong>
+    </p>
+   </td>
+   <td data-highlight-colour="#998dd9">
+    <p>
+     <strong>
+      <span style="color: rgb(255,255,255);">
+       Mitigation / Contingency Plan
+      </span>
+     </strong>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td data-highlight-colour="#ffffff">
+    <p>
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+    </p>
+   </td>
+  </tr>
+ </tbody>
+</table>
+<h1>
+ Market Analysis
+</h1>
+<h2>
+ Competitive Intelligence
+</h2>
+<h2>
+ Cost vs. ROI Analysis
+</h2>
+<p>
+</p>
+<h1>
+ Requirements
+</h1>
+<h2>
+ User Stories/Acceptance Criteria
+</h2>
+<ul>
+ <li>
+  <p>
+   <ac:structured-macro ac:macro-id="2563c5f9-cce3-4143-b096-dc67e8406785" ac:name="jira" ac:schema-version="1">
+    <ac:parameter ac:name="key">
+     CBP-499
+    </ac:parameter>
+    <ac:parameter ac:name="serverId">
+     34b2023d-ebcf-320b-87a4-4db8f4ff7bca
+    </ac:parameter>
+    <ac:parameter ac:name="server">
+     System Jira
+    </ac:parameter>
+   </ac:structured-macro>
+  </p>
+ </li>
+ <li>
+  <p>
+   <ac:structured-macro ac:macro-id="27365358-3f16-433d-85a1-a5e76d1cbfd4" ac:name="jira" ac:schema-version="1">
+    <ac:parameter ac:name="key">
+     CBP-500
+    </ac:parameter>
+    <ac:parameter ac:name="serverId">
+     34b2023d-ebcf-320b-87a4-4db8f4ff7bca
+    </ac:parameter>
+    <ac:parameter ac:name="server">
+     System Jira
+    </ac:parameter>
+   </ac:structured-macro>
+  </p>
+ </li>
+</ul>
+<h2>
+ Non-Functional Requirements
+</h2>
+<table ac:local-id="a0ba219a-7c9a-48d9-9111-918ea456fea6" data-layout="align-start" data-table-width="1800">
+ <colgroup>
+  <col style="width: 81.0px;"/>
+  <col style="width: 291.0px;"/>
+  <col style="width: 1090.0px;"/>
+  <col style="width: 336.0px;"/>
+ </colgroup>
+ <tbody>
+  <tr>
+   <td data-highlight-colour="#998dd9">
+    <p>
+     <strong>
+      <span style="color: rgb(255,255,255);">
+       ID
+      </span>
+     </strong>
+    </p>
+   </td>
+   <td data-highlight-colour="#998dd9">
+    <p>
+     <strong>
+      <span style="color: rgb(255,255,255);">
+       Short Title
+      </span>
+     </strong>
+    </p>
+   </td>
+   <td data-highlight-colour="#998dd9">
+    <p>
+     <strong>
+      <span style="color: rgb(255,255,255);">
+       Requirement
+      </span>
+     </strong>
+    </p>
+   </td>
+   <td data-highlight-colour="#998dd9">
+    <p>
+     <strong>
+      <span style="color: rgb(255,255,255);">
+       JIRA Link
+      </span>
+     </strong>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td data-highlight-colour="#ffffff">
+    <p>
+     NF.1
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+     Events - reporting
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+     The following events should be recorded and logged for reporting purposes:
+    </p>
+    <ul>
+     <li>
+      <p>
+      </p>
+     </li>
+    </ul>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td data-highlight-colour="#ffffff">
+    <p>
+     NF.2
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+     Events - audit log
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+     The following events should be recorded so they appear in audit log reporting:
+    </p>
+    <ul>
+     <li>
+      <p>
+      </p>
+     </li>
+    </ul>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td data-highlight-colour="#ffffff">
+    <p>
+     NF.3
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+     Events - documentation
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+     Any updates to events should be documented in our
+     <ac:link>
+      <ri:page ri:content-title="Usage Analytics" ri:space-key="CBP" ri:version-at-save="62">
+      </ri:page>
+      <ac:link-body>
+       Confluence repo
+      </ac:link-body>
+     </ac:link>
+     illustrating our list/explanation of supported events.
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td data-highlight-colour="#ffffff">
+    <p>
+     NF.4
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+     Performance
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+     <em>
+      &lt;Include any requirements around max amount of data to be retrieved in a given load/export request/etc., max length of time it should take to query data, retrieve it, and load it back to the client, or any other performance standards we should consider&gt;
+     </em>
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td data-highlight-colour="#ffffff">
+    <p>
+     NF.5
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+     Migration Script Runtime
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+     Need a requirement around max length run-time for any work that requires migration scripts to run.
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+    </p>
+   </td>
+  </tr>
+ </tbody>
+</table>
+<h2>
+ Special UI Requirements
+</h2>
+<table ac:local-id="13c35146-8dba-4d54-afb2-28b72b686391" data-layout="align-start" data-table-width="1800">
+ <colgroup>
+  <col style="width: 49.0px;"/>
+  <col style="width: 321.0px;"/>
+  <col style="width: 525.0px;"/>
+  <col style="width: 566.0px;"/>
+  <col style="width: 336.0px;"/>
+ </colgroup>
+ <tbody>
+  <tr>
+   <td data-highlight-colour="#998dd9">
+    <p>
+     <strong>
+      <span style="color: rgb(255,255,255);">
+       ID
+      </span>
+     </strong>
+    </p>
+   </td>
+   <td data-highlight-colour="#998dd9">
+    <p>
+     <strong>
+      <span style="color: rgb(255,255,255);">
+       Short Title
+      </span>
+     </strong>
+    </p>
+   </td>
+   <td data-highlight-colour="#998dd9">
+    <p>
+     <strong>
+      <span style="color: rgb(255,255,255);">
+       Condition
+      </span>
+     </strong>
+    </p>
+   </td>
+   <td data-highlight-colour="#998dd9">
+    <p>
+     <strong>
+      <span style="color: rgb(255,255,255);">
+       UI Details - Text Message, Banners, etc.
+      </span>
+     </strong>
+    </p>
+   </td>
+   <td data-highlight-colour="#998dd9">
+    <p>
+     <strong>
+      <span style="color: rgb(255,255,255);">
+       JIRA Link
+      </span>
+     </strong>
+    </p>
+   </td>
+  </tr>
+  <tr>
+   <td data-highlight-colour="#ffffff">
+    <p>
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+    </p>
+   </td>
+   <td data-highlight-colour="#ffffff">
+    <p>
+    </p>
+   </td>
+  </tr>
+ </tbody>
+</table>
+<h1>
+ Design
+</h1>
+<h2>
+ User Research &amp; Usability Test Insights
+</h2>
+<p>
+ <em>
+  <span style="color: rgb(7,71,166);">
+   Provide any insights from user research or usability tests.
+  </span>
+ </em>
+</p>
+<h2>
+ User Flow Diagrams &amp; Mock-ups
+</h2>
+<p>
+ <em>
+  <span style="color: rgb(7,71,166);">
+   Provide links to FIGMA files containing user flow diagrams and HiFi mock-ups.
+  </span>
+ </em>
+</p>
+<p>
+</p>

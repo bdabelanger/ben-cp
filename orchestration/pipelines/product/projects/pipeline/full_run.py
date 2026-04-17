@@ -135,6 +135,21 @@ def main():
         f.write(render_html(report_md))
 
     print(f"✅ Report generated: {html_path}")
+
+    # Step 5: Intelligence Harvest (confluence fetch)
+    print("\n🧠 Running Intelligence Harvest (Confluence Fetch)...")
+    subprocess.run(["python3", os.path.join(script_dir, "step_5_intelligence_ingest.py")])
+
+    # Step 6: Vault Normalization
+    print("🏗️  Running Vault Normalization...")
+    subprocess.run(["python3", os.path.join(script_dir, "step_6_vault_normalization.py")])
+
+    # Step 7: Archive to Intelligence (Gemma-accessible)
+    intel_report_path = os.path.join(VAULT_ROOT, "intelligence/product/reports/latest-platform-status.md")
+    print(f"📁 Archiving report for agent access: {intel_report_path}")
+    shutil.copy2(OUTPUT_PATH, intel_report_path)
+
+
     if open_report:
         webbrowser.open(f"file://{os.path.abspath(html_path)}")
     print(f"\n--- PREVIEW ---\n")

@@ -37,7 +37,7 @@ To prevent architectural drift and maintain clarity between agentic processes an
 | Term | Definition | Primary Location |
 | :--- | :--- | :--- |
 | **Steps** | Executable, agent-led actions defined within an implementation plan or handoff. | `orchestration/handoff/` |
-| **Tasks** | Strategic, human-led deliverables or project work items. Agents do not modify these without explicit direction. | `tasks/` |
+| **Tasks** | Strategic, human-led deliverables or project work items. Agents do not modify these without explicit direction. | `orchestration/tasks/` |
 
 ### The Token Economy Rule
 
@@ -161,8 +161,8 @@ The vault is organized into four distinct layers. Writing data files, scripts, o
 | Layer | Lives in | Contents |
 | :--- | :--- | :--- |
 | Skill logic | `intelligence/core/skills/` | `SKILL.md`, `character.md`, `index.md`, `changelog.md`, templates, report specs |
-| Execution tooling | `tools/` | Scripts, pipeline runners, automation harnesses |
-| Live data / WIP | `inputs/` | Raw API responses, processed JSON, `manifest.json` |
+| Execution tooling | `orchestration/tools/` | Scripts, pipeline runners, automation harnesses |
+| Live data / WIP | `orchestration/pipelines/inputs/` | Raw API responses, processed JSON, `manifest.json` |
 | Outputs | `orchestration/pipelines/outputs/` | Final reports, HTML, archives |
 | Vault source of truth | `intelligence/` | Domain knowledge and strategic core |
 | Core logic / Skills | `intelligence/core/skills/` | Skill SOPs and procedural logic |
@@ -220,7 +220,8 @@ ben-cp/
 │   └── pipelines/                   ← consolidated pipeline domain
 │       ├── inputs/                  ← live run data (raw API responses, manifests)
 │       └── outputs/                 ← generated reports, audit logs, session artifacts
-├── tasks/                           ← active deliverables and project WIP (FLAT)
+│   └── tools/                       ← Execution tooling, runners, and logic engines
+├── tasks/                           ← (Symlink to orchestration/tasks/)
 └── intelligence/                    ← vault source of truth (Unified Domain)
     ├── core/                        ← system logic and procedural core
     │   ├── mapping/                 ← logic stubs and status rules
@@ -359,7 +360,7 @@ To reduce cognitive load and vault clutter, P1 and P2 workflows follow a **Unifi
 | **P4 (Trivial)** | **Atomic** | Direct execution with `changelog.md` entry only. |
 
 1. **Plan first (`implementation_plan.md`)**: Mandatory for P1/P2. Must be approved by human user or peer agent before code is touched. Focuses on "The Why" and "The Path."
-2. **Execute via Tasks (`task.md`)**: Active deliverable tracker. For P3, this contains the "Proposed Logic" at the top to bypass a separate plan artifact.
+2. **Execute via Tasks (`orchestration/tasks/task.md`)**: Active deliverable tracker. For P3, this contains the "Proposed Logic" at the top to bypass a separate plan artifact.
 3. **Walkthrough (`walkthrough.md`)**: Mandatory for P1. Summarizes changes, lessons learned, and verification. Optimized for NotebookLM ingestion.
 
 #### Mobile & Voice Optimization

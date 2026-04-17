@@ -1,22 +1,18 @@
 # Domain: Orchestration
 
-> **Role:** The engine of the vault.
-> **Purpose:** To manage the coordination, tracking, and governance of all agent activities.
-> **Last updated:** 2026-04-12
 
----
+# Orchestration Domain
 
-## The Orchestration Stem
+> **Purpose:** Execution engine of the vault. Manages state, flow, and delivery.
 
-The Orchestration domain provides the "rules of the road" for the vault. It ensures that agents coordinate effectively with the human user, track their progress accurately, and adhere to strict access and permission standards.
+## Core Skills
+- [**Handoff**](handoff/SKILL.md) — Cross-agent coordination and state persistence.
+- [**Tasks**](tasks/SKILL.md) — Strategic deliverables and human-led work items.
+- [**Changelog**](changelog/SKILL.md) — Vault integrity and historical logic tracking.
+- [**Reports**](reports/SKILL.md) — (Pouch Protocol) Pipeline output publishing.
+- [**Access**](access/SKILL.md) — Security, auditing, and structural policy enforcement.
 
-1. **[Notes / Communication](notes/index.md)**: The coordination layer. Handles human-in-the-loop notes and structured cross-agent handoffs.
-2. **[Changelog](changelog/index.md)**: The tracking layer. Audits work accuracy, ensures documentation completeness, and maintains the git record.
-3. **[Access](access/index.md)**: The governance layer. Conducts permission audits and ensures compliance with AGENTS.md.
-4. **[Separation Policy](../../governance/policy.md)**: The architectural layer. Defines the four-layer vault structural rules.
-
----
-
-## Principle: The Engine of Trust
-
-Orchestration is what makes the vault reliable. By centralizing coordination, tracking, and governance, we ensure that every session is planned, every change is recorded, and every permission is validated.
+## Active Domains
+- [**Active Handoffs**](../../../orchestration/handoff/)
+- [**Active Tasks**](../../../orchestration/tasks/)
+- [**Pipeline Outputs**](../../../orchestration/pipelines/outputs/)

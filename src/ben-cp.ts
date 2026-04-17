@@ -221,7 +221,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     // --- DELIVERABLES & TASKS ---
     {
       name: "add_task",
-      description: "Create a new task file in the root tasks/ directory. Use this for drafting deliverables or staging work before final codification.",
+      description: "Create a new task file in the orchestration/tasks/ directory. Use this for drafting deliverables or staging work before final codification.",
       inputSchema: {
         type: "object",
         properties: {
@@ -239,7 +239,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
       inputSchema: {
         type: "object",
         properties: {
-          path: { type: "string", description: "Path relative to tasks/ (e.g. 'q2-shareout/notes-authoring-ux.md')" },
+          path: { type: "string", description: "Path relative to orchestration/tasks/ (e.g. 'q2-shareout/notes-authoring-ux.md')" },
           title: { type: "string" },
           metadata: { type: "object" },
           content: { type: "string" }
@@ -248,12 +248,12 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
       }
     },
     { name: "list_tasks", description: "List all active task files.", inputSchema: { type: "object", properties: {} } },
-    { name: "get_task", description: "Read a task file by filename (e.g. 'notes-authoring-ux.md'). Use this STRICTLY for files in the root tasks/ domain.", inputSchema: { type: "object", properties: { path: { type: "string" } }, required: ["path"] } },
+    { name: "get_task", description: "Read a task file by filename (e.g. 'notes-authoring-ux.md'). Use this STRICTLY for files in the orchestration/tasks/ domain.", inputSchema: { type: "object", properties: { path: { type: "string" } }, required: ["path"] } },
 
     // --- ART & MEDIA ---
     {
       name: "add_art",
-      description: "Contribute a new piece of digital art (poem, sketch, prompt, etc) to the vault's art domain.",
+      description: "Contribute a new piece of digital art (poem, sketch, prompt, etc) to the vault's intelligence/art domain.",
       inputSchema: {
         type: "object",
         properties: {
@@ -577,7 +577,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     // --- DELIVERABLES & TASKS ---
     if (name === "add_task") {
       const { name: fileName, title, metadata = {}, content } = args as any;
-      const tasksRoot = path.resolve(rootPath, "tasks");
+      const tasksRoot = path.resolve(rootPath, "orchestration/tasks");
       await fs.mkdir(tasksRoot, { recursive: true });
       const sanitizedFilename = ensureSingleExtension(fileName);
       const fullPath = path.join(tasksRoot, sanitizedFilename);
@@ -598,7 +598,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
     if (name === "edit_task") {
       const { path: relPath, title, metadata = {}, content } = args as any;
-      const tasksRoot = path.resolve(rootPath, "tasks");
+      const tasksRoot = path.resolve(rootPath, "orchestration/tasks");
       const normalized = String(relPath).startsWith("tasks/") ? String(relPath).slice(6) : relPath;
       const fullPath = path.resolve(tasksRoot, normalized);
       let existingContent = await fs.readFile(fullPath, "utf-8");
@@ -619,7 +619,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     }
 
     if (name === "list_tasks") {
-      const tasksRoot = path.resolve(rootPath, "tasks");
+      const tasksRoot = path.resolve(rootPath, "orchestration/tasks");
       const entries = await fs.readdir(tasksRoot, { withFileTypes: true });
       const files = entries
         .filter(e => !e.name.startsWith("."))
@@ -629,7 +629,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
     if (name === "get_task") {
       const { path: relPath } = args as any;
-      const tasksRoot = path.resolve(rootPath, "tasks");
+      const tasksRoot = path.resolve(rootPath, "orchestration/tasks");
       const normalized = String(relPath).startsWith("tasks/") ? String(relPath).slice(6) : relPath;
       let fullPath = path.resolve(tasksRoot, normalized);
 
@@ -657,7 +657,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     // --- ART & MEDIA ---
     if (name === "add_art") {
       const { name: fileName, title, agent, content } = args as any;
-      const artRoot = path.resolve(rootPath, "art");
+      const artRoot = path.resolve(rootPath, "intelligence/art");
       await fs.mkdir(artRoot, { recursive: true });
       const sanitizedFilename = ensureSingleExtension(fileName);
       const fullPath = path.join(artRoot, sanitizedFilename);
@@ -685,7 +685,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     }
 
     if (name === "list_art") {
-      const artRoot = path.resolve(rootPath, "art");
+      const artRoot = path.resolve(rootPath, "intelligence/art");
       const entries = await fs.readdir(artRoot, { withFileTypes: true });
       const files = entries
         .filter(e => !e.name.startsWith(".") && e.name.endsWith(".md") && e.name !== "index.md" && e.name !== "changelog.md")
@@ -695,8 +695,8 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
     if (name === "get_art") {
       const { path: relPath } = args as any;
-      const artRoot = path.resolve(rootPath, "art");
-      const normalized = String(relPath).startsWith("art/") ? String(relPath).slice(4) : relPath;
+      const artRoot = path.resolve(rootPath, "intelligence/art");
+      const normalized = String(relPath).startsWith("intelligence/art/") ? String(relPath).slice(17) : (String(relPath).startsWith("art/") ? String(relPath).slice(4) : relPath);
       const fullPath = path.resolve(artRoot, normalized);
       const content = await fs.readFile(fullPath, "utf-8");
       return { content: [{ type: "text", text: content }] };
@@ -913,10 +913,10 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       let cmdArgs: string[] = [];
 
       if (skill === "platform") {
-        script = path.resolve(rootPath, "tools/status-reports/scripts/full_run.py");
+        script = path.resolve(rootPath, "orchestration/tools/status-reports/scripts/full_run.py");
         cmdArgs = ["--force", "--team", "platform"];
       } else if (skill === "dream" || skill === "reporting") {
-        script = path.resolve(rootPath, "tools/intelligence/report.py");
+        script = path.resolve(rootPath, "orchestration/tools/intelligence/report.py");
         if ((args as any).date) cmdArgs.push("--date", (args as any).date);
         if ((args as any).dry_run) cmdArgs.push("--dry-run");
       } else {

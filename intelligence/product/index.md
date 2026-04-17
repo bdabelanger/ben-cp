@@ -1,19 +1,16 @@
 # Product Intelligence
 
-> Vault source of truth for the Product Roadmap domain.
+> Vault source of truth for the Product domain.
 
-## Primary Domain
-- [**Roadmap**](roadmap/index.md) — Unified hub for Strategic (Shareout), Tactical (Projects), and Governance (OKRs) layers.
-
-## Structure & Discovery Protocol
-Agents should traverse the roadmap hierarchy to understand the relationship between vision and execution:
-1.  **[Shareout](roadmap/shareout/q2/index.md)**: The "Why" and "What" (Strategic narrative).
-2.  **[Projects](roadmap/projects/q2/index.md)**: The "Who" and "When" (Tactical execution).
-3.  **[OKRs](roadmap/okrs/q2/index.md)**: The "Impact" (Governance and measurement).
-4.  **[Releases](releases/index.md)**: The "Coordination" (Engineering alignment).
+## Domains
+- [**Projects**](projects/q2/index.md) — Tactical GID mappings, technical status, and engineering specs.
+- [**Shareout**](shareout/q2/index.md) — Strategic messaging, slides, and quarterly presentation context.
+- [**OKRs**](okrs/q2/index.md) — Governance measurement, Objectives, and Key Result performance.
+- [**Reports**](reports/latest-platform-status.md) — (Pouch Protocol) Latest automated status reports for agent access.
+- [**Releases**](releases/index.md) — Strategic coordination and Jira release alignment.
 
 ## Navigation
-- **Current Cycle:** [Q2 2026 Roadmap Shareout](roadmap/shareout/q2/index.md)
-- **Active Initiatives:** [Q2 Projects](roadmap/projects/q2/index.md)
-- **Coordination:** [Jira Fix Versions](releases/index.md)
-- **Performance:** [Q2 OKR Dashboard](roadmap/okrs/q2/index.md)
+- **Current Cycle:** [Q2 2026 Roadmap Shareout](shareout/q2/index.md)
+- **Active Initiatives:** [Q2 Projects](projects/q2/index.md)
+- **Governance:** [Q2 OKR Dashboard](okrs/q2/index.md)
+- **Latest Status:** [Platform Report](reports/latest-platform-status.md)

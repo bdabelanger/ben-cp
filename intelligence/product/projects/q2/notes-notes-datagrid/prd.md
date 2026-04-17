@@ -1,0 +1,1573 @@
+# PRD: Notes - Notes datagrid
+
+<table ac:local-id="42d1c58cc704" data-layout="default" data-table-width="760">
+ <colgroup>
+  <col style="width: 226.0px;"/>
+  <col style="width: 533.0px;"/>
+ </colgroup>
+ <tbody>
+  <tr ac:local-id="37b292a1-cb03-44a2-8d89-5ff200134841">
+   <td ac:local-id="17b163a7-8c5c-410a-b282-da9b2214cec5">
+    <p local-id="30f661eaefa3">
+     <strong>
+      Asana Project(s)
+     </strong>
+    </p>
+   </td>
+   <td ac:local-id="23a740c7-8866-478f-819f-d11a6dc1d896">
+    <p local-id="7d9d321eff92">
+     <a href="https://app.asana.com/1/1123317448830974/project/1209963394727039/list/1209964105788152">
+      Notes - Notes datagrid for Engage, Intake, and Track
+     </a>
+    </p>
+    <p local-id="316209c73046">
+     <a href="https://app.asana.com/1/1123317448830974/project/1210452458408251">
+      Notes - Keyword quick filter Notes
+     </a>
+    </p>
+    <p local-id="29cef85c369c">
+     <a href="https://app.asana.com/1/1123317448830974/project/1210368097846960">
+      Notes - Global Notes WLV
+     </a>
+    </p>
+   </td>
+  </tr>
+  <tr ac:local-id="d8a85565-fab4-48b4-87c1-b59a6823016f">
+   <td ac:local-id="99dadef6-f36b-42fd-8b74-a7a2606800d4">
+    <p local-id="7e2c9b36950b">
+     <strong>
+      Jira Epic(s)
+     </strong>
+    </p>
+   </td>
+   <td ac:local-id="3a1286cc-9eeb-47f3-9e66-bdf883c5c1e4">
+    <p local-id="d6bed7afaf7c">
+     <ac:structured-macro ac:local-id="bee9d6c9bb67" ac:macro-id="42ad8fec-7d94-4d29-9326-8aedd0e1023a" ac:name="jira" ac:schema-version="1">
+      <ac:parameter ac:name="key">
+       CBP-2736
+      </ac:parameter>
+      <ac:parameter ac:name="serverId">
+       34b2023d-ebcf-320b-87a4-4db8f4ff7bca
+      </ac:parameter>
+      <ac:parameter ac:name="server">
+       System Jira
+      </ac:parameter>
+     </ac:structured-macro>
+    </p>
+   </td>
+  </tr>
+  <tr ac:local-id="333eb33b-634d-4d09-9b6d-4d8ff6c4562d">
+   <td ac:local-id="6980a4df-8ca8-4ec5-81c4-e54001194b7c">
+    <p local-id="a0ddc1394181">
+     <strong>
+      Product Manager
+     </strong>
+    </p>
+   </td>
+   <td ac:local-id="3e72b271-f46c-45f4-910f-30d21b8a48ba">
+    <p local-id="ebb4fbea2829">
+     <ac:link>
+      <ri:user ri:account-id="629dfdc29b728c006a928e90" ri:local-id="bb35a555-5941-4df1-9e26-58c1226f835c">
+      </ri:user>
+     </ac:link>
+    </p>
+   </td>
+  </tr>
+  <tr ac:local-id="0bd6474a-8876-4cd5-8a34-a6b169db3d0f">
+   <td ac:local-id="ad65ef0e-4b48-4cd5-9490-8022972b5156">
+    <p local-id="44d84c98bfef">
+     <strong>
+      Designer
+     </strong>
+    </p>
+   </td>
+   <td ac:local-id="aecb69fc-ee2e-4e55-8197-499bcea57af1">
+    <p local-id="b83151ac3f78">
+     <ac:link>
+      <ri:user ri:account-id="5bc4ee57c905d802a7aa0c9b" ri:local-id="8226f052-a8ee-42e6-b1ac-7e5675bcf9a8">
+      </ri:user>
+     </ac:link>
+    </p>
+   </td>
+  </tr>
+  <tr ac:local-id="92ef563c-7699-48a7-af3b-069922da36b1">
+   <td ac:local-id="488a23e3-98d8-45ea-bf84-68d3be7fcac7">
+    <p local-id="89dab44bd6f1">
+     <strong>
+      Engineers
+     </strong>
+    </p>
+   </td>
+   <td ac:local-id="8d9d9ade-4ca9-492d-baae-6093390d17d6">
+    <p local-id="f1b0a5de3203">
+     <ac:link>
+      <ri:user ri:account-id="5c01b9616c48883c8637a828" ri:local-id="d6777254-f2bb-4200-870b-a16ece3c7881">
+      </ri:user>
+     </ac:link>
+     ,
+     <ac:link>
+      <ri:user ri:account-id="712020:f53fa21c-0d20-46b5-9809-b804160a3a2b" ri:local-id="c8e683e4-577b-4913-9b78-0729626dc84b">
+      </ri:user>
+     </ac:link>
+     ,
+     <ac:link>
+      <ri:user ri:account-id="712020:9911cefe-8bbb-483f-9f5e-c8fec9983095" ri:local-id="5913c224-4db3-41c9-baa4-1a7c1bb183a8">
+      </ri:user>
+     </ac:link>
+    </p>
+   </td>
+  </tr>
+  <tr ac:local-id="6995ba15-8581-4262-9e6a-81ae0d7d9aeb">
+   <td ac:local-id="ae1fff1d-ba4e-45f4-a126-de1247a7a8e9">
+    <p local-id="102ff58af98f">
+     <strong>
+      Google Drive File Location
+     </strong>
+    </p>
+   </td>
+   <td ac:local-id="0dbbbad4-ccce-4958-9563-58b1c022a4b9">
+    <p local-id="384a0a2cc276">
+     <a href="https://drive.google.com/drive/folders/1Y9UKczQRxRBXxgoy-GF9il2kzG_nRWh7">
+      Notes WLV Folder
+     </a>
+    </p>
+   </td>
+  </tr>
+ </tbody>
+</table>
+<h1 local-id="af528e84603b">
+ Problem Definition
+</h1>
+<h2 local-id="136a5f4b3752">
+ Context
+</h2>
+<p local-id="94fcc849e5f1">
+ Casebook notes features are very commonly used, however the user experience for navigating notes does not use the latest datagrid functionality supported in most Casebook lists.
+</p>
+<p local-id="d48bcd7c0bec">
+ Customers can access notes from three primary experiences:
+</p>
+<ol local-id="3a255445-4494-4cf5-9e47-bbb72b662cc4" start="1">
+ <li local-id="f4dd72b3-48de-4b2c-a10f-f69fe50bb3da">
+  <p local-id="22ea5a1b1eeb">
+   "Notes" components on the Engage case details, Intake report details, or Track provider details pages
+  </p>
+ </li>
+ <li local-id="e547fbde-9374-48f3-9c19-879cc0071b29">
+  <p local-id="5b8b2db20a02">
+   Local "Notebook" pages in Engage, Intake, or Track
+  </p>
+ </li>
+ <li local-id="e95a6721-fe1f-406c-b359-e2819eef6221">
+  <p local-id="c039feec6e9c">
+   Global "Notebook" page in Home
+  </p>
+ </li>
+</ol>
+<h3 local-id="b148e7e71561">
+ Persona(s)
+</h3>
+<table ac:local-id="9b4b34e11a0a" data-layout="default" data-table-width="760">
+ <tbody>
+  <tr ac:local-id="25fdf0ab-a6ed-4c94-8e4d-53484f7bc71a">
+   <th ac:local-id="5ceab0ff-83a3-4bb9-a4db-7336bf8a5b4a">
+    <p local-id="a33a160efcd7">
+     <strong>
+      Persona(s) Engaged
+     </strong>
+    </p>
+   </th>
+   <th ac:local-id="4a12a505-3e5a-452f-bb7b-558ab2335e26">
+    <p local-id="c64c968622e5">
+     <strong>
+      Job(s) to be Done
+     </strong>
+    </p>
+   </th>
+  </tr>
+  <tr ac:local-id="d86b7f15-68b6-42b6-b451-44c0b65a0258">
+   <td ac:local-id="193b17b6-9e7b-437a-bbca-1e52af1d7053">
+    <p local-id="048fe84026d6">
+     <strong>
+      System/Data Admin
+     </strong>
+    </p>
+    <p local-id="705e8c5eca3d">
+     All segments - Admin role
+    </p>
+   </td>
+   <td ac:local-id="be618700-a697-4a51-9def-ba73717d452f">
+    <p local-id="12e6632c7203">
+     Creating, reading, updating, and deleting Notes in Track
+    </p>
+   </td>
+  </tr>
+  <tr ac:local-id="275abad1-4a14-40b8-995d-c078a6074f8a">
+   <td ac:local-id="c545457e-9ec9-410f-83ce-5fadc30cdb88">
+    <p local-id="daea0279f89c">
+     <strong>
+      Case Worker
+     </strong>
+    </p>
+    <p local-id="b06ec7034de8">
+     All segments - Engage role
+    </p>
+   </td>
+   <td ac:local-id="48147a28-a67f-4824-979d-f371feb2eeb5">
+    <p local-id="c3c210a97b3d">
+     Creating, reading, updating, and deleting Notes in Engage and/or Track
+    </p>
+   </td>
+  </tr>
+  <tr ac:local-id="78e9a15c-5ae0-4c47-b4d9-0c7cd4b6ed61">
+   <td ac:local-id="a5568f26-91d5-44d4-b420-59b254b3aa00">
+    <p local-id="270a2d3ead36">
+     <strong>
+      Intake Worker
+     </strong>
+    </p>
+    <p local-id="85072aa26043">
+     All segments - Intake role
+    </p>
+   </td>
+   <td ac:local-id="d2738666-ac68-4dad-ad7c-77a582ef46be">
+    <p local-id="77af74a721e6">
+     Creating, reading, updating, and deleting Notes in Engage and/or Track
+    </p>
+   </td>
+  </tr>
+ </tbody>
+</table>
+<h3 local-id="c64ea8f6b693">
+ Notes components in Engage, Intake, and Track
+</h3>
+<p local-id="c1f4c65404f2">
+ A Notes component is available in Engage, Intake, and Track which displays up to the three most recent notes associated with a unit of work. Prior notes can be accessed using a “View all” button.
+</p>
+<h3 local-id="c9944ef2bad0">
+ Filtered Notebook page in Home
+</h3>
+<p local-id="9eff90b66f64">
+ The Notebook page is available in the Home app for reuse across units of work, including cases, intake reports, and providers. The Notebook can only be filtered to display records related to one unit of work at a time, unlike workload views.
+</p>
+<p local-id="741e820ab381">
+ The global Notebook is not accessible through the navigation menu and must be accessed through a unit of work:
+</p>
+<ul local-id="c223296a-cd60-4a33-9c4a-fc2124cc322d">
+ <li local-id="0d5d9a4f-2ff3-40de-8367-fcfa4d815c5f">
+  <p local-id="6633f3f8ccb0">
+   Engage, Intake, or Track → Notes component → "See all" button
+  </p>
+ </li>
+ <li local-id="70de37dc-cc6f-45a6-aed0-20c2ab0dd88c">
+  <p local-id="5f428748922d">
+   Engage or Intake → Service plan component → service notes link
+  </p>
+ </li>
+ <li local-id="309b32ad-e2fb-4386-ba4c-632953265af1">
+  <p local-id="f64f093fb749">
+   Track → Clients component → expanded Client cell → service notes link
+  </p>
+ </li>
+ <li local-id="5c1b8474-e349-4400-8402-8f7cc97aed70">
+  <p local-id="bb8289699bdc">
+   Track → Services component → Service cell → service notes link
+  </p>
+ </li>
+</ul>
+<h3 local-id="9cbb6ab8d99f">
+ Expandable card user experience
+</h3>
+<p local-id="82ea2746c44d">
+ Notes are displayed in an expandable card format in both the Notes component or Notebook. If a note is accessible to the current user, the following details will be displayed when populated:
+</p>
+<ol local-id="eecba166-b58e-4095-864b-379b09a9fd08" start="1">
+ <li local-id="feabddd6-ee60-4465-877c-1f1985d1318e">
+  <p local-id="35d73b759ebc">
+   "Note type"
+  </p>
+ </li>
+ <li local-id="3f3bb511-ab55-4015-bf05-d83688a578ce">
+  <p local-id="f569babc0c0d">
+   "People involved" (displayed as a stack of profile pictures)
+  </p>
+ </li>
+ <li local-id="01e8c70a-d8d3-4600-8987-1bf9ff07f0df">
+  <p local-id="0a21197a451b">
+   "Subject"
+  </p>
+ </li>
+ <li local-id="d867ce88-6b70-4619-86ee-3b5178716e35">
+  <p local-id="86bcfd40c66a">
+   "Note" (displayed with rich text formatting in expanded state)
+  </p>
+ </li>
+ <li local-id="18face8f-4621-433f-9808-b91f773b480c">
+  <p local-id="20d12c69deb6">
+   "Attachments" (includes a count of attachments and a link to display the "Note attachments" dialog)
+  </p>
+ </li>
+ <li local-id="cac2a7d6-234d-4f20-a22e-dc1f3130474e">
+  <p local-id="ec10ebf1cdaf">
+   "Author"
+  </p>
+ </li>
+ <li local-id="85f37068-79cb-4561-a5fc-991fcc8f6a97">
+  <p local-id="2d8ccf9ed19b">
+   "Method of contact" (except General Notes and Service Notes)
+  </p>
+ </li>
+ <li local-id="8c87f6cb-194f-4286-9273-2acf6ddbe90c">
+  <p local-id="90521a651172">
+   "Date and time of event" (except General Notes and Service Notes)
+  </p>
+ </li>
+ <li local-id="6caad24d-ae6e-483e-a822-421f83f72460">
+  <p local-id="d46835205e53">
+   Service Notes only: Service Interactions including “Date and time", "Method of delivery", "Service and provider", "Service type", "Provider/person providing service", "Number of service units", "Unit cost for this service", "Total cost for this service", and per-person "Person", "Received service/attended", and "Note" fields
+  </p>
+ </li>
+</ol>
+<h3 local-id="4798ed622839">
+ Note locking
+</h3>
+<p local-id="335afa9c4780">
+ Notes that are locked for the current user will display only the note subject and author; all other fields are inaccessible. A message "(You do not have access to this note's content)" is also displayed.
+</p>
+<h2 local-id="e3656746df1a">
+ Problems &amp; Impact
+</h2>
+<h3 local-id="b34f77f4549d">
+ Notes components have limited functionality
+</h3>
+<p local-id="a4f46e2b470a">
+ Today, the Notes component functionality is limited - only three results are displayed with basic expand/collapse functionality.
+</p>
+<p local-id="ba3788a76b91">
+ Ideally, the Notes component should support more robust functionality matching other datagrids:
+</p>
+<ul local-id="d2fabb35-7160-48f5-9a76-ab4a840ac780">
+ <li local-id="b7417357-30a8-4335-b8f1-0be80776f18c">
+  <p local-id="83a8fc159fdb">
+   Custom columns and density
+  </p>
+ </li>
+ <li local-id="35315163-bc2d-4216-8434-c72408dd7908">
+  <p local-id="98e10e844f53">
+   Sorting and filters to help find a specific record quickly
+  </p>
+ </li>
+ <li local-id="d5459b5a-12a0-422d-a563-d1898bcd5724">
+  <p local-id="ee28f43962e5">
+   Pagination to navigate through records without leaving the page
+  </p>
+ </li>
+ <li local-id="ea475cf0-6a9f-4329-9142-e9c1fec6934c">
+  <p local-id="6ac14426f032">
+   Pinned notes per unit of work
+  </p>
+ </li>
+ <li local-id="02c0e30b-9c46-412b-b5b2-f844155a6940">
+  <p local-id="d6094ed31242">
+   Export to CSV
+  </p>
+ </li>
+ <li local-id="f69b97d4-6efb-4495-937d-061e8e5f995e">
+  <p local-id="7e72021c859a">
+   Actions (Edit, Print, Delete)
+  </p>
+ </li>
+</ul>
+<h3 local-id="2fc4dd5b52bd">
+ The Notebook page offers more features, but is still underpowered
+</h3>
+<p local-id="658199d59ccc">
+ Today, the Notebook page supports more functionality than the Notes component - all associated notes are displayed, grouped by created date with pagination. A "Print all" action supports printing all notes or exporting to PDF. Filtering is also supported by the following fields:
+</p>
+<ul local-id="f9c6ac7d-1feb-48f0-bbb9-a7399e54c43d">
+ <li local-id="5c832782-1217-4698-b784-c5fd9657e754">
+  <p local-id="3cb243f44294">
+   Created date (date range)
+  </p>
+ </li>
+ <li local-id="1fb64ad6-9791-4918-8654-48765ec2e6aa">
+  <p local-id="98e10f31a578">
+   Author
+  </p>
+ </li>
+ <li local-id="470568cb-7584-4f5a-889b-850b069b379b">
+  <p local-id="c2db222438fa">
+   People involved
+  </p>
+ </li>
+ <li local-id="d6a66722-4c6b-46f6-a3a8-9edb7c2328ca">
+  <p local-id="94efe445e1c8">
+   Note types
+  </p>
+ </li>
+</ul>
+<p local-id="3290e3c0d417">
+ Ideally, the Notebook should also support more robust functionality matching other datagrids:
+</p>
+<ul local-id="fe030960-0bb3-41fb-bc30-b683c4e95bce">
+ <li local-id="74f45402-4259-4b8f-9218-e122aa74de88">
+  <p local-id="49d7f77df02c">
+   Custom columns and density
+  </p>
+ </li>
+ <li local-id="f402388c-4177-46db-8ed2-2999bffd2eaf">
+  <p local-id="e70d96904d73">
+   Sorting and filters to help find a specific record quickly
+  </p>
+ </li>
+ <li local-id="cdbcc813-fa12-4997-9354-4a40badb49ad">
+  <p local-id="ef57dbefb6b0">
+   Pinned notes per unit of work
+  </p>
+ </li>
+ <li local-id="041cdbc1-420b-4329-8905-c536cbfdedb2">
+  <p local-id="c8b268ae6a5d">
+   Export to CSV
+  </p>
+ </li>
+ <li local-id="8f83143b-36a7-40fa-a020-adb22a8abb36">
+  <p local-id="67e3ac7b196c">
+   Actions (Edit, Print, Delete)
+  </p>
+ </li>
+</ul>
+<h3 local-id="4aa948d17fc1">
+ Notes must always be viewed in context of a unit of work
+</h3>
+<p local-id="fad916097b64">
+ Today, Notes can only be viewed for one unit of work at a time - a case, intake report, or provider.
+</p>
+<p local-id="1a02ea90faeb">
+ Ideally, Notes should be accessible globally with helpful tools for navigating and finding the correct notes:
+</p>
+<ul local-id="46bfbd5e-ae28-4ad5-a1a6-453cba194096">
+ <li local-id="354066f2-44d9-4bde-8595-a2a932e00824">
+  <p local-id="e86ba88a4373">
+   A quick filter to Notes authored by the user
+  </p>
+ </li>
+ <li local-id="b2fa0a94-52d9-450c-a280-4a1155e706ca">
+  <p local-id="95c3776cf9a9">
+   Filter by associated unit of work
+  </p>
+ </li>
+</ul>
+<h1 local-id="5a21f17ca76f">
+ Solution Concept
+</h1>
+<h2 local-id="8767180ea311">
+ Overview
+</h2>
+<p local-id="e4e613c7d3d3">
+ The datagrid user experience is becoming common in Casebook as a straightforward way to present lists of data with robust, consistent navigation and user experience.
+</p>
+<p local-id="b4763405b7e0">
+ Casebook should implement a datagrid to replace the Notes component within a unit of work, which will allow users to find the data that they need quickly without navigating away from the unit of work. A global Notes workload view using a larger datagrid should also be introduced with similar functionality, plus the ability to filter by unit of work. A keyword quick filter in the Notes datagrid allows users to search note subjects and narratives without navigating to a dedicated search page.
+</p>
+<h3 local-id="e5b891fc4245">
+ Upgrade the current "Notes" component to a datagrid UX
+</h3>
+<p local-id="c72e03683674">
+ The core Notes component is being replaced with an MUI datagrid behind feature flag
+ <code>
+  notes_component_datagrid
+ </code>
+ . The new datagrid (
+ <a href="https://casecommons.atlassian.net/browse/CBP-2614">
+  CBP-2614
+ </a>
+ ) supports the following default columns (in order): Type, Subject, Narrative, People, Created on, Start date, End date, Author - plus sortable/filterable columns for Contact method, Delivery method, and Actions. All density, pagination, sorting, column visibility, and filter preferences are cached per application (Engage, Intake, Track).
+</p>
+<p local-id="1b97612c163d">
+ <strong>
+  MVP:
+ </strong>
+</p>
+<ol local-id="5daca751-6351-42b6-a5b4-0e6288fb02bc" start="1">
+ <li local-id="48a32b92-a692-41a6-a2cb-61fc729f3423">
+  <p local-id="b8af3081db48">
+   Upgrade the "Notes" component to use a datagrid (
+   <a href="https://casecommons.atlassian.net/browse/CBP-2614">
+    CBP-2614
+   </a>
+   )
+  </p>
+ </li>
+ <li local-id="bd28a5ef-9bf6-4b8e-a911-e5f31f1215ec">
+  <p local-id="0c12516bee8b">
+   Set default columns (
+   <a href="https://casecommons.atlassian.net/browse/CBP-3049">
+    CBP-3049
+   </a>
+   )
+  </p>
+ </li>
+ <li local-id="45f076cb-2cee-4aff-96f7-62c51a1db61e">
+  <p local-id="030794e0feee">
+   Expand any note type to show rich text Note and attachments
+  </p>
+ </li>
+ <li local-id="409d20af-0a7b-40e2-b87b-9e4a5b44624b">
+  <p local-id="d95353b4e062">
+   Expand a service note to show service details
+  </p>
+ </li>
+ <li local-id="2e362251-9083-48f7-b902-62f59fd40a7b">
+  <p local-id="ec58d5296a1f">
+   Display an Actions column with Edit, Print, and Delete actions
+  </p>
+ </li>
+ <li local-id="e43ce6ca-ada7-4f73-ac36-e4329db91adc">
+  <p local-id="00aec80e8cc3">
+   Cache custom columns, filters, density, sorting, and pagination settings per application
+  </p>
+ </li>
+ <li local-id="b9d37bcc-495e-42fe-a83f-eea1d1d35b8a">
+  <p local-id="9f2d6ef926f9">
+   Move the "Print all" button into the MUI toolbar (
+   <a href="https://casecommons.atlassian.net/browse/CBP-3032">
+    CBP-3032
+   </a>
+   )
+  </p>
+ </li>
+ <li local-id="8d7d1876-dea8-4d48-badc-d2d77b76f857">
+  <p local-id="66f754e50ffa">
+   Enable keyword quick filter in the toolbar behind flag
+   <code>
+    notes_datagrid_quick_filter
+   </code>
+   (
+   <a href="https://casecommons.atlassian.net/browse/CBP-2873">
+    CBP-2873
+   </a>
+   )
+  </p>
+ </li>
+ <li local-id="aa85b9aa-89a5-4114-9188-b022cb51824d">
+  <p local-id="f8e4eee9264c">
+   Enable multi-filter stacking (
+   <a href="https://casecommons.atlassian.net/browse/CBP-3054">
+    CBP-3054
+   </a>
+   )
+  </p>
+ </li>
+ <li local-id="3041fc32-c5b6-4781-a52b-dc18a85d67de">
+  <p local-id="70042583873c">
+   Enable row pinning (
+   <a href="https://casecommons.atlassian.net/browse/CBP-3055">
+    CBP-3055
+   </a>
+   )
+  </p>
+ </li>
+ <li local-id="1e9ff0ab-4e9c-4caf-8000-03ec7b82ee4a">
+  <p local-id="6aeada6a46f8">
+   Enhance the Service(s) column display (
+   <a href="https://casecommons.atlassian.net/browse/CBP-3062">
+    CBP-3062
+   </a>
+   )
+  </p>
+ </li>
+ <li local-id="f254724e-42c7-4a02-a435-70b81bf73eb8">
+  <p local-id="654996148c7e">
+   Display Services data in the note preview as a structured list (
+   <a href="https://casecommons.atlassian.net/browse/CBP-3059">
+    CBP-3059
+   </a>
+   )
+  </p>
+ </li>
+</ol>
+<p local-id="9573e22963e9">
+ <strong>
+  Future roadmap:
+ </strong>
+</p>
+<ul local-id="dbab7cea-f9ed-42b8-868d-a67daf0f479b">
+ <li local-id="6e963466-66e8-4348-85c7-cdbb86588811">
+  <p local-id="1f13ddcb11b5">
+   Bulk actions (Print, Delete)
+  </p>
+ </li>
+</ul>
+<h3 local-id="c1d62685000e">
+ Introduce a global "Notes" workload view
+</h3>
+<p local-id="72a848270c39">
+ A dedicated Notes workload view will be accessible from the main navigation menu and will allow users to browse notes across all units of work, filtered to a specific unit of work when launched from the Notes component. This is tracked under Asana project
+ <a href="https://app.asana.com/1/1123317448830974/project/1210368097846960">
+  Notes - Global Notes WLV
+ </a>
+ .
+</p>
+<p local-id="6f1da23472cb">
+ <strong>
+  MVP:
+ </strong>
+</p>
+<ol local-id="20d6cf5c-3cab-4161-ab74-45c88a80096e" start="1">
+ <li local-id="298646c9-c205-47cb-892e-9f375ccfda8d">
+  <p local-id="ee9f87f807cf">
+   Display all notes in a full-page datagrid
+  </p>
+ </li>
+ <li local-id="40454765-5207-4e50-bdfc-079120bcf442">
+  <p local-id="ed4bd072cca5">
+   Display an Actions column with Edit, Print, and Delete actions
+  </p>
+ </li>
+ <li local-id="7881e0e3-b0f4-4328-b264-5272d9fc6635">
+  <p local-id="6c3af93920db">
+   Cache custom columns, filters, density, sorting, and pagination settings
+  </p>
+ </li>
+ <li local-id="876dd050-bf36-463f-a75e-cf07d5943556">
+  <p local-id="8e0e2694c512">
+   Display a "Notes" application in the main menu
+  </p>
+ </li>
+ <li local-id="a38edc3e-09ec-44ca-a13f-ee9e8a5b1bb8">
+  <p local-id="d9e5f0f34722">
+   Filter to associated unit of work when launched from Notes component
+  </p>
+ </li>
+</ol>
+<p local-id="5fb42024016b">
+ <strong>
+  Future roadmap:
+ </strong>
+</p>
+<ul local-id="d52e4afe-3b22-4694-841e-77851de31cb5">
+ <li local-id="af7522c5-f1ef-4817-806e-89af277c40f4">
+  <p local-id="7c9941e677a9">
+   Search note body
+  </p>
+ </li>
+ <li local-id="631b32d3-05f1-43d7-a03b-f1810cc0f7ba">
+  <p local-id="fb957f290ec0">
+   Search attachment content
+  </p>
+ </li>
+ <li local-id="7dd9041c-7cc2-40ee-98f9-345b46cfec45">
+  <p local-id="6ffe6f0f1043">
+   Support pinned notes
+  </p>
+ </li>
+ <li local-id="98f723a2-e97f-4d9f-b4b7-4d84f055786a">
+  <p local-id="0874273adadc">
+   Bulk actions (Print, Delete)
+  </p>
+ </li>
+</ul>
+<h3 local-id="3ab0abb11df3">
+ Link the Notes component to the Notes workload view
+</h3>
+<p local-id="c93f277a4e95">
+ A "View all" link in the Notes component will launch the Notes workload view pre-filtered to the current unit of work, replacing the legacy local Notebook page.
+</p>
+<p local-id="9ad068759532">
+ <strong>
+  MVP:
+ </strong>
+</p>
+<ol local-id="f1189f28-2d08-498a-b486-9a0bc6b25d51" start="1">
+ <li local-id="1c30c109-f11b-47ff-b6d1-a703eac16e64">
+  <p local-id="ccf147bd76f3">
+   Display a "View all" link from the Notes component that leads to a filtered view of the Notes workload view
+  </p>
+ </li>
+ <li local-id="c707a902-3900-4fc5-9c42-eff372cd6bb8">
+  <p local-id="059b2b12e7a0">
+   When launching the Notes workload view from the Notes component, filter results to the associated unit of work
+  </p>
+ </li>
+</ol>
+<h2 local-id="ce6f3833c80d">
+ Casebook Business Outcomes
+</h2>
+<table ac:local-id="3bd7b5140801" data-layout="default" data-table-width="760">
+ <tbody>
+  <tr ac:local-id="4221d64b-0336-420a-963f-b7e64801e7b0">
+   <th ac:local-id="793e28a5-8943-4586-ab1b-48df297c0c8d">
+    <p local-id="00a02adcd59f">
+     <strong>
+      Company OKR
+     </strong>
+    </p>
+   </th>
+   <th ac:local-id="a8b1291a-e5b6-46fe-aa08-3e2ebe916de1">
+    <p local-id="41c7cbcd234e">
+     <strong>
+      Product Portfolio OKR
+     </strong>
+    </p>
+   </th>
+   <th ac:local-id="9d0f15d6-40f5-4ef4-9579-f48af2044816">
+    <p local-id="60af797be1c2">
+     <strong>
+      Quarterly Objective(s)
+     </strong>
+    </p>
+   </th>
+   <th ac:local-id="5243119b-0e31-4341-ba35-a65a9e391adf">
+    <p local-id="43857143b23f">
+     <strong>
+      Initiative Key Result(s)
+     </strong>
+    </p>
+   </th>
+   <th ac:local-id="b0e0bfb9-ff7a-4e7e-9220-4565b734a4d3">
+    <p local-id="475682947cea">
+     <strong>
+      Measurement Method(s)
+     </strong>
+    </p>
+   </th>
+  </tr>
+  <tr ac:local-id="bd234a39-b742-4255-ae6f-3c1042d7b8d1">
+   <td ac:local-id="3782f99d-5d0b-4c13-87dc-3d8956801e65">
+    <p local-id="c63962536581">
+     Increase customer retention and expansion
+    </p>
+   </td>
+   <td ac:local-id="c183b234-9ae7-4971-9456-fd70d497781e">
+    <p local-id="92728fd9efc3">
+     Improve ease of use for core case management workflows
+    </p>
+   </td>
+   <td ac:local-id="79f3f156-2d37-405f-8a70-109daa8db6ab">
+    <p local-id="fe7739474aaf">
+     Reduce time caseworkers spend navigating to relevant notes
+    </p>
+   </td>
+   <td ac:local-id="c1f8dc00-1cb2-45a1-b1a0-46e6ad4cf007">
+    <p local-id="ca4f51343d93">
+     Baseline: N/A - Target: Measurable reduction in time-to-find-note as reported in beta feedback
+    </p>
+   </td>
+   <td ac:local-id="1f638dd0-3bde-46cf-98eb-a99b92f42915">
+    <p local-id="4c343dbe509f">
+     Beta survey - ChurnZero engagement
+    </p>
+   </td>
+  </tr>
+ </tbody>
+</table>
+<h2 local-id="6d18293d4601">
+ Scope &amp; Preliminary Estimate
+</h2>
+<table ac:local-id="41a91f05ab01" data-layout="default" data-table-width="760">
+ <tbody>
+  <tr ac:local-id="a68b18c6-34e7-4045-a6db-9b3a0b9a77ee">
+   <th ac:local-id="8232aad6-b2a6-4b92-9e94-574f6ad09f85">
+    <p local-id="2cc93cb7cded">
+     <strong>
+      What's In?
+     </strong>
+    </p>
+   </th>
+   <th ac:local-id="e90b9395-7fec-4dc6-bfd0-69e5c75275de">
+    <p local-id="0cd554c466dc">
+     <strong>
+      Design Estimate
+     </strong>
+    </p>
+   </th>
+   <th ac:local-id="06f935bc-d914-4d22-8fb7-6aec5ecba5bb">
+    <p local-id="b21dfa8cf367">
+     <strong>
+      Dev Estimate
+     </strong>
+    </p>
+   </th>
+   <th ac:local-id="b8656696-039f-48dc-a709-ce7080759d6a">
+    <p local-id="60019938f6e0">
+     <strong>
+      QA Estimate
+     </strong>
+    </p>
+   </th>
+  </tr>
+  <tr ac:local-id="2b4f340d-85b5-4202-8472-2b9e40aa1e8b">
+   <td ac:local-id="ca3cfc69-f7b2-40a4-894f-d770b135cde5">
+    <p local-id="f379c44b7a4c">
+     Notes datagrid for Engage, Intake, Track (
+     <a href="https://casecommons.atlassian.net/browse/CBP-2614">
+      CBP-2614
+     </a>
+     )
+    </p>
+   </td>
+   <td ac:local-id="6735296a-1b11-4be0-bb9e-178655182a92">
+    <p local-id="e1f98c939668">
+     Done
+    </p>
+   </td>
+   <td ac:local-id="b205a235-575d-40b0-a691-7e5a963d9a3f">
+    <p local-id="7c18a4f447f7">
+    </p>
+   </td>
+   <td ac:local-id="f7ae987a-02a6-486f-b460-4ac9ae19fad2">
+    <p local-id="02b0396d3492">
+    </p>
+   </td>
+  </tr>
+  <tr ac:local-id="371f44aa-254e-427e-849b-76936284b6a2">
+   <td ac:local-id="a5e67aca-27b6-47c6-8833-7c2c78ab0865">
+    <p local-id="0bbeef70a266">
+     Default columns and sort order (
+     <a href="https://casecommons.atlassian.net/browse/CBP-3049">
+      CBP-3049
+     </a>
+     )
+    </p>
+   </td>
+   <td ac:local-id="e5cb5124-b50a-4009-93a2-4973511393aa">
+    <p local-id="7c5e50a3d5bf">
+     Done
+    </p>
+   </td>
+   <td ac:local-id="9e5106b8-5e50-4346-b1f7-48da82e5e2eb">
+    <p local-id="e12f158628bc">
+    </p>
+   </td>
+   <td ac:local-id="b6cbec3a-9127-425d-8476-ef23e6195454">
+    <p local-id="4a876f1f5d35">
+    </p>
+   </td>
+  </tr>
+  <tr ac:local-id="61672538-f37a-4abc-9718-ac7ac637471c">
+   <td ac:local-id="0e288239-4a26-4375-bcf7-dbed9cd516a3">
+    <p local-id="bf0c6ae9cc17">
+     Print button in MUI toolbar (
+     <a href="https://casecommons.atlassian.net/browse/CBP-3032">
+      CBP-3032
+     </a>
+     )
+    </p>
+   </td>
+   <td ac:local-id="b918a1a4-b880-4e38-be1e-56d0b93ccd59">
+    <p local-id="2af7da1d925f">
+     Done
+    </p>
+   </td>
+   <td ac:local-id="2a662bc4-4078-4d96-a313-cacfe831660e">
+    <p local-id="c8375a15d51a">
+    </p>
+   </td>
+   <td ac:local-id="d763b868-97c3-4186-b341-d1af3580ca00">
+    <p local-id="0cb0c87bc8cd">
+    </p>
+   </td>
+  </tr>
+  <tr ac:local-id="26b584bf-2155-44a7-9c9d-93b588138eeb">
+   <td ac:local-id="6d4d0f00-8f9a-483c-b743-9c1dde2404af">
+    <p local-id="4826968626cb">
+     Keyword quick filter (
+     <a href="https://casecommons.atlassian.net/browse/CBP-2873">
+      CBP-2873
+     </a>
+     )
+    </p>
+   </td>
+   <td ac:local-id="dfe4fc33-8564-40a7-8643-23f62dac309d">
+    <p local-id="fee866b8bd7b">
+     Done
+    </p>
+   </td>
+   <td ac:local-id="694191bd-2331-457a-bf49-05a20e1655e5">
+    <p local-id="d2080f490e92">
+    </p>
+   </td>
+   <td ac:local-id="2dbe19f6-bcb0-4705-983f-28853942b4a4">
+    <p local-id="c4c787466b4d">
+    </p>
+   </td>
+  </tr>
+  <tr ac:local-id="486558ea-da68-4826-bab9-40f7bdb47192">
+   <td ac:local-id="bd47b6ac-0b73-4a2a-a640-4b6319d49317">
+    <p local-id="fefc27be498b">
+     Multi-filter stacking (
+     <a href="https://casecommons.atlassian.net/browse/CBP-3054">
+      CBP-3054
+     </a>
+     )
+    </p>
+   </td>
+   <td ac:local-id="9c02c7bc-54b2-4c5f-8aa6-7bce5cf490d0">
+    <p local-id="aadfc7d30bba">
+     Done
+    </p>
+   </td>
+   <td ac:local-id="cc259818-5157-49af-9ba4-e1bac494c8cb">
+    <p local-id="b91236946c91">
+    </p>
+   </td>
+   <td ac:local-id="dadd6dd8-4206-4759-8598-678aaa230b7b">
+    <p local-id="f4fafc820ca2">
+    </p>
+   </td>
+  </tr>
+  <tr ac:local-id="795f2dbd-37e1-4e23-a1ca-e788a95d6128">
+   <td ac:local-id="efbfd9d4-e19c-491b-80b8-7310dc692a5c">
+    <p local-id="8666c3eb5d52">
+     Row pinning (
+     <a href="https://casecommons.atlassian.net/browse/CBP-3055">
+      CBP-3055
+     </a>
+     )
+    </p>
+   </td>
+   <td ac:local-id="9fd7e2ef-e821-40bd-809c-0fdb934e3402">
+    <p local-id="9e754361d01b">
+     Done
+    </p>
+   </td>
+   <td ac:local-id="1bf6d995-4795-40f9-85b2-cb1612eeab1d">
+    <p local-id="9bb2988e03ac">
+    </p>
+   </td>
+   <td ac:local-id="e61317bd-b1e0-4c86-bd45-73533069ed0d">
+    <p local-id="333e604ac21a">
+    </p>
+   </td>
+  </tr>
+  <tr ac:local-id="08c06407-4ac3-4351-a3f0-6b868b5f0e3f">
+   <td ac:local-id="135c465c-fc09-40dd-8ea5-1b399ffa5435">
+    <p local-id="c0783a473f48">
+     Service(s) column display (
+     <a href="https://casecommons.atlassian.net/browse/CBP-3062">
+      CBP-3062
+     </a>
+     )
+    </p>
+   </td>
+   <td ac:local-id="12513a9d-9429-4d49-a7f1-2fbc6f15b20a">
+    <p local-id="b06d7d02158e">
+     Done
+    </p>
+   </td>
+   <td ac:local-id="3802bce9-276c-4612-9a2f-d863cdc9a43d">
+    <p local-id="5d2aa27825bb">
+    </p>
+   </td>
+   <td ac:local-id="e9120d00-3884-413d-b683-1e226b527e83">
+    <p local-id="d1657dca6a40">
+    </p>
+   </td>
+  </tr>
+  <tr ac:local-id="eecbc8b3-f343-4e32-87ea-1918991d8f9b">
+   <td ac:local-id="f988e262-15a3-42fc-8dc1-bb3031d27aa2">
+    <p local-id="f5d4333cf2d3">
+     Services data in note preview (
+     <a href="https://casecommons.atlassian.net/browse/CBP-3059">
+      CBP-3059
+     </a>
+     )
+    </p>
+   </td>
+   <td ac:local-id="17742e55-f189-404d-bd13-7bc3f647348f">
+    <p local-id="d372e09bac28">
+     Done
+    </p>
+   </td>
+   <td ac:local-id="5004c680-e01f-40d1-a2ff-98971e558c50">
+    <p local-id="7155a5bb6de5">
+    </p>
+   </td>
+   <td ac:local-id="19057ef0-4d0e-42dc-87dc-dad1f19a1e2a">
+    <p local-id="bfe3a4ebe3da">
+    </p>
+   </td>
+  </tr>
+  <tr ac:local-id="8cc5b82d-4e96-478c-b996-a3566f6ae974">
+   <td ac:local-id="e804b7e5-5766-43ef-a173-adcb87a2714b">
+    <p local-id="ab0e5f8fa30a">
+     Global Notes WLV
+    </p>
+   </td>
+   <td ac:local-id="f3f6057c-c6ba-44c5-a6ab-2075b4661413">
+    <p local-id="6be361487a7c">
+    </p>
+   </td>
+   <td ac:local-id="75fd5bd9-48be-4127-85d1-043f376e2cb9">
+    <p local-id="e4621b2624c2">
+    </p>
+   </td>
+   <td ac:local-id="79ad10f6-c945-4688-96f5-c20ccc0b7fc6">
+    <p local-id="e1511339c94b">
+    </p>
+   </td>
+  </tr>
+ </tbody>
+</table>
+<table ac:local-id="5e9a4cc8055d" data-layout="default" data-table-width="760">
+ <tbody>
+  <tr ac:local-id="a968c288-e215-4eaa-91d5-7826551b2b70">
+   <th ac:local-id="af3f6efc-ee83-4bef-a49a-451639e176a5">
+    <p local-id="6fb0c6c1ce87">
+     <strong>
+      What's Out?
+     </strong>
+    </p>
+   </th>
+   <th ac:local-id="7c3753a3-905b-453f-9a09-5e8134b79083">
+    <p local-id="eac0ae7dee5e">
+     <strong>
+      Why?
+     </strong>
+    </p>
+   </th>
+  </tr>
+  <tr ac:local-id="c35df787-57a5-4ebe-844c-284c4d0aaabb">
+   <td ac:local-id="0c30b27f-f0e1-45d7-890a-805585b1c27f">
+    <p local-id="a43637019e8f">
+     Bulk actions (Print, Delete)
+    </p>
+   </td>
+   <td ac:local-id="13aa0c02-f0b2-4d1c-80b3-60f6279fb7cb">
+    <p local-id="6f8ba881882f">
+     <strong>
+      Future roadmap
+     </strong>
+     – foundational datagrid work ships first
+    </p>
+   </td>
+  </tr>
+  <tr ac:local-id="26028928-7620-44bd-9c01-cd6ce1c43b7b">
+   <td ac:local-id="2a3e8e96-d68f-495c-895d-64c97b04c9f1">
+    <p local-id="be832f84b6b8">
+     Search note attachment content
+    </p>
+   </td>
+   <td ac:local-id="0a7d8bc0-103b-4641-9713-24ac9ec8398b">
+    <p local-id="19e808ef6f37">
+     <strong>
+      Future roadmap
+     </strong>
+     – requires dedicated search infrastructure
+    </p>
+   </td>
+  </tr>
+ </tbody>
+</table>
+<h2 local-id="f8e5379b021c">
+ Dependencies
+</h2>
+<table ac:local-id="bb509775a154" data-layout="default" data-table-width="760">
+ <tbody>
+  <tr ac:local-id="3bd847fe-97f6-4c83-b72b-b094be14ae12">
+   <th ac:local-id="d60ffc77-62a5-4539-96cc-3774241e0714">
+    <p local-id="c2235fedc94c">
+     <strong>
+      Team
+     </strong>
+    </p>
+   </th>
+   <th ac:local-id="1406d4e1-1ef1-4d85-9d73-61fd05159729">
+    <p local-id="a5f56025a5fc">
+     <strong>
+      What's Needed From Them?
+     </strong>
+    </p>
+   </th>
+  </tr>
+  <tr ac:local-id="8182a563-ebd4-4d1d-8bbe-ea085a888cbe">
+   <td ac:local-id="aac200cc-9daa-4d97-8136-cc7ee1ace8f3">
+    <p local-id="2356658ed6db">
+     <strong>
+      CX team
+     </strong>
+    </p>
+   </td>
+   <td ac:local-id="d215dc57-a118-4bb8-a42d-8b43dfdfbcf7">
+    <p local-id="7e4999b9564e">
+     Updated knowledge base articles, training materials, and beta communication emails
+    </p>
+   </td>
+  </tr>
+ </tbody>
+</table>
+<h2 local-id="c56817f71233">
+ Risk(s) &amp; Mitigation Plan(s)
+</h2>
+<table ac:local-id="0bf9ef38c3e9" data-layout="default" data-table-width="760">
+ <tbody>
+  <tr ac:local-id="58b6155d-528f-4969-a636-c8d9ef4c8f63">
+   <th ac:local-id="c4bf2b2c-10bf-48de-be6e-7d2afcf3da53">
+    <p local-id="06846c2a8f89">
+     <strong>
+      Risk
+     </strong>
+    </p>
+   </th>
+   <th ac:local-id="383aa5e3-8f52-4c28-9db4-96000834112e">
+    <p local-id="2e65d4c2e082">
+     <strong>
+      Mitigation / Contingency Plan
+     </strong>
+    </p>
+   </th>
+  </tr>
+  <tr ac:local-id="31164e3a-c244-4fea-b884-cda21813a51e">
+   <td ac:local-id="b69a8974-d9d2-430b-b42e-8cc234742f74">
+    <p local-id="26a803090274">
+     <strong>
+      Beta customers report the datagrid is overwhelming or confusing
+     </strong>
+    </p>
+   </td>
+   <td ac:local-id="d92b1679-eae1-4506-b85f-95f5b263ac8d">
+    <p local-id="98df0d978654">
+     Default column set has been simplified (
+     <a href="https://casecommons.atlassian.net/browse/CBP-3049">
+      CBP-3049
+     </a>
+     ) to mirror the existing card UX as closely as possible. Beta survey feedback will be used to tune further before GA.
+    </p>
+   </td>
+  </tr>
+  <tr ac:local-id="d6166e4e-7ba5-464d-aaf3-83c7dffd21b8">
+   <td ac:local-id="97cd8ff4-db6e-43b9-8925-1e0eeae2b409">
+    <p local-id="519e909bcdd8">
+     <strong>
+      Performance degradation with large note volumes
+     </strong>
+    </p>
+   </td>
+   <td ac:local-id="c8d802e0-0482-4c18-b928-4a6be96cc57a">
+    <p local-id="7fdc53d7f9ec">
+     Pagination default of 5 rows; server-side filtering and sorting; Rollbar/Kibana monitoring required before each beta rollout per the launch plan.
+    </p>
+   </td>
+  </tr>
+ </tbody>
+</table>
+<h1 local-id="272287efbe03">
+ Requirements
+</h1>
+<h2 local-id="05eb38e4b406">
+ User Stories / Acceptance Criteria
+</h2>
+<p local-id="6e76fb837607">
+ Key Jira stories for this initiative:
+</p>
+<ul local-id="f8048aeb-99c8-406d-aeba-2676f7e0db2f">
+ <li local-id="ced85d75-49bd-4e40-a77d-151a8c5c5a86">
+  <p local-id="a32e0d9a5c0e">
+   <ac:structured-macro ac:local-id="294ecbf7552e" ac:macro-id="d3d717a2-909f-41d5-bd24-b886a7740de1" ac:name="jira" ac:schema-version="1">
+    <ac:parameter ac:name="key">
+     CBP-2614
+    </ac:parameter>
+    <ac:parameter ac:name="serverId">
+     34b2023d-ebcf-320b-87a4-4db8f4ff7bca
+    </ac:parameter>
+    <ac:parameter ac:name="server">
+     System Jira
+    </ac:parameter>
+   </ac:structured-macro>
+  </p>
+ </li>
+ <li local-id="00df8f0e-91b2-4765-bb4f-e1ded548c861">
+  <p local-id="ec190b140c78">
+   <ac:structured-macro ac:local-id="0f625e41809b" ac:macro-id="4a156655-d377-4e40-ba82-1a01d9273619" ac:name="jira" ac:schema-version="1">
+    <ac:parameter ac:name="key">
+     CBP-2873
+    </ac:parameter>
+    <ac:parameter ac:name="serverId">
+     34b2023d-ebcf-320b-87a4-4db8f4ff7bca
+    </ac:parameter>
+    <ac:parameter ac:name="server">
+     System Jira
+    </ac:parameter>
+   </ac:structured-macro>
+  </p>
+ </li>
+ <li local-id="5ea558d5-401c-416a-8358-e6e7c990f3c6">
+  <p local-id="6a16eb6d6f7e">
+   <ac:structured-macro ac:local-id="d94ae0e55a37" ac:macro-id="e5de44b4-2b1a-4f99-8135-a3253fb15e59" ac:name="jira" ac:schema-version="1">
+    <ac:parameter ac:name="key">
+     CBP-2936
+    </ac:parameter>
+    <ac:parameter ac:name="serverId">
+     34b2023d-ebcf-320b-87a4-4db8f4ff7bca
+    </ac:parameter>
+    <ac:parameter ac:name="server">
+     System Jira
+    </ac:parameter>
+   </ac:structured-macro>
+  </p>
+ </li>
+ <li local-id="7bf63da2-d2f4-47be-86fe-18726912eae7">
+  <p local-id="c838667cb62b">
+   <ac:structured-macro ac:local-id="0002d585f974" ac:macro-id="9224f34b-c792-4551-88dd-1c8fe1054433" ac:name="jira" ac:schema-version="1">
+    <ac:parameter ac:name="key">
+     CBP-2943
+    </ac:parameter>
+    <ac:parameter ac:name="serverId">
+     34b2023d-ebcf-320b-87a4-4db8f4ff7bca
+    </ac:parameter>
+    <ac:parameter ac:name="server">
+     System Jira
+    </ac:parameter>
+   </ac:structured-macro>
+  </p>
+ </li>
+ <li local-id="4fc57e4208cb">
+  <p local-id="9c777ab111e9">
+   <ac:structured-macro ac:local-id="e1838a99-a7de-4499-b6b1-b4295f85cd9d" ac:macro-id="d7edd2e8-1eff-4db3-a10e-8e015bb00081" ac:name="jira" ac:schema-version="1">
+    <ac:parameter ac:name="key">
+     CBP-3059
+    </ac:parameter>
+    <ac:parameter ac:name="serverId">
+     34b2023d-ebcf-320b-87a4-4db8f4ff7bca
+    </ac:parameter>
+    <ac:parameter ac:name="server">
+     System Jira
+    </ac:parameter>
+   </ac:structured-macro>
+  </p>
+ </li>
+ <li local-id="25590bd5-091a-4a17-bcfc-6d404959f87b">
+  <p local-id="2870a709da9d">
+   <ac:structured-macro ac:local-id="eaed4639892c" ac:macro-id="5b748f2f-1bbc-4494-8df7-5b1cbf1ef98c" ac:name="jira" ac:schema-version="1">
+    <ac:parameter ac:name="key">
+     CBP-3032
+    </ac:parameter>
+    <ac:parameter ac:name="serverId">
+     34b2023d-ebcf-320b-87a4-4db8f4ff7bca
+    </ac:parameter>
+    <ac:parameter ac:name="server">
+     System Jira
+    </ac:parameter>
+   </ac:structured-macro>
+  </p>
+ </li>
+ <li local-id="d34e6110-72c5-4516-81fd-ae3f31d42cf3">
+  <p local-id="141bf417d686">
+   <ac:structured-macro ac:local-id="dd0deabd2c7f" ac:macro-id="a237fc8a-24f8-41dc-8c57-d6f720305f93" ac:name="jira" ac:schema-version="1">
+    <ac:parameter ac:name="key">
+     CBP-3049
+    </ac:parameter>
+    <ac:parameter ac:name="serverId">
+     34b2023d-ebcf-320b-87a4-4db8f4ff7bca
+    </ac:parameter>
+    <ac:parameter ac:name="server">
+     System Jira
+    </ac:parameter>
+   </ac:structured-macro>
+  </p>
+ </li>
+ <li local-id="c7e06053-7232-4fe1-a98b-bcba56941f16">
+  <p local-id="73dc0636bdf1">
+   <ac:structured-macro ac:local-id="c89aa9eb306c" ac:macro-id="038d9587-8f8c-4aed-9433-f53252314cf0" ac:name="jira" ac:schema-version="1">
+    <ac:parameter ac:name="key">
+     CBP-3054
+    </ac:parameter>
+    <ac:parameter ac:name="serverId">
+     34b2023d-ebcf-320b-87a4-4db8f4ff7bca
+    </ac:parameter>
+    <ac:parameter ac:name="server">
+     System Jira
+    </ac:parameter>
+   </ac:structured-macro>
+  </p>
+ </li>
+ <li local-id="1f1be356-518d-40cd-9981-8e5d9a01bdb9">
+  <p local-id="505e8a00fbc8">
+   <ac:structured-macro ac:local-id="ffff484bd298" ac:macro-id="f25168be-cb82-41d3-9834-f9605e8e1bca" ac:name="jira" ac:schema-version="1">
+    <ac:parameter ac:name="key">
+     CBP-3055
+    </ac:parameter>
+    <ac:parameter ac:name="serverId">
+     34b2023d-ebcf-320b-87a4-4db8f4ff7bca
+    </ac:parameter>
+    <ac:parameter ac:name="server">
+     System Jira
+    </ac:parameter>
+   </ac:structured-macro>
+  </p>
+ </li>
+</ul>
+<h2 local-id="8b75dec37e5e">
+ Services Display Format
+</h2>
+<p local-id="bd518c2db653">
+ Services data is displayed in both the Service(s) datagrid column (
+ <a href="https://casecommons.atlassian.net/browse/CBP-3062">
+  CBP-3062
+ </a>
+ ) and the expanded note preview (
+ <a href="https://casecommons.atlassian.net/browse/CBP-3059">
+  CBP-3059
+ </a>
+ ). Both use the same display format for consistency.
+</p>
+<h3 local-id="783ba08a797f">
+ Data Model
+</h3>
+<p local-id="186ad9c0f31c">
+ <strong>
+  Service Type
+ </strong>
+ is always present on every service.
+ <strong>
+  Service Offering + Provider
+ </strong>
+ are always present together or both absent.
+ <strong>
+  Person providing service, Start date, End date
+ </strong>
+ are each independent and optional.
+</p>
+<h3 local-id="f013804b796b">
+ Format
+</h3>
+<p local-id="62705d931243">
+ When Service Offering is present, use parenthetical format:
+</p>
+<p local-id="5cd5c0831bf1">
+ <code>
+  Service Offering (Service Type - Provider [provided by Person] - [date range])
+ </code>
+</p>
+<p local-id="04265e34a5cb">
+ When Service Offering is absent, display Service Type as the primary label:
+</p>
+<p local-id="c1c83e72cde1">
+ <code>
+  Service Type [- provided by Person] [- date range]
+ </code>
+</p>
+<p local-id="d2b7a10ab61d">
+ <strong>
+  Date range rules:
+ </strong>
+ Both dates present:
+ <code>
+  MM/DD/YYYY-MM/DD/YYYY
+ </code>
+ - Start date only:
+ <code>
+  MM/DD/YYYY
+ </code>
+ - End date only:
+ <code>
+  ends MM/DD/YYYY
+ </code>
+ - Neither: omit entirely.
+</p>
+<p local-id="8618f79bbc28">
+ <strong>
+  "provided by" prefix
+ </strong>
+ only appears on Person providing service when Provider is also present.
+</p>
+<h3 local-id="bf5d1aab8721">
+ Examples
+</h3>
+<ul local-id="c3686bc7-ca76-41a9-9df7-4889b299dd0b">
+ <li local-id="f7080ca6-a091-4ff0-8acd-d317ef1f37eb">
+  <p local-id="e6a712a75494">
+   All fields present:
+   <code>
+    Housing assistance (Housing - Haven Path provided by Jane Smith - 12/10/2025-02/10/2026)
+   </code>
+  </p>
+ </li>
+ <li local-id="c3ea2564-e4c9-41ad-b216-1c7d3713a28f">
+  <p local-id="63ce18236329">
+   Service Offering + Provider, no Person, Start date only:
+   <code>
+    Support Group (Therapy - Anchor Point - 12/17/2025)
+   </code>
+  </p>
+ </li>
+ <li local-id="09e3e2de-5b1b-460d-986f-ee19c46d0fdf">
+  <p local-id="5884202e7ca9">
+   Service Offering + Provider, no Person, End date only:
+   <code>
+    Housing assistance (Housing - Haven Path - ends 02/10/2026)
+   </code>
+  </p>
+ </li>
+ <li local-id="1594bda1-860f-4566-9857-47b17e4ce6a5">
+  <p local-id="5300ca539fca">
+   Service Offering + Provider, no Person, no dates:
+   <code>
+    Housing assistance (Housing - Haven Path)
+   </code>
+  </p>
+ </li>
+ <li local-id="c3bf693a-d2c1-422b-a92a-bb84009e5c01">
+  <p local-id="c512cb3cab2d">
+   Service Type only, with Person and dates:
+   <code>
+    Therapy - Jane Smith - 12/10/2025-02/10/2026
+   </code>
+  </p>
+ </li>
+ <li local-id="24e6a7e7-ea41-407d-a0f3-e2cf00a8a844">
+  <p local-id="5ed76e6707a1">
+   Service Type only, minimum:
+   <code>
+    Therapy
+   </code>
+  </p>
+ </li>
+</ul>
+<h2 local-id="73052f05e309">
+ Non-Functional Requirements
+</h2>
+<table ac:local-id="beec3f75b3fd" data-layout="default" data-table-width="760">
+ <tbody>
+  <tr ac:local-id="865301d1-43af-42e6-b709-bd96929a160c">
+   <th ac:local-id="2d67749b-21a9-48b2-ac25-179e739d7199">
+    <p local-id="87119f484f55">
+     <strong>
+      Short Title
+     </strong>
+    </p>
+   </th>
+   <th ac:local-id="6410b553-8077-4471-97c1-93804bbc33be">
+    <p local-id="7fcf92693799">
+     <strong>
+      Requirement
+     </strong>
+    </p>
+   </th>
+   <th ac:local-id="2a12c860-2901-4756-92b4-d7ba10390a56">
+    <p local-id="62c6c95874d1">
+     <strong>
+      JIRA Link
+     </strong>
+    </p>
+   </th>
+  </tr>
+  <tr ac:local-id="6533283f-5614-4e6e-ba91-516a3ea0d994">
+   <td ac:local-id="b83baf71-6c79-4422-8c4a-8373b7f6695b">
+    <p local-id="a34d7865008b">
+     Error handling
+    </p>
+   </td>
+   <td ac:local-id="5372bf20-ad1e-4b4c-8453-9d1e1a500673">
+    <p local-id="8734a750102b">
+     SWW errors must not surface during datagrid load, row expansion, or action execution. All errors should be caught and surfaced as toast notifications.
+    </p>
+   </td>
+   <td ac:local-id="90834a08-1437-474a-8bfb-959ef2aca57a">
+    <p local-id="ca1cd10f28fb">
+     <a href="https://casecommons.atlassian.net/browse/CBP-2888">
+      CBP-2888
+     </a>
+    </p>
+   </td>
+  </tr>
+  <tr ac:local-id="0d58f64e-9951-43f0-aee0-db0b1784dde8">
+   <td ac:local-id="251e0034-ec68-4942-8cab-b66b8a1eac5a">
+    <p local-id="56fa05c7eaff">
+     Events – audit log
+    </p>
+   </td>
+   <td ac:local-id="1a6accc7-d98e-4a7e-8c36-abac2431cb78">
+    <p local-id="e2c626dd4442">
+     Note edits and deletions initiated from the datagrid should record events in the Audit log consistent with existing note operations
+    </p>
+   </td>
+   <td ac:local-id="e8e69d52-db82-44e4-aca1-611d6f917efa">
+    <p local-id="94447a445d6c">
+    </p>
+   </td>
+  </tr>
+  <tr ac:local-id="7160d68b-acae-433e-b752-c7eb83957054">
+   <td ac:local-id="809e83d9-3776-492c-9df6-913ffe7b1190">
+    <p local-id="5fdb8885128c">
+     Events – analytics
+    </p>
+   </td>
+   <td ac:local-id="a69e1b16-e5ab-47c7-900e-fd7250223feb">
+    <p local-id="940695cc1071">
+     The following events should be recorded in Google Analytics and ChurnZero: Notes datagrid loaded, Note expanded/collapsed, Quick filter applied, Quick filter cleared, Note exported, Note printed, Note deleted
+    </p>
+   </td>
+   <td ac:local-id="e2bf2ec9-28d1-40df-a521-dec25db77259">
+    <p local-id="4e9daa29156a">
+    </p>
+   </td>
+  </tr>
+  <tr ac:local-id="3c5ef071-bf4e-40df-b0b7-740db3f9e4a2">
+   <td ac:local-id="05f6d5e4-e380-4311-a8c9-e7fe5fe8b1a7">
+    <p local-id="d5a1bab3a0fd">
+     Reporting
+    </p>
+   </td>
+   <td ac:local-id="829849b8-d271-4456-85c6-b1d82e46208d">
+    <p local-id="2103c971673f">
+     N/A
+    </p>
+   </td>
+   <td ac:local-id="bfa14820-f693-4c93-b769-dce939c0b16b">
+    <p local-id="33b912ac23ad">
+    </p>
+   </td>
+  </tr>
+  <tr ac:local-id="304f37aa-dec6-4bb8-aa5e-17de0c3b24d9">
+   <td ac:local-id="219296b6-b308-41cf-ba75-edc0b0e02c90">
+    <p local-id="52c3449259eb">
+     Performance
+    </p>
+   </td>
+   <td ac:local-id="1e156f9c-3d84-4d70-8d87-ccf0807fd9df">
+    <p local-id="7e539d931545">
+     Datagrid initial load should complete within 5 seconds for up to 1,000 notes. Quick filter results should update within 2 seconds of debounce.
+    </p>
+   </td>
+   <td ac:local-id="cd949cb0-3bca-4f0c-a5b8-6b64a83b5bce">
+    <p local-id="d552f3fd94d8">
+    </p>
+   </td>
+  </tr>
+ </tbody>
+</table>
+<h1 local-id="3f77ebfa2efa">
+ Design
+</h1>
+<h2 local-id="6995816348e2">
+ User Research &amp; Usability Test Insights
+</h2>
+<p local-id="bbced691dc0c">
+ No formal usability study has been conducted for the Notes datagrid. Beta feedback will inform column defaults and filter UX adjustments prior to GA. A services usability study (
+ <a href="https://app.asana.com/1/1123317448830974/project/1209067717586495">
+  Notes - Services usability study
+ </a>
+ ) is in progress separately.
+</p>
+<h2 local-id="fe39c1709ab4">
+ User Flow Diagrams &amp; Mock-ups
+</h2>
+<ul local-id="99f2f367-df20-4115-aa4d-0e1a8e76a91f">
+ <li local-id="8a3cc2ee-e2af-4e00-bd32-01e92b7b38ed">
+  <p local-id="6401bb297e89">
+   Mockups:
+   <a href="https://www.figma.com/design/zKrIJ9YTASVYoA6BkZWjaQ/Notes-WLV?node-id=174-1754&amp;t=VCEMGDxVowGWFKhq-1">
+    Notes WLV - Figma
+   </a>
+  </p>
+ </li>
+ <li local-id="4f28e9a8-28e8-4f0e-8d42-523c53fd5c08">
+  <p local-id="b9d851229ae4">
+   Quick filter designs:
+   <a href="https://www.figma.com/design/zKrIJ9YTASVYoA6BkZWjaQ/Notes-WLV?node-id=176-2098&amp;t=4kXFsmcvd1NEqYFy-1">
+    Figma - Quick filter node
+   </a>
+  </p>
+ </li>
+</ul>

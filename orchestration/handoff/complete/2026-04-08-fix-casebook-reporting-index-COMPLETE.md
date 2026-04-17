@@ -4,7 +4,7 @@
 > **Source:** Vault Auditor report `reports/knowledge-report-2026-04-08.md` flag 1.4
 > **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **v1.0**
-> **STATUS: ✅ COMPLETE — 2026-04-09**
+> **STATUS**: ✅ COMPLETE
 
 `skills/casebook/reporting/schema_joins.md` created with the existing index.md content, paths fixed from `casebook-reporting/` to `casebook/reporting/`, and "File Management Best Practice" section removed. `index.md` replaced with a proper directory TOC listing all 9 files including the new `schema_joins.md` and existing `changelog.md`.
 

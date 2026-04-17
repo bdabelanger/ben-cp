@@ -5,7 +5,7 @@
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P1 — introduces the nightly automation system for the vault
 > **v1.1**
-> **STATUS: ✅ COMPLETE — 2026-04-12**
+> **STATUS**: ✅ COMPLETE
 
 Finalized the architectural design for "Daily Progress Digest," establishing the flow sequence (Strategic PM -> Changelog Auditor -> Vault Auditor -> Roz -> Robert -> Bryan -> Digest Editor) and character voices for the vault's nightly orchestration report. Broke down the build phase into discrete P1 and P2 handoffs to preserve focus during execution.
 

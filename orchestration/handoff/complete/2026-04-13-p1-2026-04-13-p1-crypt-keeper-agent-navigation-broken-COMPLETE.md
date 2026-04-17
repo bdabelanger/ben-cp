@@ -6,7 +6,7 @@
 > **Priority:** P1 — Agent navigation broken (missing AGENTS.md, missing index.md files, orphaned files)
 > **Source report:** `skills/knowledge/outputs/reports/knowledge-report-2026-04-13.md`
 > **v1.0**
-> **STATUS: ✅ COMPLETE — 2026-04-14**
+> **STATUS**: ✅ COMPLETE
 
 Created missing index.md files for intelligence/report, memory/audit, memory/intake, memory/retrieval, styles, and updated orchestration index. Reconciled memory naming from legacy learn/recall to current intake/retrieval. Skip AGENTS.md restoration as it was already fixed by path normalization.
 

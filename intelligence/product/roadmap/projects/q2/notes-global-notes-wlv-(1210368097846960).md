@@ -33,16 +33,18 @@
 
 # Global Notes WLV (GID: 1210368097846960)
 
-This view is the central hub designed to solve "Navigation Fatigue," providing a unified entry point for all note-related activity across the platform.
+... [Existing Content] ...
 
 ## 🗣️ Key Narrative Points (From Shareout)
+- **Core Vision**: "All your notes in one place." Designed to end the practice of "tab-switching" and manual navigation between cases to find information.
+- **Key Capabilities**:
+    - **Cross-Unit Visibility**: Users can see, sort, and filter notes from every case and person record they have authorized access to in one single dashboard.
+    - **"My Content" Filter**: A specialized toggle that allows caseworkers to instantly isolate their own interactions and contributions.
+    - **Global Keyword Search**: Full-text search across all accessible note narratives, leveraging standardized "table technology."
+- **Value Proposition**:
+    - **Effortless Navigation**: Ends the "Navigation Fatigue" associated with opening dozens of records to find a single note.
+    - **Supervisory Insight**: Provides supervisors with a high-level "activity stream" view of their team without needing to dig into individual folders.
+- **Customer Validation**:
+    - **The Wellmet Project**: Explicitly stated the need for this: "I don't want them to have to go into 12 cases or people in order to write their notes. What I'd like is one central place… where all the notes are just in one area."
 
-*   **Core Vision**: "All your notes in one place." Eliminating the need for users to manually navigate between dozens of records to find information.
-*   **Customer Validation**: The Wellmet Project highlighted this need: "I don't want them to have to go into 12 cases or people in order to write their notes. What I’d like is one central place… where all the notes are just in one area."
-*   **Key Capabilities**: Features Cross-Unit Visibility (seeing notes across all authorized records), a "My Content" filter, and Global Keyword Search leveraging standardized table technology.
-
-## 💬 Strategic Roadmap
-
-**Related:** The underlying table technology is provided by [Notes Datagrid](notes-notes-datagrid-(1209963394727039).md).
-
-*Status Note: Currently in Backlog, with Bisoye expected to lead development starting May 2026.*
+**Related:** [Notes Datagrid](notes-notes-datagrid-(1209963394727039).md) provides the underlying table technology.

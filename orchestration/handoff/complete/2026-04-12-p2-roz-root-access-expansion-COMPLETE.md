@@ -5,7 +5,7 @@
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **v1.1**
-> **STATUS: ✅ COMPLETE — 2026-04-12**
+> **STATUS**: ✅ COMPLETE
 
 Established a sealed proxy bucket using symlinks to map hidden local files (`~/.claude/` and `~/.gemini/`) natively into the `skills/access/agent-roots/` vault paths. To safeguard GitHub token leakage, deployed a high-priority `.gitignore` file masking the buckets entirely. Finally, updated Changelog Auditor to actively scan these files so Roz can successfully triangulate over-privileged tool sets or stale paths.
 

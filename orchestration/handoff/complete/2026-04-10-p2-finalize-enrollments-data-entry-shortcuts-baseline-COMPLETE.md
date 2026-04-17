@@ -5,7 +5,7 @@
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **v1.0**
-> **STATUS: ✅ COMPLETE — 2026-04-10**
+> **STATUS**: ✅ COMPLETE
 
 The Enrollment Data Entry Shortcuts SOP was updated to incorporate the Metric Qualification Standards (N&D) from procedure.md, specifically refining the Denominator definition and formalizing the Target Setting protocol for future data pulls.
 

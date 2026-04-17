@@ -4,7 +4,7 @@
 > **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P2 — structural consolidation, Vault Auditor owns its reports
 > **v1.0**
-> **STATUS: ✅ COMPLETE — 2026-04-09**
+> **STATUS**: ✅ COMPLETE
 
 `skills/knowledge/reports/` and its `archive/` subdirectory were already created in a prior session. The root `reports/` directory was removed via `git rm -r`. `skills/knowledge/procedure.md` updated: output path changed to `skills/knowledge/reports/`, Pre-Flight updated with archive step. `AGENTS.md` vault tree updated: root `reports/` removed, `crypt-keeper/` section expanded with SKILL.md, changelog.md, and `reports/` (with `archive/`). File Placement table updated. `crypt-keeper/index.md` reports/ entry and stale reference updated (done as part of handoff 1). `SKILL.md` was already correct — no change needed.
 

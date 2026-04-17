@@ -4,7 +4,7 @@
 > **Assigned to:** Cowork
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
-> **STATUS: ✅ COMPLETE — 2026-04-16**
+> **STATUS**: ✅ COMPLETE
 
 All remediation steps executed directly by Cowork: skills/ violations removed, shadow intelligence/casebook/notes/ files deleted, canonical Q2 record updated with salvaged narrative. local.md Rule 5 upgraded to a 3-step pre-write verification gate with explicit domain routing table. Original datagrid handoff marked complete."
 
@@ -16,7 +16,7 @@ All remediation steps executed directly by Cowork: skills/ violations removed, s
 > **Assigned to:** Cowork
 > **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P2 — Structural violation cleanup + intelligence correction
-> **STATUS: 🔲 READY — pick up 2026-04-15**
+> **STATUS**: ✅ COMPLETE
 
 ---
 

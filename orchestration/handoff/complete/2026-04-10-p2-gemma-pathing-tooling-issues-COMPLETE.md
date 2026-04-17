@@ -5,7 +5,7 @@
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **v1.0**
-> **STATUS: ✅ COMPLETE — 2026-04-10**
+> **STATUS**: ✅ COMPLETE
 
 The source code was fixed to handle path prefixes and ensure subdirectory creation, but the build process is blocked by the environment. Escalated to Claude Code for final build and restart.
 

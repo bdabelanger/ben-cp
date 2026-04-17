@@ -6,7 +6,7 @@
 > **Priority:** P2 — structural violations
 > **Source report:** `skills/knowledge/outputs/reports/knowledge-report-2026-04-12.md`
 > **v1.0**
-> **STATUS: 🔲 READY — pick up 2026-04-12**
+> **STATUS**: ✅ COMPLETE
 
 ---
 

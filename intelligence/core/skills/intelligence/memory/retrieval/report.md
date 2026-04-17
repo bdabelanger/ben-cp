@@ -11,7 +11,7 @@ Use the standard cold, logical voice of the Senior Archivist.
 
 # Recall: Context Brief — [Session ID]
 **Agent:** Vault Auditor
-**Source Domain:** [e.g., skills/product/]
+**Source Domain:** [e.g., intelligence/core/skills/product/]
 
 ### Relevant Patterns
 - [Pattern 1]: [Brief description]

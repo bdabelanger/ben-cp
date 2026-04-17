@@ -5,7 +5,7 @@
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **v1.2**
-> **STATUS: 🔲 READY — pick up 2026-04-12**
+> **STATUS**: ✅ COMPLETE
 
 ---
 

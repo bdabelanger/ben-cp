@@ -34,3 +34,4 @@ Draft narrative accompanying the Q2 deck.
 ## Navigation
 - [**Roadmap Root**](../../index.md)
 - [**Product Intelligence Root**](../../../index.md)
+- [Q2 2026 Product Shareout Intelligence Record](notes-q2-2026-product-shareout.md)

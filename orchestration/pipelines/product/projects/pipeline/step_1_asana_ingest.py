@@ -99,6 +99,13 @@ def filter_platform_projects(input_path, output_path, target_gid=None, team_gid=
                     link_field = next((f for f in custom_fields if f['gid'] == "1208818005809198"), None)
                     jira_link = link_field.get('text_value') or link_field.get('display_value') if link_field else "N/A"
 
+                # Extract PRD and Launch Plan links for the Intelligence Ingestion Pipeline
+                prd_field = next((f for f in custom_fields if f['gid'] == "1211632504010030"), None)
+                p['prd_link'] = prd_field.get('text_value') if prd_field else None
+
+                lp_field = next((f for f in custom_fields if f['gid'] == "1211632748689814"), None)
+                p['launch_plan_link'] = lp_field.get('text_value') if lp_field else None
+
                 p['jira_link'] = jira_link
                 filtered.append(p)
 

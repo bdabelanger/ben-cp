@@ -12,14 +12,14 @@ The Access Auditor ensures that agents are operating within their defined roles 
 
 ## Documentation
 
-- [SKILL.md](file:///Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/access/SKILL.md) — Detailed vision, synergy, and full audit procedure list.
-- [character.md](file:///Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/access/character.md) — Access Auditor's voice, persona, and Dream Cycle segment format.
-- [report_template.md](file:///Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/access/report_template.md) — The form of the Auditor's report.
+- [SKILL.md](file:///Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/intelligence/core/skills/orchestration/access/SKILL.md) — Detailed vision, synergy, and full audit procedure list.
+- [character.md](file:///Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/intelligence/core/skills/orchestration/access/character.md) — Access Auditor's voice, persona, and Dream Cycle segment format.
+- [report_template.md](file:///Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/intelligence/core/skills/orchestration/access/report_template.md) — The form of the Auditor's report.
 
 ## Reports Archive
 
-Audits are archived in [outputs/reports/](file:///Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/access/outputs/reports/).
-- [ ] [roz-report-2026-04-10.md](file:///Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/access/outputs/reports/access-report-2026-04-10.md) (Expected)
+Audits are archived in [outputs/reports/](file:///Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/intelligence/core/skills/orchestration/access/outputs/reports/).
+- [ ] [roz-report-2026-04-10.md](file:///Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/intelligence/core/skills/orchestration/access/outputs/reports/access-report-2026-04-10.md) (Expected)
 
 ## Roadmap
 

@@ -18,24 +18,30 @@ def scan_orphans():
             source_dir = os.path.join(root, 'source')
             parent_dir = root
             
-            source_files = os.listdir(source_dir)
+            # Exclude known template files from orphans
+            IGNORE_KEYWORDS = ['template', 'test', 'example', '.DS_Store']
             
-            # Check for matches
+            source_files = os.listdir(source_dir)
             available_mds = [f.replace('.md', '').lower() for f in os.listdir(parent_dir) if f.endswith('.md')]
             
             for s_file in source_files:
                 if s_file.startswith('.') or s_file == "index.md":
                     continue
                 
+                # Check for ignore keywords
+                if any(keyword in s_file.lower() for keyword in IGNORE_KEYWORDS):
+                    continue
+                
                 # Try to find a match in the parent
-                # We check if the basename (without extension) of the source file 
-                # matches any of the MD files in the parent.
                 basename = os.path.splitext(s_file)[0].lower()
                 
-                # Loose matching: if basename is IN an MD filename or vice versa
+                # Double extension check (e.g., .txt and .pdf for same thing)
                 matched = False
                 for md in available_mds:
-                    if basename in md or md in basename:
+                    if basename == md: # Exact match preferred
+                        matched = True
+                        break
+                    if basename in md or md in basename: # Loose match
                         matched = True
                         break
                 

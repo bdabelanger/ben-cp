@@ -5,7 +5,7 @@
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P4
 > **v1.0**
-> **STATUS: ✅ COMPLETE — 2026-04-12**
+> **STATUS**: ✅ COMPLETE
 
 Smoke test completed successfully. All three domain checks passed with corrected vault-relative paths. Along the way, identified and cleaned up two real issues: a rogue orchestration/notes/ directory created at the repo root (not the vault) by a prior agent, and a broken collaboration/index.md reference in orchestration/index.md (the skill is actually communication/, not collaboration/). Both were fixed. The smoke test step 3 path (skills/orchestration/notes/notes.md) was a bad path in the original handoff — the correct vault-relative path is orchestration/communication/notes.md, which reads fine.
 

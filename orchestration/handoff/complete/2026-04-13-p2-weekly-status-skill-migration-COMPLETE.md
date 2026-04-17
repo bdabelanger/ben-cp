@@ -5,7 +5,7 @@
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **v1.0**
-> **STATUS: ✅ COMPLETE — 2026-04-13**
+> **STATUS**: ✅ COMPLETE
 
 Migrated weekly-status-update skill into the vault at skills/product/weekly-status/. Source content taken from the Cowork plugin spec shared in-session. Created index.md, procedure.md (full four-step spec: Asana fetch + bucketing, Jira fetch + status overrides + batching, card format with all emoji/flag/time bar rules, report structure with data quality and summary sections), and changelog.md. Updated product/index.md and skills/index.md. Cowork plugin remains the runtime version; vault is now the canonical reference.
 

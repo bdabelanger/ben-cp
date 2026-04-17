@@ -7,7 +7,7 @@
 > **Priority:** P3 — data quality gaps
 > **Source report:** `skills/knowledge/outputs/reports/knowledge-report-2026-04-12.md`
 > **v1.2**
-> **STATUS: ✅ COMPLETE — 2026-04-13**
+> **STATUS**: ✅ COMPLETE
 
 Added KR #6 (Locked/Signed Notes) to skills/product/okr-reporting/data_sources.md. Tasks 2 and 3 from the original report were invalidated: character content now lives in report.md files (no standalone character.md), and skills/input/ does not exist in the vault. Changelog written at okr-reporting and root level.
 

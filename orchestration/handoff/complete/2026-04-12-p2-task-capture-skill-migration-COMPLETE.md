@@ -5,7 +5,7 @@
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2 — skill migration, no urgency but improves vault completeness
 > **v1.0**
-> **STATUS: ✅ COMPLETE — 2026-04-13**
+> **STATUS**: ✅ COMPLETE
 
 Migrated task-capture skill into the vault at skills/product/task-capture/. Source content taken from the Cowork plugin definition shared in-session (files were not on disk). Created index.md (purpose, scope, companion skills, source-of-truth note), procedure.md (classification system, workspace config, Asana custom field GIDs, Jira issue type mapping, execution steps, confirmation format, known limitations), changelog.md, and a references/ directory stub. Updated skills/product/index.md and skills/index.md to register the new skill. Cowork plugin remains the runtime version; vault is now the canonical reference and edit target.
 

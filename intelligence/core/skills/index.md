@@ -21,7 +21,7 @@
 
 | Store | Purpose |
 | :--- | :--- |
-| [`intelligence/`](../intelligence/mapping/status_mapping.md) | Vault source of truth: logic stubs, status rules, domain knowledge (gitignored optional) |
-| [`tools/`](../tools/) | Execution scripts and pipeline runners for all skills |
-| [`inputs/`](../inputs/) | Live run data: raw API responses, processed JSON, manifest state |
-| [`outputs/`](../outputs/) | Centralized repository for all skill session reports and logs |
+| [`intelligence/`](../mapping/status_mapping.md) | Vault source of truth: logic stubs, status rules, domain knowledge |
+| [`tools/`](../../../tools/) | Execution scripts and pipeline runners for all skills |
+| [`inputs/`](../../../inputs/) | Live run data: raw API responses, processed JSON, manifest state |
+| [`outputs/`](../../../orchestration/pipelines/outputs/) | Centralized repository for all skill session reports and logs |

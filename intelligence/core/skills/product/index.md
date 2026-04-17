@@ -10,23 +10,20 @@
 
 | Sub-skill | Purpose |
 | :--- | :--- |
-| [`status-reports/`](status-reports/index.md) | Weekly platform status report pipeline (Asana-driven) |
-| [`okr-reporting/`](okr-reporting/index.md) | Q2 OKR measurement and dashboard |
-| [`weekly-status/`](weekly-status/index.md) | Platform weekly status report — Asana + Jira card format (Cowork skill) |
-| [`task-capture/`](task-capture/index.md) | Captures work items and routes to Asana or Jira with correct metadata |
-| [`dod-helper/`](dod-helper/index.md) | Interviews Ben and writes a Definition of Done back to a task |
-| [`shared/`](shared/data_sources.md) | Shared data sources used across all product sub-skills |
+| [SKILL.md](SKILL.md) | Primary SOP: Status reporting, OKR measurement, and PM workflow logic |
+| [projects/](projects/index.md) | Active project inventory and delivery SOPs |
+| [roadmap/](roadmap/index.md) | Future-looking strategic items and feature sequencing |
 
 ---
 
 ## Philosophy
 
-These skills measure the same thing from different angles:
-- `status-reports/` asks: *what shipped this week and what's at risk?*
-- `okr-reporting/` asks: *are we moving the needle on the metrics that matter?*
-- `weekly-status/` asks: *what's the full card-level picture across all Platform projects?*
+The Product domain consolidates all procedural knowledge for managing the Casebook/Platform roadmap. It prioritizes:
+- **Status Reporting**: Real-time health checks of active tracks.
+- **OKR Measurement**: Mapping execution to high-level strategic results.
+- **Roadmap Planning**: Balancing user needs with engineering capacity.
 
-All product work is done through the **Strategic PM** lens — see `character.md`.
+All product work is done through the **Strategic PM** lens — see `SKILL.md`.
 
 ---
 

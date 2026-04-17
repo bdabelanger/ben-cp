@@ -3,7 +3,7 @@
 > **Prepared by:** Claude (Cowork session, 2026-04-08)
 > **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **v1.0**
-> **STATUS: ✅ COMPLETE — 2026-04-08**
+> **STATUS**: ✅ COMPLETE
 
 All 9 files moved from `skills/casebook-reporting/` to `skills/casebook/reporting/` via `git mv`. Stubs created for `admin-mcp/` and `billing-mcp/`. `index.md` and `changelog.md` created at `skills/casebook/`. `AGENTS.md` vault tree and `skills/index.md` links updated. No unexpected findings in the external MCP repos — both are standard Node/TypeScript projects. `skills/index.md` had 5 direct links to `casebook-reporting/` paths, all updated.
 

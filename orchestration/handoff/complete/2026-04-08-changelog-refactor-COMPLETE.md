@@ -3,7 +3,7 @@
 > **Prepared by:** Claude (Cowork session, 2026-04-08)
 > **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **v1.0**
-> **STATUS: ✅ COMPLETE — executed by Claude Code, 2026-04-08**
+> **STATUS**: ✅ COMPLETE
 
 All tasks completed. `skills/wrap-up/` renamed to `skills/changelog/`, multi-level
 changelog procedure defined, `gemma-wrap-up-latest.md` deprecated, MCP tools

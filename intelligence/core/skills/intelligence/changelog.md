@@ -1,6 +1,6 @@
 # Intelligence Changelog
 
-> Detail log for `skills/intelligence/`. See root `changelog.md` for version history.
+> Detail log for `intelligence/core/skills/intelligence/`. See root `changelog.md` for version history.
 
 ---
 
@@ -10,9 +10,9 @@
 
 **Files changed:**
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/orchestration/notes/` — Deleted rogue directory created at repo root by prior agent (Gemma) — was not in vault path ✅ Complete
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/orchestration/index.md` — Fixed broken link: collaboration/index.md → communication/index.md ✅ Complete
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/intelligence/index.md` — Verified clean — no corruption from prior agent's failed shell commands ✅ Complete
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/orchestration/communication/notes.md` — Verified readable at correct vault-relative path (smoke test step 3 had wrong path in handoff) ✅ Complete
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/intelligence/core/skills/orchestration/index.md` — Fixed broken link: collaboration/index.md → communication/index.md ✅ Complete
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/intelligence/core/skills/intelligence/index.md` — Verified clean — no corruption from prior agent's failed shell commands ✅ Complete
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/intelligence/core/skills/orchestration/notes/notes.md` — Verified readable at correct vault-relative path (smoke test step 3 had wrong path in handoff) ✅ Complete
 
 **Handoff:** `handoff/complete/2026-04-12-p4-intelligence-smoke-test-fresh-chat-COMPLETE.md`
 

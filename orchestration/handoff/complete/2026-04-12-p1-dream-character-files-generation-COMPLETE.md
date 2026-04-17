@@ -5,7 +5,7 @@
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P1
 > **v1.0**
-> **STATUS: ✅ COMPLETE — 2026-04-12**
+> **STATUS**: ✅ COMPLETE
 
 Generated `character.md` files for Robert, Changelog Auditor, Vault Auditor, Strategic PM, Bryan (predict), and Digest Editor (dream). These configuration files set their specific personas, bylines, execution rules, and zero-noise success messages for the upcoming Digest Editor orchestration layer.
 

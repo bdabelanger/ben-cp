@@ -13,7 +13,7 @@
 
 ### Pre-Flight
 1. Read `AGENTS.md` — confirm role definitions and authorized directory boundaries.
-2. Read latest changelog skill report in `skills/orchestration/changelog/outputs/reports/` — specifically Check 9.
+2. Read latest changelog skill report in `intelligence/core/skills/orchestration/changelog/outputs/reports/` — specifically Check 9.
 3. Read root `changelog.md` and relevant skill changelogs for the audit period.
 
 ### Step 1 — Synthesis
@@ -23,9 +23,9 @@ For each flag in Check 9, cross-reference against changelog entries and git log.
 - explicitly flag overly broad tool permission grants (e.g. `Bash(*)`) or orphaned project entries referencing deleted repos.
 
 ### Step 2 — Separation Policy Scan (ALWAYS RUN)
-1. Read `skills/orchestration/separation-policy.md` § Known Migration Debt.
-2. Walk `skills/` and flag any violation of the four-layer architecture (scripts, data, or logs in skill subdirectories) that is not already tracked in the debt list.
-3. Scan for stale `notes.md` files in `skills/` subdirectories.
+1. Read `intelligence/core/skills/orchestration/separation-policy.md` § Known Migration Debt.
+2. Walk `intelligence/core/skills/` and flag any violation of the four-layer architecture (scripts, data, or logs in skill subdirectories) that is not already tracked in the debt list.
+3. Scan for stale `notes.md` files in `intelligence/core/skills/` subdirectories.
 
 ### Step 3 — Deletion & Overwrite Watch (ALWAYS RUN)
 Scan all agent outputs, skill instructions, and handoffs for any language advocating:

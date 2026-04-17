@@ -221,26 +221,26 @@ ben-cp/
 │       ├── inputs/                  ← live run data (raw API responses, manifests)
 │       └── outputs/                 ← generated reports, audit logs, session artifacts
 ├── tasks/                           ← active deliverables and project WIP (FLAT)
-├── intelligence/                    ← vault source of truth (Unified Domain)
-│   ├── core/                        ← system logic and procedural core
-│   │   ├── skills/                  ← all skill SOPs and procedures
-│   │   │   ├── orchestration/       ← execution engine
-│   │   │   │   ├── notes/           
-│   │   │   │   ├── handoff/         
-│   │   │   │   ├── access/          
-│   │   │   │   └── changelog/       
-│   │   │   ├── intelligence/        ← consolidated cognitive domain
-│   │   │   │   ├── memory/          
-│   │   │   │   ├── analysis/        
-│   │   │   │   └── dream/           
-│   │   │   ├── product/             ← PM-facing skills
-│   │   │   ├── rovo/                
-│   │   │   ├── shared/              
-│   │   │   └── styles/              
-│   │   └── governance/              ← vault logic policies and agent rules
-│   ├── mapping/                     ← logic stubs and status rules
-│   ├── casebook/                    ← Casebook domain knowledge
-│   └── product/projects/            ← product roadmap and strategic data
+└── intelligence/                    ← vault source of truth (Unified Domain)
+    ├── core/                        ← system logic and procedural core
+    │   ├── mapping/                 ← logic stubs and status rules
+    │   ├── governance/              ← vault logic policies and agent rules
+    │   └── skills/                  ← all skill SOPs and procedures
+    │       ├── orchestration/       ← execution engine
+    │       │   ├── notes/           
+    │       │   ├── handoff/         
+    │       │   ├── access/          
+    │       │   └── changelog/       
+    │       ├── intelligence/        ← consolidated cognitive domain
+    │       │   ├── memory/          
+    │       │   ├── analysis/        
+    │       │   └── dream/           
+    │       ├── product/             ← PM-facing skills
+    │       ├── rovo/                
+    │       ├── shared/              
+    │       └── styles/              
+    ├── casebook/                    ← Casebook domain knowledge
+    └── product/projects/            ← product roadmap and strategic data
 ```
 
 ---
@@ -254,7 +254,7 @@ ben-cp/
 | `intelligence/analysis/report` | Orchestrator | Nightly Gazette assembly | Daily |
 | `orchestration/changelog` | Changelog Auditor | Project integrity & git drift audit | On-Change |
 | `orchestration/handoff` | Handoff | Task state & plan management | On-Demand |
-| `orchestration/notes` | Notes | Human/Agent context bridge (notes.md) | On-Demand |
+| `orchestration/notes" | Notes | Human/Agent context bridge (notes.md) | On-Demand |
 | `product/status-reports` | Strategic PM | External stakeholder updates | Weekly |
 | `product/okr-reporting` | Strategic PM | KR measurement and strategy | Weekly |
 

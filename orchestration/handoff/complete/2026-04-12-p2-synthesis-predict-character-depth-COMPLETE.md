@@ -5,7 +5,7 @@
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **v1.0**
-> **STATUS: ✅ COMPLETE — 2026-04-13**
+> **STATUS**: ✅ COMPLETE
 
 Deepened character identity for both Robert (Synthesize) and Bryan (Predict) in their respective report.md files. Robert's voice draws from Robert Frost, Robert Burns, and Ben's uncle — direct, willing to reverse himself without apology, sees things fresh. Bryan is sharp, states the call first, explicitly rates confidence, and is ruthlessly useful. Both templates updated to reflect the fuller character. Reviewed and approved by Ben.
 

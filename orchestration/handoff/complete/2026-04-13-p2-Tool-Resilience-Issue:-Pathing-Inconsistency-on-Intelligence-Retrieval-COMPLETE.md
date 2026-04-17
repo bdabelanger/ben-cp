@@ -4,7 +4,7 @@
 > **Assigned to:** Claude
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
-> **STATUS: ✅ COMPLETE — 2026-04-14**
+> **STATUS**: ✅ COMPLETE
 
 Resolved intermittent ENOENT errors in the MCP server by ensuring all path-based tools automatically attempt .md extension resolution and better handle directory-relative lookups.
 

@@ -32,7 +32,7 @@ Read the full handoff file. Note:
 
 ### Step 4 — Write Changelog
 Before marking complete, write a changelog entry using `write_changelog_entry`:
-- **Subdirectory level** for each `skills/` directory touched — full detail.
+- **Subdirectory level** for each `intelligence/core/skills/` directory touched — full detail.
 - **Root level** — one-line summary + pointer to subdirectory changelog(s).
 - **Resilience Policy:** If a subdirectory changelog write fails, follow the **Course Correction Protocol** in `AGENTS.md`. 1-2 attempts to fix, then escalate to root-only logging with a clear flag for human user about the failure.
 - Include `**Handoff:** handoff/complete/[filename]-COMPLETE.md` in the root entry.

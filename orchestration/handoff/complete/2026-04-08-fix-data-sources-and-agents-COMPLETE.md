@@ -4,7 +4,7 @@
 > **Source:** Vault Auditor report `reports/knowledge-report-2026-04-08.md` flags 6.1, 6.2, 7.1 naming note
 > **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **v1.0**
-> **STATUS: ✅ COMPLETE — 2026-04-09**
+> **STATUS**: ✅ COMPLETE
 
 `skills/okr-reporting/data_sources.md` updated: added "Database (Direct) — Portal KRs" section after SQL via Data team, and added `/portal` page view proxy row to the GA table with an engineering confirmation note. `AGENTS.md` updated with SKILL.md/AGENTS.md naming exemption in the File Naming section.
 

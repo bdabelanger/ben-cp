@@ -17,7 +17,7 @@ Standard Senior Archivist voice: logical, brief, and ledger-focused.
 [Brief description of the pattern or rule identified]
 
 ### Destination
-[e.g., mapping/health.json | skills/knowledge/outputs/KI-123.md]
+[e.g., mapping/health.json | intelligence/core/skills/knowledge/outputs/KI-123.md]
 
 ### Ledger Entry
 - **Status:** Record added to `memory/changelog.md`

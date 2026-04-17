@@ -5,7 +5,7 @@
 > **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P1
 > **Constraint:** DO NOT create new intelligence records. FOCUS on updating `index.md` files and link integrity.
-> **STATUS: ✅ COMPLETE — 2026-04-14**
+> **STATUS**: ✅ COMPLETE
 
 Created missing root intelligence/index.md and intelligence/mapping/index.md. Created Q2 projects index at intelligence/product/roadmap/projects/q2/index.md to satisfy broken links. Sanitized Casebook domain index by removing environment-specific absolute paths. Verified all Roadmap indices (Strategtc, Tactical, Governance) are correctly tiered and interlinked.
 

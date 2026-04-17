@@ -5,7 +5,7 @@
 > **Priority:** P2 — structural violation (AGENTS.md compliance)
 > **Source report:** `skills/knowledge/reports/knowledge-report-2026-04-08.md`
 > **v1.0**
-> **STATUS: ✅ COMPLETE — 2026-04-09**
+> **STATUS**: ✅ COMPLETE
 
 On reading `AGENTS.md`, the exemption list already contained `CLAUDE.md` and `README.md` — the update was applied in a prior session. `CLAUDE.md` contains unique Claude Code–specific guidance (handoff check protocol), so it is retained and correctly listed in exemptions. No file edits or deletions were needed; handoff is complete as found.
 

@@ -5,7 +5,7 @@
 > **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P1 — Process refinement and new agent definition
 > **v1.3**
-> **STATUS: ✅ COMPLETE — 2026-04-12**
+> **STATUS**: ✅ COMPLETE
 
 Launched Roz (Access Auditor) and refined the synergy between her and Changelog Auditor. Implemented a mandatory Artifact-First Workflow policy in AGENTS.md to improve vault safety and human oversight. Verified Check 8 (Lingering Plans) with a successful decoy cleanup.
 

@@ -5,7 +5,7 @@
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2 — skill migration, companion to task-capture-skill-migration
 > **v1.0**
-> **STATUS: ✅ COMPLETE — 2026-04-13**
+> **STATUS**: ✅ COMPLETE
 
 Migrated dod-helper skill into the vault at skills/product/dod-helper/. Source content taken from the Cowork plugin definition (task-dod-helper) shared in-session. Created index.md (purpose, modes, companion skills, source-of-truth note), procedure.md (mode detection, single-task flow, question sets by task type, DoD format rules with rationale, posting behavior for Asana vs Jira, batch mode flow), and changelog.md. The DoD quality bar rules — plain dashes, no markdown headers, 3–7 criteria — are preserved verbatim with rationale in procedure.md. Cowork plugin remains the runtime version; vault is now the canonical reference and edit target.
 

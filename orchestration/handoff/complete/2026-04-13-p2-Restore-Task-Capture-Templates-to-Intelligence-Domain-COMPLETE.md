@@ -4,7 +4,7 @@
 > **Assigned to:** Claude
 > **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P2
-> **STATUS: ✅ COMPLETE — 2026-04-14**
+> **STATUS**: ✅ COMPLETE
 
 Successfully retrieved the missing Task Capture templates from the Claude session cache and deployed them to the canonical intelligence domain. Updated the skill documentation to ensure all procedures point to these new vault-native paths.
 

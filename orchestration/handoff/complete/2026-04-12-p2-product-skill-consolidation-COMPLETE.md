@@ -5,7 +5,7 @@
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **v1.0**
-> **STATUS: ✅ COMPLETE — 2026-04-12**
+> **STATUS**: ✅ COMPLETE
 
 Created skills/product/ as a new peer-level domain. Moved project-status-reports/ (renamed to status-reports/) and okr-reporting/ under it. Created a shared/ directory with merged data_sources.md covering sources common to both skills. Created master index.md as the PM-facing entry point.
 
@@ -21,7 +21,7 @@ Created skills/product/ as a new peer-level domain. Moved project-status-reports
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2 — vault reorganization, no urgency but improves agent navigation
 > **v1.0**
-> **STATUS: 🔲 READY — pick up on desktop**
+> **STATUS**: ✅ COMPLETE
 
 ---
 

@@ -5,7 +5,7 @@
 > **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P2
 > **v1.3**
-> **STATUS: ✅ COMPLETE — 2026-04-14**
+> **STATUS**: ✅ COMPLETE
 
 Formally established the 'product' skill name and Strategic PM persona as the standard for all PM-facing vault operations. Confirmed all directory paths and tool references adhere to this naming convention. Deprecated the temporary session planning patterns in favor of the artifact-led workflow.
 

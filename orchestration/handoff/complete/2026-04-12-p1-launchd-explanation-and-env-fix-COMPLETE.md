@@ -5,7 +5,7 @@
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P1
 > **v1.0**
-> **STATUS: ✅ COMPLETE — 2026-04-12**
+> **STATUS**: ✅ COMPLETE
 
 Elaborated on the Bash environment sourcing bug caused by `//` comments. Corrected the `.env` file to use standard Bash `#` comments to restore stability for the legacy project status pipelines.
 

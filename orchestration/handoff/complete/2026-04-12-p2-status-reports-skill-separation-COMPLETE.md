@@ -5,7 +5,7 @@
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **v1.0**
-> **STATUS: ✅ COMPLETE — 2026-04-12**
+> **STATUS**: ✅ COMPLETE
 
 Migrated skills/product/status-reports/ from a three-layer mixed directory to a clean two-file skill stub. All execution tooling moved to tools/status-reports/ (scripts, run_pipeline.sh, tests). All live data moved to inputs/status-reports/ (raw/, processed/, archive/, manifest.json). Generated log moved to outputs/status-reports/. Updated all path constants in 8 Python scripts + shell wrapper to compute VAULT_ROOT from __file__ and resolve all data paths from vault root. Updated manifest.json config and step file paths. Updated index.md kickstart commands. Wrote READMEs for tools/ and inputs/ layers. Smoke tested — all paths resolve correctly. Note: files were untracked (never committed), so filesystem mv was used rather than git mv; no git history existed to preserve.
 

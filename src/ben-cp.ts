@@ -10,7 +10,7 @@ import { fileURLToPath } from "node:url";
 import { execFile } from "node:child_process";
 
 const server = new Server(
-  { name: "ben-cp", version: "2.1.0" },
+  { name: "ben-cp", version: "2.1.1" },
   { capabilities: { tools: {} } }
 );
 
@@ -24,52 +24,57 @@ const handoffPath = path.resolve(rootPath, "orchestration/handoff");
 
 // Notes domain map — agents use the shorthand key, tool resolves the path
 const NOTES_DOMAIN_MAP: Record<string, string> = {
-  "primary":                      "intelligence/core/skills/orchestration/notes/notes.md",
-  "communication":                "intelligence/core/skills/orchestration/notes/notes.md",
-  "orchestration/communication":  "intelligence/core/skills/orchestration/notes/notes.md",
-  "notes":                        "intelligence/core/skills/orchestration/notes/notes.md",
-  "orchestration/notes":          "intelligence/core/skills/orchestration/notes/notes.md",
-  "handoff":                      "intelligence/core/skills/orchestration/handoff/notes.md",
-  "orchestration/handoff":        "intelligence/core/skills/orchestration/handoff/notes.md",
-  "changelog":                    "intelligence/core/skills/orchestration/changelog/notes.md",
-  "orchestration/changelog":      "intelligence/core/skills/orchestration/changelog/notes.md",
-  "access":                       "intelligence/core/skills/orchestration/access/notes.md",
-  "orchestration/access":         "intelligence/core/skills/orchestration/access/notes.md",
-  "memory":                       "intelligence/core/skills/intelligence/memory/notes.md",
-  "intelligence/memory":          "intelligence/core/skills/intelligence/memory/notes.md",
-  "synthesize":                   "intelligence/core/skills/intelligence/analyze/synthesize/notes.md",
+  "primary": "intelligence/core/skills/orchestration/notes/notes.md",
+  "communication": "intelligence/core/skills/orchestration/notes/notes.md",
+  "orchestration/communication": "intelligence/core/skills/orchestration/notes/notes.md",
+  "notes": "intelligence/core/skills/orchestration/notes/notes.md",
+  "orchestration/notes": "intelligence/core/skills/orchestration/notes/notes.md",
+  "handoff": "intelligence/core/skills/orchestration/handoff/notes.md",
+  "orchestration/handoff": "intelligence/core/skills/orchestration/handoff/notes.md",
+  "changelog": "intelligence/core/skills/orchestration/changelog/notes.md",
+  "orchestration/changelog": "intelligence/core/skills/orchestration/changelog/notes.md",
+  "access": "intelligence/core/skills/orchestration/access/notes.md",
+  "orchestration/access": "intelligence/core/skills/orchestration/access/notes.md",
+  "memory": "intelligence/core/skills/intelligence/memory/notes.md",
+  "intelligence/memory": "intelligence/core/skills/intelligence/memory/notes.md",
+  "synthesize": "intelligence/core/skills/intelligence/analyze/synthesize/notes.md",
   "intelligence/analyze/synthesize": "intelligence/core/skills/intelligence/analyze/synthesize/notes.md",
-  "predict":                      "intelligence/core/skills/intelligence/analyze/predict/notes.md",
+  "predict": "intelligence/core/skills/intelligence/analyze/predict/notes.md",
   "intelligence/analyze/predict": "intelligence/core/skills/intelligence/analyze/predict/notes.md",
-  "product":                      "intelligence/core/skills/product/notes.md",
-  "intelligence/product":         "intelligence/core/skills/product/notes.md",
+  "product": "intelligence/core/skills/product/notes.md",
+  "intelligence/product": "intelligence/core/skills/product/notes.md",
 };
 
 function resolveNotesPath(domain: string | undefined): string {
   const key = (domain ?? "primary").trim().toLowerCase();
-  
+
   // 1. Check if it's a shorthand from the map
   if (NOTES_DOMAIN_MAP[key]) {
     return path.resolve(rootPath, NOTES_DOMAIN_MAP[key]);
   }
-  
+
   // 2. Otherwise, treat it as a path relative to skills/
   // Sanitize: remove leading 'skills/' or 'intelligence/core/skills/' if present
   let sanitized = key.startsWith("skills/") ? key.slice(7) : key;
   if (sanitized.startsWith("intelligence/core/skills/")) sanitized = sanitized.slice(25);
   const resolvedPath = path.resolve(skillsPath, sanitized);
-  
+
   // Security check
   if (!resolvedPath.startsWith(skillsPath)) {
     throw new Error(`Access denied: Domain '${key}' resolves outside the skills directory.`);
   }
-  
+
   // If it's a directory (or looks like one), append notes.md
   if (path.extname(resolvedPath) === "") {
     return path.join(resolvedPath, "notes.md");
   }
-  
+
   return resolvedPath;
+}
+
+function ensureSingleExtension(filename: string, ext: string = ".md"): string {
+  if (filename.endsWith(ext)) return filename;
+  return filename + ext;
 }
 
 async function writeChangelogInternal(a: any, skillsPath: string, date: string): Promise<string[]> {
@@ -111,7 +116,7 @@ async function writeChangelogInternal(a: any, skillsPath: string, date: string):
     newVersion = bump === "major" ? `${maj + 1}.0.0` : bump === "minor" ? `${maj}.${min + 1}.0` : `${maj}.${min}.${pat + 1}`;
   }
   const rootChanges = (a.completed_work ?? []).map((w: any) => `- \`${w.path}\` — ${w.change}`).join("\n");
-  const subPointers = rawSubs.length > 0 ? "\n\n**Detail logs:**\n" + rawSubs.map(s => `- \`skills/${s}/changelog.md\``).join("\n") : "";
+  const subPointers = rawSubs.length > 0 ? "\n\n**Detail logs:**\n" + rawSubs.map(s => `- \`intelligence/core/skills/${s}/changelog.md\``).join("\n") : "";
   let rootEntry = `## [${newVersion}] — ${a.session_goal} (${date})${subPointers}\n\n**Changes:**\n${rootChanges}\n`;
   if (failedLines) rootEntry += `\n**Failed actions:**\n${failedLines}\n`;
   if (blockerLines) rootEntry += `\n**Blockers:**\n${blockerLines}\n`;
@@ -294,17 +299,17 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
       }
     },
     { name: "list_intelligence", description: "List intelligence files in a domain or subdomain. Pass a domain like 'product/projects/shareout/q2' to drill into subdirectories. Returns all files including non-.md source files in source/ subdirectories.", inputSchema: { type: "object", properties: { domain: { type: "string" }, include_directories: { type: "boolean" } }, required: ["domain"] } },
-    { 
-      name: "get_intelligence", 
-      description: "Read an intelligence file by path relative to the intelligence/ directory. Use this for both .md records AND source data documents (txt, pdf, etc.) in source/ folders. Example: 'product/projects/source/data.txt'. The 'intelligence/' prefix is optional and will be handled automatically.", 
-      inputSchema: { 
-        type: "object", 
-        properties: { 
+    {
+      name: "get_intelligence",
+      description: "Read an intelligence file by path relative to the intelligence/ directory. Use this for both .md records AND source data documents (txt, pdf, etc.) in source/ folders. Example: 'product/projects/source/data.txt'. The 'intelligence/' prefix is optional and will be handled automatically.",
+      inputSchema: {
+        type: "object",
+        properties: {
           path: { type: "string", description: "Path relative to intelligence/ directory (e.g. 'product/projects/shareout/q2/notes-authoring-ux.md')" },
           parse: { type: "boolean", description: "If true, returns parsed metadata instead of raw markdown." }
-        }, 
-        required: ["path"] 
-      } 
+        },
+        required: ["path"]
+      }
     },
     { name: "search_intelligence", description: "Search intelligence.", inputSchema: { type: "object", properties: { query: { type: "string" }, domain: { type: "string" } }, required: ["query"] } },
     { name: "connect_intelligence", description: "Link intelligence records.", inputSchema: { type: "object", properties: { relationship: { type: "string" }, sourcePath: { type: "string" }, targetPath: { type: "string" } }, required: ["sourcePath", "targetPath", "relationship"] } },
@@ -335,20 +340,21 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     { name: "get_changelog", description: "Read changelog.", inputSchema: { type: "object", properties: { scope: { type: "string" } } } },
 
     // --- REPORTING & OUTPUTS ---
-    { 
-      name: "generate_report", 
-      description: "Generate a strategic or platform report by executing relevant pipelines.", 
-      inputSchema: { 
-        type: "object", 
-        properties: { 
+    {
+      name: "generate_report",
+      description: "Generate a strategic or platform report by executing relevant pipelines.",
+      inputSchema: {
+        type: "object",
+        properties: {
           skill: { type: "string", description: "The skill or domain (e.g. 'platform', 'dream')." },
-          date: { type: "string" }, 
-          dry_run: { type: "boolean" } 
+          date: { type: "string" },
+          dry_run: { type: "boolean" }
         },
         required: ["skill"]
-      } 
+      }
     },
-    { name: "list_reports", description: "List reports.", inputSchema: { type: "object", properties: {} } }
+    { name: "list_reports", description: "List reports in outputs. Optional domain (e.g. 'dream/reports').", inputSchema: { type: "object", properties: { domain: { type: "string" } } } },
+    { name: "get_report", description: "Read a report file by path relative to orchestration/pipelines/outputs/.", inputSchema: { type: "object", properties: { path: { type: "string" } }, required: ["path"] } }
   ]
 }));
 
@@ -359,12 +365,12 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     if (name === "get_agent_info") {
       const { agent_id } = args as any;
       const agentsMd = await fs.readFile(path.resolve(rootPath, "AGENTS.md"), "utf-8");
-      
+
       // Load all role documentation from agents/*.md for a single-fetch baseline
       const agentsDir = path.resolve(rootPath, "agents");
       const files = await fs.readdir(agentsDir);
       const roleDocs: string[] = [];
-      
+
       for (const file of files) {
         if (file.endsWith(".md") && !file.startsWith(".") && file !== "index.md") {
           const content = await fs.readFile(path.join(agentsDir, file), "utf-8");
@@ -372,10 +378,10 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
           roleDocs.push(`## Role: ${roleName}\n\n${content}`);
         }
       }
-      
+
       const allRolesDoc = roleDocs.join("\n\n---\n\n");
       let requestingAgentDoc = "";
-      
+
       if (agent_id) {
         try {
           const agentPath = path.resolve(rootPath, "agents", `${agent_id.toLowerCase()}.md`);
@@ -384,15 +390,15 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
           requestingAgentDoc = `\n\n> **Note:** No specific documentation found for agent '${agent_id}'.`;
         }
       }
-      
+
       let finalContent = `# Vault Governance & Role Data\n\n${agentsMd}\n\n---\n\n# All Agent Roles\n\n${allRolesDoc}`;
-      
+
       if (agent_id) {
         finalContent += `\n\n---\n\n# Requesting Agent Role: ${agent_id}\n\n${requestingAgentDoc}`;
       } else {
         finalContent += `\n\n---\n\n# Requesting Agent Role: Unspecified\n\n> **Note:** Call with 'agent_id' to highlight your specific role at the end of this document.`;
       }
-      
+
       return { content: [{ type: "text", text: finalContent }] };
     }
 
@@ -454,7 +460,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     if (name === "add_handoff") {
       const { title, priority, content, assigned_to = "Any" } = args as any;
       const date = new Date().toISOString().split('T')[0];
-      const filename = `${date}-${priority.toLowerCase()}-${title.replace(/\s+/g, '-')}.md`;
+      const filename = ensureSingleExtension(`${date}-${priority.toLowerCase()}-${title.replace(/\s+/g, '-')}`);
       const fullPath = path.join(handoffPath, filename);
       const header = `# Implementation Plan: ${title}\n\n` +
         `> **Prepared by:** Code (Gemini) (${date})\n` +
@@ -498,10 +504,18 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
               assigned_to: assignee
             });
           }
-        } catch (e) {}
+        } catch (e) { }
       }
-      results.sort((a,b) => b.date.localeCompare(a.date));
-      return { content: [{ type: "text", text: JSON.stringify(limit ? results.slice(0, limit) : results, null, 2) }] };
+      results.sort((a, b) => b.date.localeCompare(a.date));
+      const filteredResults = (status === "ALL")
+        ? results
+        : results.filter(r => {
+          const rStatus = r.status.toLowerCase();
+          if (status === "READY") return rStatus.includes("ready") && !rStatus.includes("complete");
+          if (status === "COMPLETE") return rStatus.includes("complete");
+          return true;
+        });
+      return { content: [{ type: "text", text: JSON.stringify(limit ? filteredResults.slice(0, limit) : filteredResults, null, 2) }] };
     }
 
     if (name === "get_handoff") {
@@ -516,7 +530,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
           try {
             await fs.access(mdPath);
             fullPath = mdPath;
-          } catch {}
+          } catch { }
         }
       }
       const content = await fs.readFile(fullPath, "utf-8");
@@ -528,7 +542,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const relPath = String(a.path);
       const normalized = relPath.startsWith("handoff/") ? relPath.slice(8) : relPath;
       let sourcePath = path.resolve(handoffPath, normalized);
-      
+
       try {
         await fs.access(sourcePath);
       } catch {
@@ -537,10 +551,10 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
           try {
             await fs.access(mdPath);
             sourcePath = mdPath;
-          } catch {}
+          } catch { }
         }
       }
-      
+
       if (a.mark_complete) {
         const date = new Date().toISOString().split('T')[0];
         const targetFilename = `${path.basename(relPath, ".md")}-COMPLETE.md`;
@@ -565,12 +579,13 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const { name: fileName, title, metadata = {}, content } = args as any;
       const tasksRoot = path.resolve(rootPath, "tasks");
       await fs.mkdir(tasksRoot, { recursive: true });
-      const fullPath = path.join(tasksRoot, `${fileName}.md`);
+      const sanitizedFilename = ensureSingleExtension(fileName);
+      const fullPath = path.join(tasksRoot, sanitizedFilename);
       try {
         await fs.access(fullPath);
-        throw new Error(`Task '${fileName}.md' already exists. Use edit_task to update.`);
+        throw new Error(`Task '${sanitizedFilename}' already exists. Use edit_task to update.`);
       } catch (e: any) {
-         if (e.message && e.message.includes("already exists")) throw e;
+        if (e.message && e.message.includes("already exists")) throw e;
       }
       let metaBlock = "";
       if (metadata) {
@@ -617,12 +632,12 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const tasksRoot = path.resolve(rootPath, "tasks");
       const normalized = String(relPath).startsWith("tasks/") ? String(relPath).slice(6) : relPath;
       let fullPath = path.resolve(tasksRoot, normalized);
-      
+
       // Safety check: ensure the resolved path is still inside the tasksRoot
       if (!fullPath.startsWith(tasksRoot)) {
         throw new Error("Access denied: path must be within the tasks/ directory.");
       }
-      
+
       try {
         await fs.access(fullPath);
       } catch {
@@ -631,7 +646,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
           try {
             await fs.access(mdPath);
             fullPath = mdPath;
-          } catch {}
+          } catch { }
         }
       }
 
@@ -644,15 +659,16 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const { name: fileName, title, agent, content } = args as any;
       const artRoot = path.resolve(rootPath, "art");
       await fs.mkdir(artRoot, { recursive: true });
-      const fullPath = path.join(artRoot, `${fileName}.md`);
+      const sanitizedFilename = ensureSingleExtension(fileName);
+      const fullPath = path.join(artRoot, sanitizedFilename);
       const date = new Date().toISOString().split('T')[0];
       const fullContent = `# ${title}\n\n> **Artist:** ${agent}\n> **Date:** ${date}\n\n${content}\n`;
       await fs.writeFile(fullPath, fullContent, "utf-8");
-      
+
       // Update Index
       const indexPath = path.join(artRoot, "index.md");
       let indexContent = "# Vault Art Gallery\n\n";
-      try { indexContent = await fs.readFile(indexPath, "utf-8"); } catch {}
+      try { indexContent = await fs.readFile(indexPath, "utf-8"); } catch { }
       if (!indexContent.includes(`[${title}]`)) {
         indexContent += `- [${title}](${fileName}.md) — by ${agent} (${date})\n`;
         await fs.writeFile(indexPath, indexContent, "utf-8");
@@ -661,7 +677,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       // Update Changelog
       const changelogPath = path.join(artRoot, "changelog.md");
       let logContent = "# Art Changelog\n\n";
-      try { logContent = await fs.readFile(changelogPath, "utf-8"); } catch {}
+      try { logContent = await fs.readFile(changelogPath, "utf-8"); } catch { }
       logContent += `- **${date}**: ${agent} contributed "${title}"\n`;
       await fs.writeFile(changelogPath, logContent, "utf-8");
 
@@ -691,10 +707,11 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const { domain, name: fileName, title, metadata = {}, content } = args as any;
       const domainPath = path.resolve(rootPath, "intelligence", domain);
       await fs.mkdir(domainPath, { recursive: true });
-      const fullPath = path.join(domainPath, `${fileName}.md`);
+      const sanitizedFilename = ensureSingleExtension(fileName);
+      const fullPath = path.join(domainPath, sanitizedFilename);
       try {
         await fs.access(fullPath);
-        throw new Error(`File '${fileName}.md' already exists in '${domain}'. Use edit_intelligence to update it.`);
+        throw new Error(`File '${sanitizedFilename}' already exists in '${domain}'. Use edit_intelligence to update it.`);
       } catch (e: any) {
         if (e.message.includes("already exists")) throw e;
       }
@@ -708,10 +725,10 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         try { indexContent = await fs.readFile(indexPath, "utf-8"); } catch {
           indexContent = `# ${domain.split('/').pop()?.toUpperCase() || 'Domain'} Index\n\n## Records\n`;
         }
-        if (!indexContent.includes(`${fileName}.md`)) {
-          await fs.appendFile(indexPath, `- [${title}](${fileName}.md)\n`, "utf-8");
+        if (!indexContent.includes(sanitizedFilename)) {
+          await fs.appendFile(indexPath, `- [${title}](${sanitizedFilename})\n`, "utf-8");
         }
-      } catch (e) {}
+      } catch (e) { }
       return { content: [{ type: "text", text: "Intelligence record created." }] };
     }
 
@@ -723,17 +740,24 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       try {
         await fs.access(fullPath);
       } catch {
-        if (!path.extname(fullPath)) {
-          const mdPath = `${fullPath}.md`;
-          try {
-            await fs.access(mdPath);
-            fullPath = mdPath;
-          } catch {}
+        // Fallback: try core/ prefix
+        const corePath = path.resolve(rootPath, "intelligence/core", normalized);
+        try {
+          await fs.access(corePath);
+          fullPath = corePath;
+        } catch {
+          if (!path.extname(fullPath)) {
+            const mdPath = `${fullPath}.md`;
+            try { await fs.access(mdPath); fullPath = mdPath; } catch {
+              const mdCorePath = `${corePath}.md`;
+              try { await fs.access(mdCorePath); fullPath = mdCorePath; } catch { }
+            }
+          }
         }
       }
 
       let existingContent = await fs.readFile(fullPath, "utf-8");
-      
+
       const lines = existingContent.split('\n');
       let currentTitle = lines[0].replace(/^# /, '');
       if (title) currentTitle = title;
@@ -749,7 +773,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       let metaBlock = "";
       for (const [key, value] of Object.entries(currentMetadata)) { metaBlock += `- **${key}:** ${value}\n`; }
       const newContent = `# ${currentTitle}\n\n${metaBlock}\n${currentBody}`;
-      
+
       await fs.writeFile(fullPath, newContent, "utf-8");
       return { content: [{ type: "text", text: `Intelligence record ${relPath} updated.` }] };
     }
@@ -770,7 +794,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
               for (const sf of sub) {
                 if (!sf.isDirectory()) items.push({ name: sf.name, type: "file", path: path.join("intelligence", domain, f.name, sf.name) });
               }
-            } catch {}
+            } catch { }
           }
         } else if (f.name !== "index.md") {
           items.push({ name: f.name, type: "file", path: path.join("intelligence", domain, f.name) });
@@ -787,17 +811,24 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       try {
         await fs.access(fullPath);
       } catch {
-        if (!path.extname(fullPath)) {
-          const mdPath = `${fullPath}.md`;
-          try {
-            await fs.access(mdPath);
-            fullPath = mdPath;
-          } catch {}
+        // Fallback: try core/ prefix
+        const corePath = path.resolve(rootPath, "intelligence/core", normalized);
+        try {
+          await fs.access(corePath);
+          fullPath = corePath;
+        } catch {
+          if (!path.extname(fullPath)) {
+            const mdPath = `${fullPath}.md`;
+            try { await fs.access(mdPath); fullPath = mdPath; } catch {
+              const mdCorePath = `${corePath}.md`;
+              try { await fs.access(mdCorePath); fullPath = mdCorePath; } catch { }
+            }
+          }
         }
       }
 
       const content = await fs.readFile(fullPath, "utf-8");
-      
+
       if (parse) {
         const metadata: Record<string, string> = {};
         const matches = content.matchAll(/- \*\*([^:]+):\*\* (.*)/g);
@@ -880,7 +911,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const skill = String((args as any)?.skill ?? "platform");
       let script = "";
       let cmdArgs: string[] = [];
-      
+
       if (skill === "platform") {
         script = path.resolve(rootPath, "tools/status-reports/scripts/full_run.py");
         cmdArgs = ["--force", "--team", "platform"];
@@ -897,8 +928,21 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     }
 
     if (name === "list_reports") {
-      const files = await fs.readdir(path.resolve(rootPath, "outputs/dream"));
+      const { domain = "" } = args as any;
+      const baseReportsPath = path.resolve(rootPath, "orchestration/pipelines/outputs");
+      const reportsPath = path.resolve(baseReportsPath, domain);
+      if (!reportsPath.startsWith(baseReportsPath)) throw new Error("Access denied: Outside reports directory.");
+      const files = await fs.readdir(reportsPath);
       return { content: [{ type: "text", text: files.filter(f => !f.startsWith('.')).join("\n") }] };
+    }
+
+    if (name === "get_report") {
+      const { path: relPath } = args as any;
+      const baseReportsPath = path.resolve(rootPath, "orchestration/pipelines/outputs");
+      const fullPath = path.resolve(baseReportsPath, relPath);
+      if (!fullPath.startsWith(baseReportsPath)) throw new Error("Access denied: Outside reports directory.");
+      const content = await fs.readFile(fullPath, "utf-8");
+      return { content: [{ type: "text", text: content }] };
     }
 
     throw new Error(`Tool not found: ${name}`);

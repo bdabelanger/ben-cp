@@ -5,8 +5,9 @@ import shutil
 from datetime import datetime
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-VAULT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../../.."))
-MANIFEST_PATH = os.path.join(VAULT_ROOT, "inputs/status-reports/manifest.json")
+# orchestration/pipelines/product/projects/pipeline/ -> ben-cp/
+VAULT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../../../../.."))
+MANIFEST_PATH = os.path.abspath(os.path.join(SCRIPT_DIR, "../inputs/status-reports/manifest.json"))
 REPO_ROOT = VAULT_ROOT
 
 def load_manifest():

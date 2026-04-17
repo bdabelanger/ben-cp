@@ -6,7 +6,7 @@
 > **Priority:** P1 — agent navigation broken
 > **Source report:** `skills/knowledge/outputs/reports/knowledge-report-2026-04-12.md`
 > **v1.0**
-> **STATUS: ✅ COMPLETE — 2026-04-12**
+> **STATUS**: ✅ COMPLETE
 
 Synchronized AGENTS.md and the skills index with the post-cleanup vault structure, ensuring agents are no longer misrouted to defunct paths.
 

@@ -4,7 +4,7 @@
 > **Assigned to:** Code
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P1
-> **STATUS: ✅ COMPLETE — 2026-04-16**
+> **STATUS**: ✅ COMPLETE
 
 Identified and fixed a bug in src/ben-cp.ts where writeChangelogInternal was attempting to .map() over undefined arrays (completed_work, next_tasks) during handoff archival. Applied nullish coalescing to ensure safety. Verified by successfully archiving the blocking handoffs.
 

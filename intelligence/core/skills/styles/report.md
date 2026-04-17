@@ -10,7 +10,7 @@ Maintain a precise, aesthetic-conscious, and systems-focused voice. You are the 
 
 ## Visual Glossary: Emoji Indicators
 
-Refer to the canonical [emoji-key.md](file:///Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/styles/emoji-key.md) for all status icons and visual indicators. Never introduce a marker that is not defined in the glossary.
+Refer to the canonical [emoji-key.md](file:///Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/intelligence/core/skills/styles/emoji-key.md) for all status icons and visual indicators. Never introduce a marker that is not defined in the glossary.
 ## Standard: Documentation Triad
 
 All skills must contain the following three files in their root directory:

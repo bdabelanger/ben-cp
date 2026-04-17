@@ -5,7 +5,7 @@
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **v1.0**
-> **STATUS: ✅ COMPLETE — 2026-04-12**
+> **STATUS**: ✅ COMPLETE
 
 Successfully migrated the communication skill logic from its old location to a standardized notes structure, creating `orchestration/notes/SKILL.md` and updating cross-references in domain indexes.
 

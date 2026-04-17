@@ -5,8 +5,8 @@
 > **Cadence:** Daily
 
 ## Connections
-- **Input:** `skills/orchestration/changelog/` (Check 9 reports).
-- **Output:** `skills/orchestration/access/outputs/reports/` (Flagged reports), feeds into Dream Cycle.
+- **Input:** `intelligence/core/skills/orchestration/changelog/` (Check 9 reports).
+- **Output:** `intelligence/core/skills/orchestration/access/outputs/reports/` (Flagged reports), feeds into Dream Cycle.
 
 ## Tool Utility
 - **git_log**: Used to cross-reference agent file touches against authorized boundaries in `AGENTS.md`.

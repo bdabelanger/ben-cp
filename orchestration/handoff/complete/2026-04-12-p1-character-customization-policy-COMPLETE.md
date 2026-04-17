@@ -5,7 +5,7 @@
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P1
 > **v1.2**
-> **STATUS: ✅ COMPLETE — 2026-04-12**
+> **STATUS**: ✅ COMPLETE
 
 Expanded domain execution safety standards by launching `skills/handoff/character.md` to force sharp, brief context swaps (Baton). Created a non-conversational core fallback persona (`character.md`) placed safely at repository root. Updated `AGENTS.md` directly beneath the core mission statement locking agents from initiating functional sequences explicitly without first parsing either the local map or defaulting to root.
 

@@ -1,6 +1,6 @@
 {
     "project": "Platform Weekly Status",
-    "last_run": "2026_04_14",
+    "last_run": "2026_04_16",
     "config": {
         "processed_dir": "orchestration/pipelines/product/projects/inputs/status-reports/processed",
         "archive_dir": "orchestration/pipelines/product/projects/inputs/status-reports/archive"
@@ -9,27 +9,27 @@
         {
             "id": "1_asana_ingest",
             "status": "pending",
-            "file": "orchestration/pipelines/product/projects/inputs/status-reports/processed/asana_active.json"
+            "file": "inputs/status-reports/processed/asana_active.json"
         },
         {
             "id": "2_atlassian_fetch",
             "status": "pending",
-            "file": "orchestration/pipelines/product/projects/inputs/status-reports/raw/jira"
+            "file": "inputs/status-reports/raw/jira"
         },
         {
             "id": "3_rovo_context",
             "status": "pending",
-            "file": "orchestration/pipelines/product/projects/inputs/status-reports/processed/rovo_insights.json"
+            "file": "inputs/status-reports/processed/rovo_insights.json"
         },
         {
             "id": "4_jira_harvest",
             "status": "pending",
-            "file": "orchestration/pipelines/product/projects/inputs/status-reports/processed/jira_issues.json"
+            "file": "inputs/status-reports/processed/jira_issues.json"
         },
         {
             "id": "5_report_generation",
             "status": "pending",
-            "file": "orchestration/pipelines/outputs/product/projects/Status_Report.html"
+            "file": "outputs/status-reports/Status_Report.html"
         }
     ]
 }

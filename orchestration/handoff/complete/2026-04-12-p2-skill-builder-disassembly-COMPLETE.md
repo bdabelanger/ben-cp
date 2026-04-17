@@ -5,7 +5,7 @@
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **v1.0**
-> **STATUS: ✅ COMPLETE — 2026-04-12**
+> **STATUS**: ✅ COMPLETE
 
 Migrated mappings to knowledge domain, extracted styles into a new standalone skill, merged historical changelog data to preserve records, and fully decommissioned the skill-builder directory.
 

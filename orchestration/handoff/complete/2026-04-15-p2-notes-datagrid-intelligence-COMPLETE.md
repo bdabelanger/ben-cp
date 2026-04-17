@@ -6,7 +6,7 @@
 > **Assigned to:** Gemma
 > **Vault root:** ben-cp/
 > **Priority:** P2
-> **STATUS: ✅ COMPLETE — 2026-04-16**
+> **STATUS**: ✅ COMPLETE
 
 Gemma originally wrote to the wrong domain (intelligence/casebook/notes/) and created skills/ boundary violations. Cowork remediated: shadow files deleted, skills/casebook/ and skills/root/ violations removed, and the verbatim shareout narrative merged into the authoritative record at intelligence/product/roadmap/projects/q2/notes-notes-datagrid-(1209963394727039).md. WLV cross-link added inline to that record. Original handoff target path was ambiguous — future handoffs for Gemma will use the full GID-keyed path."
 

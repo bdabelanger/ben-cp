@@ -11,7 +11,7 @@
 
 ## Operating Procedure
 
-1. **Load Standard**: Reference `skills/memory/audit/structural_requirements.md` (if specialized) or the parent `memory/audit.md`.
+1. **Load Standard**: Reference `intelligence/core/skills/memory/audit/structural_requirements.md` (if specialized) or the parent `memory/audit.md`.
 2. **Scan Tree**: Execute a full recursive tree view of the target path.
 3. **Validate**:
    - Check per-directory for `index.md`.

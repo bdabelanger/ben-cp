@@ -4,7 +4,7 @@
 > **Assigned to:** Claude
 > **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P1
-> **STATUS: ✅ COMPLETE — 2026-04-14**
+> **STATUS**: ✅ COMPLETE
 
 Audited 18+ project files and 10+ OKR/KR files in the Q2 roadmap. Implemented 'OKR Mapping' in tactical project files and 'Constituent Projects' lists in strategic OKR/KR files using vault-relative paths. Verified the separation of concerns, ensuring project files focus on technical status while OKR files handle governance and measurement methodology.
 

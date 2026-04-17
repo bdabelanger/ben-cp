@@ -10,7 +10,7 @@
 
 | Level | File | Granularity |
 | :--- | :--- | :--- |
-| Deepest | `skills/[name]/changelog.md` | Every file touch, exact values, KR-level detail |
+| Deepest | `intelligence/core/skills/[name]/changelog.md` | Every file touch, exact values, KR-level detail |
 | Root | `changelog.md` | Version-tagged milestones, one-liner per skill, pointer down |
 
 Start at the deepest level. The root entry should be readable as a summary;
@@ -32,18 +32,18 @@ the subdirectory entry should be complete enough to reconstruct what happened.
 
 ### Stage 1 — Identify Active Skills
 
-List which `skills/` subdirectories were touched this session. Each active
+List which `intelligence/core/skills/` subdirectories were touched this session. Each active
 subdirectory gets its own changelog entry before the root entry is written.
 
 ### Stage 2 — Write Subdirectory Changelog Entries (Deepest First)
 
 **Handoff Exemption:** If the work performed in a subdirectory is already fully detailed in a newly created READY handoff file, you SHOULD skip Stage 2 for that subdirectory. Instead, ensure the root entry in Stage 3 points directly to the handoff.
  
- For each active subdirectory (e.g., `skills/okr-reporting/`):
+ For each active subdirectory (e.g., `intelligence/core/skills/okr-reporting/`):
 
-1. Check if `skills/[name]/changelog.md` exists
+1. Check if `intelligence/core/skills/[name]/changelog.md` exists
    - If yes: read it first, then use `edit_file` to prepend a new entry
-   - If no: create it with the starter format from `skills/changelog/entry_template.md`
+   - If no: create it with the starter format from `intelligence/core/skills/orchestration/changelog/entry_template.md`
 2. Write with full granularity — exact paths, exact values, specific blockers
 3. Include a **Next** line: what to do in this subdirectory next session
 
@@ -61,7 +61,7 @@ determine the bump:
 
 Prepend a new entry to root `changelog.md`:
 - One-line summary per subdirectory touched
-- Pointer to each subdirectory changelog: `See skills/[name]/changelog.md`
+- Pointer to each subdirectory changelog: `See intelligence/core/skills/[name]/changelog.md`
 - If this session was triggered by a handoff, include: `**Handoff:** handoff/[filename]-COMPLETE.md`
 - Blockers and next tasks at vault level only — not granular KR detail
 
@@ -78,12 +78,12 @@ State clearly:
 
 ## Creating a New Subdirectory Changelog
 
-If `skills/[name]/changelog.md` does not exist, create it with:
+If `intelligence/core/skills/[name]/changelog.md` does not exist, create it with:
 
 ```markdown
 # [Skill Name] Changelog
 
-> Detail log for `skills/[name]/`. See root `changelog.md` for version history.
+> Detail log for `intelligence/core/skills/[name]/`. See root `changelog.md` for version history.
 
 ---
 
@@ -96,14 +96,16 @@ Then prepend the first entry immediately below `## [Unreleased]`.
 
 ## Entry Templates
 
-### Subdirectory Entry (`skills/[name]/changelog.md`)
+Prepend below `## [Unreleased]` in the relevant subdirectory changelog. Full granularity.
+
+### Subdirectory Entry (`intelligence/core/skills/[name]/changelog.md`)
 Prepend below `## [Unreleased]` in the relevant subdirectory changelog. Full granularity.
 
 ```markdown
 ## [YYYY-MM-DD] — [Short Title]
 
 **Files changed:**
-- `skills/[name]/file.md` — [what changed, one line]
+- `intelligence/core/skills/[name]/file.md` — [what changed, one line]
 
 **Blockers:**
 - [description] — [what's needed to unblock]
@@ -118,7 +120,7 @@ Prepend below `## [Unreleased]`. High-level summary with directory pointers.
 ## [X.Y.Z] — [Short Title] ([YYYY-MM-DD])
 
 **Changes:**
-- `skills/[name]/` — [one-line summary] (see `skills/[name]/changelog.md`)
+- `intelligence/core/skills/[name]/` — [one-line summary] (see `intelligence/core/skills/[name]/changelog.md`)
 
 **Handoff:** `handoff/[filename]-COMPLETE.md`
 **Blockers:** [if any]
@@ -149,8 +151,8 @@ See `audit_procedure.md` for full execution steps.
 | 5 — Subdir ↔ root alignment | Subdirectory entries without a root pointer, or vice versa |
 | 6 — Handoff cross-reference | COMPLETE handoffs without a changelog entry; entries missing Handoff field |
 | 7 — Version sequence | Gaps or duplicates in `[X.Y.Z]` version numbering |
-| 9 — Permission & Access Scan | Scan the git log for the past 24 hours. Compare active agents against `AGENTS.md`. <br> - **Permission Gap**: Did an agent edit a file outside their defined scope? <br> - **Policy Bypass**: Did an agent invoke shell or build commands directly if they are a pure "Planner" or "Synthesizer"? <br> - **Config Viability**: Scan the local model config proxy paths `skills/access/agent-roots/*`. Check file permissions on token files (must be 600 or stricter) and note active JSON configurations (`allowedTools` or active paths). <br><br> **Format:** Output the raw flags and findings. Roz will synthesize them into "Violation!" and "Oops!" summaries based on the Artifact-First logic checks. |
+| 9 — Permission & Access Scan | Scan the git log for the past 24 hours. Compare active agents against `AGENTS.md`. <br> - **Permission Gap**: Did an agent edit a file outside their defined scope? <br> - **Policy Bypass**: Did an agent invoke shell or build commands directly if they are a pure "Planner" or "Synthesizer"? <br> - **Config Viability**: Scan the local model config proxy paths `intelligence/core/skills/orchestration/access/agent-roots/*`. Check file permissions on token files (must be 600 or stricter) and note active JSON configurations (`allowedTools` or active paths). <br><br> **Format:** Output the raw flags and findings. Roz will synthesize them into "Violation!" and "Oops!" summaries based on the Artifact-First logic checks. |
 
 ### Output
 A structured report (not a fix — flag only):
-`skills/changelog/reports/changelog-report-YYYY-MM-DD.md`
+`intelligence/core/skills/orchestration/changelog/reports/changelog-report-YYYY-MM-DD.md`

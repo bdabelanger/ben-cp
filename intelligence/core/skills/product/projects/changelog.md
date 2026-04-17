@@ -1,6 +1,6 @@
 # Project Reporting Changelog
 
-> Detail log for `skills/product/projects/`. See root `changelog.md` for version history.
+> Detail log for `intelligence/core/skills/product/projects/`. See root `changelog.md` for version history.
 
 ---
 

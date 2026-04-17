@@ -18,7 +18,7 @@ The vault has been successfully restructured into three primary stems: `intellig
 
 **Key Achievements:**
 - Flattened the `orchestration` domain for clearer execution.
-- Implemented legacy redirect symlinks at `skills/` for backward compatibility.
+- Implemented legacy redirect symlinks at `intelligence/core/skills/` for backward compatibility.
 - Deduplicated the Daily Digest discovery logic to handle symlink overlaps.
 - **[P1 Blocker]** Identified that the Platform Status Report requires the `requests` library in the local Python environment to complete execution.
 - **[Verification]** Successfully ran a dry-run of the Daily Progress Summary (Dream Cycle) via `intelligence/report/run.py`.

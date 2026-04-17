@@ -16,7 +16,7 @@
 3. **Append:** Use `replace_file_content` or similar to ensure existing notes are preserved.
 
 ### 2. Context Ingestion
-1. **Primary Scan:** Read `skills/orchestration/communication/notes.md` (or the mapped primary channel).
+1. **Primary Scan:** Read `intelligence/core/skills/orchestration/notes/notes.md` (or the mapped primary channel).
 2. **Local Scan:** Read the `notes.md` within the active skill directory.
 3. **Synthesis:** Weight human user notes as 100% priority ground truth.
 

@@ -6,7 +6,7 @@
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P1 — recurring weekly input required from human user before Claude can act
 > **v1.5**
-> **STATUS: ✅ COMPLETE — 2026-04-13**
+> **STATUS**: ✅ COMPLETE
 
 Pushed 11 of 12 queued Asana date corrections from the Q2 planning session. All date fields fixed (Asana API requires `{"date": "..."}` format, not plain strings) and GA Month set via enum GID. Notes - Tabbed design (GID 1213002343224284) returned 404 and was confirmed by Ben as no longer existing — its scope was absorbed into Bulk Service Notes. OKR writing (Task 2) and AGENTS.md Dispatch entry (Task 4) remain for a future session.
 

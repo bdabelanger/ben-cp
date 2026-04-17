@@ -31545,10 +31545,10 @@
   {
     "gid": "1211839375492286",
     "current_status_update": {
-      "gid": "1213984539419202",
+      "gid": "1214084731594284",
       "status_type": "on_track",
-      "text": "Summary\n\nThis feature is still getting bugs tended to. I will admit there are a complicated series of conditions for showing and ending statuses, so want to give grace. It also cascades into many object. We were able to start QA on this earlier and so have a reduced timeline to get through the rest of it. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
-      "title": "Cascading Values - Apr 9"
+      "text": "Summary\n\nQA has let me know if we shift back UAT to Tuesday they can get through both manual tests and automation test coverage. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
+      "title": "Cascading Values - Apr 16"
     },
     "custom_fields": [
       {
@@ -32059,10 +32059,10 @@
   {
     "gid": "1211982734413498",
     "current_status_update": {
-      "gid": "1213991589408917",
+      "gid": "1214085073022078",
       "status_type": "on_track",
-      "text": "Summary\n\nWith some quick pivoting by Feyi I think I can leave this on track for now. He was able to pick up immediately and get running when we deprioritized Services Permissions. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
-      "title": "WF - Assign WF Task to Case Person - Apr 9"
+      "text": "Summary\n\nBE work is still happening, a little impacted by bugs but Feyi is still on it. No FE work yet. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
+      "title": "WF - Assign WF Task to Case Person - Apr 16"
     },
     "custom_fields": [
       {
@@ -32885,10 +32885,10 @@
   {
     "gid": "1212301034946059",
     "current_status_update": {
-      "gid": "1213984539419195",
+      "gid": "1214084731594270",
       "status_type": "on_track",
-      "text": "Summary\n\nI've begun basic QA on this tool and demoed it extensively. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
-      "title": "AI - Supervisor Tools - Case workload overview - Apr 9"
+      "text": "Summary\n\nThese are both delivered, waiting on my QA. I have also reached out to Reba again around willingness to set it up. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
+      "title": "AI - Supervisor Tools - Case workload overview - Apr 16"
     },
     "custom_fields": [
       {
@@ -36559,10 +36559,10 @@
       {
         "gid": "1210199689431979",
         "enum_value": {
-          "gid": "1210201162196333"
+          "gid": "1210319664912778"
         },
         "name": "Current Discovery Stage",
-        "display_value": "Demo"
+        "display_value": "Done"
       },
       {
         "gid": "1210319522464926",
@@ -36761,10 +36761,10 @@
       {
         "gid": "1210199689431979",
         "enum_value": {
-          "gid": "1210199689431986"
+          "gid": "1210319664912778"
         },
         "name": "Current Discovery Stage",
-        "display_value": "100%"
+        "display_value": "Done"
       },
       {
         "gid": "1210319522464926",
@@ -37255,10 +37255,10 @@
   {
     "gid": "1213218414627700",
     "current_status_update": {
-      "gid": "1213984539419209",
+      "gid": "1214085073022062",
       "status_type": "on_track",
-      "text": "Summary\n\nLeaving on track since it's only moving 1 release. This is getting bumped out due to the delay in BE work as well as the complicated nature of Cascade Values and a series of P1 bugs coming through. Feyi has officially delivered the BE work and migration that will unblock Hector as soon as he surfaces off Cascade Values. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
-      "title": "Configurable Relationship Type - Apr 9"
+      "text": "Summary\n\nHector has been able to get back to this now that cascades is mostly resolved. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
+      "title": "Configurable Relationship Type - Apr 16"
     },
     "custom_fields": [
       {
@@ -38450,10 +38450,10 @@
   {
     "gid": "1213222092578435",
     "current_status_update": {
-      "gid": "1213984539419216",
+      "gid": "1214084731594291",
       "status_type": "on_track",
-      "text": "Summary\n\nThis is a one ticket initiative - We groomed it and I will put it in sprint as soon as some space frees up. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
-      "title": "Audit Log - Follow the Person - Apr 9"
+      "text": "Summary\n\nAhmed picked this up today\n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
+      "title": "Audit Log - Follow the Person - Apr 16"
     },
     "custom_fields": [
       {
@@ -39218,10 +39218,10 @@
   {
     "gid": "1213246452539768",
     "current_status_update": {
-      "gid": "1213991492075623",
+      "gid": "1214085073022069",
       "status_type": "on_track",
-      "text": "Summary\n\nThis brought up some really good conversation around driving consistency in tasks and I think we can get to this in time. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
-      "title": "WF - Add Attachments & Forms to UoW before ending a WF - Apr 9"
+      "text": "Summary\n\nThis is looking like it might be delayed on dev start because of the influx of bugs. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
+      "title": "WF - Add Attachments & Forms to UoW before ending a WF - Apr 16"
     },
     "custom_fields": [
       {
@@ -39794,10 +39794,10 @@
   {
     "gid": "1213406580664275",
     "current_status_update": {
-      "gid": "1213984539419186",
+      "gid": "1214084731594277",
       "status_type": "on_track",
-      "text": "Summary\n\nI have let QA know this is the bottom of the priority list for the next release, so it may get bumped in favor of customer bugs. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
-      "title": "Accessibility - VPAT Critical Issues - Access  - Apr 9"
+      "text": "Summary\n\nLeaving in the green even though it will likely slip to the following release - QA has been focused on Hotfix testing and will wrap up Cascade Values first. \n\n----------------------------------------\n\nNext steps\n\n\n\n----------------------------------------\n\n\n",
+      "title": "Accessibility - VPAT Critical Issues - Access  - Apr 16"
     },
     "custom_fields": [
       {
@@ -39896,12 +39896,12 @@
       {
         "gid": "1210909305830092",
         "name": "Release Date(s)",
-        "display_value": "4/24/2026"
+        "display_value": "5/14/2026"
       },
       {
         "gid": "1210909549820601",
         "name": "GA Month",
-        "display_value": "Apr 26"
+        "display_value": "May 26"
       },
       {
         "gid": "1210191417850167",

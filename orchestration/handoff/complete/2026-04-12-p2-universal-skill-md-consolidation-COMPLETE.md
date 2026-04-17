@@ -5,7 +5,7 @@
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **v1.0**
-> **STATUS: ✅ COMPLETE — 2026-04-12**
+> **STATUS**: ✅ COMPLETE
 
 Audited the vault for the dual `procedure.md` / `SKILL.md` paradigm. Successfully identified the two domains (Knowledge and Access) containing structural duplicates. Rewrote both central `SKILL.md` files to natively incorporate exact procedural mechanisms, checklists, priorities, and workflow loops. Safely deleted the deprecated `procedure.md` files and routed all index pointers straight to `SKILL.md`.
 

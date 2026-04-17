@@ -4,7 +4,7 @@
 > **Assigned to:** Code
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
-> **STATUS: ✅ COMPLETE — 2026-04-16**
+> **STATUS**: ✅ COMPLETE
 
 Refactored note domain resolution in the ben-cp MCP server to support arbitrary paths within the skills/ directory and added automatic parent directory creation.
 

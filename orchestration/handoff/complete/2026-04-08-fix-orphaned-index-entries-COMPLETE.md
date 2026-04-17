@@ -4,7 +4,7 @@
 > **Source:** Vault Auditor report `reports/knowledge-report-2026-04-08.md` flags 1.1, 1.2, 1.3, 4.1
 > **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **v1.0**
-> **STATUS: ✅ COMPLETE — 2026-04-09**
+> **STATUS**: ✅ COMPLETE
 
 All three tasks executed. `skills/knowledge/index.md` updated with SKILL.md, changelog.md, and reports/ entries. `skills/okr-reporting/index.md` updated with changelog.md entry. `crypt-keeper.md` root stub deleted via `git rm` (confirmed as redirect-only). `vault-cleanup.md` was not present at root — no action needed.
 

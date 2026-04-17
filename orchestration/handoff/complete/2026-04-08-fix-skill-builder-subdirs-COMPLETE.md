@@ -4,7 +4,7 @@
 > **Source:** Vault Auditor report `reports/knowledge-report-2026-04-08.md` flags 3.1, 3.2, 3.3
 > **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **v1.0**
-> **STATUS: ✅ COMPLETE — 2026-04-09**
+> **STATUS**: ✅ COMPLETE
 
 `skills/skill-builder/mappings/index.md` and `skills/skill-builder/styles/index.md` created as proper directory TOCs. `skills/skill-builder/rules/` confirmed empty and removed via `rmdir` (no git-tracked files, so `git rm -r` had nothing to remove; `rmdir` completed cleanly).
 

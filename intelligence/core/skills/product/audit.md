@@ -11,11 +11,11 @@
 ## Operating Procedure
 
 ### 1. OKR Validation
-1. Scan `skills/product/okr-reporting/` for all active SOPS.
+1. Scan `intelligence/core/skills/product/okr-reporting/` for all active SOPS.
 2. Verify all status emojis correspond to the calculated metric health.
 3. Flag any SOP missing a "next step" or valid baseline date.
 
 ### 2. Reporting Integrity
 1. Check `outputs/product/` for current week's manifests.
 2. Ensure every automated report has a signed executive summary from the Strategic PM.
-3. Validate that data sources quoted in reports exist in `skills/product/shared/data_sources.md`.
+3. Validate that data sources quoted in reports exist in `intelligence/core/skills/product/shared/data_sources.md`.

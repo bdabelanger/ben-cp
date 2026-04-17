@@ -5,7 +5,7 @@
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **v1.0**
-> **STATUS: ✅ COMPLETE — 2026-04-12**
+> **STATUS**: ✅ COMPLETE
 
 Established the vault's four-layer separation policy. Created skills/shared/separation-policy.md documenting what belongs in skills/ vs tools/ vs inputs/ vs outputs/, including the character.md contract. Updated AGENTS.md with a Directory Boundaries section (hard constraint rule + four-layer table). Updated skills/index.md to register tools/ and inputs/ as Central Stores. Ran a full violation scan and documented 13 script violations, 6 live data paths, 1 structural double-nesting bug, and 7 stale notes.md files as Known Migration Debt in the policy doc.
 

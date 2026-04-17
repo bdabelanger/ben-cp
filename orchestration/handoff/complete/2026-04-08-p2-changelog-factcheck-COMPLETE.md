@@ -5,7 +5,7 @@
 > **Priority:** P2 — changelog inaccuracies mislead agents loading session context
 > **Source report:** manual fact-check; Changelog Auditor skill created at `skills/changelog/`
 > **v1.0**
-> **STATUS: ✅ COMPLETE — 2026-04-09**
+> **STATUS**: ✅ COMPLETE
 
 All 8 tasks executed. `handoff/complete/` naming fixed for 2 files (added -COMPLETE suffix). `p2-crypt-keeper-root-exemptions` confirmed already done. Root changelog 1.4.1 phantom path corrected (`reports/archive/` → `skills/knowledge/reports/archive/`). Root 1.5.0 expanded with missing infrastructure changes. Casebook changelog 1.1.0 count corrected (4 → 3 unexposed). Stale Next Tasks annotated in 1.2.0 and 1.3.0. `skills/index.md` and `AGENTS.md` already had lumberjack entries — Task 7 was pre-done. Changelog entries written via `write_changelog_entry` (root 1.6.0 + 5 subdirectory logs).
 

@@ -4,14 +4,14 @@
 > **Assigned to:** Code
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P1
-> **STATUS**: 🔲 READY
+> **STATUS**: ✅ COMPLETE
 
 ---
 
 ### Root Cause Analysis
 During the stabilization session on 2026-04-16, we identified several structural issues in the MCP handoff management tools:
 
-1. **Regex Mismatch**: `add_handoff` was writing the status line as `> **STATUS: ✅ COMPLETE — 2026-04-16**
+1. **Regex Mismatch**: `add_handoff` was writing the status line as `> **STATUS**: ✅ COMPLETE
 
 Root cause identified as bolding/colon regex mismatch. Fixed in src/ben-cp.ts by standardizing the STATUS line format and hardening regex patterns.
 2. **Filtering Inconsistency**: `list_handoffs` default filtering was occasionally pulling items that should have been excluded or failing to identify `COMPLETE` status due to the aforementioned regex mismatch.

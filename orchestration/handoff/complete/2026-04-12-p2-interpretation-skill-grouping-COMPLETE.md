@@ -5,7 +5,7 @@
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **v1.0**
-> **STATUS: ✅ COMPLETE — 2026-04-12**
+> **STATUS**: ✅ COMPLETE
 
 Consolidated the synthesis and predict skills into a new interpretation/ domain, cleaned up root-level junk (project-status-reports/), and normalized all vault-wide references in AGENTS.md and the dream orchestrator. The collaboration group and unified notes system are also fully documented and synced.
 

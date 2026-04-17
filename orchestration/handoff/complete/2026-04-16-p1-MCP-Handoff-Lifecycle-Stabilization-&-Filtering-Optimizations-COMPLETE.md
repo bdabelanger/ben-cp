@@ -4,7 +4,7 @@
 > **Assigned to:** Any
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P1
-> **STATUS: ✅ COMPLETE — 2026-04-16**
+> **STATUS**: ✅ COMPLETE
 
 Unified handoff status formatting across all MCP tools, hardened regex for list/edit operations, and implemented strict READY filtering. This successfully unblocked Gemma for handoff management.
 

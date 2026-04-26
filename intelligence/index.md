@@ -8,9 +8,9 @@
 
 ## Domains
 
-1. **[Product Roadmap](product/roadmap/index.md)**: The Strategic PM layer. Strategic shareouts, tactical project status, and OKR governance.
+1. **[Product Roadmap](product/index.md)**: The Strategic PM layer. Strategic shareouts, tactical project status, and OKR governance.
 2. **[Casebook Domain](casebook/index.md)**: Platform-wide domain knowledge (Admin, Subscriptions, Reporting).
-3. **[Mapping & Logic](mapping/index.md)**: Rules of the road — status mappings, health baseline logic, and data transformation rules.
+3. **[Governance & Logic](governance/policy.md)**: Rules of the road — status mappings, health baseline logic, and data transformation rules.
 
 ---
 

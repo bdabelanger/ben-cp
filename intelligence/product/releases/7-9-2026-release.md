@@ -5,8 +5,8 @@
 - **Theme:** Coordination Snapshot
 
 ## Linked Projects
-- [**Notes - Global Notes WLV**](../../roadmap/projects/q2/notes-global-notes-wlv-(1210368097846960).md)
-- [**Data import - Bulk import for Notes**](../../roadmap/projects/q2/data-import-bulk-import-for-notes-(1210860550580423).md)
+- [**Notes - Global Notes WLV**](../projects/q2/notes-global-notes-wlv-(1210368097846960).md)
+- [**Data import - Bulk import for Notes**](../projects/q2/data-import-bulk-import-for-notes-(1210860550580423).md)
 
 ## Scope Status (Jira Alignment)
 *Note: Jira Fix Version extraction requires ATLASSIAN_API_TOKEN. Currently mapped via Project Metadata.*

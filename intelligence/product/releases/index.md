@@ -37,5 +37,5 @@
 - **Green (Aligned):** Project and Jira tickets match.
 
 ## Navigation
-- [**Product Roadmap Root**](../roadmap/index.md)
-- [**Tactical Projects**](../roadmap/projects/index.md)
+- [**Product Roadmap Root**](../index.md)
+- [**Tactical Projects**](../projects/index.md)

@@ -7,7 +7,7 @@ Output: reports/dream/report.md
 import os, sys, json, importlib.util
 from datetime import datetime
 
-VAULT_ROOT   = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
+VAULT_ROOT   = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 SENSORS_DIR  = os.path.join(os.path.dirname(__file__), 'sensors')
 OUTPUTS_DIR  = os.path.join(VAULT_ROOT, 'reports', 'dream')
 REPORT_DIR   = os.path.join(VAULT_ROOT, 'reports', 'dream')

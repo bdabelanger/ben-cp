@@ -1,7 +1,4 @@
-# Domain: Orchestration
-
-
-# Orchestration Domain
+# Orchestration Domain Index
 
 > **Purpose:** Execution engine of the vault. Manages state, flow, and delivery.
 
@@ -10,6 +7,6 @@
 - [**Tasks**](tasks/SKILL.md) — Strategic deliverables and human-led work items.
 
 ## Active Domains
-- [**Active Handoffs**](../../../handoffs/)
-- [**Active Tasks**](../../../tasks/)
-- [**Pipeline Outputs**](pipelines/outputs/)
+- [**Active Handoffs**](../handoffs/)
+- [**Active Tasks**](../tasks/)
+- [**Pipeline Outputs**](../reports/)

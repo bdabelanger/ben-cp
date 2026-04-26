@@ -28,9 +28,8 @@ def extract_links(path):
     # [[wiki-links]]
     for m in re.finditer(r'\[\[([^\]]+)\]\]', content):
         links.append(('wiki', m.group(1).strip()))
-    # [text](target) — skip URLs and anchors
-    for m in re.finditer(r'\[([^\]]*)\]\(([^)]+)\)', content):
-        target = m.group(2).strip().split('#')[0]
+    for m in re.finditer(r'\[([^\]]*)\]\(([^ \n]+)\)', content):
+        target = m.group(2).strip().split('#')[0].rstrip(')')
         if not target or any(target.startswith(s) for s in SKIP_SCHEMES):
             continue
         links.append(('md', target))

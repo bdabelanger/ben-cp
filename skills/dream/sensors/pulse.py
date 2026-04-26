@@ -41,17 +41,23 @@ def scan_boundary_violations():
         if not os.path.isdir(dir_path):
             continue
         for root, dirs, files in os.walk(dir_path):
-            dirs[:] = [d for d in dirs if not d.startswith('.')]
+            dirs[:] = [d for d in dirs if not d.startswith('.') and d != 'node_modules']
             for f in files:
-                if os.path.splitext(f)[1].lower() in data_exts:
-                    rel = os.path.relpath(os.path.join(root, f), VAULT_ROOT)
+                ext = os.path.splitext(f)[1].lower()
+                if ext in data_exts:
+                    # Allow schemas and templates
+                    rel_dir = os.path.relpath(root, VAULT_ROOT)
+                    if 'schemas' in rel_dir or 'templates' in rel_dir:
+                        continue
+                    rel = os.path.join(rel_dir, f)
                     violations.append({"path": rel, "rule": "data_file_in_skills_or_orchestration"})
     return violations
 
 def check_index_coverage():
     missing = []
+    ignore_dirs = {'.', 'node_modules', 'reports', 'dist', 'src', '.git', '.gemini'}
     for root, dirs, files in os.walk(VAULT_ROOT):
-        dirs[:] = [d for d in dirs if not d.startswith('.') and d != '__pycache__']
+        dirs[:] = [d for d in dirs if not d.startswith('.') and d not in ignore_dirs and d != '__pycache__']
         rel_root = os.path.relpath(root, VAULT_ROOT)
         md_files = [f for f in files if f.endswith('.md')]
         if md_files and 'index.md' not in files:

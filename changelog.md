@@ -18,7 +18,7 @@
 
 
 **Changes:**
-- **AGENTS.md**: Codified the **Unified Artifact Standard** (Context -> Logic -> Execution Steps). Established flat-file handoffs in `orchestration/handoff/` as the P1/P2 default.
+- **AGENTS.md**: Codified the **Unified Artifact Standard** (Context -> Logic -> Execution Steps). Established flat-file handoffs in `handoffs/` as the P1/P2 default.
 - **AGENTS.md**: Defined explicit terminology for **"Steps"** (agent-led execution) and **"Tasks"** (human-led strategic deliverables) to prevent role-drift.
 - **agents/cowork.md**: Updated the **Handoff Protocol** to reflect the unified standard and formally deprecated root-level `_IMPLEMENTATION_PLAN.md` files.
 - **Vault Hygiene**: Verified the vault root is free of implementation plans, moving all execution logic to the orchestration domain.
@@ -68,57 +68,57 @@
   - `agents/roz.md`
 
 - **orchestration**:
-  - `orchestration/handoff/2026-04-10-p1-triage-cross-project-dependency-CBP2573.md`
-  - `orchestration/handoff/2026-04-10-p2-lumberjack-changelog-alignment-fixes.md`
-  - `orchestration/handoff/2026-04-10-p2-quartermaster-convention.md`
-  - `orchestration/handoff/2026-04-11-p1-q2-platform-planning-okrs.md`
-  - `orchestration/handoff/2026-04-12-p1-agent-python-wrappers.md`
-  - `orchestration/handoff/2026-04-12-p1-provision-reporting-pipeline-environment.md`
-  - `orchestration/handoff/2026-04-12-p2-crypt-keeper-missing-indexes-and-roz-consolidation.md`
-  - `orchestration/handoff/2026-04-12-p2-dod-helper-skill-migration.md`
-  - `orchestration/handoff/2026-04-12-p2-synthesis-predict-character-depth.md`
-  - `orchestration/handoff/2026-04-12-p2-task-capture-skill-migration.md`
-  - `orchestration/handoff/2026-04-12-p2-universal-skill-deployment.md`
-  - `orchestration/handoff/2026-04-12-p3-crypt-keeper-data-and-index-gaps.md`
-  - `orchestration/handoff/2026-04-12-p3-mapping-manager-skill-formalization.md`
-  - `orchestration/handoff/complete/2026-04-08-changelog-refactor-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-08-consolidate-casebook-into-skills-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-08-fix-casebook-reporting-index-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-08-fix-data_sources-and-agents-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-08-fix-orphaned-index-entries-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-08-fix-skill-builder-subdirs-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-08-p2-changelog-factcheck-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-08-p2-crypt-keeper-root-exemptions-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-08-p2-move-reports-into-crypt-keeper-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-09-consolidate-project-status-reports-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-10-p1-agent-permission-and-behavior-refinement-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-10-p1-create-status-report-triage-procedure-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-10-p1-crypt-keeper-orphaned-and-sync-gaps-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-10-p1-handoff-editability-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-10-p2-antigravity-agent-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-10-p2-context-loading-triage-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-10-p2-crypt-keeper-conventions-and-redundancy-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-10-p2-finalize-enrollments-data-entry-shortcuts-baseline-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-10-p2-gemma-explicit-identity-correction-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-10-p2-gemma-pathing-tooling-issues-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-12-p1-ben-ad-hoc-input-protocol-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-12-p1-character-customization-policy-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-12-p1-crypt-keeper-agents-md-and-skills-index-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-12-p1-dream-character-files-generation-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-12-p1-dream-cycles-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-12-p1-kucera-orchestrator-scaffold-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-12-p1-launchd-explanation-and-env-fix-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-12-p1-resolve-gemini-root-edit-block-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-12-p2-interpretation-skill-grouping-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-12-p2-migrate-communication-to-notes-skill-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-12-p2-product-skill-consolidation-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-12-p2-refactor-communication-to-notes-skill-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-12-p2-roz-root-access-expansion-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-12-p2-skill-builder-disassembly-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-12-p2-skill-separation-architecture-policy-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-12-p2-status-reports-skill-separation-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-12-p2-universal-skill-md-consolidation-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-12-p4-intelligence-smoke-test-fresh-chat-COMPLETE.md`
+  - `handoffs/2026-04-10-p1-triage-cross-project-dependency-CBP2573.md`
+  - `handoffs/2026-04-10-p2-lumberjack-changelog-alignment-fixes.md`
+  - `handoffs/2026-04-10-p2-quartermaster-convention.md`
+  - `handoffs/2026-04-11-p1-q2-platform-planning-okrs.md`
+  - `handoffs/2026-04-12-p1-agent-python-wrappers.md`
+  - `handoffs/2026-04-12-p1-provision-reporting-pipeline-environment.md`
+  - `handoffs/2026-04-12-p2-crypt-keeper-missing-indexes-and-roz-consolidation.md`
+  - `handoffs/2026-04-12-p2-dod-helper-skill-migration.md`
+  - `handoffs/2026-04-12-p2-synthesis-predict-character-depth.md`
+  - `handoffs/2026-04-12-p2-task-capture-skill-migration.md`
+  - `handoffs/2026-04-12-p2-universal-skill-deployment.md`
+  - `handoffs/2026-04-12-p3-crypt-keeper-data-and-index-gaps.md`
+  - `handoffs/2026-04-12-p3-mapping-manager-skill-formalization.md`
+  - `handoffs/complete/2026-04-08-changelog-refactor-COMPLETE.md`
+  - `handoffs/complete/2026-04-08-consolidate-casebook-into-skills-COMPLETE.md`
+  - `handoffs/complete/2026-04-08-fix-casebook-reporting-index-COMPLETE.md`
+  - `handoffs/complete/2026-04-08-fix-data_sources-and-agents-COMPLETE.md`
+  - `handoffs/complete/2026-04-08-fix-orphaned-index-entries-COMPLETE.md`
+  - `handoffs/complete/2026-04-08-fix-skill-builder-subdirs-COMPLETE.md`
+  - `handoffs/complete/2026-04-08-p2-changelog-factcheck-COMPLETE.md`
+  - `handoffs/complete/2026-04-08-p2-crypt-keeper-root-exemptions-COMPLETE.md`
+  - `handoffs/complete/2026-04-08-p2-move-reports-into-crypt-keeper-COMPLETE.md`
+  - `handoffs/complete/2026-04-09-consolidate-project-status-reports-COMPLETE.md`
+  - `handoffs/complete/2026-04-10-p1-agent-permission-and-behavior-refinement-COMPLETE.md`
+  - `handoffs/complete/2026-04-10-p1-create-status-report-triage-procedure-COMPLETE.md`
+  - `handoffs/complete/2026-04-10-p1-crypt-keeper-orphaned-and-sync-gaps-COMPLETE.md`
+  - `handoffs/complete/2026-04-10-p1-handoff-editability-COMPLETE.md`
+  - `handoffs/complete/2026-04-10-p2-antigravity-agent-COMPLETE.md`
+  - `handoffs/complete/2026-04-10-p2-context-loading-triage-COMPLETE.md`
+  - `handoffs/complete/2026-04-10-p2-crypt-keeper-conventions-and-redundancy-COMPLETE.md`
+  - `handoffs/complete/2026-04-10-p2-finalize-enrollments-data-entry-shortcuts-baseline-COMPLETE.md`
+  - `handoffs/complete/2026-04-10-p2-gemma-explicit-identity-correction-COMPLETE.md`
+  - `handoffs/complete/2026-04-10-p2-gemma-pathing-tooling-issues-COMPLETE.md`
+  - `handoffs/complete/2026-04-12-p1-ben-ad-hoc-input-protocol-COMPLETE.md`
+  - `handoffs/complete/2026-04-12-p1-character-customization-policy-COMPLETE.md`
+  - `handoffs/complete/2026-04-12-p1-crypt-keeper-agents-md-and-skills-index-COMPLETE.md`
+  - `handoffs/complete/2026-04-12-p1-dream-character-files-generation-COMPLETE.md`
+  - `handoffs/complete/2026-04-12-p1-dream-cycles-COMPLETE.md`
+  - `handoffs/complete/2026-04-12-p1-kucera-orchestrator-scaffold-COMPLETE.md`
+  - `handoffs/complete/2026-04-12-p1-launchd-explanation-and-env-fix-COMPLETE.md`
+  - `handoffs/complete/2026-04-12-p1-resolve-gemini-root-edit-block-COMPLETE.md`
+  - `handoffs/complete/2026-04-12-p2-interpretation-skill-grouping-COMPLETE.md`
+  - `handoffs/complete/2026-04-12-p2-migrate-communication-to-notes-skill-COMPLETE.md`
+  - `handoffs/complete/2026-04-12-p2-product-skill-consolidation-COMPLETE.md`
+  - `handoffs/complete/2026-04-12-p2-refactor-communication-to-notes-skill-COMPLETE.md`
+  - `handoffs/complete/2026-04-12-p2-roz-root-access-expansion-COMPLETE.md`
+  - `handoffs/complete/2026-04-12-p2-skill-builder-disassembly-COMPLETE.md`
+  - `handoffs/complete/2026-04-12-p2-skill-separation-architecture-policy-COMPLETE.md`
+  - `handoffs/complete/2026-04-12-p2-status-reports-skill-separation-COMPLETE.md`
+  - `handoffs/complete/2026-04-12-p2-universal-skill-md-consolidation-COMPLETE.md`
+  - `handoffs/complete/2026-04-12-p4-intelligence-smoke-test-fresh-chat-COMPLETE.md`
 
 - **inputs**:
   - `inputs/status-reports/README.md`
@@ -275,12 +275,12 @@
   - `skills/orchestration/communication/notes.md`
   - `skills/orchestration/communication/report.md`
   - `skills/orchestration/communication/report_spec.json`
-  - `skills/orchestration/handoff/SKILL.md`
-  - `skills/orchestration/handoff/audit.md`
-  - `skills/orchestration/handoff/changelog.md`
-  - `skills/orchestration/handoff/index.md`
-  - `skills/orchestration/handoff/report.md`
-  - `skills/orchestration/handoff/report_spec.json`
+  - `skills/handoffs/SKILL.md`
+  - `skills/handoffs/audit.md`
+  - `skills/handoffs/changelog.md`
+  - `skills/handoffs/index.md`
+  - `skills/handoffs/report.md`
+  - `skills/handoffs/report_spec.json`
   - `skills/orchestration/index.md`
   - `skills/product/SKILL.md`
   - `skills/product/audit.md`
@@ -364,11 +364,11 @@
   - `intelligence/mapping/status_mapping.md`
 
 - **orchestration**:
-  - `orchestration/handoff/.DS_Store`
-  - `orchestration/handoff/2026-04-10-p1-create-status-report-triage-procedure.md`
-  - `orchestration/handoff/complete/2026-04-10-p1-claude-code-mcp-server-build-and-restart-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-10-p3-robert-agent-creation-COMPLETE.md`
-  - `orchestration/handoff/complete/2026-04-10-p4-session-retrospective-context-COMPLETE.md`
+  - `handoffs/.DS_Store`
+  - `handoffs/2026-04-10-p1-create-status-report-triage-procedure.md`
+  - `handoffs/complete/2026-04-10-p1-claude-code-mcp-server-build-and-restart-COMPLETE.md`
+  - `handoffs/complete/2026-04-10-p3-robert-agent-creation-COMPLETE.md`
+  - `handoffs/complete/2026-04-10-p4-session-retrospective-context-COMPLETE.md`
 
 - **root**:
   - `AGENTS.md`
@@ -457,12 +457,12 @@
   - `skills/orchestration/communication/notes.md`
   - `skills/orchestration/communication/report.md`
   - `skills/orchestration/communication/report_spec.json`
-  - `skills/orchestration/handoff/SKILL.md`
-  - `skills/orchestration/handoff/audit.md`
-  - `skills/orchestration/handoff/changelog.md`
-  - `skills/orchestration/handoff/index.md`
-  - `skills/orchestration/handoff/report.md`
-  - `skills/orchestration/handoff/report_spec.json`
+  - `skills/handoffs/SKILL.md`
+  - `skills/handoffs/audit.md`
+  - `skills/handoffs/changelog.md`
+  - `skills/handoffs/index.md`
+  - `skills/handoffs/report.md`
+  - `skills/handoffs/report_spec.json`
   - `skills/orchestration/index.md`
   - `skills/product/SKILL.md`
   - `skills/product/audit.md`
@@ -554,7 +554,7 @@
 - `Orchestration` — Normalized Communication, Changelog (Lumberjack), and Handoff (Baton) systems.
 - `Styles` — Consolidated the local emoji glossary into the Styles reporting standard.
 - `Hygiene` — Cleaned skills tree of over 10 deprecated documentation files.
-- `Handoff` — [2026-04-12-p1-resolve-gemini-root-edit-block.md](orchestration/handoff/2026-04-12-p1-resolve-gemini-root-edit-block.md) — Established P1 mission to resolve agent permission blocks.
+- `Handoff` — [2026-04-12-p1-resolve-gemini-root-edit-block.md](handoffs/2026-04-12-p1-resolve-gemini-root-edit-block.md) — Established P1 mission to resolve agent permission blocks.
 
 ## [1.18.0] — Unified and Normalized Vault Architecture: Established domain-driven hierarchy (Intelligence / Orchestration / Product) and professionalized nomenclature. (2026-04-12)
 
@@ -570,7 +570,7 @@
 - `skills/` — Deployed **Legacy Redirect Symlinks** for all moved top-level skills to ensure continuous MCP tool compatibility.
 - `skills/intelligence/report/run.py` — Updated discovery logic to deduplicate symlink overlaps.
 
-**Handoff:** `handoff/complete/2026-04-12-p1-vault-path-normalization-COMPLETE.md`
+**Handoff:** `handoffs/complete/2026-04-12-p1-vault-path-normalization-COMPLETE.md`
 
 **Next Tasks:**
 1. Restore `requests` library in local Python environment.
@@ -591,7 +591,7 @@
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/product/status-reports/index.md` — Updated kickstart commands and data path references to new locations
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/product/status-reports/` — Now contains only changelog.md and index.md — clean skill stub
 
-**Handoff:** `handoff/complete/2026-04-12-p2-status-reports-skill-separation-COMPLETE.md`
+**Handoff:** `handoffs/complete/2026-04-12-p2-status-reports-skill-separation-COMPLETE.md`
 
 **Next Tasks:**
 1. Remove stale notes.md files listed in separation-policy.md Known Migration Debt
@@ -603,12 +603,12 @@
 ## [1.16.1] — Verify the new reporting architecture by running core pipelines and reviewing documentation. (2026-04-12)
 
 **Changes:**
-- `handoff/2026-04-10-p1-create-status-report-triage-procedure.md` — Updated handoff to document critical blockers in documentation access and pipeline execution paths.
+- `handoffs/2026-04-10-p1-create-status-report-triage-procedure.md` — Updated handoff to document critical blockers in documentation access and pipeline execution paths.
 
 **Blockers:**
 - Cannot read core architectural documentation (AGENTS.md, skills/index.md) due to file system access restrictions outside the allowed root directory. — Grant broader read permissions or confirm correct pathing for documentation.
 
-**Handoff:** `handoff/2026-04-10-p1-create-status-report-triage-procedure.md`
+**Handoff:** `handoffs/2026-04-10-p1-create-status-report-triage-procedure.md`
 
 **Next Tasks:**
 1. Investigate and resolve file system access limitations for documentation files.
@@ -639,7 +639,7 @@
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Added Directory Boundaries section after Who Are You? table
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/index.md` — Added tools/ and inputs/ to Central Stores table
 
-**Handoff:** `handoff/complete/2026-04-12-p2-skill-separation-architecture-policy-COMPLETE.md`
+**Handoff:** `handoffs/complete/2026-04-12-p2-skill-separation-architecture-policy-COMPLETE.md`
 
 **Next Tasks:**
 1. Execute 2026-04-12-p2-status-reports-skill-separation.md — migrate scripts, inputs, and manifest out of skills/product/status-reports/
@@ -657,7 +657,7 @@
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Added Directory Boundaries section with four-layer table and hard constraint rule, cross-referencing separation-policy.md
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/index.md` — Added tools/ and inputs/ to Central Stores table
 
-**Handoff:** `handoff/2026-04-12-p2-skill-separation-architecture-policy.md`
+**Handoff:** `handoffs/2026-04-12-p2-skill-separation-architecture-policy.md`
 
 **Next Tasks:**
 1. Execute companion migration handoff: 2026-04-12-p2-status-reports-skill-separation.md — move scripts, inputs, and manifest out of skills/product/status-reports/
@@ -689,7 +689,7 @@
 - `AGENTS.md` — Updated AGENTS.md and skills/index.md to reflect the most current vault structure (interpretation, collaboration, product).
 - `AGENTS.md` — Fixed Roz role entry and tool examples in AGENTS.md.
 
-**Handoff:** `handoff/complete/2026-04-12-p1-crypt-keeper-agents-md-and-skills-index-COMPLETE.md`
+**Handoff:** `handoffs/complete/2026-04-12-p1-crypt-keeper-agents-md-and-skills-index-COMPLETE.md`
 
 **Next Tasks:**
 1. None - navigation fixed.
@@ -705,7 +705,7 @@
 - `project-status-reports/` — Dissolved root project-status-reports/ junk directory.
 - `skills/dream/run.py` — Updated Dream orchestrator to recursively discover skills and use correct CSS paths.
 
-**Handoff:** `handoff/complete/2026-04-12-p2-interpretation-skill-grouping-COMPLETE.md`
+**Handoff:** `handoffs/complete/2026-04-12-p2-interpretation-skill-grouping-COMPLETE.md`
 
 **Next Tasks:**
 1. Investigate character abstraction for reports to allow any combination of personas.
@@ -740,7 +740,7 @@
 - `skills/product/okr-reporting/` — Moved okr-reporting into product group
 - `skills/product/shared/data_sources.md` — Created merged shared data sources document
 
-**Handoff:** `handoff/complete/2026-04-12-p2-product-skill-consolidation-COMPLETE.md`
+**Handoff:** `handoffs/complete/2026-04-12-p2-product-skill-consolidation-COMPLETE.md`
 
 **Next Tasks:**
 1. universal-skill-deployment
@@ -754,7 +754,7 @@
 - `skills/styles/` — Created new styles skill with SKILL.md and emoji_key.md
 - `skills/skill-builder/` — Decommissioned legacy skill-builder domain
 
-**Handoff:** `handoff/complete/2026-04-12-p2-skill-builder-disassembly-COMPLETE.md`
+**Handoff:** `handoffs/complete/2026-04-12-p2-skill-builder-disassembly-COMPLETE.md`
 
 **Next Tasks:**
 1. product-skill-consolidation
@@ -825,7 +825,7 @@
 **Changes:**
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/index.md` — Full rewrite — removed defunct crypt-keeper/, lumberjack/, roz/ references; added all current skill directories with accurate descriptions
 
-**Handoff:** `handoff/2026-04-12-p1-crypt-keeper-agents-md-and-skills-index.md`
+**Handoff:** `handoffs/2026-04-12-p1-crypt-keeper-agents-md-and-skills-index.md`
 
 **Next Tasks:**
 1. Execute P2 handoff: add missing index.md to dream/, predict/, changelog/lumberjack/ and archive agents/roz.md
@@ -859,9 +859,9 @@
 **Changes:**
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/outputs/reports/knowledge-report-2026-04-12.md` — Knowledge skill run — 11 flags across 8 checks, 3 handoffs written
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/outputs/reports/archive/cleanup-report-2026-04-10.md` — Archived previous report before writing new one
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoff/2026-04-12-p1-crypt-keeper-agents-md-and-skills-index.md` — P1 handoff — fix AGENTS.md (notes.md rename, vault diagram, Roz dispatch) and rewrite skills/index.md
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoff/2026-04-12-p2-crypt-keeper-missing-indexes-and-roz-consolidation.md` — P2 handoff — add missing index.md to dream/, predict/, changelog/lumberjack/ and archive agents/roz.md
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoff/2026-04-12-p3-crypt-keeper-data-and-index-gaps.md` — P3 handoff — add Locked/Signed Notes to data_sources.md, fix orphaned index references
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoffs/2026-04-12-p1-crypt-keeper-agents-md-and-skills-index.md` — P1 handoff — fix AGENTS.md (notes.md rename, vault diagram, Roz dispatch) and rewrite skills/index.md
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoffs/2026-04-12-p2-crypt-keeper-missing-indexes-and-roz-consolidation.md` — P2 handoff — add missing index.md to dream/, predict/, changelog/lumberjack/ and archive agents/roz.md
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoffs/2026-04-12-p3-crypt-keeper-data-and-index-gaps.md` — P3 handoff — add Locked/Signed Notes to data_sources.md, fix orphaned index references
 
 **Next Tasks:**
 1. Execute P1 handoff: fix AGENTS.md and rewrite skills/index.md
@@ -874,10 +874,10 @@
 
 **Changes:**
 - `character.md` — Deploy default generic root character identity to secure non-specialized domains
-- `skills/handoff/character.md` — Deployed the 'Baton' transitionary logic map
+- `skills/handoffs/character.md` — Deployed the 'Baton' transitionary logic map
 - `AGENTS.md` — Anchored global agent enforcement loop
 
-**Handoff:** `handoff/complete/2026-04-12-p1-character-customization-policy-COMPLETE.md`
+**Handoff:** `handoffs/complete/2026-04-12-p1-character-customization-policy-COMPLETE.md`
 
 **Next Tasks:**
 1. product-skill-consolidation
@@ -895,7 +895,7 @@
 - `skills/predict/report_spec.json` — Created Bryan spec
 - `skills/dream/run.py` — Architected and simulated the Digest Editor Orchestrator sequence
 
-**Handoff:** `handoff/complete/2026-04-12-p1-kucera-orchestrator-scaffold-COMPLETE.md`
+**Handoff:** `handoffs/complete/2026-04-12-p1-kucera-orchestrator-scaffold-COMPLETE.md`
 
 **Next Tasks:**
 1. agent-python-wrappers
@@ -911,7 +911,7 @@
 - `skills/changelog/index.md` — Updated Check 9 Config Viability loop
 - `skills/access/SKILL.md` — Updated Agent Root Triage synthesis module
 
-**Handoff:** `handoff/complete/2026-04-12-p2-roz-root-access-expansion-COMPLETE.md`
+**Handoff:** `handoffs/complete/2026-04-12-p2-roz-root-access-expansion-COMPLETE.md`
 
 **Next Tasks:**
 1. kucera-scaffold
@@ -926,7 +926,7 @@
 - `skills/input/character.md` — Established the Sea Shanty character bounds.
 - `AGENTS.md` — Updated Vault Pathing documentation.
 
-**Handoff:** `handoff/complete/2026-04-12-p1-ben-ad-hoc-input-protocol-COMPLETE.md`
+**Handoff:** `handoffs/complete/2026-04-12-p1-ben-ad-hoc-input-protocol-COMPLETE.md`
 
 **Next Tasks:**
 1. vault-structural-collapse-sprint
@@ -941,7 +941,7 @@
 - `skills/knowledge/index.md` — Rewrote index file references.
 - `skills/access/index.md` — Rewrote index file references.
 
-**Handoff:** `handoff/complete/2026-04-12-p2-universal-skill-md-consolidation-COMPLETE.md`
+**Handoff:** `handoffs/complete/2026-04-12-p2-universal-skill-md-consolidation-COMPLETE.md`
 
 **Next Tasks:**
 1. kucera-orchestrator-scaffold
@@ -951,9 +951,9 @@
 
 **Changes:**
 - `AGENTS.md` — Updated AGENTS.md Rule 5 to default to hyphenated names.
-- `handoff/2026-04-12-p2-universal-skill-md-consolidation.md` — Added newly spun-out handoff 2026-04-12-p2-universal-skill-md-consolidation.md to queue off the SKILL vs procedure discussion.
+- `handoffs/2026-04-12-p2-universal-skill-md-consolidation.md` — Added newly spun-out handoff 2026-04-12-p2-universal-skill-md-consolidation.md to queue off the SKILL vs procedure discussion.
 
-**Handoff:** `handoff/complete/2026-04-10-p2-crypt-keeper-conventions-and-redundancy-COMPLETE.md`
+**Handoff:** `handoffs/complete/2026-04-10-p2-crypt-keeper-conventions-and-redundancy-COMPLETE.md`
 
 **Next Tasks:**
 1. universal-skill-md-consolidation
@@ -964,7 +964,7 @@
 **Changes:**
 - `agents/gemma.md` — Added 'Explicit Identity' logic to Gemma's core rule execution sequence.
 
-**Handoff:** `handoff/complete/2026-04-10-p2-gemma-explicit-identity-correction-COMPLETE.md`
+**Handoff:** `handoffs/complete/2026-04-10-p2-gemma-explicit-identity-correction-COMPLETE.md`
 
 **Next Tasks:**
 1. roz-root-access-expansion
@@ -980,7 +980,7 @@
 - `skills/predict/character.md` — Created character config file in skills/predict/
 - `skills/dream/character.md` — Created character config file in skills/dream/
 
-**Handoff:** `handoff/complete/2026-04-12-p1-dream-character-files-generation-COMPLETE.md`
+**Handoff:** `handoffs/complete/2026-04-12-p1-dream-character-files-generation-COMPLETE.md`
 
 **Next Tasks:**
 1. Execute kucera-orchestrator-scaffold
@@ -992,7 +992,7 @@
 **Changes:**
 - `.env` — Replaced JS-style `//` comments with Bash-legit `#` comments to fix sourcing errors.
 
-**Handoff:** `handoff/complete/2026-04-12-p1-launchd-explanation-and-env-fix-COMPLETE.md`
+**Handoff:** `handoffs/complete/2026-04-12-p1-launchd-explanation-and-env-fix-COMPLETE.md`
 
 **Next Tasks:**
 1. kucera-orchestrator-scaffold.md
@@ -1002,9 +1002,9 @@
 
 **Changes:**
 - `implementation_plan.md` — Produced final architectural design for "Daily Progress Digest".
-- `handoff/` — Created 5 discrete handoffs to execute the build phase of Daily Progress Digest sequentially.
+- `handoffs/` — Created 5 discrete handoffs to execute the build phase of Daily Progress Digest sequentially.
 
-**Handoff:** `handoff/complete/2026-04-12-p1-dream-cycles-COMPLETE.md`
+**Handoff:** `handoffs/complete/2026-04-12-p1-dream-cycles-COMPLETE.md`
 
 **Next Tasks:**
 1. Execute 2026-04-12-p1-launchd-explanation-and-env-fix
@@ -1021,7 +1021,7 @@
 - `skills/changelog/audit_procedure.md` — Added Check 9 (Permission Scan) to Changelog Auditor procedure.
 - `skills/access/` — Created Roz skill infrastructure (SKILL, procedure, template, index).
 
-**Handoff:** `handoff/complete/2026-04-10-p1-agent-permission-and-behavior-refinement-COMPLETE.md`
+**Handoff:** `handoffs/complete/2026-04-10-p1-agent-permission-and-behavior-refinement-COMPLETE.md`
 
 **Next Tasks:**
 1. Monitor Roz's first nightly report.
@@ -1033,10 +1033,10 @@
 **Changes:**
 - `src/ben-cp.ts` — Identified root cause (missing fs.mkdir) and applied source-level fix in src/ben-cp.ts.
 
-**Handoff:** `handoff/complete/2026-04-10-p2-gemma-pathing-tooling-issues-COMPLETE.md`
+**Handoff:** `handoffs/complete/2026-04-10-p2-gemma-pathing-tooling-issues-COMPLETE.md`
 
 **Next Tasks:**
-1. Claude Code to rebuild and restart the MCP server via handoff/2026-04-10-p1-claude-code-mcp-server-build-and-restart.md
+1. Claude Code to rebuild and restart the MCP server via handoffs/2026-04-10-p1-claude-code-mcp-server-build-and-restart.md
 
 
 ## [1.9.7] — Orchestrate and execute the Platform Weekly Status Report pipeline to generate the latest status report. (2026-04-10)
@@ -1057,7 +1057,7 @@
 - `skills/okr-reporting/q2-2026/planning-services-at-scale/index.md` — Added Notes Quick Entry to dashboard and detailed metadata sections.
 - `skills/okr-reporting/data_sources.md` — Added TrackServiceNoteNew event to Section 1 and created Section 16 for Notes Datagrid Shortcuts.
 
-**Handoff:** `handoff/complete/2026-04-10-p1-crypt-keeper-orphaned-and-sync-gaps-COMPLETE.md`
+**Handoff:** `handoffs/complete/2026-04-10-p1-crypt-keeper-orphaned-and-sync-gaps-COMPLETE.md`
 
 **Next Tasks:**
 1. Address P2 handoff: gemma-pathing-tooling-issues.md
@@ -1085,10 +1085,10 @@
 **Changes:**
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/changelog/reports/archive/lumberjack-report-2026-04-09.md` — Archived lumberjack-report-2026-04-09.md and created archive/ directory.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/changelog/reports/changelog-report-2026-04-10.md` — Executed changelog audit against git history and written report lumberjack-report-2026-04-10.md.
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/changelog/reports/changelog-report-2026-04-10.md` — Identified alignment gaps in skills/handoff/changelog.md and okr-reporting log nesting.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/changelog/reports/changelog-report-2026-04-10.md` — Identified alignment gaps in skills/handoffs/changelog.md and okr-reporting log nesting.
 
 **Next Tasks:**
-1. Address handoff/2026-04-10-p2-lumberjack-changelog-alignment-fixes.md
+1. Address handoffs/2026-04-10-p2-lumberjack-changelog-alignment-fixes.md
 
 
 ## [1.9.3] — Run Vault Auditor nightly structural audit. (2026-04-10)
@@ -1102,8 +1102,8 @@
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/reports/knowledge-report-2026-04-10.md` — Identified orphaned index entry for notes_quick_entry.md and data_sources.md sync gaps.
 
 **Next Tasks:**
-1. Address handoff/2026-04-10-p1-crypt-keeper-orphaned-and-sync-gaps.md
-2. Address handoff/2026-04-10-p2-crypt-keeper-conventions-and-redundancy.md
+1. Address handoffs/2026-04-10-p1-crypt-keeper-orphaned-and-sync-gaps.md
+2. Address handoffs/2026-04-10-p2-crypt-keeper-conventions-and-redundancy.md
 
 
 ## [1.9.2] — Refine vault reporting protocols to eliminate redundant changelog entries when a handoff is the primary output. (2026-04-10)
@@ -1125,13 +1125,13 @@
 **Detail logs:**
 - `skills/pmm/changelog.md`
 - `skills/changelog/changelog.md`
-- `skills/handoff/changelog.md`
+- `skills/handoffs/changelog.md`
 
 **Changes:**
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/pmm/index.md` — Established Strategic PM skill SOP and template.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Updated AGENTS.md with Strategic PM session pattern.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/changelog/audit_procedure.md` — Added Check 8 (Lingering Plans) to Changelog Auditor audit procedure.
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoff/2026-04-10-p2-quartermaster-convention.md` — Created Strategic PM convention handoff.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoffs/2026-04-10-p2-quartermaster-convention.md` — Created Strategic PM convention handoff.
 
 **Next Tasks:**
 1. Verify Strategic PM usage in the next write-active session.
@@ -1147,7 +1147,7 @@
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md` — Updated SOP with March 2026 proxy baseline (18 tenants) and integrated Margaux's Google Sheet link into Data Sources for segmentation validation.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/procedure.md` — Added 'Metric Qualification Standards (N & D)' section, defining strict inclusion criteria for Numerator and Denominator populations to ensure measurement consistency across all KRs.
 
-**Handoff:** `handoff/2026-04-10-p2-finalize-enrollments-data-entry-shortcuts-baseline.md`
+**Handoff:** `handoffs/2026-04-10-p2-finalize-enrollments-data-entry-shortcuts-baseline.md`
 
 **Next Tasks:**
 1. Execute the handoff: 2026-04-10-p2-finalize-enrollments-data-entry-shortcuts-baseline.md
@@ -1412,12 +1412,12 @@
 - `skills/okr-reporting/changelog.md`
 
 **Changes:**
-- `handoff/2026-04-10-p1-okr-reporting-data-source-population-blocked.md` — Created P1 handoff to document and escalate the file system access denial blocking data source population in okr-reporting.
+- `handoffs/2026-04-10-p1-okr-reporting-data-source-population-blocked.md` — Created P1 handoff to document and escalate the file system access denial blocking data source population in okr-reporting.
 
 **Blockers:**
 - No blockers remain for this session, as the primary blocker was escalated via a new handoff. — N/A
 
-**Handoff:** `handoff/2026-04-10-p1-okr-reporting-data-source-population-blocked.md`
+**Handoff:** `handoffs/2026-04-10-p1-okr-reporting-data-source-population-blocked.md`
 
 **Next Tasks:**
 1. Monitor for resolution of P1 handoff; upon access restoration, resume work on skills/okr-reporting/data_sources.md.
@@ -1456,10 +1456,10 @@
 
 **Changes:**
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Added Course Correction Protocol to AGENTS.md.
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/handoff/index.md` — Updated Handoff Protocol (skills/handoff/index.md) with logging resilience rules.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/handoffs/index.md` — Updated Handoff Protocol (skills/handoffs/index.md) with logging resilience rules.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/robert.md` — Updated Robert's monitors (agents/robert.md).
 
-**Handoff:** `handoff/complete/2026-04-10-p2-context-loading-triage-COMPLETE.md`
+**Handoff:** `handoffs/complete/2026-04-10-p2-context-loading-triage-COMPLETE.md`
 
 **Next Tasks:**
 1. Ensure all agents are aware of the Course Correction Protocol.
@@ -1468,14 +1468,14 @@
 ## [1.7.8] — Implement session resilience and Course Correction protocols for vault agents. (2026-04-10)
 
 **Detail logs:**
-- `skills/handoff/changelog.md`
+- `skills/handoffs/changelog.md`
 
 **Changes:**
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Integrated Course Correction Protocol and Resonance rules into AGENTS.md.
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/handoff/index.md` — Updated Handoff Protocol with resilience policies for logging failures.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/handoffs/index.md` — Updated Handoff Protocol with resilience policies for logging failures.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/robert.md` — Added Course Correction Protocol to Robert's monitoring scope.
 
-**Handoff:** `handoff/2026-04-10-p2-context-loading-triage.md`
+**Handoff:** `handoffs/2026-04-10-p2-context-loading-triage.md`
 
 **Next Tasks:**
 1. Agents to apply Course Correction Protocol when encountering tool errors.
@@ -1485,9 +1485,9 @@
 ## [1.7.7] — Clean up context handoff after Robert creation. (2026-04-09)
 
 **Changes:**
-- `handoff/2026-04-10-p4-session-retrospective-context.md` — P3 (Robert) is complete; this context package is no longer needed in the READY folder.
+- `handoffs/2026-04-10-p4-session-retrospective-context.md` — P3 (Robert) is complete; this context package is no longer needed in the READY folder.
 
-**Handoff:** `handoff/complete/2026-04-10-p4-session-retrospective-context-COMPLETE.md`
+**Handoff:** `handoffs/complete/2026-04-10-p4-session-retrospective-context-COMPLETE.md`
 
 **Next Tasks:**
 1. Tackle P2 context loading triage.
@@ -1500,7 +1500,7 @@
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/synthesis/` — Launched skills/synthesis/ directory with index, diff_checker, art, and changelog.md.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Documented art.md convention in AGENTS.md.
 
-**Handoff:** `handoff/complete/2026-04-10-p3-robert-agent-creation-COMPLETE.md`
+**Handoff:** `handoffs/complete/2026-04-10-p3-robert-agent-creation-COMPLETE.md`
 
 **Next Tasks:**
 1. Robert to perform first official audit of AGENTS.md.
@@ -1517,7 +1517,7 @@
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/synthesis/art.md` — Established art.md convention for mixed digital media art.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Integrated Robert into AGENTS.md.
 
-**Handoff:** `handoff/2026-04-10-p3-robert-agent-creation.md`
+**Handoff:** `handoffs/2026-04-10-p3-robert-agent-creation.md`
 
 **Next Tasks:**
 1. The user to perform initial review of Robert's audit procedure.
@@ -1527,13 +1527,13 @@
 ## [1.7.4] — Codify handoff editability rules to allow for iterative plan development. (2026-04-09)
 
 **Detail logs:**
-- `skills/handoff/changelog.md`
+- `skills/handoffs/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/handoff/index.md` — Added 'Editability Rules' section clarifying that open handoffs are fully editable living documents.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/handoffs/index.md` — Added 'Editability Rules' section clarifying that open handoffs are fully editable living documents.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Added note to AGENTS.md Handoff Check section regarding living document status of open handoffs.
 
-**Handoff:** `handoff/2026-04-10-p1-handoff-editability-COMPLETE.md`
+**Handoff:** `handoffs/2026-04-10-p1-handoff-editability-COMPLETE.md`
 
 **Next Tasks:**
 1. Address remaining handoffs: p2-context-loading-triage, p3-robert-agent-creation, p4-session-retrospective-context.
@@ -1545,7 +1545,7 @@
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/antigravity.md` — Created agents/antigravity.md role file with verbatim handoff text.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Updated AGENTS.md dispatch table and vault structure tree to register Antigravity agent.
 
-**Handoff:** `handoff/2026-04-10-p2-antigravity-agent.md`
+**Handoff:** `handoffs/2026-04-10-p2-antigravity-agent.md`
 
 **Next Tasks:**
 1. Surface remaining handoffs to human user.
@@ -1607,7 +1607,7 @@
 **Changes:**
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/changelog.md` — Added a note regarding the brittleness of line-based edits during complex refactoring, advising agents to read larger context blocks first.
 
-**Handoff:** `handoff/2026-04-XX-editing-friction-summary.md (Conceptual)`
+**Handoff:** `handoffs/2026-04-XX-editing-friction-summary.md (Conceptual)`
 
 **Next Tasks:**
 1. Draft the KR SOP for Service Notes — Data Entry Shortcuts based on established patterns.
@@ -1637,7 +1637,7 @@
 ## [1.6.6] — To document the process refinement cycle resulting from tooling errors during structured changelog logging for future agent reference. (2026-04-09)
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/changelog.md` — Added a detailed entry documenting the 'ENOENT' error when targeting skills/skillshandoff/changelog.md, detailing the necessary course correction (directory creation and root logging) to ensure process continuity.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/changelog.md` — Added a detailed entry documenting the 'ENOENT' error when targeting skills/skillshandoffs/changelog.md, detailing the necessary course correction (directory creation and root logging) to ensure process continuity.
 
 **Next Tasks:**
 
@@ -1646,34 +1646,34 @@
 ## [1.6.5] — To learn the Handoff Protocol by reviewing its documentation and understanding how to delegate an observation to Claude Code. (2026-04-09)
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/handoff/index.md` — Reviewed the complete Handoff Protocol skill documentation, detailing receiving, execution, and completion steps.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/handoffs/index.md` — Reviewed the complete Handoff Protocol skill documentation, detailing receiving, execution, and completion steps.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/claude-code.md` — Reviewed Claude Code's role instructions to understand its capabilities as the target agent for triaging.
 
 **Next Tasks:**
 1. Draft a new handoff file based on the observation that context loading is complex, targeting Claude Code for triage.
-2. Execute the drafted handoff by moving it into the 'handoff/' directory.
+2. Execute the drafted handoff by moving it into the 'handoffs/' directory.
 
 
 ## [1.6.4] — To learn the Handoff Protocol by reviewing its documentation and understanding how to delegate an observation to Claude Code. (2026-04-09)
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/handoff/index.md` — Reviewed the complete Handoff Protocol skill documentation, detailing receiving, execution, and completion steps.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/handoffs/index.md` — Reviewed the complete Handoff Protocol skill documentation, detailing receiving, execution, and completion steps.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/claude-code.md` — Reviewed Claude Code's role instructions to understand its capabilities as the target agent for triaging.
 
 **Next Tasks:**
 1. Draft a new handoff file based on the observation that context loading is complex, targeting Claude Code for triage.
-2. Execute the drafted handoff by moving it into the 'handoff/' directory.
+2. Execute the drafted handoff by moving it into the 'handoffs/' directory.
 
 
 ## [1.6.3] — To learn the Handoff Protocol by reviewing its documentation and understanding how to delegate an observation to Claude Code. (2026-04-09)
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/handoff/index.md` — Reviewed the complete Handoff Protocol skill documentation, detailing receiving, execution, and completion steps.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/handoffs/index.md` — Reviewed the complete Handoff Protocol skill documentation, detailing receiving, execution, and completion steps.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/claude-code.md` — Reviewed Claude Code's role instructions to understand its capabilities as the target agent for triaging.
 
 **Next Tasks:**
 1. Draft a new handoff file based on the observation that context loading is complex, targeting Claude Code for triage.
-2. Execute the drafted handoff by moving it into the 'handoff/' directory.
+2. Execute the drafted handoff by moving it into the 'handoffs/' directory.
 
 
 ## [1.6.2] — First formal Changelog Auditor audit — 7 checks across root changelog and all 9 subdirectory changelogs, validated against 7-day git log. (2026-04-09)
@@ -1730,12 +1730,12 @@
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Added SKILL.md/AGENTS.md naming exemption; updated vault tree (removed root reports/, added knowledge/reports/); updated File Placement table; root exemptions already had CLAUDE.md and README.md
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/reports/` — Removed root reports/ directory (git rm -r); content already existed in skills/knowledge/reports/
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/procedure.md` — Updated output path from reports/ to skills/knowledge/reports/; added archive step to Pre-Flight
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoff/complete/2026-04-08-changelog-refactor-COMPLETE.md` — Renamed from 2026-04-08-changelog-refactor.md (added -COMPLETE suffix)
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoff/complete/2026-04-09-consolidate-project-status-reports-COMPLETE.md` — Renamed from 2026-04-09-consolidate-project-status-reports.md (added -COMPLETE suffix)
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoffs/complete/2026-04-08-changelog-refactor-COMPLETE.md` — Renamed from 2026-04-08-changelog-refactor.md (added -COMPLETE suffix)
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoffs/complete/2026-04-09-consolidate-project-status-reports-COMPLETE.md` — Renamed from 2026-04-09-consolidate-project-status-reports.md (added -COMPLETE suffix)
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/changelog.md` — Fixed 1.4.1 phantom reports/archive/ path; expanded 1.5.0 with missing infrastructure changes; annotated stale Next Tasks in 1.2.0 and 1.3.0
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/casebook/changelog.md` — Fixed 1.1.0 wrong count: 4 unexposed → 3 unexposed API functions for subscriptions
 
-**Handoff:** `handoff/2026-04-08-p2-changelog-factcheck-COMPLETE.md`
+**Handoff:** `handoffs/2026-04-08-p2-changelog-factcheck-COMPLETE.md`
 
 **Next Tasks:**
 1. Run Vault Auditor to verify all P1/P2 flags from 2026-04-08 report are resolved
@@ -1752,15 +1752,15 @@
 **Changes:**
 - `skills/changelog/` — new skill created: changelog auditing (7 checks, flag-only, companion to Vault Auditor)
 - `skills/index.md` + `AGENTS.md` — lumberjack added to vault index and structure tree
-- `skills/handoff/index.md` + `skills/changelog/index.md` + `skills/changelog/entry_template.md` — bidirectional handoff ↔ changelog cross-reference added
+- `skills/handoffs/index.md` + `skills/changelog/index.md` + `skills/changelog/entry_template.md` — bidirectional handoff ↔ changelog cross-reference added
 - `src/ben-cp.ts` — `write_changelog_entry` upgraded: `subdirectories` array (replaces single `subdirectory`), `handoff` param, `get_changelog` scope param, `failed_actions` surfaced at root level
 - `src/ben-cp.ts` — `package.json` build script fixed: `tsc -p tsconfig.json` (was broken inline flags)
-- `handoff/complete/` — subdirectory created; all COMPLETE handoffs migrated out of root
+- `handoffs/complete/` — subdirectory created; all COMPLETE handoffs migrated out of root
 - `casebook-admin-mcp/src/casebook-mcp.ts` — server name corrected: `casebook-admin-api` → `casebook-admin-mcp`
 - `casebook-billing-mcp/src/casebook-mcp.ts` — server name corrected: `casebook-billing-api` → `casebook-subscriptions-mcp`
 - `casebook-billing-mcp/package.json` — name updated: `casebook-billing-mcp` → `casebook-subscriptions-mcp`
 - Both `package.json` descriptions corrected: SSE/Express, not stdio
-- `handoff/2026-04-08-p2-changelog-factcheck.md` — handoff created for next session covering all fact-check fixes
+- `handoffs/2026-04-08-p2-changelog-factcheck.md` — handoff created for next session covering all fact-check fixes
 
 **Next Tasks:**
 1. Run Changelog Auditor after each multi-skill session
@@ -1776,7 +1776,7 @@
 - 13 total flags across 6 checks (Check 5 clean); 2 new flags (CLAUDE.md, README.md) not in prior session
 - Report written to `skills/knowledge/reports/knowledge-report-2026-04-08.md`
 - `skills/knowledge/reports/` and `skills/knowledge/reports/archive/` directories created
-- 1 new handoff created: `handoff/2026-04-08-p2-crypt-keeper-root-exemptions.md`
+- 1 new handoff created: `handoffs/2026-04-08-p2-crypt-keeper-root-exemptions.md`
 - 5 prior handoffs remain open — all flagged in report for next run verification
 
 **Next Tasks:**
@@ -1827,7 +1827,7 @@
 - `AGENTS.md` — vault tree updated to reflect new casebook/ structure
 - `skills/index.md` — 5 casebook-reporting/ links updated to casebook/reporting/
 
-**Handoff:** `handoff/complete/2026-04-08-consolidate-casebook-into-skills-COMPLETE.md`
+**Handoff:** `handoffs/complete/2026-04-08-consolidate-casebook-into-skills-COMPLETE.md`
 
 **Next Tasks:**
 1. Populate `skills/casebook/admin-mcp/index.md` with tool descriptions and SOPs _(completed in 1.3.0 as admin/ and subscriptions/)_

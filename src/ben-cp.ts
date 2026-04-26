@@ -803,7 +803,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         script = path.resolve(rootPath, "skills/pipelines/status/run.py");
         cmdArgs = ["--force", "--team", "platform"];
       } else if (skill === "dream" || skill === "reporting") {
-        script = path.resolve(rootPath, "skills/pipelines/intelligence/scripts/run.py");
+        script = path.resolve(rootPath, "skills/dream/run.py");
         if ((args as any).date) cmdArgs.push("--date", (args as any).date);
         if ((args as any).dry_run) cmdArgs.push("--dry-run");
       } else {

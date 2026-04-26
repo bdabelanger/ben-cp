@@ -1,109 +1,60 @@
-# Handoff: Gemma (Local) Smoke Test — Nightly Report Digest
+# Handoff: Gemma (Local) Smoke Test — Results & Tool Fix
 
+> **Prepared by:** Cowork (Claude) + Ben (2026-04-25)
+> **Assigned to:** Code
 > **Priority:** P2
-> **Assigned to:** Cowork (Claude) — for design; execute with Gemma
-> **Redesigned by:** Cowork (Claude) + Ben (2026-04-25)
-> **Status:** READY
+> **STATUS**: ✅ COMPLETE — 2026-04-26
+
+Processed Gemma's smoke test results. Updated Local agent role documentation with get_report routing and Rule 8 (metrics framing). Updated the smoke test template to use get_report instead of embedded content.
 
 ---
 
 ## Context
 
-The previous smoke test asked Gemma to navigate multi-step MCP tool chains, maintain vault state, and infer conventions autonomously — beyond her reliable capability as a Gemma-4 12B local model on a 16GB M1.
-
-This redesigned test defines **Gemma's actual lane**: given a finished artifact (the nightly dream report), produce a plain-language digest. One input, one output, no tool navigation required.
-
-**Gemma's revised role in the vault:**
-- ✅ Summarize nightly Python pipeline outputs into plain-language digests
-- ✅ Rewrite report sections in accessible language for Ben's review
-- ⚠️ Append a predefined section to a predefined SOP file (narrow scope only — file and section must be handed to her explicitly)
-- ❌ Multi-step tool chaining, autonomous file navigation, or self-directed vault writes
+Gemma ran the redesigned smoke test on 2026-04-25. The test asked her to read the nightly dream report (embedded in the handoff) and produce a plain-language digest. Results were evaluated by Cowork (Claude) against defined acceptance criteria.
 
 ---
 
-## Smoke Test Instructions for Gemma
+## Smoke Test Results
 
-You are Local — a reviewer and summarizer in Ben's vault. You do not navigate the vault autonomously. Your job in this test is to read a nightly report and produce a plain-language digest Ben can read in under 2 minutes.
+**Overall: PASS**
 
-### Input
+| Criterion | Result | Notes |
+| :--- | :--- | :--- |
+| Readable in under 90 seconds | ✅ Pass | Clean, well-structured, no fluff |
+| Both 🟡 flags identified with specifics | ✅ Pass | Changelog (14 files, locations named) and Handoff (16 active, both P1s named) |
+| No hallucinated items | ✅ Pass | Everything maps directly to the report |
+| Plain language, no vault jargon | ✅ Pass | "Memory Growth" framing was a nice touch |
+| Clear opinionated action for Ben | ✅ Pass | Correctly prioritized P1 handoffs as potential blockers |
 
-Today's dream report (2026-04-25):
-
----
-
-# Daily Report — 2026-04-25
-
-> **Editor:** Orchestrator
-> **Published:** 2026-04-26T02:56:31Z
-> **Skills:** 7 active
-
-## Summary
-🟡 Clean run with items to watch. Flags from: orchestration/handoff. Review flagged columns — no action required unless noted.
-
-## 📓 Intelligence
-
-### 🟢 Memory
-172 records tracked across 47 domains.
-- Vault contains 172 intelligence records.
-- Structural coverage: 47 domain indices verified.
-
-### 🟢 Report
-7 skills registered, outputs online.
-- Specs: 7 verified, 0 malformed.
-- Outputs: Connected at orchestration/pipelines/outputs/dream/
-- Theme: Modern Vault CSS loaded
-
-### 🟢 Projects
-18 active initiatives in intelligence (0 at risk, 0 off track, 7 missing)
-- Vault covers 18 projects for Q2 release.
-- External sync verified 11 projects via Asana ingestion.
-
-## ⚙️ Orchestration
-
-### 🟢 Access
-Access Policy Audit: PASS
-
-### 🟡 Changelog
-14 modified file(s) without changelog (version 1.18.9)
-- Undocumented File Changes: 14
-- Change locations: 12 in orchestration/, 1 in /, 1 in src/
-
-### 🟡 Handoff
-16 active handoffs (2 P1, 9 P2, 5 P3)
-- P1: Triage CBP-2573 Results
-- P1: Video Production — Notes Table Filtering & Preview Demo
-- P2: Pipeline: Automated Knowledge Ingestion & Parsing
-- P3: Mapping Manager Skill Formalization
-- P3: Crypt Keeper Data Quality Gaps
-
-### 🟢 Notes
-0 new entries across 0 domain(s)
+**Minor issue:** Gemma placed the 🟢 "Memory Growth" metric (172 records / 47 domains) inside "What needs attention" — it's a clean stat, not a flag. Small framing error, not a failure. Worth noting in her role documentation.
 
 ---
 
-### Task
+## Tool Issue Identified (Action Required for Code)
 
-Produce a plain-language digest of this report for Ben. Format it as follows:
+Gemma attempted several MCP tool calls to locate the dream report externally before falling back to the embedded content in the handoff. Specific calls attempted:
 
-**Overall Status:** One sentence. Green, yellow, or red — and why.
+- `get_intelligence` with a path approximating the dream report output — failed with `ENOENT`
+- `get_handoff` and `get_task` calls looking for the report — not the right tools
 
-**What needs attention:** A short bulleted list (max 4 items) of anything flagged or worth Ben's eyes. Be specific — include numbers and names.
+**Root cause:** There is no ben-cp MCP tool that can read files from `orchestration/pipelines/outputs/`. Gemma (and Cowork) are forced to either embed report content manually or fall back to raw filesystem reads.
 
-**All clear:** A single sentence covering what's running clean, so Ben knows what he doesn't need to think about.
+This is the same issue documented in `2026-04-26-p2-Fix:-Expose-Dream-Report-Output-via-ben-cp-MCP.md`. The two handoffs are related — this one adds Gemma's failed tool call pattern as a concrete reproduction case.
 
-**Gemma's note:** One sentence in your own words — what's the most important thing Ben should do today based on this report?
+**Impact on production use:** In her nightly digest role, Gemma will burn unnecessary tokens attempting MCP calls that will always fail before falling back to embedded content. This needs to be fixed before she runs nightly.
 
 ---
+
+## Requested Action for Code
+
+1. **Implement `get_report` tool** (or equivalent) per `2026-04-26-p2-Fix:-Expose-Dream-Report-Output-via-ben-cp-MCP.md` — expose `orchestration/pipelines/outputs/dream/daily-report.md` via a purpose-built ben-cp MCP tool
+2. **Update `agents/local.md`** — add `get_report` to Local's tool routing table so Gemma knows to call it first for pipeline outputs
+3. **Update the smoke test template** — once the tool exists, revise the smoke test instructions to replace the embedded report block with a `get_report(scope='dream')` call as Step 0
+4. **Minor doc fix** — note in Local's role file that 🟢 clean metrics should not appear in the "What needs attention" digest section
 
 ## Acceptance Criteria
 
-A passing smoke test produces a digest that:
-- Is readable in under 90 seconds
-- Correctly identifies both 🟡 flags (Changelog + Handoff) and their specifics
-- Does not hallucinate items not present in the report
-- Uses plain language — no vault jargon, no emoji overload
-- Ends with a clear, opinionated single action for Ben
-
-## Evaluation Notes for Cowork (Claude)
-
-After Gemma runs this test, review her output against the acceptance criteria above and report back to Ben with a pass/fail and specific notes on where she succeeded or fell short. This forms the baseline for her ongoing nightly digest role.
+- `get_report(scope='dream')` returns `daily-report.md` content successfully
+- Gemma can run the smoke test without any failed MCP calls before reaching the digest task
+- `agents/local.md` reflects the updated tool routing

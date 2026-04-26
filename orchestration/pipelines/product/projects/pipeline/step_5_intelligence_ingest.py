@@ -4,7 +4,7 @@ import sys
 import json
 import subprocess
 
-REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", "..", ".."))
 sys.path.append(os.path.dirname(__file__))
 PROJECTS_PIPELINE_JSON = os.path.join(REPO_ROOT, "orchestration/pipelines/product/projects/inputs/status-reports/processed/asana_active.json")
 FETCH_SCRIPT = os.path.join(REPO_ROOT, "orchestration/pipelines/product/projects/pipeline/confluence_v2.py")
@@ -84,7 +84,7 @@ def run_mass_harvest():
                 if attachments:
                     print(f"    Found {len(attachments)} attachment(s). Downloading...")
                     # We'll use a small helper or just re-import fetch_v2 logic
-                    from fetch_confluence_v2 import get_confluence_client
+                    from confluence_v2 import get_confluence_client
                     confluence = get_confluence_client()
                     
                     for att in attachments:

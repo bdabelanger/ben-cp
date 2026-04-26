@@ -4,7 +4,9 @@
 > **Assigned to:** Claude
 > **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P2
-> **STATUS: 🔲 READY — pick up when P1 queue is clear**
+> **STATUS**: ✅ COMPLETE — 2026-04-26
+
+Pipeline was already substantially built. Fixed two off-by-one REPO_ROOT path bugs (4 levels up vs 5) in step_5_intelligence_ingest.py and confluence_v2.py that caused silent failures on every run. Also fixed stale module import (fetch_confluence_v2 → confluence_v2) and added sys.exit(1) on fetch failure for proper error surfacing. All 12 projects with Confluence links now fetch PRDs and Launch Plans successfully.
 
 ---
 

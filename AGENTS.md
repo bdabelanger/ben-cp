@@ -1,7 +1,7 @@
 # AGENTS.md — Vault Agent Dispatch
 
 > **All agents working in this vault must read this file before taking any action.**
-> Last updated: 2026-04-15
+> Last updated: 2026-04-25
 
 ---
 
@@ -37,7 +37,7 @@ To prevent architectural drift and maintain clarity between agentic processes an
 | Term | Definition | Primary Location |
 | :--- | :--- | :--- |
 | **Steps** | Executable, agent-led actions defined within an implementation plan or handoff. | `orchestration/handoff/` |
-| **Tasks** | Strategic, human-led deliverables or project work items. Agents do not modify these without explicit direction. | `orchestration/tasks/` |
+| **Tasks** | Human-led work items synchronized automatically from Asana and Jira. This directory is a **read-only sync target** — agents MUST NOT create, edit, or delete task files here. Use `get_task` / `list_tasks` to read. To create a task for Ben, use the Asana MCP tool directly. | `tasks/` |
 
 ### The Token Economy Rule
 
@@ -182,8 +182,8 @@ This vault exposes purpose-built MCP tools. Use them instead of raw file reads/w
 | `get_handoff` / `list_handoffs` | Read and list handoffs by filename — no absolute path needed |
 | `get_intelligence` / `list_intelligence` | Read intelligence files and source docs by path relative to `intelligence/` |
 | `add_intelligence` / `edit_intelligence` | Structured record management for the Intelligence domain |
-| `get_task` / `list_tasks` | Manage drafting and active deliverables in the root `tasks/` directory |
-| `add_task` / `edit_task` | Create or update active task files — merging metadata automatically |
+| `get_task` / `list_tasks` | Read tasks synced from Asana/Jira — **read-only**, do not use to infer write access |
+| ~~`add_task` / `edit_task`~~ | **Deprecated** — tasks are now synced from Asana/Jira. Use the Asana MCP tool to create tasks for Ben. |
 | `get_skill` / `list_skills` | Read skill files by path relative to `intelligence/core/skills/` |
 | `add_art` / `get_art` / `list_art` | Contribute to and explore the vault's gallery (poems, sketches, etc) |
 | `get_note` / `add_note` | Read and append to notes files by domain shorthand |
@@ -272,6 +272,11 @@ ben-cp/
 5. **Read Failure:** If a read fails, stop and report — do not guess or proceed with a write.
 
 **Mental Check:** Before every edit, state in your `<thought>` block: "Verification: I have read [file] in step [N] of this session."
+
+### Google Drive Sync Latency (CRITICAL)
+The vault is hosted on Google Drive, which introduces sync latency. Direct filesystem reads (via `read_text_file` with absolute paths) of recently written pipeline outputs or reports are UNRELIABLE.
+- **Rule:** NEVER use raw filesystem tools to read files in `orchestration/pipelines/outputs/`.
+- **Requirement:** Always use the purpose-built `get_report` MCP tool. This tool runs on the host and ensures access to the latest data, bypassing sync delays.
 
 ### notes.md Write Policy
 

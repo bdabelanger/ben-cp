@@ -1,61 +1,65 @@
-# ben-cp
+# ben-cp (v2.1.1)
 
-Personal repo for human user — two main components live here:
-
----
-
-## MCP Server (Skill Vault)
-
-A local [Model Context Protocol](https://modelcontextprotocol.io) server that exposes SOPs and skill templates to Claude Code.
-
-**Entry point:** `src/ben-cp.ts`
-
-**Tools exposed:**
-| Tool | Description |
-|---|---|
-| `get_skill` | Read a SOP or skill template by path relative to `/skills` |
-| `list_vault` | List all files available in the SOP vault |
-
-**Run locally:**
-```
-npm start
-```
-
-**SOPs live in:** `skills/` — organized by tool/workflow (e.g. `skills/project-status-reports/`)
+Personal repo for Ben — the central nervous system for vault automation and agentic coordination.
 
 ---
 
-## Platform Weekly Status Report Pipeline
+## 🛠 MCP Server (ben-cp)
 
-Automated pipeline that generates an HTML status report for the Platform engineering team by pulling live data from Asana and Jira.
+A purpose-built [Model Context Protocol](https://modelcontextprotocol.io) server that provides structured access to the vault's intelligence and orchestration layers.
 
-**Quick start (from repo root):**
+**Entry point:** `src/ben-cp.ts`  
+**Build path:** `dist/ben-cp.js`
+
+### Core Tools Exposed:
+
+| Domain | Tool | Purpose |
+| :--- | :--- | :--- |
+| **Governance** | `get_agent_info` | Retrieve `AGENTS.md` and role definitions. |
+| **Handoffs** | `get_handoff` / `list_handoffs` | Manage cross-agent implementation plans. |
+| **Intelligence** | `get_intelligence` / `list_intelligence` | Read/write to the long-term knowledge base. |
+| **Tasks** | `get_task` / `list_tasks` | Manage active deliverables and drafting. |
+| **Skills** | `get_skill` / `list_skills` | Retrieve SOPs and procedural logic. |
+| **Reports** | `get_report` / `list_reports` | Access nightly pipeline outputs (Dream cycle). |
+| **Vault** | `add_changelog` / `get_changelog` | Maintain the audit trail of all vault changes. |
+
+### ⚠️ Google Drive Sync Warning
+The vault is hosted on Google Drive. Agents and scripts should **NEVER** use raw filesystem reads (e.g., `read_text_file` with absolute paths) for recently generated pipeline outputs in `orchestration/pipelines/outputs/`. 
+
+**Requirement:** Always use the `get_report` tool. It runs on the host and guarantees access to the latest data, bypassing Google Drive's local sync latency.
+
+---
+
+## 🌙 Dream Cycle (Nightly Reporting)
+
+The vault features an automated synthesis pipeline that runs nightly to coordinate project data from Asana and Jira.
+
+**Runner:** `orchestration/utilities/intelligence/report.py`  
+**Outputs:** `orchestration/pipelines/outputs/dream/`
+
+### Quick Start:
 ```bash
-# Full fresh run — wipes Jira cache, re-fetches everything
-python3 skills/project-status-reports/scripts/full_run.py --force
-
-# Re-render only — Jira data already fresh, skip re-fetching
-python3 skills/project-status-reports/scripts/full_run.py
+# Generate a fresh nightly report
+python3 orchestration/utilities/intelligence/report.py
 ```
 
-**Pipeline steps:**
+---
 
-| Step | Script | What it does |
-|---|---|---|
-| 0 | `step_0_asana_refresh.py` | Fetches all active Product team projects from Asana API |
-| 1 | `step_1_asana_ingest.py` | Filters to Platform team, extracts stage/status/milestones/Jira links |
-| 2 | `step_2_atlassian_fetch.py` | Fetches child issues + epic estimates per CBP key from Jira |
-| 3 | `step_3_jira_harvest.py` | Harvests and normalizes Jira issue data |
-| 4 | `platform_report.py` | Synthesizes Asana + Jira into a markdown report |
-| — | `render_html.py` | Converts markdown report to a self-contained HTML file |
+## 🏗 Directory Structure
 
-**Output:** `project-status-reports/outputs/Platform_Status_<date>.html`
+| Layer | Lives in | Contents |
+| :--- | :--- | :--- |
+| **Intelligence** | `intelligence/` | Domain knowledge, strategic core, and source documents. |
+| **Orchestration** | `orchestration/` | Active work (handoffs, tasks) and pipeline logic. |
+| **Skills** | `intelligence/core/skills/` | Procedural SOPs and agent instructions. |
+| **Agents** | `agents/` | Specific role documentation for Cowork, Local, and Code. |
 
-**Required environment variables** (`.env` at repo root):
+---
+
+## Development
+
+```bash
+npm install     # Install dependencies
+npm run build   # Rebuild the MCP server
+npm start       # Run the server via tsx (dev)
 ```
-ASANA_API_TOKEN=...
-ATLASSIAN_USER_EMAIL=...
-ATLASSIAN_API_TOKEN=...
-```
-
-Full SOP: [`skills/project-status-reports/index.md`](skills/project-status-reports/index.md)

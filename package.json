@@ -1,6 +1,6 @@
 {
   "name": "ben-cp",
-  "version": "1.0.0",
+  "version": "2.1.1",
   "type": "module",
   "description": "Personal MCP Server — Skill Vault",
   "scripts": {

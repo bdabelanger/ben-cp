@@ -5,7 +5,7 @@ import json
 from atlassian import Confluence
 
 # Standard Vault Paths
-REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", "..", ".."))
 
 def load_env():
     env_path = os.path.join(REPO_ROOT, ".env")
@@ -80,3 +80,5 @@ if __name__ == "__main__":
     data = fetch_page_v2(sys.argv[1])
     if data:
         print(json.dumps(data, indent=2))
+    else:
+        sys.exit(1)

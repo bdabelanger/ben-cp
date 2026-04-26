@@ -1,6 +1,0 @@
-{
-  "skill_name": "orchestration/changelog",
-  "preferred_agent": "Changelog Auditor (Yukon Cornelius)",
-  "cadence": "daily",
-  "run_order": 11
-}

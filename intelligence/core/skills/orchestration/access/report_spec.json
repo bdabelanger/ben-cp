@@ -1,6 +1,0 @@
-{
-  "skill_name": "orchestration/access",
-  "preferred_agent": "Access Auditor",
-  "cadence": "daily",
-  "run_order": 12
-}

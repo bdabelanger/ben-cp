@@ -1,1 +1,0 @@
-- [Skill: Report Publishing (Pouch Protocol)](SKILL.md)

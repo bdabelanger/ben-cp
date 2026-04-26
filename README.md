@@ -24,7 +24,7 @@ A purpose-built [Model Context Protocol](https://modelcontextprotocol.io) server
 | **Vault** | `add_changelog` / `get_changelog` | Maintain the audit trail of all vault changes. |
 
 ### ⚠️ Google Drive Sync Warning
-The vault is hosted on Google Drive. Agents and scripts should **NEVER** use raw filesystem reads (e.g., `read_text_file` with absolute paths) for recently generated pipeline outputs in `orchestration/pipelines/outputs/`. 
+The vault is hosted on Google Drive. Agents and scripts should **NEVER** use raw filesystem reads (e.g., `read_text_file` with absolute paths) for recently generated pipeline outputs in `skills/pipelines/outputs/`. 
 
 **Requirement:** Always use the `get_report` tool. It runs on the host and guarantees access to the latest data, bypassing Google Drive's local sync latency.
 
@@ -35,7 +35,7 @@ The vault is hosted on Google Drive. Agents and scripts should **NEVER** use raw
 The vault features an automated synthesis pipeline that runs nightly to coordinate project data from Asana and Jira.
 
 **Runner:** `orchestration/utilities/intelligence/report.py`  
-**Outputs:** `orchestration/pipelines/outputs/dream/`
+**Outputs:** `reports/dream/`
 
 ### Quick Start:
 ```bash
@@ -51,7 +51,7 @@ python3 orchestration/utilities/intelligence/report.py
 | :--- | :--- | :--- |
 | **Intelligence** | `intelligence/` | Domain knowledge, strategic core, and source documents. |
 | **Orchestration** | `orchestration/` | Active work (handoffs, tasks) and pipeline logic. |
-| **Skills** | `intelligence/core/skills/` | Procedural SOPs and agent instructions. |
+| **Skills** | `skills/` | Procedural SOPs and agent instructions. |
 | **Agents** | `agents/` | Specific role documentation for Cowork, Local, and Code. |
 
 ---

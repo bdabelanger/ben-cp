@@ -1,6 +1,0 @@
-{
-  "skill_name": "orchestration/notes",
-  "preferred_agent": "Notes Auditor (Sea Shanty)",
-  "cadence": "daily",
-  "run_order": 90
-}

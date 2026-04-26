@@ -1,1 +1,0 @@
-- [Skill: Agent-Python Wrappers](SKILL.md)

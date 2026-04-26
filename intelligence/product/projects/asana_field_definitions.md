@@ -1,6 +1,6 @@
 # Asana Custom Field GID Reference Catalog
 
-- **source_file:** asana-custom-fields.md
+- **source_file:** ../../skills/pipelines/asana/schemas/asana-custom-fields.md
 - **status:** DRAFT
 - **type:** ReferenceCatalog
 

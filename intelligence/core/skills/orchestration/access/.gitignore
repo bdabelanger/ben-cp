@@ -1,4 +1,0 @@
-# Do not ever commit local model configuration directories!
-# These contain absolute paths, local telemetry logs, and API tokens.
-agent-roots/*
-!agent-roots/.gitkeep

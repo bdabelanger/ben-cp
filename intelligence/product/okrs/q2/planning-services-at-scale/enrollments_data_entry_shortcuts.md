@@ -124,5 +124,5 @@ The following initiatives contribute to this KR:
 
 - Parent procedure: `../../procedure.md`
 - Notes quick entry SOP: `./notes_quick_entry.md`
-- Status logic: `../../../skill-builder/mappings/status_mapping.md`
+- Status logic: `../../../../skills/status/schemas/status_mapping.md`
 - Visual standards: `../../../skill-builder/styles/emoji_key.md`

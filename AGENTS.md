@@ -36,7 +36,7 @@ To prevent architectural drift and maintain clarity between agentic processes an
 
 | Term | Definition | Primary Location |
 | :--- | :--- | :--- |
-| **Steps** | Executable, agent-led actions defined within an implementation plan or handoff. | `orchestration/handoff/` |
+| **Steps** | Executable, agent-led actions defined within an implementation plan or handoff. | `handoffs/` |
 | **Tasks** | Human-led work items synchronized automatically from Asana and Jira. This directory is a **read-only sync target** — agents MUST NOT create, edit, or delete task files here. Use `get_task` / `list_tasks` to read. To create a task for Ben, use the Asana MCP tool directly. | `tasks/` |
 
 ### The Token Economy Rule
@@ -99,7 +99,7 @@ Find your role file and read it next:
 | Cowork | `agents/cowork.md` | Architect, session lead, handoff reviewer |
 | Local | `agents/local.md` | Reviewer, parser, intelligence refresher |
 | Code (Gemini / Claude Code) | `agents/code.md` | Implementer, code executor, file engineer |
-| Vault Auditor | `intelligence/core/skills/intelligence/memory/SKILL.md` | Memory Auditor — guards mappings, indexes memory, and conducts audits |
+| Vault Auditor | `skills/intelligence/memory/SKILL.md` | Memory Auditor — guards mappings, indexes memory, and conducts audits |
 | Dispatch | — | Proxy Messenger — mobile relay (no vault access) |
 
 ---
@@ -107,12 +107,12 @@ Find your role file and read it next:
 ## Global Tone & Schema Directive
 
 **All agents must assume the explicitly mapped persona of the domain they are operating within.**
-Before executing a procedure against `intelligence/core/skills/[skill_name]/`, an agent MUST sequentially read:
+Before executing a procedure against `skills/[skill_name]/`, an agent MUST sequentially read:
 1. `SKILL.md` (To learn *how* to execute the boundary).
 
 Agents MUST default to parsing `./character.md` for tone and voice. No generalized fluffy assistant speak is allowed inside the repo boundary.
 
-**Visual Authority**: All reports must adhere to the visual and nomenclature standards defined in `intelligence/core/skills/styles/emoji-key.md`. Check this guide before selecting status icons or formatting markers.
+**Visual Authority**: All reports must adhere to the visual and nomenclature standards defined in `skills/styles/emoji-key.md`. Check this guide before selecting status icons or formatting markers.
 
 
 ---
@@ -123,12 +123,12 @@ Agents MUST default to parsing `./character.md` for tone and voice. No generaliz
 If the human has already told you what to work on — by naming a handoff, a file, or a task — skip this check entirely and go directly to that work.
 
 For autonomous (undirected) session starts:
-1. List `orchestration/handoff/` (root only — not `handoff/complete/`)
-2. Any `.md` file present is an open handoff — completed ones live in `orchestration/handoff/complete/`
+1. List `handoffs/` (root only — not `handoffs/complete/`)
+2. Any `.md` file present is an open handoff — completed ones live in `handoffs/complete/`
 3. Surface them to human user immediately: "You have N outstanding handoff(s): [filenames]"
-4. If human user confirms, execute using the handoff protocol at `intelligence/core/skills/collaboration/handoff/index.md`
+4. If human user confirms, execute using the handoff protocol at `skills/collaboration/handoff/index.md`
 
-> **Note:** Open handoffs are living documents — they may be edited and iterated before execution. Only completed handoffs (in `handoff/complete/`) are immutable.
+> **Note:** Open handoffs are living documents — they may be edited and iterated before execution. Only completed handoffs (in `handoffs/complete/`) are immutable.
 
 Do not proceed with other autonomous work until open handoffs are acknowledged by human user.
 
@@ -154,21 +154,21 @@ The user-cp is not currently connected on mobile. Dispatch cannot read vault fil
 
 ## Directory Boundaries
 
-> See `intelligence/core/governance/policy.md` for the full policy.
+> See `intelligence/governance/policy.md` for the full policy.
 
-The vault is organized into four distinct layers. Writing data files, scripts, or run artifacts into `intelligence/core/skills/` is a violation.
+The vault is organized into four distinct layers. Writing data files, scripts, or run artifacts into `skills/` is a violation.
 
 | Layer | Lives in | Contents |
 | :--- | :--- | :--- |
-| Skill logic | `intelligence/core/skills/` | `SKILL.md`, `character.md`, `index.md`, `changelog.md`, templates, report specs |
-| Execution tooling | `orchestration/utilities/` | Scripts, pipeline runners, automation harnesses |
-| Live data / WIP | `orchestration/pipelines/inputs/` | Raw API responses, processed JSON, `manifest.json` |
-| Outputs | `orchestration/pipelines/outputs/` | Final reports, HTML, archives |
+| Skill logic | `skills/` | `SKILL.md`, `character.md`, `index.md`, `changelog.md`, templates, report specs |
+| Execution tooling | `skills/utilities/` | Scripts, pipeline runners, automation harnesses |
+| Live data / WIP | `skills/pipelines/inputs/` | Raw API responses, processed JSON, `manifest.json` |
+| Outputs | `skills/pipelines/outputs/` | Final reports, HTML, archives |
 | Vault source of truth | `intelligence/` | Domain knowledge and strategic core |
-| Core logic / Skills | `intelligence/core/skills/` | Skill SOPs and procedural logic |
+| Core logic / Skills | `skills/` | Skill SOPs and procedural logic |
 | Reference source files | `intelligence/<domain>/<topic>/source/` | Raw input files (PDFs, TXTs, exports) tied to active work |
 
-**Hard constraint:** Any agent writing data files, scripts (`*.py`, `*.sh`), `manifest.json`, archived reports, or session logs into `intelligence/core/` is in violation of this policy. Flag the violation in a handoff rather than proceeding.
+**Hard constraint:** Any agent writing data files, scripts (`*.py`, `*.sh`), `manifest.json`, archived reports, or session logs into `intelligence/` is in violation of this policy. Flag the violation in a handoff rather than proceeding.
 
 ---
 
@@ -184,9 +184,8 @@ This vault exposes purpose-built MCP tools. Use them instead of raw file reads/w
 | `add_intelligence` / `edit_intelligence` | Structured record management for the Intelligence domain |
 | `get_task` / `list_tasks` | Read tasks synced from Asana/Jira — **read-only**, do not use to infer write access |
 | ~~`add_task` / `edit_task`~~ | **Deprecated** — tasks are now synced from Asana/Jira. Use the Asana MCP tool to create tasks for Ben. |
-| `get_skill` / `list_skills` | Read skill files by path relative to `intelligence/core/skills/` |
+| `get_skill` / `list_skills` | Read skill files by path relative to `skills/` |
 | `add_art` / `get_art` / `list_art` | Contribute to and explore the vault's gallery (poems, sketches, etc) |
-| `get_note` / `add_note` | Read and append to notes files by domain shorthand |
 | `get_changelog` | Read changelog entries by scope |
 | `add_changelog` | Append a new entry — always write deepest level first, then root |
 | `generate_report` | Generate a strategic or platform report (e.g. `platform`, `dream`) |
@@ -195,10 +194,8 @@ This vault exposes purpose-built MCP tools. Use them instead of raw file reads/w
 **Session pattern:**
 1. `get_agent_info(agent_id='your_name')` → Load `AGENTS.md` + your role file to confirm identity and rules.
 2. `get_changelog` scoped to the work area → understand recent context
-3. **Session Planning:** If writes are intended, create/update `notes.md` in the target `intelligence/core/skills/` subdirectory using the template at `intelligence/core/skills/product/report.md`.
 4. Do the work
 5. `add_changelog` at subdirectory level → then at root
-6. **Cleanup:** Delete the `notes.md` file after successful changelog entry.
 
 The human user will tell you which changelog scope is relevant for the session. If not specified, ask before pulling root.
 
@@ -210,37 +207,30 @@ The human user will tell you which changelog scope is relevant for the session. 
 ben-cp/
 ├── AGENTS.md                        ← this file — read first, always
 ├── agents/                          ← role-specific instructions per agent
-│   ├── code.md
-│   ├── cowork.md
-│   └── local.md
+├── skills/                          ← all skill SOPs and procedures
+│   ├── orchestration/               ← execution engine
+│   │   ├── pipelines/               ← consolidated pipeline domain
+│   │   │   ├── inputs/              ← live run data (raw API responses, manifests)
+│   │   │   └── outputs/             ← generated reports, audit logs, session artifacts
+│   │   ├── communications/          
+│   │   ├── handoffs/                
+│   │   ├── access/                  
+│   │   └── changelog/               
+│   ├── intelligence/                ← consolidated cognitive domain
+│   │   ├── memory/                  
+│   │   ├── analysis/                
+│   │   └── dream/                   
+│   ├── status/                      ← PM-facing status skill
+│   ├── rovo/                        
+│   ├── shared/                      
+│   └── styles/                      
 ├── changelog.md                     ← root project changelog (versioned milestones)
-├── orchestration/                   ← execution domain (active work & state)
-│   ├── handoff/                     ← open cross-agent implementation plans (READY)
-│   │   └── complete/                ← executed handoffs (COMPLETE) — never edit
-│   └── pipelines/                   ← consolidated pipeline domain
-│       ├── inputs/                  ← live run data (raw API responses, manifests)
-│       └── outputs/                 ← generated reports, audit logs, session artifacts
-│   └── utilities/                   ← Execution tooling, runners, and logic engines
-├── tasks/                           ← (Symlink to orchestration/tasks/)
+├── handoffs/                        ← open cross-agent implementation plans (READY)
+│   └── complete/                    ← executed handoffs (COMPLETE)
+├── tasks/                           ← (Symlink to tasks/)
 └── intelligence/                    ← vault source of truth (Unified Domain)
-    ├── core/                        ← system logic and procedural core
-    │   ├── mapping/                 ← logic stubs and status rules
-    │   ├── governance/              ← vault logic policies and agent rules
-    │   └── skills/                  ← all skill SOPs and procedures
-    │       ├── orchestration/       ← execution engine
-    │       │   ├── notes/           
-    │       │   ├── handoff/         
-    │       │   ├── access/          
-    │       │   └── changelog/       
-    │       ├── intelligence/        ← consolidated cognitive domain
-    │       │   ├── memory/          
-    │       │   ├── analysis/        
-    │       │   └── dream/           
-    │       ├── product/             ← PM-facing skills
-    │       ├── rovo/                
-    │       ├── shared/              
-    │       └── styles/              
     ├── casebook/                    ← Casebook domain knowledge
+    ├── governance/                  ← vault logic policies and agent rules
     └── product/projects/            ← product roadmap and strategic data
 ```
 
@@ -250,12 +240,10 @@ ben-cp/
 
 | Skill Path | Preferred Agent | Purpose | Cadence |
 | :--- | :--- | :--- | :--- |
-| `intelligence/memory` | Vault Auditor | Structural & factual integrity | Daily |
-| `intelligence/analysis` | Intelligence (Predict) | Trend and risk synthesis | Daily |
-| `intelligence/analysis/report` | Orchestrator | Nightly Gazette assembly | Daily |
-| `orchestration/changelog` | Changelog Auditor | Project integrity & git drift audit | On-Change |
-| `orchestration/handoff` | Handoff | Task state & plan management | On-Demand |
-| `orchestration/notes" | Notes | Human/Agent context bridge (notes.md) | On-Demand |
+| `skills/intelligence/memory` | Vault Auditor | Structural & factual integrity | Daily |
+| `skills/intelligence/analysis` | Intelligence (Predict) | Trend and risk synthesis | Daily |
+| `skills/intelligence/analysis/report` | Orchestrator | Nightly Gazette assembly | Daily |
+| `handoffs` | Handoff | Task state & plan management | On-Demand |
 | `product/status-reports` | Strategic PM | External stakeholder updates | Weekly |
 | `product/okr-reporting` | Strategic PM | KR measurement and strategy | Weekly |
 
@@ -275,20 +263,8 @@ ben-cp/
 
 ### Google Drive Sync Latency (CRITICAL)
 The vault is hosted on Google Drive, which introduces sync latency. Direct filesystem reads (via `read_text_file` with absolute paths) of recently written pipeline outputs or reports are UNRELIABLE.
-- **Rule:** NEVER use raw filesystem tools to read files in `orchestration/pipelines/outputs/`.
+- **Rule:** NEVER use raw filesystem tools to read files in `skills/pipelines/outputs/`.
 - **Requirement:** Always use the purpose-built `get_report` MCP tool. This tool runs on the host and ensures access to the latest data, bypassing sync delays.
-
-### notes.md Write Policy
-
-`notes.md` files are sparingly used collaborative scratchpads tracking human-oriented observations within the `intelligence/core/skills/` layer.
-
-1. **Observations Only**: Use `notes.md` strictly for observations about a skill—things we want to keep track of for later review (e.g., structural inconsistencies, project blockers). **DO NOT log operational steps, task completions, or meta-observations here.**
-2. **Never for Logic or Nuances**: If there is a nuance, rule, or logic change that every agent needs to know to be successful, edit it directly into the relevant `SKILL.md` or documentation file and **write a changelog**. Never leave critical system knowledge languishing in a note.
-3. **Always sign your entry** with agent name and timestamp: `[Your Name — YYYY-MM-DD HH:MM]`
-4. **Append only** — never edit or remove another agent's or human user's entries.
-5. **Edit only your own entries** — corrections should be added inline as `[Correction — YYYY-MM-DD]`
-
-*Note: The previous practice of using ephemeral `notes.md` files for session planning is deprecated. Use the Artifact-Led Workflow (`implementation_plan.md`, `task.md`) for planning state.*
 
 ### Course Correction Protocol
 
@@ -302,26 +278,25 @@ If a required tool call fails (e.g., `add_changelog`, `edit_file`, or path-based
 
 | Content type | Correct location |
 | :--- | :--- |
-| KR-specific measurement SOP | `intelligence/core/skills/product/okr-reporting/[quarter]/[initiative]/[name].md` |
-| Master OKR runbook (evergreen) | `intelligence/core/skills/product/okr-reporting/procedure.md` |
-| Quarterly KR reference | `intelligence/core/skills/product/okr-reporting/[quarter]/index.md` |
+| KR-specific measurement SOP | `skills/status/okr-reporting/[quarter]/[initiative]/[name].md` |
+| Master OKR runbook (evergreen) | `skills/status/SKILL.md` |
+| Quarterly KR reference | `skills/status/[quarter]/index.md` |
 | Shared data source inventory | `intelligence/product/projects/data_sources.md` |
 | Reference source files (PDFs, TXTs) | `intelligence/<domain>/<topic>/source/` |
-| status/transform logic | `intelligence/mapping/` (Legacy) or `intelligence/core/mapping/` |
-| visual/emoji standards | `intelligence/core/skills/styles/` |
-| memory store / audit | `intelligence/core/skills/intelligence/memory/` |
-| synthesis / analysis | `intelligence/core/skills/intelligence/analysis/` |
-| nightly orchestration | `intelligence/core/skills/intelligence/dream/` |
-| changelog procedure | `intelligence/core/skills/orchestration/changelog/` |
-| other skill sops | `intelligence/core/skills/[skill-name]/` |
-| audit reports | `orchestration/pipelines/outputs/memory/audit/audit-report-[TARGET]-[YYYY-MM-DD].md` |
-| Access audit reports | `orchestration/pipelines/outputs/access/access-report-[YYYY-MM-DD].md` |
+| status/transform logic | `intelligence/mapping/` (Legacy) or `intelligence/mapping/` |
+| visual/emoji standards | `skills/styles/` |
+| memory store / audit | `skills/intelligence/memory/` |
+| synthesis / analysis | `skills/intelligence/analysis/` |
+| nightly orchestration | `skills/intelligence/dream/` |
+| other skill sops | `skills/[skill-name]/` |
+| audit reports | `skills/pipelines/outputs/memory/audit/audit-report-[TARGET]-[YYYY-MM-DD].md` |
+| Access audit reports | `skills/pipelines/outputs/access/access-report-[YYYY-MM-DD].md` |
 
 **Never create files at vault root** (except `AGENTS.md`, `changelog.md`, `README.md`).
 
 ### File Naming
 
-- **Use hyphens** (`-`) for separating words in document titles (e.g., `handoff/2026-04-12-p1-sprint-plan.md`, `changelog.md`).
+- **Use hyphens** (`-`) for separating words in document titles (e.g., `handoffs/2026-04-12-p1-sprint-plan.md`, `changelog.md`).
 - Scripts or specific code files requiring underscores by native language formats (e.g., Python `run_pipeline.py`) are exempt, but general knowledge markdown defaults to hyphens.
 - Keep names short and descriptive. No camelCase.
 - `SKILL.md` and `AGENTS.md` are exempt from the convention — all-caps filenames are valid for vault contracts and Cowork skill descriptors.
@@ -334,9 +309,9 @@ After creating or significantly modifying any file, update `index.md` in the sam
 
 **Changelogs are strictly for functional, structural, and logic changes to a skill or the vault.** 
 
-Every session that involves writing, editing, or structural modification must end with a changelog entry — use `add_changelog` or follow `intelligence/core/skills/orchestration/changelog/index.md`. Read-only or discovery sessions do not require a changelog unless a significant insight or blocker was identified.
+Every session that involves writing, editing, or structural modification must end with a changelog entry — use the `add_changelog` MCP tool. Read-only or discovery sessions do not require a changelog unless a significant insight or blocker was identified.
 
-**Handoff Exemption:** If a session's primary output is a newly created READY handoff (`handoff/[name].md`) and no other significant SOP or structural changes occurred, the agent SHOULD skip the detailed subdirectory changelog. In this case, the root `changelog.md` entry should be a concise one-line pointer to the handoff.
+**Handoff Exemption:** If a session's primary output is a newly created READY handoff (`handoffs/[name].md`) and no other significant SOP or structural changes occurred, the agent SHOULD skip the detailed subdirectory changelog. In this case, the root `changelog.md` entry should be a concise one-line pointer to the handoff.
 
 ### Artifact-First Workflow (MANDATORY)
 
@@ -346,13 +321,13 @@ To ensure human oversight and safety, agents MUST interact with specialized arti
 
 To reduce cognitive load and vault clutter, P1 and P2 workflows follow a **Unified Artifact** model.
 
-1.  **The Unified Handoff**: For most work, the *Handoff* and *Implementation Plan* are merged into a single flat file in `orchestration/handoff/`.
+1.  **The Unified Handoff**: For most work, the *Handoff* and *Implementation Plan* are merged into a single flat file in `handoffs/`.
 2.  **Mandatory Schema**: Every unified artifact MUST follow this hierarchy:
     - **Context**: The problem statement and background.
     - **Logic**: The proposed technical solution or strategy.
     - **Execution Steps**: A checklist of agent-led "Steps."
-3.  **Feature Bundles (The Exception)**: Use a sub-directory in `handoff/` (e.g., `handoff/feature-name/`) ONLY when the task requires auxiliary support files (scripts, images, schemas).
-4.  **Root Cleanliness**: All implementation logic resides in `handoff/`. No implementation plans are allowed at the vault root.
+3.  **Feature Bundles (The Exception)**: Use a sub-directory in `handoffs/` (e.g., `handoffs/feature-name/`) ONLY when the task requires auxiliary support files (scripts, images, schemas).
+4.  **Root Cleanliness**: All implementation logic resides in `handoffs/`. No implementation plans are allowed at the vault root.
 
 #### Complexity Threshold Decision Matrix (Tiered Rigor)
 
@@ -365,7 +340,7 @@ To reduce cognitive load and vault clutter, P1 and P2 workflows follow a **Unifi
 | **P4 (Trivial)** | **Atomic** | Direct execution with `changelog.md` entry only. |
 
 1. **Plan first (`implementation_plan.md`)**: Mandatory for P1/P2. Must be approved by human user or peer agent before code is touched. Focuses on "The Why" and "The Path."
-2. **Execute via Tasks (`orchestration/tasks/task.md`)**: Active deliverable tracker. For P3, this contains the "Proposed Logic" at the top to bypass a separate plan artifact.
+2. **Execute via Tasks (`tasks/task.md`)**: Active deliverable tracker. For P3, this contains the "Proposed Logic" at the top to bypass a separate plan artifact.
 3. **Walkthrough (`walkthrough.md`)**: Mandatory for P1. Summarizes changes, lessons learned, and verification. Optimized for NotebookLM ingestion.
 
 #### Mobile & Voice Optimization
@@ -375,7 +350,7 @@ To reduce cognitive load and vault clutter, P1 and P2 workflows follow a **Unifi
 The access skill will flag sessions that bypass this artifact-led workflow as violations.
 
 ### Operational Meta-Agent Handoffs
-As meta-agents analyze the vault over their nightly cycles, they are actively encouraged to generate new `handoff/` artifacts containing ideas for operational improvements, workflow coordinations, or structural delegations.
+As meta-agents analyze the vault over their nightly cycles, they are actively encouraged to generate new `handoffs/` artifacts containing ideas for operational improvements, workflow coordinations, or structural delegations.
 
 **Rules for Meta-Agent Ideation:**
 1. These ideation handoffs MUST be assigned to the specific agent who makes the most functional sense for the task.

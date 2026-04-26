@@ -25,7 +25,6 @@ from datetime import datetime
 
 SKILLS_DIR   = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", "intelligence", "core", "skills"))
 REPO_ROOT    = os.path.abspath(os.path.join(SKILLS_DIR, "..", "..", ".."))
-VAULT_ROOT   = os.path.abspath(os.path.join(REPO_ROOT, "..", ".."))
 OUTPUTS_DIR  = os.path.join(REPO_ROOT, "orchestration", "pipelines", "outputs", "dream")
 REPORT_MD    = os.path.join(SKILLS_DIR, "intelligence", "report", "character.md")
 VAULT_CSS    = os.path.join(SKILLS_DIR, "styles", "vault.css")
@@ -121,10 +120,10 @@ def execute_skill(spec, phase="draft", draft_pool=None):
     spec_path  = spec.get("_path")
     skill_dir  = os.path.dirname(spec_path)
     # Search hierarchy:
-    # 1. orchestration/tools/[skill_path]/report.py
+    # 1. orchestration/utilities/[skill_path]/report.py
     # 2. [skill_dir]/report.py (legacy)
     rel_path = os.path.relpath(skill_dir, SKILLS_DIR)
-    script_path = os.path.join(REPO_ROOT, "orchestration", "tools", rel_path, "report.py")
+    script_path = os.path.join(REPO_ROOT, "orchestration", "utilities", rel_path, "report.py")
 
     if not os.path.exists(script_path):
         script_path = os.path.join(skill_dir, "report.py")

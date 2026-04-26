@@ -1,10 +1,10 @@
 # Implementation Plan: Global Notes WLV Intelligence Update
 
 > **Prepared by:** Cowork (Gemini) (2026-04-15)
-> **Assigned to:** Gemma
+> **Assigned to:** Cowork (Claude)
 > **Vault root:** ben-cp/
 > **Priority:** P2
-> **STATUS: 🔲 READY — pick up 2026-04-15**
+> **STATUS: 🔲 READY — reassigned 2026-04-25**
 
 ---
 
@@ -12,7 +12,7 @@
 The **Global Notes WLV** (GID: 1210368097846960) is a Q2 strategic project currently in the **Backlog** stage. It is the architectural solution to "Navigation Fatigue," providing a unified entry point for all note-related activity across the platform.
 
 ## Logic
-Gemma (Local) should update the Intelligence domain to reflect that this view is the "Central Hub" for casework. The ROI here is the elimination of the "hunt"—moving from a case-by-case search pattern to a global, filtered stream of information.
+Update the Intelligence domain to reflect that this view is the "Central Hub" for casework. The ROI here is the elimination of the "hunt"—moving from a case-by-case search pattern to a global, filtered stream of information.
 
 ## Synthesized Intelligence for Entry
 - **Core Vision**: "All your notes in one place." Designed to end the practice of "tab-switching" and manual navigation between cases to find information.
@@ -28,7 +28,7 @@ Gemma (Local) should update the Intelligence domain to reflect that this view is
 
 ## Verbatim Source Material
 ### Slide Text
-> "All your notes in one place: Notes WLV. Effortless navigation. Centralized review. 'I don’t want them to have to go into 12 cases or people in order to write their notes. What I’d like is one central place… where all the notes are just in one area.' — Wellmet Project"
+> "All your notes in one place: Notes WLV. Effortless navigation. Centralized review. 'I don't want them to have to go into 12 cases or people in order to write their notes. What I'd like is one central place… where all the notes are just in one area.' — Wellmet Project"
 
 ### Speaker Notes
 > "This is the Notes Workload View (WLV). It is the central hub designed to solve one of our most common user frustrations: 'Navigation Fatigue.' ... For the first time, users can see, sort, and filter notes from every case and person record they have access to in one single dashboard. ... We are effectively ending the 'hunt.' Users no longer need to open 12 different cases just to find one specific interaction."

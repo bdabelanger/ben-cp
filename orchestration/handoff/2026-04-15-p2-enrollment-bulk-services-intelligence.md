@@ -1,10 +1,10 @@
 # Implementation Plan: Enrollment Bulk Services Intelligence Update
 
 > **Prepared by:** Cowork (Gemini) (2026-04-15)
-> **Assigned to:** Gemma
+> **Assigned to:** Cowork (Claude)
 > **Vault root:** ben-cp/
 > **Priority:** P2
-> **STATUS: 🔲 READY — pick up 2026-04-15**
+> **STATUS: 🔲 READY — reassigned 2026-04-25**
 
 ---
 
@@ -12,7 +12,7 @@
 This handoff consolidates the "Bulk Productivity" initiative (GIDs: 1211631356870657, 1211631360190563, 1211733450555414). These projects are the primary Q2 vehicle for moving high-volume users away from the "one-by-one" maintenance model.
 
 ## Logic
-Gemma (Local) should update the Intelligence domain to reflect that these tools collectively solve for "Efficiency at Scale." This update highlights that the Service Plan datagrid is now even more feature-rich than its Notes counterpart.
+Update the Intelligence domain to reflect that these tools collectively solve for "Efficiency at Scale." This update highlights that the Service Plan datagrid is now even more feature-rich than its Notes counterpart.
 
 ## Synthesized Intelligence for Entry
 - **Core Vision**: Ending the "efficiency gap" in enrollment lifecycle management.

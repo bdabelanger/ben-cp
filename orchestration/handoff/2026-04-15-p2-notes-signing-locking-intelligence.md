@@ -1,10 +1,10 @@
 # Implementation Plan: Notes Signing & Locking Intelligence Update
 
 > **Prepared by:** Cowork (Gemini) (2026-04-15)
-> **Assigned to:** Gemma
+> **Assigned to:** Cowork (Claude)
 > **Vault root:** ben-cp/
 > **Priority:** P2
-> **STATUS: 🔲 READY — pick up 2026-04-15**
+> **STATUS: 🔲 READY — reassigned 2026-04-25**
 
 ---
 
@@ -12,7 +12,7 @@
 **Locked Notes** (GID: 1211786365522017) and **Notes Signing** (GID: 1213685097670626) are core Q2 "Security & Compliance Enablers." These projects address critical data governance needs for healthcare-adjacent partners and are currently in **In QA / Development**.
 
 ## Logic
-Gemma (Local) should update the Intelligence domain to reflect that these are not just UI locks, but ethical and legal compliance tools. The record should emphasize the "Immutable Record" philosophy being introduced to the platform.
+Update the Intelligence domain to reflect that these are not just UI locks, but ethical and legal compliance tools. The record should emphasize the "Immutable Record" philosophy being introduced to the platform.
 
 ## Synthesized Intelligence for Entry
 - **Core Vision**: "Sign and lock notes for better compliance mgmt." Ensuring the integrity of the record is as important as the speed of capturing it.
@@ -30,7 +30,7 @@ Gemma (Local) should update the Intelligence domain to reflect that these are no
 > "Sign and lock notes for better compliance mgmt. Security & Compliance Enablers. 'If one of the staff writes a note, they can go in and edit it at any time which is super unethical and dangerous.' — Grafton County, NH"
 
 ### Speaker Notes
-> "Speed doesn't matter if the integrity of the record is in question... For our healthcare-minded partners, these aren't just 'nice-to-have' features—they are core components for HIPAA compliance and professional ethics... Service Note Locking is arriving in our June Beta... If a note absolutely has to be changed, removing a signature to reopen it will trigger an audit trail... we’re moving away from that danger and toward a much higher standard of data governance."
+> "Speed doesn't matter if the integrity of the record is in question... For our healthcare-minded partners, these aren't just 'nice-to-have' features—they are core components for HIPAA compliance and professional ethics... Service Note Locking is arriving in our June Beta... If a note absolutely has to be changed, removing a signature to reopen it will trigger an audit trail... we're moving away from that danger and toward a much higher standard of data governance."
 
 ## Execution Steps
 

@@ -1,10 +1,10 @@
 # Implementation Plan: Zapier Improvements Intelligence Update
 
 > **Prepared by:** Cowork (Gemini) (2026-04-15)
-> **Assigned to:** Gemma
+> **Assigned to:** Cowork (Claude)
 > **Vault root:** ben-cp/
 > **Priority:** P2
-> **STATUS: 🔲 READY — pick up 2026-04-15**
+> **STATUS: 🔲 READY — reassigned 2026-04-25**
 
 ---
 
@@ -12,7 +12,7 @@
 **Integrations - Zapier Improvements** (GID: 1213496879668016) is a Q2 strategic initiative currently in **Development**. It is designed to empower non-technical users to build robust automations without needing direct API or developer assistance.
 
 ## Logic
-Gemma (Local) should update the Intelligence domain to reflect that Zapier is our "Automation Tool of Record." The update should emphasize the shift from simple record creation to complex, multi-step profile building via custom fields.
+Update the Intelligence domain to reflect that Zapier is our "Automation Tool of Record." The update should emphasize the shift from simple record creation to complex, multi-step profile building via custom fields.
 
 ## Synthesized Intelligence for Entry
 - **Core Vision**: "Better no-code automations: Zapier does custom fields." The goal is to lower the technical barrier for over 100 customers who rely on Zapier.

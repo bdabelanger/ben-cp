@@ -5,7 +5,9 @@
 > **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P3
 > **v1.0**
-> **STATUS: 🔲 READY — pick up 2026-04-12**
+> **STATUS**: ✅ COMPLETE — 2026-04-26
+
+Converted to task: mapping-manager-skill-formalization. Design conversation needed before agent execution — parked as a Ben task until direction is set.
 
 ---
 

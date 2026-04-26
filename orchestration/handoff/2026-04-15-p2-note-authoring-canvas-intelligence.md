@@ -1,10 +1,10 @@
 # Implementation Plan: Note Authoring Canvas Intelligence Update
 
 > **Prepared by:** Cowork (Gemini) (2026-04-15)
-> **Assigned to:** Gemma
+> **Assigned to:** Cowork (Claude)
 > **Vault root:** ben-cp/
 > **Priority:** P2
-> **STATUS: 🔲 READY — pick up 2026-04-15**
+> **STATUS: 🔲 READY — reassigned 2026-04-25**
 
 ---
 
@@ -12,7 +12,7 @@
 The **Note Authoring Canvas** represents a overhaul of how notes are created and managed (GIDs: 1211838817183809, 1211757637943244). It is a Q2 strategic initiative currently in **Beta/QA**, designed to set the foundation for the "Dynamic Pages" roadmap later this year.
 
 ## Logic
-Gemma (Local) should update the Intelligence domain to reflect the "Canvas" as a mental model. This isn't just a new form; it's a "standardized look and feel" that reduces cognitive load by keeping data entry "eye-level" across all note types.
+Update the Intelligence domain to reflect the "Canvas" as a mental model. This isn't just a new form; it's a "standardized look and feel" that reduces cognitive load by keeping data entry "eye-level" across all note types.
 
 ## Synthesized Intelligence for Entry
 - **Core Vision**: "Speed through note writing." This update is framed as a massive leap forward in consistency and professional-grade performance.
@@ -30,7 +30,7 @@ Gemma (Local) should update the Intelligence domain to reflect the "Canvas" as a
 > "Speed through note writing: Note authoring canvas. Always consistent and eye-level. Bulk note authoring shortcuts. Canvas approach (prep for Dynamic pages). '[Case Workers] input bulk notes so that they don't have to write the same thing five to eight times.' — Path of Life"
 
 ### Speaker Notes
-> "Just like the datagrid, note authoring is taking a massive leap forward. Pierre’s design and Bisoye, Russell, and Tuan’s implementation sets users up with a note that is always consistent and eye-level for every note type... The new tabs feel like a big change, but the underlying sections are structured in familiar groups... they feel more mature than their predecessor... Dynamic pages support which will allow customers to add and arrange fields in the top section of the note later this year."
+> "Just like the datagrid, note authoring is taking a massive leap forward. Pierre's design and Bisoye, Russell, and Tuan's implementation sets users up with a note that is always consistent and eye-level for every note type... The new tabs feel like a big change, but the underlying sections are structured in familiar groups... they feel more mature than their predecessor... Dynamic pages support which will allow customers to add and arrange fields in the top section of the note later this year."
 
 ## Execution Steps
 

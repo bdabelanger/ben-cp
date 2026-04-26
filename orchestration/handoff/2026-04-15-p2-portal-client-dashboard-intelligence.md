@@ -1,10 +1,10 @@
 # Implementation Plan: Client Portal Dashboard Intelligence Update
 
 > **Prepared by:** Cowork (Gemini) (2026-04-15)
-> **Assigned to:** Gemma
+> **Assigned to:** Cowork (Claude)
 > **Vault root:** ben-cp/
 > **Priority:** P2
-> **STATUS: 🔲 READY — pick up 2026-04-15**
+> **STATUS: 🔲 READY — reassigned 2026-04-25**
 
 ---
 
@@ -12,7 +12,7 @@
 The **Client Portal Dashboard** (GID: 1213506659163435) is a high-priority strategic shift for Q2. It was accelerated in the roadmap specifically to drive revenue and retention impact within the 2026 calendar year.
 
 ## Logic
-Gemma (Local) should update the Intelligence domain to reflect the "Revenue & Retention" framing of this project. While currently in **Discovery**, the project is gaining momentum as technical resources (specifically Duc) have transitioned onto it following the completion of communications fixes.
+Update the Intelligence domain to reflect the "Revenue & Retention" framing of this project. While currently in **Discovery**, the project is gaining momentum as technical resources (specifically Duc) have transitioned onto it following the completion of communications fixes.
 
 ## Synthesized Intelligence for Entry
 - **Core Vision**: "Make a bigger impact on revenue & retention in 2026."

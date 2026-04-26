@@ -4,7 +4,9 @@
 > **Assigned to:** Ben
 > **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P1
-> **STATUS: 🔲 READY — pick up 2026-04-12**
+> **STATUS**: ✅ COMPLETE — 2026-04-26
+
+Converted to task: triage-cbp-2573. No agent execution required — this is a human action item for Ben.
 
 ---
 

@@ -69,6 +69,7 @@ Every vault domain has its own purpose-built MCP tool. Always use these — **ne
 | A skill or SKILL.md | `get_skill` | Path relative to `skills/` (e.g. `orchestration/handoff/SKILL.md`) |
 | **Art & Media** | `add_art` / `get_art` | For creative contributions (poems, sketches, etc). |
 | A notes file | `get_note` | Domain shorthand (e.g. `primary`, `orchestration/notes`) |
+| **Pipeline Reports** | `get_report` | Path relative to `outputs/` (e.g. `dream/daily-report.md`) |
 | A changelog | `get_changelog` | Scope string |
 
 - `edit_file` → to change part of an existing file (requires absolute path — retrieve it from a prior `list_intelligence` or `list_handoffs` `path` field).
@@ -106,6 +107,10 @@ No changelog, no data file, no run artifact ever goes in `skills/`. If a changel
 ### Rule 7: File Names Use Underscores
 - Correct: `notes_quick_entry.md`. Wrong: `notes-quick-entry.md`, `NotesQuickEntry.md`.
 - Keep names short — feature + metric type only.
+
+### Rule 8: Digest Reporting
+- **Positive Metrics:** 🟢 Clean metrics and positive growth stats should appear in the general summary or "Highlights" section.
+- **Attention Items:** 🟡 Flags and 🔴 Blockers belong in the "What needs attention" section. Do NOT place 🟢 clean metrics in the attention section.
 
 ---
 

@@ -913,10 +913,10 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       let cmdArgs: string[] = [];
 
       if (skill === "platform") {
-        script = path.resolve(rootPath, "orchestration/tools/status-reports/scripts/full_run.py");
+        script = path.resolve(rootPath, "orchestration/utilities/status-reports/scripts/full_run.py");
         cmdArgs = ["--force", "--team", "platform"];
       } else if (skill === "dream" || skill === "reporting") {
-        script = path.resolve(rootPath, "orchestration/tools/intelligence/report.py");
+        script = path.resolve(rootPath, "orchestration/utilities/intelligence/report.py");
         if ((args as any).date) cmdArgs.push("--date", (args as any).date);
         if ((args as any).dry_run) cmdArgs.push("--dry-run");
       } else {

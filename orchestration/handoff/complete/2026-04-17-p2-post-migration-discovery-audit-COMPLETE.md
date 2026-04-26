@@ -4,7 +4,9 @@
 > **Assigned to:** Code (For Review)
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
-> **STATUS**: 🔲 READY — pick up 2026-04-17
+> **STATUS**: ✅ COMPLETE — 2026-04-26
+
+All steps completed by Gemma (Local) on 2026-04-17. Tooling verified, 50+ stale path references migrated, AGENTS.md confirmed accurate. Minor notice: some product/ index.md files have stale relative links — not blocking, flagged for future cleanup.
 
 ---
 

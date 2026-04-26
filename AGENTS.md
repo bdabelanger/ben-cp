@@ -161,7 +161,7 @@ The vault is organized into four distinct layers. Writing data files, scripts, o
 | Layer | Lives in | Contents |
 | :--- | :--- | :--- |
 | Skill logic | `intelligence/core/skills/` | `SKILL.md`, `character.md`, `index.md`, `changelog.md`, templates, report specs |
-| Execution tooling | `orchestration/tools/` | Scripts, pipeline runners, automation harnesses |
+| Execution tooling | `orchestration/utilities/` | Scripts, pipeline runners, automation harnesses |
 | Live data / WIP | `orchestration/pipelines/inputs/` | Raw API responses, processed JSON, `manifest.json` |
 | Outputs | `orchestration/pipelines/outputs/` | Final reports, HTML, archives |
 | Vault source of truth | `intelligence/` | Domain knowledge and strategic core |
@@ -220,7 +220,7 @@ ben-cp/
 │   └── pipelines/                   ← consolidated pipeline domain
 │       ├── inputs/                  ← live run data (raw API responses, manifests)
 │       └── outputs/                 ← generated reports, audit logs, session artifacts
-│   └── tools/                       ← Execution tooling, runners, and logic engines
+│   └── utilities/                   ← Execution tooling, runners, and logic engines
 ├── tasks/                           ← (Symlink to orchestration/tasks/)
 └── intelligence/                    ← vault source of truth (Unified Domain)
     ├── core/                        ← system logic and procedural core

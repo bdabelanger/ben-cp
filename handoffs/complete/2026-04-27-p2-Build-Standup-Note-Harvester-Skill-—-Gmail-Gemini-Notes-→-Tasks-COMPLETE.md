@@ -6,6 +6,8 @@
 > **Priority:** P2
 > **STATUS**: ✅ COMPLETE — 2026-04-27
 
+Feature renamed to Transcripts. Ingested 6 tasks. Updated MCP server for better UX (URLs and code blocks). Reconciled people cache.
+
 ---
 
 # Build Standup Note Harvester Skill — Gmail Gemini Notes → Tasks

@@ -2,7 +2,7 @@
 
 - **GID:** 1211757637943244
 - **Permalink:** https://app.asana.com/1/1123317448830974/project/1211757637943244
-- **OKR Mapping:** [Create Note Shortcuts](../../okrs/q2/planning-services-at-scale/service_notes_data_entry_shortcuts.md)
+- **OKR Mapping:** [Create Note Shortcuts](../../../okrs/q2/planning-services-at-scale/service_notes_data_entry_shortcuts.md)
 - **Team:** Platform
 - **Stage:** In QA
 - **Status:** on_track

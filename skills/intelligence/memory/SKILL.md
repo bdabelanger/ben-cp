@@ -1,3 +1,9 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Skill: Memory Store
 
 > **Description:** Custodian of Intelligence and Structural Truth. Manages long-term mappings, active learning, and standardized retrieval.

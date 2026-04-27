@@ -6,8 +6,11 @@ foreign_keys: []
 bridge_tables:
   - case_involvements
 description: Client, provider, and subject demographic repository.
+Status: published
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
 ---
-
 # Dataset: People
 
 ## Context

@@ -6,7 +6,7 @@ from datetime import datetime
 VAULT_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
 OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream')
 
-SKIP_DIRS = {'.git', '__pycache__', 'node_modules', 'archived', 'complete'}
+SKIP_DIRS = {'.git', '__pycache__', 'node_modules', 'archived', 'archive', 'complete'}
 SKIP_SCHEMES = ('http://', 'https://', 'mailto:', 'ftp://', '#')
 
 def collect_md_files():

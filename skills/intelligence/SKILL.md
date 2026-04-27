@@ -2,8 +2,11 @@
 name: intelligence
 description: The cognitive core of the vault. Manages memory, strategic analysis, and reporting orchestration.
 preferred_agent: Vault Auditor
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
 ---
-
 # SKILL: Intelligence Domain
 
 > **Purpose:** Oversees the vault's cognitive architecture. 

@@ -1,10 +1,16 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Asana Custom Field GID Reference Catalog
 
 - **source_file:** ../../skills/pipelines/asana/schemas/asana-custom-fields.md
 - **status:** DRAFT
 - **type:** ReferenceCatalog
 
-# Asana Custom Field Definitions
+## Asana Custom Field Definitions
 
 This document catalogs the official Global IDs (GIDs) for all custom fields used across our project management suite in Asana. This serves as the single source of truth for field mapping.
 

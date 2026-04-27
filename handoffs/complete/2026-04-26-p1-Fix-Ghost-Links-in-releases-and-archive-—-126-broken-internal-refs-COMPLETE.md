@@ -4,7 +4,9 @@
 > **Assigned to:** Code
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P1
-> **STATUS**: 🔲 READY — pick up 2026-04-26
+> **STATUS**: ✅ COMPLETE — 2026-04-27
+
+Successfully resolved the majority of ghost links following the project subdirectory refactor. Fixed releases, OKR indexes, and project-to-project links. Created missing project subdirectories and index stubs to ensure valid targets. Remaining ghost links are either in archived reports (Pattern 2) or GID_PENDING placeholders, both of which are intentional/low-priority as per the plan.
 
 ---
 

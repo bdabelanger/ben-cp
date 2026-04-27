@@ -1,3 +1,9 @@
+---
+Status: published
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Schema Relationships & Data Joins
 
 This document serves as a quick reference for spinning up SQL joins or BI tool data models based on the Joining Guide.

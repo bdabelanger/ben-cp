@@ -34,11 +34,6 @@ Reference data for this skill has been consolidated into the `intelligence/` dom
 
 ---
 
-## Companion Skills
-
-- [`dod-helper`](../dod-helper/index.md) — Interviews Ben and writes a Definition of Done back to an Asana or Jira task
-- [`weekly-status`](../weekly-status/index.md) — Platform weekly status report from Asana + Jira
-
 ---
 
 ## Source of Truth Note

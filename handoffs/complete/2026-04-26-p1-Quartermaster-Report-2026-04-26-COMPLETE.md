@@ -4,7 +4,9 @@
 > **Assigned to:** Ben
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P1
-> **STATUS**: 🔲 READY — pick up 2026-04-26
+> **STATUS**: ✅ COMPLETE — 2026-04-27
+
+Superseded by Dream Report — 2026-04-26 handoff. Renamed to remove Quartermaster terminology.
 
 ---
 

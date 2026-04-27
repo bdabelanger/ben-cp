@@ -1,3 +1,9 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Skill: Handoff
 
 > **Description:** Management of the asynchronous agent relay system to ensure perfect continuity across session gaps.

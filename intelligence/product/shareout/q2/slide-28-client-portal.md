@@ -1,3 +1,9 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Slide 28 — Client Portal v1 (Q2)
 
 - **okr:** Ease Navigation Burdens
@@ -16,7 +22,7 @@
 - **Redundant Entry Elimination:** Clients enter it once; workers review and approve.
 - **Self-Service:** Clients have visibility into their own submitted history.
 
-# Slide 28 — Client Portal v1 (Q2)
+## Slide 28 — Client Portal v1 (Q2)
 
 **Status:** ✅ Complete
 

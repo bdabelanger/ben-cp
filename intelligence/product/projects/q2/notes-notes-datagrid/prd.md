@@ -1,3 +1,9 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # PRD: Notes - Notes datagrid
 
 <table ac:local-id="42d1c58cc704" data-layout="default" data-table-width="760">

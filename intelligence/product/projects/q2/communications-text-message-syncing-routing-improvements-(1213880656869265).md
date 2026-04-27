@@ -1,3 +1,9 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Communications - Text message syncing routing improvements
 
 - **GID:** 1213880656869265

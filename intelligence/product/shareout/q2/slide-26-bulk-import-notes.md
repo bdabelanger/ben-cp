@@ -1,3 +1,9 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Slide 26 — Bulk Import for Notes: Faster Onboarding (Q2)
 
 - **okr:** Ease Navigation Burdens
@@ -11,7 +17,7 @@
 - **Quote (Kentucky Humane Society):** *"If we can't import into notes… if we can only have narrative… do I need to basically also shrink down these notes?"*
 - **Refocus Required:** Update this slide to focus specifically on the deliverables: bulk import for notes and the improved bulk error reporting.
 
-# Slide 26 — Bulk Import for Notes: Faster Onboarding (Q2)
+## Slide 26 — Bulk Import for Notes: Faster Onboarding (Q2)
 
 **Status:** 🏗️ Refining
 

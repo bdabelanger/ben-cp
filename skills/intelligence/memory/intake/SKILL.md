@@ -1,3 +1,9 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Skill: Memory Intake
 
 > **Description:** Standardized procedure for capturing significant findings and patterns into persistent memory via `append_note` and structured encoding.

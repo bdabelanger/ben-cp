@@ -1,3 +1,9 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Slide 30 — Better No-Code Automations: Zapier (Q2)
 
 - **okr:** Enhance Core Configurability
@@ -11,7 +17,7 @@
 - **Quote (North Cook ISD):** *"I could not really work on Zapier by myself because I know that setting up APIs… I need a developer or someone with me because I tried to do that on my own but I wasn't able to."*
 - **Refocus Required:** Focus this slide specifically on confirmed Q2 deliverables (new triggers/actions). Contractor progress determines if 6/11 GA is lockable.
 
-# Slide 30 — Better No-Code Automations: Zapier (Q2)
+## Slide 30 — Better No-Code Automations: Zapier (Q2)
 
 **Status:** 🏗️ Refining
 

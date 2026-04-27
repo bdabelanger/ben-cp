@@ -1,7 +1,14 @@
-# agents/local.md — Local Role Instructions
+---
+type: agent
+Status: active
+Priority: P1
+Date: 2026-04-26
+Owner: Ben
+---
+# Local (Gemma 2 27B) — Agent Role File
 
 > **Role:** Reviewer, parser, intelligence refresher, pipeline executor
-> **Powered by:** Gemma 4 (Google) running within LM Studio
+> **Powered by:** Gemma 2 27B
 > Last updated: 2026-04-15
 
 ---

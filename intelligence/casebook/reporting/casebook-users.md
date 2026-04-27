@@ -6,8 +6,11 @@ foreign_keys:
   - tenant_id
 bridge_tables: []
 description: System users, caseworkers, and administrators scoped to a tenant.
+Status: published
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
 ---
-
 # Dataset: Users
 
 ## Context

@@ -1,10 +1,16 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Slide 19: Workforce Reporting Package
 
 - **okr:** Simplify Reporting
 - **slide:** 19
 - **status:** needs_work
 
-# Slide 19 — Reporting packages: Understand Work and Workflow Performance
+## Slide 19 — Reporting packages: Understand Work and Workflow Performance
 
 - **Theme:** Simplify Reporting
 - **Status:** ⚠️ NEEDS WORK
@@ -25,5 +31,5 @@
 - **Missing:** Needs a real customer quote to replace the current placeholder.
 
 ## Constituent Projects
-- [**Reporting - Tasks/Work package**](../../projects/q2/reporting-tasks-work-package-(GID_PENDING).md)
+- **Reporting - Tasks/Work package**
 

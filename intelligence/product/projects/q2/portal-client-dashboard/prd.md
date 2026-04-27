@@ -1,3 +1,9 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # PRD: Portal - Client Dashboard
 
 <table ac:local-id="e0cf9caaf767" data-layout="default" data-table-width="760">

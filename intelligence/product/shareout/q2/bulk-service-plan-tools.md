@@ -1,7 +1,13 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Slide 17 — Sort, filter, and enrollment shortcuts: Service Plan + Services WLV
 
 
-# Slide 17 — Sort, filter, and enrollment shortcuts: Service Plan + Services WLV
+## Slide 17 — Sort, filter, and enrollment shortcuts: Service Plan + Services WLV
 
 **Status:** 🏗️ Refining
 

@@ -1,9 +1,15 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # 2026 CBP Roadmap
 
 - **priority:** P2
 - **type:** Strategic Roadmap
 
-# 2026 CBP Roadmap
+## 2026 CBP Roadmap
 
 > **Domain:** Strategic Vision
 > **Scope:** Full FY2026 CBP Roadmap (Q1-Q4)

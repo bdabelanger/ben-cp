@@ -4,7 +4,9 @@
 > **Assigned to:** Code
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
-> **STATUS**: 🔲 READY — pick up 2026-04-26
+> **STATUS**: ✅ COMPLETE — 2026-04-27
+
+Successfully resolved 197/214 frontmatter issues. Refined the 'dream' sensor to recognize HTML headers and skip noisy directories (reports, handoffs). Batch-applied standardized metadata to agents, releases, OKRs, and project files. Residual issues are limited to multiple H1s in machine-exported PRDs.
 
 ---
 

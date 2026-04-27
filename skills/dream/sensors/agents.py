@@ -6,7 +6,7 @@ from datetime import datetime
 VAULT_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
 OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream')
 
-SKIP_DIRS = {'.git', '__pycache__', 'node_modules', 'archived', 'complete'}
+SKIP_DIRS = {'.git', '__pycache__', 'node_modules', 'archived', 'complete', 'reports'}
 
 # Phrases that suggest generic AI assistant bleed-through
 AI_PHRASES = [
@@ -20,8 +20,8 @@ AI_PHRASES = [
 
 # Code agent should not be the author of architecture/design decisions
 CODE_ARCH_PATTERN = re.compile(
-    r'(Prepared by|Agent)\s*[:\-]\s*Code.*?(architecture|vault structure|SOP design|new skill)',
-    re.IGNORECASE | re.DOTALL
+    r'^\s*[\*_\-]*\b(Prepared by|Agent)\b[\*_\-]*\s*[:\-]\s*Code.*?(architecture|vault structure|SOP design|new skill)',
+    re.IGNORECASE | re.MULTILINE | re.DOTALL
 )
 
 def collect_md_files():
@@ -51,14 +51,36 @@ def audit_file(path):
     if CODE_ARCH_PATTERN.search(content):
         issues.append({"file": rel, "issue": "code_agent_architecture_decision"})
 
-    # Unknown agent in Prepared by
-    prepared = re.findall(r'(?:Prepared by|Agent)\s*[:\-]\s*([^\n\(]+)', content, re.IGNORECASE)
-    known_agents = {'code', 'cowork', 'local', 'human', 'ben', 'gemini', 'claude',
-                    'antigravity', 'vault auditor', 'dispatch'}
-    for author in prepared:
-        name = author.strip().split('(')[0].strip().lower()
-        if name and not any(k in name for k in known_agents):
-            issues.append({"file": rel, "issue": "unknown_agent", "value": author.strip()})
+    # Skip AGENTS.md as it defines the standard
+    if rel == 'AGENTS.md':
+        return issues
+
+    # Unknown agent in Prepared by / Agent lines
+    # Requirement: Exactly one of [Code, Cowork, Local] followed by (Model Name)
+    prepared = re.findall(r'^\s*[\*_\-]*\b(Prepared by|Agent)\b[\*_\-]*\s*[:]\s*([^\n]+)', content, re.IGNORECASE | re.MULTILINE)
+    known_agents = {'code', 'cowork', 'local'}
+    
+    for author_key, author_val in prepared:
+        val = author_val.strip().strip('*').strip()
+        # Check for Name (Model) format
+        match = re.match(r'^([\w\s]+)\s*\(([^)]+)\)', val)
+        if not match:
+            issues.append({
+                "file": rel, 
+                "issue": "invalid_agent_format", 
+                "value": author_val.strip(),
+                "expected": "Name (Model)"
+            })
+            continue
+            
+        name = match.group(1).strip().lower()
+        if name not in known_agents:
+            issues.append({
+                "file": rel, 
+                "issue": "unknown_agent", 
+                "value": name,
+                "allowed": sorted(list(known_agents))
+            })
 
     return issues
 

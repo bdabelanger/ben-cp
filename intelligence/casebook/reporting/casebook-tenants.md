@@ -6,9 +6,11 @@ primary_key: tenant_id
 foreign_keys: []
 bridge_tables: []
 description: The root administrative entity representing an organization or agency. Mandatory rules for query generation in the shared-database architecture.
+Status: published
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
 ---
-
-
 # Dataset: Tenants
 
 ## Context
@@ -23,7 +25,7 @@ The `tenants` table represents the highest level of hierarchy in the multi-tenan
 * **Admin Reporting:** Join this table when generating cross-organizational platform metrics (e.g., "Which tenants have the highest volume of active cases?").
 
 
-# Multi-Tenancy Architecture Rules
+## Multi-Tenancy Architecture Rules
 
 ## Core Directive: The Tenant Partition
 This System of Record utilizes a shared database multi-tenant architecture. Data for all organizations coexists in the same tables, partitioned logically by a `tenant_id` column.

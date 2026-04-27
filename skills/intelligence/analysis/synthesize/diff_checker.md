@@ -1,3 +1,9 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Procedure: Intelligence (Synthesize) Diff Checker
 
 This procedure enables the Intelligence (Synthesize) skill to identify structural or philosophical drift in `AGENTS.md`.
@@ -41,7 +47,7 @@ This procedure enables the Intelligence (Synthesize) skill to identify structura
 ## Report Format
 
 ```markdown
-# Intelligence (Synthesize): Mission Integrity Audit (YYYY-MM-DD)
+## Intelligence (Synthesize): Mission Integrity Audit (YYYY-MM-DD)
 
 - **Audit Target:** AGENTS.md
 - **Drift Detected:** [YES/NO]

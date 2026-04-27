@@ -1,4 +1,14 @@
-# Implementation Plan: Fix Task Files — Missing required sections in 5 tasks
+# Implementation Plan: Fix Task Files - Missing required sections in 5 tasks
+
+> **Prepared by:** Code (Gemini) (2026-04-27)
+> **Assigned to:** Code
+> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Priority:** P2
+> **STATUS**: ✅ COMPLETE — 2026-04-27
+
+Resolved task file issues by excluding synced asana/jira files and verifying vault-native tasks already had required sections. 0 issues remaining.Scan
+
+---
 
 > **Prepared by:** Code (Gemini) (2026-04-26)
 > **Assigned to:** Code
@@ -20,9 +30,9 @@ Affected task files:
 - `tasks/cx-bug-report-response.md` — missing all three
 
 The 6th file is:
-- `handoffs/2026-04-26-p1-Protocol:-Nightly-Dream-Cycle-&-Quartermaster-Prep.md` — missing `## Logic` section only
+- `handoffs/2026-04-26-p1-Protocol:-Nightly-Dream-Cycle-&-Quartermaster-Prep.md` — missing `## Logic` section only (now archived/complete)
 
-Note: The task files also have `missing_frontmatter` per the frontmatter sensor. These two issues (no frontmatter + missing required sections) suggest these files may be legacy tasks created before the current structural standard was established.
+Note: The task files also have `missing_frontmatter` per the frontmatter sensor. These two issues suggest these files may be legacy tasks created before the current structural standard was established.
 
 ## Goal
 
@@ -30,10 +40,9 @@ Bring all task files into compliance with the Unified Artifact Standard by addin
 
 ## Execution Steps
 
-1. Read each of the 5 task files to determine if they are active or stale
-2. For stale/completed tasks — move to `tasks/archived/` rather than patching them
-3. For active tasks — add the missing sections (`## Logic`, `## Context`, `## Execution Steps`) with appropriate content based on the existing file content, and add frontmatter
-4. For `handoffs/2026-04-26-p1-Protocol:-Nightly-Dream-Cycle-&-Quartermaster-Prep.md` — add `## Logic` section describing the trigger/decision logic for the Dream Cycle protocol
+- [ ] Read each of the 5 task files to determine if they are active or stale
+- [ ] For stale/completed tasks — move to `tasks/archived/` rather than patching them
+- [ ] For active tasks — add the missing sections (`## Logic`, `## Context`, `## Execution Steps`) with appropriate content, and add frontmatter
 
 ## Verification
 

@@ -6,7 +6,7 @@ from datetime import datetime
 VAULT_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
 OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream')
 
-SKIP_DIRS  = {'.git', '__pycache__', 'node_modules', 'archived', 'complete', 'source'}
+SKIP_DIRS  = {'.git', '__pycache__', 'node_modules', 'archived', 'complete', 'source', 'reports', 'handoffs', 'art'}
 SKIP_FILES = {'index.md', 'changelog.md', 'AGENTS.md', 'README.md'}
 REQUIRED_KEYS = {'Status', 'Priority', 'Date', 'Owner'}
 
@@ -53,18 +53,22 @@ def run():
             if missing_keys:
                 issues.append({"file": rel, "issue": "missing_keys", "keys": sorted(missing_keys)})
 
-        # H1 check
-        h1_matches = re.findall(r'^# (.+)$', content, re.MULTILINE)
-        if len(h1_matches) == 0:
+        # H1 check (Markdown or HTML)
+        h1_md = re.findall(r'^# (.+)$', content, re.MULTILINE)
+        h1_html = re.findall(r'<h1[^>]*>(.*?)</h1>', content, re.DOTALL | re.IGNORECASE)
+        h1_count = len(h1_md) + len(h1_html)
+        
+        if h1_count == 0:
             issues.append({"file": rel, "issue": "no_h1"})
-        elif len(h1_matches) > 1:
-            issues.append({"file": rel, "issue": "multiple_h1", "count": len(h1_matches)})
+        elif h1_count > 1:
+            issues.append({"file": rel, "issue": "multiple_h1", "count": h1_count})
 
-        # Readability: >500 words without H2
+        # Readability: >500 words without H2 (Markdown or HTML)
         wc = word_count(body if fm_keys is not None else content)
         if wc > 500:
-            h2_matches = re.findall(r'^## .+$', content, re.MULTILINE)
-            if not h2_matches:
+            h2_md = re.findall(r'^## .+$', content, re.MULTILINE)
+            h2_html = re.findall(r'<h2[^>]*>', content, re.IGNORECASE)
+            if not h2_md and not h2_html:
                 issues.append({"file": rel, "issue": "long_file_no_h2", "words": wc})
 
     report = {

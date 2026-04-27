@@ -1,3 +1,10 @@
+---
+type: okr-research
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # KR Measurement SOP: Notes Datagrid Navigation Shortcuts
 
 > [!NOTE]
@@ -105,7 +112,7 @@ See master inventory: `../../data_sources.md`
 ## 🔗 Constituent Projects
 
 The following initiatives contribute to this KR:
-- [**Notes - Notes WLV / Datagrid**](../../projects/q2/notes-notes-datagrid/index.md)
+- [**Notes - Notes WLV / Datagrid**](../../../projects/q2/notes-notes-datagrid/index.md)
 
 ---
 

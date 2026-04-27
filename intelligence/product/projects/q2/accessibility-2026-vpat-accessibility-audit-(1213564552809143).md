@@ -1,3 +1,9 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Accessibility - 2026 VPAT accessibility audit
 
 - **GID:** 1213564552809143

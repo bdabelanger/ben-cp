@@ -1,3 +1,9 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Slide 24 — Sign & Lock Notes (Q2)
 
 - **okr:** Security & Compliance Enablers
@@ -11,7 +17,7 @@
 - **Quote (Grafton County, NH):** *"If one of the staff writes a note, they can go in and edit it at any time which is super unethical and dangerous."*
 - **Scope Decision Open:** Confirm whether to cover both signing + locking or just locking for the June Beta.
 
-# Slide 24 — Sign & Lock Notes (Q2)
+## Slide 24 — Sign & Lock Notes (Q2)
 
 **Status:** 🏗️ Refining
 

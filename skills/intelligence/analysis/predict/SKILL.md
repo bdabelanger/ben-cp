@@ -1,3 +1,9 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Skill: Predict
 
 > **Description:** Forward-looking analyst surfacing high-confidence predictions, emerging patterns, and risk flags across all vault signals.

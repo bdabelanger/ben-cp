@@ -1,3 +1,9 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Styles: Visual Glossary (Emoji Indicators)
 
 This is the canonical reference for all visual status indicators and section markers used across the vault. All reports and documentation must adhere to these standards to ensure cognitive consistency.

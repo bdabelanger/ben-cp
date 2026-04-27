@@ -1,16 +1,24 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Intelligence Ingestion Pipeline Development
 
 - **priority:** P2
 - **status:** 🟢 Pipeline Operational (Alpha)
-- **methodology:** Link-Driven Discovery via Asana/Jira
 
-# Task: Intelligence Ingestion Pipeline Development
+## Context
+Development of a strategic discovery and ingestion engine to keep the vault synchronized with external product data (Asana projects, Jira epics, Confluence PRDs). The primary problem is manual intelligence drift as product specs evolve outside the vault.
 
-## Priority: P2
-## Status: 🟢 Pipeline Operational (Alpha)
-## Assignee: Code
+## Logic
+A link-driven discovery mechanism using Asana as the source of truth for "active" projects.
+1. **Discovery**: Scan Asana project custom fields for documentation links.
+2. **Ingestion**: Automated harvester fetches content from linked sources.
+3. **Normalization**: Parser converts raw data (txt, pdf) into vault-compliant intelligence records.
 
-## Goals
+## Execution Steps
 1. [x] Scaffold pipeline directory.
 2. [x] Implement orphan scanner (`scan_orphans.py`).
 3. [x] Manual verification of parsing logic (Q2 Shareout).

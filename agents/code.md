@@ -1,7 +1,14 @@
-# Code — Agent Role File
+---
+type: agent
+Status: active
+Priority: P1
+Date: 2026-04-26
+Owner: Ben
+---
+# Code (Gemini 3 Flash) — Agent Role File
 
-> **Role:** Implementer — executes handoffs reviewed by Claude
-> **Powered by:** Gemini (Google) / Claude (Anthropic)
+> **Role:** Implementer — executes handoffs reviewed by Cowork
+> **Powered by:** Gemini 3 Flash
 > Last updated: 2026-04-13
 
 ---

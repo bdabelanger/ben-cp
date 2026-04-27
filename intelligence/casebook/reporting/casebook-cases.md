@@ -9,8 +9,11 @@ bridge_tables:
   - case_assignees
   - note_resources
 description: The central anchor entity for active case management.
+Status: published
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
 ---
-
 # Dataset: Cases
 
 ## Context
@@ -33,7 +36,7 @@ When querying `cases`, be aware that resources, people, and intake reports are s
 * To retrieve labels, apply the "Correct Concat" function to roll up multiple `resource_id` rows into a single comma-separated string per `case_id` to maintain row granularity.
 
 
-# Dataset: Cases
+## Dataset: Cases
 
 ## Overview
 

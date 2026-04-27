@@ -1,10 +1,16 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Slide 34: External People in Workflows
 
 - **okr:** Enhance Workflow Engine
 - **slide:** 34
 - **status:** needs_work
 
-# Slide 34 — Workflows that reach beyond your team
+## Slide 34 — Workflows that reach beyond your team
 
 - **Theme:** Enhance Workflow Engine
 - **Status:** ⚠️ NEEDS WORK
@@ -25,5 +31,5 @@
 - **Missing:** Needs a real customer quote to replace the current placeholder.
 
 ## Constituent Projects
-- [**Workflows - Assign WF Tasks to External Users**](../../projects/q2/workflows-assign-wf-tasks-to-external-users-(GID_PENDING).md)
+- **Workflows - Assign WF Tasks to External Users**
 

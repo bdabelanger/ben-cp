@@ -1,3 +1,9 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Integrations - Zapier improvements
 
 - **GID:** 1213496879668016

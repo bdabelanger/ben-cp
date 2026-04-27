@@ -2,7 +2,7 @@
 
 - **GID:** 1211733450555414
 - **Permalink:** https://app.asana.com/1/1123317448830974/project/1211733450555414
-- **OKR Mapping:** [Create Enrollment Shortcuts](../../okrs/q2/planning-services-at-scale/enrollments_data_entry_shortcuts.md)
+- **OKR Mapping:** [Create Enrollment Shortcuts](../../../okrs/q2/planning-services-at-scale/enrollments_data_entry_shortcuts.md)
 - **Team:** Platform
 - **Stage:** Discovery
 - **Status:** on_track

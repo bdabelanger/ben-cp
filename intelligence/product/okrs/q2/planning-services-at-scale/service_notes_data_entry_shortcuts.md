@@ -1,3 +1,10 @@
+---
+type: okr-research
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # KR Measurement SOP: Service Notes — Data Entry Shortcuts
 
 > [!NOTE]
@@ -88,7 +95,7 @@ See master inventory: `../../data_sources.md`
 ## 🔗 Constituent Projects
 
 The following initiatives contribute to this KR:
-- [**Notes - Bulk Service Notes**](../../projects/q2/notes-bulk-service-notes/index.md)
+- [**Notes - Bulk Service Notes**](../../../projects/q2/notes-bulk-service-notes/index.md)
 
 ---
 

@@ -1,3 +1,9 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Audit Procedure: Recall
 
 > **Owner:** Vault Auditor

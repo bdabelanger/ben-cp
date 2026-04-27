@@ -1,3 +1,9 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # PRD: Data import - Clearer IDs
 
 <ac:structured-macro ac:local-id="d2d0caa5-c27b-48c8-84dd-1fa4dbbc31e2" ac:macro-id="d858d8e03b5e1daef385609bd282d5dd" ac:name="details" ac:schema-version="1" data-layout="default">

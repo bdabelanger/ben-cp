@@ -61,8 +61,8 @@
 
 ## 🔗 Constituent Projects
 
-- [**Zapier Improvements**](../../projects/q2/integrations-zapier-improvements/index.md)
-- [**Portal Client Dashboard**](../../projects/q2/portal-client-dashboard/index.md)
+- [**Zapier Improvements**](../../../projects/q2/integrations-zapier-improvements/index.md)
+- [**Portal Client Dashboard**](../../../projects/q2/portal-client-dashboard/index.md)
 
 ---
 

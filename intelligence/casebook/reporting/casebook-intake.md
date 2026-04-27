@@ -7,8 +7,11 @@ bridge_tables:
   - case_assignees
   - note_resources
 description: The entry system for unassigned or initial reports.
+Status: published
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
 ---
-
 # Dataset: Intake
 
 ## Context

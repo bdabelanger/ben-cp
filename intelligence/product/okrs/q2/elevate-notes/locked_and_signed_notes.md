@@ -1,3 +1,10 @@
+---
+type: okr-research
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # KR Measurement SOP: Locked and Signed Notes (High-Confidentiality)
 
 > [!NOTE]
@@ -89,8 +96,8 @@ Because "Signed Notes" is a late-Q2/Q3 launch (Beta 7/27, GA 8/24), the current 
 ## 🔗 Constituent Projects
 
 The following initiatives contribute to this KR:
-- [**Notes - Locked Notes**](../../projects/q2/notes-locked-notes/index.md)
-- [**Notes - Signing / Service Note Locking**](../../projects/q2/notes-signing-service-note-locking/index.md)
+- [**Notes - Locked Notes**](../../../projects/q2/notes-locked-notes/index.md)
+- [**Notes - Signing / Service Note Locking**](../../../projects/q2/notes-signing-service-note-locking/index.md)
 
 ---
 

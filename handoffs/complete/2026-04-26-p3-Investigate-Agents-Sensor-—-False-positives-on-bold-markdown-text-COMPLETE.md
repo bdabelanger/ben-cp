@@ -4,7 +4,9 @@
 > **Assigned to:** Code
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P3
-> **STATUS**: 🔲 READY — pick up 2026-04-26
+> **STATUS**: ✅ COMPLETE — 2026-04-27
+
+Superseded by 2026-04-27-p3-Investigate-Agents-Sensor---False-positives-on-bold-markdown-text.md with clean filename.
 
 ---
 

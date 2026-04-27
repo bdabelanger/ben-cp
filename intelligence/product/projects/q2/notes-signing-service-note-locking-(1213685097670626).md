@@ -1,3 +1,9 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Notes - Signing + Service Note Locking
 
 - **GID:** 1213685097670626
@@ -16,7 +22,7 @@
 - **Type:** Strategic
 - **Roadmap:** Security & Compliance Enablers
 
-# Notes Signing & Service Note Locking (GID: 1213685097670626)
+## Notes Signing & Service Note Locking (GID: 1213685097670626)
 
 This capability formalizes the approval process, building sequentially on the Immutable Record philosophy established by Locked Notes.
 

@@ -1,3 +1,10 @@
+---
+type: okr-research
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # KR Measurement SOP: Service Notes — Roster Association
 
 > [!NOTE]

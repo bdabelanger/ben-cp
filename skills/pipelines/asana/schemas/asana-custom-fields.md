@@ -1,3 +1,9 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Asana Custom Field GID Reference
 
 - **agent:** Code
@@ -9,7 +15,7 @@
 - **Strategic Theme:** Data Integrity / API Automation
 - **Target Audience:** All agents interacting with Asana via scripts or MCP.
 
-# Asana Custom Field GID Reference
+## Asana Custom Field GID Reference
 
 - **Source:** asana_all_projects.json / asana-custom-fields.md
 - **Status:** ✅ Complete

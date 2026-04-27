@@ -1,7 +1,14 @@
-# Cowork — Agent Role File
+---
+type: agent
+Status: active
+Priority: P1
+Date: 2026-04-26
+Owner: Ben
+---
+# Cowork (Sonnet 4.6) — Agent Role File
 
 > **Role:** Architect, handoff reviewer, session lead
-> **Powered by:** Gemini (Google) / Claude (Anthropic)
+> **Powered by:** Sonnet 4.6
 > Last updated: 2026-04-13
 
 ---

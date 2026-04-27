@@ -1,3 +1,9 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Data import - Bulk import for Notes
 
 - **GID:** 1210860550580423
@@ -31,7 +37,7 @@
 - **UAT Start:** 2026-07-02T00:00:00.000Z
 - **Roadmap:** Enhance Core Configurability
 
-# Implementation Plan: Bulk Import for Notes Intelligence Update
+## Implementation Plan: Bulk Import for Notes Intelligence Update
 
 > **Prepared by:** Cowork (Gemini) (2026-04-15)
 > **Assigned to:** Gemma

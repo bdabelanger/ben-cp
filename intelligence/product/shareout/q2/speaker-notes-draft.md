@@ -1,7 +1,13 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Q2 2026 Product Shareout — Speaker Notes Draft
 
 
-# Q2 2026 Product Shareout — Speaker Notes Draft
+## Q2 2026 Product Shareout — Speaker Notes Draft
 
 ## 1. Introduction: The Strategic Pivot
 - **Goal:** Faster Notes Nav + Authoring UX. 

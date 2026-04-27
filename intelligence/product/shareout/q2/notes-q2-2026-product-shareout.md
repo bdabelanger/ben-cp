@@ -1,10 +1,16 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Q2 2026 Product Shareout Intelligence Record
 
 - **agent:** Code
 - **source:** Q2 2026 Product Shareout.txt
 - **status:** 🟡 Draft
 
-# Q2 2026 Product Shareout
+## Q2 2026 Product Shareout
 
 - **Source:** Q2 2026 Product Shareout.txt
 - **Status:** 🟡 Draft

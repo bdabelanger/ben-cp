@@ -1,3 +1,9 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Slide 16 — Notes Authoring UX: Tabbed Design (Q2)
 
 - **Headline:** Intuitive notes authoring: Reduce clicks and save time.
@@ -10,7 +16,7 @@
 - **Rich Content:** Support for rosters, resource linking, and complex narratives ("Bears! Oh my!").
 - **Consistency:** Uses the new tabbed design standard for high-density data entry.
 
-# Slide 16 — Notes Authoring UX: Tabbed Design (Q2)
+## Slide 16 — Notes Authoring UX: Tabbed Design (Q2)
 
 
 ## Strategic Context & Vision

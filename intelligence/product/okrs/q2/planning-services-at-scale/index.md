@@ -64,11 +64,11 @@
 
 ## 🔗 Constituent Projects
 
-- [**Service Plan Datagrid**](../../projects/q2/services-service-plan-datagrid-with-bulk-actions/index.md)
-- [**Enrollment Dialog Bulk Services**](../../projects/q2/enrollment-dialog-bulk-services-section/index.md)
-- [**Services WLV Bulk Actions**](../../projects/q2/services-wlv-bulk-actions/index.md)
-- [**Notes Datagrid**](../../projects/q2/notes-notes-datagrid/index.md)
-- [**Bulk Service Notes**](../../projects/q2/notes-bulk-service-notes/index.md)
+- [**Service Plan Datagrid**](../../../projects/q2/services-service-plan-datagrid-with-bulk-actions/index.md)
+- [**Enrollment Dialog Bulk Services**](../../../projects/q2/enrollment-dialog-bulk-services-section/index.md)
+- [**Services WLV Bulk Actions**](../../../projects/q2/services-wlv-bulk-actions/index.md)
+- [**Notes Datagrid**](../../../projects/q2/notes-notes-datagrid/index.md)
+- [**Bulk Service Notes**](../../../projects/q2/notes-bulk-service-notes/index.md)
 
 ---
 

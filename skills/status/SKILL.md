@@ -1,3 +1,9 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Task Capture — Procedure
 
 > Vault-native documentation. The Cowork runtime version (agent-instruction framing) lives in the plugin. This document is the reference and edit target.

@@ -1,3 +1,9 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # PRD: Notes - Bulk Service Notes
 
 <table ac:local-id="34330ffad1db" data-layout="default" data-table-width="760">

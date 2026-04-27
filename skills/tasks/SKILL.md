@@ -1,10 +1,16 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Skill: Task Management (Deliverable Governance)
 
 - **agent:** Antigravity
 - **status:** 🟢 Codified
 - **type:** Execution Skill
 
-# Skill: Task Management
+## Skill: Task Management
 
 > **Description:** Governance standard for managing strategic, human-led deliverables and project work items.
 > **Domain:** Orchestration / Tasks

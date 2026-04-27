@@ -1,3 +1,10 @@
+---
+type: okr-research
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # KR Measurement SOP: Enrollments — Data Entry Shortcuts
 
 > [!NOTE]
@@ -114,9 +121,9 @@ See master inventory: `../../data_sources.md`
 ## 🔗 Constituent Projects
 
 The following initiatives contribute to this KR:
-- [**Enrollment Dialog - Bulk Services Section**](../../projects/q2/enrollment-dialog-bulk-services-section/index.md)
-- [**Services WLV - Bulk Actions**](../../projects/q2/services-wlv-bulk-actions/index.md)
-- [**Service Plan Datagrid - Bulk Actions**](../../projects/q2/services-service-plan-datagrid-with-bulk-actions/index.md)
+- [**Enrollment Dialog - Bulk Services Section**](../../../projects/q2/enrollment-dialog-bulk-services-section/index.md)
+- [**Services WLV - Bulk Actions**](../../../projects/q2/services-wlv-bulk-actions/index.md)
+- [**Service Plan Datagrid - Bulk Actions**](../../../projects/q2/services-service-plan-datagrid-with-bulk-actions/index.md)
 
 ---
 

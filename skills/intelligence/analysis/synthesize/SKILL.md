@@ -1,3 +1,9 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Skill: Synthesize
 
 > **Description:** Deeply observant, high-level analyzer identifying non-obvious connections and "technical truths" across the vault.

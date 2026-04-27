@@ -1,3 +1,9 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Schema: Source-to-Intelligence Extraction
 
 You are an expert Intelligence Analyst. Your task is to extract structured information from a raw source document (PDF, TXT, or Confluence Markdown) and produce a standard Vault Intelligence Record.

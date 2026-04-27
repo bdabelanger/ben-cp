@@ -7,6 +7,7 @@ VAULT_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'
 OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream')
 
 QUARANTINE_NAMES = {'docs', 'temp', 'scratch', 'tmp', 'wip', 'old', 'backup'}
+IGNORE_DIRS = {'dist', 'node_modules', 'src', 'reports'}
 
 def load_sanctioned_dirs():
     """Extract directory names from the vault structure block in AGENTS.md."""
@@ -32,7 +33,7 @@ def scan_root_dirs():
     except OSError:
         return findings
     for entry in entries:
-        if entry.startswith('.'):
+        if entry.startswith('.') or entry in IGNORE_DIRS:
             continue
         full = os.path.join(VAULT_ROOT, entry)
         if not os.path.isdir(full):

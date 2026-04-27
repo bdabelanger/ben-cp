@@ -16,8 +16,11 @@ def scan_dir(path):
     if not os.path.isdir(path):
         return results
     for f in os.listdir(path):
-        if f.endswith('.md') and f != 'index.md':
-            results.append(os.path.join(path, f))
+        if not f.endswith('.md') or f == 'index.md':
+            continue
+        if f in {'asana.md', 'jira.md'} or 'Dream-Report' in f:
+            continue
+        results.append(os.path.join(path, f))
     return results
 
 def audit_file(path):
@@ -38,9 +41,9 @@ def audit_file(path):
 
     if is_ready:
         # Execution Steps has checkboxes
-        steps_match = re.search(r'## Execution Steps(.*?)(?=\n## |\Z)', content, re.DOTALL)
+        steps_match = re.search(r'^## Execution Steps(.*?)(?=\n## |\Z)', content, re.DOTALL | re.MULTILINE)
         if steps_match:
-            checkboxes = re.findall(r'- \[[ x]\]', steps_match.group(1))
+            checkboxes = re.findall(r'[*-]\s*\[[ x]\]|\d+\.\s*\[[ x]\]', steps_match.group(1))
             if not checkboxes:
                 issues.append({"file": rel, "issue": "ready_no_checkboxes"})
 

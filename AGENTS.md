@@ -25,10 +25,9 @@ This is the most important section. Before assigning work, match the task to the
 
 | Agent | Sweet Spot | Avoid |
 | :--- | :--- | :--- |
-| **Human (The User)** | Real-world tasks, unblocking ambiguity, directional pivots, manual UI testing, gathering context unreachable by agents | Routine markdown formatting, repetitive refactoring, or tasks that can be fully automated |
-| **Cowork** (Claude Cowork / Gemini) | Handoff review and refinement, architecture decisions, session planning, skill design, briefing other agents | Long document reviews, repetitive file population, code implementation |
-| **Local** (Gemma) | Long document reviews, intelligence refresh, multi-file parsing, data formatting, repetitive populate-and-save tasks | Architecture decisions, code refactoring |
-| **Code** (Claude Code / Gemini) | Code refactoring and implementation, shell commands, build/test steps, precision file engineering, vault maintenance tasks | Lengthy document review |
+| **Cowork (Sonnet 4.6)** | Handoff review and refinement, architecture decisions, session planning, skill design, briefing other agents | Long document reviews, repetitive file population, code implementation |
+| **Local (Gemma 2 27B)** | Long document reviews, intelligence refresh, multi-file parsing, data formatting, repetitive populate-and-save tasks | Architecture decisions, code refactoring |
+| **Code (Gemini 3 Flash)** | Code refactoring and implementation, shell commands, build/test steps, precision file engineering, vault maintenance tasks | Lengthy document review |
 
 ### Terminology
 
@@ -42,7 +41,7 @@ To prevent architectural drift and maintain clarity between agentic processes an
 ### The Token Economy Rule
 
 
-**Local should absorb token-heavy review and parsing tasks** — she has a large context window and can iterate through lengthy documents without burning the session budget. Reserve Cowork for work that requires judgment, architecture, or human-in-the-loop planning.
+**Local** should absorb token-heavy review and parsing tasks — she has a large context window and can iterate through lengthy documents without burning the session budget. Reserve **Cowork** for work that requires judgment, architecture, or human-in-the-loop planning.
 
 ### The Handoff Loop
 
@@ -91,16 +90,13 @@ Executing agents are required to scrutinize every handoff for logical coherence 
 
 ## Who Are You?
 
-Find your role file and read it next:
+Find your role file and read it next. All agents MUST identify using the format `Name (Model)`.
 
 | Agent | Role file | Role summary |
 | :--- | :--- | :--- |
-| Human (The User) | — | Ultimate authority, real-world execution, directional refinement |
-| Cowork | `agents/cowork.md` | Architect, session lead, handoff reviewer |
-| Local | `agents/local.md` | Reviewer, parser, intelligence refresher |
-| Code (Gemini / Claude Code) | `agents/code.md` | Implementer, code executor, file engineer |
-| Vault Auditor | `skills/intelligence/memory/SKILL.md` | Memory Auditor — guards mappings, indexes memory, and conducts audits |
-| Dispatch | — | Proxy Messenger — mobile relay (no vault access) |
+| **Cowork (Sonnet 4.6)** | `agents/cowork.md` | Architect, session lead, handoff reviewer |
+| **Local (Gemma 2 27B)** | `agents/local.md` | Reviewer, parser, intelligence refresher |
+| **Code (Gemini 3 Flash)** | `agents/code.md` | Implementer, code executor, file engineer |
 
 ---
 

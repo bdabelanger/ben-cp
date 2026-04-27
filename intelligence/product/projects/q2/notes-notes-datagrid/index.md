@@ -2,7 +2,7 @@
 
 - **GID:** 1209963394727039
 - **Permalink:** https://app.asana.com/1/1123317448830974/project/1209963394727039
-- **OKR Mapping:** [Notes Datagrid Shortcuts](../../okrs/q2/planning-services-at-scale/notes_datagrid_shortcuts.md)
+- **OKR Mapping:** [Notes Datagrid Shortcuts](../../../okrs/q2/planning-services-at-scale/notes_datagrid_shortcuts.md)
 - **Team:** Platform
 - **Stage:** GA
 - **Status:** on_track
@@ -39,7 +39,7 @@
 
 - **GID:** 1209963394727039
 - **Permalink:** https://app.asana.com/1/1123317448830974/project/1209963394727039
-- **OKR Mapping:** [Notes Datagrid Shortcuts](../../okrs/q2/planning-services-at-scale/notes_datagrid_shortcuts.md)
+- **OKR Mapping:** [Notes Datagrid Shortcuts](../../../okrs/q2/planning-services-at-scale/notes_datagrid_shortcuts.md)
 - **Team:** Platform
 - **Stage:** GA
 - **Status:** on_track
@@ -95,4 +95,4 @@ Notes have been upgraded to streamline bulk data entry, centralizing inline data
 - [**Product Requirements Document (PRD)**](prd.md)
 - [**Launch Plan**](launch_plan.md)
 
-Related:** [Notes - Global Notes WLV](notes-global-notes-wlv-(1210368097846960).md) — shares the same core table technology.
+Related:** [Notes - Global Notes WLV](../notes-global-notes-wlv-(1210368097846960).md) — shares the same core table technology.

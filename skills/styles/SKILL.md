@@ -1,3 +1,9 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Skill: Styles
 
 > **Description:** Visual syntax authority and aesthetic gatekeeper for the vault.

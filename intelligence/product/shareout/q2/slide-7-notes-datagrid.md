@@ -1,10 +1,16 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Slide 7 — Notes Datagrid: Optimized Review (Q1)
 
 - **priority:** P1
 - **slide_number:** 7
 - **stage:** Q1 Highlights
 
-# Slide 7 — Notes Datagrid: Optimized Review (Q1)
+## Slide 7 — Notes Datagrid: Optimized Review (Q1)
 
 **Status:** 🏗️ Refining
 

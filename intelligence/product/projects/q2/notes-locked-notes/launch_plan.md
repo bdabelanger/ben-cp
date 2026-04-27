@@ -1,3 +1,9 @@
+---
+Status: active
+Priority: P3
+Date: 2026-04-26
+Owner: Ben
+---
 # Launch Plan: Notes - Locked Notes
 
 <h1 local-id="afb4ef1b-8176-4e00-bf59-c45498ad2087">

@@ -2,7 +2,7 @@
 
 - **GID:** 1213506659163435
 - **Permalink:** https://app.asana.com/1/1123317448830974/project/1213506659163435
-- **OKR Mapping:** [Reduce Admin Burden](../../okrs/q2/reduce-admin-burden/index.md)
+- **OKR Mapping:** [Reduce Admin Burden](../../../okrs/q2/reduce-admin-burden/index.md)
 - **Team:** N/A
 - **Stage:** Discovery
 - **Status:** N/A

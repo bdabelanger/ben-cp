@@ -35,4 +35,4 @@ Scoping down to the "v1" launch essentials to maximize immediate impact for cust
 **Quote:** "Is there a client portal? Do clients have any interaction with the system?" — Sparta, WI Police Department
 
 ---
-**Tactical Link:** [Client Portal Dashboard](../../projects/q2/portal-client-dashboard-(1213506659163435).md)
+**Tactical Link:** [Client Portal Dashboard](../../projects/q2/portal-client-dashboard/index.md)

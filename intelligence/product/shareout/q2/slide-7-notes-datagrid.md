@@ -23,5 +23,5 @@ Focus on the notes table/datagrid experience, enabling fast filtering and scanni
 **Quote:** "The ability to sort by the two types of dates has been very helpful… the chronological view as to what was going on in that student's life. That's been very positive." — North Cook ISC
 
 ---
-**Tactical Link:** [Notes Datagrid](../../projects/q2/notes-notes-datagrid-(1209963394727039).md)
+**Tactical Link:** [Notes Datagrid](../../projects/q2/notes-notes-datagrid/index.md)
 

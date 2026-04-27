@@ -6,7 +6,7 @@
 
 ## Linked Projects
 - [**Data import - Clearer error messages**](../projects/q2/data-import-clearer-error-messages-(1210860550580329).md)
-- [**Notes - Bulk "General Notes"**](../projects/q2/notes-bulk-general-notes-(1211838817183809).md)
+- [**Notes - Bulk "General Notes"**](../projects/q2/notes-bulk-general-notes/index.md)
 
 ## Scope Status (Jira Alignment)
 *Note: Jira Fix Version extraction requires ATLASSIAN_API_TOKEN. Currently mapped via Project Metadata.*

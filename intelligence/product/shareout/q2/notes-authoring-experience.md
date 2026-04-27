@@ -31,5 +31,5 @@ Pierre’s design, implemented by Bisoye, Russell, and Tuan, ensures every note 
 ## Next Steps & Feedback Loop
 We are currently in QA with this feature. It will soon be available for internal testing in a designated beta tenant.
 
-**Tactical Link:** [Notes Bulk Service Notes](../../projects/q2/notes-bulk-service-notes-(1211757637943244).md)
+**Tactical Link:** [Notes Bulk Service Notes](../../projects/q2/notes-bulk-service-notes/index.md)
 **Call to Action:** Take a minute to spin through the new experience. As you poke around, keep one question in mind: *Do you or your customers notice a change in how much effort you need to put into each note? Are you duplicating your effort anywhere?*

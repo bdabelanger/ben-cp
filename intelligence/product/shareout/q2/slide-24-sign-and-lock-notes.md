@@ -30,4 +30,4 @@ Addressing the ethical and practical need for immutable records in case manageme
 **Quote:** "If one of the staff writes a note, they can go in and edit it at any time which is super unethical and dangerous." — Grafton County, NH
 
 ---
-**Tactical Link:** [Notes Signing & Locking](../../projects/q2/notes-signing-service-note-locking-(1213685097670626).md)
+**Tactical Link:** [Notes Signing & Locking](../../projects/q2/notes-signing-service-note-locking/index.md)

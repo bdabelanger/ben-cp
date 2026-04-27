@@ -105,7 +105,7 @@ See master inventory: `../../data_sources.md`
 ## 🔗 Constituent Projects
 
 The following initiatives contribute to this KR:
-- [**Notes - Notes WLV / Datagrid**](../../projects/q2/notes-notes-datagrid-(1209963394727039).md)
+- [**Notes - Notes WLV / Datagrid**](../../projects/q2/notes-notes-datagrid/index.md)
 
 ---
 

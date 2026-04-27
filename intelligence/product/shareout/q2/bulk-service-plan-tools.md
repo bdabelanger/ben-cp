@@ -23,4 +23,4 @@ A new Service Plan datagrid will help users locate enrollments immediately with 
 **Quote:** "Can I bulk [add] the service enrollments? Like … all five of them go on?" — Arc of the Capital
 
 ---
-**Tactical Link:** [Enrollment Bulk Services](../../projects/q2/enrollment-dialog-bulk-services-section-(1211631356870657).md)
+**Tactical Link:** [Enrollment Bulk Services](../../projects/q2/enrollment-dialog-bulk-services-section/index.md)

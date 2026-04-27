@@ -89,8 +89,8 @@ Because "Signed Notes" is a late-Q2/Q3 launch (Beta 7/27, GA 8/24), the current 
 ## 🔗 Constituent Projects
 
 The following initiatives contribute to this KR:
-- [**Notes - Locked Notes**](../../projects/q2/notes-locked-notes-(1211786365522017).md)
-- [**Notes - Signing / Service Note Locking**](../../projects/q2/notes-signing-service-note-locking-(1213685097670626).md)
+- [**Notes - Locked Notes**](../../projects/q2/notes-locked-notes/index.md)
+- [**Notes - Signing / Service Note Locking**](../../projects/q2/notes-signing-service-note-locking/index.md)
 
 ---
 

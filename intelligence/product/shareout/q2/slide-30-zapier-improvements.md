@@ -30,4 +30,4 @@ Focusing on custom field support and dynamic schema rendering to unlock high-uti
 **Quote:** "I could not really work on Zapier by myself because I know that setting up APIs… I need a developer or someone with me because I tried to do that on my own but I wasn't able to." — North Cook ISD
 
 ---
-**Tactical Link:** [Zapier Improvements](../../projects/q2/integrations-zapier-improvements-(1213496879668016).md)
+**Tactical Link:** [Zapier Improvements](../../projects/q2/integrations-zapier-improvements/index.md)

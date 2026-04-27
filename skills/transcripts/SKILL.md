@@ -1,12 +1,12 @@
 ---
-title: Standup Note Harvester — Gemini Notes → Cowork Handoff
+title: Transcript Note Harvester — Gemini Notes → Cowork Handoff
 type: skill
-domain: skills/standup
+domain: skills/transcripts
 ---
 
-# Standup Note Harvester
+# Transcript Note Harvester
 
-> **Trigger:** "Harvest tasks from today's standup notes", "Process my standup email from [date]", "Pull action items from this morning's standup"
+> **Trigger:** "Harvest tasks from this transcript", "Process my notes from [date]", "Pull action items from the Discovery Review transcript"
 > **Agent:** Code (Claude)
 > **Output:** A handoff in `handoffs/` for Cowork to run task-capture with Ben
 
@@ -14,7 +14,7 @@ domain: skills/standup
 
 ## What it does
 
-Reads a Gemini standup email, parses the "Suggested next steps" section, classifies each action item with a routing hint, and writes a structured handoff. Cowork then picks up the handoff and works through each item interactively with Ben using the task-capture skill.
+Reads a Gemini meeting transcript or standup email, parses the "Suggested next steps" section, classifies each action item with a routing hint, and writes a structured handoff. Cowork then picks up the handoff and works through each item interactively with Ben using the task-capture skill.
 
 This keeps task creation in an interactive session — not automated.
 
@@ -33,8 +33,8 @@ Ask Ben to paste the email body (or forward it). Save it to a temp file, e.g. `/
 ## Step 2 — Run the harvester
 
 ```bash
-python3 "skills/standup/scripts/run.py" \
-  --email /tmp/standup-email.txt \
+python3 "skills/transcripts/scripts/run.py" \
+  --email /tmp/transcript.txt \
   --date "Apr 27, 2026"
 ```
 
@@ -50,8 +50,8 @@ The `--date` flag is optional — defaults to today.
 The script will print a summary of parsed items and the handoff filename. Show Ben the list and confirm:
 
 ```
-✅ Standup harvested — Apr 27, 2026 (8 action items)
-   Handoff ready for Cowork: handoffs/2026-04-27-p2-Standup-Harvest-Apr-27.md
+✅ Transcript harvested — Apr 27, 2026 (8 action items)
+   Handoff ready for Cowork: handoffs/2026-04-27-p2-Transcript-Harvest-Apr-27.md
 ```
 
 Cowork will pick it up and work through the items with Ben using task-capture.
@@ -79,7 +79,7 @@ Suggested next steps
 
 ## People cache
 
-`skills/standup/schemas/people.json` maps first names to roles. Used for routing hints only — no Jira/Asana lookups at harvest time.
+`skills/transcripts/schemas/people.json` maps first names to roles. Used for routing hints only — no Jira/Asana lookups at harvest time.
 
 ---
 

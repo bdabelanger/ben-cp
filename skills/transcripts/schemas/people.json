@@ -1,0 +1,92 @@
+{
+  "Russell": {
+    "jira_account_id": null,
+    "asana_gid": null,
+    "role": "dev_pm"
+  },
+  "Tuan": {
+    "jira_account_id": null,
+    "asana_gid": null,
+    "role": "dev_java-GQL-react_lead_engineer"
+  },
+  "Duc": {
+    "jira_account_id": null,
+    "asana_gid": null,
+    "role": "dev_java-GQL-react_engineer"
+  },
+  "Bisoye": {
+    "jira_account_id": null,
+    "asana_gid": null,
+    "role": "dev_GQL-react_lead-engineer"
+  },
+  "Blessing": {
+    "jira_account_id": null,
+    "asana_gid": null,
+    "role": "dev_GQL-react_engineer"
+  },
+  "Sodiq": {
+    "jira_account_id": null,
+    "asana_gid": null,
+    "role": "dev_react_engineer"
+  },
+  "Nicole": {
+    "jira_account_id": null,
+    "asana_gid": null,
+    "role": "cx_csm_lead"
+  },
+  "Becky": {
+    "jira_account_id": null,
+    "asana_gid": null,
+    "role": "cx_csm"
+  },
+  "Romiel": {
+    "jira_account_id": null,
+    "asana_gid": null,
+    "role": "cx_csm"
+  },
+  "Shanita": {
+    "jira_account_id": null,
+    "asana_gid": null,
+    "role": "cx_csm"
+  },
+  "Anthony": {
+    "jira_account_id": null,
+    "asana_gid": null,
+    "role": "product_cpo"
+  },
+  "Ben": {
+    "jira_account_id": "629dfdc29b728c006a928e90",
+    "asana_gid": "1208822152029926",
+    "role": "product_pm"
+  },
+  "Margaux": {
+    "jira_account_id": null,
+    "asana_gid": null,
+    "role": "product_pm"
+  },
+  "Pierre": {
+    "jira_account_id": null,
+    "asana_gid": null,
+    "role": "product_designer"
+  },
+  "Yi": {
+    "jira_account_id": null,
+    "asana_gid": null,
+    "role": "qa_pm"
+  },
+  "Sai": {
+    "jira_account_id": null,
+    "asana_gid": null,
+    "role": "qa_lead_engineer"
+  },
+  "Sindhu": {
+    "jira_account_id": null,
+    "asana_gid": null,
+    "role": "qa_engineer"
+  },
+  "Uday": {
+    "jira_account_id": null,
+    "asana_gid": null,
+    "role": "qa_engineer"
+  }
+}

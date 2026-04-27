@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-standup/scripts/run.py — Parse Gemini standup email → Cowork handoff
+transcripts/scripts/run.py — Parse Gemini transcript/email → Cowork handoff
 
-Parses the "Suggested next steps" section of a Gemini standup email,
+Parses the "Suggested next steps" section of a Gemini transcript or email,
 classifies each action item, and writes a handoff for Cowork to run
 the task-capture skill with Ben in an interactive session.
 
 Usage:
-    python3 run.py --email /path/to/email.txt [--date "Apr 27, 2026"]
+    python3 run.py --email /path/to/notes.txt [--date "Apr 27, 2026"]
 """
 import os, sys, re, json, argparse
 from datetime import datetime
@@ -91,7 +91,7 @@ def classify_hint(item, people):
     for name in assignees:
         name_lower = name.lower()
         for cached_name, info in people.items():
-            if cached_name.lower() == name_lower or cached_name.lower().startswith(name_lower):
+            if cached_name.lower() == name_lower or name_lower.startswith(cached_name.lower()):
                 roles.append(info.get("role", ""))
                 break
 
@@ -123,23 +123,23 @@ def write_handoff(items, meeting_date, people):
     today = datetime.now().strftime("%Y-%m-%d")
     date_slug = today
 
-    # Filename: 2026-04-27-p2-Standup-Harvest-Apr-27.md
+    # Filename: 2026-04-27-p2-Transcript-Harvest-Apr-27.md
     month_day = datetime.now().strftime("%b-%-d").replace(" ", "-")
-    filename = f"{date_slug}-p2-Standup-Harvest-{month_day}.md"
+    filename = f"{date_slug}-p2-Transcript-Harvest-{month_day}.md"
     filepath = os.path.join(HANDOFFS_DIR, filename)
 
     lines = [
         "---",
-        f"title: Standup Harvest — {meeting_date}",
+        f"title: Transcript Harvest — {meeting_date}",
         "priority: P2",
         "assigned_to: Cowork (Sonnet 4.6)",
         "status: READY",
         f"date: {today}",
         "---",
         "",
-        f"# Standup Harvest — {meeting_date}",
+        f"# Transcript Harvest — {meeting_date}",
         "",
-        f"> **Prepared by:** Code (standup) ({today})",
+        f"> **Prepared by:** Code (transcript) ({today})",
         f"> **Assigned to:** Cowork (Sonnet 4.6)",
         f"> **Priority:** P2",
         f"> **STATUS**: 🔲 READY — pick up {today}",
@@ -148,7 +148,7 @@ def write_handoff(items, meeting_date, people):
         "",
         "## Context",
         "",
-        f"Gemini standup notes from {meeting_date} have been parsed. The action items below need to be captured as tasks. Work through them with Ben using the **task-capture skill** — present each item, confirm routing, and fire off creation.",
+        f"Gemini notes from {meeting_date} have been parsed. The action items below need to be captured as tasks. Work through them with Ben using the **task-capture skill** — present each item, confirm routing, and fire off creation.",
         "",
         "---",
         "",
@@ -218,7 +218,7 @@ def update_index(filename):
 # ---------------------------------------------------------------------------
 
 def main():
-    parser = argparse.ArgumentParser(description="Standup note harvester → handoff")
+    parser = argparse.ArgumentParser(description="Transcript note harvester → handoff")
     parser.add_argument("--email", required=True, help="Path to email text file")
     parser.add_argument("--date",  help='Meeting date string, e.g. "Apr 27, 2026"')
     args = parser.parse_args()
@@ -231,10 +231,10 @@ def main():
 
     items = parse_email(email_text)
     if not items:
-        print("❌ No action items found. Check that the email contains a '[Name] Action: Description' format.")
+        print("❌ No action items found. Check that the source text contains a '[Name] Action: Description' format.")
         sys.exit(1)
 
-    print(f"📋 Parsed {len(items)} action items from {meeting_date} standup\n")
+    print(f"📋 Parsed {len(items)} action items from {meeting_date} notes\n")
 
     for i, item in enumerate(items, 1):
         hint = classify_hint(item, people)

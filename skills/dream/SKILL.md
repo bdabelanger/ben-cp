@@ -9,7 +9,7 @@ domain: skills/dream
 
 > **Trigger:** Nightly automated run (22:00) or manual invocation
 > **Agent:** Cowork (Claude)
-> **Purpose:** Run all vault health sensors, triage findings, fix low-risk issues directly, create handoffs for Code, and raise Asana tasks for Ben.
+> **Purpose:** Run all vault health sensors, triage findings, fix low-risk issues directly, and create handoffs for Code/Cowork (avoiding Asana tasks).
 
 ---
 
@@ -74,6 +74,7 @@ Low-risk, deterministic corrections with no downstream risk:
 - Minor metadata fixes on intelligence records
 - Missing `index.md` files that are trivially creatable (stub only)
 - Frontmatter field corrections (wrong type, empty required field)
+- Root changelog sync (summarizing completed handoffs)
 
 ### Bucket B — Handoff for Code
 Anything touching more than ~3 files, requiring script changes, or needing a PR:
@@ -82,8 +83,8 @@ Anything touching more than ~3 files, requiring script changes, or needing a PR:
 - Directory boundary issues (drift)
 - Sensor logic fixes
 
-### Bucket C — Asana task for Ben
-Decisions or risks that require human judgment:
+### Bucket C — Handoff for Cowork (Human Decision Required)
+Decisions or risks that require human judgment. Create a P2 handoff for Cowork instead of an Asana task:
 - Files over 750KB needing archival decisions
 - Ambiguous drift (unsanctioned dirs that might be intentional)
 - Sensor failures with no clear explanation
@@ -116,10 +117,11 @@ Use `add_handoff` for each discrete fix area.
 
 ---
 
-## Step 7 — Raise Asana Tasks for Ben (Bucket C)
+## Step 7 — Create Handoffs for Cowork (Bucket C)
 
-- Assign to Ben
-- Due: tomorrow's date
+- Assign to Cowork
+- Priority: P2
+- Use the imperative slug: `Decide: [Specific Risk]`
 - Include enough context to act without re-reading sensor data
 
 ---
@@ -172,7 +174,7 @@ The handoff should be professional and concise — no narrative, no prose. Use t
 
 **Direct Fixes Applied** — bulleted list of any Bucket A fixes made during the run, or "None."
 
-**Asana Tasks Raised** — titles only, or "None."
+**Handoffs for Cowork (Bucket C)** — titles only, or "None."
 
 **Pipeline Results** — table with columns: Pipeline, Result, Notes.
 
@@ -185,6 +187,18 @@ The handoff should be professional and concise — no narrative, no prose. Use t
 *This is your action list. Pick up each handoff below in priority order and execute it. No other interpretation needed.*
 
 **Handoffs for Code** — table with columns: Title, Priority. One row per handoff created.
+
+---
+
+---
+
+## Step 11.5 — Update Root Changelog
+
+If the `changelog` sensor flags **unlogged_changes**, or if significant milestones (handoff completions) occurred:
+1. Review the `handoffs/complete/` files from the last 24h.
+2. Draft a summary of major changes and structural improvements.
+3. Update the root `changelog.md` with a new version entry and date.
+4. If work is routine maintenance, append to the existing version entry.
 
 ---
 
@@ -212,7 +226,7 @@ Content:
 
 - Do NOT edit files in `src/` or `orchestration/` — those are Code's domain
 - Do NOT create more than 5 handoffs per run
-- Do NOT raise Asana tasks for issues you can fix directly
+- Do NOT create handoffs for issues you can fix directly
 - Keep handoffs focused — one discrete problem per handoff
 - If a sensor errors out entirely, note it in the Dream Report and move on
 - Handoff titles must not contain slashes, em-dashes, en-dashes, or special characters — plain hyphens only

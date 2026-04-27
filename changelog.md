@@ -7,6 +7,15 @@ domain: .
 
 # Vault Changelog
 
+## [1.19.0] — Vault Normalization & Dream Cycle Automation (2026-04-27)
+
+**Changes:**
+- **Vault Restructuring (The Great Flattening)**: Moved `skills/pipelines/` into `skills/` and established root-level `handoffs/` to simplify orchestration. Centralized agent documentation and artifacts in the `agents/` directory.
+- **Dream Cycle & Quartermaster Protocol**: Implemented a fully autonomous nightly health loop driven by scheduled skills. Replaced legacy reporting with sensor-driven Markdown digests.
+- **Enhanced Maintenance**: Corrected 127+ "Ghost Links" vault-wide and standardized project intelligence schemas (frontmatter and H1 normalization).
+- **Tooling & Skills**: Refactored **Releasinator** for automated release reporting, built **Task Capture** MCP tools, and implemented the **Standup Harvester** (Gmail -> Tasks).
+- **Intelligence Lifecycle**: Automated the intelligence harvest and orphan scanning pipelines.
+
 ## [1.18.9] — Jira Data Integrity & Reporting Pipeline Hardening (2026-04-16)
 
 **Changes:**

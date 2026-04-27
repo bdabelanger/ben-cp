@@ -12,7 +12,9 @@ date: 2026-04-27
 > **Assigned to:** Cowork (Sonnet 4.6)
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
-> **STATUS**: 🔲 READY — pick up 2026-04-27
+> **STATUS**: ✅ COMPLETE — 2026-04-27
+
+Reviewed the 16 overdue Asana tasks from the task report in the context of the boss's asks. Rescheduled all 16 to 2026-04-30 (Thursday) via Asana MCP. Also cross-referenced boss's 5 asks against the task report, confirming coverage for Notes datagrid, Client Portal, PROD support, and status update requests. PdM Admin project still needs direct review in Asana.
 
 ---
 

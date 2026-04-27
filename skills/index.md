@@ -21,6 +21,6 @@ domain: skills
 - [Styles](styles/index.md)
 - [Releasinator](releasinator/index.md)
 - [Rovo](rovo/index.md)
-- [Standup](standup/index.md)
+- [Transcripts](transcripts/index.md)
 
 

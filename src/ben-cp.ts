@@ -536,7 +536,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         `> **Priority:** ${priority}\n` +
         `> **STATUS**: 🔲 READY — pick up ${date}\n\n---\n\n`;
       await fs.writeFile(fullPath, header + content, "utf-8");
-      return { content: [{ type: "text", text: `Handoff created: ${filename}` }] };
+      return { content: [{ type: "text", text: `Handoff created: \`${filename}\`` }] };
     }
 
     if (name === "list_handoffs") {
@@ -1115,7 +1115,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         const asanaJson = JSON.parse(asanaRes.data);
         asanaProjectGid = asanaJson?.data?.gid ?? null;
         const asanaName = asanaJson?.data?.name ?? text.slice(0, 80);
-        results.push(`✅ Asana project created: "${asanaName}"\n   Stage: Backlog | Team: Platform | Assignee: Ben\n   ⚠️ Set Stage, Release Quarter, Launch Plan manually in Asana UI`);
+        results.push(`✅ Asana project created: "${asanaName}"\n   https://app.asana.com/0/${asanaProjectGid}/board\n   Stage: Backlog | Team: Platform | Assignee: Ben\n   ⚠️ Set Stage, Release Quarter, Launch Plan manually in Asana UI`);
 
         // Create linked Jira Project issue
         const jiraToken = Buffer.from(`${process.env.ATLASSIAN_USER_EMAIL}:${process.env.ATLASSIAN_API_TOKEN}`).toString("base64");
@@ -1231,7 +1231,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       );
       const json = JSON.parse(res.data);
       if (!json?.data?.gid) throw new Error(`Asana project creation failed: ${res.data}`);
-      return { content: [{ type: "text", text: `✅ Asana project created: "${json.data.name}"\n   GID: ${json.data.gid}\n   ⚠️ Set Stage, Release Quarter, Launch Plan, JIRA Link manually in Asana UI` }] };
+      return { content: [{ type: "text", text: `✅ Asana project created: "${json.data.name}"\n   https://app.asana.com/0/${json.data.gid}/board\n   ⚠️ Set Stage, Release Quarter, Launch Plan, JIRA Link manually in Asana UI` }] };
     }
 
     if (name === "create_asana_task") {
@@ -1247,7 +1247,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       );
       const json = JSON.parse(res.data);
       if (!json?.data?.gid) throw new Error(`Asana task creation failed: ${res.data}`);
-      return { content: [{ type: "text", text: `✅ Asana task created: "${json.data.name}"\n   GID: ${json.data.gid} | Project: ${project_gid} | Assignee: Ben${due_on ? ` | Due: ${due_on}` : ""}` }] };
+      return { content: [{ type: "text", text: `✅ Asana task created: "${json.data.name}"\n   https://app.asana.com/0/${project_gid}/${json.data.gid}\n   Project: ${project_gid} | Assignee: Ben${due_on ? ` | Due: ${due_on}` : ""}` }] };
     }
 
     if (name === "create_jira_issue") {

@@ -4,7 +4,7 @@
 > **Assigned to:** Code
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
-> **STATUS**: 🔲 READY — pick up 2026-04-27
+> **STATUS**: ✅ COMPLETE — 2026-04-27
 
 ---
 
@@ -14,7 +14,7 @@
 > **Assigned to:** Code
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
-> **STATUS**: 🔲 READY — pick up 2026-04-27
+> **STATUS**: ✅ COMPLETE — 2026-04-27
 
 ---
 
@@ -95,7 +95,7 @@ Use the same routing rules as the task-capture skill, applied per action item:
 | Tuan | (look up via `lookupJiraAccountId`) |
 | Yi Liu | (look up via `lookupJiraAccountId`) |
 
-**On first run:** Look up each engineer's Jira account ID once and cache in `skills/standup-harvester/schemas/people.json`. Reuse on subsequent runs — don't look up on every execution.
+**On first run:** Look up each engineer's Jira account ID once and cache in `skills/standup/schemas/people.json`. Reuse on subsequent runs — don't look up on every execution.
 
 **Asana assignee:** Always Ben (`1208822152029926`) unless item is clearly a PM action for a specific other person (rare — use judgment).
 
@@ -230,7 +230,7 @@ The SKILL.md should instruct the agent to:
 
 ## People Cache File to Create
 
-On first run, create `skills/standup-harvester/schemas/people.json`:
+On first run, create `skills/standup/schemas/people.json`:
 
 ```json
 {

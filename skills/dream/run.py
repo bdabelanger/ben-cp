@@ -9,7 +9,7 @@ import os, sys, json, re, subprocess, importlib.util
 from datetime import datetime
 
 VAULT_ROOT   = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-SENSORS_DIR  = os.path.join(os.path.dirname(__file__), 'sensors')
+SENSORS_DIR  = os.path.join(os.path.dirname(__file__), 'scripts')
 OUTPUTS_DIR  = os.path.join(VAULT_ROOT, 'reports', 'dream', 'data', 'raw')
 REPORT_DIR   = os.path.join(VAULT_ROOT, 'reports', 'dream')
 REPORT_MD    = os.path.join(REPORT_DIR, 'report.md')

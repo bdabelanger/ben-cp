@@ -19,5 +19,8 @@ domain: skills
 - [Dream](dream/index.md)
 - [Handoff](handoff/index.md)
 - [Styles](styles/index.md)
+- [Releasinator](releasinator/index.md)
+- [Rovo](rovo/index.md)
+- [Standup](standup/index.md)
 
 

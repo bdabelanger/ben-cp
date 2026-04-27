@@ -23,15 +23,16 @@ except ImportError:
     print("❌ 'requests' not installed. Run: pip3 install requests", file=sys.stderr)
     sys.exit(1)
 
-SCRIPT_DIR   = os.path.dirname(os.path.abspath(__file__))
-VAULT_ROOT   = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "..", ".."))
-REPORT_DIR   = os.path.join(VAULT_ROOT, "reports", "releasinator")
-REPORT_PATH  = os.path.join(REPORT_DIR, "report.md")
-ENV_PATH     = os.path.join(VAULT_ROOT, ".env")
+SCRIPT_DIR    = os.path.dirname(os.path.abspath(__file__))
+VAULT_ROOT    = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "..", ".."))
+REPORT_DIR    = os.path.join(VAULT_ROOT, "reports", "releasinator")
+REPORT_PATH   = os.path.join(REPORT_DIR, "report.md")
+ENV_PATH      = os.path.join(VAULT_ROOT, ".env")
 
-JIRA_BASE    = "https://casecommons.atlassian.net/rest/api/3"
-GITHUB_BASE  = "https://api.github.com"
-GITHUB_ORG   = "Casecommons"
+JIRA_BASE     = "https://casecommons.atlassian.net/rest/api/3"
+JIRA_DEV_BASE = "https://casecommons.atlassian.net/rest/dev-status/latest"
+GITHUB_BASE   = "https://api.github.com"
+GITHUB_ORG    = "Casecommons"
 
 # Project config: key → (version prefix, label)
 PROJECTS = {
@@ -153,6 +154,18 @@ def get_jira_issues_by_keys(keys, ff_field=None):
     resp.raise_for_status()
     return resp.json().get("issues", [])
 
+def get_prs_for_issue_via_jira(issue):
+    resp = requests.get(
+        f"{JIRA_DEV_BASE}/issue/detail",
+        params={"issueId": issue["id"], "applicationType": "github", "dataType": "pullrequest"},
+        auth=jira_auth(),
+        headers={"Accept": "application/json"},
+        timeout=30
+    )
+    resp.raise_for_status()
+    detail = resp.json().get("detail", [])
+    return detail[0].get("pullRequests", []) if detail else []
+
 # ---------------------------------------------------------------------------
 # GitHub
 # ---------------------------------------------------------------------------
@@ -168,41 +181,6 @@ def search_github_prs(query):
         return resp.json().get("items", [])
     return call_with_retry(_do)
 
-def get_pr_details(pr_url):
-    def _do():
-        resp = requests.get(
-            pr_url, auth=github_auth(),
-            headers={"Accept": "application/vnd.github+json"}, timeout=30
-        )
-        resp.raise_for_status()
-        return resp.json()
-    return call_with_retry(_do)
-
-def get_prs_for_issue(jira_key):
-    branch_results = search_github_prs(f"is:pr user:{GITHUB_ORG} head:{jira_key}")
-    title_results  = search_github_prs(f"is:pr user:{GITHUB_ORG} {jira_key}")
-
-    seen_urls, pr_urls = set(), []
-    for item in branch_results + title_results:
-        url = item.get("pull_request", {}).get("url")
-        if url and url not in seen_urls:
-            seen_urls.add(url)
-            pr_urls.append(url)
-
-    prs = []
-    title_re  = re.compile(rf"{re.escape(jira_key)}(?:[^0-9]|$)")
-    branch_re = re.compile(rf"{GITHUB_ORG}:{re.escape(jira_key)}(?:[^0-9]|$)")
-
-    for url in pr_urls:
-        pr = get_pr_details(url)
-        title = pr.get("title", "")
-        label = pr.get("head", {}).get("label", "")
-        if title_re.search(title) or branch_re.search(label):
-            prs.append(pr)
-        time.sleep(0.5)
-
-    return prs
-
 def get_qa_to_master_prs():
     return search_github_prs(f"is:pr is:open user:{GITHUB_ORG} head:qa base:master")
 
@@ -210,8 +188,61 @@ def repo_url_from_pr_url(html_url):
     idx = html_url.find("/pull")
     return html_url[:idx] if idx != -1 else html_url
 
-def extract_jira_keys_from_text(text, project_key):
-    return set(re.findall(rf'{project_key}-\d+', text or ""))
+def get_in_flight_jira_keys(repo_url, project_key):
+    """Compare master...qa to find Jira keys riding out in this release."""
+    repo_path = repo_url.replace("https://github.com/", "")
+    resp = requests.get(
+        f"{GITHUB_BASE}/repos/{repo_path}/compare/master...qa",
+        auth=github_auth(),
+        headers={"Accept": "application/vnd.github+json"},
+        timeout=30
+    )
+    if resp.status_code == 404:
+        return set()
+    resp.raise_for_status()
+    keys = set()
+    pattern = re.compile(rf'{project_key}-\d+')
+    for commit in resp.json().get("commits", []):
+        msg = commit.get("commit", {}).get("message", "")
+        keys.update(pattern.findall(msg))
+    return keys
+
+# ---------------------------------------------------------------------------
+# PR normalisation
+# ---------------------------------------------------------------------------
+
+def normalise_pr(pr, source):
+    """Return a uniform dict regardless of whether pr came from Jira or GitHub."""
+    if source == "jira":
+        url = pr.get("url", "")
+        return {
+            "html_url": url,
+            "title":    pr.get("title", ""),
+            "number":   url.split("/")[-1],
+            "branch":   pr.get("source", {}).get("branch", {}).get("name", ""),
+            "repo_url": pr.get("repositoryUrl", ""),
+        }
+    # github
+    html_url = pr.get("html_url", "")
+    return {
+        "html_url": html_url,
+        "title":    pr.get("title", ""),
+        "number":   pr.get("number", ""),
+        "branch":   pr.get("head", {}).get("ref", ""),
+        "repo_url": repo_url_from_pr_url(html_url),
+    }
+
+def is_in_flight(pr):
+    """Raw dev-status PR is still moving toward master."""
+    dest   = pr.get("destination", {}).get("branch", {}).get("name", "")
+    status = pr.get("status", "")
+    return status == "OPEN" or (status == "MERGED" and dest != "master")
+
+def is_merged_to_master(pr):
+    """Raw dev-status PR has already landed on master."""
+    dest   = pr.get("destination", {}).get("branch", {}).get("name", "")
+    status = pr.get("status", "")
+    return status == "MERGED" and dest == "master"
 
 # ---------------------------------------------------------------------------
 # Feature flags
@@ -233,99 +264,110 @@ def extract_feature_flags(issues, ff_field):
 # Per-project pipeline
 # ---------------------------------------------------------------------------
 
+def _collect_prs(issues, label_prefix):
+    """
+    Fetch dev-status PRs for each issue, normalise, and classify repos.
+    Returns (issues_with_prs, all_release_repos, already_merged_repos).
+    """
+    items = []
+    all_release_repos    = set()
+    already_merged_repos = set()
+
+    for issue in issues:
+        key = issue["key"]
+        print(f"    PRs for {label_prefix}{key}...")
+        raw_prs  = get_prs_for_issue_via_jira(issue)
+        norm_prs = []
+        for raw_pr in raw_prs:
+            norm_pr   = normalise_pr(raw_pr, "jira")
+            repo_name = norm_pr["repo_url"].split("/")[-1]
+            if repo_name not in SHARED_LIB_REPOS:
+                if is_in_flight(raw_pr):
+                    all_release_repos.add(norm_pr["repo_url"])
+                elif is_merged_to_master(raw_pr):
+                    already_merged_repos.add(norm_pr["repo_url"])
+            norm_prs.append(norm_pr)
+        items.append({"issue": issue, "prs": norm_prs})
+
+    return items, all_release_repos, already_merged_repos
+
 def run_project_pipeline(project_key, release_name, extra_jql, qa_master_items):
     label = PROJECTS[project_key]["label"]
     print(f"\n  [{label}]")
 
-    ff_field = get_feature_flags_field_id()
+    ff_field   = get_feature_flags_field_id()
     raw_issues = get_jira_issues(project_key, release_name, extra_jql, ff_field)
     print(f"  Found {len(raw_issues)} issues")
 
     if not raw_issues:
         return None
 
-    migrations = [
+    migrations  = [
         i for i in raw_issues
         if (i.get("fields", {}).get("issuetype") or {}).get("name") in BE_MIGRATION_TYPES
     ]
     main_issues = [i for i in raw_issues if i not in migrations]
 
-    # GitHub PRs per issue
-    issues_with_prs = []
-    all_release_repos = set()
     found_keys = {i["key"] for i in raw_issues}
 
-    for issue in main_issues:
-        key = issue["key"]
-        print(f"    PRs for {key}...")
-        prs = get_prs_for_issue(key)
-        issues_with_prs.append({"issue": issue, "prs": prs})
-        for pr in prs:
-            repo = repo_url_from_pr_url(pr.get("html_url", ""))
-            if repo.split("/")[-1] not in SHARED_LIB_REPOS:
-                all_release_repos.add(repo)
+    issues_with_prs,  repos_main,  merged_main  = _collect_prs(main_issues, "")
+    migration_items,  repos_migr,  merged_migr  = _collect_prs(migrations,  "migration ")
 
-    migration_items = []
-    for issue in migrations:
-        key = issue["key"]
-        print(f"    PRs for migration {key}...")
-        prs = get_prs_for_issue(key)
-        migration_items.append({"issue": issue, "prs": prs})
-        for pr in prs:
-            repo = repo_url_from_pr_url(pr.get("html_url", ""))
-            if repo.split("/")[-1] not in SHARED_LIB_REPOS:
-                all_release_repos.add(repo)
+    all_release_repos    = repos_main | repos_migr
+    already_merged_repos = merged_main | merged_migr
 
-    # Repos to bump (open qa→master PRs in release repos)
-    repos_to_bump = set()
-    qa_prs_by_repo = {}
-    for item in qa_master_items:
-        html_url = item.get("html_url", "")
-        repo = repo_url_from_pr_url(html_url)
-        if repo in all_release_repos:
-            repos_to_bump.add(repo)
-            if repo not in qa_prs_by_repo:
-                qa_prs_by_repo[repo] = get_pr_details(item["pull_request"]["url"])
+    # Repos to bump: in-flight repos that have an open qa→master PR
+    qa_master_repos = {
+        repo_url_from_pr_url(item.get("html_url", ""))
+        for item in qa_master_items
+    }
+    repos_to_bump = all_release_repos & qa_master_repos
 
-    # Leaked issues
-    leaked_keys = set()
+    # Leak detection: compare master...qa per repo, extract keys not in this release
+    leaked_keys      = set()
     leaked_pr_sources = {}
-    for repo, pr in qa_prs_by_repo.items():
-        body = pr.get("body") or ""
-        for key in extract_jira_keys_from_text(body, project_key):
+    for repo in all_release_repos:
+        keys = get_in_flight_jira_keys(repo, project_key)
+        for key in keys:
             if key not in found_keys:
                 leaked_keys.add(key)
-                leaked_pr_sources.setdefault(key, []).append(pr.get("html_url", ""))
+                leaked_pr_sources.setdefault(key, []).append(repo)
 
     print(f"  {len(leaked_keys)} potential leaks")
     leaked_details_list = get_jira_issues_by_keys(list(leaked_keys), ff_field) if leaked_keys else []
-    leaked_details = {i["key"]: i for i in leaked_details_list}
+    leaked_details      = {i["key"]: i for i in leaked_details_list}
 
     all_leak_repos = set()
-    leak_items = []
+    leak_items     = []
     for key in leaked_keys:
-        prs = get_prs_for_issue(key)
+        issue_obj = leaked_details.get(key)
+        if issue_obj:
+            raw_prs = get_prs_for_issue_via_jira(issue_obj)
+            prs     = [normalise_pr(pr, "jira") for pr in raw_prs]
+        else:
+            prs = []
         for pr in prs:
-            all_leak_repos.add(repo_url_from_pr_url(pr.get("html_url", "")))
+            all_leak_repos.add(pr["repo_url"])
         leak_items.append({
-            "key": key,
-            "details": leaked_details.get(key),
-            "prs": prs,
+            "key":         key,
+            "details":     leaked_details.get(key),
+            "prs":         prs,
             "found_in_prs": leaked_pr_sources.get(key, []),
         })
 
     return {
-        "project_key":      project_key,
-        "label":            label,
-        "ff_field":         ff_field,
-        "issues_with_prs":  issues_with_prs,
-        "migration_items":  migration_items,
-        "all_release_repos": all_release_repos,
-        "repos_to_bump":    repos_to_bump,
-        "leak_items":       leak_items,
-        "leak_repos":       all_leak_repos - all_release_repos,
-        "flags_on":         extract_feature_flags(main_issues, ff_field),
-        "flags_leave":      extract_feature_flags(leaked_details_list, ff_field),
+        "project_key":         project_key,
+        "label":               label,
+        "ff_field":            ff_field,
+        "issues_with_prs":     issues_with_prs,
+        "migration_items":     migration_items,
+        "all_release_repos":   all_release_repos,
+        "already_merged_repos": already_merged_repos,
+        "repos_to_bump":       repos_to_bump,
+        "leak_items":          leak_items,
+        "leak_repos":          all_leak_repos - all_release_repos,
+        "flags_on":            extract_feature_flags(main_issues, ff_field),
+        "flags_leave":         extract_feature_flags(leaked_details_list, ff_field),
     }
 
 # ---------------------------------------------------------------------------
@@ -337,7 +379,7 @@ def issue_link(key):
 
 def pr_link(pr):
     repo_name = repo_url_from_pr_url(pr.get("html_url", "")).split("/")[-1]
-    number = pr.get("number", "")
+    number    = pr.get("number", "")
     return f"[{repo_name} #{number}]({pr.get('html_url', '')})"
 
 def render_repo_list(repos):
@@ -350,27 +392,27 @@ def render_repo_list(repos):
 def render_issues_table(issues_with_prs):
     lines = ["| Key | Summary | Status | Assignee | PRs |", "|---|---|---|---|---|"]
     for item in sorted(issues_with_prs, key=lambda x: x["issue"]["key"]):
-        issue   = item["issue"]
-        f       = issue.get("fields", {})
-        key     = issue["key"]
-        summary = f.get("summary", "")[:60]
-        status  = f.get("status", {}).get("name", "")
+        issue    = item["issue"]
+        f        = issue.get("fields", {})
+        key      = issue["key"]
+        summary  = f.get("summary", "")[:60]
+        status   = f.get("status", {}).get("name", "")
         assignee = (f.get("assignee") or {}).get("displayName", "—")
         prs_str  = ", ".join(pr_link(pr) for pr in item["prs"]) or "—"
         lines.append(f"| {issue_link(key)} | {summary} | {status} | {assignee} | {prs_str} |")
     return "\n".join(lines)
 
 def render_leaks_table(leak_items):
-    lines = ["| Key | Summary | Status | Assignee | Found in PR |", "|---|---|---|---|---|"]
+    lines = ["| Key | Summary | Status | Assignee | Found in Repo |", "|---|---|---|---|---|"]
     for item in sorted(leak_items, key=lambda x: x["key"]):
-        key     = item["key"]
-        details = item.get("details") or {}
-        f       = details.get("fields", {})
+        key      = item["key"]
+        details  = item.get("details") or {}
+        f        = details.get("fields", {})
         summary  = f.get("summary", "")[:60]
         status   = f.get("status", {}).get("name", "")
         assignee = (f.get("assignee") or {}).get("displayName", "—")
         found_in = ", ".join(
-            f"[{repo_url_from_pr_url(u).split('/')[-1]}]({u})"
+            f"[{u.split('/')[-1]}]({u})"
             for u in item.get("found_in_prs", [])
         ) or "—"
         lines.append(f"| {issue_link(key)} | {summary} | {status} | {assignee} | {found_in} |")
@@ -379,7 +421,7 @@ def render_leaks_table(leak_items):
 def render_migrations_table(issues):
     lines = ["| Key | Summary | Status | Assignee |", "|---|---|---|---|"]
     for issue in sorted(issues, key=lambda x: x["key"]):
-        f = issue.get("fields", {})
+        f        = issue.get("fields", {})
         key      = issue["key"]
         summary  = f.get("summary", "")[:60]
         status   = f.get("status", {}).get("name", "")
@@ -391,7 +433,6 @@ def write_report(release_name, results):
     os.makedirs(REPORT_DIR, exist_ok=True)
     now = datetime.now().strftime("%Y-%m-%d")
 
-    project_labels = " + ".join(r["label"] for r in results)
     lines = [
         f"---",
         f"title: Release Readiness — {release_name}",
@@ -403,7 +444,7 @@ def write_report(release_name, results):
         f"",
     ]
 
-    # --- All repos (primary, per project) ---
+    # --- All repos (per project) ---
     for r in results:
         all_repos = r["all_release_repos"]
         if all_repos:
@@ -411,7 +452,16 @@ def write_report(release_name, results):
             lines.append(render_repo_list(all_repos))
             lines.append("")
 
-    # --- Repos to bump (merged) ---
+    # --- Already merged to master ---
+    all_merged_repos = set().union(*(r["already_merged_repos"] for r in results))
+    if all_merged_repos:
+        lines += [f"## ✅ Already Merged to Master ({len(all_merged_repos)})", ""]
+        lines.append("These repos had release PRs that are fully landed — no action needed.")
+        lines.append("")
+        lines.append(render_repo_list(all_merged_repos))
+        lines.append("")
+
+    # --- Repos to bump ---
     all_bump_repos = set().union(*(r["repos_to_bump"] for r in results))
     if all_bump_repos:
         lines += [f"## 📦 Repositories to Bump — qa → master ({len(all_bump_repos)})", ""]
@@ -420,9 +470,9 @@ def write_report(release_name, results):
 
     # --- Issues per project ---
     for r in results:
-        all_items = r["issues_with_prs"] + r["migration_items"]
+        all_items      = r["issues_with_prs"] + r["migration_items"]
         migration_keys = {i["issue"]["key"] for i in r["migration_items"]}
-        main_items = [i for i in all_items if i["issue"]["key"] not in migration_keys]
+        main_items     = [i for i in all_items if i["issue"]["key"] not in migration_keys]
         if main_items:
             lines += [
                 f"## 📋 Release Issues — {r['label']} ({len(main_items)})",
@@ -431,7 +481,7 @@ def write_report(release_name, results):
                 "",
             ]
 
-    # --- Leaks (per project, only if present) ---
+    # --- Leaks (per project) ---
     for r in results:
         if r["leak_items"]:
             lines += [
@@ -441,14 +491,14 @@ def write_report(release_name, results):
                 "",
             ]
 
-    # --- Additional repos for leaks (merged) ---
+    # --- Additional repos for leaks ---
     all_leak_only_repos = set().union(*(r["leak_repos"] for r in results))
     if all_leak_only_repos:
         lines += ["## 📦 Additional Repos Needed for Leaks", ""]
         lines.append(render_repo_list(all_leak_only_repos))
         lines.append("")
 
-    # --- Feature flags (merged, deduped) ---
+    # --- Feature flags ---
     all_flags_on    = sorted(set().union(*(r["flags_on"]    for r in results)))
     all_flags_leave = sorted(set().union(*(r["flags_leave"] for r in results)))
 
@@ -464,7 +514,7 @@ def write_report(release_name, results):
             lines.append(f"- `{flag}`")
         lines.append("")
 
-    # --- BE Migrations (per project) ---
+    # --- BE Migrations ---
     for r in results:
         if r["migration_items"]:
             migration_issues = [i["issue"] for i in r["migration_items"]]
@@ -496,7 +546,6 @@ def main():
     project_str = " + ".join(args.project)
     print(f"🚀 Releasinator — {args.release} ({project_str})")
 
-    # Fetch open qa→master PRs once (shared across projects)
     print("\n  Fetching open qa→master PRs...")
     qa_master_items = get_qa_to_master_prs()
     print(f"  Found {len(qa_master_items)} open qa→master PRs")

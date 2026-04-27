@@ -1,10 +1,3 @@
----
-title: 'PRD: Portal - Client Dashboard'
-type: prd
-domain: intelligence/product/projects/q2/portal-client-dashboard
----
-
-
 # PRD: Portal - Client Dashboard
 
 <table ac:local-id="e0cf9caaf767" data-layout="default" data-table-width="760">
@@ -104,9 +97,9 @@ domain: intelligence/product/projects/q2/portal-client-dashboard
   </tr>
  </tbody>
 </table>
-<h2>
+<h1 local-id="d26ea10724ec">
  Problem Definition
-</h2>
+</h1>
 <h2 local-id="bb21d263fa5a">
  Context
 </h2>
@@ -287,9 +280,9 @@ domain: intelligence/product/projects/q2/portal-client-dashboard
  </a>
  submissions into the corresponding Casebook fields on a person, intake report, or case. This is one of the most persistent sources of frustration across the customer base.
 </p>
-<h2>
+<h1 local-id="9c5612b26a5a">
  Problems &amp; Impact
-</h2>
+</h1>
 <table ac:local-id="987962787ee3" data-layout="default" data-table-width="760">
  <colgroup>
   <col style="width: 49.0px;"/>
@@ -456,9 +449,9 @@ domain: intelligence/product/projects/q2/portal-client-dashboard
 <p local-id="53c06bac581c">
  Casebook is simultaneously investing in improving its Zapier integration (expanded write actions, custom field support, line item groups). There is meaningful overlap in the outcome these two initiatives serve (getting external data into Casebook) even though the actors and channels differ (Zapier: system-to-system; Portal: person-to-system).
 </p>
-<h2>
+<h1 local-id="8cf6e38830bc">
  Solution Concept
-</h2>
+</h1>
 <h2 local-id="2322469b7701">
  Vision statement
 </h2>
@@ -704,9 +697,9 @@ domain: intelligence/product/projects/q2/portal-client-dashboard
   </p>
  </li>
 </ul>
-<h2>
+<h1 local-id="e3c0cab29fbe">
  Implementation Details
-</h2>
+</h1>
 <h2 local-id="3a51743a7c54">
  Authentication
 </h2>
@@ -1049,9 +1042,9 @@ domain: intelligence/product/projects/q2/portal-client-dashboard
   </tr>
  </tbody>
 </table>
-<h2>
+<h1 local-id="80456f28f07a">
  Market Analysis
-</h2>
+</h1>
 <h2 local-id="01ac33a27f1a">
  Competitive Intelligence
 </h2>
@@ -1096,9 +1089,9 @@ domain: intelligence/product/projects/q2/portal-client-dashboard
   To be completed.
  </em>
 </p>
-<h2>
+<h1 local-id="175b86a1c41e">
  Requirements
-</h2>
+</h1>
 <h2 local-id="4273f2a03476">
  User Stories/Acceptance Criteria
 </h2>
@@ -1372,9 +1365,9 @@ domain: intelligence/product/projects/q2/portal-client-dashboard
   </tr>
  </tbody>
 </table>
-<h2>
+<h1 local-id="b51094730774">
  Design
-</h2>
+</h1>
 <h2 local-id="1ef25d1cbe1d">
  User Research &amp; Usability Test Insights
 </h2>

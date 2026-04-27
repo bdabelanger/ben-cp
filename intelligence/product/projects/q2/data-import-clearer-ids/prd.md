@@ -1,13 +1,3 @@
----
-title: 'PRD: Data import - Clearer IDs'
-type: prd
-domain: intelligence/product/projects/q2/data-import-clearer-ids
-links:
-  figma: https://www.figma.com/design/Q3FuCNyW4JlKysI0yD1a2G/Bulk-Import-V2---Option-B">
-  github: https://github.com/Casecommons/cbp-bulks-api-node">
----
-
-
 # PRD: Data import - Clearer IDs
 
 <ac:structured-macro ac:local-id="d2d0caa5-c27b-48c8-84dd-1fa4dbbc31e2" ac:macro-id="d858d8e03b5e1daef385609bd282d5dd" ac:name="details" ac:schema-version="1" data-layout="default">
@@ -130,9 +120,9 @@ links:
   </table>
  </ac:rich-text-body>
 </ac:structured-macro>
-<h2>
+<h1>
  Problem Definition
-</h2>
+</h1>
 <h2>
  Context
 </h2>
@@ -420,9 +410,9 @@ links:
   </p>
  </li>
 </ol>
-<h2>
+<h1>
  Solution Concepts
-</h2>
+</h1>
 <h2>
  Overview
 </h2>
@@ -900,9 +890,9 @@ links:
   </tr>
  </tbody>
 </table>
-<h2>
+<h1>
  Market Analysis
-</h2>
+</h1>
 <h2>
  Competitive Intelligence
 </h2>
@@ -911,9 +901,9 @@ links:
 </h2>
 <p>
 </p>
-<h2>
+<h1>
  Requirements
-</h2>
+</h1>
 <h2>
  User Stories/Acceptance Criteria
 </h2>
@@ -1210,9 +1200,9 @@ links:
   </tr>
  </tbody>
 </table>
-<h2>
+<h1>
  Design
-</h2>
+</h1>
 <h2>
  User Research &amp; Usability Test Insights
 </h2>

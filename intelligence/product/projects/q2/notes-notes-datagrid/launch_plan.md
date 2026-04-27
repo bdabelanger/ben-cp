@@ -1,17 +1,8 @@
----
-title: 'Launch Plan: Notes - Notes datagrid'
-type: intelligence
-domain: intelligence/product/projects/q2/notes-notes-datagrid
-links:
-  asana: https://app.asana.com/1/1123317448830974/project/1209963394727039/list/1209964105788152">
----
-
-
 # Launch Plan: Notes - Notes datagrid
 
-<h2>
+<h1 local-id="880457ffbe3b">
  Summary
-</h2>
+</h1>
 <p local-id="533cd81e9f2b">
  <strong>
   Tenant Roster:
@@ -131,9 +122,9 @@ links:
   </ul>
  </li>
 </ul>
-<h2>
+<h1 local-id="1ee053a68dbf">
  Communication strategy
-</h2>
+</h1>
 <h2 local-id="871c0277dd28">
  Customer notifications
 </h2>
@@ -202,9 +193,9 @@ links:
   </ul>
  </li>
 </ul>
-<h2>
+<h1 local-id="6728194922f2">
  Rollout plan
-</h2>
+</h1>
 <ac:structured-macro ac:local-id="3bfcbcf6-6a2e-4d2d-9909-f29b31831106" ac:macro-id="77f9f8cf-4681-4382-9cef-e51491793eec" ac:name="panel" ac:schema-version="1">
  <ac:parameter ac:name="panelIcon">
   :dart:
@@ -1238,9 +1229,9 @@ links:
  </ac:rich-text-body>
 </ac:structured-macro>
 <hr local-id="5734af65-0134-49d2-9991-68c813979514"/>
-<h2>
+<h1 local-id="a7a7f6e01482">
  Resources
-</h2>
+</h1>
 <ul local-id="765e6f76-1e40-4812-ada1-2b63fb30ea9b">
  <li local-id="9e160bb8-b37d-40df-812a-08f3c6e8759b">
   <p local-id="c98767680948">

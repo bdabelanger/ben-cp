@@ -4,7 +4,7 @@ import json
 from datetime import datetime
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-VAULT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../../../../.."))
+VAULT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../../.."))
 OUTPUT_PATH = os.path.join(VAULT_ROOT, "reports/asana/raw/all_tasks.json")
 
 def fetch_asana_tasks():

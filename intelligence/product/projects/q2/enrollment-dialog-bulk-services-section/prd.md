@@ -1,13 +1,3 @@
----
-title: 'PRD: Enrollment dialog - Bulk Services section'
-type: prd
-domain: intelligence/product/projects/q2/enrollment-dialog-bulk-services-section
-links:
-  confluence: https://casecommons.atlassian.net/wiki/spaces/PROD/pages/3679256581/Planning+services+with+enrollments#%3A1_one_circle_blue%3A-Consistently-support-bulk-enrolling-multiple-clients-at-once">
-  figma: https://www.figma.com/design/A3pP7U6D1O4ApwO6OZspwG/Services-2025?node-id=349-2845&amp;p=f&amp;t=nIMg5jCL3ErAp7bt-0"
----
-
-
 # PRD: Enrollment dialog - Bulk Services section
 
 <p local-id="4a5bce80-e3b8-4f88-953e-0e2c37034c5d">
@@ -239,9 +229,9 @@ links:
   </table>
  </ac:rich-text-body>
 </ac:structured-macro>
-<h2>
+<h1 local-id="cfbca925-aefc-4d74-bef6-7e9cb94536df">
  Problem Definition
-</h2>
+</h1>
 <h2 local-id="fd590bd0-e052-4864-9fda-fb427d8a9d05">
  Context
 </h2>
@@ -591,9 +581,9 @@ links:
   </tr>
  </tbody>
 </table>
-<h2>
+<h1 local-id="c2de30bf-5a10-4fd2-8396-0d0981d79bd6">
  Solution Concept
-</h2>
+</h1>
 <h2 local-id="de426d01-6b14-497c-b473-4c556a35cdfb">
  Overview
 </h2>
@@ -1370,9 +1360,9 @@ links:
   </tr>
  </tbody>
 </table>
-<h2>
+<h1 local-id="51df830e-c4d5-4f46-a49f-c5a6a4b7de1c">
  Market Analysis
-</h2>
+</h1>
 <h2 local-id="9b7df837-c3d8-43cc-b438-f973447ed23e">
  Competitive Intelligence
 </h2>
@@ -1476,9 +1466,9 @@ links:
   </p>
  </li>
 </ul>
-<h2>
+<h1 local-id="ccf5a586-e9d5-436f-b667-965bf5641c8a">
  Requirements
-</h2>
+</h1>
 <h2 local-id="2bc3a909-6c46-4afe-b195-85814a34efe9">
  User Stories/Acceptance Criteria
 </h2>
@@ -1823,9 +1813,9 @@ links:
   </tr>
  </tbody>
 </table>
-<h2>
+<h1 local-id="1fcf6f15-7ee2-4bf9-bb3d-499824cbfbea">
  Design
-</h2>
+</h1>
 <h2 local-id="8da68234-4ca7-4589-b508-cf702be8190f">
  User Research &amp; Usability Test Insights
 </h2>

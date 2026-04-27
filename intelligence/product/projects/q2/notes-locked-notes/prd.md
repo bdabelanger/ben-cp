@@ -1,14 +1,3 @@
----
-title: 'PRD: Notes - Locked Notes'
-type: prd
-domain: intelligence/product/projects/q2/notes-locked-notes
-links:
-  asana: https://app.asana.com/1/1123317448830974/project/1211838817183809/list/1211840118612354">
-  jira: https://casecommons.atlassian.net/browse/CBP-2912">
-  figma: https://www.figma.com/design/HcwaonV58UklaK8NIgXEGN/Notes-redesign?node-id=38-7615&amp;t=NbQaB30TOD13nx3X-1">
----
-
-
 # PRD: Notes - Locked Notes
 
 <table ac:local-id="34330ffad1db" data-layout="default" data-table-width="760">
@@ -185,9 +174,9 @@ links:
   </tr>
  </tbody>
 </table>
-<h2>
+<h1 local-id="5186d9a2d379">
  Problem Definition
-</h2>
+</h1>
 <h2 local-id="0cffe71b5fd2">
  Context
 </h2>
@@ -355,9 +344,9 @@ links:
 <p local-id="ed75a4ada03b">
  When adding People or Services to a note, the current implementation opens a second modal on top of the note creation modal. Opening multiple modals simultaneously has been associated with rendering delays and increased error rates in high-volume tenants.
 </p>
-<h2>
+<h1 local-id="23939d0ce289">
  Solution Concept
-</h2>
+</h1>
 <h2 local-id="70c5b8bf47d2">
  Overview
 </h2>
@@ -923,9 +912,9 @@ links:
   </tr>
  </tbody>
 </table>
-<h2>
+<h1 local-id="e184bde1ac26">
  Requirements
-</h2>
+</h1>
 <h2 local-id="6bbb0ccafd0f">
  User Stories / Acceptance Criteria
 </h2>
@@ -1159,9 +1148,9 @@ links:
   </tr>
  </tbody>
 </table>
-<h2>
+<h1 local-id="49383991213c">
  Design
-</h2>
+</h1>
 <h2 local-id="62876d6c0907">
  User Research &amp; Usability Test Insights
 </h2>

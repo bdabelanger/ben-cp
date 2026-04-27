@@ -1,7 +1,7 @@
 ---
 title: Integrations - Zapier improvements
-type: index
-domain: intelligence/product/projects/q2/integrations-zapier-improvements
+type: intelligence
+domain: intelligence/product/projects/q2
 links:
   asana: https://app.asana.com/1/1123317448830974/project/1213496879668016
   jira: https://casecommons.atlassian.net/browse/CBP-3158
@@ -12,7 +12,7 @@ links:
 
 - **GID:** 1213496879668016
 - **Permalink:** https://app.asana.com/1/1123317448830974/project/1213496879668016
-- **OKR Mapping:** [Reduce Admin Burden](../../../okrs/q2/reduce-admin-burden/index.md)
+- **OKR Mapping:** [Reduce Admin Burden](../../okrs/q2/reduce-admin-burden/index.md)
 - **Team:** N/A
 - **Stage:** Development
 - **Status:** on_track
@@ -58,7 +58,12 @@ Next steps
 - **QA Start:** 2026-05-11T00:00:00.000Z
 - **R-Notes Stage:** Backlog
 - **KB Stage:** Backlog
-- **PRD:** [prd.md](prd.md)
+- **PRD:** null
 - **Launch Plan:** null
 - **UAT Start:** 2026-05-28T00:00:00.000Z
 - **Roadmap:** Enhance Core Configurability
+
+
+
+## 📚 Internal Documentation
+- [**Product Requirements Document (PRD)**](prd.md)

@@ -1,18 +1,9 @@
---- 
+---
 title: Data import - Bulk import for Notes
-type: index
-domain: intelligence/product/projects/q2/data-import-bulk-import-for-notes
+type: intelligence
+domain: intelligence/product/projects/q2
 links:
   asana: https://app.asana.com/1/1123317448830974/project/1210860550580423
-sources:
-  asana:
-  - type: project
-    gid: '1210860550580423'
-    last_fetched: '2026-04-27'
-  jira:
-  - type: epic
-    key: CBP-498
-    last_fetched: '2026-04-27'
 ---
 
 
@@ -20,7 +11,7 @@ sources:
 
 - **GID:** 1210860550580423
 - **Permalink:** https://app.asana.com/1/1123317448830974/project/1210860550580423
-- **OKR Mapping:** [Elevate Notes](../../../okrs/q2/elevate-notes/index.md)
+- **OKR Mapping:** [Elevate Notes](../../okrs/q2/elevate-notes/index.md)
 - **Team:** Platform
 - **Stage:** Backlog
 - **Status:** on_track
@@ -48,7 +39,6 @@ sources:
 - **Launch Plan:** null
 - **UAT Start:** 2026-07-02T00:00:00.000Z
 - **Roadmap:** Enhance Core Configurability
-- **PRD:** [prd.md](prd.md)
 
 ## Implementation Plan: Bulk Import for Notes Intelligence Update
 
@@ -92,3 +82,6 @@ Gemma (Local) should update the Intelligence domain to reflect that this is an "
 1. **Intelligence Update**: Edit `intelligence/product/roadmap/projects/q2/data-import-bulk-import-for-notes-(1210860550580423).md` — add the "Implementation Accelerator" framing, Kentucky Humane Society quote, and Consolidated Error Feedback capability under `## 🗣️ Key Narrative Points (From Shareout)`.
 2. **Stretch Designation**: Within the added narrative, note explicitly: "Stretch goal for Q2 — prioritized for onboarding acceleration, not a GA commitment."
 3. **Status Sync**: Confirm Stage metadata reflects Discovery (25%). Do not overwrite structured metadata — add status context in prose only.
+
+## 📚 Internal Documentation
+- [**Product Requirements Document (PRD)**](prd.md)

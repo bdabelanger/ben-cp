@@ -1,10 +1,3 @@
----
-title: 'PRD: Integrations - Zapier improvements'
-type: prd
-domain: intelligence/product/projects/q2/integrations-zapier-improvements
----
-
-
 # PRD: Integrations - Zapier improvements
 
 <table data-layout="default">
@@ -107,9 +100,9 @@ domain: intelligence/product/projects/q2/integrations-zapier-improvements
   </tr>
  </tbody>
 </table>
-<h2>
+<h1>
  Problem Definition
-</h2>
+</h1>
 <h2>
  Context
 </h2>
@@ -278,9 +271,9 @@ domain: intelligence/product/projects/q2/integrations-zapier-improvements
   </tr>
  </tbody>
 </table>
-<h2>
+<h1>
  Solution Concept
-</h2>
+</h1>
 <h2>
  Overview
 </h2>

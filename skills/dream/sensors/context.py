@@ -12,7 +12,9 @@ SKIP_DIRS = {'.git', '__pycache__', 'node_modules', 'complete', 'archive', 'arch
 
 IGNORE_LIST = {
     'intelligence/product/shareout/q2/source/Q2 2026 Product Shareout.pdf',
-    'intelligence/product/shareout/q2/source/Q2 2026 Product Shareout.txt'
+    'intelligence/product/shareout/q2/source/Q2 2026 Product Shareout.txt',
+    'reports/asana/raw/all_projects.json',
+    'reports/status/data/processed/jira_issues.json',
 }
 
 def is_acknowledged(path):

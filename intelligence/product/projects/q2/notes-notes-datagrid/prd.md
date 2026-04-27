@@ -1,15 +1,3 @@
----
-title: 'PRD: Notes - Notes datagrid'
-type: prd
-domain: intelligence/product/projects/q2/notes-notes-datagrid
-links:
-  asana: https://app.asana.com/1/1123317448830974/project/1209963394727039/list/1209964105788152">
-  jira: https://casecommons.atlassian.net/browse/CBP-2614">
-  figma: https://www.figma.com/design/zKrIJ9YTASVYoA6BkZWjaQ/Notes-WLV?node-id=174-1754&amp;t=VCEMGDxVowGWFKhq-1">
-  google-drive: https://drive.google.com/drive/folders/1Y9UKczQRxRBXxgoy-GF9il2kzG_nRWh7">
----
-
-
 # PRD: Notes - Notes datagrid
 
 <table ac:local-id="42d1c58cc704" data-layout="default" data-table-width="760">
@@ -147,9 +135,9 @@ links:
   </tr>
  </tbody>
 </table>
-<h2>
+<h1 local-id="af528e84603b">
  Problem Definition
-</h2>
+</h1>
 <h2 local-id="136a5f4b3752">
  Context
 </h2>
@@ -469,9 +457,9 @@ links:
   </p>
  </li>
 </ul>
-<h2>
+<h1 local-id="5a21f17ca76f">
  Solution Concept
-</h2>
+</h1>
 <h2 local-id="8767180ea311">
  Overview
 </h2>
@@ -1163,9 +1151,9 @@ links:
   </tr>
  </tbody>
 </table>
-<h2>
+<h1 local-id="272287efbe03">
  Requirements
-</h2>
+</h1>
 <h2 local-id="05eb38e4b406">
  User Stories / Acceptance Criteria
 </h2>
@@ -1549,9 +1537,9 @@ links:
   </tr>
  </tbody>
 </table>
-<h2>
+<h1 local-id="3f77ebfa2efa">
  Design
-</h2>
+</h1>
 <h2 local-id="6995816348e2">
  User Research &amp; Usability Test Insights
 </h2>

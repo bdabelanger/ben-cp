@@ -61,7 +61,8 @@ def sensor_status_line(name, data):
     # 🟡 YELLOW: Maintenance findings (<20% of scanned files)
     # 🔴 RED: Critical failure or widespread issues (>20% of scanned files)
     
-    issue_parts = [p for p in parts if 'scanned' not in p.lower() and 'total' not in p.lower()]
+    # subdirectory_changelogs is informational — per-skill changelogs are expected
+    issue_parts = [p for p in parts if 'scanned' not in p.lower() and 'total' not in p.lower() and 'subdirectory changelogs' not in p.lower()]
     scanned_count = summary.get('files_scanned', summary.get('skills_checked', 1))
     
     # Count total findings across standard keys

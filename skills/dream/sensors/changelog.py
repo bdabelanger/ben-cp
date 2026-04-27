@@ -40,10 +40,12 @@ def parse_root_changelog():
 
     return tuples, issues
 
+SKIP_DIRS = {'node_modules', '__pycache__', '.git', 'reports', 'complete', 'archive', 'archived', 'dist'}
+
 def find_subdirectory_changelogs():
     logs = []
     for root, dirs, files in os.walk(VAULT_ROOT):
-        dirs[:] = [d for d in dirs if not d.startswith('.') and d != '__pycache__']
+        dirs[:] = [d for d in dirs if not d.startswith('.') and d not in SKIP_DIRS]
         rel = os.path.relpath(root, VAULT_ROOT)
         if rel == '.' :
             continue

@@ -17,7 +17,7 @@ MANIFEST_PATH = os.path.join(REPO_ROOT, "reports/status/data/manifest.json")
 
 def _load_dotenv():
     """Load .env from vault root (ben-cp/.env)."""
-    env_path = os.path.join(VAULT_ROOT, ".env")
+    env_path = os.path.join(REPO_ROOT, ".env")
     if not os.path.exists(env_path):
         return
     with open(env_path) as f:
@@ -67,7 +67,7 @@ def main():
 
     if force:
         print("🔄 --force: wiping inputs/raw/jira/ and processed outputs for a clean run...")
-        jira_raw_dir = os.path.join(VAULT_ROOT, "reports/status/data/raw/jira")
+        jira_raw_dir = os.path.join(REPO_ROOT, "reports/status/data/raw/jira")
         if os.path.isdir(jira_raw_dir):
             shutil.rmtree(jira_raw_dir)
         subprocess.run(["python3", os.path.join(script_dir, "update_manifest.py"), "reset"], check=True)
@@ -75,8 +75,8 @@ def main():
     with open(MANIFEST_PATH, 'r') as f:
         manifest = json.load(f)
 
-    ASANA_RAW      = os.path.join(VAULT_ROOT, "reports/asana/raw/all_projects.json")
-    JIRA_RAW_DIR   = os.path.join(VAULT_ROOT, "reports/status/data/raw/jira")
+    ASANA_RAW      = os.path.join(REPO_ROOT, "reports/asana/raw/all_projects.json")
+    JIRA_RAW_DIR   = os.path.join(REPO_ROOT, "reports/status/data/raw/jira")
     ASANA_FILTERED = get_path_from_manifest(manifest, "1_asana_ingest")
     JIRA_HARVESTED = get_path_from_manifest(manifest, "4_jira_harvest")
     OUTPUT_PATH    = get_path_from_manifest(manifest, "5_report_generation")

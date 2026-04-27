@@ -1,17 +1,8 @@
----
-title: 'Launch Plan: Services WLV - Bulk actions'
-type: intelligence
-domain: intelligence/product/projects/q2/services-wlv-bulk-actions
-links:
-  asana: https://app.asana.com/1/1123317448830974/project/1211631356870657/list/1211631441454418">
----
-
-
 # Launch Plan: Services WLV - Bulk actions
 
-<h2>
+<h1 local-id="567182454ad4">
  Summary
-</h2>
+</h1>
 <p local-id="139d5465ed52">
  <strong>
   Tenant Roster:
@@ -101,9 +92,9 @@ links:
   </ol>
  </li>
 </ol>
-<h2>
+<h1 local-id="1ee053a68dbf">
  Communication strategy
-</h2>
+</h1>
 <h2 local-id="871c0277dd28">
  Customer notifications
 </h2>
@@ -160,9 +151,9 @@ links:
   </p>
  </li>
 </ul>
-<h2>
+<h1 local-id="6728194922f2">
  Rollout plan
-</h2>
+</h1>
 <ac:structured-macro ac:local-id="cd3240e7-d55e-4b95-a026-c0bf243c7d06" ac:macro-id="107f3629-4aa0-4c09-a912-f1cf19d8062e" ac:name="panel" ac:schema-version="1">
  <ac:parameter ac:name="panelIcon">
   :dart:
@@ -562,9 +553,9 @@ links:
  </li>
 </ol>
 <hr local-id="5397dca3f94f"/>
-<h2>
+<h1 local-id="a7a7f6e01482">
  Resources
-</h2>
+</h1>
 <ul local-id="b6b5db23-3ed3-4445-9500-b244abf6cd68">
  <li local-id="514f814e-500a-456d-8341-0249a1c269cd">
   <p local-id="83e85a53645c">

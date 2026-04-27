@@ -1,3 +1,10 @@
+---
+title: Notes - Locked Notes
+type: prd
+domain: product/projects/q2
+status: active
+---
+
 # PRD: Notes - Locked Notes
 
 <table ac:local-id="34330ffad1db" data-layout="default" data-table-width="760">

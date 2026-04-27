@@ -1,3 +1,10 @@
+---
+title: Services - Service plan datagrid with bulk actions
+type: launch_plan
+domain: product/projects/q2
+status: active
+---
+
 # Launch Plan: Services - Service plan datagrid with bulk actions
 
 <h1 local-id="567182454ad4">

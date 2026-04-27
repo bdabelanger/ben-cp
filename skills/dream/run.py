@@ -124,7 +124,6 @@ def build_pipeline_section(pipeline_results):
         result = pipeline_results.get(name, {})
         icon = '✅' if result.get('ok') else '⚠️'
         lines.append(f'### {icon} {p["label"]}')
-        lines.append(f'[Full report]({p["report"]})')
         lines.append('')
 
         if not p.get('report'):
@@ -137,9 +136,13 @@ def build_pipeline_section(pipeline_results):
             continue
 
         content = _read_report(p['report'])
-        if not content:
+        if content:
+            lines.append(f'[Full report]({p["report"]})')
+        else:
             lines.append('_Report not found._')
-            lines.append('')
+        lines.append('')
+
+        if not content:
             continue
 
         if name == 'status':

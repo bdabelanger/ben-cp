@@ -1,3 +1,10 @@
+---
+title: Integrations - Zapier improvements
+type: prd
+domain: product/projects/q2
+status: active
+---
+
 # PRD: Integrations - Zapier improvements
 
 <table data-layout="default">

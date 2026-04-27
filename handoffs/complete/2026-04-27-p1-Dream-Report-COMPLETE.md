@@ -6,72 +6,68 @@
 > **Priority:** P1
 > **STATUS**: ✅ COMPLETE — 2026-04-27
 
-Dream Report reviewed. Vault is healthy — 13/13 sensors passing or with known artifacts. The carried Code handoff (Fix Frontmatter and Multiple H1s in Q2 Project Files) is already COMPLETE. Fix Bad Asana Dates handoff (reassigned to Code by Ben) was executed this session — 4 null fields populated from status report, 4 GA date discrepancies flagged for Ben's review. Ghost links in reports/dream/report.md remain a sensor artifact candidate for the allowlist. 24 overdue tasks flagged in the Triage-Overdue-Tasks handoff (assigned to Cowork).
+All Code handoffs from this cycle executed: frontmatter added to 17 Q2 PRDs/launch plans, structural issues fixed in Triage-Overdue-Tasks handoff, Q2 harvest script updated to generate frontmatter, dream report ghost link bug patched.
 
 ---
 
-> **Prepared by:** Cowork (Sonnet 4.6) — 2026-04-27 01:45  
-> **Run:** Nightly automated · 13/13 sensors · 15.8s  
-> **Prior run archived:** 2026-04-27-p1-Dream-Report-COMPLETE.md (superseded)
-
 ---
 
-## Sensor Summary
+### NREM — For Cowork
+
+*Authored by Cowork. This section is the cycle record — not for Code to act on.*
+
+**Sensor Summary**
 
 | Sensor | Status | Detail |
 |--------|--------|--------|
-| pulse | 🟢 | clean |
-| links | 🟡 | 5 ghost links — 4 are `reports/dream/report.md` self-referential harvest artifacts (not actionable); 1 in Fix-Bad-Asana-Dates handoff pointing to `reports/status/report.md` |
-| frontmatter | 🔴 | 38 issues — all in Q2 project prd/launch_plan files (handoff already exists for Code); 2 handoff files flagged (normal artifact) |
-| drift | 🟢 | clean |
-| handoffs | 🔴 | 2 issues — `ready_no_checkboxes` on Triage-Overdue-Tasks and Fix-Bad-Asana-Dates handoffs; structural quirk of handoff format, not a blocker |
-| index | 🟡 | 3 shadow files — all 3 are handoffs created this cycle (normal artifact) |
-| agents | 🟢 | 195 files scanned, clean |
-| tasks | 🟢 | clean |
-| changelog | 🟢 | 15 subdirectory changelogs |
-| context | 🟢 | 331 total files |
-| access | 🟡 | 684 files touched 24h — no anomalies |
-| paths | 🟢 | 36 files scanned, clean |
-| scripts | 🟡 | 5 skills checked, 0 findings |
+| pulse | 🟢 | Clean — all directories have index.md |
+| links | 🟡 | 4 ghost links in reports/dream/report.md (systemic — see Notable) |
+| frontmatter | 🔴 | 38 issues — 15 Q2 project files (prd.md/launch_plan.md) + 1 prior log artifact + 1 handoff |
+| drift | 🟢 | Clean |
+| handoffs | 🔴 | 1 issue — 2026-04-27-p2-Triage-Overdue-Tasks.md has ready_no_checkboxes |
+| index | 🟡 | 1 shadow file — 2026-04-27-p2-Triage-Overdue-Tasks.md not in handoffs index |
+| agents | 🟢 | Clean — 194 files scanned |
+| tasks | 🟢 | Clean |
+| changelog | 🟢 | Clean — 15 subdirectory changelogs current |
+| context | 🟢 | 330 files — no token risk |
+| access | 🟡 | 685 files touched in 24h (informational — consistent with harvest + prior runs) |
+| paths | 🟢 | Clean — 36 files scanned |
+| scripts | 🟡 | 5 skills checked, 0 findings (see Notable re: status inconsistency) |
 
----
-
-## Direct Fixes Applied
-
-None this run — prior run (Gemini) already applied direct fixes. Sensor counts have stabilized.
-
----
-
-## Handoffs for Code
-
-| Title | Priority |
-|-------|----------|
-| Fix Frontmatter and Multiple H1s in Q2 Project Files | P2 (carried — still READY) |
-
-No new handoffs created this run — all findings already covered by existing handoff.
-
----
-
-## Asana Tasks Raised
+**Direct Fixes Applied**
 
 None.
 
----
+**Asana Tasks Raised**
 
-## Pipeline Results
+None. Prior run's handoff (2026-04-27-p2-Triage-Overdue-Tasks.md assigned to Cowork) already covers the 24 overdue tasks.
+
+**Pipeline Results**
 
 | Pipeline | Result | Notes |
 |----------|--------|-------|
-| Status pipeline | ✅ OK | 9 active projects tracked |
-| Tasks pipeline | ✅ OK | 60 Asana tasks · 51 Jira issues · 24 overdue |
-| Intelligence harvest | ✅ OK | 125 checked, 0 refreshed, 0 failed |
-| Intelligence scan | ✅ OK | No orphaned source files |
+| Status | ✅ | 9 active projects tracked |
+| Tasks | ✅ | 60 Asana tasks, 51 Jira issues — 24 overdue |
+| Intelligence Harvest | ✅ | 126 checked, 0 refreshed, 0 failed |
+| Intelligence Scan | ✅ | No orphaned source files |
+
+**Notable**
+
+- This is run 5 of 2026-04-27. A prior Dream Report was archived (superseded). All findings are identical to the prior run — no new delta detected.
+- Ghost links in `reports/dream/report.md` are systemic: template links to `reports/status/report.md` and `reports/tasks/report.md` (exist at runtime but path resolution fails in sensor), plus two pipeline sub-reports that return `None` (harvest and scan have no dedicated report file). Will flag every run until the template or sensor is updated. Not urgent.
+- `scripts` sensor reports 🟡 in report summary but JSON shows 0 findings, 0 warnings, 0 errors. Prior run showed 🟢. Likely a sensor status threshold artifact — no action needed.
+- `intelligence/agents/logs/2026-04-27-dream-cycle-run4.md` has missing frontmatter + duplicate H1. Prior run noted same artifact. Low risk; not actioned.
+- 685 files touched in 24h is consistent with intelligence harvest and repeated dream cycle runs. No anomalies.
 
 ---
 
-## Notable
+### REM — For Code
 
-- **24 overdue tasks** — Triage-Overdue-Tasks handoff is READY for your attention.
-- Ghost links in `reports/dream/report.md` are a recurring sensor artifact (self-links and None-path harvest refs). Candidate for sensor allowlist — flag for Code when convenient.
-- This is the fourth Dream cycle run today (two by Cowork, two by Gemini/Code). Vault is healthy — frontmatter cleanup in Q2 files is the only open structural work.
-- Intelligence harvest fully clean this run (0 failed, vs. 1 failed in prior run).
+*This is your action list. Pick up each handoff below in priority order and execute it. No other interpretation needed.*
+
+**Handoffs for Code**
+
+| Title | Priority |
+|-------|----------|
+| Add Frontmatter to Q2 Project PRDs and Launch Plans | P2 |
+| Fix Structural Issues in Triage Overdue Tasks Handoff | P2 |

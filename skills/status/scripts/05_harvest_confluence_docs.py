@@ -77,8 +77,10 @@ def run_mass_harvest():
                 
                 # Save as codified record
                 target_path = os.path.join(project_dir, filename)
+                fm_type = filename.replace(".md", "")
+                frontmatter = f"---\ntitle: {name}\ntype: {fm_type}\ndomain: product/projects/q2\nstatus: active\n---\n\n"
                 with open(target_path, "w") as tf:
-                    tf.write(f"# {type_name}: {name}\n\n{content}")
+                    tf.write(f"{frontmatter}# {type_name}: {name}\n\n{content}")
 
                 # DOWNLOAD ATTACHMENTS
                 if attachments:

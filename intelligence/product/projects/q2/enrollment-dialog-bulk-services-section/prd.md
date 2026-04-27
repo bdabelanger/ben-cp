@@ -1,3 +1,10 @@
+---
+title: Enrollment dialog - Bulk Services section
+type: prd
+domain: product/projects/q2
+status: active
+---
+
 # PRD: Enrollment dialog - Bulk Services section
 
 <p local-id="4a5bce80-e3b8-4f88-953e-0e2c37034c5d">

@@ -1,3 +1,10 @@
+---
+title: Portal - Client Dashboard
+type: prd
+domain: product/projects/q2
+status: active
+---
+
 # PRD: Portal - Client Dashboard
 
 <table ac:local-id="e0cf9caaf767" data-layout="default" data-table-width="760">

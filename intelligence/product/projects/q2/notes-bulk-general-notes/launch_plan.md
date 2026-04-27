@@ -1,3 +1,10 @@
+---
+title: 'Notes - Bulk "General Notes"'
+type: launch_plan
+domain: product/projects/q2
+status: active
+---
+
 # Launch Plan: Notes - Bulk "General Notes"
 
 <h1 local-id="afb4ef1b-8176-4e00-bf59-c45498ad2087">

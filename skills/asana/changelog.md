@@ -9,6 +9,15 @@ domain: skills/asana
 
 ## [Unreleased]
 
+## 2026-04-27 — Build Task Capture MCP Tools from Skill
+
+**Files changed:**
+- `src/ben-cp.ts` — Added loadEnv() + httpsRequest() helpers; added 5 new MCP tools: capture_task, create_asana_project, create_asana_task, create_jira_issue, link_asana_jira ✅
+- `dist/` — Rebuilt TypeScript compilation — clean build confirmed ✅
+
+**Next:** Restart MCP server to pick up new tools
+
+
 ## 2026-04-26 — Update documentation and registry for new Asana pipeline
 
 **Files changed:**

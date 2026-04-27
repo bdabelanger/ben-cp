@@ -157,22 +157,34 @@ For each orphaned source file found:
 Create one final handoff using `add_handoff`:
 
 - **title:** `Dream Report` (no date — the filename prefix handles it)
-- **assigned_to:** Ben
+- **assigned_to:** Code
 - **priority:** P1
 
 The handoff should be professional and concise — no narrative, no prose. Use the following structure:
+
+---
+
+### NREM — For Cowork
+
+*Authored by Cowork. This section is the cycle record — not for Code to act on.*
 
 **Sensor Summary** — table with columns: Sensor, Status, Detail. One row per sensor.
 
 **Direct Fixes Applied** — bulleted list of any Bucket A fixes made during the run, or "None."
 
-**Handoffs for Code** — table with columns: Title, Priority. One row per handoff created.
-
 **Asana Tasks Raised** — titles only, or "None."
 
 **Pipeline Results** — table with columns: Pipeline, Result, Notes.
 
-**Notable** — brief bullets for anything Ben should be aware of that didn't generate a task or handoff.
+**Notable** — brief bullets for anything an agent or human should be aware of that didn't generate a task or handoff.
+
+---
+
+### REM — For Code
+
+*This is your action list. Pick up each handoff below in priority order and execute it. No other interpretation needed.*
+
+**Handoffs for Code** — table with columns: Title, Priority. One row per handoff created.
 
 ---
 

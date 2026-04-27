@@ -8,6 +8,32 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { execFile } from "node:child_process";
+import https from "node:https";
+
+// Load .env from vault root
+async function loadEnv(rootPath: string) {
+  try {
+    const raw = await fs.readFile(path.resolve(rootPath, ".env"), "utf-8");
+    for (const line of raw.split("\n")) {
+      const m = line.match(/^([A-Z_][A-Z0-9_]*)=[\'\"']?(.+?)[\'\"']?\s*$/);
+      if (m && !process.env[m[1]]) process.env[m[1]] = m[2];
+    }
+  } catch { }
+}
+
+function httpsRequest(url: string, method: string, headers: Record<string, string>, body?: string): Promise<{ status: number; data: string }> {
+  return new Promise((resolve, reject) => {
+    const u = new URL(url);
+    const req = https.request({ hostname: u.hostname, path: u.pathname + u.search, method, headers }, (res) => {
+      let data = "";
+      res.on("data", (d) => data += d);
+      res.on("end", () => resolve({ status: res.statusCode ?? 0, data }));
+    });
+    req.on("error", reject);
+    if (body) req.write(body);
+    req.end();
+  });
+}
 
 const server = new Server(
   { name: "ben-cp", version: "2.1.1" },
@@ -18,6 +44,7 @@ const server = new Server(
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootPath = path.resolve(__dirname, "..");
+await loadEnv(rootPath);
 const skillsPath = path.resolve(rootPath, "skills");
 const rootChangelogPath = path.resolve(rootPath, "changelog.md");
 const handoffPath = path.resolve(rootPath, "handoffs");
@@ -256,6 +283,152 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
       }
     },
     { name: "get_changelog", description: "Read changelog.", inputSchema: { type: "object", properties: { scope: { type: "string" } } } },
+
+    // --- TASK CAPTURE (Asana + Jira) ---
+    {
+      name: "capture_task",
+      description: "Primary entry point for task capture. Takes raw text, classifies it, routes to Asana and/or Jira, and returns a concise confirmation. No clarifying questions unless truly ambiguous — make a call and act.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          text: { type: "string", description: "Raw capture text from Ben" }
+        },
+        required: ["text"]
+      }
+    },
+    {
+      name: "create_asana_project",
+      description: "Create a new Asana project for a roadmap initiative. Applies defaults: Stage=Backlog, Team=Platform, Product Assignee=Ben. Note: project-level custom fields (Stage, Release Quarter, Launch Plan, JIRA Link) cannot be set via MCP — flags these to Ben.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          name: { type: "string", description: "Project name" },
+          notes: { type: "string", description: "Project description" },
+          release_quarter_gid: { type: "string", description: "Optional enum GID for Release Quarter" },
+          release_month_gid: { type: "string", description: "Optional enum GID for Release Month" },
+          team_gid: { type: "string", description: "Optional team GID override (default: Platform)" }
+        },
+        required: ["name"]
+      }
+    },
+    {
+      name: "create_asana_task",
+      description: "Create a PM readiness task in an existing Asana project. Searches for matching project by name, falls back to PD - Small Projects. Always assigns to Ben.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          name: { type: "string", description: "Task name" },
+          notes: { type: "string", description: "Task description" },
+          project_gid: { type: "string", description: "Asana project GID. Use PD-Small-Projects GID 1208693459152262 as fallback." },
+          due_on: { type: "string", description: "Optional due date (YYYY-MM-DD)" }
+        },
+        required: ["name", "project_gid"]
+      }
+    },
+    {
+      name: "create_jira_issue",
+      description: "Create a Jira CBP issue with the correct template applied. After creating, automatically follows up with editJiraIssue to fix double-escaped newlines. Checkbox syntax (- [ ]) requires manual conversion in Jira UI.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          summary: { type: "string", description: "Issue summary — format: [Product Area] - [description]" },
+          issue_type_id: { type: "string", description: "Jira issue type ID: 10000=Project, 10057=Story, 10011=Bug, 10013=CX Bug, 10064=Research, 10009=Task, 10065=QAFE" },
+          description: { type: "string", description: "Full issue description with template fields pre-populated" },
+          priority: { type: "string", description: "Optional: Highest, High, Medium, Low, Lowest" },
+          labels: { type: "array", items: { type: "string" }, description: "Optional labels" }
+        },
+        required: ["summary", "issue_type_id", "description"]
+      }
+    },
+    {
+      name: "link_asana_jira",
+      description: "Set the JIRA Link custom field on an Asana project (field GID 1208818005809198). Stores the full Jira issue URL.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          asana_project_gid: { type: "string", description: "Asana project GID" },
+          jira_issue_key: { type: "string", description: "Jira issue key e.g. CBP-3102" }
+        },
+        required: ["asana_project_gid", "jira_issue_key"]
+      }
+    },
+
+    // --- EDIT (Approval Required) ---
+    {
+      name: "edit_asana_task",
+      description: "Update fields on an existing Asana task (name, notes, due_on). Approval required.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          task_gid: { type: "string", description: "Asana task GID" },
+          name: { type: "string", description: "New task name" },
+          notes: { type: "string", description: "New task notes/description" },
+          due_on: { type: "string", description: "Due date (YYYY-MM-DD)" }
+        },
+        required: ["task_gid"]
+      }
+    },
+    {
+      name: "edit_asana_project",
+      description: "Update fields on an existing Asana project (name, notes). Approval required.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          project_gid: { type: "string", description: "Asana project GID" },
+          name: { type: "string", description: "New project name" },
+          notes: { type: "string", description: "New project description" }
+        },
+        required: ["project_gid"]
+      }
+    },
+    {
+      name: "edit_jira_issue",
+      description: "Update summary and/or description on an existing Jira CBP issue. Applies ADF formatting. Approval required.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          issue_key: { type: "string", description: "Jira issue key e.g. CBP-3102" },
+          summary: { type: "string", description: "New summary text" },
+          description: { type: "string", description: "New description (plain text, converted to ADF)" }
+        },
+        required: ["issue_key"]
+      }
+    },
+
+    // --- DELETE (Approval Required) ---
+    {
+      name: "delete_asana_task",
+      description: "⚠️ DESTRUCTIVE — Permanently delete an Asana task by GID. Approval required. Use sparingly.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          task_gid: { type: "string", description: "Asana task GID to delete" }
+        },
+        required: ["task_gid"]
+      }
+    },
+    {
+      name: "delete_asana_project",
+      description: "⚠️ DESTRUCTIVE — Permanently delete an Asana project by GID. Approval required. Use sparingly.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          project_gid: { type: "string", description: "Asana project GID to delete" }
+        },
+        required: ["project_gid"]
+      }
+    },
+    {
+      name: "delete_jira_issue",
+      description: "⚠️ DESTRUCTIVE — Permanently delete a Jira issue by key. Approval required. Use sparingly.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          issue_key: { type: "string", description: "Jira issue key to delete e.g. CBP-3102" }
+        },
+        required: ["issue_key"]
+      }
+    },
 
     // --- REPORTING & OUTPUTS ---
     {
@@ -830,6 +1003,385 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       if (!fullPath.startsWith(baseReportsPath)) throw new Error("Access denied: Outside reports directory.");
       const content = await fs.readFile(fullPath, "utf-8");
       return { content: [{ type: "text", text: content }] };
+    }
+
+    // --- TASK CAPTURE (Asana + Jira) ---
+
+    // Shell taxonomy — to be replaced once intelligence/product/taxonomy.md is defined
+    // Format: "Product - Feature" or "Feature" for standalone areas
+    function inferProductArea(t: string): string {
+      const s = t.toLowerCase();
+      const areas: string[] = [];
+      if (/\bnotes\b|autosave|service record|case note/.test(s)) areas.push("Engage - Notes");
+      if (/\benroll/.test(s)) areas.push("Enrollments");
+      if (/\bwlv\b|workload/.test(s)) areas.push("Engage - WLV");
+      if (/datagrid|data grid/.test(s)) areas.push("Engage - DataGrid");
+      if (/dynamic page/.test(s)) areas.push("Engage - Dynamic Pages");
+      if (/\bnav(igation)?\b|\bsearch\b/.test(s)) areas.push("Platform - Navigation");
+      if (/\bgp\b|granular perm/.test(s)) areas.push("Platform - GP");
+      if (/\breporting\b|\breveal\b|\bredshift\b/.test(s)) areas.push("Reporting");
+      if (/\bzapier\b|\bnylas\b|\bintegrat/.test(s)) areas.push("Integrations");
+      if (/\bsecurity\b|\bsoc\b|\bcjis\b|\bprowler\b/.test(s)) areas.push("Security & Compliance");
+      if (/\bkafka\b|\brails\b|\bec2\b|\binfra\b|karpenter/.test(s)) areas.push("Infrastructure");
+      if (/\bworkflow/.test(s)) areas.push("Platform - Workflows");
+      return areas.length > 0 ? areas.join(", ") : "Platform";
+    }
+
+    function getPopulatedTemplate(type: string, area: string, text: string): string {
+      const summary = `${area} — ${text}`;
+      if (type === "bug") {
+        return `## Summary\n${summary}\n\n## Description\n${text}\n\n## Steps to Reproduce\n1. \n2. \n3. \n\n## Expected Behavior\n\n## Actual Behavior\n\n## Environment\n- Tenant: \n- Browser/Device: \n- Release/Version: \n\n## Severity\n[ ] Critical \u2014 blocks release\n[ ] High \n[ ] Medium \n[ ] Low \n\n## Links\n- Asana Project: \n- Related Story: `;
+      }
+      if (type === "cx_bug") {
+        return `## Summary\n${summary}\n\n## Customer / Tenant\n- Reported by: \n- Tenant name: \n- Severity to customer: \n\n## Description\n${text}\n\n## Steps to Reproduce\n1. \n2. \n3. \n\n## Expected Behavior\n\n## Actual Behavior\n\n## Workaround Available?\n[ ] Yes \n[ ] No\n\n## Release Blocker?\n[ ] Yes\n[ ] No\n\n## Links\n- Asana Project: \n- Support ticket / Slack thread: `;
+      }
+      if (type === "story") {
+        return `Summary: "${summary}"\n\n## PRD link\n\n## Introduction\n${text}\n\nAs a [user], I want [goal] so that [value].\n\n## Use cases\n## Use case 1: \n\n## Edge cases\n1. \n\n## Out of scope\n1. `;
+      }
+      if (type === "research") {
+        return `## Summary\n${summary}\n\n## Objective\n${text}\n\n## Methodology\n\n## Findings\n\n## Next Steps`;
+      }
+      // Default / Task
+      return `## Summary\n${summary}\n\n## Introduction\n${text}\n\n## Acceptance Criteria\n- [ ] \n\n## Links\n- Asana Project: \n- Figma Designs: `;
+    }
+
+    if (name === "capture_task") {
+      const { text } = args as any;
+      const lower = text.toLowerCase();
+
+      // Phase signals
+      const isUat = /blocker|broken|not working|regression|can't|failing|can not/.test(lower);
+      const isRelease = /\bprep\b|\bdemo\b|connect with|\bkb\b|launch plan/.test(lower);
+
+      // Type classification
+      const isCxBug = /cx bug|customer bug|tenant/.test(lower);
+      const isBug = !isCxBug && (isUat || /\bbug\b|\bbroken\b|\bregression\b/.test(lower));
+      const isStory = /\buser story\b|\bstory\b/.test(lower);
+      const isResearch = /\bresearch\b|\bstudy\b|\binvestigate\b/.test(lower);
+      const isQafe = /\bqafe\b/.test(lower);
+      const isNewInitiative = /\bnew (initiative|project|roadmap)\b|\bnew feature\b/.test(lower) || (!isBug && !isCxBug && !isStory && !isResearch && !isQafe && /\bproject\b/.test(lower));
+      const isPmTask = isRelease || (!isNewInitiative && !isBug && !isCxBug && !isStory && !isResearch && !isQafe);
+
+      // Product area label
+      const productArea = inferProductArea(text);
+
+      // Project routing
+      let projectGid = "1208693459152262"; // PD - Small Projects fallback
+      if (/\bgp\b|granular perm/i.test(text)) projectGid = "1208693459152262";
+      else if (/\bnotes\b/i.test(text)) projectGid = "1211726272848115";
+      else if (/\benroll/i.test(text)) projectGid = "1211631356870657";
+
+      const results: string[] = [];
+
+      // Jira issue type
+      const issueTypeMap: Record<string, string> = {
+        bug: "10011", cx_bug: "10013", story: "10057",
+        research: "10064", task: "10009", qafe: "10065", project: "10000"
+      };
+      let jiraTypeId = issueTypeMap.task;
+      if (isBug) jiraTypeId = issueTypeMap.bug;
+      else if (isCxBug) jiraTypeId = issueTypeMap.cx_bug;
+      else if (isStory) jiraTypeId = issueTypeMap.story;
+      else if (isResearch) jiraTypeId = issueTypeMap.research;
+      else if (isQafe) jiraTypeId = issueTypeMap.qafe;
+      else if (isNewInitiative) jiraTypeId = issueTypeMap.project;
+
+      let asanaProjectGid: string | null = null;
+      let jiraKey: string | null = null;
+
+      // New initiative: create both Asana project + Jira Project issue
+      if (isNewInitiative) {
+        const asanaBody = JSON.stringify({
+          data: {
+            name: text.slice(0, 120),
+            notes: "",
+            workspace: "1123317448830974",
+            public: false
+          }
+        });
+        const asanaToken = process.env.ASANA_API_TOKEN ?? "";
+        const asanaRes = await httpsRequest(
+          "https://app.asana.com/api/1.0/projects", "POST",
+          { "Authorization": `Bearer ${asanaToken}`, "Content-Type": "application/json", "Accept": "application/json" },
+          asanaBody
+        );
+        const asanaJson = JSON.parse(asanaRes.data);
+        asanaProjectGid = asanaJson?.data?.gid ?? null;
+        const asanaName = asanaJson?.data?.name ?? text.slice(0, 80);
+        results.push(`✅ Asana project created: "${asanaName}"\n   Stage: Backlog | Team: Platform | Assignee: Ben\n   ⚠️ Set Stage, Release Quarter, Launch Plan manually in Asana UI`);
+
+        // Create linked Jira Project issue
+        const jiraToken = Buffer.from(`${process.env.ATLASSIAN_USER_EMAIL}:${process.env.ATLASSIAN_API_TOKEN}`).toString("base64");
+        const jiraSummary = `${productArea} — ${text}`;
+        const jiraBody = JSON.stringify({
+          fields: {
+            project: { key: "CBP" },
+            summary: jiraSummary,
+            issuetype: { id: "10000" },
+            assignee: { accountId: "629dfdc29b728c006a928e90" },
+            description: { type: "doc", version: 1, content: [{ type: "paragraph", content: [{ type: "text", text: text }] }] }
+          }
+        });
+        const jiraRes = await httpsRequest(
+          `https://api.atlassian.com/ex/jira/d4deabe8-6b83-4008-8fae-dfe274d33bfe/rest/api/3/issue`, "POST",
+          { "Authorization": `Basic ${jiraToken}`, "Content-Type": "application/json", "Accept": "application/json" },
+          jiraBody
+        );
+        const jiraJson = JSON.parse(jiraRes.data);
+        jiraKey = jiraJson?.key ?? null;
+        if (jiraKey) {
+          results.push(`✅ Jira Project created: ${jiraKey}\n   https://casecommons.atlassian.net/browse/${jiraKey}`);
+          if (asanaProjectGid) {
+            // Link Jira to Asana
+            const linkBody = JSON.stringify({ data: { custom_fields: { "1208818005809198": `https://casecommons.atlassian.net/browse/${jiraKey}` } } });
+            await httpsRequest(
+              `https://app.asana.com/api/1.0/projects/${asanaProjectGid}`, "PUT",
+              { "Authorization": `Bearer ${asanaToken}`, "Content-Type": "application/json", "Accept": "application/json" },
+              linkBody
+            );
+            results.push(`   JIRA Link field set on Asana project.`);
+          }
+        }
+        return { content: [{ type: "text", text: results.join("\n") }] };
+      }
+
+      // PM task → Asana task only
+      if (isPmTask) {
+        const asanaToken = process.env.ASANA_API_TOKEN ?? "";
+        const summaryText = `${productArea} — ${text}`;
+        const templateNotes = getPopulatedTemplate("task", productArea, text);
+        const taskBody = JSON.stringify({
+          data: {
+            name: summaryText.slice(0, 200),
+            notes: templateNotes,
+            projects: [projectGid],
+            assignee: "1208822152029926"
+          }
+        });
+        const res = await httpsRequest(
+          "https://app.asana.com/api/1.0/tasks", "POST",
+          { "Authorization": `Bearer ${asanaToken}`, "Content-Type": "application/json", "Accept": "application/json" },
+          taskBody
+        );
+        const json = JSON.parse(res.data);
+        const taskName = json?.data?.name ?? summaryText.slice(0, 100);
+        const taskGid = json?.data?.gid;
+        results.push(`✅ Asana task created: "${taskName}"\n   Project GID: ${projectGid} | Assignee: Ben${taskGid ? `\n   https://app.asana.com/0/${projectGid}/${taskGid}` : ""}`);
+        return { content: [{ type: "text", text: results.join("\n") }] };
+      }
+
+      // Engineering work → Jira only
+      const jiraToken = Buffer.from(`${process.env.ATLASSIAN_USER_EMAIL}:${process.env.ATLASSIAN_API_TOKEN}`).toString("base64");
+      const priority = isUat ? "Highest" : "Medium";
+      const summaryText = `${productArea} — ${text}`;
+      const typeKey = isBug ? "bug" : isCxBug ? "cx_bug" : isStory ? "story" : isResearch ? "research" : isQafe ? "qafe" : "task";
+      const descText = getPopulatedTemplate(typeKey, productArea, text);
+      const descParagraphs = descText.split("\n").map(line => ({
+        type: "paragraph", content: [{ type: "text", text: line || " " }]
+      }));
+
+      const jiraCreateBody = JSON.stringify({
+        fields: {
+          project: { key: "CBP" },
+          summary: summaryText,
+          issuetype: { id: jiraTypeId },
+          assignee: { accountId: "629dfdc29b728c006a928e90" },
+          description: { type: "doc", version: 1, content: descParagraphs }
+        }
+      });
+      const jiraHeaders = { "Authorization": `Basic ${jiraToken}`, "Content-Type": "application/json", "Accept": "application/json" };
+      const jiraCreateRes = await httpsRequest(
+        `https://api.atlassian.com/ex/jira/d4deabe8-6b83-4008-8fae-dfe274d33bfe/rest/api/3/issue`, "POST",
+        jiraHeaders,
+        jiraCreateBody
+      );
+      const jiraCreateJson = JSON.parse(jiraCreateRes.data);
+      const key = jiraCreateJson?.key ?? null;
+      if (!key) throw new Error(`Jira creation failed: ${jiraCreateRes.data}`);
+
+      // Workaround for double-escaping: follow up with PUT
+      const jiraEditBody = JSON.stringify({
+        fields: { description: { type: "doc", version: 1, content: descParagraphs } }
+      });
+      await httpsRequest(`https://api.atlassian.com/ex/jira/d4deabe8-6b83-4008-8fae-dfe274d33bfe/rest/api/3/issue/${key}`, "PUT", jiraHeaders, jiraEditBody).catch(() => {});
+
+      const typeLabel = isBug ? "Bug" : isCxBug ? "CX Bug" : isStory ? "Story" : isResearch ? "Research" : isQafe ? "QAFE" : "Task";
+      results.push(`✅ Jira ${typeLabel} created: ${key}\n   https://casecommons.atlassian.net/browse/${key}\n   Priority: ${priority}`);
+      if (isBug || isCxBug) results.push(`   ⚠️ Checkbox fields require manual conversion in Jira UI`);
+      return { content: [{ type: "text", text: results.join("\n") }] };
+    }
+
+    if (name === "create_asana_project") {
+      const { name: projName, notes = "", team_gid = "1208820967756799" } = args as any;
+      const asanaToken = process.env.ASANA_API_TOKEN ?? "";
+      const body = JSON.stringify({
+        data: { name: projName, notes, workspace: "1123317448830974", team: team_gid, public: false }
+      });
+      const res = await httpsRequest(
+        "https://app.asana.com/api/1.0/projects", "POST",
+        { "Authorization": `Bearer ${asanaToken}`, "Content-Type": "application/json", "Accept": "application/json" },
+        body
+      );
+      const json = JSON.parse(res.data);
+      if (!json?.data?.gid) throw new Error(`Asana project creation failed: ${res.data}`);
+      return { content: [{ type: "text", text: `✅ Asana project created: "${json.data.name}"\n   GID: ${json.data.gid}\n   ⚠️ Set Stage, Release Quarter, Launch Plan, JIRA Link manually in Asana UI` }] };
+    }
+
+    if (name === "create_asana_task") {
+      const { name: taskName, notes = "", project_gid, due_on } = args as any;
+      const asanaToken = process.env.ASANA_API_TOKEN ?? "";
+      const data: any = { name: taskName, notes, projects: [project_gid], assignee: "1208822152029926" };
+      if (due_on) data.due_on = due_on;
+      const body = JSON.stringify({ data });
+      const res = await httpsRequest(
+        "https://app.asana.com/api/1.0/tasks", "POST",
+        { "Authorization": `Bearer ${asanaToken}`, "Content-Type": "application/json", "Accept": "application/json" },
+        body
+      );
+      const json = JSON.parse(res.data);
+      if (!json?.data?.gid) throw new Error(`Asana task creation failed: ${res.data}`);
+      return { content: [{ type: "text", text: `✅ Asana task created: "${json.data.name}"\n   GID: ${json.data.gid} | Project: ${project_gid} | Assignee: Ben${due_on ? ` | Due: ${due_on}` : ""}` }] };
+    }
+
+    if (name === "create_jira_issue") {
+      const { summary, issue_type_id, description, priority = "Medium", labels = [] } = args as any;
+      const jiraToken = Buffer.from(`${process.env.ATLASSIAN_USER_EMAIL}:${process.env.ATLASSIAN_API_TOKEN}`).toString("base64");
+      const headers = { "Authorization": `Basic ${jiraToken}`, "Content-Type": "application/json", "Accept": "application/json" };
+      const baseUrl = `https://api.atlassian.com/ex/jira/d4deabe8-6b83-4008-8fae-dfe274d33bfe/rest/api/3/issue`;
+
+      // Build ADF description
+      const descParagraphs = description.split("\n").map((line: string) => ({
+        type: "paragraph",
+        content: [{ type: "text", text: line || " " }]
+      }));
+      const createBody = JSON.stringify({
+        fields: {
+          project: { key: "CBP" },
+          summary,
+          issuetype: { id: issue_type_id },
+          assignee: { accountId: "629dfdc29b728c006a928e90" },
+          labels,
+          description: { type: "doc", version: 1, content: descParagraphs }
+        }
+      });
+      const createRes = await httpsRequest(baseUrl, "POST", headers, createBody);
+      const createJson = JSON.parse(createRes.data);
+      if (!createJson?.key) throw new Error(`Jira issue creation failed: ${createRes.data}`);
+      const key = createJson.key;
+
+      // Fix formatting: follow up with PUT to re-apply description (workaround for double-escape)
+      const editBody = JSON.stringify({
+        fields: { description: { type: "doc", version: 1, content: descParagraphs } }
+      });
+      await httpsRequest(`${baseUrl}/${key}`, "PUT", headers, editBody).catch(() => {});
+
+      const typeNames: Record<string, string> = { "10000": "Project", "10057": "Story", "10011": "Bug", "10013": "CX Bug", "10064": "Research", "10009": "Task", "10065": "QAFE" };
+      const typeName = typeNames[issue_type_id] ?? "Issue";
+      let msg = `✅ Jira ${typeName} created: ${key}\n   https://casecommons.atlassian.net/browse/${key}\n   Priority: ${priority}`;
+      if (["10011", "10013"].includes(issue_type_id)) msg += `\n   ⚠️ Checkbox fields (- [ ]) require manual conversion in Jira UI`;
+      return { content: [{ type: "text", text: msg }] };
+    }
+
+    if (name === "link_asana_jira") {
+      const { asana_project_gid, jira_issue_key } = args as any;
+      const asanaToken = process.env.ASANA_API_TOKEN ?? "";
+      const jiraUrl = `https://casecommons.atlassian.net/browse/${jira_issue_key}`;
+      const body = JSON.stringify({ data: { custom_fields: { "1208818005809198": jiraUrl } } });
+      const res = await httpsRequest(
+        `https://app.asana.com/api/1.0/projects/${asana_project_gid}`, "PUT",
+        { "Authorization": `Bearer ${asanaToken}`, "Content-Type": "application/json", "Accept": "application/json" },
+        body
+      );
+      if (res.status >= 400) throw new Error(`Failed to set JIRA Link: ${res.data}`);
+      return { content: [{ type: "text", text: `✅ JIRA Link set on Asana project ${asana_project_gid}\n   → ${jiraUrl}` }] };
+    }
+
+    // --- EDIT ---
+    if (name === "edit_asana_task") {
+      const { task_gid, name: taskName, notes, due_on } = args as any;
+      const asanaToken = process.env.ASANA_API_TOKEN ?? "";
+      const data: any = {};
+      if (taskName) data.name = taskName;
+      if (notes !== undefined) data.notes = notes;
+      if (due_on) data.due_on = due_on;
+      const res = await httpsRequest(
+        `https://app.asana.com/api/1.0/tasks/${task_gid}`, "PUT",
+        { "Authorization": `Bearer ${asanaToken}`, "Content-Type": "application/json", "Accept": "application/json" },
+        JSON.stringify({ data })
+      );
+      if (res.status >= 400) throw new Error(`Failed to edit task: ${res.data}`);
+      const json = JSON.parse(res.data);
+      return { content: [{ type: "text", text: `✅ Asana task updated: "${json.data?.name}"\n   GID: ${task_gid}` }] };
+    }
+
+    if (name === "edit_asana_project") {
+      const { project_gid, name: projName, notes } = args as any;
+      const asanaToken = process.env.ASANA_API_TOKEN ?? "";
+      const data: any = {};
+      if (projName) data.name = projName;
+      if (notes !== undefined) data.notes = notes;
+      const res = await httpsRequest(
+        `https://app.asana.com/api/1.0/projects/${project_gid}`, "PUT",
+        { "Authorization": `Bearer ${asanaToken}`, "Content-Type": "application/json", "Accept": "application/json" },
+        JSON.stringify({ data })
+      );
+      if (res.status >= 400) throw new Error(`Failed to edit project: ${res.data}`);
+      const json = JSON.parse(res.data);
+      return { content: [{ type: "text", text: `✅ Asana project updated: "${json.data?.name}"\n   GID: ${project_gid}` }] };
+    }
+
+    if (name === "edit_jira_issue") {
+      const { issue_key, summary, description } = args as any;
+      const jiraToken = Buffer.from(`${process.env.ATLASSIAN_USER_EMAIL}:${process.env.ATLASSIAN_API_TOKEN}`).toString("base64");
+      const fields: any = {};
+      if (summary) fields.summary = summary;
+      if (description) {
+        const paragraphs = description.split("\n").map((line: string) => ({
+          type: "paragraph", content: [{ type: "text", text: line || " " }]
+        }));
+        fields.description = { type: "doc", version: 1, content: paragraphs };
+      }
+      const res = await httpsRequest(
+        `https://api.atlassian.com/ex/jira/d4deabe8-6b83-4008-8fae-dfe274d33bfe/rest/api/3/issue/${issue_key}`, "PUT",
+        { "Authorization": `Basic ${jiraToken}`, "Content-Type": "application/json", "Accept": "application/json" },
+        JSON.stringify({ fields })
+      );
+      if (res.status >= 400) throw new Error(`Failed to edit issue: ${res.data}`);
+      return { content: [{ type: "text", text: `✅ Jira issue updated: ${issue_key}\n   https://casecommons.atlassian.net/browse/${issue_key}` }] };
+    }
+
+    // --- DELETE ---
+    if (name === "delete_asana_task") {
+      const { task_gid } = args as any;
+      const asanaToken = process.env.ASANA_API_TOKEN ?? "";
+      const res = await httpsRequest(
+        `https://app.asana.com/api/1.0/tasks/${task_gid}`, "DELETE",
+        { "Authorization": `Bearer ${asanaToken}`, "Accept": "application/json" }
+      );
+      if (res.status >= 400) throw new Error(`Failed to delete task: ${res.data}`);
+      return { content: [{ type: "text", text: `🗑️ Asana task ${task_gid} deleted.` }] };
+    }
+
+    if (name === "delete_asana_project") {
+      const { project_gid } = args as any;
+      const asanaToken = process.env.ASANA_API_TOKEN ?? "";
+      const res = await httpsRequest(
+        `https://app.asana.com/api/1.0/projects/${project_gid}`, "DELETE",
+        { "Authorization": `Bearer ${asanaToken}`, "Accept": "application/json" }
+      );
+      if (res.status >= 400) throw new Error(`Failed to delete project: ${res.data}`);
+      return { content: [{ type: "text", text: `🗑️ Asana project ${project_gid} deleted.` }] };
+    }
+
+    if (name === "delete_jira_issue") {
+      const { issue_key } = args as any;
+      const jiraToken = Buffer.from(`${process.env.ATLASSIAN_USER_EMAIL}:${process.env.ATLASSIAN_API_TOKEN}`).toString("base64");
+      const res = await httpsRequest(
+        `https://api.atlassian.com/ex/jira/d4deabe8-6b83-4008-8fae-dfe274d33bfe/rest/api/3/issue/${issue_key}`, "DELETE",
+        { "Authorization": `Basic ${jiraToken}`, "Accept": "application/json" }
+      );
+      if (res.status >= 400) throw new Error(`Failed to delete issue: ${res.data}`);
+      return { content: [{ type: "text", text: `🗑️ Jira issue ${issue_key} deleted.` }] };
     }
 
     throw new Error(`Tool not found: ${name}`);

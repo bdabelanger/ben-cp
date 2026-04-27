@@ -1,11 +1,9 @@
-# Implementation Plan: Triage Overdue Tasks
-
-> **Prepared by:** Code (Gemini) (2026-04-27)
-> **Assigned to:** Cowork (Sonnet 4.6)
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
-> **Priority:** P2
-> **STATUS**: 🔲 READY — pick up 2026-04-27
-
+---
+title: Triage Overdue Tasks
+priority: P2
+assigned_to: Cowork (Sonnet 4.6)
+status: READY
+date: 2026-04-27
 ---
 
 # Implementation Plan: Triage Overdue Tasks

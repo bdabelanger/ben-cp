@@ -1,3 +1,10 @@
+---
+title: Services WLV - Bulk actions
+type: launch_plan
+domain: product/projects/q2
+status: active
+---
+
 # Launch Plan: Services WLV - Bulk actions
 
 <h1 local-id="567182454ad4">

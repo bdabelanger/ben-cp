@@ -1,3 +1,10 @@
+---
+title: Notes - Bulk Service Notes
+type: prd
+domain: product/projects/q2
+status: active
+---
+
 # PRD: Notes - Bulk Service Notes
 
 <table ac:local-id="34330ffad1db" data-layout="default" data-table-width="760">

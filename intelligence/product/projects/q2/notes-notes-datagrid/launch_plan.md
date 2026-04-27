@@ -1,3 +1,10 @@
+---
+title: Notes - Notes datagrid
+type: launch_plan
+domain: product/projects/q2
+status: active
+---
+
 # Launch Plan: Notes - Notes datagrid
 
 <h1 local-id="880457ffbe3b">

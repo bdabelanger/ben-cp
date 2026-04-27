@@ -1,3 +1,10 @@
+---
+title: Enrollment dialog - Bulk Services section
+type: launch_plan
+domain: product/projects/q2
+status: active
+---
+
 # Launch Plan: Enrollment dialog - Bulk Services section
 
 <h1 local-id="567182454ad4">

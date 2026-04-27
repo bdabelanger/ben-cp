@@ -1,8 +1,9 @@
 ---
-title: Claude Code Implementation Plan Agent Antigravity (Gemini)
+title: 'Claude Code Implementation Plan: Agent ''Antigravity'' (Gemini)'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Claude Code Implementation Plan: Agent 'Antigravity' (Gemini)
 

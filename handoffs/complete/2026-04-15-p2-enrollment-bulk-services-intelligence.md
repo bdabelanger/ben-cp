@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan Enrollment Bulk Services Intelligence Update
+title: 'Implementation Plan: Enrollment Bulk Services Intelligence Update'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Enrollment Bulk Services Intelligence Update
 

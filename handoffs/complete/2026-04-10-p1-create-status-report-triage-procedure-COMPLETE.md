@@ -1,8 +1,9 @@
 ---
-title: Handoff Status Report Triage Procedure
+title: 'Handoff: Status Report Triage Procedure'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Handoff: Status Report Triage Procedure
 

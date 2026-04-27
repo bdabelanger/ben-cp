@@ -1,8 +1,9 @@
 ---
-title: index
+title: Tasks Index
 type: index
 domain: skills/tasks
 ---
+
 
 # Tasks Index
 

@@ -1,8 +1,14 @@
 ---
-title: PRD Notes - Notes datagrid
+title: 'PRD: Notes - Notes datagrid'
 type: prd
 domain: intelligence/product/projects/q2/notes-notes-datagrid
+links:
+  asana: https://app.asana.com/1/1123317448830974/project/1209963394727039/list/1209964105788152">
+  jira: https://casecommons.atlassian.net/browse/CBP-2614">
+  figma: https://www.figma.com/design/zKrIJ9YTASVYoA6BkZWjaQ/Notes-WLV?node-id=174-1754&amp;t=VCEMGDxVowGWFKhq-1">
+  google-drive: https://drive.google.com/drive/folders/1Y9UKczQRxRBXxgoy-GF9il2kzG_nRWh7">
 ---
+
 
 # PRD: Notes - Notes datagrid
 

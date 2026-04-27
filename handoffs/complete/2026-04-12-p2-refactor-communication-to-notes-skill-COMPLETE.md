@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan refactor-communication-to-notes-skill
+title: 'Implementation Plan: refactor-communication-to-notes-skill'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: refactor-communication-to-notes-skill
 

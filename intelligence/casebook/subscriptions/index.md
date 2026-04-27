@@ -1,8 +1,9 @@
 ---
-title: Skill Casebook Subscriptions MCP
+title: 'Skill: Casebook Subscriptions MCP'
 type: index
 domain: intelligence/casebook/subscriptions
 ---
+
 
 # Skill: Casebook Subscriptions MCP
 

@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan TEST Gemma Completion Workflow Verification
+title: 'Implementation Plan: TEST: Gemma Completion Workflow Verification'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: TEST: Gemma Completion Workflow Verification
 

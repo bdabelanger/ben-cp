@@ -4,7 +4,7 @@ import os, json, re
 from datetime import datetime
 
 VAULT_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
-OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream')
+OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream', 'data', 'raw')
 
 SKIP_DIRS = {'.git', '__pycache__', 'node_modules', 'archived', 'archive', 'complete'}
 SKIP_SCHEMES = ('http://', 'https://', 'mailto:', 'ftp://', '#')
@@ -18,21 +18,45 @@ def collect_md_files():
                 files.append(os.path.join(root, f))
     return files
 
+def strip_code_blocks(content):
+    # Remove fenced code blocks (``` ... ```) to avoid false positives
+    return re.sub(r'```.*?```', '', content, flags=re.DOTALL)
+
 def extract_links(path):
     try:
         with open(path, errors='replace') as f:
-            content = f.read()
+            raw = f.read()
     except OSError:
         return []
+    content = strip_code_blocks(raw)
     links = []
     # [[wiki-links]]
     for m in re.finditer(r'\[\[([^\]]+)\]\]', content):
         links.append(('wiki', m.group(1).strip()))
-    for m in re.finditer(r'\[([^\]]*)\]\(([^ \n]+)\)', content):
-        target = m.group(2).strip().split('#')[0].rstrip(')')
-        if not target or any(target.startswith(s) for s in SKIP_SCHEMES):
-            continue
-        links.append(('md', target))
+    
+    import urllib.parse
+    idx = 0
+    while True:
+        idx = content.find('](', idx)
+        if idx == -1: break
+        start = idx + 2
+        parens = 1
+        end = start
+        while end < len(content):
+            if content[end] == '(': parens += 1
+            elif content[end] == ')': parens -= 1
+            if parens == 0: break
+            end += 1
+        if parens == 0:
+            target = content[start:end].strip()
+            if target.startswith('<') and target.endswith('>'):
+                target = target[1:-1]
+            target = target.split('#')[0].strip()
+            target = target.split()[0] if target else ''
+            target = urllib.parse.unquote(target)
+            if target and not target.startswith(SKIP_SCHEMES):
+                links.append(('md', target))
+        idx = end + 1
     return links
 
 def resolve(link_target, source_path):

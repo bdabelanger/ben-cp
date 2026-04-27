@@ -1,8 +1,9 @@
 ---
-title: Protocol Nightly Dream Cycle  Quartermaster Loop
+title: 'Protocol: Nightly Dream Cycle & Quartermaster Loop'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Protocol: Nightly Dream Cycle & Quartermaster Loop
 

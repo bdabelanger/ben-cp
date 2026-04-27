@@ -1,8 +1,9 @@
 ---
-title: Claude Code Implementation Plan Changelog Fact-Check Fixes
+title: 'Claude Code Implementation Plan: Changelog Fact-Check Fixes'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Claude Code Implementation Plan: Changelog Fact-Check Fixes
 

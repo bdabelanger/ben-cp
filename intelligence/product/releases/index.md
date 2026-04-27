@@ -53,4 +53,4 @@ domain: intelligence/product/releases
 - [07-09-2026](7-9-2026-release.md)
 - [07-23-2026](7-23-2026-release.md)
 
-## Navigation
+## Links

@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan product-skill-consolidation
+title: 'Implementation Plan: product-skill-consolidation'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: product-skill-consolidation
 

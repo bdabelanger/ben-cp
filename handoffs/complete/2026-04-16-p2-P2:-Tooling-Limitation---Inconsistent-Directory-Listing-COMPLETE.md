@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan P2 Tooling Limitation - Inconsistent Directory Listing
+title: 'Implementation Plan: P2: Tooling Limitation - Inconsistent Directory Listing'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: P2: Tooling Limitation - Inconsistent Directory Listing
 

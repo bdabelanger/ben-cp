@@ -1,8 +1,9 @@
 ---
-title: Slide 24  Sign  Lock Notes (Q2)
+title: Slide 24 — Sign & Lock Notes (Q2)
 type: intelligence
 domain: intelligence/product/shareout/q2
 ---
+
 
 # Slide 24 — Sign & Lock Notes (Q2)
 

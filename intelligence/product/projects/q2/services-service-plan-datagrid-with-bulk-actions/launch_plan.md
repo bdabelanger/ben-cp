@@ -1,8 +1,11 @@
 ---
-title: Launch Plan Services - Service plan datagrid with bulk actions
+title: 'Launch Plan: Services - Service plan datagrid with bulk actions'
 type: intelligence
 domain: intelligence/product/projects/q2/services-service-plan-datagrid-with-bulk-actions
+links:
+  asana: https://app.asana.com/1/1123317448830974/project/1211631356870657/list/1211631441454418">
 ---
+
 
 # Launch Plan: Services - Service plan datagrid with bulk actions
 

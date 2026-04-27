@@ -1,8 +1,11 @@
 ---
-title: Launch Plan Enrollment dialog - Bulk Services section
+title: 'Launch Plan: Enrollment dialog - Bulk Services section'
 type: intelligence
 domain: intelligence/product/projects/q2/enrollment-dialog-bulk-services-section
+links:
+  asana: https://app.asana.com/1/1123317448830974/project/1211631356870657/list/1211631441454418">
 ---
+
 
 # Launch Plan: Enrollment dialog - Bulk Services section
 

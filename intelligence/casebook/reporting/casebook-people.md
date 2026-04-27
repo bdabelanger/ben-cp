@@ -1,8 +1,9 @@
 ---
-title: Dataset People
+title: 'Dataset: People'
 type: intelligence
 domain: intelligence/casebook/reporting
 ---
+
 
 # Dataset: People
 

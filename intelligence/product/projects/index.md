@@ -1,10 +1,11 @@
 ---
-title: '- Asana Custom Field GID Reference(......skillspipelinesasanaschemasasana-custom-fields.md)'
+title: '- Asana Custom Field GID Reference'
 type: index
 domain: intelligence/product/projects
 ---
 
-# - [Asana Custom Field GID Reference](../../../skills/pipelines/asana/schemas/asana-custom-fields.md)
+
+# - [Asana Custom Field GID Reference](../../../skills/asana/schemas/asana-custom-fields.md)
 
 
 ## Product Projects Index

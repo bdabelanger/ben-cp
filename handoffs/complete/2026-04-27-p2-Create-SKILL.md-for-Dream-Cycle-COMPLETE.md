@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan Create SKILL.md for Dream Cycle
+title: 'Implementation Plan: Create SKILL.md for Dream Cycle'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Create SKILL.md for Dream Cycle
 

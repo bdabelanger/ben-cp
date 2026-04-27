@@ -1,8 +1,9 @@
 ---
-title: Local (Gemma 2 27B)  Agent Role File
+title: Local (Gemma 2 27B) — Agent Role File
 type: agent
 domain: agents
 ---
+
 
 # Local (Gemma 2 27B) — Agent Role File
 

@@ -1,8 +1,9 @@
 ---
-title: Slide 27  Global Notes WLV (Q2)
+title: Slide 27 — Global Notes WLV (Q2)
 type: intelligence
 domain: intelligence/product/shareout/q2
 ---
+
 
 # Slide 27 — Global Notes WLV (Q2)
 

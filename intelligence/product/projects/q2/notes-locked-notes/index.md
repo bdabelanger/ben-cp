@@ -2,7 +2,12 @@
 title: Notes - Locked Notes
 type: index
 domain: intelligence/product/projects/q2/notes-locked-notes
+links:
+  asana: https://app.asana.com/1/1123317448830974/projects/1211786365522017
+  jira: https://casecommons.atlassian.net/browse/CBP-2923
+  confluence: https://casecommons.atlassian.net/wiki/x/A4AN9
 ---
+
 
 # Notes - Locked Notes
 

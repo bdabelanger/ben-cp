@@ -1,8 +1,9 @@
 ---
-title: Status Mapping Rules OKR Health Logic
+title: 'Status Mapping Rules: OKR Health Logic'
 type: task
 domain: skills/status/schemas
 ---
+
 
 # Status Mapping Rules: OKR Health Logic
 

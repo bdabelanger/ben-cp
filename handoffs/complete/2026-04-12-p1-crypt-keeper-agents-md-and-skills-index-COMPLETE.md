@@ -1,8 +1,9 @@
 ---
-title: Claude Code Implementation Plan Fix AGENTS.md and skillsindex.md
+title: 'Claude Code Implementation Plan: Fix AGENTS.md and skills/index.md'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Claude Code Implementation Plan: Fix AGENTS.md and skills/index.md
 

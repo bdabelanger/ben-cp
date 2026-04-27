@@ -171,7 +171,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     // --- ART & MEDIA ---
     {
       name: "add_art",
-      description: "Contribute a new piece of digital art (poem, sketch, prompt, etc) to the vault's intelligence/art domain.",
+      description: "Contribute a new piece of digital art (poem, sketch, prompt, etc) to the vault's agents/art domain.",
       inputSchema: {
         type: "object",
         properties: {
@@ -544,7 +544,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     // --- ART & MEDIA ---
     if (name === "add_art") {
       const { name: fileName, title, agent, content } = args as any;
-      const artRoot = path.resolve(rootPath, "intelligence/art");
+      const artRoot = path.resolve(rootPath, "agents/art");
       await fs.mkdir(artRoot, { recursive: true });
       const sanitizedFilename = ensureSingleExtension(fileName);
       const fullPath = path.join(artRoot, sanitizedFilename);
@@ -572,7 +572,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     }
 
     if (name === "list_art") {
-      const artRoot = path.resolve(rootPath, "intelligence/art");
+      const artRoot = path.resolve(rootPath, "agents/art");
       const entries = await fs.readdir(artRoot, { withFileTypes: true });
       const files = entries
         .filter(e => !e.name.startsWith(".") && e.name.endsWith(".md") && e.name !== "index.md" && e.name !== "changelog.md")
@@ -582,8 +582,8 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
     if (name === "get_art") {
       const { path: relPath } = args as any;
-      const artRoot = path.resolve(rootPath, "intelligence/art");
-      const normalized = String(relPath).startsWith("intelligence/art/") ? String(relPath).slice(17) : (String(relPath).startsWith("art/") ? String(relPath).slice(4) : relPath);
+      const artRoot = path.resolve(rootPath, "agents/art");
+      const normalized = String(relPath).startsWith("agents/art/") ? String(relPath).slice(11) : (String(relPath).startsWith("art/") ? String(relPath).slice(4) : relPath);
       const fullPath = path.resolve(artRoot, normalized);
       const content = await fs.readFile(fullPath, "utf-8");
       return { content: [{ type: "text", text: content }] };
@@ -800,7 +800,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       let cmdArgs: string[] = [];
 
       if (skill === "platform") {
-        script = path.resolve(rootPath, "skills/pipelines/status/run.py");
+        script = path.resolve(rootPath, "skills/status/run.py");
         cmdArgs = ["--force", "--team", "platform"];
       } else if (skill === "dream" || skill === "reporting") {
         script = path.resolve(rootPath, "skills/dream/run.py");

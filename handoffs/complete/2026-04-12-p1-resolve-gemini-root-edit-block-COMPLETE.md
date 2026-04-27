@@ -1,8 +1,9 @@
 ---
-title: Handoff Resolve Gemini Root Edit Block and MCP Traversal
+title: 'Handoff: Resolve Gemini Root Edit Block and MCP Traversal'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Handoff: Resolve Gemini Root Edit Block and MCP Traversal
 

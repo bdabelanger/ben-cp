@@ -1,8 +1,9 @@
 ---
-title: Dataset Cases
+title: 'Dataset: Cases'
 type: intelligence
 domain: intelligence/casebook/reporting
 ---
+
 
 # Dataset: Cases
 

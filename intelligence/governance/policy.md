@@ -15,11 +15,11 @@ domain: intelligence/governance
 
 | Layer | Lives in | Contents |
 | :--- | :--- | :--- |
-| Skill logic | `skills/` | `SKILL.md`, `character.md`, `index.md`, `changelog.md`, templates, report specs — anything defining *how* a skill works |
-| Execution tooling | `tools/` | Scripts, pipeline runners, and automation harnesses that *execute* a skill's procedure |
-| Live data / WIP | `inputs/` | Raw API responses, processed JSON, `manifest.json` — anything produced *during* a run |
-| Outputs | `outputs/` | Final reports, HTML, archives — anything *produced by* a run |
-| Vault source of truth | `intelligence/` | Logic stubs, status rules, domain knowledge, schema reference — gitignored optional |
+| **Skill logic** | `skills/` | `SKILL.md`, `character.md`, `index.md`, `changelog.md`, templates, report specs — anything defining *how* a skill works |
+| **Agent artifacts** | `agents/` | `logs/`, `sessions/`, `art/` — anything produced by an agent that isn't a strategic report |
+| **Live data / WIP** | `skills/inputs/` | Raw API responses, processed JSON, `manifest.json` — anything produced *during* a run |
+| **Outputs** | `skills/outputs/` | Final reports, HTML, archives — strategic reports produced by a run |
+| **Vault source of truth**| `intelligence/` | Domain knowledge and strategic core |
 
 ---
 
@@ -60,6 +60,19 @@ domain: intelligence/governance
 
 ---
 
+## Large File Convention
+
+To ensure transparency about repository size and token economy, any links to intentionally large binary or source files (e.g., PDFs > 750KB) must include an explicit size callout using the convention `_(SIZE)_` at the end of the markdown link in `index.md` files.
+
+Example:
+```markdown
+- [Q2 2026 Product Shareout PDF](source/Q2%202026%20Product%20Shareout.pdf) _(7.4MB)_
+```
+
+These files should also be added to the `IGNORE_LIST` in `skills/dream/sensors/context.py` to prevent them from triggering red flags in the nightly Dream cycle.
+
+---
+
 ## Known Migration Debt
 
 > Last updated: 2026-04-12. Items marked ✅ are resolved.
@@ -89,6 +102,3 @@ Per AGENTS.md §notes.md Write Policy, session `notes.md` files must be deleted 
 - `skills/orchestration/communication/notes.md`
 - `skills/orchestration/changelog/notes.md`
 - `skills/orchestration/access/notes.md`
-- `skills/intelligence/analysis/synthesize/notes.md`
-- `skills/intelligence/analysis/predict/notes.md`
-- `skills/intelligence/memory/notes.md`

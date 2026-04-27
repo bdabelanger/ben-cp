@@ -10,5 +10,5 @@ Vault source of truth for Objectives and Key Results.
 
 ## Quarterly Cycles
 
-## Resources
+## Links
 - [Data Sources](data_sources.md)

@@ -1,8 +1,9 @@
 ---
-title: Changelog Handoff Protocol
+title: 'Changelog: Handoff Protocol'
 type: changelog
 domain: skills/handoff
 ---
+
 
 # Changelog: Handoff Protocol
 

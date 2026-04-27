@@ -2,7 +2,11 @@
 title: Portal - Client Dashboard
 type: index
 domain: intelligence/product/projects/q2/portal-client-dashboard
+links:
+  asana: https://app.asana.com/1/1123317448830974/project/1213506659163435
+  confluence: https://casecommons.atlassian.net/wiki/x/AgCrBQE
 ---
+
 
 # Portal - Client Dashboard
 

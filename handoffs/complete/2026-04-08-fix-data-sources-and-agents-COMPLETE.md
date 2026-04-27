@@ -1,9 +1,10 @@
 ---
-title: Claude Code Implementation Plan Fix data_sources.md Portal Gaps  AGENTS.md
-  SKILL.md Exemption
+title: 'Claude Code Implementation Plan: Fix data_sources.md Portal Gaps + AGENTS.md
+  SKILL.md Exemption'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Claude Code Implementation Plan: Fix data_sources.md Portal Gaps + AGENTS.md SKILL.md Exemption
 

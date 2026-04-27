@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan finalize-enrollments-data-entry-shortcuts-baseline
+title: 'Implementation Plan: finalize-enrollments-data-entry-shortcuts-baseline'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: finalize-enrollments-data-entry-shortcuts-baseline
 

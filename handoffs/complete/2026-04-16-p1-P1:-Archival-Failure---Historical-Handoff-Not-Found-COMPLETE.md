@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan P1 Archival Failure - Historical Handoff Not Found
+title: 'Implementation Plan: P1: Archival Failure - Historical Handoff Not Found'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: P1: Archival Failure - Historical Handoff Not Found
 

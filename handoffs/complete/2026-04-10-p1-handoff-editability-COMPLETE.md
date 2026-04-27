@@ -1,8 +1,9 @@
 ---
-title: Claude Code Implementation Plan Handoff Editability Rule
+title: 'Claude Code Implementation Plan: Handoff Editability Rule'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Claude Code Implementation Plan: Handoff Editability Rule
 

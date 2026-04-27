@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan Gemma Remediation Datagrid Intelligence Mis-Write Correction
+title: 'Implementation Plan: Gemma Remediation: Datagrid Intelligence Mis-Write Correction'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Gemma Remediation: Datagrid Intelligence Mis-Write Correction
 

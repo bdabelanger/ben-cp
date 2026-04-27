@@ -1,9 +1,10 @@
 ---
-title: Implementation Plan Fix Agent Sensor False Positives - Bold Markdown in Report
-  Files
+title: 'Implementation Plan: Fix Agent Sensor False Positives - Bold Markdown in Report
+  Files'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Fix Agent Sensor False Positives - Bold Markdown in Report Files
 

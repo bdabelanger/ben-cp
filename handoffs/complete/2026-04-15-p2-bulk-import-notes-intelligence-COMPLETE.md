@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan Bulk Import for Notes Intelligence Update
+title: 'Implementation Plan: Bulk Import for Notes Intelligence Update'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Bulk Import for Notes Intelligence Update
 

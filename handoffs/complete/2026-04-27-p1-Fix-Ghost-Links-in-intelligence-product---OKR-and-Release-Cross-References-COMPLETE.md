@@ -1,9 +1,10 @@
 ---
-title: Implementation Plan Fix Ghost Links in intelligence-product - OKR and Release
-  Cross-References
+title: 'Implementation Plan: Fix Ghost Links in intelligence-product - OKR and Release
+  Cross-References'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Fix Ghost Links in intelligence-product - OKR and Release Cross-References
 

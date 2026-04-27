@@ -2,7 +2,10 @@
 title: Asana Custom Field GID Reference
 type: intelligence
 domain: intelligence/product/projects/source
+links:
+  jira: https://casecommons.atlassian.net/browse/CBP-XXXX`
 ---
+
 
 # Asana Custom Field GID Reference
 

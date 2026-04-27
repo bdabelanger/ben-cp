@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan skill-separation-architecture-policy
+title: 'Implementation Plan: skill-separation-architecture-policy'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: skill-separation-architecture-policy
 

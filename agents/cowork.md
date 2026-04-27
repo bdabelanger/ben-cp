@@ -1,8 +1,9 @@
 ---
-title: Cowork (Sonnet 4.6)  Agent Role File
+title: Cowork (Sonnet 4.6) — Agent Role File
 type: agent
 domain: agents
 ---
+
 
 # Cowork (Sonnet 4.6) — Agent Role File
 

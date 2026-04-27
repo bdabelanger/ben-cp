@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan Global Notes WLV Intelligence Update
+title: 'Implementation Plan: Global Notes WLV Intelligence Update'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Global Notes WLV Intelligence Update
 

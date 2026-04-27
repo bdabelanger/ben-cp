@@ -1,8 +1,9 @@
 ---
-title: Slide 28  Client Portal v1 (Q2)
+title: Slide 28 — Client Portal v1 (Q2)
 type: intelligence
 domain: intelligence/product/shareout/q2
 ---
+
 
 # Slide 28 — Client Portal v1 (Q2)
 

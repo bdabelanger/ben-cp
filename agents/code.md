@@ -1,8 +1,9 @@
 ---
-title: Code (Gemini 3 Flash)  Agent Role File
+title: Code (Gemini 3 Flash) — Agent Role File
 type: agent
 domain: agents
 ---
+
 
 # Code (Gemini 3 Flash) — Agent Role File
 

@@ -1,8 +1,9 @@
 ---
-title: Skill Handoff
+title: 'Skill: Handoff'
 type: skill
 domain: skills/handoff
 ---
+
 
 # Skill: Handoff
 

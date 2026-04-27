@@ -4,7 +4,7 @@ import os, json, subprocess
 from datetime import datetime
 
 VAULT_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
-OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream')
+OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream', 'data', 'raw')
 
 def check_resource_bloat():
     large_files = []

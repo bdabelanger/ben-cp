@@ -1,8 +1,9 @@
 ---
-title: KR Measurement SOP Notes Datagrid Navigation Shortcuts
+title: 'KR Measurement SOP: Notes Datagrid Navigation Shortcuts'
 type: intelligence
 domain: intelligence/product/okrs/q2/planning-services-at-scale
 ---
+
 
 # KR Measurement SOP: Notes Datagrid Navigation Shortcuts
 

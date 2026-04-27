@@ -1,8 +1,13 @@
 ---
-title: PRD Notes - Locked Notes
+title: 'PRD: Notes - Locked Notes'
 type: prd
 domain: intelligence/product/projects/q2/notes-locked-notes
+links:
+  asana: https://app.asana.com/1/1123317448830974/project/1211838817183809/list/1211840118612354">
+  jira: https://casecommons.atlassian.net/browse/CBP-2912">
+  figma: https://www.figma.com/design/HcwaonV58UklaK8NIgXEGN/Notes-redesign?node-id=38-7615&amp;t=NbQaB30TOD13nx3X-1">
 ---
+
 
 # PRD: Notes - Locked Notes
 

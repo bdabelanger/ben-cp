@@ -1,8 +1,9 @@
 ---
-title: Release 242026
+title: 'Release: 2/4/2026'
 type: release
 domain: intelligence/product/releases
 ---
+
 
 # Release: 2/4/2026
 

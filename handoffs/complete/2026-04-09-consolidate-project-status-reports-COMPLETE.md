@@ -1,9 +1,10 @@
 ---
-title: Claude Code Implementation Plan Consolidate Project Status Reports Pipeline
-  into skills
+title: 'Claude Code Implementation Plan: Consolidate Project Status Reports Pipeline
+  into skills/'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Claude Code Implementation Plan: Consolidate Project Status Reports Pipeline into skills/
 

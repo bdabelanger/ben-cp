@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan migrate-communication-to-notes-skill
+title: 'Implementation Plan: migrate-communication-to-notes-skill'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: migrate-communication-to-notes-skill
 

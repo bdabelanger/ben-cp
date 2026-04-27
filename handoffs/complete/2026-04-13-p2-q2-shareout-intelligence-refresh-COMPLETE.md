@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan Q2 Shareout  Intelligence Refresh from Updated Deck
+title: 'Implementation Plan: Q2 Shareout — Intelligence Refresh from Updated Deck'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Q2 Shareout — Intelligence Refresh from Updated Deck
 

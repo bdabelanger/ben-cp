@@ -1,8 +1,9 @@
 ---
-title: Code Implementation Plan Consolidating Skills into Intelligence
+title: 'Code Implementation Plan: Consolidating Skills into Intelligence'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Code Implementation Plan: Consolidating Skills into Intelligence
 

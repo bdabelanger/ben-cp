@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan gemma-pathing-tooling-issues
+title: 'Implementation Plan: gemma-pathing-tooling-issues'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: gemma-pathing-tooling-issues
 

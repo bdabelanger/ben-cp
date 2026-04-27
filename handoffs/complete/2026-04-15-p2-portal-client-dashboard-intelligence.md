@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan Client Portal Dashboard Intelligence Update
+title: 'Implementation Plan: Client Portal Dashboard Intelligence Update'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Client Portal Dashboard Intelligence Update
 

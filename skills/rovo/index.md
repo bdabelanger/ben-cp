@@ -1,8 +1,9 @@
 ---
-title: Atlassian Rovo SOP Status Report Synthesis
+title: 'Atlassian Rovo SOP: Status Report Synthesis'
 type: index
 domain: skills/rovo
 ---
+
 
 ## Standard Operating Procedures
 

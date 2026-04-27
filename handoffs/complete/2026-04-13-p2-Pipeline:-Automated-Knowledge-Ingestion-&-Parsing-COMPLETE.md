@@ -1,8 +1,9 @@
 ---
-title: Concept Automated Knowledge Ingestion  Parsing Pipeline
+title: 'Concept: Automated Knowledge Ingestion & Parsing Pipeline'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Concept: Automated Knowledge Ingestion & Parsing Pipeline
 

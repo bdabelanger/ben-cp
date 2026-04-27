@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan Crypt-Keeper  Structural Violations
+title: 'Implementation Plan: Crypt-Keeper — Structural Violations'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Crypt-Keeper — Structural Violations
 

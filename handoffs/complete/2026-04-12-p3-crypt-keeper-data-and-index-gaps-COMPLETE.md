@@ -1,8 +1,9 @@
 ---
-title: Any Agent Implementation Plan Data Sources Gap  Orphaned Index Entries
+title: 'Any Agent Implementation Plan: Data Sources Gap + Orphaned Index Entries'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Any Agent Implementation Plan: Data Sources Gap + Orphaned Index Entries
 

@@ -1,8 +1,9 @@
 ---
-title: Bug Triage CBP-2573
+title: 'Bug Triage: CBP-2573'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Bug Triage: CBP-2573
 

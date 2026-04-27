@@ -1,8 +1,9 @@
 ---
-title: Claude Code Implementation Plan Fix Orphaned Index Entries  Root Stub
+title: 'Claude Code Implementation Plan: Fix Orphaned Index Entries + Root Stub'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Claude Code Implementation Plan: Fix Orphaned Index Entries + Root Stub
 

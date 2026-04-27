@@ -1,8 +1,9 @@
 ---
-title: Slide 7  Notes Datagrid Optimized Review (Q1)
+title: 'Slide 7 — Notes Datagrid: Optimized Review (Q1)'
 type: intelligence
 domain: intelligence/product/shareout/q2
 ---
+
 
 # Slide 7 — Notes Datagrid: Optimized Review (Q1)
 

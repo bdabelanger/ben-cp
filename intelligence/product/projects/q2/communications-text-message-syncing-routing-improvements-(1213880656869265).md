@@ -2,7 +2,11 @@
 title: Communications - Text message syncing routing improvements
 type: intelligence
 domain: intelligence/product/projects/q2
+links:
+  asana: https://app.asana.com/1/1123317448830974/project/1213880656869265
+  jira: https://casecommons.atlassian.net/browse/CBP-3078
 ---
+
 
 # Communications - Text message syncing routing improvements
 

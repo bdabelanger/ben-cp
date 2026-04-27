@@ -1,8 +1,9 @@
 ---
-title: PRD Portal - Client Dashboard
+title: 'PRD: Portal - Client Dashboard'
 type: prd
 domain: intelligence/product/projects/q2/portal-client-dashboard
 ---
+
 
 # PRD: Portal - Client Dashboard
 

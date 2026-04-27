@@ -1,8 +1,9 @@
 ---
-title: AGENTS.md  Vault Agent Dispatch
+title: AGENTS.md — Vault Agent Dispatch
 type: agent
 domain: .
 ---
+
 
 # AGENTS.md — Vault Agent Dispatch
 
@@ -160,12 +161,10 @@ The user-cp is not currently connected on mobile. Dispatch cannot read vault fil
 
 The vault is organized into four distinct layers. Writing data files, scripts, or run artifacts into `skills/` is a violation.
 
-| Layer | Lives in | Contents |
-| :--- | :--- | :--- |
 | Skill logic | `skills/` | `SKILL.md`, `character.md`, `index.md`, `changelog.md`, templates, report specs |
 | Execution tooling | `skills/utilities/` | Scripts, pipeline runners, automation harnesses |
-| Live data / WIP | `skills/pipelines/inputs/` | Raw API responses, processed JSON, `manifest.json` |
-| Outputs | `skills/pipelines/outputs/` | Final reports, HTML, archives |
+| Live data / WIP | `skills/inputs/` | Raw API responses, processed JSON, `manifest.json` |
+| Outputs | `skills/outputs/` | Final reports, HTML, archives |
 | Vault source of truth | `intelligence/` | Domain knowledge and strategic core |
 | Core logic / Skills | `skills/` | Skill SOPs and procedural logic |
 | Reference source files | `intelligence/<domain>/<topic>/source/` | Raw input files (PDFs, TXTs, exports) tied to active work |
@@ -208,24 +207,22 @@ The human user will tell you which changelog scope is relevant for the session. 
 ```
 ben-cp/
 ├── AGENTS.md                        ← this file — read first, always
-├── agents/                          ← role-specific instructions per agent
+├── agents/                          ← role instructions AND agent artifacts
+│   ├── logs/                        ← automated run logs
+│   ├── sessions/                    ← notable session summaries
+│   └── art/                         ← agent creative output
 ├── skills/                          ← all skill SOPs and procedures
-│   ├── orchestration/               ← execution engine
-│   │   ├── pipelines/               ← consolidated pipeline domain
-│   │   │   ├── inputs/              ← live run data (raw API responses, manifests)
-│   │   │   └── outputs/             ← generated reports, audit logs, session artifacts
-│   │   ├── communications/          
-│   │   ├── handoffs/                
-│   │   ├── access/                  
-│   │   └── changelog/               
-│   ├── intelligence/                ← consolidated cognitive domain
-│   │   ├── memory/                  
-│   │   ├── analysis/                
-│   │   └── dream/                   
-│   ├── status/                      ← PM-facing status skill
-│   ├── rovo/                        
-│   ├── shared/                      
-│   └── styles/                      
+│   ├── asana/                       ← Asana harvest/push pipeline
+│   ├── intelligence/                ← Intelligence parsing pipeline
+│   ├── status/                      ← PM-facing status skill & report pipeline
+│   ├── tasks/                       ← Task sync pipeline
+│   ├── dream/                       ← Nightly synthesis cycle
+│   ├── handoff/                     ← Handoff management skill
+│   ├── rovo/                        ← Rovo context generator
+│   ├── styles/                      ← Visual standards & emoji keys
+│   ├── utilities/                   ← Vault-wide scripts & helpers
+│   ├── inputs/                      ← Live run data (API responses)
+│   └── outputs/                     ← Generated reports & audit logs
 ├── changelog.md                     ← root project changelog (versioned milestones)
 ├── handoffs/                        ← open cross-agent implementation plans (READY)
 │   └── complete/                    ← executed handoffs (COMPLETE)
@@ -291,8 +288,8 @@ If a required tool call fails (e.g., `add_changelog`, `edit_file`, or path-based
 | synthesis / analysis | `skills/intelligence/analysis/` |
 | nightly orchestration | `skills/intelligence/dream/` |
 | other skill sops | `skills/[skill-name]/` |
-| audit reports | `skills/pipelines/outputs/memory/audit/audit-report-[TARGET]-[YYYY-MM-DD].md` |
-| Access audit reports | `skills/pipelines/outputs/access/access-report-[YYYY-MM-DD].md` |
+| audit reports | `skills/outputs/memory/audit/audit-report-[TARGET]-[YYYY-MM-DD].md` |
+| Access audit reports | `skills/outputs/access/access-report-[YYYY-MM-DD].md` |
 
 **Never create files at vault root** (except `AGENTS.md`, `changelog.md`, `README.md`).
 

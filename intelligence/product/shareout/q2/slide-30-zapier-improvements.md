@@ -1,8 +1,9 @@
 ---
-title: Slide 30  Better No-Code Automations Zapier (Q2)
+title: 'Slide 30 — Better No-Code Automations: Zapier (Q2)'
 type: intelligence
 domain: intelligence/product/shareout/q2
 ---
+
 
 # Slide 30 — Better No-Code Automations: Zapier (Q2)
 

@@ -1,8 +1,9 @@
 ---
-title: Claude Code Implementation Plan Agent Robert Creation
+title: 'Claude Code Implementation Plan: Agent ''Robert'' Creation'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Claude Code Implementation Plan: Agent 'Robert' Creation
 

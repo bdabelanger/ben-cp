@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan Restore Task Capture Templates to Intelligence Domain
+title: 'Implementation Plan: Restore Task Capture Templates to Intelligence Domain'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Restore Task Capture Templates to Intelligence Domain
 

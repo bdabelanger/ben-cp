@@ -1,8 +1,9 @@
 ---
-title: Action Required Video Production  Notes Table Filtering  Preview Demo
+title: 'Action Required: Video Production — Notes Table Filtering & Preview Demo'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Action Required: Video Production — Notes Table Filtering & Preview Demo
 

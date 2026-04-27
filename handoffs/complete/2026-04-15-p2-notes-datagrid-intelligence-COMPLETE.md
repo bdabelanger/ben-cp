@@ -1,8 +1,9 @@
 ---
-title: orchestrationhandoff2026-04-15-p2-notes-datagrid-intelligence.md
+title: orchestration/handoff/2026-04-15-p2-notes-datagrid-intelligence.md
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # orchestration/handoff/2026-04-15-p2-notes-datagrid-intelligence.md
 

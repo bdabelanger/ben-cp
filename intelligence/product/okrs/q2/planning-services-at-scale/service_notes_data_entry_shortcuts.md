@@ -1,8 +1,9 @@
 ---
-title: KR Measurement SOP Service Notes  Data Entry Shortcuts
+title: 'KR Measurement SOP: Service Notes — Data Entry Shortcuts'
 type: intelligence
 domain: intelligence/product/okrs/q2/planning-services-at-scale
 ---
+
 
 # KR Measurement SOP: Service Notes — Data Entry Shortcuts
 

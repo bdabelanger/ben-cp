@@ -1,8 +1,9 @@
 ---
-title: Claude Code Implementation Plan Move reports into skillsknowledge
+title: 'Claude Code Implementation Plan: Move reports/ into skills/knowledge/'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Claude Code Implementation Plan: Move reports/ into skills/knowledge/
 

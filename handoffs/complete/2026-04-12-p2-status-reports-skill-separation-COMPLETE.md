@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan status-reports-skill-separation
+title: 'Implementation Plan: status-reports-skill-separation'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: status-reports-skill-separation
 

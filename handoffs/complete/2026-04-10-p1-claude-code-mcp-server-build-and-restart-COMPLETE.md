@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan claude-code-mcp-server-build-and-restart
+title: 'Implementation Plan: claude-code-mcp-server-build-and-restart'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: claude-code-mcp-server-build-and-restart
 

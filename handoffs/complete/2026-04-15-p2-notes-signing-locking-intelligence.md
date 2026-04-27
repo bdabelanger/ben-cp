@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan Notes Signing  Locking Intelligence Update
+title: 'Implementation Plan: Notes Signing & Locking Intelligence Update'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Notes Signing & Locking Intelligence Update
 

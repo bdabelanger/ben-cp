@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan intelligence-smoke-test-fresh-chat
+title: 'Implementation Plan: intelligence-smoke-test-fresh-chat'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: intelligence-smoke-test-fresh-chat
 

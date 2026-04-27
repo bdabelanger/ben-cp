@@ -1,8 +1,9 @@
 ---
-title: Q2 2026 Product Shareout  Speaker Notes Draft
+title: Q2 2026 Product Shareout — Speaker Notes Draft
 type: intelligence
 domain: intelligence/product/shareout/q2
 ---
+
 
 # Q2 2026 Product Shareout — Speaker Notes Draft
 

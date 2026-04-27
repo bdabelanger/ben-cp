@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan kucera-orchestrator-scaffold
+title: 'Implementation Plan: kucera-orchestrator-scaffold'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: kucera-orchestrator-scaffold
 

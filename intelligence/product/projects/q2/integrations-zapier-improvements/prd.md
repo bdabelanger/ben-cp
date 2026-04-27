@@ -1,8 +1,9 @@
 ---
-title: PRD Integrations - Zapier improvements
+title: 'PRD: Integrations - Zapier improvements'
 type: prd
 domain: intelligence/product/projects/q2/integrations-zapier-improvements
 ---
+
 
 # PRD: Integrations - Zapier improvements
 

@@ -1,8 +1,9 @@
 ---
-title: Styles Visual Glossary (Emoji Indicators)
+title: 'Styles: Visual Glossary (Emoji Indicators)'
 type: task
 domain: skills/styles
 ---
+
 
 # Styles: Visual Glossary (Emoji Indicators)
 

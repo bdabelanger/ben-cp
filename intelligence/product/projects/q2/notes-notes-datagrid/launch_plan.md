@@ -1,8 +1,11 @@
 ---
-title: Launch Plan Notes - Notes datagrid
+title: 'Launch Plan: Notes - Notes datagrid'
 type: intelligence
 domain: intelligence/product/projects/q2/notes-notes-datagrid
+links:
+  asana: https://app.asana.com/1/1123317448830974/project/1209963394727039/list/1209964105788152">
 ---
+
 
 # Launch Plan: Notes - Notes datagrid
 

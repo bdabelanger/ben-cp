@@ -1,8 +1,9 @@
 ---
-title: changelog
+title: Vault Changelog
 type: changelog
 domain: .
 ---
+
 
 # Vault Changelog
 

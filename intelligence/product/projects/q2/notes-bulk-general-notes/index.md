@@ -1,8 +1,12 @@
 ---
-title: Notes - Bulk General Notes
+title: Notes - Bulk "General Notes"
 type: index
 domain: intelligence/product/projects/q2/notes-bulk-general-notes
+links:
+  asana: https://app.asana.com/1/1123317448830974/project/1211838817183809
+  jira: https://casecommons.atlassian.net/browse/CBP-2752
 ---
+
 
 # Notes - Bulk "General Notes"
 

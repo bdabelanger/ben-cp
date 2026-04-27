@@ -1,8 +1,9 @@
 ---
-title: Dataset Tenants
+title: 'Dataset: Tenants'
 type: intelligence
 domain: intelligence/casebook/reporting
 ---
+
 
 # Dataset: Tenants
 

@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan Fix Index Sensor - 68 Shadow Files and 36 Ghost Refs
+title: 'Implementation Plan: Fix Index Sensor - 68 Shadow Files and 36 Ghost Refs'
 type: handoff
 domain: handoffs
 ---
+
 
 # Implementation Plan: Fix Index Sensor - 68 Shadow Files and 36 Ghost Refs
 

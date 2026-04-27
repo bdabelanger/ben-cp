@@ -1,8 +1,9 @@
 ---
-title: Skill Task Capture
+title: 'Skill: Task Capture'
 type: index
 domain: skills/status
 ---
+
 
 # Skill: Task Capture
 

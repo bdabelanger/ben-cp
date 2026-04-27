@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan Fix Task Files  Missing required sections in 5 tasks
+title: 'Implementation Plan: Fix Task Files — Missing required sections in 5 tasks'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Fix Task Files — Missing required sections in 5 tasks
 

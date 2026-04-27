@@ -1,8 +1,9 @@
 ---
-title: Claude Code Implementation Plan Fix casebookreportingindex.md
+title: 'Claude Code Implementation Plan: Fix casebook/reporting/index.md'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Claude Code Implementation Plan: Fix casebook/reporting/index.md
 

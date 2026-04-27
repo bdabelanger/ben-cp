@@ -1,8 +1,9 @@
 ---
-title: Claude Code Implementation Plan Document Root-Level File Exemptions in AGENTS.md
+title: 'Claude Code Implementation Plan: Document Root-Level File Exemptions in AGENTS.md'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Claude Code Implementation Plan: Document Root-Level File Exemptions in AGENTS.md
 

@@ -1,8 +1,9 @@
 ---
-title: Dream Cycle  Skill
+title: Dream Cycle — Skill
 type: skill
 domain: skills/dream
 ---
+
 
 # Dream Cycle — Skill
 
@@ -14,7 +15,7 @@ domain: skills/dream
 
 ## Overview
 
-The Dream cycle is the vault's nightly health loop. It runs 11 sensors against the vault, analyzes the results, and routes work to the right destination — fixing trivial issues in-place, handing non-trivial work to Code, and surfacing decisions to Ben. Ben's morning briefing is a `Dream Report` handoff waiting for him when he signs in.
+The Dream cycle is the vault's nightly health loop. It runs all sensors against the vault, analyzes results, routes work to the right destination, then harvests fresh data (tasks, status, intelligence) so everything is current by morning. Ben's briefing is a `Dream Report` handoff waiting for him when he signs in.
 
 ---
 
@@ -127,7 +128,40 @@ If you made direct fixes, re-run `generate_report(skill='dream')` and confirm th
 
 ---
 
-## Step 9 — Write the Dream Report Handoff
+## Step 9 — Harvest Fresh Data
+
+Run the three harvest pipelines in sequence. These rebuild the raw data that powers tomorrow's reports.
+
+```
+# Asana + Jira tasks
+python3 skills/tasks/run.py
+
+# Platform status (Asana projects + Jira epics)
+python3 skills/status/run.py
+
+# Intelligence harvest (refresh stale source docs)
+python3 skills/intelligence/run.py --harvest
+```
+
+Log any pipeline failures in the Dream Report. Do not block on failures — if a pipeline errors, note it and move on.
+
+---
+
+## Step 10 — Intelligence Refresh
+
+After the harvest, scan for intelligence records with missing or stale source files:
+
+```
+python3 skills/intelligence/run.py --scan
+```
+
+For each orphaned source file found:
+- If it has an obvious matching intelligence record → flag in Dream Report for Code to link
+- If it has no matching record → create a handoff for Code to parse and ingest it (counts toward the 5 handoff cap)
+
+---
+
+## Step 11 — Write the Dream Report Handoff
 
 Create one final handoff using `add_handoff`:
 
@@ -140,9 +174,30 @@ Content:
 - What you fixed directly (Bucket A)
 - Handoffs created for Code (Bucket B) — titles only
 - Asana tasks raised for Ben (Bucket C) — titles only
+- Harvest pipeline results (tasks, status, intelligence) — ok / failed / findings count
 - Notable observations
 
 This is Ben's morning briefing. He reads it first thing at 8am.
+
+---
+
+## Step 12 — Log the Run
+
+Create a run log in `agents/logs/` using `add_intelligence`:
+- **domain:** `agents/logs`
+- **name:** `YYYY-MM-DD-dream-cycle`
+- **title:** `Dream Cycle Run Log — YYYY-MM-DD`
+- **metadata:**
+    - `type: log`
+    - `agent: Cowork`
+    - `run: dream`
+
+Content:
+- Execution timestamp
+- Pulse status summary
+- Total fixes/handoffs/tasks generated
+- Harvest results (pipelines run, failures, orphans found)
+- Any significant errors encountered
 
 ---
 

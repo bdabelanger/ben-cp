@@ -1,8 +1,9 @@
 ---
-title: Slide 34 External People in Workflows
+title: 'Slide 34: External People in Workflows'
 type: intelligence
 domain: intelligence/product/shareout/q2
 ---
+
 
 # Slide 34: External People in Workflows
 

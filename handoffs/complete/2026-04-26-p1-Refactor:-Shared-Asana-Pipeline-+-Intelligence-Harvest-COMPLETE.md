@@ -1,8 +1,9 @@
 ---
-title: Refactor Shared Asana Pipeline  Intelligence Harvest Step
+title: 'Refactor: Shared Asana Pipeline + Intelligence Harvest Step'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Refactor: Shared Asana Pipeline + Intelligence Harvest Step
 

@@ -1,8 +1,9 @@
 ---
-title: Handoff Pathing Normalization (Remove benbelanger Hard-Coding)
+title: 'Handoff: Pathing Normalization (Remove ''benbelanger'' Hard-Coding)'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Handoff: Pathing Normalization (Remove 'benbelanger' Hard-Coding)
 **Priority:** p1  

@@ -1,8 +1,11 @@
 ---
-title: Launch Plan Services WLV - Bulk actions
+title: 'Launch Plan: Services WLV - Bulk actions'
 type: intelligence
 domain: intelligence/product/projects/q2/services-wlv-bulk-actions
+links:
+  asana: https://app.asana.com/1/1123317448830974/project/1211631356870657/list/1211631441454418">
 ---
+
 
 # Launch Plan: Services WLV - Bulk actions
 

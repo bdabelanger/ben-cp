@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan crypt-keeper-conventions-and-redundancy
+title: 'Implementation Plan: crypt-keeper-conventions-and-redundancy'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: crypt-keeper-conventions-and-redundancy
 

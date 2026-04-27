@@ -2,7 +2,10 @@
 title: Data import - Bulk import for Notes
 type: index
 domain: intelligence/product/projects/q2/data-import-bulk-import-for-notes
+links:
+  asana: https://app.asana.com/1/1123317448830974/project/1210860550580423
 ---
+
 
 # Data import - Bulk import for Notes
 

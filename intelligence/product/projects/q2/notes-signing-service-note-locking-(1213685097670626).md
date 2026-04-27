@@ -1,8 +1,11 @@
 ---
-title: Notes - Signing  Service Note Locking
+title: Notes - Signing + Service Note Locking
 type: intelligence
 domain: intelligence/product/projects/q2
+links:
+  asana: https://app.asana.com/1/1123317448830974/project/1213685097670626
 ---
+
 
 # Notes - Signing + Service Note Locking
 

@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan agent-python-wrappers
+title: 'Implementation Plan: agent-python-wrappers'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: agent-python-wrappers
 

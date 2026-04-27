@@ -1,8 +1,12 @@
 ---
-title: PRD Services - Multiple rosters for enrollments and notes
+title: 'PRD: Services - Multiple rosters for enrollments and notes'
 type: prd
 domain: intelligence/product/projects/q2/services-multiple-rosters-for-enrollments-and-notes
+links:
+  confluence: https://casecommons.atlassian.net/wiki/spaces/PROD/pages/3679256581/Planning+services+with+enrollments#%3A1_one_circle_blue%3A-Consistently-support-bulk-enrolling-multiple-clients-at-once">
+  figma: https://www.figma.com/design/A3pP7U6D1O4ApwO6OZspwG/Services-2025?node-id=349-2845&amp;p=f&amp;t=nIMg5jCL3ErAp7bt-0"
 ---
+
 
 # PRD: Services - Multiple rosters for enrollments and notes
 

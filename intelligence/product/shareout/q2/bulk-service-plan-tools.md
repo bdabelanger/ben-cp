@@ -1,8 +1,10 @@
 ---
-title: Slide 17  Sort filter and enrollment shortcuts Service Plan  Services WLV
+title: 'Slide 17 — Sort, filter, and enrollment shortcuts: Service Plan + Services
+  WLV'
 type: intelligence
 domain: intelligence/product/shareout/q2
 ---
+
 
 # Slide 17 — Sort, filter, and enrollment shortcuts: Service Plan + Services WLV
 

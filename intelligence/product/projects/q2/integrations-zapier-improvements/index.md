@@ -2,7 +2,11 @@
 title: Integrations - Zapier improvements
 type: index
 domain: intelligence/product/projects/q2/integrations-zapier-improvements
+links:
+  asana: https://app.asana.com/1/1123317448830974/project/1213496879668016
+  jira: https://casecommons.atlassian.net/browse/CBP-3158
 ---
+
 
 # Integrations - Zapier improvements
 

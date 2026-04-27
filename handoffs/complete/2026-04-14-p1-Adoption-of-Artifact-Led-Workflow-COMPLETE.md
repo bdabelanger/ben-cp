@@ -1,8 +1,9 @@
 ---
-title: Handoff Mandatory Adoption of Artifact-Led Workflow
+title: 'Handoff: Mandatory Adoption of Artifact-Led Workflow'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Handoff: Mandatory Adoption of Artifact-Led Workflow
 

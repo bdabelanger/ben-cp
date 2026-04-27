@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan Fix Expose Dream Report Output via ben-cp MCP
+title: 'Implementation Plan: Fix: Expose Dream Report Output via ben-cp MCP'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Fix: Expose Dream Report Output via ben-cp MCP
 

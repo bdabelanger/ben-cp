@@ -1,8 +1,12 @@
 ---
-title: PRD Data import - Clearer IDs
+title: 'PRD: Data import - Clearer IDs'
 type: prd
 domain: intelligence/product/projects/q2/data-import-clearer-ids
+links:
+  figma: https://www.figma.com/design/Q3FuCNyW4JlKysI0yD1a2G/Bulk-Import-V2---Option-B">
+  github: https://github.com/Casecommons/cbp-bulks-api-node">
 ---
+
 
 # PRD: Data import - Clearer IDs
 

@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan synthesis-predict-character-depth
+title: 'Implementation Plan: synthesis-predict-character-depth'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: synthesis-predict-character-depth
 

@@ -1,8 +1,9 @@
 ---
-title: Skill Styles
+title: 'Skill: Styles'
 type: skill
 domain: skills/styles
 ---
+
 
 # Skill: Styles
 

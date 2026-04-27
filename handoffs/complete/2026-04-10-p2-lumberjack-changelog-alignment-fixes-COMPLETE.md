@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan lumberjack-changelog-alignment-fixes
+title: 'Implementation Plan: lumberjack-changelog-alignment-fixes'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: lumberjack-changelog-alignment-fixes
 

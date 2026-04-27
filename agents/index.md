@@ -1,19 +1,8 @@
----
-title: agents  Agent Role Directory
-type: index
-domain: agents
----
+# Agent Domain
 
-# agents/ — Agent Role Directory
+The `agents/` directory is the home for agent-produced artifacts, including creative output, run logs, and session notes.
 
-> Each file defines one agent's role, duties, entry point, and relevant SOPs.
-> All agents read `AGENTS.md` at vault root first, then their role file here.
-> Last updated: 2026-04-13
-
----
-
-| File | Agent | Role |
-| :--- | :--- | :--- |
-| [cowork.md](cowork.md) | Cowork (Gemini / Claude Cowork) | Architect, handoff reviewer, session lead — shared role for both Cowork instances |
-| [code.md](code.md) | Code (Gemini / Claude Code) | Implementer, code executor, file engineer |
-| [local.md](local.md) | Local (Gemma 4) | Executor, pipeline tasks, data formatting |
+## Subdirectories
+- [art/](art/index.md) — Agent creative output and artistic expressions.
+- [logs/](logs/index.md) — Structured run logs from automated cycles.
+- [sessions/](sessions/index.md) — Notable session summaries and decision logs.

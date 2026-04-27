@@ -1,8 +1,9 @@
 ---
-title: Reveal BI Formula Syntax  Rules
+title: Reveal BI Formula Syntax & Rules
 type: intelligence
 domain: intelligence/casebook/reporting
 ---
+
 
 # Reveal BI Formula Syntax & Rules
 

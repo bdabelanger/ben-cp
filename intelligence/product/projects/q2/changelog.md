@@ -1,8 +1,9 @@
 ---
-title: ProductRoadmapProjectsQ2 Changelog
+title: Product/Roadmap/Projects/Q2 Changelog
 type: changelog
 domain: intelligence/product/projects/q2
 ---
+
 
 # Product/Roadmap/Projects/Q2 Changelog
 

@@ -1,8 +1,9 @@
 ---
-title: Handoff Gemma (Local) Smoke Test  Results  Tool Fix
+title: 'Handoff: Gemma (Local) Smoke Test — Results & Tool Fix'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Handoff: Gemma (Local) Smoke Test — Results & Tool Fix
 

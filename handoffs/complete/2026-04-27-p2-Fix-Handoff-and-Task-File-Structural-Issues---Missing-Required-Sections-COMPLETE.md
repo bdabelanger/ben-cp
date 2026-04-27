@@ -1,9 +1,10 @@
 ---
-title: Implementation Plan Fix Handoff and Task File Structural Issues - Missing Required
-  Sections
+title: 'Implementation Plan: Fix Handoff and Task File Structural Issues - Missing
+  Required Sections'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Fix Handoff and Task File Structural Issues - Missing Required Sections
 

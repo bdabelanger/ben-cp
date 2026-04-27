@@ -1,8 +1,9 @@
 ---
-title: Update Intelligence Pipeline index.md and ben-cp Registry After Harvest Refactor
+title: 'Update: Intelligence Pipeline index.md and ben-cp Registry After Harvest Refactor'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Update: Intelligence Pipeline index.md and ben-cp Registry After Harvest Refactor
 

@@ -1,8 +1,9 @@
 ---
-title: Skill Handoff Protocol
+title: 'Skill: Handoff Protocol'
 type: index
 domain: skills/handoff
 ---
+
 
 # Skill: Handoff Protocol
 

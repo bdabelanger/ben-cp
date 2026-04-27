@@ -1,8 +1,9 @@
 ---
-title: Task Capture  Procedure
+title: Task Capture — Procedure
 type: skill
 domain: skills/status
 ---
+
 
 # Task Capture — Procedure
 

@@ -4,7 +4,7 @@ import os, json, re
 from datetime import datetime
 
 VAULT_ROOT   = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
-OUTPUTS_DIR  = os.path.join(VAULT_ROOT, 'reports')
+OUTPUTS_DIR  = os.path.join(VAULT_ROOT, 'reports', 'dream', 'data', 'raw')
 TASKS_DIR    = os.path.join(VAULT_ROOT, 'tasks')
 PROJECTS_DIR = os.path.join(VAULT_ROOT, 'intelligence', 'product', 'projects')
 

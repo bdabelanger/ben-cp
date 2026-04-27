@@ -1,8 +1,11 @@
 ---
-title: Implementation Plan q2-platform-planning-okrs
+title: 'Implementation Plan: q2-platform-planning-okrs'
 type: handoff
 domain: handoffs/complete
+links:
+  confluence: https://casecommons.atlassian.net/wiki/spaces/PROD/pages/4390420482/Integrations+-+Zapier+improvements
 ---
+
 
 # Implementation Plan: q2-platform-planning-okrs
 

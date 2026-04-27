@@ -2,7 +2,11 @@
 title: Services WLV - Bulk actions
 type: index
 domain: intelligence/product/projects/q2/services-wlv-bulk-actions
+links:
+  asana: https://app.asana.com/1/1123317448830974/project/1211733450555414
+  jira: https://casecommons.atlassian.net/browse/CBP-3121
 ---
+
 
 # Services WLV - Bulk actions
 

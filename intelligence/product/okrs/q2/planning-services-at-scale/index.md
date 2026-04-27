@@ -1,8 +1,9 @@
 ---
-title: Initiative Planning Services at Scale  Index
+title: 'Initiative: Planning Services at Scale — Index'
 type: index
 domain: intelligence/product/okrs/q2/planning-services-at-scale
 ---
+
 
 # Initiative: Planning Services at Scale — Index
 

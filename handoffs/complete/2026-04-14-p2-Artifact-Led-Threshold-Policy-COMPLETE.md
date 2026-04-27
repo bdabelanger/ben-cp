@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan Artifact-Led Threshold Policy
+title: 'Implementation Plan: Artifact-Led Threshold Policy'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Artifact-Led Threshold Policy
 

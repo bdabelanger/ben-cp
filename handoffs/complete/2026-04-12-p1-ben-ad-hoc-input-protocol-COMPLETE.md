@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan ben-ad-hoc-input-protocol
+title: 'Implementation Plan: ben-ad-hoc-input-protocol'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: ben-ad-hoc-input-protocol
 

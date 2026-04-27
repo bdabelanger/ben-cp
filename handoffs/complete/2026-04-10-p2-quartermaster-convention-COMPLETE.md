@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan Establish Strategic PM Convention
+title: 'Implementation Plan: Establish Strategic PM Convention'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Establish Strategic PM Convention
 

@@ -1,9 +1,10 @@
 ---
-title: Implementation Plan Fix Ghost Links in releases and archive  126 broken internal
-  refs
+title: 'Implementation Plan: Fix Ghost Links in releases and archive — 126 broken
+  internal refs'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Fix Ghost Links in releases and archive — 126 broken internal refs
 

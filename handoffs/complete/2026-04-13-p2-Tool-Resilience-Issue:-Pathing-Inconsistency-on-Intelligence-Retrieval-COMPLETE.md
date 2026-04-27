@@ -1,9 +1,10 @@
 ---
-title: Implementation Plan Tool Resilience Issue Pathing Inconsistency on Intelligence
-  Retrieval
+title: 'Implementation Plan: Tool Resilience Issue: Pathing Inconsistency on Intelligence
+  Retrieval'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Tool Resilience Issue: Pathing Inconsistency on Intelligence Retrieval
 

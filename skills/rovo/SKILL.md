@@ -1,8 +1,9 @@
 ---
-title: Skill Atlassian Rovo SOP (CBP-XXXX)
+title: 'Skill: Atlassian Rovo SOP (CBP-XXXX)'
 type: skill
 domain: skills/rovo
 ---
+
 
 # Skill: Atlassian Rovo SOP (CBP-XXXX)
 

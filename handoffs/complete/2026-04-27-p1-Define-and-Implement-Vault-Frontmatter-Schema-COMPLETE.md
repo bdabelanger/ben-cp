@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan Define and Implement Vault Frontmatter Schema
+title: 'Implementation Plan: Define and Implement Vault Frontmatter Schema'
 type: handoff
 domain: handoffs
 ---
+
 
 # Implementation Plan: Define and Implement Vault Frontmatter Schema
 

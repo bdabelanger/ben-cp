@@ -2,7 +2,11 @@
 title: Web applications - Material UI upgrade (all components)
 type: intelligence
 domain: intelligence/product/projects/q2
+links:
+  asana: https://app.asana.com/1/1123317448830974/project/1212552174642233
+  jira: https://casecommons.atlassian.net/browse/CBP-2917
 ---
+
 
 # Web applications - Material UI upgrade (all components)
 

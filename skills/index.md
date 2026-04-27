@@ -12,4 +12,12 @@ domain: skills
 
 ## Active Domains
 
-- [Skill](SKILL.md)
+- [Asana](asana/index.md)
+- [Intelligence](intelligence/index.md)
+- [Status](status/index.md)
+- [Tasks](tasks/index.md)
+- [Dream](dream/index.md)
+- [Handoff](handoff/index.md)
+- [Styles](styles/index.md)
+
+

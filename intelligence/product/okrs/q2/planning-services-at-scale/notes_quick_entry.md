@@ -1,8 +1,9 @@
 ---
-title: KR Measurement SOP Notes Quick Entry (Outside UOW)
+title: 'KR Measurement SOP: Notes Quick Entry (Outside UOW)'
 type: intelligence
 domain: intelligence/product/okrs/q2/planning-services-at-scale
 ---
+
 
 # KR Measurement SOP: Notes Quick Entry (Outside UOW)
 

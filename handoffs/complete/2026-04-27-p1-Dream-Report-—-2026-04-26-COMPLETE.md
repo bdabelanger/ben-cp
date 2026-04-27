@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan Dream Report  2026-04-26
+title: 'Implementation Plan: Dream Report — 2026-04-26'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Dream Report — 2026-04-26
 

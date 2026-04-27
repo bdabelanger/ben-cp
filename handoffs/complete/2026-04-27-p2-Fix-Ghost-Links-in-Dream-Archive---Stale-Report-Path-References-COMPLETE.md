@@ -1,8 +1,10 @@
 ---
-title: Implementation Plan Fix Ghost Links in Dream Archive - Stale Report Path References
+title: 'Implementation Plan: Fix Ghost Links in Dream Archive - Stale Report Path
+  References'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Fix Ghost Links in Dream Archive - Stale Report Path References
 

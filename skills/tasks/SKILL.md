@@ -1,8 +1,9 @@
 ---
-title: Skill Task Management (Deliverable Governance)
+title: 'Skill: Task Management (Deliverable Governance)'
 type: skill
 domain: skills/tasks
 ---
+
 
 # Skill: Task Management (Deliverable Governance)
 

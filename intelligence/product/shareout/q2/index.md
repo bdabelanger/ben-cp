@@ -35,5 +35,5 @@ Draft narrative accompanying the Q2 deck.
 
 ## Technical Alignment
 
-## Navigation
+## Links
 - [Q2 2026 Product Shareout Intelligence Record](notes-q2-2026-product-shareout.md)

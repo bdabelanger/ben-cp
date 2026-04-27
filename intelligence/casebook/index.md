@@ -1,8 +1,9 @@
 ---
-title: Skill Casebook
+title: 'Skill: Casebook'
 type: index
 domain: intelligence/casebook
 ---
+
 
 # Skill: Casebook
 

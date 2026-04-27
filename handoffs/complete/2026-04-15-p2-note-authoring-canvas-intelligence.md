@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan Note Authoring Canvas Intelligence Update
+title: 'Implementation Plan: Note Authoring Canvas Intelligence Update'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Note Authoring Canvas Intelligence Update
 

@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan Crypt-Keeper  Agent Navigation Broken
+title: 'Implementation Plan: Crypt-Keeper — Agent Navigation Broken'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Crypt-Keeper — Agent Navigation Broken
 

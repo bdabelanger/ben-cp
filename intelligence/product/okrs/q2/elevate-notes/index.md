@@ -1,8 +1,9 @@
 ---
-title: Initiative Elevate Notes to a First-Class Experience  Index
+title: 'Initiative: Elevate Notes to a First-Class Experience — Index'
 type: index
 domain: intelligence/product/okrs/q2/elevate-notes
 ---
+
 
 # Initiative: Elevate Notes to a First-Class Experience — Index
 

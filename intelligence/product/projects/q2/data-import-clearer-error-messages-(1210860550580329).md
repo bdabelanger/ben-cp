@@ -2,7 +2,12 @@
 title: Data import - Clearer error messages
 type: intelligence
 domain: intelligence/product/projects/q2
+links:
+  asana: https://app.asana.com/1/1123317448830974/project/1210860550580329
+  jira: https://casecommons.atlassian.net/browse/CBP-498
+  confluence: https://casecommons.atlassian.net/wiki/spaces/PROD/pages/1682309130
 ---
+
 
 # Data import - Clearer error messages
 

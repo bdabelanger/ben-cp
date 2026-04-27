@@ -1,8 +1,10 @@
 ---
-title: Implementation Plan Integrate Legacy Platform Analytics into New Projects Engine
+title: 'Implementation Plan: Integrate Legacy Platform Analytics into New Projects
+  Engine'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Integrate Legacy Platform Analytics into New Projects Engine
 

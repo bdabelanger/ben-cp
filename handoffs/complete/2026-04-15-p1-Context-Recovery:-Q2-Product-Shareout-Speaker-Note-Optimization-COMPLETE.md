@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan Context Recovery Q2 Product Shareout Speaker Note Optimization
+title: 'Implementation Plan: Context Recovery: Q2 Product Shareout Speaker Note Optimization'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Context Recovery: Q2 Product Shareout Speaker Note Optimization
 

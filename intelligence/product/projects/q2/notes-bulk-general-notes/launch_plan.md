@@ -1,8 +1,11 @@
 ---
-title: Launch Plan Notes - Bulk General Notes
+title: 'Launch Plan: Notes - Bulk "General Notes"'
 type: intelligence
 domain: intelligence/product/projects/q2/notes-bulk-general-notes
+links:
+  asana: https://app.asana.com/1/1123317448830974/project/1211838817183809/list/1211840118612354">
 ---
+
 
 # Launch Plan: Notes - Bulk "General Notes"
 

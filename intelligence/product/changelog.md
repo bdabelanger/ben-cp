@@ -1,8 +1,9 @@
 ---
-title: Changelog Product Intelligence
+title: 'Changelog: Product Intelligence'
 type: changelog
 domain: intelligence/product
 ---
+
 
 # Changelog: Product Intelligence
 

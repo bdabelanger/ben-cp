@@ -1,8 +1,9 @@
 ---
-title: Skill Casebook Reporting
+title: 'Skill: Casebook Reporting'
 type: index
 domain: intelligence/casebook/reporting
 ---
+
 
 # Skill: Casebook Reporting
 

@@ -1,8 +1,9 @@
 ---
-title: KR Measurement SOP Locked and Signed Notes (High-Confidentiality)
+title: 'KR Measurement SOP: Locked and Signed Notes (High-Confidentiality)'
 type: intelligence
 domain: intelligence/product/okrs/q2/elevate-notes
 ---
+
 
 # KR Measurement SOP: Locked and Signed Notes (High-Confidentiality)
 

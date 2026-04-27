@@ -8,7 +8,5 @@ domain: skills/dream
 
 > **Purpose:** Nightly vault health, sensor synthesis, and health reporting.
 
-## Core Logic
+## Links
 - [SKILL Definition](SKILL.md)
-
-## Components

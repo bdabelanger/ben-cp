@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan universal-skill-md-consolidation
+title: 'Implementation Plan: universal-skill-md-consolidation'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: universal-skill-md-consolidation
 

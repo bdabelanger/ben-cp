@@ -4,13 +4,22 @@ import os, json
 from datetime import datetime
 
 VAULT_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
-OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream')
+OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream', 'data', 'raw')
 
 YELLOW_KB = 250
 RED_KB    = 750
 SKIP_DIRS = {'.git', '__pycache__', 'node_modules'}
 
+IGNORE_LIST = {
+    'intelligence/product/shareout/q2/source/Q2 2026 Product Shareout.pdf',
+    'intelligence/product/shareout/q2/source/Q2 2026 Product Shareout.txt'
+}
+
 def is_acknowledged(path):
+    rel = os.path.relpath(path, VAULT_ROOT)
+    if rel in IGNORE_LIST:
+        return True
+    
     dir_path = os.path.dirname(path)
     index_path = os.path.join(dir_path, 'index.md')
     if not os.path.exists(index_path): return False
@@ -19,8 +28,8 @@ def is_acknowledged(path):
     try:
         with open(index_path, 'r') as f:
             content = f.read()
-            # Check for the filename (or its URL-encoded version) and (SIZE: flag
-            return (filename in content or urllib.parse.quote(filename) in content) and "(SIZE:" in content
+            # Check for the filename (or its URL-encoded version) and the new convention e.g. _(7.4MB)_
+            return (filename in content or urllib.parse.quote(filename) in content) and ("MB)_" in content or "KB)_" in content)
     except: return False
 
 def run():

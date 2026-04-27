@@ -1,8 +1,12 @@
 ---
-title: PRD Data import - Bulk import for Notes
+title: 'PRD: Data import - Bulk import for Notes'
 type: prd
 domain: intelligence/product/projects/q2/data-import-bulk-import-for-notes
+links:
+  figma: https://www.figma.com/design/Q3FuCNyW4JlKysI0yD1a2G/Bulk-Import-V2---Option-B">
+  github: https://github.com/Casecommons/cbp-bulks-api-node">
 ---
+
 
 # PRD: Data import - Bulk import for Notes
 

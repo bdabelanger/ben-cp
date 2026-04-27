@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan gemma-explicit-identity-correction
+title: 'Implementation Plan: gemma-explicit-identity-correction'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: gemma-explicit-identity-correction
 

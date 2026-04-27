@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan task-capture-skill-migration
+title: 'Implementation Plan: task-capture-skill-migration'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: task-capture-skill-migration
 

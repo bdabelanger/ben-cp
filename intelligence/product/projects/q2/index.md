@@ -28,8 +28,7 @@ domain: intelligence/product/projects/q2
 
 ## Maintenance & Infrastructure
 
-## Navigation
-
+## Links
 - [Web Applications Material Ui Upgrade All Components (1212552174642233)](web-applications-material-ui-upgrade-all-components-(1212552174642233).md)
 - [Data Import Bulk Import For Notes (1210860550580423)](data-import-bulk-import-for-notes-(1210860550580423).md)
 - [Notes Global Notes Wlv (1210368097846960)](notes-global-notes-wlv-(1210368097846960).md)

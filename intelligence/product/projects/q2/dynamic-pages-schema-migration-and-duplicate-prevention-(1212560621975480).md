@@ -2,7 +2,10 @@
 title: Dynamic pages - Schema migration and duplicate prevention
 type: intelligence
 domain: intelligence/product/projects/q2
+links:
+  asana: https://app.asana.com/1/1123317448830974/project/1212560621975480
 ---
+
 
 # Dynamic pages - Schema migration and duplicate prevention
 

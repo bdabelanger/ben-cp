@@ -1,8 +1,9 @@
 ---
-title: Claude Code Implementation Plan Fix skill-builder Subdirectory index.md Files
+title: 'Claude Code Implementation Plan: Fix skill-builder Subdirectory index.md Files'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Claude Code Implementation Plan: Fix skill-builder Subdirectory index.md Files
 

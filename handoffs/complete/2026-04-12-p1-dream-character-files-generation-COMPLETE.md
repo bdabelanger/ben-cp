@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan dream-character-files-generation
+title: 'Implementation Plan: dream-character-files-generation'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: dream-character-files-generation
 

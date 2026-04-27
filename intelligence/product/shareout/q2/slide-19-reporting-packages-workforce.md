@@ -1,8 +1,9 @@
 ---
-title: Slide 19 Workforce Reporting Package
+title: 'Slide 19: Workforce Reporting Package'
 type: intelligence
 domain: intelligence/product/shareout/q2
 ---
+
 
 # Slide 19: Workforce Reporting Package
 

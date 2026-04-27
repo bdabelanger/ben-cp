@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan character-customization-policy
+title: 'Implementation Plan: character-customization-policy'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: character-customization-policy
 

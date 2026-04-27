@@ -4,7 +4,7 @@ import os, json, re, subprocess
 from datetime import datetime
 
 VAULT_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
-OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream')
+OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream', 'data', 'raw')
 
 def parse_root_changelog():
     path = os.path.join(VAULT_ROOT, 'changelog.md')

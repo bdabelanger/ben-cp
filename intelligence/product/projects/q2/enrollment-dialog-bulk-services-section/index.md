@@ -2,7 +2,12 @@
 title: Enrollment dialog - Bulk Services section
 type: index
 domain: intelligence/product/projects/q2/enrollment-dialog-bulk-services-section
+links:
+  asana: https://app.asana.com/1/1123317448830974/project/1211631356870657
+  jira: https://casecommons.atlassian.net/browse/CBP-2992
+  confluence: https://casecommons.atlassian.net/wiki/x/MwB79
 ---
+
 
 # Enrollment dialog - Bulk Services section
 

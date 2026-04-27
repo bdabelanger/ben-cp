@@ -4,7 +4,7 @@ import os, json, re
 from datetime import datetime
 
 VAULT_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
-OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream')
+OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream', 'data', 'raw')
 
 QUARANTINE_NAMES = {'docs', 'temp', 'scratch', 'tmp', 'wip', 'old', 'backup'}
 IGNORE_DIRS = {'dist', 'node_modules', 'src', 'reports'}

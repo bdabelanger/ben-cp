@@ -9,5 +9,5 @@ domain: intelligence/product/shareout/q2/source
 > **Purpose:** Raw source files for the Q2 2026 Product Shareout.
 
 ## Source Files
-- [Q2 2026 Product Shareout PDF](Q2%202026%20Product%20Shareout.pdf) (SIZE: 7.4 MB)
-- [Q2 2026 Product Shareout Text](Q2%202026%20Product%20Shareout.txt)
+- [Q2 2026 Product Shareout PDF](Q2%202026%20Product%20Shareout.pdf) _(7.4MB)_
+- [Q2 2026 Product Shareout Text](Q2%202026%20Product%20Shareout.txt) _(21KB)_

@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan Quartermaster Report  2026-04-26
+title: 'Implementation Plan: Quartermaster Report — 2026-04-26'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Quartermaster Report — 2026-04-26
 

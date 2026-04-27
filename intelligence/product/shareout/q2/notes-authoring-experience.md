@@ -1,8 +1,9 @@
 ---
-title: Slide 16  Notes Authoring UX Tabbed Design (Q2)
+title: 'Slide 16 — Notes Authoring UX: Tabbed Design (Q2)'
 type: intelligence
 domain: intelligence/product/shareout/q2
 ---
+
 
 # Slide 16 — Notes Authoring UX: Tabbed Design (Q2)
 

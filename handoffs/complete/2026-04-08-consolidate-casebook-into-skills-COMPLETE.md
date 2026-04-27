@@ -1,8 +1,9 @@
 ---
-title: Claude Code Implementation Plan Consolidate Casebook into skillscasebook
+title: 'Claude Code Implementation Plan: Consolidate Casebook into skills/casebook/'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Claude Code Implementation Plan: Consolidate Casebook into skills/casebook/
 

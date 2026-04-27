@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan Mapping Manager Skill Formalization
+title: 'Implementation Plan: Mapping Manager Skill Formalization'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Mapping Manager Skill Formalization
 

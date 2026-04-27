@@ -1,8 +1,9 @@
 ---
-title: Claude Code Implementation Plan Context Loading Complexity Triage
+title: 'Claude Code Implementation Plan: Context Loading Complexity Triage'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Claude Code Implementation Plan: Context Loading Complexity Triage
 

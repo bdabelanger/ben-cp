@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan Zapier Improvements Intelligence Update
+title: 'Implementation Plan: Zapier Improvements Intelligence Update'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Zapier Improvements Intelligence Update
 

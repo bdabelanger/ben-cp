@@ -1,8 +1,9 @@
 ---
-title: Implementation Plan Vault Intelligence Re-Indexing Audit
+title: 'Implementation Plan: Vault Intelligence Re-Indexing Audit'
 type: handoff
 domain: handoffs/complete
 ---
+
 
 # Implementation Plan: Vault Intelligence Re-Indexing Audit
 

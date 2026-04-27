@@ -37,7 +37,7 @@ links:
 - **QA Start:** 2026-02-26T00:00:00.000Z
 - **R-Notes Stage:** In Review
 - **KB Stage:** Published
-- **PRD:** null
+- **PRD:** https://casecommons.atlassian.net/wiki/x/BQBN2w
 - **Launch Plan:** https://casecommons.atlassian.net/wiki/x/MwB79
 - **UAT Start:** 2026-03-12T00:00:00.000Z
 - **Roadmap:** Strengthen Core Case Management

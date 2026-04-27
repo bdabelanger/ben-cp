@@ -1,10 +1,12 @@
 # Implementation Plan: Fix Bad Asana Dates & Null Fields
 
 > **Prepared by:** Code (Gemini) (2026-04-27)
-> **Assigned to:** Local (Gemma 2 27B)
+> **Assigned to:** Code
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
-> **STATUS**: 🔲 READY — pick up 2026-04-27
+> **STATUS**: ✅ COMPLETE — 2026-04-27
+
+Scanned all 22 Q2 intelligence files for null/TBD/stale fields and correlated against the Apr 27 Platform Weekly Status report. Applied 4 confident fixes: Beta Start on notes-notes-datagrid (Apr 1), GA Month on notes-bulk-general-notes (Jun 26), PRD URL on enrollment-dialog-bulk-services-section, PRD URL on integrations-zapier-improvements. Flagged 4 GA-date discrepancies for Ben's review (enrollment-dialog Apr 27 vs May 29; notes-datagrid Apr 23 vs Apr 27; locked-notes May 18 vs May 14 and Beta Apr 27 vs Apr 28; zapier Jun 1 vs Jun 11). All remaining nulls (Discovery Start, CEO Meeting/Next CEO Date, Launch Plan/PRD for non-tracked projects) are unresolvable without a fresh Asana harvest or manual input.
 
 ---
 

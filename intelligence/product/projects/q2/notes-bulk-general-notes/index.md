@@ -31,7 +31,7 @@ links:
 - **CEO Meeting:** null
 - **Engineering Assignee(s):** Blessing, Pierre
 - **Release Date(s):** null
-- **GA Month:** null
+- **GA Month:** Jun 26
 - **QA Start:** 2026-04-06T00:00:00.000Z
 - **R-Notes Stage:** Backlog
 - **KB Stage:** Backlog

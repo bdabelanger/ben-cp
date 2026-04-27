@@ -23,7 +23,7 @@ links:
 - **Jira Link:** https://casecommons.atlassian.net/browse/CBP-2736
 - **Discovery Start:** null
 - **Dev Start:** null
-- **Beta Start:** null
+- **Beta Start:** 2026-04-01T00:00:00.000Z
 - **GA:** 2026-04-23T00:00:00.000Z
 - **JIRA Link:** https://casecommons.atlassian.net/browse/CBP-2736
 - **Release Quarter:** Q2 2026

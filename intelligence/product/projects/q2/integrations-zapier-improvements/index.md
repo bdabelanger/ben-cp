@@ -58,7 +58,7 @@ Next steps
 - **QA Start:** 2026-05-11T00:00:00.000Z
 - **R-Notes Stage:** Backlog
 - **KB Stage:** Backlog
-- **PRD:** null
+- **PRD:** https://casecommons.atlassian.net/wiki/x/AoCwBQE
 - **Launch Plan:** null
 - **UAT Start:** 2026-05-28T00:00:00.000Z
 - **Roadmap:** Enhance Core Configurability

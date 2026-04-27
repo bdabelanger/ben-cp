@@ -14,7 +14,7 @@ from datetime import datetime
 VAULT_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
 OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream', 'data', 'raw')
 
-SKIP_DIRS = {'.git', '__pycache__', 'node_modules', 'dist'}
+SKIP_DIRS = {'.git', '__pycache__', 'node_modules', 'dist', 'complete', 'archive', 'archived'}
 
 # Vault-relative path pattern: starts with a known top-level dir name,
 # followed by / and more path components. We extract the first segment

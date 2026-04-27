@@ -8,7 +8,7 @@ OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream', 'data', 'raw')
 
 YELLOW_KB = 250
 RED_KB    = 750
-SKIP_DIRS = {'.git', '__pycache__', 'node_modules'}
+SKIP_DIRS = {'.git', '__pycache__', 'node_modules', 'complete', 'archive', 'archived'}
 
 IGNORE_LIST = {
     'intelligence/product/shareout/q2/source/Q2 2026 Product Shareout.pdf',

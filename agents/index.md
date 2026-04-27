@@ -1,3 +1,9 @@
+---
+title: Agent Domain Index
+type: index
+domain: agents
+---
+
 # Agent Domain
 
 The `agents/` directory is the home for agent-produced artifacts, including creative output, run logs, and session notes.

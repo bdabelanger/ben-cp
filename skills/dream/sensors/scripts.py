@@ -13,7 +13,7 @@ VAULT_ROOT   = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..
 SKILLS_DIR   = os.path.join(VAULT_ROOT, 'skills')
 OUTPUTS_DIR  = os.path.join(VAULT_ROOT, 'reports', 'dream', 'data', 'raw')
 
-SKIP_DIRS = {'.git', '__pycache__', 'node_modules', 'dist'}
+SKIP_DIRS = {'.git', '__pycache__', 'node_modules', 'dist', 'complete', 'archive', 'archived'}
 
 # Strings that indicate a script is a stub with no real implementation
 STUB_SIGNALS = [

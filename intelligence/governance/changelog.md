@@ -1,3 +1,9 @@
+---
+title: Intelligence/Governance Changelog
+type: changelog
+domain: intelligence/governance
+---
+
 # Intelligence/Governance Changelog
 
 ## [Unreleased]

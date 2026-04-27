@@ -1,3 +1,9 @@
+---
+title: Agent Sessions Index
+type: index
+domain: agents/sessions
+---
+
 # Agent Sessions
 
 This directory contains summaries of notable agent sessions that involve significant decisions, architectural changes, or strategic insights.

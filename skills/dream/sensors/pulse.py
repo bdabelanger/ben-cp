@@ -55,7 +55,7 @@ def scan_boundary_violations():
 
 def check_index_coverage():
     missing = []
-    ignore_dirs = {'.', 'node_modules', 'reports', 'dist', 'src', '.git', '.gemini'}
+    ignore_dirs = {'.', 'node_modules', 'reports', 'dist', 'src', '.git', '.gemini', 'complete', 'archive', 'archived'}
     for root, dirs, files in os.walk(VAULT_ROOT):
         dirs[:] = [d for d in dirs if not d.startswith('.') and d not in ignore_dirs and d != '__pycache__']
         rel_root = os.path.relpath(root, VAULT_ROOT)

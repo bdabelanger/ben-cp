@@ -9,8 +9,18 @@ except ImportError:
 from datetime import datetime
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-VAULT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../../../../.."))
+VAULT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../../.."))
 OUTPUT_PATH = os.path.join(VAULT_ROOT, "reports/asana/raw/all_projects.json")
+
+def _load_dotenv():
+    env_path = os.path.join(VAULT_ROOT, ".env")
+    if not os.path.exists(env_path): return
+    with open(env_path) as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line: continue
+            key, _, val = line.partition("=")
+            os.environ.setdefault(key.strip(), val.strip().strip('"').strip("'"))
 
 ASANA_API_URL = (
     "https://app.asana.com/api/1.0/teams/1208693459152259/projects"
@@ -25,6 +35,7 @@ ASANA_API_URL = (
 
 def fetch_asana_projects():
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] fetch_asana_projects.py")
+    _load_dotenv()
 
     token = os.environ.get("ASANA_API_TOKEN")
     if not token:

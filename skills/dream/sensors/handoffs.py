@@ -8,7 +8,8 @@ OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream', 'data', 'raw')
 HANDOFF_DIR = os.path.join(VAULT_ROOT, 'handoffs')
 TASKS_DIR   = os.path.join(VAULT_ROOT, 'tasks')
 
-REQUIRED_SECTIONS = {'## Context', '## Logic', '## Execution Steps'}
+REQUIRED_SECTIONS = {'## Context', '## Execution Steps'}
+# ## Logic is highly encouraged but optional for simple tasks
 STALE_HOURS = 72
 
 def scan_dir(path):

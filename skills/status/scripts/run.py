@@ -84,7 +84,7 @@ def main():
     print("🚀 Triggering Pipeline Components...")
 
     # Step 0: Asana API refresh
-    asana_run_script = os.path.abspath(os.path.join(REPO_ROOT, "skills/asana/run.py"))
+    asana_run_script = os.path.abspath(os.path.join(REPO_ROOT, "skills", "asana", "run.py"))
     result = subprocess.run(["python3", asana_run_script])
     if result.returncode != 0:
         if not os.path.exists(ASANA_RAW):

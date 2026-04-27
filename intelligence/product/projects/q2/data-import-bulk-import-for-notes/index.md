@@ -1,9 +1,18 @@
----
+--- 
 title: Data import - Bulk import for Notes
 type: index
 domain: intelligence/product/projects/q2/data-import-bulk-import-for-notes
 links:
   asana: https://app.asana.com/1/1123317448830974/project/1210860550580423
+sources:
+  asana:
+  - type: project
+    gid: '1210860550580423'
+    last_fetched: '2026-04-27'
+  jira:
+  - type: epic
+    key: CBP-498
+    last_fetched: '2026-04-27'
 ---
 
 

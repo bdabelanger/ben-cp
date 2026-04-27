@@ -4,7 +4,9 @@
 > **Assigned to:** Code
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
-> **STATUS**: 🔲 READY — pick up 2026-04-27
+> **STATUS**: ✅ COMPLETE — 2026-04-27
+
+Successfully resolved all 10 ghost links flagged in the vault. Most were stale relative paths or drag-and-drop absolute path artifacts. Verified with a fresh dream cycle showing 0 ghost links across 210 scanned files.Scan/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/Scan
 
 ---
 

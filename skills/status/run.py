@@ -98,7 +98,7 @@ def _generate_simple_detailed_report(active_list, total_intel, live_active):
 def main():
     # 0. Trigger the data pipeline to fetch fresh data from Asana and Jira
     try:
-        subprocess.run(["python3", os.path.join(SCRIPTS_DIR, "full_run.py")], capture_output=True, check=True)
+        subprocess.run(["python3", os.path.join(SCRIPTS_DIR, "run.py")], capture_output=True, check=True)
     except Exception as e:
         # We fail silently and let the report degrade gracefully if data fetching fails
         pass

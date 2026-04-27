@@ -1,0 +1,193 @@
+{
+  "gid": "1210860550580423",
+  "current_status_update": {
+    "gid": "1214001204273306",
+    "status_type": "on_track",
+    "text": "Summary\n\nNothin' doin' at the moment but will be prioritized later this quarter, likely with Duc and Tuan to lead through\n\n----------------------------------------\n\nNext steps\n\nNone yet",
+    "title": "Data import - Bulk import for Notes - Apr 10"
+  },
+  "custom_fields": [
+    {
+      "gid": "1208817993811507",
+      "name": "Discovery Start",
+      "display_value": null,
+      "date_value": null
+    },
+    {
+      "gid": "1208818118276550",
+      "name": "Dev Start",
+      "display_value": "2026-05-18T00:00:00.000Z",
+      "date_value": {
+        "date": "2026-05-18",
+        "date_time": null
+      }
+    },
+    {
+      "gid": "1208818118032458",
+      "name": "Beta Start",
+      "display_value": null,
+      "date_value": null
+    },
+    {
+      "gid": "1208818124273418",
+      "name": "GA",
+      "display_value": "2026-07-13T00:00:00.000Z",
+      "date_value": {
+        "date": "2026-07-13",
+        "date_time": null
+      }
+    },
+    {
+      "gid": "1208818005809198",
+      "name": "JIRA Link",
+      "display_value": null,
+      "text_value": null
+    },
+    {
+      "gid": "1208820967756795",
+      "enum_value": {
+        "gid": "1208820967756799"
+      },
+      "name": "Team",
+      "display_value": "Platform"
+    },
+    {
+      "gid": "1208821111273828",
+      "enum_value": {
+        "gid": "1211441089905124"
+      },
+      "name": "Release Quarter",
+      "display_value": "Q2 2026"
+    },
+    {
+      "gid": "1208822149019495",
+      "enum_value": {
+        "gid": "1208822011920664"
+      },
+      "name": "Stage",
+      "display_value": "Backlog"
+    },
+    {
+      "gid": "1209127915359058",
+      "enum_value": {
+        "gid": "1209127915359061"
+      },
+      "name": "Type",
+      "display_value": "Strategic"
+    },
+    {
+      "gid": "1210199689431979",
+      "enum_value": {
+        "gid": "1210199689431983"
+      },
+      "name": "Current Discovery Stage",
+      "display_value": "25%"
+    },
+    {
+      "gid": "1210199693442470",
+      "enum_value": {
+        "gid": "1210199693442476"
+      },
+      "name": "Target Discovery Stage",
+      "display_value": "75%"
+    },
+    {
+      "gid": "1210191417850167",
+      "name": "Next DR Date",
+      "display_value": "2026-05-06T00:00:00.000Z",
+      "date_value": {
+        "date": "2026-05-06",
+        "date_time": null
+      }
+    },
+    {
+      "gid": "1210191417850169",
+      "name": "Next Discovery Topics",
+      "display_value": "https://app.asana.com/1/1123317448830974/project/1210860550580423/note/1212896371461095",
+      "text_value": "https://app.asana.com/1/1123317448830974/project/1210860550580423/note/1212896371461095"
+    },
+    {
+      "gid": "1210319522464926",
+      "name": " Next CEO Date",
+      "display_value": null,
+      "date_value": null
+    },
+    {
+      "gid": "1210320475546788",
+      "name": "CEO Meeting",
+      "display_value": null,
+      "text_value": null
+    },
+    {
+      "gid": "1210860558531904",
+      "name": "Engineering Assignee(s)",
+      "display_value": "Bisoye"
+    },
+    {
+      "gid": "1210909305830092",
+      "name": "Release Date(s)",
+      "display_value": "7/9/2026"
+    },
+    {
+      "gid": "1210909549820601",
+      "name": "GA Month",
+      "display_value": "Jul 26"
+    },
+    {
+      "gid": "1211631943113717",
+      "name": "QA Start",
+      "display_value": "2026-06-11T00:00:00.000Z",
+      "date_value": {
+        "date": "2026-06-11",
+        "date_time": null
+      }
+    },
+    {
+      "gid": "1211632501491612",
+      "enum_value": {
+        "gid": "1211843164552618"
+      },
+      "name": "R-Notes Stage",
+      "display_value": "Backlog"
+    },
+    {
+      "gid": "1211632506130433",
+      "enum_value": {
+        "gid": "1211843164552615"
+      },
+      "name": "KB Stage",
+      "display_value": "Backlog"
+    },
+    {
+      "gid": "1211632504010030",
+      "name": "PRD",
+      "display_value": "https://casecommons.atlassian.net/wiki/x/CgBGZ",
+      "text_value": "https://casecommons.atlassian.net/wiki/x/CgBGZ"
+    },
+    {
+      "gid": "1211632748689814",
+      "name": "Launch Plan",
+      "display_value": null,
+      "text_value": null
+    },
+    {
+      "gid": "1210467277124544",
+      "name": "UAT Start",
+      "display_value": "2026-07-02T00:00:00.000Z",
+      "date_value": {
+        "date": "2026-07-02",
+        "date_time": null
+      }
+    },
+    {
+      "gid": "1211763621285210",
+      "enum_value": {
+        "gid": "1212990185667311"
+      },
+      "name": "Roadmap",
+      "display_value": "Enhance Core Configurability"
+    }
+  ],
+  "name": "Data import - Bulk import for Notes",
+  "permalink_url": "https://app.asana.com/1/1123317448830974/project/1210860550580423"
+}

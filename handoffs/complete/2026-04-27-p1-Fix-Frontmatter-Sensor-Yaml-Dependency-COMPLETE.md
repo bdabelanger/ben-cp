@@ -4,7 +4,9 @@
 > **Assigned to:** Code
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P1
-> **STATUS**: 🔲 READY — pick up 2026-04-27
+> **STATUS**: ✅ COMPLETE — 2026-04-27
+
+Successfully fixed the frontmatter sensor by confirming PyYAML is present and verified with a clean sensor run. Also created a root requirements.txt for future dependency management.Scan/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/Scan
 
 ---
 

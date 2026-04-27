@@ -1,0 +1,365 @@
+{
+  "epic": {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations,customfield_10010.requestTypePractice",
+    "id": "11199",
+    "self": "https://casecommons.atlassian.net/rest/api/3/issue/11199",
+    "key": "CBP-498",
+    "fields": {
+      "statuscategorychangedate": "2023-02-10T10:42:48.424-0500",
+      "issuetype": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+        "id": "10000",
+        "description": "A roadmapped initiative",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+        "name": "Project",
+        "subtask": false,
+        "hierarchyLevel": 1
+      },
+      "timespent": null,
+      "customfield_10391": null,
+      "customfield_10392": null,
+      "project": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/project/10012",
+        "id": "10012",
+        "key": "CBP",
+        "name": "Platform",
+        "projectTypeKey": "software",
+        "simplified": false,
+        "avatarUrls": {
+          "48x48": "https://casecommons.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10559",
+          "24x24": "https://casecommons.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10559?size=small",
+          "16x16": "https://casecommons.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10559?size=xsmall",
+          "32x32": "https://casecommons.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10559?size=medium"
+        }
+      },
+      "customfield_10230": null,
+      "customfield_10076": null,
+      "customfield_10231": null,
+      "fixVersions": [],
+      "statusCategory": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
+        "id": 2,
+        "key": "new",
+        "colorName": "blue-gray",
+        "name": "To Do"
+      },
+      "customfield_10078": null,
+      "customfield_10232": null,
+      "aggregatetimespent": 230400,
+      "resolution": null,
+      "customfield_10233": null,
+      "customfield_10234": null,
+      "customfield_10036": [],
+      "customfield_10235": null,
+      "customfield_10027": null,
+      "customfield_10226": null,
+      "customfield_10424": null,
+      "customfield_10028": null,
+      "customfield_10227": null,
+      "customfield_10029": null,
+      "customfield_10228": null,
+      "customfield_10229": null,
+      "resolutiondate": null,
+      "workratio": -1,
+      "lastViewed": null,
+      "watches": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/CBP-498/watchers",
+        "watchCount": 2,
+        "isWatching": false
+      },
+      "created": "2023-02-10T10:42:48.111-0500",
+      "customfield_10020": [
+        {
+          "id": 2279,
+          "name": "Platform - Sprint 43",
+          "state": "closed",
+          "boardId": 15,
+          "goal": "",
+          "startDate": "2025-09-08T04:00:13.834Z",
+          "endDate": "2025-09-29T04:00:00.000Z",
+          "completeDate": "2025-10-10T16:14:57.365Z"
+        }
+      ],
+      "customfield_10021": null,
+      "customfield_10022": null,
+      "priority": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/priority/3",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/priorities/medium.svg",
+        "name": "P2",
+        "id": "3"
+      },
+      "customfield_10023": null,
+      "labels": [],
+      "customfield_10026": null,
+      "customfield_10016": null,
+      "customfield_10017": "blue",
+      "customfield_10458": null,
+      "customfield_10459": null,
+      "customfield_10019": "0|i001ls:040003",
+      "timeestimate": null,
+      "aggregatetimeoriginalestimate": 846000,
+      "issuelinks": [],
+      "assignee": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=629dfdc29b728c006a928e90",
+        "accountId": "629dfdc29b728c006a928e90",
+        "emailAddress": "ben.belanger@casebook.net",
+        "avatarUrls": {
+          "48x48": "https://secure.gravatar.com/avatar/56513ae8984eb11e1e971326a665a9fa?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBB-2.png",
+          "24x24": "https://secure.gravatar.com/avatar/56513ae8984eb11e1e971326a665a9fa?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBB-2.png",
+          "16x16": "https://secure.gravatar.com/avatar/56513ae8984eb11e1e971326a665a9fa?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBB-2.png",
+          "32x32": "https://secure.gravatar.com/avatar/56513ae8984eb11e1e971326a665a9fa?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FBB-2.png"
+        },
+        "displayName": "Ben Belanger",
+        "active": true,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "updated": "2026-03-10T10:39:47.853-0400",
+      "status": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
+        "description": "Ready for development in DEV environment",
+        "iconUrl": "https://casecommons.atlassian.net/",
+        "name": "To do",
+        "id": "10007",
+        "statusCategory": {
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
+          "id": 2,
+          "key": "new",
+          "colorName": "blue-gray",
+          "name": "To Do"
+        }
+      },
+      "customfield_10050": [],
+      "customfield_10051": null,
+      "timeoriginalestimate": null,
+      "description": {
+        "type": "doc",
+        "version": 1,
+        "content": [
+          {
+            "type": "panel",
+            "content": [
+              {
+                "type": "heading",
+                "attrs": {
+                  "level": 4
+                },
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "HubSpot linked tickets:"
+                  }
+                ]
+              },
+              {
+                "type": "bulletList",
+                "content": [
+                  {
+                    "type": "listItem",
+                    "content": [
+                      {
+                        "type": "paragraph",
+                        "content": [
+                          {
+                            "type": "text",
+                            "text": "Bulk import Labels with Cases (Ticket ID: 39051035814)",
+                            "marks": [
+                              {
+                                "type": "link",
+                                "attrs": {
+                                  "href": "https://app.hubspot.com/contacts/6899772/ticket/39051035814"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "(please, do not edit or duplicate in description)",
+                    "marks": [
+                      {
+                        "type": "subsup",
+                        "attrs": {
+                          "type": "sub"
+                        }
+                      },
+                      {
+                        "type": "em"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "attrs": {
+              "panelType": "info"
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "inlineCard",
+                "attrs": {
+                  "url": "https://casecommons.atlassian.net/wiki/spaces/PROD/pages/edit-v2/1682309130"
+                }
+              },
+              {
+                "type": "text",
+                "text": " "
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "mention",
+                "attrs": {
+                  "id": "712020:e715f612-98cd-4680-b8d8-410006257c59",
+                  "text": "@Tuan Nguyen",
+                  "accessLevel": "",
+                  "localId": "eab97cb2-0b15-46a4-b148-1fac5d007269"
+                }
+              },
+              {
+                "type": "text",
+                "text": " scouting/researching project, consulting and code review"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "mention",
+                "attrs": {
+                  "id": "712020:d27d517d-1c8b-43bb-bde1-577563ba5a79",
+                  "text": "@Scott Taylor",
+                  "accessLevel": "",
+                  "localId": "afd55080-b6f7-4565-a139-da9284d00e3c"
+                }
+              },
+              {
+                "type": "text",
+                "text": " leading development"
+              }
+            ]
+          }
+        ]
+      },
+      "customfield_10010": null,
+      "customfield_10011": "Bulk Import Updates",
+      "customfield_10012": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/customFieldOption/10016",
+        "value": "To Do",
+        "id": "10016"
+      },
+      "customfield_10057": null,
+      "customfield_10013": "ghx-label-10",
+      "customfield_10014": null,
+      "timetracking": {},
+      "customfield_10015": null,
+      "customfield_10049": {
+        "errorMessage": "The service space you are trying to view does not exist.",
+        "i18nErrorMessage": {
+          "i18nKey": "sd.jsm.agent.servicedesk.error.servicedesk.missing.galaxia",
+          "parameters": []
+        }
+      },
+      "customfield_10126": null,
+      "aggregatetimeestimate": 529200,
+      "attachment": [],
+      "summary": "Data import - Q4 2025",
+      "creator": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=63051a5249a5c6754d90de4e",
+        "accountId": "63051a5249a5c6754d90de4e",
+        "avatarUrls": {
+          "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/default-avatar.png",
+          "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/default-avatar.png",
+          "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/default-avatar.png",
+          "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/default-avatar.png"
+        },
+        "displayName": "Former user",
+        "active": false,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "customfield_10080": null,
+      "customfield_10081": null,
+      "subtasks": [],
+      "customfield_10041": null,
+      "customfield_10360": null,
+      "customfield_10042": null,
+      "reporter": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/user?accountId=63051a5249a5c6754d90de4e",
+        "accountId": "63051a5249a5c6754d90de4e",
+        "avatarUrls": {
+          "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/default-avatar.png",
+          "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/default-avatar.png",
+          "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/default-avatar.png",
+          "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/default-avatar.png"
+        },
+        "displayName": "Former user",
+        "active": false,
+        "timeZone": "America/New_York",
+        "accountType": "atlassian"
+      },
+      "customfield_10043": null,
+      "aggregateprogress": {
+        "progress": 230400,
+        "total": 759600,
+        "percent": 30
+      },
+      "customfield_10044": null,
+      "customfield_10000": "{}",
+      "customfield_10045": null,
+      "customfield_10001": null,
+      "customfield_10046": null,
+      "customfield_10002": [],
+      "customfield_10123": null,
+      "customfield_10124": null,
+      "customfield_10048": {
+        "errorMessage": "The service space you are trying to view does not exist.",
+        "i18nErrorMessage": {
+          "i18nKey": "sd.jsm.agent.servicedesk.error.servicedesk.missing.galaxia",
+          "parameters": []
+        }
+      },
+      "customfield_10116": null,
+      "environment": null,
+      "customfield_10359": null,
+      "progress": {
+        "progress": 0,
+        "total": 0
+      },
+      "votes": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/CBP-498/votes",
+        "votes": 0,
+        "hasVoted": false
+      },
+      "comment": {
+        "comments": [],
+        "self": "https://casecommons.atlassian.net/rest/api/3/issue/11199/comment",
+        "maxResults": 0,
+        "total": 0,
+        "startAt": 0
+      },
+      "worklog": {
+        "startAt": 0,
+        "maxResults": 20,
+        "total": 0,
+        "worklogs": []
+      }
+    }
+  },
+  "children": []
+}

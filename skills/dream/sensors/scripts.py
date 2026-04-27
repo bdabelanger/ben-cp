@@ -89,15 +89,17 @@ def find_referenced_scripts(filepath, base_dir):
         # Skip self-references and sensor names
         if ref == os.path.basename(filepath):
             continue
-        # Resolve relative to the script's directory or base_dir
+        # Resolve relative to the script's directory, base_dir, or base_dir/scripts/
         candidate = os.path.join(os.path.dirname(filepath), ref)
         if not os.path.exists(candidate):
             candidate2 = os.path.join(base_dir, ref)
             if not os.path.exists(candidate2):
-                missing.append({
-                    "ref": ref,
-                    "resolved": os.path.relpath(candidate, VAULT_ROOT),
-                })
+                candidate3 = os.path.join(base_dir, 'scripts', ref)
+                if not os.path.exists(candidate3):
+                    missing.append({
+                        "ref": ref,
+                        "resolved": os.path.relpath(candidate, VAULT_ROOT),
+                    })
     return missing
 
 

@@ -24,6 +24,9 @@ CODE_ARCH_PATTERN = re.compile(
     re.IGNORECASE | re.MULTILINE | re.DOTALL
 )
 
+def strip_code_blocks(content):
+    return re.sub(r'```.*?```', '', content, flags=re.DOTALL)
+
 def collect_md_files():
     files = []
     for root, dirs, fs in os.walk(VAULT_ROOT):
@@ -38,7 +41,7 @@ def audit_file(path):
     issues = []
     try:
         with open(path, errors='replace') as f:
-            content = f.read()
+            content = strip_code_blocks(f.read())
     except OSError:
         return issues
 
@@ -52,7 +55,8 @@ def audit_file(path):
         issues.append({"file": rel, "issue": "code_agent_architecture_decision"})
 
     # Skip AGENTS.md as it defines the standard
-    if rel == 'AGENTS.md':
+    # Skip index.md files to avoid template/registry false positives
+    if rel == 'AGENTS.md' or rel.endswith('index.md'):
         return issues
 
     # Unknown agent in Prepared by / Agent lines

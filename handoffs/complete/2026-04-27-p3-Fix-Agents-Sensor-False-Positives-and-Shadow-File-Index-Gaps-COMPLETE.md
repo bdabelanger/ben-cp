@@ -4,7 +4,9 @@
 > **Assigned to:** Code
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P3
-> **STATUS**: 🔲 READY — pick up 2026-04-27
+> **STATUS**: ✅ COMPLETE — 2026-04-27
+
+Successfully resolved false positives in the agents sensor by excluding index.md files from author format checks. Also cleared shadow file and ghost ref findings in the index sensor by updating handoffs/index.md and confirming agents/index.md was already accurate. Verified with clean sensor runs (0 findings).Scan/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/Scan
 
 ---
 

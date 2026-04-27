@@ -18,5 +18,4 @@ def run_script(script_name):
 if __name__ == "__main__":
     run_script("01_fetch_projects.py")
     run_script("02_fetch_tasks.py")
-    run_script("03_normalize.py")
     print("\n✅ Asana pipeline completed successfully.")

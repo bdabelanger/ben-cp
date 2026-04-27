@@ -66,7 +66,7 @@ To ensure transparency about repository size and token economy, any links to int
 
 Example:
 ```markdown
-- [Q2 2026 Product Shareout PDF](source/Q2%202026%20Product%20Shareout.pdf) _(7.4MB)_
+- [Q2 2026 Product Shareout PDF](../product/shareout/q2/source/Q2%202026%20Product%20Shareout.pdf) _(7.4MB)_
 ```
 
 These files should also be added to the `IGNORE_LIST` in `skills/dream/sensors/context.py` to prevent them from triggering red flags in the nightly Dream cycle.

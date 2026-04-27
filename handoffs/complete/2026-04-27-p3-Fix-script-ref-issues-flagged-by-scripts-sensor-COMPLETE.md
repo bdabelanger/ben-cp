@@ -2,7 +2,7 @@
 title: "Fix script reference issues flagged by scripts sensor"
 type: handoff
 priority: P3
-status: 🔲 READY
+status: ✅ COMPLETE
 date: 2026-04-27
 assigned_to: Code
 ---

@@ -36,15 +36,28 @@ def scan_orphans():
                 # Try to find a match in the parent
                 basename = os.path.splitext(s_file)[0].lower()
 
-                # Double extension check (e.g., .txt and .pdf for same thing)
+                # 1. Filename match (Loose)
                 matched = False
                 for md in available_mds:
-                    if basename == md:  # Exact match preferred
+                    if basename == md or basename in md or md in basename:
                         matched = True
                         break
-                    if basename in md or md in basename:  # Loose match
-                        matched = True
-                        break
+
+                # 2. Frontmatter 'sources' match
+                if not matched:
+                    for f in os.listdir(parent_dir):
+                        if f.endswith('.md'):
+                            md_path = os.path.join(parent_dir, f)
+                            try:
+                                with open(md_path, 'r', errors='ignore') as mdf:
+                                    content = mdf.read()
+                                    # Check for source path in content (simple grep-like check)
+                                    # This handles 'source/filename' in the frontmatter
+                                    if f"source/{s_file}" in content:
+                                        matched = True
+                                        break
+                            except:
+                                continue
 
                 if not matched:
                     orphans.append(os.path.join(source_dir, s_file))

@@ -17,6 +17,8 @@ domain: skills/dream
 
 The Dream cycle is the vault's nightly health loop. It runs all sensors against the vault, analyzes results, routes work to the right destination, then harvests fresh data (tasks, status, intelligence) so everything is current by morning. Ben's briefing is a `Dream Report` handoff waiting for him when he signs in.
 
+Terminal output during the run stays terse — no narration until the final handoff is written.
+
 ---
 
 ## Step 1 — Generate the Report
@@ -25,7 +27,7 @@ The Dream cycle is the vault's nightly health loop. It runs all sensors against 
 generate_report(skill='dream')
 ```
 
-Runs all 11 sensors and writes results to `reports/dream/`.
+Runs all sensors and writes results to `reports/dream/`.
 
 ---
 
@@ -81,7 +83,7 @@ Anything touching more than ~3 files, requiring script changes, or needing a PR:
 - Sensor logic fixes
 
 ### Bucket C — Asana task for Ben
-## Decisions or risks that require human judgment:
+Decisions or risks that require human judgment:
 - Files over 750KB needing archival decisions
 - Ambiguous drift (unsanctioned dirs that might be intentional)
 - Sensor failures with no clear explanation
@@ -100,16 +102,16 @@ Use ben-cp MCP tools to apply corrections. Log each fix for the Dream Report han
 Use `add_handoff` for each discrete fix area.
 
 **Handoff standards:**
-- `title` — imperative, specific. **Plain hyphens only — no em-dashes, en-dashes, or special characters**
+- `title` — imperative, specific. **Plain hyphens only — no em-dashes, en-dashes, or special characters, no slashes**
 - `priority` — P1 for broken sensors, P2 for structural issues, P3 for housekeeping
 - `assigned_to` — Code
 - Body must include: Context, Goal, Execution Steps, Verification checklist
 - Max 5 handoffs per run — group related issues
 
 **Naming examples:**
-✅ `Fix Ghost Links in intelligence/product/releases/`
+✅ `Fix Ghost Links in Q2 Project Intelligence`
 ✅ `Add Missing Index Files to 14 Directories`
-❌ `Fix Ghost Links — intelligence/` (em-dash)
+❌ `Fix Ghost Links — intelligence/` (em-dash, slash)
 ❌ `Fix Ghost Links - intelligence/` (space-hyphen-space causes triple-dash in filename)
 
 ---
@@ -130,20 +132,9 @@ If you made direct fixes, re-run `generate_report(skill='dream')` and confirm th
 
 ## Step 9 — Harvest Fresh Data
 
-Run the three harvest pipelines in sequence. These rebuild the raw data that powers tomorrow's reports.
+All four pipelines (status, tasks, intelligence harvest, intelligence scan) run automatically inside `generate_report`. You do not need to run any of them manually.
 
-```
-# Asana + Jira tasks
-python3 skills/tasks/run.py
-
-# Platform status (Asana projects + Jira epics)
-python3 skills/status/run.py
-
-# Intelligence harvest (refresh stale source docs)
-python3 skills/intelligence/run.py --harvest
-```
-
-Log any pipeline failures in the Dream Report. Do not block on failures — if a pipeline errors, note it and move on.
+Log any pipeline failures surfaced in the Dream Report. Do not block on failures — note and move on.
 
 ---
 
@@ -169,15 +160,19 @@ Create one final handoff using `add_handoff`:
 - **assigned_to:** Ben
 - **priority:** P1
 
-Content:
-- Sensor status table (from `report.md`)
-- What you fixed directly (Bucket A)
-- Handoffs created for Code (Bucket B) — titles only
-- Asana tasks raised for Ben (Bucket C) — titles only
-- Harvest pipeline results (tasks, status, intelligence) — ok / failed / findings count
-- Notable observations
+The handoff should be professional and concise — no narrative, no prose. Use the following structure:
 
-This is Ben's morning briefing. He reads it first thing at 8am.
+**Sensor Summary** — table with columns: Sensor, Status, Detail. One row per sensor.
+
+**Direct Fixes Applied** — bulleted list of any Bucket A fixes made during the run, or "None."
+
+**Handoffs for Code** — table with columns: Title, Priority. One row per handoff created.
+
+**Asana Tasks Raised** — titles only, or "None."
+
+**Pipeline Results** — table with columns: Pipeline, Result, Notes.
+
+**Notable** — brief bullets for anything Ben should be aware of that didn't generate a task or handoff.
 
 ---
 
@@ -194,7 +189,7 @@ Create a run log in `agents/logs/` using `add_intelligence`:
 
 Content:
 - Execution timestamp
-- Pulse status summary
+- Sensor status summary
 - Total fixes/handoffs/tasks generated
 - Harvest results (pipelines run, failures, orphans found)
 - Any significant errors encountered
@@ -208,3 +203,4 @@ Content:
 - Do NOT raise Asana tasks for issues you can fix directly
 - Keep handoffs focused — one discrete problem per handoff
 - If a sensor errors out entirely, note it in the Dream Report and move on
+- Handoff titles must not contain slashes, em-dashes, en-dashes, or special characters — plain hyphens only

@@ -10,6 +10,15 @@ Personal repo for Ben — the central nervous system for vault automation and ag
 
 ---
 
+## ⚙️ Setup
+
+Install Python dependencies:
+```bash
+pip3 install -r requirements.txt --break-system-packages
+```
+
+---
+
 ## 🛠 MCP Server (ben-cp)
 
 A purpose-built [Model Context Protocol](https://modelcontextprotocol.io) server that provides structured access to the vault's intelligence and orchestration layers.
@@ -40,13 +49,13 @@ The vault is hosted on Google Drive. Agents and scripts should **NEVER** use raw
 
 The vault features an automated synthesis pipeline that runs nightly to coordinate project data from Asana and Jira.
 
-**Runner:** `orchestration/utilities/intelligence/report.py`  
+**Runner:** `skills/dream/run.py`  
 **Outputs:** `reports/dream/`
 
 ### Quick Start:
 ```bash
 # Generate a fresh nightly report
-python3 orchestration/utilities/intelligence/report.py
+python3 skills/dream/run.py
 ```
 
 ---

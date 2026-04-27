@@ -11,7 +11,7 @@ links:
 
 - **GID:** 1213685097670626
 - **Permalink:** https://app.asana.com/1/1123317448830974/project/1213685097670626
-- **OKR Mapping:** [Locked and Signed Notes](../../okrs/q2/elevate-notes/locked_and_signed_notes.md)
+- **OKR Mapping:** [Locked and Signed Notes](../../../okrs/q2/elevate-notes/locked_and_signed_notes.md)
 - **Team:** Platform
 - **Stage:** Development
 - **Status:** on_track

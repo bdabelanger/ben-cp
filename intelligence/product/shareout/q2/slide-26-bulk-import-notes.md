@@ -36,4 +36,4 @@ Focusing on key deliverables for data migration: bulk note importing and improve
 **Quote:** "If we can't import into notes… if we can only have narrative… do I need to basically also shrink down these notes?" — Kentucky Humane Society
 
 ---
-**Tactical Link:** [Bulk Import notes](../../projects/q2/data-import-bulk-import-for-notes-(1210860550580423).md)
+**Tactical Link:** [Bulk Import notes](../../projects/q2/data-import-bulk-import-for-notes/index.md)

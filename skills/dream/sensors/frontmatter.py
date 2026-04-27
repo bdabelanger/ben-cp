@@ -8,7 +8,7 @@ OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream', 'data', 'raw')
 
 SKIP_DIRS  = {'.git', '__pycache__', 'node_modules', 'dist', 'src', 'reports', 'art', 'complete', 'archive', 'archived'}
 REQUIRED_KEYS = {'title', 'type', 'domain'}
-VALID_TYPES = {'index', 'skill', 'intelligence', 'handoff', 'changelog', 'release', 'prd', 'agent', 'task', 'report', 'log', 'session'}
+VALID_TYPES = {'index', 'skill', 'intelligence', 'handoff', 'changelog', 'release', 'prd', 'agent', 'task', 'report', 'log', 'session', 'launch_plan'}
 
 def collect_md_files():
     files = []

@@ -2,12 +2,13 @@
 title: Q2 2026 Product Shareout Index
 type: index
 domain: intelligence/product/shareout/q2
+local_sources:
+  - source/Q2 2026 Product Shareout.txt
+  - source/Q2 2026 Product Shareout.pdf
+date: 2026-04-14
 ---
 
 # Q2 2026 Product Shareout Index
-
-
-## Q2 2026 Product Shareout Index
 
 > **Domain:** Strategic Vision
 > **Purpose:** Consolidated intelligence for the Q2 2026 Product Shareout.

@@ -1,3 +1,9 @@
+---
+title: intelligence pipeline
+type: index
+domain: skills/pipelines/intelligence
+---
+
 # intelligence pipeline
 
 Ingests raw source material (Confluence docs, PDFs, text files) and produces structured **vault intelligence records** — markdown files tagged, summarized, and indexed so agents can retrieve and reason over them.

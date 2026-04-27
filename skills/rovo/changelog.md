@@ -1,3 +1,9 @@
+---
+title: Rovo Changelog
+type: changelog
+domain: skills/rovo
+---
+
 # Rovo Changelog
 
 > Detail log for `skills/rovo/`. See root `changelog.md` for version history.

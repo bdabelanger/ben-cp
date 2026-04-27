@@ -1,3 +1,9 @@
+---
+title: Enrollment dialog - Bulk Services section
+type: index
+domain: intelligence/product/projects/q2/enrollment-dialog-bulk-services-section
+---
+
 # Enrollment dialog - Bulk Services section
 
 - **GID:** 1211631356870657
@@ -32,7 +38,7 @@
 - **Roadmap:** Strengthen Core Case Management
 - **Product Assignee:** Ben Belanger, Pierre Klein
 
-# Enrollment Dialog Bulk Services Section (GID: 1211631356870657)
+## Enrollment Dialog Bulk Services Section (GID: 1211631356870657)
 
 ... [Existing Content] ...
 
@@ -48,4 +54,5 @@
 **Strategic Prerequisite:** Single-Click Edits (GA 4.2) is the downstream dependency for this feature set.
 
 ## 📚 Internal Documentation
-- [**Launch Plan**](launch_plan.md)
+- [PRD](prd.md)
+- [Launch Plan](launch_plan.md)

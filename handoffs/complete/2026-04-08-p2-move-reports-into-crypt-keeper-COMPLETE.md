@@ -1,3 +1,9 @@
+---
+title: Claude Code Implementation Plan Move reports into skillsknowledge
+type: handoff
+domain: handoffs/complete
+---
+
 # Claude Code Implementation Plan: Move reports/ into skills/knowledge/
 
 > **Prepared by:** Claude (Cowork session, 2026-04-08)

@@ -1,3 +1,9 @@
+---
+title: Implementation Plan Fix Task Files - Missing required sections in 5 tasks
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: Fix Task Files - Missing required sections in 5 tasks
 
 > **Prepared by:** Code (Gemini) (2026-04-27)

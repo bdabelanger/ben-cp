@@ -1,3 +1,9 @@
+---
+title: Robert Skill Changelog
+type: changelog
+domain: skills/intelligence/analysis/synthesize
+---
+
 # Robert Skill Changelog
 
 ## 2026-04-10 — v1.0.0

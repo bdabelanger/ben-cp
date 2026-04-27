@@ -1,3 +1,9 @@
+---
+title: Interpretation Skills
+type: index
+domain: skills/intelligence/analysis
+---
+
 # Interpretation Skills
 
 > **Purpose:** Vault analysis, pattern recognition, and forward-looking prediction.
@@ -22,3 +28,6 @@ The Interpretation domain is where the vault moves from *reporting* to *understa
 - **Predict** captures the quantitative trajectory and identifies upcoming risks or focuses.
 
 Together, they provide human user and the agents with the strategic context needed to iterate effectively.
+
+- [Audit](audit.md)
+- [Skill](SKILL.md)

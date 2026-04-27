@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Report Instructions Synthesize (Robert)
+type: intelligence
+domain: skills/intelligence/analysis/synthesize
 ---
+
 # Report Instructions: Synthesize (Robert)
 
 ## Identity & Voice

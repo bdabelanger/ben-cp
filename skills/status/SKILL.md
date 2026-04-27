@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Task Capture  Procedure
+type: skill
+domain: skills/status
 ---
+
 # Task Capture — Procedure
 
 > Vault-native documentation. The Cowork runtime version (agent-instruction framing) lives in the plugin. This document is the reference and edit target.

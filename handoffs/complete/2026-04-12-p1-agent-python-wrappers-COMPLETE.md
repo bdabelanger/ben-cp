@@ -1,3 +1,9 @@
+---
+title: Implementation Plan agent-python-wrappers
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: agent-python-wrappers
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)

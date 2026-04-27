@@ -1,3 +1,9 @@
+---
+title: Implementation Plan intelligence-smoke-test-fresh-chat
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: intelligence-smoke-test-fresh-chat
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)

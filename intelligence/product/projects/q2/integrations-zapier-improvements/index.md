@@ -1,3 +1,9 @@
+---
+title: Integrations - Zapier improvements
+type: index
+domain: intelligence/product/projects/q2/integrations-zapier-improvements
+---
+
 # Integrations - Zapier improvements
 
 - **GID:** 1213496879668016
@@ -48,8 +54,7 @@ Next steps
 - **QA Start:** 2026-05-11T00:00:00.000Z
 - **R-Notes Stage:** Backlog
 - **KB Stage:** Backlog
-- **PRD:** null
+- **PRD:** [prd.md](prd.md)
 - **Launch Plan:** null
 - **UAT Start:** 2026-05-28T00:00:00.000Z
 - **Roadmap:** Enhance Core Configurability
-

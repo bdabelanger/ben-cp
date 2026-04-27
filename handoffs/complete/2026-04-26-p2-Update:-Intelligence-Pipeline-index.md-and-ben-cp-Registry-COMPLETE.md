@@ -1,10 +1,7 @@
 ---
-title: "Update: Intelligence Pipeline index.md and ben-cp Registry After Harvest Refactor"
-priority: P2
-status: open
-assigned_to: Code
-created: 2026-04-26
-depends_on: 2026-04-26-p1-Refactor:-Shared-Asana-Pipeline-+-Intelligence-Harvest.md
+title: Update Intelligence Pipeline index.md and ben-cp Registry After Harvest Refactor
+type: handoff
+domain: handoffs/complete
 ---
 
 # Update: Intelligence Pipeline index.md and ben-cp Registry After Harvest Refactor

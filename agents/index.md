@@ -1,3 +1,9 @@
+---
+title: agents  Agent Role Directory
+type: index
+domain: agents
+---
+
 # agents/ — Agent Role Directory
 
 > Each file defines one agent's role, duties, entry point, and relevant SOPs.

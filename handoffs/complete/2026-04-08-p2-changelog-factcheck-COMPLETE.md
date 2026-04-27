@@ -1,3 +1,9 @@
+---
+title: Claude Code Implementation Plan Changelog Fact-Check Fixes
+type: handoff
+domain: handoffs/complete
+---
+
 # Claude Code Implementation Plan: Changelog Fact-Check Fixes
 
 > **Prepared by:** Claude Code (2026-04-08)

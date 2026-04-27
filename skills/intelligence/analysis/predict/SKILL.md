@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Skill Predict
+type: skill
+domain: skills/intelligence/analysis/predict
 ---
+
 # Skill: Predict
 
 > **Description:** Forward-looking analyst surfacing high-confidence predictions, emerging patterns, and risk flags across all vault signals.

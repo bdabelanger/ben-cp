@@ -1,3 +1,10 @@
+---
+title: Implementation Plan Fix Agent Sensor False Positives - Bold Markdown in Report
+  Files
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: Fix Agent Sensor False Positives - Bold Markdown in Report Files
 
 > **Prepared by:** Code (Gemini) (2026-04-27)
@@ -10,7 +17,7 @@ Resolved false positives by updating the agents sensor to strip bold markdown fo
 
 ---
 
-# Fix Agent Sensor False Positives - Bold Markdown in Report Files
+## Fix Agent Sensor False Positives - Bold Markdown in Report Files
 
 ## Context
 

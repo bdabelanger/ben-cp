@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Data Source Inventory
+type: intelligence
+domain: intelligence/product/okrs
 ---
+
 # Data Source Inventory
 
 This document serves as the authoritative map for all data sources used to calculate Key Results (KRs) within the OKR Reporting skill. It details where each metric's components (Denominator and Numerator) are sourced.

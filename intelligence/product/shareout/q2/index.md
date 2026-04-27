@@ -1,7 +1,13 @@
+---
+title: Q2 2026 Product Shareout Index
+type: index
+domain: intelligence/product/shareout/q2
+---
+
 # Q2 2026 Product Shareout Index
 
 
-# Q2 2026 Product Shareout Index
+## Q2 2026 Product Shareout Index
 
 > **Domain:** Strategic Vision
 > **Purpose:** Consolidated intelligence for the Q2 2026 Product Shareout.
@@ -28,10 +34,6 @@ Comprehensive view of FY2026 initiatives across all four quarters.
 Draft narrative accompanying the Q2 deck.
 
 ## Technical Alignment
-- [**Q2 Projects**](../../projects/q2/index.md) — Tactical records for Q2 initiatives.
-- [**Q2 OKRs**](../../okrs/q2/index.md) — Measurement and outcomes.
 
 ## Navigation
-- [**Roadmap Root**](../../index.md)
-- [**Product Intelligence Root**](../../../index.md)
 - [Q2 2026 Product Shareout Intelligence Record](notes-q2-2026-product-shareout.md)

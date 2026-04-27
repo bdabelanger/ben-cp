@@ -1,3 +1,9 @@
+---
+title: CX Bug Template
+type: intelligence
+domain: intelligence/product/projects/source
+---
+
 # CX Bug Template
 
 ## Summary

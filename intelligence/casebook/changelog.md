@@ -1,3 +1,9 @@
+---
+title: Casebook Changelog
+type: changelog
+domain: intelligence/casebook
+---
+
 # Casebook Changelog
 
 > Detail log for `skills/casebook/`. See root `changelog.md` for version history.

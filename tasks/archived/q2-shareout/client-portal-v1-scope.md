@@ -1,7 +1,13 @@
+---
+title: Q2 Shareout Client Portal v1 (Flagged)
+type: task
+domain: tasks/archived/q2-shareout
+---
+
 # Q2 Shareout: Client Portal v1 (Flagged)
 
 
-# Q2 Shareout: Client Portal v1
+## Q2 Shareout: Client Portal v1
 
 > **Slide Number:** 28
 > **Slide Theme:** OKR 4 — Ease Navigation Burdens

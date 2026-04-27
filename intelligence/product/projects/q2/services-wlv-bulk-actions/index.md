@@ -1,3 +1,9 @@
+---
+title: Services WLV - Bulk actions
+type: index
+domain: intelligence/product/projects/q2/services-wlv-bulk-actions
+---
+
 # Services WLV - Bulk actions
 
 - **GID:** 1211733450555414
@@ -31,7 +37,7 @@
 - **UAT Start:** 2026-04-30T00:00:00.000Z
 - **Roadmap:** Strengthen Core Case Management
 
-# Services WLV Bulk Actions (GID: 1211733450555414)
+## Services WLV Bulk Actions (GID: 1211733450555414)
 
 ... [Existing Content] ...
 

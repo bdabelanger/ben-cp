@@ -1,3 +1,9 @@
+---
+title: Claude Code Implementation Plan Agent Antigravity (Gemini)
+type: handoff
+domain: handoffs/complete
+---
+
 # Claude Code Implementation Plan: Agent 'Antigravity' (Gemini)
 
 > **Prepared by:** Claude (Cowork) (2026-04-10)

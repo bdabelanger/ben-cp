@@ -1,3 +1,9 @@
+---
+title: Implementation Plan 2026-04-17-p1-handoff-state-synchronization.md
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: 2026-04-17-p1-handoff-state-synchronization.md
 
 > **Prepared by:** Code (Gemini) (2026-04-17)
@@ -12,7 +18,7 @@
 
 ---
 
-# Handoff: Resilience Remediation — State Synchronization
+## Handoff: Resilience Remediation — State Synchronization
 
 ## Context
 Gemma (Local) has reported persistent issues with filtering and closing out handoffs. Specifically, handoffs that should be marked as `COMPLETE` are appearing in `READY` lists, and path discrepancies (like double `.md` extensions) are introducing noise into the orchestration layer.

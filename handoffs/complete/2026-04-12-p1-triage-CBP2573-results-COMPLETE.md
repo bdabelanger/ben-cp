@@ -1,3 +1,9 @@
+---
+title: Bug Triage CBP-2573
+type: handoff
+domain: handoffs/complete
+---
+
 # Bug Triage: CBP-2573
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)

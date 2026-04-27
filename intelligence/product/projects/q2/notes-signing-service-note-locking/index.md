@@ -1,3 +1,9 @@
+---
+title: Notes - Signing  Service Note Locking
+type: index
+domain: intelligence/product/projects/q2/notes-signing-service-note-locking
+---
+
 # Notes - Signing + Service Note Locking
 
 - **GID:** 1213685097670626

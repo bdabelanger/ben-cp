@@ -1,3 +1,9 @@
+---
+title: Implementation Plan Implement Jira Fix Version Alignment Audit
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: Implement Jira Fix Version Alignment Audit
 
 > **Prepared by:** Code (Gemini) (2026-04-14); Refined by Cowork (2026-04-15)

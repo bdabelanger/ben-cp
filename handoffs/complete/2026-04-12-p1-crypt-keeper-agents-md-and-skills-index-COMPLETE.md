@@ -1,3 +1,9 @@
+---
+title: Claude Code Implementation Plan Fix AGENTS.md and skillsindex.md
+type: handoff
+domain: handoffs/complete
+---
+
 # Claude Code Implementation Plan: Fix AGENTS.md and skills/index.md
 
 > **Prepared by:** Claude (Cowork) via knowledge skill run (2026-04-12)

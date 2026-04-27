@@ -61,6 +61,8 @@ def check_index_coverage():
         rel_root = os.path.relpath(root, VAULT_ROOT)
         md_files = [f for f in files if f.endswith('.md')]
         if md_files and 'index.md' not in files:
+            if rel_root == '.' and 'README.md' in files:
+                continue
             missing.append(rel_root)
     return missing
 

@@ -1,3 +1,9 @@
+---
+title: Asana Pipeline
+type: index
+domain: skills/pipelines/asana
+---
+
 # Asana Pipeline
 
 ## Purpose

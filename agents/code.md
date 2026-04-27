@@ -1,10 +1,9 @@
 ---
+title: Code (Gemini 3 Flash)  Agent Role File
 type: agent
-Status: active
-Priority: P1
-Date: 2026-04-26
-Owner: Ben
+domain: agents
 ---
+
 # Code (Gemini 3 Flash) — Agent Role File
 
 > **Role:** Implementer — executes handoffs reviewed by Cowork

@@ -1,3 +1,9 @@
+---
+title: Skill Task Capture
+type: index
+domain: skills/status
+---
+
 # Skill: Task Capture
 
 > **Purpose:** Captures work items from raw notes and routes them into Asana or Jira with correct metadata, issue types, and templates.
@@ -39,3 +45,5 @@ Reference data for this skill has been consolidated into the `intelligence/` dom
 ## Source of Truth Note
 
 > **Cowork plugin:** This skill is mirrored in the Cowork runtime plugin (`task-capture/SKILL.md`). Update this vault version first; keep the plugin in sync manually until auto-sync is in place. The vault version is the canonical reference and edit target.
+
+- [Skill](SKILL.md)

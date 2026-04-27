@@ -1,16 +1,16 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Launch Plan Notes - Locked Notes
+type: intelligence
+domain: intelligence/product/projects/q2/notes-locked-notes
 ---
+
 # Launch Plan: Notes - Locked Notes
 
-<h1 local-id="afb4ef1b-8176-4e00-bf59-c45498ad2087">
+<h2>
  <ac:inline-comment-marker ac:ref="809de9fa-f228-4612-a30d-d44aa224c7fc">
   Summary
  </ac:inline-comment-marker>
-</h1>
+</h2>
 <p local-id="e21ffaf5895c">
  <strong>
   Tenant Roster:
@@ -76,9 +76,9 @@ Owner: Ben
   </ol>
  </li>
 </ol>
-<h1 local-id="b1220013fadd">
+<h2>
  Communication strategy
-</h1>
+</h2>
 <h2 local-id="f179fa39d42f">
  Customer notifications
 </h2>
@@ -147,11 +147,11 @@ Owner: Ben
   </ul>
  </li>
 </ul>
-<h1 local-id="676864c64346">
+<h2>
  <ac:inline-comment-marker ac:ref="f0a5d37b-9047-476d-8db5-b36eebe5edd1">
   Rollout plan
  </ac:inline-comment-marker>
-</h1>
+</h2>
 <ac:structured-macro ac:local-id="22e8d5dd-8a6f-47e7-95d7-9e43125485a6" ac:macro-id="49852d68-d378-433e-b65d-a8a32999ae99" ac:name="panel" ac:schema-version="1">
  <ac:parameter ac:name="panelIcon">
   :dart:
@@ -1584,9 +1584,9 @@ Owner: Ben
  </ac:rich-text-body>
 </ac:structured-macro>
 <hr local-id="c7d35485-ca42-4ff4-b3d6-230499210ba9"/>
-<h1 local-id="a7a7f6e01482">
+<h2>
  Resources
-</h1>
+</h2>
 <ul local-id="b95cca68-d2ff-44e9-b81e-6421843d20b1">
  <li local-id="0340c7a9-497d-4566-9148-97bb0179f195">
   <p local-id="2d0d139d8857">

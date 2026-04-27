@@ -1,3 +1,9 @@
+---
+title: Casebook Reporting Changelog
+type: changelog
+domain: intelligence/casebook/reporting
+---
+
 # Casebook Reporting Changelog
 
 > Detail log for `skills/casebook/reporting/`. See root `changelog.md` for version history.

@@ -1,3 +1,9 @@
+---
+title: Implementation Plan Restore Task Capture Templates to Intelligence Domain
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: Restore Task Capture Templates to Intelligence Domain
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-13)

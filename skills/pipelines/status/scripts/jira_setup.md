@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Step 0 Jira Data Ingestion (Agent Guide)
+type: task
+domain: skills/pipelines/status/scripts
 ---
+
 # Step 0: Jira Data Ingestion (Agent Guide)
 
 This document provides instructions for LLMs/AI Agents on how to use the Atlassian Rovo MCP tools to populate the `inputs/raw/jira_issues.json` file.

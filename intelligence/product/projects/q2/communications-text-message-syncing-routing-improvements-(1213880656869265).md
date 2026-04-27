@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Communications - Text message syncing routing improvements
+type: intelligence
+domain: intelligence/product/projects/q2
 ---
+
 # Communications - Text message syncing routing improvements
 
 - **GID:** 1213880656869265

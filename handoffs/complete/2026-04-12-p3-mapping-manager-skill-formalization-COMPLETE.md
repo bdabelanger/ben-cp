@@ -1,3 +1,9 @@
+---
+title: Implementation Plan Mapping Manager Skill Formalization
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: Mapping Manager Skill Formalization
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)

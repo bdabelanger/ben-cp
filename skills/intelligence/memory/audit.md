@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Audit Procedure Memory Store
+type: intelligence
+domain: skills/intelligence/memory
 ---
+
 # Audit Procedure: Memory Store
 
 > **Owner:** Vault Auditor (Senior Archivist)

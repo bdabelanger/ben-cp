@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Memory Intake Report
+type: intelligence
+domain: skills/intelligence/memory/audit
 ---
+
 # Memory Intake Report
 
 > **Purpose:** Summary of memory updates and index shifts for the Intake domain.

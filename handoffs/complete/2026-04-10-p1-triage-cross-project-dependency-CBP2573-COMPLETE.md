@@ -1,3 +1,9 @@
+---
+title: Implementation Plan triage-cross-project-dependency-CBP2573
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: triage-cross-project-dependency-CBP2573
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-10)

@@ -1,3 +1,9 @@
+---
+title: Claude Code Implementation Plan Document Root-Level File Exemptions in AGENTS.md
+type: handoff
+domain: handoffs/complete
+---
+
 # Claude Code Implementation Plan: Document Root-Level File Exemptions in AGENTS.md
 
 > **Prepared by:** Vault Auditor (scheduled run, 2026-04-08)

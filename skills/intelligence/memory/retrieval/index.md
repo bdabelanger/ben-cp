@@ -1,3 +1,9 @@
+---
+title: Memory Retrieval Index
+type: index
+domain: skills/intelligence/memory/retrieval
+---
+
 # Memory Retrieval Index
 
 > **Purpose:** Contextual search, pattern matching, and context injection.

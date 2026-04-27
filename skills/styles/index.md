@@ -1,3 +1,9 @@
+---
+title: Styles Index
+type: index
+domain: skills/styles
+---
+
 # Styles Index
 
 > **Purpose:** Visual syntax authority — emoji glossary, vault nomenclature, and global CSS.
@@ -11,3 +17,5 @@
 | [audit.md](audit.md) | Procedural logic for visual compliance |
 | [report.md](report.md) | Visual glossary and report template |
 | [vault.css](vault.css) | Global CSS tokens for HTML-rendered reports |
+
+- [Emoji Key](emoji-key.md)

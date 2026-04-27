@@ -1,3 +1,9 @@
+---
+title: Handoff Gemma (Local) Smoke Test  Results  Tool Fix
+type: handoff
+domain: handoffs/complete
+---
+
 # Handoff: Gemma (Local) Smoke Test — Results & Tool Fix
 
 > **Prepared by:** Cowork (Claude) + Ben (2026-04-25)

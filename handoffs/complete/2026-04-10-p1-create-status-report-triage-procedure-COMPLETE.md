@@ -1,3 +1,9 @@
+---
+title: Handoff Status Report Triage Procedure
+type: handoff
+domain: handoffs/complete
+---
+
 # Handoff: Status Report Triage Procedure
 
 **Status:** ✅ COMPLETE (Structural Verification & Dependency Triage)

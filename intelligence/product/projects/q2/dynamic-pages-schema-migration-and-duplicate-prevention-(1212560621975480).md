@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Dynamic pages - Schema migration and duplicate prevention
+type: intelligence
+domain: intelligence/product/projects/q2
 ---
+
 # Dynamic pages - Schema migration and duplicate prevention
 
 - **GID:** 1212560621975480

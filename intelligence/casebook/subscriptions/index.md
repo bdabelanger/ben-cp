@@ -1,3 +1,9 @@
+---
+title: Skill Casebook Subscriptions MCP
+type: index
+domain: intelligence/casebook/subscriptions
+---
+
 # Skill: Casebook Subscriptions MCP
 
 > **Repo:** `/Users/benbelanger/GitHub/casebook-billing-mcp` _(dir name is legacy — repo should be renamed to `casebook-subscriptions-mcp` on GitHub)_

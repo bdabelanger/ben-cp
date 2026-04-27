@@ -1,3 +1,9 @@
+---
+title: Initiative Reduce Admin Burden  Third-Party Data Entry  Index
+type: index
+domain: intelligence/product/okrs/q2/reduce-admin-burden
+---
+
 # Initiative: Reduce Admin Burden — Third-Party Data Entry — Index
 
 > **Period:** Q2 2026
@@ -61,8 +67,6 @@
 
 ## 🔗 Constituent Projects
 
-- [**Zapier Improvements**](../../../projects/q2/integrations-zapier-improvements/index.md)
-- [**Portal Client Dashboard**](../../../projects/q2/portal-client-dashboard/index.md)
 
 ---
 

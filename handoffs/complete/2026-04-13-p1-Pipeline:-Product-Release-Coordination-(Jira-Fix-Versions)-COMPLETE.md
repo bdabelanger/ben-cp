@@ -1,3 +1,9 @@
+---
+title: Implementation Plan Pipeline  Product Release Coordination (Jira Fix Versions)
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: Pipeline — Product Release Coordination (Jira Fix Versions)
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-13)

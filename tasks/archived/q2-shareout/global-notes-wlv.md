@@ -1,7 +1,13 @@
+---
+title: Q2 Shareout Global Notes WLV (Flagged)
+type: task
+domain: tasks/archived/q2-shareout
+---
+
 # Q2 Shareout: Global Notes WLV (Flagged)
 
 
-# Q2 Shareout: Global Notes WLV
+## Q2 Shareout: Global Notes WLV
 
 > **Slide Number:** 27
 > **Slide Theme:** OKR 4 — Ease Navigation Burdens

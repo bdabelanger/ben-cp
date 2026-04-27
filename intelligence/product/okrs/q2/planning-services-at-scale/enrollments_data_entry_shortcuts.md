@@ -1,10 +1,9 @@
 ---
-type: okr-research
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: KR Measurement SOP Enrollments  Data Entry Shortcuts
+type: intelligence
+domain: intelligence/product/okrs/q2/planning-services-at-scale
 ---
+
 # KR Measurement SOP: Enrollments — Data Entry Shortcuts
 
 > [!NOTE]

@@ -1,3 +1,9 @@
+---
+title: Implementation Plan universal-skill-md-consolidation
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: universal-skill-md-consolidation
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)

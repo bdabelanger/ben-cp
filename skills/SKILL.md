@@ -1,12 +1,9 @@
 ---
-name: orchestration
-description: The execution engine of the vault. Manages coordination, tracking, and governance protocols.
-preferred_agent: mission-integrity
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: SKILL Orchestration Domain
+type: skill
+domain: skills
 ---
+
 # SKILL: Orchestration Domain
 
 > **Purpose:** Manages the operational standards of the vault.

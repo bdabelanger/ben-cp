@@ -1,3 +1,9 @@
+---
+title: ben-cp (v2.1.1)
+type: task
+domain: .
+---
+
 # ben-cp (v2.1.1)
 
 Personal repo for Ben — the central nervous system for vault automation and agentic coordination.

@@ -1,3 +1,9 @@
+---
+title: Implementation Plan interpretation-skill-grouping
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: interpretation-skill-grouping
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)

@@ -1,3 +1,9 @@
+---
+title: Data import - Bulk import for Notes
+type: index
+domain: intelligence/product/projects/q2/data-import-bulk-import-for-notes
+---
+
 # Data import - Bulk import for Notes
 
 - **GID:** 1210860550580423
@@ -30,6 +36,7 @@
 - **Launch Plan:** null
 - **UAT Start:** 2026-07-02T00:00:00.000Z
 - **Roadmap:** Enhance Core Configurability
+- **PRD:** [prd.md](prd.md)
 
 ## Implementation Plan: Bulk Import for Notes Intelligence Update
 

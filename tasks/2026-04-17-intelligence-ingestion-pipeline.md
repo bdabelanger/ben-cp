@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Intelligence Ingestion Pipeline Development
+type: task
+domain: tasks
 ---
+
 # Intelligence Ingestion Pipeline Development
 
 - **priority:** P2

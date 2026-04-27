@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: PRD Integrations - Zapier improvements
+type: prd
+domain: intelligence/product/projects/q2/integrations-zapier-improvements
 ---
+
 # PRD: Integrations - Zapier improvements
 
 <table data-layout="default">
@@ -106,9 +106,9 @@ Owner: Ben
   </tr>
  </tbody>
 </table>
-<h1>
+<h2>
  Problem Definition
-</h1>
+</h2>
 <h2>
  Context
 </h2>
@@ -277,9 +277,9 @@ Owner: Ben
   </tr>
  </tbody>
 </table>
-<h1>
+<h2>
  Solution Concept
-</h1>
+</h2>
 <h2>
  Overview
 </h2>

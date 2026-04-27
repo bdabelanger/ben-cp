@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: PRD Notes - Locked Notes
+type: prd
+domain: intelligence/product/projects/q2/notes-locked-notes
 ---
+
 # PRD: Notes - Locked Notes
 
 <table ac:local-id="34330ffad1db" data-layout="default" data-table-width="760">
@@ -180,9 +180,9 @@ Owner: Ben
   </tr>
  </tbody>
 </table>
-<h1 local-id="5186d9a2d379">
+<h2>
  Problem Definition
-</h1>
+</h2>
 <h2 local-id="0cffe71b5fd2">
  Context
 </h2>
@@ -350,9 +350,9 @@ Owner: Ben
 <p local-id="ed75a4ada03b">
  When adding People or Services to a note, the current implementation opens a second modal on top of the note creation modal. Opening multiple modals simultaneously has been associated with rendering delays and increased error rates in high-volume tenants.
 </p>
-<h1 local-id="23939d0ce289">
+<h2>
  Solution Concept
-</h1>
+</h2>
 <h2 local-id="70c5b8bf47d2">
  Overview
 </h2>
@@ -918,9 +918,9 @@ Owner: Ben
   </tr>
  </tbody>
 </table>
-<h1 local-id="e184bde1ac26">
+<h2>
  Requirements
-</h1>
+</h2>
 <h2 local-id="6bbb0ccafd0f">
  User Stories / Acceptance Criteria
 </h2>
@@ -1154,9 +1154,9 @@ Owner: Ben
   </tr>
  </tbody>
 </table>
-<h1 local-id="49383991213c">
+<h2>
  Design
-</h1>
+</h2>
 <h2 local-id="62876d6c0907">
  User Research &amp; Usability Test Insights
 </h2>

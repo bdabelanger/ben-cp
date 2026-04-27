@@ -1,8 +1,14 @@
+---
+title: Draft Speaker Notes for Product Roadmap Shareout Slides
+type: task
+domain: tasks/archived/q2-shareout
+---
+
 # Draft Speaker Notes for Product Roadmap Shareout Slides
 
 - **source_context:** /intelligence/product/roadmap/projects/q2
 
-# Speaker Notes Draft: Product Roadmap Shareout
+## Speaker Notes Draft: Product Roadmap Shareout
 
 ## 1. Slide Title Focus
 *   **Goal:** To clearly articulate the vision and direction of our product evolution.

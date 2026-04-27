@@ -1,9 +1,15 @@
+---
+title: Q2 Shareout Enrollments Bulk Actions (Updated)
+type: task
+domain: tasks/archived/q2-shareout
+---
+
 # Q2 Shareout: Enrollments Bulk Actions (Updated)
 
 - **Quote (Arc of the Capital):** "Can I bulk [add] the service enrollments?"
 - **TODO:** Verify that all internal links are correctly resolved in `index.md`.
 
-# Q2 Shareout: Enrollments Bulk Actions
+## Q2 Shareout: Enrollments Bulk Actions
 
 > **Slide Number:** 17
 > **Slide Theme:** OKR 1 — Strengthen Core Case Management

@@ -1,3 +1,9 @@
+---
+title: Implementation Plan Dream Report  2026-04-26
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: Dream Report — 2026-04-26
 
 > **Prepared by:** Code (Gemini) (2026-04-27)

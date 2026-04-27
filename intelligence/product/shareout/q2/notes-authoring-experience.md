@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Slide 16  Notes Authoring UX Tabbed Design (Q2)
+type: intelligence
+domain: intelligence/product/shareout/q2
 ---
+
 # Slide 16 — Notes Authoring UX: Tabbed Design (Q2)
 
 - **Headline:** Intuitive notes authoring: Reduce clicks and save time.

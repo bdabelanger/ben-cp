@@ -1,3 +1,9 @@
+---
+title: SkillsPipelinesProjects Changelog
+type: changelog
+domain: skills/pipelines/status
+---
+
 # Skills/Pipelines/Projects Changelog
 
 ## [Unreleased]

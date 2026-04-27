@@ -1,10 +1,9 @@
 ---
+title: Local (Gemma 2 27B)  Agent Role File
 type: agent
-Status: active
-Priority: P1
-Date: 2026-04-26
-Owner: Ben
+domain: agents
 ---
+
 # Local (Gemma 2 27B) — Agent Role File
 
 > **Role:** Reviewer, parser, intelligence refresher, pipeline executor

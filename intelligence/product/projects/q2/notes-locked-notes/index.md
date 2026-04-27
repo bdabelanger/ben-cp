@@ -1,3 +1,9 @@
+---
+title: Notes - Locked Notes
+type: index
+domain: intelligence/product/projects/q2/notes-locked-notes
+---
+
 # Notes - Locked Notes
 
 - **GID:** 1211786365522017
@@ -26,13 +32,13 @@
 - **QA Start:** 2026-04-06T00:00:00.000Z
 - **R-Notes Stage:** Backlog
 - **KB Stage:** Published
-- **PRD:** null
+- **PRD:** [prd.md](prd.md)
 - **Launch Plan:** https://casecommons.atlassian.net/wiki/x/A4AN9
 - **UAT Start:** 2026-04-16T00:00:00.000Z
 - **Roadmap:** Strengthen Core Case Management
 - **Product Assignee:** Ben Belanger, Pierre Klein
 
-# Locked Notes (GID: 1211786365522017)
+## Locked Notes (GID: 1211786365522017)
 
 This feature introduces the **Immutable Record** philosophy to our platform, ensuring data integrity is paramount for compliance. It moves us from flexible entry to a rigorous "Source of Truth" model.
 

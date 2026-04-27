@@ -1,3 +1,9 @@
+---
+title: Implementation Plan launchd-explanation-and-env-fix
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: launchd-explanation-and-env-fix
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)

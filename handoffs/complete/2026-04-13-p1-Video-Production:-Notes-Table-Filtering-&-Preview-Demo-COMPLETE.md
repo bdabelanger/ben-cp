@@ -1,3 +1,9 @@
+---
+title: Action Required Video Production  Notes Table Filtering  Preview Demo
+type: handoff
+domain: handoffs/complete
+---
+
 # Action Required: Video Production — Notes Table Filtering & Preview Demo
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-13)

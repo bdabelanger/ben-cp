@@ -1,7 +1,13 @@
+---
+title: Q2 Shareout Bulk Import for Notes (Updated)
+type: task
+domain: tasks/archived/q2-shareout
+---
+
 # Q2 Shareout: Bulk Import for Notes (Updated)
 
 
-# Q2 Shareout: Bulk Import for Notes
+## Q2 Shareout: Bulk Import for Notes
 
 > **Slide Number:** 26
 > **Slide Theme:** OKR 4 — Ease Navigation Burdens

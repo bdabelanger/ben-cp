@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Slide 17  Sort filter and enrollment shortcuts Service Plan  Services WLV
+type: intelligence
+domain: intelligence/product/shareout/q2
 ---
+
 # Slide 17 — Sort, filter, and enrollment shortcuts: Service Plan + Services WLV
 
 

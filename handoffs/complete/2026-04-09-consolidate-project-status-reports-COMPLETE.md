@@ -1,3 +1,10 @@
+---
+title: Claude Code Implementation Plan Consolidate Project Status Reports Pipeline
+  into skills
+type: handoff
+domain: handoffs/complete
+---
+
 # Claude Code Implementation Plan: Consolidate Project Status Reports Pipeline into skills/
 
 > **Prepared by:** Claude (Cowork session, 2026-04-08)

@@ -1,3 +1,9 @@
+---
+title: Implementation Plan ben-ad-hoc-input-protocol
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: ben-ad-hoc-input-protocol
 
 > **Prepared by:** Antigravity (Gemini) / Claude via Dispatch (2026-04-12)

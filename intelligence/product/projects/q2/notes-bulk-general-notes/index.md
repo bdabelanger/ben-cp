@@ -1,3 +1,9 @@
+---
+title: Notes - Bulk General Notes
+type: index
+domain: intelligence/product/projects/q2/notes-bulk-general-notes
+---
+
 # Notes - Bulk "General Notes"
 
 - **GID:** 1211838817183809
@@ -25,15 +31,15 @@
 - **QA Start:** 2026-04-06T00:00:00.000Z
 - **R-Notes Stage:** Backlog
 - **KB Stage:** Backlog
-- **PRD:** https://casecommons.atlassian.net/wiki/x/A4AN9
-- **Launch Plan:** https://casecommons.atlassian.net/wiki/x/A4AN9
+- **PRD:** [prd.md](prd.md)
+- **Launch Plan:** [launch_plan.md](launch_plan.md)
 - **UAT Start:** 2026-04-16T00:00:00.000Z
 - **Roadmap:** Strengthen Core Case Management
 - **Product Assignee:** Ben Belanger, Pierre Klein
 - **Headline:** Intuitive notes authoring: Reduce clicks and save time.
 - **Quote (Path of Life):** "Case managers input bulk notes so that they don't have to write the same thing five to eight times".
 
-# Bulk General Notes (GID: 1211838817183809)
+## Bulk General Notes (GID: 1211838817183809)
 
 This feature introduces the Note Authoring Canvas, a massive leap forward in consistency and professional-grade performance for note creation.
 

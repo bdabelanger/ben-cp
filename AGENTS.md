@@ -1,3 +1,9 @@
+---
+title: AGENTS.md  Vault Agent Dispatch
+type: agent
+domain: .
+---
+
 # AGENTS.md — Vault Agent Dispatch
 
 > **All agents working in this vault must read this file before taking any action.**

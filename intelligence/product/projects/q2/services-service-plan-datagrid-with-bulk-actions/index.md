@@ -1,3 +1,9 @@
+---
+title: Services - Service plan datagrid with bulk actions
+type: index
+domain: intelligence/product/projects/q2/services-service-plan-datagrid-with-bulk-actions
+---
+
 # Services - Service plan datagrid with bulk actions
 
 - **GID:** 1211631360190563
@@ -32,7 +38,7 @@
 - **Roadmap:** Strengthen Core Case Management
 - **Product Assignee:** Ben Belanger, Pierre Klein
 
-# Services Service Plan Datagrid (GID: 1211631360190563)
+## Services Service Plan Datagrid (GID: 1211631360190563)
 
 ... [Existing Content] ...
 

@@ -1,3 +1,9 @@
+---
+title: Claude Code Implementation Plan Missing index.md Files  Roz Consolidation
+type: handoff
+domain: handoffs/complete
+---
+
 # Claude Code Implementation Plan: Missing index.md Files + Roz Consolidation
 
 > **Prepared by:** Claude (Cowork) via knowledge skill run (2026-04-12)

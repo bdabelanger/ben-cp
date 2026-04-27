@@ -1,3 +1,9 @@
+---
+title: Memory Domain Index
+type: index
+domain: skills/intelligence/memory
+---
+
 # Memory Domain Index
 
 > **Purpose:** Long-term storage, mapping logic, and active vault intelligence.
@@ -17,7 +23,6 @@
 
 ## 🗺️ Logic & Mapping
 Structural logic and health rulebaselines are stored centrally in the intelligence domain:
-- [**Status Mapping**](../../status/schemas/status_mapping.md)
 
 
 ---
@@ -31,3 +36,6 @@ The Memory Store is the vault's central repository of truth.
 - **Watchdog** ensures the file structure remains valid.
 
 All agents MUST respect the Memory Store as the final source of structural and logical truth.
+
+- [Audit](audit.md)
+- [Skill](SKILL.md)

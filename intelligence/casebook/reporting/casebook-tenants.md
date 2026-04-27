@@ -1,16 +1,9 @@
 ---
-entity: tenants
-type: dimension_table
-domain: security_and_scoping
-primary_key: tenant_id
-foreign_keys: []
-bridge_tables: []
-description: The root administrative entity representing an organization or agency. Mandatory rules for query generation in the shared-database architecture.
-Status: published
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Dataset Tenants
+type: intelligence
+domain: intelligence/casebook/reporting
 ---
+
 # Dataset: Tenants
 
 ## Context

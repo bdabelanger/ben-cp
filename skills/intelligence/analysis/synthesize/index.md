@@ -1,3 +1,9 @@
+---
+title: Intelligence (Synthesize) Mission Integrity Observer
+type: index
+domain: skills/intelligence/analysis/synthesize
+---
+
 # Intelligence (Synthesize): Mission Integrity Observer
 
 > **Role:** Watching the vault's foundation for drift
@@ -29,3 +35,8 @@ The Synthesize skill monitors `AGENTS.md` and ensures it remains aligned with th
 | File | Purpose |
 | :--- | :--- |
 | `changelog.md` | Tracking Synthesize session work and audits. |
+
+- [Report](report.md)
+- [Diff Checker](diff_checker.md)
+- [Audit](audit.md)
+- [Skill](SKILL.md)

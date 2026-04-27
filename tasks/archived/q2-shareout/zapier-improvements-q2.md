@@ -1,7 +1,13 @@
+---
+title: Q2 Shareout Zapier Improvements (Updated)
+type: task
+domain: tasks/archived/q2-shareout
+---
+
 # Q2 Shareout: Zapier Improvements (Updated)
 
 
-# Q2 Shareout: Zapier Improvements
+## Q2 Shareout: Zapier Improvements
 
 > **Slide Number:** 30
 > **Slide Theme:** OKR 5 — Enhance Core Configurability

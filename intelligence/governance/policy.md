@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Vault Separation Policy
+type: intelligence
+domain: intelligence/governance
 ---
+
 # Vault Separation Policy
 
 > Effective: 2026-04-12

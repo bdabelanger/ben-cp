@@ -1,3 +1,9 @@
+---
+title: Predict
+type: index
+domain: skills/intelligence/analysis/predict
+---
+
 # Predict
 
 > **Role:** Forward-looking analyst surfacing predictions of any kind — high-confidence calls, emerging patterns, risk flags — with direct utility for the week's goals.
@@ -21,3 +27,7 @@
 ## Output
 
 Reports are written to `skills/intelligence/analysis/predict/outputs/reports/predict-report-[YYYY-MM-DD].md` using `report.md`.
+
+- [Report](report.md)
+- [Audit](audit.md)
+- [Skill](SKILL.md)

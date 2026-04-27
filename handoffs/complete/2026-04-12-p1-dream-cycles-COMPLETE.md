@@ -1,3 +1,9 @@
+---
+title: Implementation Plan dream-cycles
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: dream-cycles
 
 > **Prepared by:** Claude via Cowork/Dispatch (2026-04-11)

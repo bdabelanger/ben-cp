@@ -1,3 +1,9 @@
+---
+title: Memory Audit Index
+type: index
+domain: skills/intelligence/memory/audit
+---
+
 # Memory Audit Index
 
 > **Purpose:** Structural auditing and hygiene validation for the vault.

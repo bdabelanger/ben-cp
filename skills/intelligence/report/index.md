@@ -1,3 +1,9 @@
+---
+title: Report Domain Index
+type: index
+domain: skills/intelligence/report
+---
+
 # Report Domain Index
 
 > **Purpose:** Daily Progress Summary (Dream Cycle) orchestration and output spec.

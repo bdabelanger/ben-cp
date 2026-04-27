@@ -1,3 +1,9 @@
+---
+title: Implementation Plan lumberjack-changelog-alignment-fixes
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: lumberjack-changelog-alignment-fixes
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-10)

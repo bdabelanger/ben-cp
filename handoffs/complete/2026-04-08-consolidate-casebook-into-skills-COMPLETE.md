@@ -1,3 +1,9 @@
+---
+title: Claude Code Implementation Plan Consolidate Casebook into skillscasebook
+type: handoff
+domain: handoffs/complete
+---
+
 # Claude Code Implementation Plan: Consolidate Casebook into skills/casebook/
 
 > **Prepared by:** Claude (Cowork session, 2026-04-08)

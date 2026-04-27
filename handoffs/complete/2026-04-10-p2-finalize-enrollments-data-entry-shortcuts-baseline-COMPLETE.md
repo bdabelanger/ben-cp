@@ -1,3 +1,9 @@
+---
+title: Implementation Plan finalize-enrollments-data-entry-shortcuts-baseline
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: finalize-enrollments-data-entry-shortcuts-baseline
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-10)

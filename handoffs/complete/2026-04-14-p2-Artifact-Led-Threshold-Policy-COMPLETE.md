@@ -1,3 +1,9 @@
+---
+title: Implementation Plan Artifact-Led Threshold Policy
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: Artifact-Led Threshold Policy
 
 > **Prepared by:** Code (Gemini) (2026-04-14)
@@ -17,7 +23,7 @@ version: 2026.04.14
 tags: [policy, workflow, artifacts]
 agent_sync: Gemini-Native
 ---
-# Policy: Artifact-Led Complexity Thresholds
+## Policy: Artifact-Led Complexity Thresholds
 
 ## Objective
 To balance operational speed with documentation rigor. This policy defines which "Artifacts" are required based on the Priority (P) and Complexity of a task.

@@ -1,3 +1,9 @@
+---
+title: Implementation Plan Integrate Legacy Platform Analytics into New Projects Engine
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: Integrate Legacy Platform Analytics into New Projects Engine
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-13)

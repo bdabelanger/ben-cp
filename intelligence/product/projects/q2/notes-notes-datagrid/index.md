@@ -1,3 +1,9 @@
+---
+title: Notes - Notes datagrid
+type: index
+domain: intelligence/product/projects/q2/notes-notes-datagrid
+---
+
 # Notes - Notes datagrid
 
 - **GID:** 1209963394727039
@@ -35,7 +41,7 @@
 - **Headline:** Intuitive notes authoring: Reduce clicks and save time.
 - **Quote (Path of Life):** "Case managers input bulk notes so that they don't have to write the same thing five to eight times".
 
-# Notes - Notes datagrid
+## Notes - Notes datagrid
 
 - **GID:** 1209963394727039
 - **Permalink:** https://app.asana.com/1/1123317448830974/project/1209963394727039

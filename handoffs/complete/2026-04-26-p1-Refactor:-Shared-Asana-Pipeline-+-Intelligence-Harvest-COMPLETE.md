@@ -1,9 +1,7 @@
 ---
-title: "Refactor: Shared Asana Pipeline + Intelligence Harvest Step"
-priority: P1
-status: open
-assigned_to: Code
-created: 2026-04-26
+title: Refactor Shared Asana Pipeline  Intelligence Harvest Step
+type: handoff
+domain: handoffs/complete
 ---
 
 # Refactor: Shared Asana Pipeline + Intelligence Harvest Step

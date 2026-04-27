@@ -1,9 +1,7 @@
 ---
-project: Governance / Workflow
-status: READY
-version: 2026.04.14
-tags: [workflow, artifacts, audit, governance]
-agent_sync: Cowork-Review
+title: Handoff Mandatory Adoption of Artifact-Led Workflow
+type: handoff
+domain: handoffs/complete
 ---
 
 # Handoff: Mandatory Adoption of Artifact-Led Workflow

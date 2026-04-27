@@ -1,3 +1,9 @@
+---
+title: Implementation Plan character-customization-policy
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: character-customization-policy
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)

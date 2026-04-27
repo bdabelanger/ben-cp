@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Respond to Brian and Chris regarding CX Bug in Casebook
+type: task
+domain: tasks
 ---
+
 # Respond to Brian and Chris regarding CX Bug in Casebook
 
 - **priority:** P2

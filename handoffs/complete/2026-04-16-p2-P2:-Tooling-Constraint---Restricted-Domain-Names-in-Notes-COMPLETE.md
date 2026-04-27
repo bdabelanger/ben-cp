@@ -1,3 +1,9 @@
+---
+title: Implementation Plan P2 Tooling Constraint - Restricted Domain Names in Notes
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: P2: Tooling Constraint - Restricted Domain Names in Notes
 
 > **Prepared by:** Code (Gemini) (2026-04-16)

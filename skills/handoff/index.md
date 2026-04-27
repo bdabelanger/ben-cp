@@ -1,3 +1,9 @@
+---
+title: Skill Handoff Protocol
+type: index
+domain: skills/handoff
+---
+
 # Skill: Handoff Protocol
 
 > **PURPOSE:** Cross-agent implementation plan execution. Any agent receiving
@@ -133,3 +139,6 @@ After execution, the file header should look like:
 
 **Changelog:** [X.Y.Z] — [YYYY-MM-DD] (see root `changelog.md`)
 ```
+
+- [Audit](audit.md)
+- [Skill](SKILL.md)

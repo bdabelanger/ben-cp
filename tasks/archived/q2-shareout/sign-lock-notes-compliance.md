@@ -1,9 +1,15 @@
+---
+title: Q2 Shareout Sign  Lock Notes (Updated)
+type: task
+domain: tasks/archived/q2-shareout
+---
+
 # Q2 Shareout: Sign & Lock Notes (Updated)
 
 - **Quote (Grafton County, NH):** [Original quote retained as per handoff]
 - **TODO:** Verify that all internal links are correctly resolved in `index.md`.
 
-# Q2 Shareout: Sign & Lock Notes
+## Q2 Shareout: Sign & Lock Notes
 
 > **Slide Number:** 24
 > **Slide Theme:** OKR 3 — Security & Compliance Enablers

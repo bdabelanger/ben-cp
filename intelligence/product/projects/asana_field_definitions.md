@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Asana Custom Field GID Reference Catalog
+type: intelligence
+domain: intelligence/product/projects
 ---
+
 # Asana Custom Field GID Reference Catalog
 
 - **source_file:** ../../skills/pipelines/asana/schemas/asana-custom-fields.md

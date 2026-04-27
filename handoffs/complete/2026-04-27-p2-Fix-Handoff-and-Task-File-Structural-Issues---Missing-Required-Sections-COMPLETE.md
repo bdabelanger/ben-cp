@@ -1,3 +1,10 @@
+---
+title: Implementation Plan Fix Handoff and Task File Structural Issues - Missing Required
+  Sections
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: Fix Handoff and Task File Structural Issues - Missing Required Sections
 
 > **Prepared by:** Code (Gemini) (2026-04-27)
@@ -10,7 +17,7 @@ Resolved structural issues by fixing the handoffs sensor (exclusions, header anc
 
 ---
 
-# Fix Handoff and Task File Structural Issues - Missing Required Sections
+## Fix Handoff and Task File Structural Issues - Missing Required Sections
 
 ## Context
 

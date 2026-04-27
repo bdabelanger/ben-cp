@@ -1,16 +1,9 @@
 ---
-entity: people
-type: dimension_table
-primary_key: person_id
-foreign_keys: []
-bridge_tables:
-  - case_involvements
-description: Client, provider, and subject demographic repository.
-Status: published
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Dataset People
+type: intelligence
+domain: intelligence/casebook/reporting
 ---
+
 # Dataset: People
 
 ## Context

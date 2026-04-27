@@ -1,3 +1,9 @@
+---
+title: Skill Casebook
+type: index
+domain: intelligence/casebook
+---
+
 # Skill: Casebook
 
 > All Casebook-related skills, reference documentation, and MCP context.

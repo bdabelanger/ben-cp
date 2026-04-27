@@ -1,3 +1,9 @@
+---
+title: SkillsDream Changelog
+type: changelog
+domain: skills/dream
+---
+
 # Skills/Dream Changelog
 
 ## [Unreleased]

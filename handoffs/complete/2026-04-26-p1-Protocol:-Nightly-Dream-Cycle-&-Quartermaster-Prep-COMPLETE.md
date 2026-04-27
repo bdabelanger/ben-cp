@@ -1,3 +1,9 @@
+---
+title: Protocol Nightly Dream Cycle  Quartermaster Loop
+type: handoff
+domain: handoffs/complete
+---
+
 # Protocol: Nightly Dream Cycle & Quartermaster Loop
 
 > **Prepared by:** Cowork (Claude) + Ben (2026-04-26)

@@ -1,3 +1,9 @@
+---
+title: Implementation Plan skill-builder-disassembly
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: skill-builder-disassembly
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)

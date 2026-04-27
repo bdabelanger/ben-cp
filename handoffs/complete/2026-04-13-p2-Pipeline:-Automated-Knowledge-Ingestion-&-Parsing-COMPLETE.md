@@ -1,3 +1,9 @@
+---
+title: Concept Automated Knowledge Ingestion  Parsing Pipeline
+type: handoff
+domain: handoffs/complete
+---
+
 # Concept: Automated Knowledge Ingestion & Parsing Pipeline
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-13)

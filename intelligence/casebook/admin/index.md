@@ -1,3 +1,9 @@
+---
+title: Skill Casebook Admin MCP
+type: index
+domain: intelligence/casebook/admin
+---
+
 # Skill: Casebook Admin MCP
 
 > **Repo:** `/Users/benbelanger/GitHub/casebook-admin-mcp`

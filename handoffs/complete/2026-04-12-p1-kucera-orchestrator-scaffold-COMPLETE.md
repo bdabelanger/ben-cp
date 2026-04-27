@@ -1,3 +1,9 @@
+---
+title: Implementation Plan kucera-orchestrator-scaffold
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: kucera-orchestrator-scaffold
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)

@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Skill Vault Audit
+type: skill
+domain: skills/intelligence/memory/audit
 ---
+
 # Skill: Vault Audit
 
 > **Description:** Instruction-driven structural auditing and hygiene validation.

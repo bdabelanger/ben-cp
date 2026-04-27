@@ -1,3 +1,9 @@
+---
+title: Research Template
+type: intelligence
+domain: intelligence/product/projects/source
+---
+
 # Research Template
 
 ## Summary

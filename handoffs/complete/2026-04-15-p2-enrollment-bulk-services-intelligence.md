@@ -1,3 +1,9 @@
+---
+title: Implementation Plan Enrollment Bulk Services Intelligence Update
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: Enrollment Bulk Services Intelligence Update
 
 > **Prepared by:** Cowork (Gemini) (2026-04-15)

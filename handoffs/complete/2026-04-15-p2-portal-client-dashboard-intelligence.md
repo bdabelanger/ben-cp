@@ -1,3 +1,9 @@
+---
+title: Implementation Plan Client Portal Dashboard Intelligence Update
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: Client Portal Dashboard Intelligence Update
 
 > **Prepared by:** Cowork (Gemini) (2026-04-15)

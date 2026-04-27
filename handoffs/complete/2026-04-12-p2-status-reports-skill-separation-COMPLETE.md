@@ -1,3 +1,9 @@
+---
+title: Implementation Plan status-reports-skill-separation
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: status-reports-skill-separation
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)

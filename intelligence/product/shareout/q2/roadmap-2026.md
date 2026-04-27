@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: 2026 CBP Roadmap
+type: intelligence
+domain: intelligence/product/shareout/q2
 ---
+
 # 2026 CBP Roadmap
 
 - **priority:** P2

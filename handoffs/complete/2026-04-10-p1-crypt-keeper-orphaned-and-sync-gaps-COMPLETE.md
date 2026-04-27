@@ -1,3 +1,9 @@
+---
+title: Implementation Plan crypt-keeper-orphaned-and-sync-gaps
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: crypt-keeper-orphaned-and-sync-gaps
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-10)

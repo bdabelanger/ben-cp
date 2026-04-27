@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Notes - Signing  Service Note Locking
+type: intelligence
+domain: intelligence/product/projects/q2
 ---
+
 # Notes - Signing + Service Note Locking
 
 - **GID:** 1213685097670626

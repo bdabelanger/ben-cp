@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Jira  My Issues
+type: task
+domain: tasks
 ---
+
 # Jira — My Issues
 
 _Last synced: 2026-04-26 · 51 issues_

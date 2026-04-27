@@ -1,3 +1,9 @@
+---
+title: Intelligence Ingestion Pipeline
+type: intelligence
+domain: skills/pipelines/intelligence
+---
+
 # Intelligence Ingestion Pipeline
 
 > **Domain:** Intelligence Lifecycle

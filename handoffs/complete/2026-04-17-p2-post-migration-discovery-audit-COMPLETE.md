@@ -1,3 +1,9 @@
+---
+title: Implementation Plan 2026-04-17-p2-Post-Migration-Intelligence-Audit-Gemma.md
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: 2026-04-17-p2-Post-Migration-Intelligence-Audit-Gemma.md
 
 > **Prepared by:** Gemma (Local)
@@ -10,7 +16,7 @@ All steps completed by Gemma (Local) on 2026-04-17. Tooling verified, 50+ stale 
 
 ---
 
-# Handoff: Post-Migration Intelligence Audit
+## Handoff: Post-Migration Intelligence Audit
 
 > **STATUS**: 🔲 READY — pick up 2026-04-17
 > **ASSIGNEE**: Code (For Review)

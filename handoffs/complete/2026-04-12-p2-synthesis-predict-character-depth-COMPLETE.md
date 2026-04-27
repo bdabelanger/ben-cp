@@ -1,3 +1,9 @@
+---
+title: Implementation Plan synthesis-predict-character-depth
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: synthesis-predict-character-depth
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)
@@ -14,7 +20,7 @@ Deepened character identity for both Robert (Synthesize) and Bryan (Predict) in 
 
 ---
 
-# Implementation Plan: synthesis-predict-character-depth
+## Implementation Plan: synthesis-predict-character-depth
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)
 > **Assigned to:** Claude (Cowork)

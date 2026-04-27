@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Audit Procedure Predict
+type: intelligence
+domain: skills/intelligence/analysis/predict
 ---
+
 # Audit Procedure: Predict
 
 > **Owner:** Intelligence (Predict)

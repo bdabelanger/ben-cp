@@ -1,3 +1,9 @@
+---
+title: Code Implementation Plan Consolidating Skills into Intelligence
+type: handoff
+domain: handoffs/complete
+---
+
 # Code Implementation Plan: Consolidating Skills into Intelligence
 
 > **Prepared by:** Human User / Cowork (Unified Intelligence Migration, 2026-04-15)

@@ -10,6 +10,19 @@ YELLOW_KB = 250
 RED_KB    = 750
 SKIP_DIRS = {'.git', '__pycache__', 'node_modules'}
 
+def is_acknowledged(path):
+    dir_path = os.path.dirname(path)
+    index_path = os.path.join(dir_path, 'index.md')
+    if not os.path.exists(index_path): return False
+    filename = os.path.basename(path)
+    import urllib.parse
+    try:
+        with open(index_path, 'r') as f:
+            content = f.read()
+            # Check for the filename (or its URL-encoded version) and (SIZE: flag
+            return (filename in content or urllib.parse.quote(filename) in content) and "(SIZE:" in content
+    except: return False
+
 def run():
     yellow_flags = []
     red_flags    = []
@@ -29,9 +42,11 @@ def run():
             rel = os.path.relpath(path, VAULT_ROOT)
             size_kb = size / 1024
             if size_kb > RED_KB:
-                red_flags.append({"file": rel, "size_kb": round(size_kb, 1)})
+                if not is_acknowledged(path):
+                    red_flags.append({"file": rel, "size_kb": round(size_kb, 1)})
             elif size_kb > YELLOW_KB:
-                yellow_flags.append({"file": rel, "size_kb": round(size_kb, 1)})
+                if not is_acknowledged(path):
+                    yellow_flags.append({"file": rel, "size_kb": round(size_kb, 1)})
 
     red_flags.sort(key=lambda x: -x["size_kb"])
     yellow_flags.sort(key=lambda x: -x["size_kb"])

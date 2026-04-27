@@ -1,10 +1,9 @@
 ---
-type: okr-research
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: KR Measurement SOP Locked and Signed Notes (High-Confidentiality)
+type: intelligence
+domain: intelligence/product/okrs/q2/elevate-notes
 ---
+
 # KR Measurement SOP: Locked and Signed Notes (High-Confidentiality)
 
 > [!NOTE]

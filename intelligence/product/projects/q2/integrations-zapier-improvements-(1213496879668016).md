@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Integrations - Zapier improvements
+type: intelligence
+domain: intelligence/product/projects/q2
 ---
+
 # Integrations - Zapier improvements
 
 - **GID:** 1213496879668016

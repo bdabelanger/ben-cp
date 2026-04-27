@@ -1,3 +1,9 @@
+---
+title: Implementation Plan weekly-status-skill-migration
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: weekly-status-skill-migration
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-13)

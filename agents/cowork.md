@@ -1,10 +1,9 @@
 ---
+title: Cowork (Sonnet 4.6)  Agent Role File
 type: agent
-Status: active
-Priority: P1
-Date: 2026-04-26
-Owner: Ben
+domain: agents
 ---
+
 # Cowork (Sonnet 4.6) — Agent Role File
 
 > **Role:** Architect, handoff reviewer, session lead

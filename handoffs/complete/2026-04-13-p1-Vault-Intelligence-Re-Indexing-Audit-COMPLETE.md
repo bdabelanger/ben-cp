@@ -1,3 +1,9 @@
+---
+title: Implementation Plan Vault Intelligence Re-Indexing Audit
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: Vault Intelligence Re-Indexing Audit
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-13)

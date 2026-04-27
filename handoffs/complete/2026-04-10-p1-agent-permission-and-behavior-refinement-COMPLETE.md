@@ -1,3 +1,9 @@
+---
+title: Agent Permission and Behavior Refinement
+type: handoff
+domain: handoffs/complete
+---
+
 # Agent Permission and Behavior Refinement
 
 > **Prepared by:** Antigravity (Initial Concept, 2026-04-10) — updated by Claude via Dispatch (2026-04-11, 2026-04-12)

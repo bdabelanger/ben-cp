@@ -1,3 +1,11 @@
+---
+
+# P1: JIRA Data Discrepancy
+title: 2026-04-16-p1-P1-JIRA-Data-Discrepancy-in-Daily-Reports-(Product-Projects)-COMPLETE
+type: handoff
+domain: handoffs/complete
+---
+
 The daily report for Product Projects is not accurately reflecting the data from JIRA.
 
 **Observed Issue:**

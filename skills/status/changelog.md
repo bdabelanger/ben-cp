@@ -1,3 +1,9 @@
+---
+title: Project Reporting Changelog
+type: changelog
+domain: skills/status
+---
+
 # Project Reporting Changelog
 
 > Detail log for `skills/status/`. See root `changelog.md` for version history.

@@ -1,3 +1,9 @@
+---
+title: Atlassian Rovo SOP Status Report Synthesis
+type: index
+domain: skills/rovo
+---
+
 ## Standard Operating Procedures
 
 Atlassian Rovo - see /rovo/rovo-sop.md for full details:
@@ -19,3 +25,5 @@ When acting as part of the **Status Report Orchestrator**, use Rovo tools to pro
 * **Search Context:** Use `searchAtlassian` with project names found in Step 1 to locate high-level decisions in Confluence or Slack.
 * **Sentiment Analysis:** Use `getJiraIssue` on "Anchor" issues or Epics to determine the current 'vibe' of the project.
 * **Synthesis:** Group findings into a "Decisions & Context" block for each project to be consumed by the final report generator.
+
+- [Skill](SKILL.md)

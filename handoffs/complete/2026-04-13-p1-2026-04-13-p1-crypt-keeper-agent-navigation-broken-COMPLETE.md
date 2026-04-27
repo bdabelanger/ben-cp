@@ -1,3 +1,9 @@
+---
+title: Implementation Plan Crypt-Keeper  Agent Navigation Broken
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: Crypt-Keeper — Agent Navigation Broken
 
 > **Prepared by:** Claude (Cowork) (Intelligence (Memory) scheduled run, 2026-04-13)

@@ -1,3 +1,9 @@
+---
+title: Implementation Plan P1 Workflow Blocked - Inability to Mark Handoffs Complete
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: P1: Workflow Blocked - Inability to Mark Handoffs Complete
 
 > **Prepared by:** Code (Gemini) (2026-04-16)

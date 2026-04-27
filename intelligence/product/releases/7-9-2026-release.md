@@ -1,10 +1,9 @@
 ---
+title: Release 792026
 type: release
-Status: published
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+domain: intelligence/product/releases
 ---
+
 # Release: 7/9/2026
 
 - **Target Date:** 7/9/2026

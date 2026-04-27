@@ -1,3 +1,9 @@
+---
+title: projects pipeline
+type: index
+domain: skills/pipelines/status
+---
+
 # projects pipeline
 
 Fetches, processes, and publishes the **Platform Weekly Status Report** — a comprehensive view of all active Platform team projects, their Jira health, milestone progress, and readiness status.

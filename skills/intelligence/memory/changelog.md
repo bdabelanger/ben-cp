@@ -1,3 +1,9 @@
+---
+title: Intelligencememory Changelog
+type: changelog
+domain: skills/intelligence/memory
+---
+
 # Intelligencememory Changelog
 
 > Detail log for `skills/intelligencememory/`. See root `changelog.md` for version history.

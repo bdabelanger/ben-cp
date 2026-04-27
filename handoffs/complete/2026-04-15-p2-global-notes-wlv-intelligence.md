@@ -1,3 +1,9 @@
+---
+title: Implementation Plan Global Notes WLV Intelligence Update
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: Global Notes WLV Intelligence Update
 
 > **Prepared by:** Cowork (Gemini) (2026-04-15)

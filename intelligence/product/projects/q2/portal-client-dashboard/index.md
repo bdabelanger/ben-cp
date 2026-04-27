@@ -1,3 +1,9 @@
+---
+title: Portal - Client Dashboard
+type: index
+domain: intelligence/product/projects/q2/portal-client-dashboard
+---
+
 # Portal - Client Dashboard
 
 - **GID:** 1213506659163435

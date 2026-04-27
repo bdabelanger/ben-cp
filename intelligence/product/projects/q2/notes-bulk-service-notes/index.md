@@ -1,3 +1,9 @@
+---
+title: Notes - Bulk Service Notes
+type: index
+domain: intelligence/product/projects/q2/notes-bulk-service-notes
+---
+
 # Notes - Bulk Service Notes
 
 - **GID:** 1211757637943244
@@ -26,7 +32,7 @@
 - **QA Start:** 2026-04-06T00:00:00.000Z
 - **R-Notes Stage:** Not Started
 - **KB Stage:** In Progress
-- **PRD:** null
+- **PRD:** [prd.md](prd.md)
 - **Launch Plan:** https://casecommons.atlassian.net/wiki/x/A4AN9
 - **UAT Start:** 2026-04-16T00:00:00.000Z
 - **Roadmap:** Strengthen Core Case Management
@@ -34,7 +40,7 @@
 - **Headline:** Intuitive notes authoring: Reduce clicks and save time.
 - **Quote (Path of Life):** "Case managers input bulk notes so that they don't have to write the same thing five to eight times".
 
-# Bulk Service Notes (GID: 1211757637943244)
+## Bulk Service Notes (GID: 1211757637943244)
 
 This feature leverages the Note Authoring Canvas to streamline service note creation, ensuring consistency and high performance.
 

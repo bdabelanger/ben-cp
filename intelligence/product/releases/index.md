@@ -1,8 +1,14 @@
+---
+title: Product Release Index
+type: index
+domain: intelligence/product/releases
+---
+
 # Product Release Index
 
 > **Domain:** Execution Coordination
 > **Purpose:** Tracking Jira Fix Versions against tactical project status and strategic OKRs.
-> **Last updated:** 2026-04-14 11:36:48
+> **Last updated:** 2026-04-26
 
 ## Upcoming Releases
 
@@ -31,11 +37,20 @@
 | [2026-07-23](2026-07-23-release.md) | 2026-07-23 | Synced | 🟢 Healthy |
 | [2026-07-27](2026-07-27-release.md) | 2026-07-27 | Synced | 🟢 Healthy |
 
-## Alignment Governance
-- **Red (Off-Track):** Project stage is behind Release readiness.
-- **Yellow (Risk):** Mismatched Jira epics or orphaned scope.
-- **Green (Aligned):** Project and Jira tickets match.
+## Raw Release Records (Shadow Files)
+- [10-27-2025](10-27-2025-release.md)
+- [11-06-2025](11-6-2025-release.md)
+- [11-24-2025](11-24-2025-release.md)
+- [02-04-2026](2-4-2026-release.md)
+- [03-17-2026](3-17-2026-release.md)
+- [03-27-2026](3-27-2026-release.md)
+- [04-13-2026](4-13-2026-release.md)
+- [04-23-2026](4-23-2026-release.md)
+- [05-14-2026](5-14-2026-release.md)
+- [05-28-2026](5-28-2026-release.md)
+- [06-11-2026](6-11-2026-release.md)
+- [06-25-2026](6-25-2026-release.md)
+- [07-09-2026](7-9-2026-release.md)
+- [07-23-2026](7-23-2026-release.md)
 
 ## Navigation
-- [**Product Roadmap Root**](../index.md)
-- [**Tactical Projects**](../projects/index.md)

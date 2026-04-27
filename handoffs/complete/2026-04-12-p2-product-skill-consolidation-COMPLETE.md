@@ -1,3 +1,9 @@
+---
+title: Implementation Plan product-skill-consolidation
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: product-skill-consolidation
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)
@@ -14,7 +20,7 @@ Created skills/product/ as a new peer-level domain. Moved project-status-reports
 
 ---
 
-# Implementation Plan: product-skill-consolidation
+## Implementation Plan: product-skill-consolidation
 
 > **Prepared by:** Claude via Cowork/Dispatch (2026-04-11)
 > **Assigned to:** Claude (desktop)

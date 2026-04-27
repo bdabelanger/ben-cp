@@ -1,3 +1,9 @@
+---
+title: Implementation Plan gemma-pathing-tooling-issues
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: gemma-pathing-tooling-issues
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-10)

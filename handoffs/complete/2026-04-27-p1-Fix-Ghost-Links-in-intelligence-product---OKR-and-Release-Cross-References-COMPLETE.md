@@ -1,3 +1,10 @@
+---
+title: Implementation Plan Fix Ghost Links in intelligence-product - OKR and Release
+  Cross-References
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: Fix Ghost Links in intelligence-product - OKR and Release Cross-References
 
 > **Prepared by:** Code (Gemini) (2026-04-27)
@@ -10,7 +17,7 @@ Resolved ~39 ghost links in intelligence/product/ by correcting relative paths a
 
 ---
 
-# Fix Ghost Links in intelligence/product/ - OKR and Release Cross-References
+## Fix Ghost Links in intelligence/product/ - OKR and Release Cross-References
 
 ## Context
 

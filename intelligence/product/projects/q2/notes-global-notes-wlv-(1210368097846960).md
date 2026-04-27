@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Notes - Global Notes WLV
+type: intelligence
+domain: intelligence/product/projects/q2
 ---
+
 # Notes - Global Notes WLV
 
 - **GID:** 1210368097846960

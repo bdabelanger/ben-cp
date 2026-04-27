@@ -55,7 +55,9 @@ def sensor_status_line(name, data):
         elif isinstance(v, str) and v not in ('OK',):
             parts.append(f'{k}: {v}')
     detail = ', '.join(parts) if parts else 'clean'
-    icon = '🟢' if not parts else '🟡'
+    # Icon logic: only yellow if there are actual issues/findings in the parts
+    issue_parts = [p for p in parts if 'scanned' not in p.lower() and 'total' not in p.lower()]
+    icon = '🟢' if not issue_parts else '🟡'
     # Override to red if sensor explicitly flagged failures
     failure_keys = {'ghost_links', 'issues', 'findings', 'red_flags', 'version_issues'}
     for key in failure_keys:

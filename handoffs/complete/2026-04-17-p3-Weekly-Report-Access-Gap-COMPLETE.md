@@ -1,3 +1,9 @@
+---
+title: Implementation Plan Weekly Report Access Gap
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: Weekly Report Access Gap
 
 > **Prepared by:** Code (Gemini) (2026-04-17)

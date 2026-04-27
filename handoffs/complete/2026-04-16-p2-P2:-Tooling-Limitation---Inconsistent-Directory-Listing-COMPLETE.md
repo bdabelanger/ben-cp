@@ -1,3 +1,9 @@
+---
+title: Implementation Plan P2 Tooling Limitation - Inconsistent Directory Listing
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: P2: Tooling Limitation - Inconsistent Directory Listing
 
 > **Prepared by:** Code (Gemini) (2026-04-16)

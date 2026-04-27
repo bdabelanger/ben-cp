@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Clarify Decision field in Intake History on Person Profile
+type: task
+domain: tasks
 ---
+
 # Clarify 'Decision' field in Intake History on Person Profile
 
 - **priority:** P3

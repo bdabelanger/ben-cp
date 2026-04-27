@@ -1,3 +1,9 @@
+---
+title: Asana Custom Field GID Reference
+type: intelligence
+domain: intelligence/product/projects/source
+---
+
 # Asana Custom Field GID Reference
 
 Use these GIDs directly when creating or updating Asana projects. Never search for them at runtime.

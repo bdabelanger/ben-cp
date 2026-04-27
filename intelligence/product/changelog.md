@@ -1,3 +1,9 @@
+---
+title: Changelog Product Intelligence
+type: changelog
+domain: intelligence/product
+---
+
 # Changelog: Product Intelligence
 
 All notable changes to the Product Intelligence domain will be documented in this file.

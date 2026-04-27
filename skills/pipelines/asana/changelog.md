@@ -1,3 +1,9 @@
+---
+title: SkillsPipelinesAsana Changelog
+type: changelog
+domain: skills/pipelines/asana
+---
+
 # Skills/Pipelines/Asana Changelog
 
 ## [Unreleased]

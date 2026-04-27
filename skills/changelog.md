@@ -1,3 +1,9 @@
+---
+title: Orchestration Changelog
+type: changelog
+domain: skills
+---
+
 # Orchestration Changelog
 
 > Detail log for `skills/`. See root `changelog.md` for version history.

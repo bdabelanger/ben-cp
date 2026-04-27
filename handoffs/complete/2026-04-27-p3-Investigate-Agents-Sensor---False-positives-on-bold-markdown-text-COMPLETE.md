@@ -1,3 +1,10 @@
+---
+title: Implementation Plan Investigate Agents Sensor - False positives on bold markdown
+  text
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: Investigate Agents Sensor - False positives on bold markdown text
 
 > **Prepared by:** Code (Gemini) (2026-04-27)

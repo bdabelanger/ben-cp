@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: PRD Notes - Notes datagrid
+type: prd
+domain: intelligence/product/projects/q2/notes-notes-datagrid
 ---
+
 # PRD: Notes - Notes datagrid
 
 <table ac:local-id="42d1c58cc704" data-layout="default" data-table-width="760">
@@ -141,9 +141,9 @@ Owner: Ben
   </tr>
  </tbody>
 </table>
-<h1 local-id="af528e84603b">
+<h2>
  Problem Definition
-</h1>
+</h2>
 <h2 local-id="136a5f4b3752">
  Context
 </h2>
@@ -463,9 +463,9 @@ Owner: Ben
   </p>
  </li>
 </ul>
-<h1 local-id="5a21f17ca76f">
+<h2>
  Solution Concept
-</h1>
+</h2>
 <h2 local-id="8767180ea311">
  Overview
 </h2>
@@ -1157,9 +1157,9 @@ Owner: Ben
   </tr>
  </tbody>
 </table>
-<h1 local-id="272287efbe03">
+<h2>
  Requirements
-</h1>
+</h2>
 <h2 local-id="05eb38e4b406">
  User Stories / Acceptance Criteria
 </h2>
@@ -1543,9 +1543,9 @@ Owner: Ben
   </tr>
  </tbody>
 </table>
-<h1 local-id="3f77ebfa2efa">
+<h2>
  Design
-</h1>
+</h2>
 <h2 local-id="6995816348e2">
  User Research &amp; Usability Test Insights
 </h2>

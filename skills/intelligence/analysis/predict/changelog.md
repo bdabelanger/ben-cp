@@ -1,3 +1,9 @@
+---
+title: IntelligenceAnalysisPredict Changelog
+type: changelog
+domain: skills/intelligence/analysis/predict
+---
+
 # Intelligence/Analysis/Predict Changelog
 
 > Detail log for `skills/intelligence/analysis/predict/`. See root `changelog.md` for version history.

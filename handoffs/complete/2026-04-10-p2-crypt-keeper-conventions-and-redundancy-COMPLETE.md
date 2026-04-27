@@ -1,3 +1,9 @@
+---
+title: Implementation Plan crypt-keeper-conventions-and-redundancy
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: crypt-keeper-conventions-and-redundancy
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-10)

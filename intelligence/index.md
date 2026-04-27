@@ -1,3 +1,9 @@
+---
+title: Intelligence Domain Index
+type: index
+domain: intelligence
+---
+
 # Intelligence Domain Index
 
 > **Role:** The Vault Source of Truth.

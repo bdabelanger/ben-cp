@@ -1,3 +1,9 @@
+---
+title: Implementation Plan P1 Archival Failure - Historical Handoff Not Found
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: P1: Archival Failure - Historical Handoff Not Found
 
 > **Prepared by:** Code (Gemini) (2026-04-16)

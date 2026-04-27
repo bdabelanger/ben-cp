@@ -1,3 +1,9 @@
+---
+title: toolsstatus-reports
+type: task
+domain: skills/pipelines/status
+---
+
 # tools/status-reports
 
 Execution tooling for the Platform Weekly Status Report pipeline. This directory contains the scripts and shell wrapper that *run* the pipeline — the skill SOP (what the pipeline does and how to interpret it) lives in `skills/product/status-reports/index.md`.

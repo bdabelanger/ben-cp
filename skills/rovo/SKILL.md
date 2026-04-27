@@ -1,10 +1,9 @@
 ---
-type: skill-sop
-Status: published
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Skill Atlassian Rovo SOP (CBP-XXXX)
+type: skill
+domain: skills/rovo
 ---
+
 # Skill: Atlassian Rovo SOP (CBP-XXXX)
 
 **Objective:** To efficiently locate and gather comprehensive data on "CBP-XXXX" issues using available tools.

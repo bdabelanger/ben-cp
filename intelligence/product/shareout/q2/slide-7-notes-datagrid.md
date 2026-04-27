@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Slide 7  Notes Datagrid Optimized Review (Q1)
+type: intelligence
+domain: intelligence/product/shareout/q2
 ---
+
 # Slide 7 — Notes Datagrid: Optimized Review (Q1)
 
 - **priority:** P1

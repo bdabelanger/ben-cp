@@ -1,3 +1,9 @@
+---
+title: Implementation Plan Fix Ghost Links in Dream Archive - Stale Report Path References
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: Fix Ghost Links in Dream Archive - Stale Report Path References
 
 > **Prepared by:** Code (Gemini) (2026-04-27)
@@ -10,7 +16,7 @@ Resolved ~40 ghost links by adding 'archive' to SKIP_DIRS in the links sensor. 0
 
 ---
 
-# Fix Ghost Links in Dream Archive - Stale Report Path References
+## Fix Ghost Links in Dream Archive - Stale Report Path References
 
 ## Context
 

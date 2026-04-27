@@ -1,3 +1,9 @@
+---
+title: Implementation Plan dod-helper-skill-migration
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: dod-helper-skill-migration
 
 > **Prepared by:** Claude via Dispatch (2026-04-12)

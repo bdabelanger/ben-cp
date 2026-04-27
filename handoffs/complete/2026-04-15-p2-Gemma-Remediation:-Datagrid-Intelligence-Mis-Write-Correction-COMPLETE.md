@@ -1,3 +1,9 @@
+---
+title: Implementation Plan Gemma Remediation Datagrid Intelligence Mis-Write Correction
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: Gemma Remediation: Datagrid Intelligence Mis-Write Correction
 
 > **Prepared by:** Code (Gemini) (2026-04-15)
@@ -10,7 +16,7 @@ All remediation steps executed directly by Cowork: skills/ violations removed, s
 
 ---
 
-# Cowork Implementation Plan: Gemma Remediation — Datagrid Intelligence Mis-Write
+## Cowork Implementation Plan: Gemma Remediation — Datagrid Intelligence Mis-Write
 
 > **Prepared by:** Cowork (2026-04-15)
 > **Assigned to:** Cowork

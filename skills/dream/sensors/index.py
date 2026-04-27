@@ -10,41 +10,72 @@ SKIP_DIRS  = {'.git', '__pycache__', 'node_modules', 'archived', 'complete', 'so
 SKIP_FILES = {'index.md', 'changelog.md', 'AGENTS.md', 'README.md'}
 
 def extract_index_refs(index_path):
-    """Pull all .md filenames referenced in an index.md."""
+    """Pull all .md file paths (relative to Vault Root) referenced in an index.md."""
     try:
         with open(index_path, errors='replace') as f:
             content = f.read()
     except OSError:
         return set()
     refs = set()
-    # [text](filename.md) or [text](filename)
-    for m in re.finditer(r'\[.*?\]\(([^)]+)\)', content):
-        target = m.group(1).strip().split('#')[0]
-        if target.endswith('.md') or ('.' not in os.path.basename(target)):
-            name = os.path.basename(target)
-            if not name.endswith('.md'):
-                name += '.md'
-            refs.add(name)
+    index_dir = os.path.dirname(index_path)
+    
+    # Custom parser to handle parens in URLs (e.g. Jira/Asana IDs in filenames)
+    idx = 0
+    while True:
+        idx = content.find('](', idx)
+        if idx == -1: break
+        start = idx + 2
+        parens = 1
+        end = start
+        while end < len(content):
+            if content[end] == '(': parens += 1
+            elif content[end] == ')': parens -= 1
+            if parens == 0: break
+            end += 1
+        if parens == 0:
+            target = content[start:end].strip()
+            if target.startswith('<') and target.endswith('>'):
+                target = target[1:-1]
+            target = target.split('#')[0].strip()
+            target = target.split()[0] if target else ''
+            
+            if target.endswith('.md') or ('.' not in os.path.basename(target) and target):
+                if not target.endswith('.md'):
+                    target += '.md'
+                # Resolve the target relative to the index_dir
+                abs_target = os.path.normpath(os.path.join(index_dir, target))
+                # Store the path relative to VAULT_ROOT for consistent tracking
+                rel_target = os.path.relpath(abs_target, VAULT_ROOT)
+                refs.add(rel_target)
+        idx = end + 1
     return refs
 
 def audit_directory(dir_path):
-    shadow = []  # on disk, not in index
+    shadow = []  # on disk, not in any index
     ghosts = []  # in index, not on disk
     index_path = os.path.join(dir_path, 'index.md')
     if not os.path.exists(index_path):
         return shadow, ghosts
 
     disk_files = {
-        f for f in os.listdir(dir_path)
+        os.path.relpath(os.path.join(dir_path, f), VAULT_ROOT) for f in os.listdir(dir_path)
         if f.endswith('.md') and f not in SKIP_FILES and os.path.isfile(os.path.join(dir_path, f))
     }
     index_refs = extract_index_refs(index_path)
 
+    # We only care about shadow files in THIS directory, so we filter index_refs
+    # to only those that point to THIS directory.
+    local_index_refs = {ref for ref in index_refs if os.path.dirname(os.path.join(VAULT_ROOT, ref)) == dir_path}
+    
     rel_dir = os.path.relpath(dir_path, VAULT_ROOT)
-    for f in disk_files - index_refs:
-        shadow.append({"dir": rel_dir, "file": f, "type": "shadow"})
-    for f in index_refs - disk_files:
-        ghosts.append({"dir": rel_dir, "file": f, "type": "ghost_ref"})
+    for f in disk_files - local_index_refs:
+        shadow.append({"dir": rel_dir, "file": os.path.basename(f), "type": "shadow"})
+        
+    # For ghosts, we check if the referenced file exists anywhere it's supposed to
+    for ref in index_refs:
+        abs_ref = os.path.join(VAULT_ROOT, ref)
+        if not os.path.exists(abs_ref):
+            ghosts.append({"dir": rel_dir, "file": os.path.basename(ref), "type": "ghost_ref"})
 
     return shadow, ghosts
 

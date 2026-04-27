@@ -1,3 +1,9 @@
+---
+title: Implementation Plan Crypt-Keeper  Structural Violations
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: Crypt-Keeper — Structural Violations
 
 > **Prepared by:** Claude (Cowork) (Intelligence (Memory) scheduled run, 2026-04-13)

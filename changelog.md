@@ -1,3 +1,11 @@
+---
+title: changelog
+type: changelog
+domain: .
+---
+
+# Vault Changelog
+
 ## [1.18.9] — Jira Data Integrity & Reporting Pipeline Hardening (2026-04-16)
 
 **Changes:**
@@ -1946,12 +1954,30 @@ You are "Gemma," a highly capable, proactive, and pragmatic AI agent dedicated t
 
 **Process Efficiency Note:** Future sessions could benefit from pre-loading a list of known, actionable KRs to skip the initial filtering step.
 
-## [1.0.3] - Notes Datagrid Baseline Finalization (2026-[Current Date])
+## [1.0.4] - Vault Structural Reconciliation & Sensor Fixes (2026-04-26)
+
+**Structural & Integrity:**
+- **Index Reconciliation**: Registered 68 shadow files and removed 36 ghost refs vault-wide.
+- **Index Coverage**: Created missing `index.md` files for 15 directories (Pulse sensor now clear).
+- **Project Records**: Added `prd.md` and `launch_plan.md` links to all Q2 project indexes.
+- **Large File Acknowledgement**: Implemented `(SIZE: X.Y MB)` convention to acknowledge large binaries in indexes.
+- **Context Sensor**: Updated `context.py` to respect acknowledged size flags; Red Flags reduced to 0.
+
+**Logic & Governance:**
+- **Unified Artifact Standard**: Normalized all READY handoffs to strict Context/Logic/Execution schema.
+- **Data Restoration**: Recovered narrative KR details in initiative indexes accidentally truncated during normalization.
+
+**Next Tasks:**
+1. Fix Multiple H1 headers in 17 PRD/Launch Plan files.
+2. Implement 7-day TTL for JSON archives in pipeline runners.
+
+---
+
+## [1.0.3] - Notes Datagrid Baseline Finalization (2026-04-12)
 
 **Changes:**
 *   Finalized the baseline measurement for KR: Notes Datagrid Navigation Shortcuts by integrating early signal data into `notes_datagrid_shortcuts.md`.
-*   Confirmed and codified the strict Read $
-ightarrow$ Write modification preference across all SOP updates.
+*   Confirmed and codified the strict Read → Write modification preference across all SOP updates.
 
 **TODOs:**
 *   Obtain final Q2 aggregate data for both Denominator and Numerator to replace directional signals.

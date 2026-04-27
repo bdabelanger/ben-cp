@@ -1,8 +1,14 @@
+---
+title: Initiative Planning Services at Scale  Index
+type: index
+domain: intelligence/product/okrs/q2/planning-services-at-scale
+---
+
 # Initiative: Planning Services at Scale — Index
 
 > **Period:** Q2 2026
 > **Objective:** Planning/delivering services at scale
-> Last updated: 2026-04-12 from Work Planning Register
+> Last updated: 2026-04-26
 
 ---
 
@@ -62,17 +68,17 @@
 
 ---
 
-## 🔗 Constituent Projects
-
-- [**Service Plan Datagrid**](../../../projects/q2/services-service-plan-datagrid-with-bulk-actions/index.md)
-- [**Enrollment Dialog Bulk Services**](../../../projects/q2/enrollment-dialog-bulk-services-section/index.md)
-- [**Services WLV Bulk Actions**](../../../projects/q2/services-wlv-bulk-actions/index.md)
-- [**Notes Datagrid**](../../../projects/q2/notes-notes-datagrid/index.md)
-- [**Bulk Service Notes**](../../../projects/q2/notes-bulk-service-notes/index.md)
+## 📝 Records (Vault Shadow Files)
+- [Enrollments Data Entry Shortcuts](enrollments_data_entry_shortcuts.md)
+- [Notes Datagrid Shortcuts](notes_datagrid_shortcuts.md)
+- [Notes Quick Entry](notes_quick_entry.md)
+- [Service Notes Data Entry Shortcuts](service_notes_data_entry_shortcuts.md)
+- [Service Notes Roster Association](service_notes_roster_association.md)
 
 ---
 
-## 🔗 References
+## 🔗 Constituent Projects
 
-- Parent Q2 Index: `../index.md`
-- Master OKR runbook: `../../procedure.md`
+---
+
+## 🔗 Navigation

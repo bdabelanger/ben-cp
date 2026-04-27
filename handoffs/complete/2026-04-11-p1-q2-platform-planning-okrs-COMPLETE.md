@@ -1,3 +1,9 @@
+---
+title: Implementation Plan q2-platform-planning-okrs
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: q2-platform-planning-okrs
 
 > **Prepared by:** Claude via Cowork/Dispatch (2026-04-11)

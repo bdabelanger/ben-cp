@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Procedure Intelligence (Synthesize) Diff Checker
+type: intelligence
+domain: skills/intelligence/analysis/synthesize
 ---
+
 # Procedure: Intelligence (Synthesize) Diff Checker
 
 This procedure enables the Intelligence (Synthesize) skill to identify structural or philosophical drift in `AGENTS.md`.

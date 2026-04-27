@@ -1,3 +1,9 @@
+---
+title: Intelligence Changelog
+type: changelog
+domain: skills/intelligence
+---
+
 # Intelligence Changelog
 
 > Detail log for `skills/intelligence/`. See root `changelog.md` for version history.

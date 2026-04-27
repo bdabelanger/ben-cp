@@ -1,3 +1,9 @@
+---
+title: Implementation Plan roz-root-access-expansion
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: roz-root-access-expansion
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)

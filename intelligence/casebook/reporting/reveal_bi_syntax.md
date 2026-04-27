@@ -1,13 +1,9 @@
 ---
-type: system_instruction
-domain: bi_tool_syntax
-tool: reveal_bi
-description: Mandatory syntax and function rules for generating Reveal BI calculated fields.
-Status: published
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Reveal BI Formula Syntax  Rules
+type: intelligence
+domain: intelligence/casebook/reporting
 ---
+
 # Reveal BI Formula Syntax & Rules
 
 ## Core Syntax Rules

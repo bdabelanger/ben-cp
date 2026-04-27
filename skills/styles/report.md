@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Report Instructions Styles
+type: task
+domain: skills/styles
 ---
+
 # Report Instructions: Styles
 
 ## Identity & Voice

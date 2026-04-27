@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Audit Procedure Recall
+type: intelligence
+domain: skills/intelligence/memory/retrieval
 ---
+
 # Audit Procedure: Recall
 
 > **Owner:** Vault Auditor

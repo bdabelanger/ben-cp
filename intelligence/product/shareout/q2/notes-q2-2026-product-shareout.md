@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Q2 2026 Product Shareout Intelligence Record
+type: intelligence
+domain: intelligence/product/shareout/q2
 ---
+
 # Q2 2026 Product Shareout Intelligence Record
 
 - **agent:** Code

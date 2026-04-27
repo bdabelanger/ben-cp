@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Asana  My Tasks
+type: task
+domain: tasks
 ---
+
 # Asana — My Tasks
 
 _Last synced: 2026-04-26 · 53 tasks_

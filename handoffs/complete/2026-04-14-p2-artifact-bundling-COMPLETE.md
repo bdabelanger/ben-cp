@@ -1,3 +1,9 @@
+---
+title: Handoff  Implementation Plan Unified Artifact Standard
+type: handoff
+domain: handoffs/complete
+---
+
 # Handoff & Implementation Plan: Unified Artifact Standard
 
 **Assignee:** Code Agent  

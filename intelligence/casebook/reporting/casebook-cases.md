@@ -1,19 +1,9 @@
 ---
-entity: cases
-type: fact_table
-primary_key: case_id
-foreign_keys:
-  - resource_id
-bridge_tables:
-  - case_involvements
-  - case_assignees
-  - note_resources
-description: The central anchor entity for active case management.
-Status: published
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Dataset Cases
+type: intelligence
+domain: intelligence/casebook/reporting
 ---
+
 # Dataset: Cases
 
 ## Context

@@ -1,3 +1,9 @@
+---
+title: Handoff Resolve Gemini Root Edit Block and MCP Traversal
+type: handoff
+domain: handoffs/complete
+---
+
 # Handoff: Resolve Gemini Root Edit Block and MCP Traversal
 
 > **Assigned to:** Claude Code / Roz (Access Auditor)

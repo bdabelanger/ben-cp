@@ -1,3 +1,10 @@
+---
+title: Implementation Plan Fix Frontmatter  214 issues across intelligence skills
+  tasks and reports
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: Fix Frontmatter — 214 issues across intelligence, skills, tasks, and reports
 
 > **Prepared by:** Code (Gemini) (2026-04-26)

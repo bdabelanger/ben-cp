@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Audit Procedure Handoff
+type: task
+domain: skills/handoff
 ---
+
 # Audit Procedure: Handoff
 
 > **Owner:** Handoff

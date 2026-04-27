@@ -1,3 +1,9 @@
+---
+title: Implementation Plan skill-separation-architecture-policy
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: skill-separation-architecture-policy
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)

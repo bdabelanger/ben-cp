@@ -1,13 +1,9 @@
 ---
-type: system_instruction
-domain: bi_tool_visualizations
-tool: reveal_bi
-description: Guidelines for mapping the SOP datasets to Reveal BI visualization types and statistical functions.
-Status: published
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Reveal BI Visualization Guidelines
+type: intelligence
+domain: intelligence/casebook/reporting
 ---
+
 # Reveal BI Visualization Guidelines
 
 ## Statistical Functions

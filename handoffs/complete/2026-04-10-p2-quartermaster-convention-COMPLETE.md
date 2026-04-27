@@ -1,3 +1,9 @@
+---
+title: Implementation Plan Establish Strategic PM Convention
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: Establish Strategic PM Convention
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-10), updated Claude (Cowork) (2026-04-12)

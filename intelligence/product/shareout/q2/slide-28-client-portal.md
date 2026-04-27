@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Slide 28  Client Portal v1 (Q2)
+type: intelligence
+domain: intelligence/product/shareout/q2
 ---
+
 # Slide 28 — Client Portal v1 (Q2)
 
 - **okr:** Ease Navigation Burdens

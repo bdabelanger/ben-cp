@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Slide 30  Better No-Code Automations Zapier (Q2)
+type: intelligence
+domain: intelligence/product/shareout/q2
 ---
+
 # Slide 30 — Better No-Code Automations: Zapier (Q2)
 
 - **okr:** Enhance Core Configurability

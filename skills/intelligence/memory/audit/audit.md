@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Audit Procedure Vault Audit
+type: intelligence
+domain: skills/intelligence/memory/audit
 ---
+
 # Audit Procedure: Vault Audit
 
 > **Owner:** Vault Auditor

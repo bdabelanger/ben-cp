@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Data import - Bulk import for Notes
+type: intelligence
+domain: intelligence/product/projects/q2
 ---
+
 # Data import - Bulk import for Notes
 
 - **GID:** 1210860550580423

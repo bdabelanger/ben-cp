@@ -1,3 +1,9 @@
+---
+title: Skill Casebook Reporting
+type: index
+domain: intelligence/casebook/reporting
+---
+
 # Skill: Casebook Reporting
 
 > Reveal BI reference docs and Casebook entity schemas.
@@ -18,3 +24,12 @@
 | `casebook-tenants.md` | Tenant entity schema — use for tenant segmentation |
 | `casebook-users.md` | User entity schema — use for user-level metrics |
 | `changelog.md` | Detail log for this subdirectory |
+
+- [Casebook Cases](casebook-cases.md)
+- [Casebook Intake](casebook-intake.md)
+- [Casebook People](casebook-people.md)
+- [Reveal Bi Visualizations](reveal_bi_visualizations.md)
+- [Schema Joins](schema_joins.md)
+- [Reveal Bi Syntax](reveal_bi_syntax.md)
+- [Casebook Tenants](casebook-tenants.md)
+- [Casebook Users](casebook-users.md)

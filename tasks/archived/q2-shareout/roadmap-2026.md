@@ -1,7 +1,13 @@
+---
+title: 2026 CBP Roadmap (Q1-Q4)
+type: task
+domain: tasks/archived/q2-shareout
+---
+
 # 2026 CBP Roadmap (Q1-Q4)
 
 
-# 2026 CBP Roadmap
+## 2026 CBP Roadmap
 
 This document captures the full roadmap as detailed in the Q2 Shareout deck, covering initiatives from Q1 through Q4.
 

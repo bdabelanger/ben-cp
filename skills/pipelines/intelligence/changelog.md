@@ -1,3 +1,9 @@
+---
+title: SkillsPipelinesIntelligence Changelog
+type: changelog
+domain: skills/pipelines/intelligence
+---
+
 # Skills/Pipelines/Intelligence Changelog
 
 ## [Unreleased]

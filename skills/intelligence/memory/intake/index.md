@@ -1,3 +1,9 @@
+---
+title: Memory Intake Index
+type: index
+domain: skills/intelligence/memory/intake
+---
+
 # Memory Intake Index
 
 > **Purpose:** Capturing significant findings and patterns into persistent memory.

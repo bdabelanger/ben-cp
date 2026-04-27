@@ -1,3 +1,10 @@
+---
+title: Implementation Plan Tool Resilience Issue Pathing Inconsistency on Intelligence
+  Retrieval
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: Tool Resilience Issue: Pathing Inconsistency on Intelligence Retrieval
 
 > **Prepared by:** Code (Gemini) (2026-04-13)

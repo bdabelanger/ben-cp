@@ -1,3 +1,9 @@
+---
+title: Any Agent Implementation Plan Data Sources Gap  Orphaned Index Entries
+type: handoff
+domain: handoffs/complete
+---
+
 # Any Agent Implementation Plan: Data Sources Gap + Orphaned Index Entries
 
 > **Prepared by:** Claude (Cowork) via knowledge skill run (2026-04-12)

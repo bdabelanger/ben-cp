@@ -1,14 +1,14 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Launch Plan Enrollment dialog - Bulk Services section
+type: intelligence
+domain: intelligence/product/projects/q2/enrollment-dialog-bulk-services-section
 ---
+
 # Launch Plan: Enrollment dialog - Bulk Services section
 
-<h1 local-id="567182454ad4">
+<h2>
  Summary
-</h1>
+</h2>
 <p local-id="139d5465ed52">
  <strong>
   Tenant Roster:
@@ -98,9 +98,9 @@ Owner: Ben
   </ol>
  </li>
 </ol>
-<h1 local-id="1ee053a68dbf">
+<h2>
  Communication strategy
-</h1>
+</h2>
 <h2 local-id="871c0277dd28">
  Customer notifications
 </h2>
@@ -157,9 +157,9 @@ Owner: Ben
   </p>
  </li>
 </ul>
-<h1 local-id="6728194922f2">
+<h2>
  Rollout plan
-</h1>
+</h2>
 <ac:structured-macro ac:local-id="cd3240e7-d55e-4b95-a026-c0bf243c7d06" ac:macro-id="107f3629-4aa0-4c09-a912-f1cf19d8062e" ac:name="panel" ac:schema-version="1">
  <ac:parameter ac:name="panelIcon">
   :dart:
@@ -559,9 +559,9 @@ Owner: Ben
  </li>
 </ol>
 <hr local-id="5397dca3f94f"/>
-<h1 local-id="a7a7f6e01482">
+<h2>
  Resources
-</h1>
+</h2>
 <ul local-id="b6b5db23-3ed3-4445-9500-b244abf6cd68">
  <li local-id="514f814e-500a-456d-8341-0249a1c269cd">
   <p local-id="83e85a53645c">

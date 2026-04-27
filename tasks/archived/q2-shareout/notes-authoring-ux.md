@@ -1,10 +1,16 @@
+---
+title: Q2 Shareout Notes Authoring UX
+type: task
+domain: tasks/archived/q2-shareout
+---
+
 # Q2 Shareout: Notes Authoring UX
 
 - **Headline:** Intuitive notes authoring: Reduce clicks and save time.
 - **Quote (Path of Life):** "Case managers input bulk notes so that they don't have to write the same thing five to eight times".
 - **TODO:** Verify that all internal links are correctly resolved in `index.md`.
 
-# Q2 Shareout: Notes Authoring UX
+## Q2 Shareout: Notes Authoring UX
 
 > **Slide Number:** 16
 > **Slide Theme:** OKR 1 — Strengthen Core Case Management

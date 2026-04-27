@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Skill Memory Retrieval
+type: skill
+domain: skills/intelligence/memory/retrieval
 ---
+
 # Skill: Memory Retrieval
 
 > **Description:** Standardized procedure for contextual retrieval, pattern matching, and context injection using `read_notes` and `search_intelligence`.

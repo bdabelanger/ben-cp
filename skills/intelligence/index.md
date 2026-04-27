@@ -1,3 +1,9 @@
+---
+title: Domain Intelligence Lifecycle
+type: index
+domain: skills/intelligence
+---
+
 # Domain: Intelligence Lifecycle
 
 > **Role:** Custodian of the vault's cognitive architecture.
@@ -22,3 +28,5 @@ Agents operating within the Intelligence domain should view themselves as builde
 - **Structural Integrity**: Ensuring mappings and indexes are accurate.
 - **Narrative Depth**: Finding the "why" behind the raw logs.
 - **Clarity of Communication**: Selecting the precise technical truths that matter to the human user.
+
+- [Skill](SKILL.md)

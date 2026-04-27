@@ -1,9 +1,9 @@
 ---
-Status: active
-Priority: P3
-Date: 2026-04-26
-Owner: Ben
+title: Asana Custom Field GID Reference
+type: task
+domain: skills/pipelines/asana/schemas
 ---
+
 # Asana Custom Field GID Reference
 
 - **agent:** Code

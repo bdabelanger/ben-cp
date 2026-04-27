@@ -1,3 +1,9 @@
+---
+title: Implementation Plan dream-character-files-generation
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: dream-character-files-generation
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)

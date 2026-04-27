@@ -1,3 +1,9 @@
+---
+title: Claude Code Implementation Plan Handoff Editability Rule
+type: handoff
+domain: handoffs/complete
+---
+
 # Claude Code Implementation Plan: Handoff Editability Rule
 
 > **Prepared by:** Claude (Cowork) (2026-04-10)

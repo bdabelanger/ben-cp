@@ -1,3 +1,9 @@
+---
+title: Implementation Plan Zapier Improvements Intelligence Update
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: Zapier Improvements Intelligence Update
 
 > **Prepared by:** Cowork (Gemini) (2026-04-15)

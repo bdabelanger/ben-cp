@@ -1,3 +1,9 @@
+---
+title: Claude Code Implementation Plan Fix casebookreportingindex.md
+type: handoff
+domain: handoffs/complete
+---
+
 # Claude Code Implementation Plan: Fix casebook/reporting/index.md
 
 > **Prepared by:** Claude (Cowork session, 2026-04-08)

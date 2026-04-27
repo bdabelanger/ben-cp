@@ -1,3 +1,9 @@
+---
+title: Implementation Plan Fix Expose Dream Report Output via ben-cp MCP
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: Fix: Expose Dream Report Output via ben-cp MCP
 
 > **Prepared by:** Code (Gemini) (2026-04-26)
@@ -10,7 +16,7 @@ Completed all technical and documentation fixes. Exchanged stale generate_report
 
 ---
 
-# Fix: Expose Dream Report Output via ben-cp MCP
+## Fix: Expose Dream Report Output via ben-cp MCP
 
 > **Prepared by:** Cowork (Claude) (2026-04-25)
 > **Assigned to:** Code

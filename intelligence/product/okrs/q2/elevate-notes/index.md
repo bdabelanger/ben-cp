@@ -1,8 +1,14 @@
+---
+title: Initiative Elevate Notes to a First-Class Experience  Index
+type: index
+domain: intelligence/product/okrs/q2/elevate-notes
+---
+
 # Initiative: Elevate Notes to a First-Class Experience — Index
 
 > **Period:** Q2 2026
 > **Objective:** Elevate Notes to first-class experience
-> Last updated: 2026-04-12 from Work Planning Register
+> Last updated: 2026-04-26
 
 ---
 
@@ -50,10 +56,9 @@
 
 ---
 
-## 🔗 Constituent Projects
+## 📝 Records (Vault Shadow Files)
+- [Locked and Signed Notes](locked_and_signed_notes.md)
 
-- [**Notes WLV / Datagrid**](../../../projects/q2/notes-notes-datagrid/index.md)
-- [**Global Notes WLV**](../../../projects/q2/notes-global-notes-wlv-(1210368097846960).md)
-- [**Bulk Import Notes**](../../../projects/q2/data-import-bulk-import-for-notes-(1210860550580423).md)
-- [**Locked Notes**](../../../projects/q2/notes-locked-notes/index.md)
-- [**Signing / Service Note Locking**](../../../projects/q2/notes-signing-service-note-locking/index.md)
+---
+
+## 🔗 Constituent Projects

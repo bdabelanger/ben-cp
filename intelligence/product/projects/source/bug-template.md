@@ -1,3 +1,9 @@
+---
+title: Bug Template
+type: intelligence
+domain: intelligence/product/projects/source
+---
+
 # Bug Template
 
 ## Summary

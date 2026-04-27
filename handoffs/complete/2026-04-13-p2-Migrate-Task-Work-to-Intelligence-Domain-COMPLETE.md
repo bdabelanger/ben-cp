@@ -1,3 +1,9 @@
+---
+title: Implementation Plan Migrate Task Work to Roadmap Intelligence
+type: handoff
+domain: handoffs/complete
+---
+
 # Implementation Plan: Migrate Task Work to Roadmap Intelligence
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-13)

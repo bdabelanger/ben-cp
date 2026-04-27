@@ -10,5 +10,5 @@ domain: handoffs
 
 ## Active Handoffs
 
-- [P1 — Dream Report](2026-04-27-p1-Dream-Report.md)
+*No active handoffs.*
 

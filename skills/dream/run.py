@@ -56,15 +56,31 @@ def sensor_status_line(name, data):
         elif isinstance(v, str) and v not in ('OK',):
             parts.append(f'{k}: {v}')
     detail = ', '.join(parts) if parts else 'clean'
-    # Icon logic: only yellow if there are actual issues/findings in the parts
+    # Icon logic:
+    # 🟢 GREEN: Clean run (no issue parts)
+    # 🟡 YELLOW: Maintenance findings (<20% of scanned files)
+    # 🔴 RED: Critical failure or widespread issues (>20% of scanned files)
+    
     issue_parts = [p for p in parts if 'scanned' not in p.lower() and 'total' not in p.lower()]
-    icon = '🟢' if not issue_parts else '🟡'
-    # Override to red if sensor explicitly flagged failures
-    failure_keys = {'ghost_links', 'issues', 'findings', 'red_flags', 'version_issues'}
+    scanned_count = summary.get('files_scanned', summary.get('skills_checked', 1))
+    
+    # Count total findings across standard keys
+    finding_count = 0
+    failure_keys = {'ghost_links', 'issues', 'findings', 'red_flags', 'version_issues', 'drift_findings', 'boundary_violations'}
     for key in failure_keys:
-        if r.get(key):
-            icon = '🔴'
-            break
+        val = r.get(key)
+        if isinstance(val, list):
+            finding_count += len(val)
+        elif isinstance(val, int):
+            finding_count += val
+
+    if not issue_parts and finding_count == 0:
+        icon = '🟢'
+    elif scanned_count > 0 and (finding_count / scanned_count) > 0.20:
+        icon = '🔴'
+    else:
+        icon = '🟡'
+
     return f'| {name} | {icon} | {detail} |'
 
 def build_highlights(results):

@@ -4,7 +4,9 @@
 > **Assigned to:** Code
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
-> **STATUS**: 🔲 READY — pick up 2026-04-27
+> **STATUS**: ✅ COMPLETE — 2026-04-27
+
+The Releasinator's PR lookup logic has been refactored to use the Jira Dev Status API. This change simplifies the authentication flow and improves the reliability of correlating Jira issues with their corresponding GitHub pull requests.
 
 ---
 

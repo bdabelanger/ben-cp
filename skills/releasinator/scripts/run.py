@@ -157,7 +157,7 @@ def get_jira_issues_by_keys(keys, ff_field=None):
 def get_prs_for_issue_via_jira(issue):
     resp = requests.get(
         f"{JIRA_DEV_BASE}/issue/detail",
-        params={"issueId": issue["id"], "applicationType": "github", "dataType": "pullrequest"},
+        params={"issueId": issue["id"], "applicationType": "GitHub", "dataType": "pullrequest"},
         auth=jira_auth(),
         headers={"Accept": "application/json"},
         timeout=30
@@ -217,9 +217,9 @@ def normalise_pr(pr, source):
         url = pr.get("url", "")
         return {
             "html_url": url,
-            "title":    pr.get("title", ""),
+            "title":    pr.get("name", ""),
             "number":   url.split("/")[-1],
-            "branch":   pr.get("source", {}).get("branch", {}).get("name", ""),
+            "branch":   pr.get("source", {}).get("branch", ""),
             "repo_url": pr.get("repositoryUrl", ""),
         }
     # github
@@ -234,13 +234,13 @@ def normalise_pr(pr, source):
 
 def is_in_flight(pr):
     """Raw dev-status PR is still moving toward master."""
-    dest   = pr.get("destination", {}).get("branch", {}).get("name", "")
+    dest   = pr.get("destination", {}).get("branch", "")
     status = pr.get("status", "")
     return status == "OPEN" or (status == "MERGED" and dest != "master")
 
 def is_merged_to_master(pr):
     """Raw dev-status PR has already landed on master."""
-    dest   = pr.get("destination", {}).get("branch", {}).get("name", "")
+    dest   = pr.get("destination", {}).get("branch", "")
     status = pr.get("status", "")
     return status == "MERGED" and dest == "master"
 

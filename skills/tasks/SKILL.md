@@ -22,9 +22,9 @@ domain: skills/tasks
 - **Output:** Final project deliverables and vault-ready artifacts.
 
 ## The Hierarchy
-Tasks are centralized at `orchestration/tasks/`. 
+Tasks are centralized at `tasks/`. 
 - **Active Tasks**: Root of the directory.
-- **Archive**: `orchestration/tasks/archive/` (moved here upon completion).
+- **Archive**: `tasks/archive/` (moved here upon completion).
 
 ## Workflow Summary
 1. **Initiation:** Create a new task file using `add_task`. Use a hyphenated, descriptive name (e.g., `prd-migration-q2.md`).

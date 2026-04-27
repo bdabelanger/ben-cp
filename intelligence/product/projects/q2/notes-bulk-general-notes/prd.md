@@ -1,5 +1,5 @@
 ---
-title: 'Notes - Bulk "General Notes"'
+title: Notes - Bulk "General Notes"
 type: prd
 domain: product/projects/q2
 status: active

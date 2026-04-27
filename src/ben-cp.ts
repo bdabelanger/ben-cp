@@ -499,11 +499,18 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const targetPath = path.resolve(skillsPath, domain);
       if (!targetPath.startsWith(skillsPath)) throw new Error("Access denied");
 
-      const skills = await fs.readdir(targetPath, { withFileTypes: true });
-      const files = skills
-        .filter(f => f.isDirectory() || (f.name.endsWith(".md") && !f.name.startsWith('.')))
-        .map(f => ({ name: f.name, type: f.isDirectory() ? "directory" : "file" }));
-      return { content: [{ type: "text", text: JSON.stringify(files, null, 2) }] };
+      try {
+        const skills = await fs.readdir(targetPath, { withFileTypes: true });
+        const files = skills
+          .filter(f => f.isDirectory() || (f.name.endsWith(".md") && !f.name.startsWith('.')))
+          .map(f => ({ name: f.name, type: f.isDirectory() ? "directory" : "file" }));
+        return { content: [{ type: "text", text: JSON.stringify(files, null, 2) }] };
+      } catch (e: any) {
+        if (e.code === 'ENOENT') {
+          return { content: [{ type: "text", text: `Domain '${domain}' not found in skills/` }] };
+        }
+        throw e;
+      }
     }
 
     if (name === "get_skill") {
@@ -637,7 +644,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     // --- DELIVERABLES & TASKS ---
     if (name === "add_task") {
       const { name: fileName, title, metadata = {}, content } = args as any;
-      const tasksRoot = path.resolve(rootPath, "orchestration/tasks");
+      const tasksRoot = path.resolve(rootPath, "tasks");
       await fs.mkdir(tasksRoot, { recursive: true });
       const sanitizedFilename = ensureSingleExtension(fileName);
       const fullPath = path.join(tasksRoot, sanitizedFilename);
@@ -658,7 +665,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
     if (name === "edit_task") {
       const { path: relPath, title, metadata = {}, content } = args as any;
-      const tasksRoot = path.resolve(rootPath, "orchestration/tasks");
+      const tasksRoot = path.resolve(rootPath, "tasks");
       const normalized = String(relPath).startsWith("tasks/") ? String(relPath).slice(6) : relPath;
       const fullPath = path.resolve(tasksRoot, normalized);
       let existingContent = await fs.readFile(fullPath, "utf-8");
@@ -679,7 +686,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     }
 
     if (name === "list_tasks") {
-      const tasksRoot = path.resolve(rootPath, "orchestration/tasks");
+      const tasksRoot = path.resolve(rootPath, "tasks");
       const entries = await fs.readdir(tasksRoot, { withFileTypes: true });
       const files = entries
         .filter(e => !e.name.startsWith("."))
@@ -689,7 +696,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
     if (name === "get_task") {
       const { path: relPath } = args as any;
-      const tasksRoot = path.resolve(rootPath, "orchestration/tasks");
+      const tasksRoot = path.resolve(rootPath, "tasks");
       const normalized = String(relPath).startsWith("tasks/") ? String(relPath).slice(6) : relPath;
       let fullPath = path.resolve(tasksRoot, normalized);
 

@@ -4,7 +4,9 @@
 > **Assigned to:** Code
 > **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P3
-> **STATUS**: 🔲 READY — pick up 2026-04-27
+> **STATUS**: ✅ COMPLETE — 2026-04-27
+
+Updated src/ben-cp.ts to point to root tasks/ directory instead of orchestration/tasks/. Added try/catch to list_skills to prevent ENOENT errors on non-existent domains. Created root tasks/ directory. Rebuilt MCP server. Updated skills/tasks/SKILL.md. Note: MCP server needs a restart to pick up changes.
 
 ---
 

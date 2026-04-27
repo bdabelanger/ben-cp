@@ -32,9 +32,9 @@ This is the most important section. Before assigning work, match the task to the
 
 | Agent | Sweet Spot | Avoid |
 | :--- | :--- | :--- |
-| **Cowork (Sonnet 4.6)** | Handoff review and refinement, architecture decisions, session planning, skill design, briefing other agents | Long document reviews, repetitive file population, code implementation |
-| **Local (Gemma 2 27B)** | Long document reviews, intelligence refresh, multi-file parsing, data formatting, repetitive populate-and-save tasks | Architecture decisions, code refactoring |
-| **Code (Gemini 3 Flash)** | Code refactoring and implementation, shell commands, build/test steps, precision file engineering, vault maintenance tasks | Lengthy document review |
+| **Cowork** | Handoff review and refinement, architecture decisions, session planning, skill design, briefing other agents | Long document reviews, repetitive file population, code implementation |
+| **Local** | Long document reviews, intelligence refresh, multi-file parsing, data formatting, repetitive populate-and-save tasks | Architecture decisions, code refactoring |
+| **Code** | Code refactoring and implementation, shell commands, build/test steps, precision file engineering, vault maintenance tasks | Lengthy document review |
 
 ### Terminology
 
@@ -101,9 +101,9 @@ Find your role file and read it next. All agents MUST identify using the format 
 
 | Agent | Role file | Role summary |
 | :--- | :--- | :--- |
-| **Cowork (Sonnet 4.6)** | `agents/cowork.md` | Architect, session lead, handoff reviewer |
-| **Local (Gemma 2 27B)** | `agents/local.md` | Reviewer, parser, intelligence refresher |
-| **Code (Gemini 3 Flash)** | `agents/code.md` | Implementer, code executor, file engineer |
+| **Cowork** | `agents/cowork.md` | Architect, session lead, handoff reviewer |
+| **Local** | `agents/local.md` | Reviewer, parser, intelligence refresher |
+| **Code** | `agents/code.md` | Implementer, code executor, file engineer |
 
 ---
 

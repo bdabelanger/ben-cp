@@ -10,3 +10,5 @@ domain: skills/dream
 
 ## Links
 - [SKILL Definition](SKILL.md)
+- [Master Runner (run.py)](run.py)
+- [Sensor Scripts (scripts/)](scripts/)

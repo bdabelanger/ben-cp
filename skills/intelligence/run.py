@@ -18,7 +18,7 @@ import os
 import sys
 import subprocess
 
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+SCRIPT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "scripts")
 REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", ".."))
 
 
@@ -27,15 +27,15 @@ def print_status():
     print()
     print("Stage 01: harvest     [AUTOMATED]")
     print("  → Walk intelligence records, refresh stale sources by system")
-    print("  → Script: python3 skills/intelligence/01_harvest.py")
+    print("  → Script: python3 skills/intelligence/scripts/01_harvest.py")
     print()
     print("Stage 02: parse       [AGENT-ASSISTED]")
     print("  → Apply LLM synthesis to extract structured vault intelligence records")
-    print("  → Script: python3 skills/intelligence/02_parse.py <file_path>")
+    print("  → Script: python3 skills/intelligence/scripts/02_parse.py <file_path>")
     print()
     print("Stage 03: scan_orphans [AUTOMATED]")
     print("  → Verify all source files have matching .md records; list any gaps")
-    print("  → Script: python3 skills/intelligence/03_scan_orphans.py")
+    print("  → Script: python3 skills/intelligence/scripts/03_scan_orphans.py")
     print("         or: python3 skills/intelligence/run.py --scan")
     print()
     print("Schema: skills/intelligence/schemas/source-to-intelligence-prompt.md")

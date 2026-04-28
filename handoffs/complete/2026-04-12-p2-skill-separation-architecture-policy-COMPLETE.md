@@ -9,12 +9,12 @@ domain: handoffs/complete
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)
 > **Assigned to:** Claude
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **v1.0**
 > **STATUS**: ✅ COMPLETE
 
-Established the vault's four-layer separation policy. Created skills/shared/separation-policy.md documenting what belongs in skills/ vs tools/ vs inputs/ vs outputs/, including the character.md contract. Updated AGENTS.md with a Directory Boundaries section (hard constraint rule + four-layer table). Updated skills/index.md to register tools/ and inputs/ as Central Stores. Ran a full violation scan and documented 13 script violations, 6 live data paths, 1 structural double-nesting bug, and 7 stale notes.md files as Known Migration Debt in the policy doc.
+Established the repo's four-layer separation policy. Created skills/shared/separation-policy.md documenting what belongs in skills/ vs tools/ vs inputs/ vs outputs/, including the character.md contract. Updated AGENTS.md with a Directory Boundaries section (hard constraint rule + four-layer table). Updated skills/index.md to register tools/ and inputs/ as Central Stores. Ran a full violation scan and documented 13 script violations, 6 live data paths, 1 structural double-nesting bug, and 7 stale notes.md files as Known Migration Debt in the policy doc.
 
 **Changelog:** (see root changelog.md)
 
@@ -25,7 +25,7 @@ Established the vault's four-layer separation policy. Created skills/shared/sepa
 
 A structural audit (2026-04-12) identified that several skills — most visibly `product/status-reports/` — are doing three jobs at once: defining skill logic, storing live pipeline inputs/outputs, and housing execution scripts. This violates the principle that `skills/` should be a generic, version-controlled toolset that can be iterated and improved independently of any particular run's data.
 
-The vault currently has no explicit policy documenting what belongs where. This handoff establishes that policy as a governance record and updates `AGENTS.md` and vault `index.md` to enforce it.
+The repo currently has no explicit policy documenting what belongs where. This handoff establishes that policy as a governance record and updates `AGENTS.md` and repo `index.md` to enforce it.
 
 **The rule:**
 
@@ -46,7 +46,7 @@ The vault currently has no explicit policy documenting what belongs where. This 
 
 1. **Draft the separation policy doc** — write `skills/shared/separation-policy.md`
 2. **Update `AGENTS.md`** — add a "Directory Boundaries" section with the four-layer table and cross-reference to `separation-policy.md`
-3. **Update vault root `index.md`** — add `tools/` and `inputs/` to the Central Stores table with descriptions
+3. **Update repo root `index.md`** — add `tools/` and `inputs/` to the Central Stores table with descriptions
 4. **Flag existing violations** — scan `skills/` for any `inputs/`, `outputs/`, `scripts/`, `manifest.json`, or `notes.md` at rest; list them in a brief audit section at the bottom of `separation-policy.md` as "Known Migration Debt" (do not fix here — fixes are scoped to the companion migration handoff)
 5. **Changelog + completion**
 
@@ -57,7 +57,7 @@ The vault currently has no explicit policy documenting what belongs where. This 
 Write a clean policy doc. Sections:
 
 ```markdown
-# Vault Separation Policy
+# Repo Separation Policy
 
 > Effective: 2026-04-12
 > Authority: AGENTS.md § Directory Boundaries
@@ -91,7 +91,7 @@ Add a **Directory Boundaries** section (after the skill registry table, before a
 
 ---
 
-## Task 3: Update vault root `index.md`
+## Task 3: Update repo root `index.md`
 
 In the Central Stores table, add or update:
 
@@ -105,7 +105,7 @@ In the Central Stores table, add or update:
 
 ## Task 4: Violation Scan
 
-Read the `list_vault` index and identify every file under `skills/` that matches:
+Read the `list_repo` index and identify every file under `skills/` that matches:
 - `inputs/` directories or files
 - `outputs/` directories (within skill subdirs, not the root)
 - `scripts/` directories
@@ -135,6 +135,6 @@ List each as a Known Migration Debt entry in `separation-policy.md`. Format:
 ## Notes for This Agent
 
 - This is a **policy-only** handoff. Do not move or delete any files. The companion handoff `2026-04-12-p2-status-reports-skill-separation.md` handles the first concrete migration.
-- `shared/` may not exist yet — create it if needed. It is the right home for cross-cutting vault governance docs.
-- The `product/shared/shared/` double-nesting found in the vault index is a separate bug — flag it in Known Migration Debt but do not fix here.
+- `shared/` may not exist yet — create it if needed. It is the right home for cross-cutting repo governance docs.
+- The `product/shared/shared/` double-nesting found in the repo index is a separate bug — flag it in Known Migration Debt but do not fix here.
 - Keep the policy doc terse. It is a reference doc, not a manifesto.

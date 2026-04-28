@@ -8,17 +8,17 @@ import re
 from datetime import datetime
 
 # ---------------------------------------------------------------------------
-# CSS — loaded from skills/shared/vault.css if available
+# CSS — loaded from skills/shared/repo.css if available
 # ---------------------------------------------------------------------------
 
 _SCRIPT_DIR  = os.path.dirname(os.path.abspath(__file__))
-_VAULT_CSS   = os.path.normpath(os.path.join(_SCRIPT_DIR, "..", "..", "..", "skills", "styles", "vault.css"))
+_REPO_CSS   = os.path.normpath(os.path.join(_SCRIPT_DIR, "..", "..", "..", "skills", "styles", "repo.css"))
 
 
 def _load_css():
-    """Load vault.css from skills/shared/, falling back to the inline default."""
-    if os.path.exists(_VAULT_CSS):
-        with open(_VAULT_CSS, "r") as f:
+    """Load repo.css from skills/shared/, falling back to the inline default."""
+    if os.path.exists(_REPO_CSS):
+        with open(_REPO_CSS, "r") as f:
             return f.read()
     return _CSS_FALLBACK
 

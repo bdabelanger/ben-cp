@@ -9,7 +9,7 @@ domain: handoffs/complete
 
 > **Prepared by:** Code (Gemini) (2026-04-27)
 > **Assigned to:** Ben
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P1
 > **STATUS**: ✅ COMPLETE — 2026-04-27
 
@@ -19,7 +19,7 @@ Superseded by 2026-04-27-p1-Dream-Report---2026-04-26.md with clean filename.
 
 > **Prepared by:** Code (Gemini) (2026-04-26)
 > **Assigned to:** Ben
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P1
 > **STATUS**: 🔲 READY — pick up 2026-04-26
 

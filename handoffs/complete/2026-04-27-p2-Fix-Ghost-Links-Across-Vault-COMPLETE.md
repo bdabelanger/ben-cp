@@ -1,18 +1,18 @@
-# Implementation Plan: Fix Ghost Links Across Vault
+# Implementation Plan: Fix Ghost Links Across Repo
 
 > **Prepared by:** Code (Gemini) (2026-04-27)
 > **Assigned to:** Code
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **STATUS**: ✅ COMPLETE — 2026-04-27
 
-Successfully resolved all 10 ghost links flagged in the vault. Most were stale relative paths or drag-and-drop absolute path artifacts. Verified with a fresh dream cycle showing 0 ghost links across 210 scanned files.Scan/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/Scan
+Successfully resolved all 10 ghost links flagged in the repo. Most were stale relative paths or drag-and-drop absolute path artifacts. Verified with a fresh dream cycle showing 0 ghost links across 210 scanned files.Scan/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/Scan
 
 ---
 
 ## Context
 
-The `links` sensor in the 2026-04-27 Dream cycle found 10 ghost links across the vault — broken internal references in markdown files. These range from truncated absolute paths (likely Markdown editor artifacts) to missing target files and stale relative paths.
+The `links` sensor in the 2026-04-27 Dream cycle found 10 ghost links across the repo — broken internal references in markdown files. These range from truncated absolute paths (likely Markdown editor artifacts) to missing target files and stale relative paths.
 
 ## Goal
 

@@ -9,7 +9,7 @@ domain: handoffs
 
 > **Prepared by:** Code (Gemini) (2026-04-27)
 > **Assigned to:** Code
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **STATUS**: ✅ COMPLETE — 2026-04-27
 
@@ -26,7 +26,7 @@ Successfully archived the legacy skills/intelligence directory to skills/archive
 
 ## Context
 
-`skills/intelligence/` is a legacy directory from a previous architectural era. It contains concepts ("Vault Auditor", "Daily Progress Summary", "cognitive core", memory/analysis/report pipeline) that no longer reflect how the vault works. Nothing active points to it — the only reference is a stale migration debt entry in `intelligence/governance/policy.md`.
+`skills/intelligence/` is a legacy directory from a previous architectural era. It contains concepts ("Repo Auditor", "Daily Progress Summary", "cognitive core", memory/analysis/report pipeline) that no longer reflect how the repo works. Nothing active points to it — the only reference is a stale migration debt entry in `intelligence/governance/policy.md`.
 
 ## Goal
 

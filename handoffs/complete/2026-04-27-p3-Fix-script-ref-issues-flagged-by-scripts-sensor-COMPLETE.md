@@ -24,7 +24,7 @@ restructuring (flatten of `skills/pipelines/` and the `asana` skill scaffold).
 
 [status] skills/status/scripts/run.py
   → References "skills/asana/run.py" as a string path
-  → Resolves incorrectly relative to skills/status/scripts/ instead of VAULT_ROOT
+  → Resolves incorrectly relative to skills/status/scripts/ instead of REPO_ROOT
   → Should be an absolute path built from REPO_ROOT
 
 [asana] skills/asana/run.py

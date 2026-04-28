@@ -2,11 +2,11 @@
 
 > **Prepared by:** Code (Gemini) (2026-04-27)
 > **Assigned to:** Code
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **STATUS**: ✅ COMPLETE — 2026-04-27
 
-The Releasinator skill has been successfully built, allowing for automated release readiness reporting by correlating Jira issues with GitHub PR statuses. The skill is now functional and integrated into the vault's skill set.
+The Releasinator skill has been successfully built, allowing for automated release readiness reporting by correlating Jira issues with GitHub PR statuses. The skill is now functional and integrated into the repo's skill set.
 
 ---
 
@@ -14,7 +14,7 @@ The Releasinator skill has been successfully built, allowing for automated relea
 
 > **Prepared by:** Cowork (2026-04-27)
 > **Assigned to:** Code
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **STATUS**: ✅ COMPLETE — 2026-04-27
 
@@ -187,7 +187,7 @@ The `SKILL.md` should instruct the agent to:
 
 1. Read `.env` from `/Users/benbelanger/GitHub/cbp-pivotal-tracker-doc-generator/.env` for credentials
 2. Run the releasinator script (see below) with the release name as argument
-3. Write output to `reports/releasinator/report.md` in the vault
+3. Write output to `reports/releasinator/report.md` in the repo
 4. Confirm with: `✅ Releasinator complete for {releaseName} — {N} repos to bump, {M} leaks found`
 5. Offer to open the report
 
@@ -195,7 +195,7 @@ The `SKILL.md` should instruct the agent to:
 
 ## Implementation Notes for Code
 
-**Language:** TypeScript/Node preferred (matches the source app). Alternatively Python if simpler for the shell-script pattern used by other skills in the vault.
+**Language:** TypeScript/Node preferred (matches the source app). Alternatively Python if simpler for the shell-script pattern used by other skills in the repo.
 
 **Script location:** `skills/releasinator/scripts/run.ts` (or `.py`)
 
@@ -226,5 +226,5 @@ node skills/releasinator/scripts/run.js --release "2026-5-1" [--jql "assignee = 
 - [ ] Feature flags are split: main release vs. leaked
 - [ ] BE Migrations appear in their own section
 - [ ] Report renders cleanly in markdown with working links
-- [ ] `reports/releasinator/report.md` is written to the vault (not the outputs scratch dir)
+- [ ] `reports/releasinator/report.md` is written to the repo (not the outputs scratch dir)
 - [ ] Skill invocation phrase works: "Run the releasinator for 2026-5-1"

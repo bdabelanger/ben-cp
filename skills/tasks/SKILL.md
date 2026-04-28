@@ -19,7 +19,7 @@ domain: skills/tasks
 
 ## Connections
 - **Input:** Implementation Plans (P1/P2) or direct human user requests.
-- **Output:** Final project deliverables and vault-ready artifacts.
+- **Output:** Final project deliverables and repo-ready artifacts.
 
 ## The Hierarchy
 Tasks are centralized at `tasks/`. 

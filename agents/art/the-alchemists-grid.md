@@ -21,7 +21,7 @@ To harvest high-speed, data fruit.
 
 No more the "Access Denied" cry,
 Nor broken pointers in the dark;
-The vault is normalized and true,
+The repo is normalized and true,
 Each record bears a structured spark.
 
 From OKRs to works of art,

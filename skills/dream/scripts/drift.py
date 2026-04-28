@@ -3,15 +3,15 @@
 import os, json, re
 from datetime import datetime
 
-VAULT_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
-OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream', 'data', 'raw')
+REPO_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
+OUTPUTS_DIR = os.path.join(REPO_ROOT, 'reports', 'dream', 'data', 'raw')
 
 QUARANTINE_NAMES = {'docs', 'temp', 'scratch', 'tmp', 'wip', 'old', 'backup'}
-IGNORE_DIRS = {'dist', 'node_modules', 'src', 'reports'}
+IGNORE_DIRS = {'dist', 'node_modules'}
 
 def load_sanctioned_dirs():
-    """Extract directory names from the vault structure block in AGENTS.md."""
-    agents_path = os.path.join(VAULT_ROOT, 'AGENTS.md')
+    """Extract directory names from the repo structure block in AGENTS.md."""
+    agents_path = os.path.join(REPO_ROOT, 'AGENTS.md')
     if not os.path.exists(agents_path):
         return set()
     with open(agents_path, errors='replace') as f:
@@ -27,15 +27,18 @@ def load_sanctioned_dirs():
 
 def scan_root_dirs():
     sanctioned = load_sanctioned_dirs()
+    if not sanctioned:
+        print("⚠️  drift: could not load sanctioned dirs from AGENTS.md — skipping root scan")
+        return []
     findings = []
     try:
-        entries = os.listdir(VAULT_ROOT)
+        entries = os.listdir(REPO_ROOT)
     except OSError:
         return findings
     for entry in entries:
         if entry.startswith('.') or entry in IGNORE_DIRS:
             continue
-        full = os.path.join(VAULT_ROOT, entry)
+        full = os.path.join(REPO_ROOT, entry)
         if not os.path.isdir(full):
             continue
         if entry.lower() in QUARANTINE_NAMES:
@@ -45,7 +48,7 @@ def scan_root_dirs():
     return findings
 
 def scan_intelligence_dirs():
-    intel_dir = os.path.join(VAULT_ROOT, 'intelligence')
+    intel_dir = os.path.join(REPO_ROOT, 'intelligence')
     findings = []
     if not os.path.isdir(intel_dir):
         return findings
@@ -53,7 +56,7 @@ def scan_intelligence_dirs():
         dirs[:] = [d for d in dirs if not d.startswith('.')]
         for d in dirs:
             if d.lower() in QUARANTINE_NAMES:
-                rel = os.path.relpath(os.path.join(root, d), VAULT_ROOT)
+                rel = os.path.relpath(os.path.join(root, d), REPO_ROOT)
                 findings.append({"path": rel, "severity": "QUARANTINE", "reason": "forbidden_name"})
     return findings
 

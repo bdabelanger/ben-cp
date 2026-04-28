@@ -8,8 +8,8 @@ domain: handoffs/complete
 # Claude Code Implementation Plan: Fix casebook/reporting/index.md
 
 > **Prepared by:** Claude (Cowork session, 2026-04-08)
-> **Source:** Vault Auditor report `reports/knowledge-report-2026-04-08.md` flag 1.4
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Source:** Repo Auditor report `reports/knowledge-report-2026-04-08.md` flag 1.4
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **v1.0**
 > **STATUS**: ✅ COMPLETE
 

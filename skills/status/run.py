@@ -147,7 +147,7 @@ def main():
         "status": "ok" if (at_risk == 0 and off_track == 0) else "warn",
         "summary": summary,
         "findings": [
-            f"Vault covers {total_intel} projects for Q2 release.",
+            f"Repo covers {total_intel} projects for Q2 release.",
             f"External sync verified {live_active} projects via Asana ingestion.",
             f"Full Report: [View Details]({DETAILED_REPORT_URL})",
             f"Report source: {report_source}.",

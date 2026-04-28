@@ -10,7 +10,7 @@ The user reports that `ben-cp` is down after a restart. Initial triage reveals m
 
 ## Proposed Logic
 1. **Clear Zombie Processes**: Multiple instances of `node dist/ben-cp.js` are currently running. Some are pointing to `/Users/benbelanger/GitHub/ben-cp` and others to `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`. These must be cleared to ensure a fresh start.
-2. **Standardize Path**: The vault recently underwent a "Great Flattening" restructuring. We should standardize on the `My Drive` path as it appears to be the most active and recently modified.
+2. **Standardize Path**: The repo recently underwent a "Great Flattening" restructuring. We should standardize on the `My Drive` path as it appears to be the most active and recently modified.
 3. **Rebuild & Verify**: Ensure the `dist/ben-cp.js` is up to date and that environment variables in `.env` are correct.
 4. **Client Config**: The user should verify that Claude Desktop's `config.json` points to the correct `dist/ben-cp.js` path.
 

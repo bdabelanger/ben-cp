@@ -78,7 +78,7 @@ This entire loop runs via a **scheduled Cowork skill** — no cron entries, no A
 ## Execution Steps for Code
 
 - [x] **Step 1: Migrate `orchestration/handoff/` → `handoffs/`** — Move the entire `orchestration/handoff/` directory to a root-level `handoffs/` directory (parallel to `tasks/`). Update the `handoffPath` variable in `src/ben-cp.ts` accordingly. Rebuild and verify all handoff MCP tools (`get_handoff`, `list_handoffs`, `add_handoff`, `edit_handoff`) resolve correctly against the new path. Do this first — all subsequent steps depend on handoff tools working.
-- [x] **Step 2: Update AGENTS.md** — Replace all references to `orchestration/handoff/` with `handoffs/` throughout AGENTS.md, including the vault structure diagram, directory boundaries table, and any procedural references.
+- [x] **Step 2: Update AGENTS.md** — Replace all references to `orchestration/handoff/` with `handoffs/` throughout AGENTS.md, including the repo structure diagram, directory boundaries table, and any procedural references.
 - [ ] **Step 3: Wire the scheduled skill** — Create a Cowork skill that executes the Quartermaster phase (Phase 1) on a nightly schedule at 22:00. The skill should: run `generate_report(skill='dream')`, read all sensor JSONs via `get_report`, analyze, correct records, create handoffs, and raise Asana tasks for Ben. Reference the `schedule` skill SOP for implementation pattern.
 - [x] **Step 4: Retire old dream orchestrator** — Archive `orchestration/utilities/intelligence/report.py` and nested `report/report.py`. Update `generate_report` MCP tool path to point at the new sensor runner (coordinate with `2026-04-26-p2-Fix:-Expose-Dream-Report-Output-via-ben-cp-MCP.md`).
 - [x] **Step 5: Verify `get_report` tool** — Confirm `get_report` can read all 11 sensor JSONs and `dream/report.md` from `reports/`. Fix path resolution if needed (coordinate with `2026-04-26-p2-Fix:-Expose-Dream-Report-Output-via-ben-cp-MCP.md`).
@@ -117,7 +117,7 @@ This entire loop runs via a **scheduled Cowork skill** — no cron entries, no A
 
 ## Acceptance Criteria
 
-- `handoffs/` exists at vault root; `orchestration/handoff/` is retired
+- `handoffs/` exists at repo root; `orchestration/handoff/` is retired
 - All handoff MCP tools resolve against `handoffs/`
 - Scheduled skill runs at 22:00 and completes Quartermaster phase autonomously
 - Morning `reports/dream/report.md` reflects the overnight sensor run

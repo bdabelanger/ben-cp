@@ -128,7 +128,7 @@ def main():
     stats = {"checked": 0, "refreshed": 0, "failed": 0, "skipped": 0}
     
     print(f"--- Intelligence Harvest ---")
-    print(f"Vault: {REPO_ROOT}")
+    print(f"Repo: {REPO_ROOT}")
     
     for root, dirs, files in os.walk(INTEL_DIR):
         # Skip source/ directories

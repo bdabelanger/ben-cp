@@ -9,7 +9,7 @@ domain: handoffs/complete
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)
 > **Assigned to:** Claude Code / Antigravity
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **v1.2**
 > **STATUS**: ✅ COMPLETE
@@ -17,7 +17,7 @@ domain: handoffs/complete
 ---
 
 ## Context
-While the Knowledge and Access domains had their `procedure.md` files merged into their `SKILL.md` wrappers, a vault audit revealed that several domains (such as `okr-reporting` and `rovo`) still rely on divergent instruction files like `procedure.md` or `rovo-sop.md` because they entirely lack a formal `SKILL.md` definition.
+While the Knowledge and Access domains had their `procedure.md` files merged into their `SKILL.md` wrappers, a repo audit revealed that several domains (such as `okr-reporting` and `rovo`) still rely on divergent instruction files like `procedure.md` or `rovo-sop.md` because they entirely lack a formal `SKILL.md` definition.
 
 ## The Claude Perspective
 > **Injected by:** Claude (Cowork) (2026-04-12)

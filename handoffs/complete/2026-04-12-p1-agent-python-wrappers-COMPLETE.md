@@ -9,7 +9,7 @@ domain: handoffs/complete
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)
 > **Assigned to:** Claude Code
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P1
 > **v1.2**
 > **STATUS**: ✅ COMPLETE
@@ -65,7 +65,7 @@ Each `run.py` must never crash silently. If a check fails, output a valid envelo
 ### Execution
 1. Define shared `report_spec.json` schema (see kucera-orchestrator-scaffold handoff for full context).
 2. Create `skills/changelog/run.py` — preferred agent: Gemma. Automates Check 9 and missing log detection.
-3. Create `skills/knowledge/run.py` — preferred agent: Antigravity. Vault health execution.
+3. Create `skills/knowledge/run.py` — preferred agent: Antigravity. Repo health execution.
 4. Create `report_spec.json` in each skill directory declaring preferred agent, cadence, and output schema.
 5. Ensure all scripts output the shared envelope schema with character voice confined to `summary`.
 6. Define tone approach for `summary` generation (hardcoded templates vs. LLM-assisted).

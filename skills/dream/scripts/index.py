@@ -3,14 +3,14 @@
 import os, json, re
 from datetime import datetime
 
-VAULT_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
-OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream', 'data', 'raw')
+REPO_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
+OUTPUTS_DIR = os.path.join(REPO_ROOT, 'reports', 'dream', 'data', 'raw')
 
 SKIP_DIRS  = {'.git', '__pycache__', 'node_modules', 'archived', 'complete', 'source'}
 SKIP_FILES = {'index.md', 'changelog.md', 'AGENTS.md', 'README.md'}
 
 def extract_index_refs(index_path):
-    """Pull all .md file paths (relative to Vault Root) referenced in an index.md."""
+    """Pull all .md file paths (relative to Repo Root) referenced in an index.md."""
     try:
         with open(index_path, errors='replace') as f:
             content = f.read()
@@ -44,8 +44,8 @@ def extract_index_refs(index_path):
                     target += '.md'
                 # Resolve the target relative to the index_dir
                 abs_target = os.path.normpath(os.path.join(index_dir, target))
-                # Store the path relative to VAULT_ROOT for consistent tracking
-                rel_target = os.path.relpath(abs_target, VAULT_ROOT)
+                # Store the path relative to REPO_ROOT for consistent tracking
+                rel_target = os.path.relpath(abs_target, REPO_ROOT)
                 refs.add(rel_target)
         idx = end + 1
     return refs
@@ -58,22 +58,22 @@ def audit_directory(dir_path):
         return shadow, ghosts
 
     disk_files = {
-        os.path.relpath(os.path.join(dir_path, f), VAULT_ROOT) for f in os.listdir(dir_path)
+        os.path.relpath(os.path.join(dir_path, f), REPO_ROOT) for f in os.listdir(dir_path)
         if f.endswith('.md') and f not in SKIP_FILES and os.path.isfile(os.path.join(dir_path, f))
     }
     index_refs = extract_index_refs(index_path)
 
     # We only care about shadow files in THIS directory, so we filter index_refs
     # to only those that point to THIS directory.
-    local_index_refs = {ref for ref in index_refs if os.path.dirname(os.path.join(VAULT_ROOT, ref)) == dir_path}
+    local_index_refs = {ref for ref in index_refs if os.path.dirname(os.path.join(REPO_ROOT, ref)) == dir_path}
     
-    rel_dir = os.path.relpath(dir_path, VAULT_ROOT)
+    rel_dir = os.path.relpath(dir_path, REPO_ROOT)
     for f in disk_files - local_index_refs:
         shadow.append({"dir": rel_dir, "file": os.path.basename(f), "type": "shadow"})
         
     # For ghosts, we check if the referenced file exists anywhere it's supposed to
     for ref in index_refs:
-        abs_ref = os.path.join(VAULT_ROOT, ref)
+        abs_ref = os.path.join(REPO_ROOT, ref)
         if not os.path.exists(abs_ref):
             ghosts.append({"dir": rel_dir, "file": os.path.basename(ref), "type": "ghost_ref"})
 
@@ -83,11 +83,10 @@ def run():
     all_shadow = []
     all_ghosts = []
 
-    for root, dirs, _ in os.walk(VAULT_ROOT):
-        dirs[:] = [d for d in dirs if d not in SKIP_DIRS and not d.startswith('.')]
-        s, g = audit_directory(root)
-        all_shadow.extend(s)
-        all_ghosts.extend(g)
+    # Only audit root index.md now
+    s, g = audit_directory(REPO_ROOT)
+    all_shadow.extend(s)
+    all_ghosts.extend(g)
 
     report = {
         "sensor": "index",

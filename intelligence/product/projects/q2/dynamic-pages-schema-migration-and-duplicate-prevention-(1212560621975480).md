@@ -1,13 +1,14 @@
 ---
-title: Dynamic pages - Schema migration and duplicate prevention
+title: Dynamic Pages - Schema migration and duplicate prevention
 type: intelligence
 domain: intelligence/product/projects/q2
+taxonomy: Dynamic Pages
 links:
   asana: https://app.asana.com/1/1123317448830974/project/1212560621975480
 ---
 
 
-# Dynamic pages - Schema migration and duplicate prevention
+# Dynamic Pages - Schema migration and duplicate prevention
 
 - **GID:** 1212560621975480
 - **Permalink:** https://app.asana.com/1/1123317448830974/project/1212560621975480
@@ -17,7 +18,7 @@ links:
 - **Jira Link:** None
 
 ## Current Status Update
-**Title:** Dynamic pages - Schema migration and duplicate prevention - Apr 10
+**Title:** Dynamic Pages - Schema migration and duplicate prevention - Apr 10
 **Text:**
 Summary
 
@@ -57,4 +58,3 @@ Next steps
 - **Launch Plan:** null
 - **UAT Start:** 2026-07-16T00:00:00.000Z
 - **Roadmap:** Tech Modernization
-

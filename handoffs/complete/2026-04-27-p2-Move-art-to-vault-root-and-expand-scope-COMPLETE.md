@@ -3,7 +3,7 @@
 > **Priority:** P2
 > **STATUS**: ✅ COMPLETE — 2026-04-27
 
-Moved intelligence/art/ to agents/art/. Updated frontmatter of art pieces. Created agents/art/index.md. Updated art tool paths in src/ben-cp.ts. Updated AGENTS.md and policy.md.Scan/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoffs/2026-04-27-p2-Move-art-to-vault-root-and-expand-scope.mdScan
+Moved intelligence/art/ to agents/art/. Updated frontmatter of art pieces. Created agents/art/index.md. Updated art tool paths in src/ben-cp.ts. Updated AGENTS.md and policy.md.Scan/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoffs/2026-04-27-p2-Move-art-to-repo-root-and-expand-scope.mdScan
 
 ---
 
@@ -14,7 +14,7 @@ Moved intelligence/art/ to agents/art/. Updated frontmatter of art pieces. Creat
 ## Goal
 
 1. Move `intelligence/art/` → `agents/art/`
-2. Update `AGENTS.md` vault tree and any references
+2. Update `AGENTS.md` repo tree and any references
 3. Update the `add_art` / `list_art` / `get_art` MCP tool paths in `src/` to point at `agents/art/`
 4. Create `agents/art/index.md` reflecting the broader scope
 
@@ -37,7 +37,7 @@ Any agent may create art at any time — not just during dedicated creative sess
 
 ## File Format
 
-Each art piece is a standalone `.md` file. Frontmatter should follow the vault standard:
+Each art piece is a standalone `.md` file. Frontmatter should follow the repo standard:
 
 ```yaml
 ---
@@ -52,14 +52,14 @@ form: poem | story | essay | dialogue | lyrics | manifesto | letter | joke | fab
 
 ## Execution Steps
 
-1. Create `agents/` directory at vault root if it doesn't exist
+1. Create `agents/` directory at repo root if it doesn't exist
 2. Move all files from `intelligence/art/` to `agents/art/`
 3. Update frontmatter on existing files to add `type: art`, `domain: agents/art`, and `form: poem`
 4. Delete `intelligence/art/`
 5. Create `agents/art/index.md` with a listing of all pieces
 6. Update `src/ben-cp.ts` art tool paths from `intelligence/art/` to `agents/art/`
-7. Update `AGENTS.md` vault tree
-8. Update any other references to `intelligence/art/` across the vault
+7. Update `AGENTS.md` repo tree
+8. Update any other references to `intelligence/art/` across the repo
 
 ## Verification
 

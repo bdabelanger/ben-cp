@@ -1,14 +1,15 @@
 ---
-title: Communications - Text message syncing routing improvements
+title: Communication - Text message syncing routing improvements
 type: intelligence
 domain: intelligence/product/projects/q2
+taxonomy: Communication
 links:
   asana: https://app.asana.com/1/1123317448830974/project/1213880656869265
   jira: https://casecommons.atlassian.net/browse/CBP-3078
 ---
 
 
-# Communications - Text message syncing routing improvements
+# Communication - Text message syncing routing improvements
 
 - **GID:** 1213880656869265
 - **Permalink:** https://app.asana.com/1/1123317448830974/project/1213880656869265
@@ -18,7 +19,7 @@ links:
 - **Jira Link:** https://casecommons.atlassian.net/browse/CBP-3078
 
 ## Current Status Update
-**Title:** Communications - Text message syncing routing improvements - Apr 10
+**Title:** Communication - Text message syncing routing improvements - Apr 10
 **Text:**
 Summary
 
@@ -62,4 +63,3 @@ Next steps
 - **Launch Plan:** null
 - **UAT Start:** 2026-04-16T00:00:00.000Z
 - **Roadmap:** null
-

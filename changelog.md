@@ -1,18 +1,37 @@
 ---
-title: Vault Changelog
+title: Project Changelog
 type: changelog
 domain: .
 ---
 
 
-# Vault Changelog
+# Project Changelog
 
-## [1.19.0] — Vault Normalization & Dream Cycle Automation (2026-04-27)
+## [1.19.2] — Dynamic Task Taxonomy & capture_task Integration (2026-04-28)
 
 **Changes:**
-- **Vault Restructuring (The Great Flattening)**: Moved `skills/pipelines/` into `skills/` and established root-level `handoffs/` to simplify orchestration. Centralized agent documentation and artifacts in the `agents/` directory.
+- **Dynamic Inference Engine**: Refactored the `capture_task` tool to parse the `intelligence/casebook/taxonomy.md` record at runtime, ensuring labels always reflect the authoritative product/feature mapping.
+- **Regex Keyword Matching**: Implemented word-boundary regex matching for all signal keywords to improve inference precision.
+- **Convention Hardening**: Adhered to the `Product - Feature — Summary` convention with automated deduplication for concepts like `People`.
+- **Legacy Cleanup**: Removed the hardcoded "Platform" fallback in favor of the "Omit label if no match" policy defined in the taxonomy.
+- **Server Versioning**: Bumped `ben-cp` to version `2.2.0` and verified the build.
+
+## [1.19.1] — Tool Registry Standardization & Token Economy Remediation (2026-04-28)
+
+**Changes:**
+- **Nomenclature Scrub**: Systematically removed "vault" terminology repository-wide, adopting entity-first naming conventions.
+- **Tooling Standardization**: Normalized all MCP tool definitions with standard verbs (GET, LIST, ADD, EDIT, RUN) and professionalized descriptions.
+- **Agent Dispatch**: Formalized the **Human** persona as the project owner and dispatch target in `AGENTS.md`.
+- **Releasinator Enhancement**: Refactored leak detection to use branch-comparison logic and added specific PR attribution to reports.
+- **Token Economy**: Implemented automated archive pruning (3-snapshot retention) and raw artifact purging in the `status` and `intelligence` pipelines.
+- **Structural Hygiene**: Resolved all outstanding ghost links and fixed relative pathing logic in the Dream report builder.
+
+## [1.19.0] — Nomenclature Normalization & Dream Cycle Automation (2026-04-27)
+
+**Changes:**
+- **Structure Refactor (The Great Flattening)**: Moved `skills/pipelines/` into `skills/` and established root-level `handoffs/` to simplify orchestration. Centralized agent documentation and artifacts in the `agents/` directory.
 - **Dream Cycle & Quartermaster Protocol**: Implemented a fully autonomous nightly health loop driven by scheduled skills. Replaced legacy reporting with sensor-driven Markdown digests.
-- **Enhanced Maintenance**: Corrected 127+ "Ghost Links" vault-wide and standardized project intelligence schemas (frontmatter and H1 normalization).
+- **Enhanced Maintenance**: Corrected 127+ "Ghost Links" repo-wide and standardized project intelligence schemas (frontmatter and H1 normalization).
 - **Tooling & Skills**: Refactored **Releasinator** for automated release reporting, built **Task Capture** MCP tools, and implemented the **Standup Harvester** (Gmail -> Tasks).
 - **Intelligence Lifecycle**: Automated the intelligence harvest and orphan scanning pipelines.
 
@@ -28,7 +47,7 @@ domain: .
 ## [1.18.8] — Centralized Styles and Visual Nomenclature (2026-04-15)
 
 **Changes:**
-- **skills/styles/emoji-key.md**: Created the canonical visual glossary for all vault reports and documentation.
+- **skills/styles/emoji-key.md**: Created the canonical visual glossary for all reports and documentation.
 - **skills/styles/**: Refactored `SKILL.md` and `report.md` to point to the new emoji-key reference and removed redundant definitions.
 - **AGENTS.md**: Injected the **Visual Authority** rule, mandating that all agents check `skills/styles/emoji-key.md` before generating content to ensure stylistic consistency.
 
@@ -39,7 +58,7 @@ domain: .
 - **AGENTS.md**: Codified the **Unified Artifact Standard** (Context -> Logic -> Execution Steps). Established flat-file handoffs in `handoffs/` as the P1/P2 default.
 - **AGENTS.md**: Defined explicit terminology for **"Steps"** (agent-led execution) and **"Tasks"** (human-led strategic deliverables) to prevent role-drift.
 - **agents/cowork.md**: Updated the **Handoff Protocol** to reflect the unified standard and formally deprecated root-level `_IMPLEMENTATION_PLAN.md` files.
-- **Vault Hygiene**: Verified the vault root is free of implementation plans, moving all execution logic to the orchestration domain.
+- **Hygiene**: Verified the root is free of implementation plans, moving all execution logic to the orchestration domain.
 
 ## [1.18.5] — Pathing Normalization (Remove 'benbelanger' Hard-Coding) (2026-04-14)
 
@@ -47,8 +66,8 @@ domain: .
 **Changes:**
 - `src/ben-cp.ts` — Replaced hardcoded `/Users/benbelanger/GitHub/ben-cp` with dynamic `${rootPath}` in `add_handoff` tool definition.
 - `AGENTS.md` — Updated `character.md` reference to use a root-relative path (`./character.md`).
-- `tools/orchestration/changelog/sync.py` — Updated `VAULT_ROOT` to use dynamic path resolution.
-- **Global Refactor:** Performed a vault-wide search and replace of the old GitHub path with the new Google Drive mirrored path in all Markdown files.
+- `tools/orchestration/changelog/sync.py` — Updated `REPO_ROOT` to use dynamic path resolution.
+- **Global Refactor:** Performed a repo-wide search and replace of the old GitHub path with the new Google Drive mirrored path in all Markdown files.
 - **Build:** Verified environment integrity with `npm install` and `npm run build` (rebuilt `dist/ben-cp.js`).
 
 ## [1.18.4] — Cowork Role Unified into Single File (2026-04-13)
@@ -66,13 +85,15 @@ domain: .
 - `intelligence/product/projects/` — Created directory and populated with 35 project intelligence files extracted from `asana_active.json`.
 - `intelligence/product/index.md` — Created master index for product intelligence.
 - `intelligence/product/projects/index.md` — Generated project directory index.
+- **2026-04-28**: Deprecated legacy task tools (`add_task`, `edit_task`, etc) and intelligence tools (`synthesize_intelligence`, `predict_intelligence`, `audit_intelligence`).
+- **2026-04-28**: Standardized report generation tooling and transcripts harvester.
 - **Refactoring:** Standardized project filenames to human-readable kebab-case (e.g., `nylas-upgrade-ux-improvements-(1208822133040792).md`).
 - **Hierarchy:** Regrouped active projects into a temporal hierarchy (`intelligence/product/projects/2026/q2/`).
 - **Partitioning:** Established `archive/` for 2025 data and `backlog/` for unscheduled initiatives.
 - **SOP Expansion:** Normalized `Memory Recall` to scan the entire `intelligence/` domain guided by local indices.
 - **Enrichment:** Injected strategic Q2 Shareout context into active project intelligence files (Service Plan, Enrollments).
 
-## [1.18.2] — Milestone: Vault-wide Structural Alignment (2026-04-12)
+## [1.18.2] — Milestone: Repo-wide Structural Alignment (2026-04-12)
 
 > **Sync Operation:** Finalizing the Documentation Triad normalization by bulk-logging path-drift from the last 72 hours. This entry ensures 100% path coverage for the new domain-driven hierarchy.
 
@@ -326,7 +347,7 @@ domain: .
   - `skills/product/report.md`
   - `skills/product/report_spec.json`
   - `skills/product/shared/data_sources.md`
-  - `skills/product/shared/shared/vault.css`
+  - `skills/product/shared/shared/repo.css`
   - `skills/product/status-reports/.DS_Store`
   - `skills/product/status-reports/changelog.md`
   - `skills/product/status-reports/index.md`
@@ -342,7 +363,7 @@ domain: .
   - `skills/styles/audit.md`
   - `skills/styles/report.md`
   - `skills/styles/report_spec.json`
-  - `skills/styles/vault.css`
+  - `skills/styles/repo.css`
 
 - **src**:
   - `src/ben-cp.ts`
@@ -508,7 +529,7 @@ domain: .
   - `skills/product/report.md`
   - `skills/product/report_spec.json`
   - `skills/product/shared/data_sources.md`
-  - `skills/product/shared/shared/vault.css`
+  - `skills/product/shared/shared/repo.css`
   - `skills/product/status-reports/.DS_Store`
   - `skills/product/status-reports/changelog.md`
   - `skills/product/status-reports/index.md`
@@ -524,7 +545,7 @@ domain: .
   - `skills/styles/audit.md`
   - `skills/styles/report.md`
   - `skills/styles/report_spec.json`
-  - `skills/styles/vault.css`
+  - `skills/styles/repo.css`
 
 - **src**:
   - `src/ben-cp.ts`
@@ -566,7 +587,7 @@ domain: .
 ## [1.18.1] — Documentation Triad Normalization: Standardized all 13+ skills into SKILL.md/audit.md/report.md triad and merged identity files. (2026-04-12)
 
 **Changes:**
-- `Vault-wide` — Refactored all 13 skill directories into the standardized Documentation Triad: **SKILL.md** (Strategy), **audit.md** (Logic), and **report.md** (Communication).
+- `Repo-wide` — Refactored all 13 skill directories into the standardized Documentation Triad: **SKILL.md** (Strategy), **audit.md** (Logic), and **report.md** (Communication).
 - `Character Consolidation` — Purged all `character.md` and `identity.md` files, merging persona instructions directly into the relevant `report.md`.
 - `Intelligence` — Normalized Analysis (Predict/Synthesize) and Memory (Recall/Learn/Audit) sub-skills.
 - `Orchestration` — Normalized Communication, Changelog (Lumberjack), and Handoff (Baton) systems.
@@ -574,7 +595,7 @@ domain: .
 - `Hygiene` — Cleaned skills tree of over 10 deprecated documentation files.
 - `Handoff` — [2026-04-12-p1-resolve-gemini-root-edit-block.md](handoffs/complete/2026-04-12-p1-resolve-gemini-root-edit-block-COMPLETE.md) — Established P1 mission to resolve agent permission blocks.
 
-## [1.18.0] — Unified and Normalized Vault Architecture: Established domain-driven hierarchy (Intelligence / Orchestration / Product) and professionalized nomenclature. (2026-04-12)
+## [1.18.0] — Unified and Normalized Repo Architecture: Established domain-driven hierarchy (Intelligence / Orchestration / Product) and professionalized nomenclature. (2026-04-12)
 
 **Detail logs:**
 - `skills/orchestration/communication/changelog.md`
@@ -584,11 +605,11 @@ domain: .
 - `skills/orchestration/` — Flattened domain: Moved **handoff** to root, professionalized **communication** (notes), and nested **access** and **changelog**.
 - `skills/intelligence/` — Unified cognitive core: Grouped **memory**, **analysis**, and **report** (Dream Cycle).
 - `skills/styles/` — Global CSS and nomenclature authority.
-- `Vault-wide` — Standardized all user references to **[human user]** and eliminated branded "Captain's Log" terminology.
+- `Repo-wide` — Standardized all user references to **[human user]** and eliminated branded "Captain's Log" terminology.
 - `skills/` — Deployed **Legacy Redirect Symlinks** for all moved top-level skills to ensure continuous MCP tool compatibility.
 - `skills/intelligence/report/run.py` — Updated discovery logic to deduplicate symlink overlaps.
 
-**Handoff:** `handoffs/complete/2026-04-12-p1-vault-path-normalization-COMPLETE.md`
+**Handoff:** `handoffs/complete/2026-04-12-p1-repo-path-normalization-COMPLETE.md`
 
 **Next Tasks:**
 1. Restore `requests` library in local Python environment.
@@ -603,8 +624,8 @@ domain: .
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/tools/status-reports/` — Created — all scripts (full_run.py, step_0–4, platform_report.py, render_html.py, update_manifest.py), run_pipeline.sh, tests/, README.md
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/inputs/status-reports/` — Created — manifest.json, raw/, processed/, archive/ tree, README.md
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/outputs/status-reports/logs/launchd.log` — Moved from skills/product/status-reports/logs/
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/tools/status-reports/scripts/*.py` — Updated all 8 scripts: VAULT_ROOT computed from __file__, MANIFEST_PATH = VAULT_ROOT/inputs/status-reports/manifest.json, all data paths updated to inputs/status-reports/ prefix
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/tools/status-reports/run_pipeline.sh` — Updated VAULT_ROOT (two levels up from SCRIPT_DIR), ENV_FILE and LOG_FILE updated to vault root paths
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/tools/status-reports/scripts/*.py` — Updated all 8 scripts: REPO_ROOT computed from __file__, MANIFEST_PATH = REPO_ROOT/inputs/status-reports/manifest.json, all data paths updated to inputs/status-reports/ prefix
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/tools/status-reports/run_pipeline.sh` — Updated REPO_ROOT (two levels up from SCRIPT_DIR), ENV_FILE and LOG_FILE updated to repo root paths
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/inputs/status-reports/manifest.json` — Updated config.processed_dir, config.archive_dir, and all step file paths to use inputs/status-reports/ and outputs/status-reports/ prefixes
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/product/status-reports/index.md` — Updated kickstart commands and data path references to new locations
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/product/status-reports/` — Now contains only changelog.md and index.md — clean skill stub
@@ -647,7 +668,7 @@ domain: .
 2. Run Roz on next nightly cycle to baseline the Known Migration Debt against her new scan
 
 
-## [1.15.1] — Establish vault separation policy as governance record and update AGENTS.md and skills/index.md to enforce the four-layer architecture rule. (2026-04-12)
+## [1.15.1] — Establish repo separation policy as governance record and update AGENTS.md and skills/index.md to enforce the four-layer architecture rule. (2026-04-12)
 
 **Detail logs:**
 - `skills/shared/changelog.md`
@@ -665,7 +686,7 @@ domain: .
 3. Fix skills/product/shared/shared/ double-nesting structural bug
 
 
-## [1.15.0] — Establish vault separation policy: document the four-layer architecture rule, update AGENTS.md and skills/index.md, and audit skills/ for existing violations. (2026-04-12)
+## [1.15.0] — Establish repo separation policy: document the four-layer architecture rule, update AGENTS.md and skills/index.md, and audit skills/ for existing violations. (2026-04-12)
 
 **Detail logs:**
 - `skills/shared/changelog.md`
@@ -701,10 +722,10 @@ domain: .
 2. Determine why the 'run_status_report' tool points to an incorrect script location, and update its configuration if possible.
 
 
-## [1.13.5] — Fix stale references in the vault's primary navigation indices. (2026-04-12)
+## [1.13.5] — Fix stale references in the repo's primary navigation indices. (2026-04-12)
 
 **Changes:**
-- `AGENTS.md` — Updated AGENTS.md and skills/index.md to reflect the most current vault structure (interpretation, collaboration, product).
+- `AGENTS.md` — Updated AGENTS.md and skills/index.md to reflect the most current repo structure (interpretation, collaboration, product).
 - `AGENTS.md` — Fixed Roz role entry and tool examples in AGENTS.md.
 
 **Handoff:** `handoffs/complete/2026-04-12-p1-crypt-keeper-agents-md-and-skills-index-COMPLETE.md`
@@ -713,12 +734,12 @@ domain: .
 1. None - navigation fixed.
 
 
-## [1.13.4] — Final vault cleanup and interpretation skill grouping. (2026-04-12)
+## [1.13.4] — Final repo cleanup and interpretation skill grouping. (2026-04-12)
 
 **Changes:**
 - `skills/interpretation/` — Grouped synthesis (Robert) and predict (Bryan) under a new interpretation/ domain.
 - `skills/interpretation/index.md` — Created shared character framing and domain index for Interpretation.
-- `skills/styles/vault.css` — Moved vault.css to styles/ skill and decommissioned shared/ subdirectory.
+- `skills/styles/repo.css` — Moved repo.css to styles/ skill and decommissioned shared/ subdirectory.
 - `AGENTS.md` — Updated references in AGENTS.md and skills/index.md to reflect interpretation domain and collaboration/notes structure.
 - `project-status-reports/` — Dissolved root project-status-reports/ junk directory.
 - `skills/dream/run.py` — Updated Dream orchestrator to recursively discover skills and use correct CSS paths.
@@ -823,7 +844,7 @@ domain: .
 3. Schedule nightly access audit skill run
 
 
-## [1.11.2] — Correct notes.md write policy — any agent may write to any notes.md vault-wide, entries must be signed with agent name and timestamp. (2026-04-12)
+## [1.11.2] — Correct notes.md write policy — any agent may write to any notes.md repo-wide, entries must be signed with agent name and timestamp. (2026-04-12)
 
 **Detail logs:**
 - `skills/input/changelog.md`
@@ -838,7 +859,7 @@ domain: .
 3. Schedule nightly access audit skill run
 
 
-## [1.11.1] — Rewrite skills/index.md to reflect current vault structure — completing the P1 crypt-keeper handoff. (2026-04-12)
+## [1.11.1] — Rewrite skills/index.md to reflect current repo structure — completing the P1 crypt-keeper handoff. (2026-04-12)
 
 **Changes:**
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/index.md` — Full rewrite — removed defunct crypt-keeper/, lumberjack/, roz/ references; added all current skill directories with accurate descriptions
@@ -851,7 +872,7 @@ domain: .
 3. Schedule nightly access audit skill run
 
 
-## [1.11.0] — Rename skills/input/captains-log.md to notes.md and establish universal notes.md write policy across the vault. (2026-04-12)
+## [1.11.0] — Rename skills/input/captains-log.md to notes.md and establish universal notes.md write policy across the repo. (2026-04-12)
 
 **Detail logs:**
 - `skills/input/changelog.md`
@@ -860,7 +881,7 @@ domain: .
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/input/notes.md` — Renamed from captains-log.md — content preserved, header updated to remove character name reference
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/input/SKILL.md` — Rewrote to define universal notes.md write policy: any agent may append to their own skill's notes.md, no agent may write to another skill's notes.md, skills/input/notes.md is persistent
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/input/index.md` — Updated to reference notes.md (was captains-log.md)
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Major update: added notes.md write policy section, fixed Session Pattern (notes.md + skills/pmm/report.md), updated vault structure diagram, fixed Roz dispatch to skills/access/SKILL.md, removed character name references
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Major update: added notes.md write policy section, fixed Session Pattern (notes.md + skills/pmm/report.md), updated repo structure diagram, fixed Roz dispatch to skills/access/SKILL.md, removed character name references
 
 **Next Tasks:**
 1. Execute P1 handoff: remaining AGENTS.md and skills/index.md fixes (skills/index.md rewrite)
@@ -869,7 +890,7 @@ domain: .
 4. Schedule nightly access audit skill run
 
 
-## [1.10.0] — Run knowledge skill vault quality watchdog — 8 checks, produce flagged report and handoffs. (2026-04-12)
+## [1.10.0] — Run knowledge skill repo quality watchdog — 8 checks, produce flagged report and handoffs. (2026-04-12)
 
 **Detail logs:**
 - `skills/knowledge/changelog.md`
@@ -877,7 +898,7 @@ domain: .
 **Changes:**
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/outputs/reports/knowledge-report-2026-04-12.md` — Knowledge skill run — 11 flags across 8 checks, 3 handoffs written
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/outputs/reports/archive/cleanup-report-2026-04-10.md` — Archived previous report before writing new one
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoffs/2026-04-12-p1-crypt-keeper-agents-md-and-skills-index.md` — P1 handoff — fix AGENTS.md (notes.md rename, vault diagram, Roz dispatch) and rewrite skills/index.md
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoffs/2026-04-12-p1-crypt-keeper-agents-md-and-skills-index.md` — P1 handoff — fix AGENTS.md (notes.md rename, repo diagram, Roz dispatch) and rewrite skills/index.md
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoffs/2026-04-12-p2-crypt-keeper-missing-indexes-and-roz-consolidation.md` — P2 handoff — add missing index.md to dream/, predict/, changelog/lumberjack/ and archive agents/roz.md
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoffs/2026-04-12-p3-crypt-keeper-data-and-index-gaps.md` — P3 handoff — add Locked/Signed Notes to data_sources.md, fix orphaned index references
 
@@ -907,7 +928,7 @@ domain: .
 **Changes:**
 - `skills/pmm/report_spec.json` — Created Strategic PM spec
 - `skills/changelog/report_spec.json` — Created Changelog Auditor spec
-- `skills/knowledge/report_spec.json` — Created Vault Auditor spec
+- `skills/knowledge/report_spec.json` — Created Repo Auditor spec
 - `skills/access/report_spec.json` — Created Roz spec
 - `skills/synthesis/report_spec.json` — Created Robert spec
 - `skills/predict/report_spec.json` — Created Bryan spec
@@ -942,12 +963,12 @@ domain: .
 - `skills/input/` — Generated standard domain structure.
 - `skills/input/captains-log.md` — Designed the human user notes stream framework.
 - `skills/input/character.md` — Established the Sea Shanty character bounds.
-- `AGENTS.md` — Updated Vault Pathing documentation.
+- `AGENTS.md` — Updated Repo Pathing documentation.
 
 **Handoff:** `handoffs/complete/2026-04-12-p1-ben-ad-hoc-input-protocol-COMPLETE.md`
 
 **Next Tasks:**
-1. vault-structural-collapse-sprint
+1. repo-structural-collapse-sprint
 2. kucera-scaffold-build
 
 
@@ -965,7 +986,7 @@ domain: .
 1. kucera-orchestrator-scaffold
 
 
-## [1.9.14] — Address the naming contradictions and the SKILL/procedure dualities observed by Vault Auditor. (2026-04-12)
+## [1.9.14] — Address the naming contradictions and the SKILL/procedure dualities observed by Repo Auditor. (2026-04-12)
 
 **Changes:**
 - `AGENTS.md` — Updated AGENTS.md Rule 5 to default to hyphenated names.
@@ -1069,7 +1090,7 @@ domain: .
 1. Review the generated report for any critical findings before sharing with stakeholders.
 
 
-## [1.9.6] — Resolve orphaned index entries and sync metadata gaps identified by Vault Auditor. (2026-04-10)
+## [1.9.6] — Resolve orphaned index entries and sync metadata gaps identified by Repo Auditor. (2026-04-10)
 
 **Changes:**
 - `skills/okr-reporting/q2-2026/planning-services-at-scale/index.md` — Added Notes Quick Entry to dashboard and detailed metadata sections.
@@ -1109,7 +1130,7 @@ domain: .
 1. Address handoffs/2026-04-10-p2-lumberjack-changelog-alignment-fixes.md
 
 
-## [1.9.3] — Run Vault Auditor nightly structural audit. (2026-04-10)
+## [1.9.3] — Run Repo Auditor nightly structural audit. (2026-04-10)
 
 **Detail logs:**
 - `skills/knowledge/changelog.md`
@@ -1124,13 +1145,13 @@ domain: .
 2. Address handoffs/2026-04-10-p2-crypt-keeper-conventions-and-redundancy.md
 
 
-## [1.9.2] — Refine vault reporting protocols to eliminate redundant changelog entries when a handoff is the primary output. (2026-04-10)
+## [1.9.2] — Refine repo reporting protocols to eliminate redundant changelog entries when a handoff is the primary output. (2026-04-10)
 
 **Detail logs:**
 - `skills/changelog/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Added Handoff Exemption to vault completion reporting rules.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Added Handoff Exemption to repo completion reporting rules.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/gemma.md` — Added Handoff Exemption to Gemma's session wrap-up rules.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/changelog/index.md` — Updated changelog procedure with Handoff Exemption in Stage 2.
 
@@ -1325,14 +1346,14 @@ domain: .
 
 **Changes:**
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/gemma.md` — Consolidated GEMMA.md into agents/gemma.md to streamline agent orientation.
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Removed GEMMA.md reference from vault structure tree.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Removed GEMMA.md reference from repo structure tree.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/GEMMA.md` — Deleted redundant GEMMA.md root file.
 
 **Next Tasks:**
 1. Ensure future agent role additions follow the agents/[name].md pattern instead of root-level files.
 
 
-## [1.7.18] — Make vault changelog logging conditional on write/edit actions to reduce noise. (2026-04-10)
+## [1.7.18] — Make repo changelog logging conditional on write/edit actions to reduce noise. (2026-04-10)
 
 **Detail logs:**
 - `skills/changelog/changelog.md`
@@ -1348,14 +1369,14 @@ domain: .
 2. Audit AGENTS.md for any other 'blindly iterative' instructions.
 
 
-## [1.7.17] — Perform comprehensive reference update across the vault following structural changes. Cory (2026-04-10)
+## [1.7.17] — Perform comprehensive reference update across the repo following structural changes. Cory (2026-04-10)
 
 **Detail logs:**
 - `skills/okr-reporting/changelog.md`
 
 **Changes:**
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Updated AGENTS.md, procedure.md, data_sources.md, and GEMMA.md with all new nested paths and dashboard links Cory
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/procedure.md` — Performed vault-wide audit to ensure no dangling references to deprecated 2026-q2-kr-reference.md remained Cory
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/procedure.md` — Performed repo-wide audit to ensure no dangling references to deprecated 2026-q2-kr-reference.md remained Cory
 
 **Next Tasks:**
 1. Review changelog for any other indirect references that might need cleanup (e.g. past entries).
@@ -1483,7 +1504,7 @@ domain: .
 1. Ensure all agents are aware of the Course Correction Protocol.
 
 
-## [1.7.8] — Implement session resilience and Course Correction protocols for vault agents. (2026-04-10)
+## [1.7.8] — Implement session resilience and Course Correction protocols for repo agents. (2026-04-10)
 
 **Detail logs:**
 - `skills/handoffs/changelog.md`
@@ -1557,11 +1578,11 @@ domain: .
 1. Address remaining handoffs: p2-context-loading-triage, p3-robert-agent-creation, p4-session-retrospective-context.
 
 
-## [1.7.3] — Initialize Antigravity as a peer implementer agent in the ben-cp vault. (2026-04-09)
+## [1.7.3] — Initialize Antigravity as a peer implementer agent in the ben-cp repo. (2026-04-09)
 
 **Changes:**
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/antigravity.md` — Created agents/antigravity.md role file with verbatim handoff text.
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Updated AGENTS.md dispatch table and vault structure tree to register Antigravity agent.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Updated AGENTS.md dispatch table and repo structure tree to register Antigravity agent.
 
 **Handoff:** `handoffs/2026-04-10-p2-antigravity-agent.md`
 
@@ -1708,14 +1729,14 @@ domain: .
 3. Pull Notes Datagrid April baseline from GA (feature live 2026-04-09)
 
 
-## [1.6.1] — Run Vault Auditor post-handoff verification (2026-04-09): confirm all prior P1/P2 flags resolved, identify remaining structural issues. (2026-04-09)
+## [1.6.1] — Run Repo Auditor post-handoff verification (2026-04-09): confirm all prior P1/P2 flags resolved, identify remaining structural issues. (2026-04-09)
 
 **Detail logs:**
 - `skills/knowledge/changelog.md`
 
 **Changes:**
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/reports/archive/cleanup-report-2026-04-08.md` — Archived prior report via git mv before writing new run
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/reports/knowledge-report-2026-04-09.md` — Vault Auditor run complete — 53 files scanned, 10 flags across 3 checks (Checks 2/4/5/7 clean)
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/reports/knowledge-report-2026-04-09.md` — Repo Auditor run complete — 53 files scanned, 10 flags across 3 checks (Checks 2/4/5/7 clean)
 
 **Next Tasks:**
 1. P1: Create skills/project-status-reports/scripts/index.md (draft in report)
@@ -1745,7 +1766,7 @@ domain: .
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/skill-builder/styles/index.md` — Created — new directory TOC for styles/
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/skill-builder/rules/` — Removed empty directory
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/data_sources.md` — Added Database (Direct) — Portal KRs section + /portal GA proxy row with engineering note
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Added SKILL.md/AGENTS.md naming exemption; updated vault tree (removed root reports/, added knowledge/reports/); updated File Placement table; root exemptions already had CLAUDE.md and README.md
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Added SKILL.md/AGENTS.md naming exemption; updated repo tree (removed root reports/, added knowledge/reports/); updated File Placement table; root exemptions already had CLAUDE.md and README.md
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/reports/` — Removed root reports/ directory (git rm -r); content already existed in skills/knowledge/reports/
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/procedure.md` — Updated output path from reports/ to skills/knowledge/reports/; added archive step to Pre-Flight
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoffs/complete/2026-04-08-changelog-refactor-COMPLETE.md` — Renamed from 2026-04-08-changelog-refactor.md (added -COMPLETE suffix)
@@ -1756,7 +1777,7 @@ domain: .
 **Handoff:** `handoffs/2026-04-08-p2-changelog-factcheck-COMPLETE.md`
 
 **Next Tasks:**
-1. Run Vault Auditor to verify all P1/P2 flags from 2026-04-08 report are resolved
+1. Run Repo Auditor to verify all P1/P2 flags from 2026-04-08 report are resolved
 2. Pull Notes Datagrid April baseline from GA (feature went live 2026-04-09)
 3. Run first formal Changelog Auditor audit after this multi-handoff session
 4. Rename casebook-billing-mcp GitHub repo → casebook-subscriptions-mcp, then mv local dir
@@ -1768,8 +1789,8 @@ domain: .
 - `skills/changelog/changelog.md`
 
 **Changes:**
-- `skills/changelog/` — new skill created: changelog auditing (7 checks, flag-only, companion to Vault Auditor)
-- `skills/index.md` + `AGENTS.md` — lumberjack added to vault index and structure tree
+- `skills/changelog/` — new skill created: changelog auditing (7 checks, flag-only, companion to Repo Auditor)
+- `skills/index.md` + `AGENTS.md` — lumberjack added to repo index and structure tree
 - `skills/handoffs/index.md` + `skills/changelog/index.md` + `skills/changelog/entry_template.md` — bidirectional handoff ↔ changelog cross-reference added
 - `src/ben-cp.ts` — `write_changelog_entry` upgraded: `subdirectories` array (replaces single `subdirectory`), `handoff` param, `get_changelog` scope param, `failed_actions` surfaced at root level
 - `src/ben-cp.ts` — `package.json` build script fixed: `tsc -p tsconfig.json` (was broken inline flags)
@@ -1784,13 +1805,13 @@ domain: .
 1. Run Changelog Auditor after each multi-skill session
 2. Rename `casebook-billing-mcp` GitHub repo → `casebook-subscriptions-mcp`, then mv local dir
 
-## [1.4.1] — Vault Auditor First Run (2026-04-08)
+## [1.4.1] — Repo Auditor First Run (2026-04-08)
 
 **Detail logs:**
 - `skills/knowledge/changelog.md`
 
 **Changes:**
-- Vault Auditor scheduled run completed — 7 checks across 46 .md files
+- Repo Auditor scheduled run completed — 7 checks across 46 .md files
 - 13 total flags across 6 checks (Check 5 clean); 2 new flags (CLAUDE.md, README.md) not in prior session
 - Report written to `skills/knowledge/reports/knowledge-report-2026-04-08.md`
 - `skills/knowledge/reports/` and `skills/knowledge/reports/archive/` directories created
@@ -1800,7 +1821,7 @@ domain: .
 **Next Tasks:**
 1. Execute all 6 open handoffs (assign to Claude Code or Gemma)
 2. Pull Notes Datagrid April baseline from GA (feature live 2026-04-09)
-3. Next Vault Auditor run: 2026-04-15
+3. Next Repo Auditor run: 2026-04-15
 
 ## [1.4.0] — Casebook MCP Tools Fully Wired (2026-04-08)
 
@@ -1824,7 +1845,7 @@ domain: .
 - `skills/casebook/admin/` — renamed from `admin-mcp/`; fully documented (auth, 7 MCP tools, unexposed API layer)
 - `skills/casebook/subscriptions/` — renamed from `billing-mcp/`; fully documented (Chargebee usage fetch, unexposed write op flagged)
 - `skills/casebook/index.md` — updated names and added port column
-- `AGENTS.md` — vault tree updated
+- `AGENTS.md` — repo tree updated
 
 **Next Tasks:**
 1. Add SOPs to `skills/casebook/admin/` and `skills/casebook/subscriptions/` as workflows are documented
@@ -1842,7 +1863,7 @@ domain: .
 - `skills/casebook/billing-mcp/index.md` — stub created, points to external repo
 - `skills/casebook/index.md` — TOC for all Casebook skill content
 - `skills/casebook/changelog.md` — created
-- `AGENTS.md` — vault tree updated to reflect new casebook/ structure
+- `AGENTS.md` — repo tree updated to reflect new casebook/ structure
 - `skills/index.md` — 5 casebook-reporting/ links updated to casebook/reporting/
 
 **Handoff:** `handoffs/complete/2026-04-08-consolidate-casebook-into-skills-COMPLETE.md`
@@ -1851,7 +1872,7 @@ domain: .
 1. Populate `skills/casebook/admin-mcp/index.md` with tool descriptions and SOPs _(completed in 1.3.0 as admin/ and subscriptions/)_
 2. Populate `skills/casebook/billing-mcp/index.md` with tool descriptions and SOPs _(completed in 1.3.0 as admin/ and subscriptions/)_
 
-## [1.1.0] - Vault Quality Layer & Infrastructure Overhaul (2026-04-08)
+## [1.1.0] - Repo Quality Layer & Infrastructure Overhaul (2026-04-08)
 
 **Changes:**
 - `AGENTS.md` — rebuilt as slim agent dispatch table with universal rules
@@ -1862,7 +1883,7 @@ domain: .
 - `gemma-rules.md` — updated; references `agents/gemma.md` as primary role file
 - `gemma-rules.md` Rule 7 — now points to `skills/wrap-up/index.md` procedure
 - `crypt-keeper.md` — replaced with redirect stub → `skills/knowledge/procedure.md`
-- `vault-cleanup.md` — redirect stub (points to crypt-keeper.md)
+- `repo-cleanup.md` — redirect stub (points to crypt-keeper.md)
 - `skills/wrap-up/index.md` — rewritten; new 5-stage changelog-first procedure
 - `skills/wrap-up/changelog_entry_template.md` — created; template for all future entries
 - `skills/okr-reporting/procedure.md` — split into evergreen runbook (v1.1, no quarterly content)
@@ -1870,11 +1891,11 @@ domain: .
 - `skills/okr-reporting/notes_datagrid_shortcuts.md` — restored after Gemma overwrite damage
 - `skills/okr-reporting/notes_quick_entry.md` — created; full KR measurement SOP
 - `skills/okr-reporting/index.md` — created; TOC with file type guide
-- `skills/knowledge/procedure.md` — created; 7-check vault quality watchdog
+- `skills/knowledge/procedure.md` — created; 7-check repo quality watchdog
 - `skills/knowledge/report-template.md` — created; structured report template
 - `skills/knowledge/index.md` — created
 - `src/ben-cp.ts` — added `write_gemma_wrap_up` and `get_gemma_wrap_up` MCP tools
-- `sop/` → `skills/` — directory renamed; all path references updated across vault
+- `sop/` → `skills/` — directory renamed; all path references updated across repo
 
 **KR State:**
 - Notes Quick Entry (Outside UOW): ✅ Ready — baseline ~32%, target 40%
@@ -1915,7 +1936,7 @@ See skills/skill-builder/index.md for more details.
 ```
 You are "Gemma," a highly capable, proactive, and pragmatic AI agent dedicated to assisting human user with their day-to-day work. Your conversational tone must be engaging, intelligent, and reflect that the tasks at hand—especially building Skills—are interesting and intellectually stimulating, not monotonous.
 
-**Core Mission:** Your primary goal is to collaborate with human user to build, refine, and document high-quality Skills within the designated project vault (/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp). You are responsible for assembling these Skills using modular components from the skill-builder library.
+**Core Mission:** Your primary goal is to collaborate with human user to build, refine, and document high-quality Skills within the designated project repo (/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp). You are responsible for assembling these Skills using modular components from the skill-builder library.
 
 **Context & Environment:**
 1. Project Root: All work is centered around /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp.
@@ -1940,7 +1961,7 @@ You are "Gemma," a highly capable, proactive, and pragmatic AI agent dedicated t
 **TODOs:**
 *   Finalize documentation for remaining Q2 Platform KRs.
 *   Update `data_sources.md` with acquisition methods for all non-Platform metrics.
-*   Formalize a dedicated `write_sop` tool wrapper to simplify vault modifications.
+*   Formalize a dedicated `write_sop` tool wrapper to simplify repo modifications.
 
 **Observations & Process Notes:**
 *   The use of absolute paths (`/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/...`) is the required and reliable method for all file system interactions in this environment.
@@ -1956,7 +1977,7 @@ You are "Gemma," a highly capable, proactive, and pragmatic AI agent dedicated t
 **TODOs:**
 *   Finalize documentation for remaining Q2 Platform KRs (e.g., Enrollments Shortcuts KR).
 *   Update `data_sources.md` with acquisition methods for all non-Platform metrics.
-*   Formalize a dedicated `write_sop` tool wrapper to simplify vault modifications.
+*   Formalize a dedicated `write_sop` tool wrapper to simplify repo modifications.
 
 **Observations & Process Notes:**
 *   The initial pathing assumption was incorrect; using `list_directory` proved essential for locating existing SOPs (`notes_quick_entry.md`, etc.).
@@ -1964,10 +1985,10 @@ You are "Gemma," a highly capable, proactive, and pragmatic AI agent dedicated t
 
 **Process Efficiency Note:** Future sessions could benefit from pre-loading a list of known, actionable KRs to skip the initial filtering step.
 
-## [1.0.4] - Vault Structural Reconciliation & Sensor Fixes (2026-04-26)
+## [1.0.4] - Repo Structural Reconciliation & Sensor Fixes (2026-04-26)
 
 **Structural & Integrity:**
-- **Index Reconciliation**: Registered 68 shadow files and removed 36 ghost refs vault-wide.
+- **Index Reconciliation**: Registered 68 shadow files and removed 36 ghost refs repo-wide.
 - **Index Coverage**: Created missing `index.md` files for 15 directories (Pulse sensor now clear).
 - **Project Records**: Added `prd.md` and `launch_plan.md` links to all Q2 project indexes.
 - **Large File Acknowledgement**: Implemented `(SIZE: X.Y MB)` convention to acknowledge large binaries in indexes.

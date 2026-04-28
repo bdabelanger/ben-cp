@@ -8,11 +8,11 @@ domain: handoffs/complete
 # Claude Code Implementation Plan: Consolidate Casebook into skills/casebook/
 
 > **Prepared by:** Claude (Cowork session, 2026-04-08)
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **v1.0**
 > **STATUS**: ✅ COMPLETE
 
-All 9 files moved from `skills/casebook-reporting/` to `skills/casebook/reporting/` via `git mv`. Stubs created for `admin-mcp/` and `billing-mcp/`. `index.md` and `changelog.md` created at `skills/casebook/`. `AGENTS.md` vault tree and `skills/index.md` links updated. No unexpected findings in the external MCP repos — both are standard Node/TypeScript projects. `skills/index.md` had 5 direct links to `casebook-reporting/` paths, all updated.
+All 9 files moved from `skills/casebook-reporting/` to `skills/casebook/reporting/` via `git mv`. Stubs created for `admin-mcp/` and `billing-mcp/`. `index.md` and `changelog.md` created at `skills/casebook/`. `AGENTS.md` repo tree and `skills/index.md` links updated. No unexpected findings in the external MCP repos — both are standard Node/TypeScript projects. `skills/index.md` had 5 direct links to `casebook-reporting/` paths, all updated.
 
 **Changelog:** see root `changelog.md` (next version bump)
 
@@ -43,7 +43,7 @@ SOPs, and any reference material moves into `skills/casebook/`.
 4. **Task 4** — Create reference stubs for casebook-admin-mcp and casebook-billing-mcp
 5. **Task 5** — Create `skills/casebook/index.md`
 6. **Task 6** — Create `skills/casebook/changelog.md`
-7. **Task 7** — Update `AGENTS.md` vault structure tree
+7. **Task 7** — Update `AGENTS.md` repo structure tree
 8. **Task 8** — Update root `skills/index.md` if it references `casebook-reporting`
 9. **Task 9** — Final audit and completion report
 
@@ -104,7 +104,7 @@ git rm -r skills/casebook-reporting/
 
 ## Task 4: Create MCP Reference Stubs
 
-These repos live outside the vault. Create a lightweight reference doc in each
+These repos live outside the repo. Create a lightweight reference doc in each
 subdirectory so agents know what they are and where to find them.
 
 ### skills/casebook/admin-mcp/index.md
@@ -214,7 +214,7 @@ subdirectory so agents know what they are and where to find them.
 
 ---
 
-## Task 7: Update AGENTS.md Vault Structure Tree
+## Task 7: Update AGENTS.md Repo Structure Tree
 
 **Read first:** `AGENTS.md`
 
@@ -246,7 +246,7 @@ reference it at all, no change needed.
 1. `list_directory` on `skills/casebook/` — confirm structure
 2. `list_directory` on `skills/casebook/reporting/` — confirm all 9 files present
 3. Confirm `skills/casebook-reporting/` no longer exists
-4. Read `AGENTS.md` — confirm vault tree updated
+4. Read `AGENTS.md` — confirm repo tree updated
 5. Read `skills/casebook/index.md` — confirm TOC accurate
 
 Output:

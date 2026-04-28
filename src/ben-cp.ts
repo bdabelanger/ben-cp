@@ -10,7 +10,7 @@ import { fileURLToPath } from "node:url";
 import { execFile } from "node:child_process";
 import https from "node:https";
 
-// Load .env from vault root
+// Load .env from repo root
 async function loadEnv(rootPath: string) {
   try {
     const raw = await fs.readFile(path.resolve(rootPath, ".env"), "utf-8");
@@ -36,11 +36,11 @@ function httpsRequest(url: string, method: string, headers: Record<string, strin
 }
 
 const server = new Server(
-  { name: "ben-cp", version: "2.1.1" },
+  { name: "ben-cp", version: "2.2.0" },
   { capabilities: { tools: {} } }
 );
 
-// Automatically find the vault root relative to this file's location
+// Automatically find the repo root relative to this file's location
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootPath = path.resolve(__dirname, "..");
@@ -49,10 +49,111 @@ const skillsPath = path.resolve(rootPath, "skills");
 const rootChangelogPath = path.resolve(rootPath, "changelog.md");
 const handoffPath = path.resolve(rootPath, "handoffs");
 
+interface TaxonomyRule {
+  label: string;
+  keywords: string[];
+  regexes: RegExp[];
+  isProduct: boolean;
+  isFeature: boolean;
+  isOverride: boolean;
+}
+
+let taxonomyRules: TaxonomyRule[] = [];
+
+async function loadTaxonomy(): Promise<TaxonomyRule[]> {
+  const taxonomyPath = path.resolve(rootPath, "intelligence/casebook/taxonomy.md");
+  let content = "";
+  try {
+    content = await fs.readFile(taxonomyPath, "utf-8");
+  } catch (err) {
+    console.error("Failed to load taxonomy.md, using empty rules.");
+    return [];
+  }
+
+  const productLabels = new Set<string>();
+  const featureLabels = new Set<string>();
+
+  // Extract Product labels
+  const productSection = content.match(/## Products\n\n([\s\S]*?)\n---/);
+  if (productSection) {
+    const rows = productSection[1].split("\n").filter(r => r.startsWith("|") && !r.includes("---") && !r.includes("| Product |"));
+    for (const row of rows) {
+      const parts = row.split("|").map(p => p.trim());
+      if (parts[1]) productLabels.add(parts[1]);
+    }
+  }
+
+  // Extract Feature labels
+  const featureSection = content.match(/## Features\n\n([\s\S]*?)\n---/);
+  if (featureSection) {
+    const rows = featureSection[1].split("\n").filter(r => r.startsWith("|") && !r.includes("---") && !r.includes("| Feature |"));
+    for (const row of rows) {
+      const parts = row.split("|").map(p => p.trim());
+      if (parts[1]) featureLabels.add(parts[1]);
+    }
+  }
+
+  const rules: TaxonomyRule[] = [];
+  // Extract Inference Map
+  const mapSection = content.match(/## Keyword Inference Map\n\n([\s\S]*?)\n---/);
+  if (mapSection) {
+    const rows = mapSection[1].split("\n").filter(r => r.startsWith("|") && !r.includes("---") && !r.includes("| Signal keywords |"));
+    for (const row of rows) {
+      const parts = row.split("|").map(p => p.trim());
+      if (parts[1] && parts[2] && parts[1] !== "*(no match)*") {
+        const keywords = parts[1].split(",").map(k => k.trim().toLowerCase());
+        const label = parts[2];
+        const regexes = keywords.map(k => new RegExp(`\\b${k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i"));
+
+        const isOverride = label.includes(" - ");
+        const isProduct = productLabels.has(label);
+        const isFeature = featureLabels.has(label);
+
+        rules.push({ label, keywords, regexes, isProduct, isFeature, isOverride });
+      }
+    }
+  }
+  return rules;
+}
+
+// Initialize taxonomy
+taxonomyRules = await loadTaxonomy();
+
 
 function ensureSingleExtension(filename: string, ext: string = ".md"): string {
   if (filename.endsWith(ext)) return filename;
   return filename + ext;
+}
+
+function parseTaxonomy(content: string): string[] {
+  // YAML frontmatter style
+  const yamlMatch = content.match(/^---\n([\s\S]*?)\n---/);
+  if (yamlMatch) {
+    const taxLine = yamlMatch[1].match(/^taxonomy:\s*(.+)$/m);
+    if (taxLine) return taxLine[1].split(',').map(t => t.trim());
+  }
+  // Legacy bold style (fallback)
+  const boldMatch = content.match(/- \*\*taxonomy:\*\*\s*(.+)/i);
+  if (boldMatch) return boldMatch[1].split(',').map(t => t.trim());
+  return [];
+}
+
+function parseFrontmatter(block: string): Record<string, string> {
+  const result: Record<string, string> = {};
+  for (const line of block.split('\n')) {
+    const m = line.match(/^(\w[\w_-]*):\s*(.+)$/);
+    if (m) result[m[1]] = m[2].trim().replace(/^['"]|['"]$/g, '');
+  }
+  return result;
+}
+
+async function walkDir(dir: string): Promise<string[]> {
+  const entries = await fs.readdir(dir, { withFileTypes: true });
+  const files = await Promise.all(entries.map((entry) => {
+    const res = path.resolve(dir, entry.name);
+    return entry.isDirectory() ? walkDir(res) : res;
+  }));
+  return files.flat().filter(f => f.endsWith('.md'));
 }
 
 async function writeChangelogInternal(a: any, skillsPath: string, date: string): Promise<string[]> {
@@ -110,162 +211,99 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
   tools: [
     // --- AGENT ROLES & GOVERNANCE ---
     {
-      name: "get_agent_info",
-      description: "Retrieve central governance (AGENTS.md) and all agent role documentation. Use this at the start of every session to establish your persona and rules. Returns AGENTS.md and ALL role files in one fetch.",
+      name: "list_agents",
+      description: "List all active agents and governance (AGENTS.md). Returns the AGENTS.md contract and the directory index for agent roles.",
+      inputSchema: { type: "object" }
+    },
+    {
+      name: "get_agent",
+      description: "Get specific agent instructions. Use this to establish persona and rules. Returns the role file for the requested agent_id.",
       inputSchema: {
         type: "object",
         properties: {
-          agent_id: { type: "string", description: "The ID of the agent to highlight at the end of the response (e.g. 'gemma', 'code')." }
+          agent_id: { type: "string", description: "The ID of the agent to retrieve (e.g. 'cowork', 'code', 'local')." }
+        },
+        required: ["agent_id"]
+      }
+    },
+    { name: "list_skills", description: "List all skills in the skills domain. Use this to discover available SOPs and pipelines. Optionally filter by subdirectory domain.", inputSchema: { type: "object", properties: { domain: { type: "string", description: "Optional subdirectory within skills/" } } } },
+    { name: "get_skill", description: "Get a skill from the repo. Use this to learn how to execute repo procedures. Path must be relative to skills/.", inputSchema: { type: "object", properties: { relativePath: { type: "string" } }, required: ["relativePath"] } },
+
+    // --- INTELLIGENCE ---
+    {
+      name: "search_intelligence",
+      description: "Search intelligence by query, taxonomy, or both. At least one of query or taxonomy is required. domain optionally scopes the search.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          query: { type: "string", description: "Full-text keyword search" },
+          taxonomy: { type: "string", description: "Filter by taxonomy frontmatter field (e.g. 'Notes', 'Service Plan')" },
+          domain: { type: "string", description: "Scope to intelligence subdirectory" }
         }
       }
     },
-
-    // --- SKILLS & CAPABILITIES ---
-    { name: "list_skills", description: "List all files available in the skills domain", inputSchema: { type: "object", properties: { domain: { type: "string", description: "Optional subdirectory within skills/" } } } },
-    { name: "get_skill", description: "Read a Skill documentation or template from the repo", inputSchema: { type: "object", properties: { relativePath: { type: "string" } }, required: ["relativePath"] } },
-
-
-
-    // --- HANDOFFS & EXECUTION ---
     {
-      name: "add_handoff",
-      description: "Create a new handoff file",
+      name: "list_intelligence",
+      description: "List intelligence across the domain. Use this to discover available knowledge and source data. Filters by type or taxonomy. Recursive by default.",
       inputSchema: {
         type: "object",
         properties: {
-          title: { type: "string" },
-          priority: { type: "string", enum: ["P1", "P2", "P3", "P4"] },
-          content: { type: "string" },
-          assigned_to: { type: "string" }
-        },
-        required: ["title", "priority", "content"]
+          domain: { type: "string", description: "Optional sub-domain to filter by (e.g. 'product/projects')" },
+          type: { type: "string", description: "Filter by frontmatter type (e.g. 'prd', 'intelligence')" },
+          taxonomy: { type: "string", description: "Filter by taxonomy term" },
+          include_directories: { type: "boolean", description: "Legacy parameter (ignored)" }
+        }
       }
     },
-    { name: "list_handoffs", description: "List handoffs. Use assigned_to to filter to your agent name (e.g. 'Gemma'). Returns file, path, priority, status, date, assigned_to.", inputSchema: { type: "object", properties: { status: { type: "string", enum: ["READY", "COMPLETE", "ALL"] }, limit: { type: "number" }, assigned_to: { type: "string", description: "Filter by assigned agent name. Pass your own agent name to see only your handoffs." } } } },
-    { name: "get_handoff", description: "Read a handoff file by filename (e.g. '2026-04-13-p1-q2-2026-product-shareout.md'). Omit the leading 'handoff/' prefix — the tool resolves it automatically. For COMPLETE handoffs, include 'complete/' prefix.", inputSchema: { type: "object", properties: { path: { type: "string", description: "Filename or 'complete/filename.md', NOT a full path" } }, required: ["path"] } },
-    {
-      name: "edit_handoff",
-      description: "Modify an existing handoff. Can also mark as complete (which moves file and logs).",
-      inputSchema: {
-        type: "object",
-        properties: {
-          path: { type: "string", description: "Relative to handoff/ folder" },
-          content: { type: "string", description: "New full body content" },
-          mark_complete: { type: "boolean", description: "Trigger the completion and archival workflow" },
-          summary: { type: "string", description: "Final summary (required if mark_complete is true)" },
-          session_goal: { type: "string", description: "For changelog (required if mark_complete is true)" },
-          completed_work: { type: "array", items: { type: "object", properties: { path: { type: "string" }, change: { type: "string" }, status: { type: "string" } }, required: ["path", "change", "status"] } },
-          next_tasks: { type: "array", items: { type: "string" } },
-          subdirectories: { type: "array", items: { type: "string" } },
-          version_bump: { type: "string" }
-        },
-        required: ["path"]
-      }
-    },
-
-    // --- DELIVERABLES & TASKS ---
-    {
-      name: "add_task",
-      description: "Create a new task file in the orchestration/tasks/ directory. Use this for drafting deliverables or staging work before final codification.",
-      inputSchema: {
-        type: "object",
-        properties: {
-          name: { type: "string", description: "Filename (no .md suffix)" },
-          title: { type: "string" },
-          metadata: { type: "object" },
-          content: { type: "string" }
-        },
-        required: ["name", "title", "content"]
-      }
-    },
-    {
-      name: "edit_task",
-      description: "Update an existing task deliverable. Supports merging metadata and body replacement.",
-      inputSchema: {
-        type: "object",
-        properties: {
-          path: { type: "string", description: "Path relative to orchestration/tasks/ (e.g. 'q2-shareout/notes-authoring-ux.md')" },
-          title: { type: "string" },
-          metadata: { type: "object" },
-          content: { type: "string" }
-        },
-        required: ["path"]
-      }
-    },
-    { name: "list_tasks", description: "List all active task files.", inputSchema: { type: "object", properties: {} } },
-    { name: "get_task", description: "Read a task file by filename (e.g. 'notes-authoring-ux.md'). Use this STRICTLY for files in the orchestration/tasks/ domain.", inputSchema: { type: "object", properties: { path: { type: "string" } }, required: ["path"] } },
-
-    // --- ART & MEDIA ---
-    {
-      name: "add_art",
-      description: "Contribute a new piece of digital art (poem, sketch, prompt, etc) to the vault's agents/art domain.",
-      inputSchema: {
-        type: "object",
-        properties: {
-          name: { type: "string", description: "Safe filename (no .md suffix, e.g. 'the-agent-creed')" },
-          title: { type: "string" },
-          agent: { type: "string", description: "Name of the contributing agent or user" },
-          content: { type: "string", description: "The artistic content (markdown supported)" }
-        },
-        required: ["name", "title", "agent", "content"]
-      }
-    },
-    { name: "list_art", description: "List all art pieces in the vault.", inputSchema: { type: "object" } },
-    { name: "get_art", description: "Read an art piece by name.", inputSchema: { type: "object", properties: { path: { type: "string" } }, required: ["path"] } },
-
-    // --- INTELLIGENCE & ANALYSIS ---
-    {
-      name: "add_intelligence",
-      description: "Create a brand new intelligence record. Automatically adds the record to the domain's index.md. Errors if the file already exists (use edit_intelligence for updates).",
-      inputSchema: {
-        type: "object",
-        properties: {
-          domain: { type: "string", description: "Subdirectory under intelligence/ (e.g. 'product/projects')" },
-          name: { type: "string", description: "Filename (no .md suffix)" },
-          title: { type: "string" },
-          metadata: { type: "object", description: "Key-value pairs for metadata block" },
-          content: { type: "string" }
-        },
-        required: ["domain", "name", "title", "content"]
-      }
-    },
-    {
-      name: "edit_intelligence",
-      description: "Update an existing intelligence record. Errors if the file does not exist (use add_intelligence for new records). Automatically preserves/updates the metadata block and title.",
-      inputSchema: {
-        type: "object",
-        properties: {
-          path: { type: "string", description: "Path relative to intelligence/ (e.g. 'product/projects/shareout/q2/notes-authoring-ux.md')" },
-          title: { type: "string", description: "New title (optional)" },
-          metadata: { type: "object", description: "Metadata keys to update/add (optional)" },
-          content: { type: "string", description: "New body content (optional)" }
-        },
-        required: ["path"]
-      }
-    },
-    { name: "list_intelligence", description: "List intelligence files in a domain or subdomain. Pass a domain like 'product/projects/shareout/q2' to drill into subdirectories. Returns all files including non-.md source files in source/ subdirectories.", inputSchema: { type: "object", properties: { domain: { type: "string" }, include_directories: { type: "boolean" } }, required: ["domain"] } },
     {
       name: "get_intelligence",
-      description: "Read an intelligence file by path relative to the intelligence/ directory. Use this for both .md records AND source data documents (txt, pdf, etc.) in source/ folders. Example: 'product/projects/source/data.txt'. The 'intelligence/' prefix is optional and will be handled automatically.",
+      description: "Get intelligence or source files from the domain. Use this to retrieve domain knowledge. Path must be relative to intelligence/.",
       inputSchema: {
         type: "object",
         properties: {
-          path: { type: "string", description: "Path relative to intelligence/ directory (e.g. 'product/projects/shareout/q2/notes-authoring-ux.md')" },
+          path: { type: "string", description: "Path relative to intelligence/." },
           parse: { type: "boolean", description: "If true, returns parsed metadata instead of raw markdown." }
         },
         required: ["path"]
       }
     },
-    { name: "search_intelligence", description: "Search intelligence.", inputSchema: { type: "object", properties: { query: { type: "string" }, domain: { type: "string" } }, required: ["query"] } },
-    { name: "connect_intelligence", description: "Link intelligence records.", inputSchema: { type: "object", properties: { relationship: { type: "string" }, sourcePath: { type: "string" }, targetPath: { type: "string" } }, required: ["sourcePath", "targetPath", "relationship"] } },
-    { name: "synthesize_intelligence", description: "Synthesize intelligence.", inputSchema: { type: "object", properties: { methodology: { type: "string" }, targets: { type: "array", items: { type: "string" } } }, required: ["methodology"] } },
-    { name: "predict_intelligence", description: "Predict intelligence metrics.", inputSchema: { type: "object", properties: { methodology: { type: "string" }, context: { type: "string" } }, required: ["methodology"] } },
-    { name: "audit_intelligence", description: "Audit intelligence domain.", inputSchema: { type: "object", properties: { domain: { type: "string" }, criteria: { type: "array", items: { type: "string" } } }, required: ["domain"] } },
+    {
+      name: "edit_intelligence",
+      description: "Edit intelligence. Use this to update content or link records. Can also establish relationships between records.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          path: { type: "string", description: "Path relative to intelligence/." },
+          title: { type: "string", description: "New title (optional)" },
+          metadata: { type: "object", description: "Metadata keys to update/add (optional)" },
+          content: { type: "string", description: "New body content (optional)" },
+          relationship: { type: "string", description: "Optional relationship type for linking" },
+          targetPath: { type: "string", description: "Optional target path for linking" }
+        },
+        required: ["path"]
+      }
+    },
+    {
+      name: "add_intelligence",
+      description: "Add intelligence. Use this to codify new domain knowledge. Automatically updates the domain index.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          domain: { type: "string", description: "Subdirectory under intelligence/." },
+          name: { type: "string", description: "Filename (no .md suffix)" },
+          title: { type: "string" },
+          metadata: { type: "object", description: "Key-value pairs for metadata" },
+          content: { type: "string" }
+        },
+        required: ["domain", "name", "title", "content"]
+      }
+    },
 
-    // --- CHANGELOGS & HISTORY ---
+    // --- CHANGELOGS ---
+    { name: "get_changelog", description: "Get changelogs by scope. Use this to understand recent session context. Returns records for the specified directory or root.", inputSchema: { type: "object", properties: { scope: { type: "string" } } } },
     {
       name: "add_changelog",
-      description: "Write changelog entry.",
+      description: "Add a changelog. Use this to track functional or structural changes. Supports subdirectory and root synchronization.",
       inputSchema: {
         type: "object",
         properties: {
@@ -282,170 +320,110 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         required: ["session_goal", "completed_work", "next_tasks"]
       }
     },
-    { name: "get_changelog", description: "Read changelog.", inputSchema: { type: "object", properties: { scope: { type: "string" } } } },
 
-    // --- TASK CAPTURE (Asana + Jira) ---
+    // --- HANDOFFS ---
+    { name: "list_handoffs", description: "List active handoffs. Use this to discover open implementation plans and cross-agent tasks. Can filter by status or assigned agent.", inputSchema: { type: "object", properties: { status: { type: "string", enum: ["READY", "COMPLETE", "ALL"] }, limit: { type: "number" }, assigned_to: { type: "string" } } } },
+    { name: "get_handoff", description: "Get a handoff by filename. Use this to retrieve implementation plans. Omit 'handoff/' prefix from the path.", inputSchema: { type: "object", properties: { path: { type: "string" } }, required: ["path"] } },
     {
-      name: "capture_task",
-      description: "Primary entry point for task capture. Takes raw text, classifies it, routes to Asana and/or Jira, and returns a concise confirmation. No clarifying questions unless truly ambiguous — make a call and act.",
+      name: "add_handoff",
+      description: "Add a handoff. Use this to stage cross-agent implementation plans.",
       inputSchema: {
         type: "object",
         properties: {
-          text: { type: "string", description: "Raw capture text from Ben" }
+          title: { type: "string" },
+          priority: { type: "string", enum: ["P1", "P2", "P3", "P4"] },
+          content: { type: "string" },
+          assigned_to: { type: "string" }
         },
-        required: ["text"]
+        required: ["title", "priority", "content"]
       }
     },
     {
-      name: "create_asana_project",
-      description: "Create a new Asana project for a roadmap initiative. Applies defaults: Stage=Backlog, Team=Platform, Product Assignee=Ben. Note: project-level custom fields (Stage, Release Quarter, Launch Plan, JIRA Link) cannot be set via MCP — flags these to Ben.",
+      name: "edit_handoff",
+      description: "Edit a handoff or mark it as complete. Use this to update plan progress. Completion automatically archives the file.",
       inputSchema: {
         type: "object",
         properties: {
-          name: { type: "string", description: "Project name" },
-          notes: { type: "string", description: "Project description" },
-          release_quarter_gid: { type: "string", description: "Optional enum GID for Release Quarter" },
-          release_month_gid: { type: "string", description: "Optional enum GID for Release Month" },
-          team_gid: { type: "string", description: "Optional team GID override (default: Platform)" }
+          path: { type: "string" },
+          content: { type: "string" },
+          mark_complete: { type: "boolean" },
+          summary: { type: "string" },
+          session_goal: { type: "string" },
+          completed_work: { type: "array", items: { type: "object", properties: { path: { type: "string" }, change: { type: "string" }, status: { type: "string" } } } },
+          next_tasks: { type: "array", items: { type: "string" } },
+          subdirectories: { type: "array", items: { type: "string" } },
+          version_bump: { type: "string" }
         },
-        required: ["name"]
-      }
-    },
-    {
-      name: "create_asana_task",
-      description: "Create a PM readiness task in an existing Asana project. Searches for matching project by name, falls back to PD - Small Projects. Always assigns to Ben.",
-      inputSchema: {
-        type: "object",
-        properties: {
-          name: { type: "string", description: "Task name" },
-          notes: { type: "string", description: "Task description" },
-          project_gid: { type: "string", description: "Asana project GID. Use PD-Small-Projects GID 1208693459152262 as fallback." },
-          due_on: { type: "string", description: "Optional due date (YYYY-MM-DD)" }
-        },
-        required: ["name", "project_gid"]
-      }
-    },
-    {
-      name: "create_jira_issue",
-      description: "Create a Jira CBP issue with the correct template applied. After creating, automatically follows up with editJiraIssue to fix double-escaped newlines. Checkbox syntax (- [ ]) requires manual conversion in Jira UI.",
-      inputSchema: {
-        type: "object",
-        properties: {
-          summary: { type: "string", description: "Issue summary — format: [Product Area] - [description]" },
-          issue_type_id: { type: "string", description: "Jira issue type ID: 10000=Project, 10057=Story, 10011=Bug, 10013=CX Bug, 10064=Research, 10009=Task, 10065=QAFE" },
-          description: { type: "string", description: "Full issue description with template fields pre-populated" },
-          priority: { type: "string", description: "Optional: Highest, High, Medium, Low, Lowest" },
-          labels: { type: "array", items: { type: "string" }, description: "Optional labels" }
-        },
-        required: ["summary", "issue_type_id", "description"]
-      }
-    },
-    {
-      name: "link_asana_jira",
-      description: "Set the JIRA Link custom field on an Asana project (field GID 1208818005809198). Stores the full Jira issue URL.",
-      inputSchema: {
-        type: "object",
-        properties: {
-          asana_project_gid: { type: "string", description: "Asana project GID" },
-          jira_issue_key: { type: "string", description: "Jira issue key e.g. CBP-3102" }
-        },
-        required: ["asana_project_gid", "jira_issue_key"]
+        required: ["path"]
       }
     },
 
-    // --- EDIT (Approval Required) ---
+    // --- REPORTS ---
+    { name: "list_reports", description: "List available reports. Use this to discover which skills have generated pipeline outputs. Optionally scope to a domain.", inputSchema: { type: "object", properties: { domain: { type: "string" } } } },
+    { name: "get_report", description: "Get the latest report for a specific skill. Use this to access pipeline outputs. Pass the skill name (e.g., 'status', 'tasks')—do not provide a file path.", inputSchema: { type: "object", properties: { skill: { type: "string" } }, required: ["skill"] } },
     {
-      name: "edit_asana_task",
-      description: "Update fields on an existing Asana task (name, notes, due_on). Approval required.",
+      name: "run_report",
+      description: "Run a report pipeline. do NOT use to read. Follow with get_report.",
       inputSchema: {
         type: "object",
         properties: {
-          task_gid: { type: "string", description: "Asana task GID" },
-          name: { type: "string", description: "New task name" },
-          notes: { type: "string", description: "New task notes/description" },
-          due_on: { type: "string", description: "Due date (YYYY-MM-DD)" }
-        },
-        required: ["task_gid"]
-      }
-    },
-    {
-      name: "edit_asana_project",
-      description: "Update fields on an existing Asana project (name, notes). Approval required.",
-      inputSchema: {
-        type: "object",
-        properties: {
-          project_gid: { type: "string", description: "Asana project GID" },
-          name: { type: "string", description: "New project name" },
-          notes: { type: "string", description: "New project description" }
-        },
-        required: ["project_gid"]
-      }
-    },
-    {
-      name: "edit_jira_issue",
-      description: "Update summary and/or description on an existing Jira CBP issue. Applies ADF formatting. Approval required.",
-      inputSchema: {
-        type: "object",
-        properties: {
-          issue_key: { type: "string", description: "Jira issue key e.g. CBP-3102" },
-          summary: { type: "string", description: "New summary text" },
-          description: { type: "string", description: "New description (plain text, converted to ADF)" }
-        },
-        required: ["issue_key"]
-      }
-    },
-
-    // --- DELETE (Approval Required) ---
-    {
-      name: "delete_asana_task",
-      description: "⚠️ DESTRUCTIVE — Permanently delete an Asana task by GID. Approval required. Use sparingly.",
-      inputSchema: {
-        type: "object",
-        properties: {
-          task_gid: { type: "string", description: "Asana task GID to delete" }
-        },
-        required: ["task_gid"]
-      }
-    },
-    {
-      name: "delete_asana_project",
-      description: "⚠️ DESTRUCTIVE — Permanently delete an Asana project by GID. Approval required. Use sparingly.",
-      inputSchema: {
-        type: "object",
-        properties: {
-          project_gid: { type: "string", description: "Asana project GID to delete" }
-        },
-        required: ["project_gid"]
-      }
-    },
-    {
-      name: "delete_jira_issue",
-      description: "⚠️ DESTRUCTIVE — Permanently delete a Jira issue by key. Approval required. Use sparingly.",
-      inputSchema: {
-        type: "object",
-        properties: {
-          issue_key: { type: "string", description: "Jira issue key to delete e.g. CBP-3102" }
-        },
-        required: ["issue_key"]
-      }
-    },
-
-    // --- REPORTING & OUTPUTS ---
-    {
-      name: "generate_report",
-      description: "Runs a pipeline to produce a new report — do NOT use this to read reports. After this call completes, always follow up with get_report to fetch the full report content. Valid skills: 'status', 'dream', 'tasks'. Calling with any other value will fail.",
-      inputSchema: {
-        type: "object",
-        properties: {
-          skill: { type: "string", description: "The skill or domain to run. Valid values: 'status', 'dream', 'tasks'." },
+          skill: { type: "string" },
           date: { type: "string" },
           dry_run: { type: "boolean" }
         },
         required: ["skill"]
       }
     },
-    { name: "list_reports", description: "List reports in outputs. Optional domain (e.g. 'dream/reports').", inputSchema: { type: "object", properties: { domain: { type: "string" } } } },
-    { name: "get_report", description: "Read a generated report by skill name — e.g. get_report(skill='status') or get_report(skill='dream'). Use list_reports to see available skills. Do NOT pass a file path.", inputSchema: { type: "object", properties: { skill: { type: "string", description: "The skill/domain name e.g. 'status', 'dream', 'tasks'." } }, required: ["skill"] } }
+
+    // --- EXTERNAL SYNC (Asana + Jira) ---
+    {
+      name: "search_tasks",
+      description: "Search keywords in the latest tasks report. Use this to find existing tasks and prevent duplication. Returns matching tasks with status and links.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          query: { type: "string", description: "Search query (keyword, ID, or project name)" }
+        },
+        required: ["query"]
+      }
+    },
+    {
+      name: "add_task",
+      description: "Add a task to external systems (Asana/Jira) via raw capture. Use this to stage new deliverables.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          text: { type: "string", description: "Raw capture text" },
+          acceptance_criteria: { type: "string" },
+          figma_link: { type: "string" },
+          asana_project_gid: { type: "string" }
+        },
+        required: ["text"]
+      }
+    },
+
+    // --- ART & MEDIA ---
+    { name: "list_art", description: "List all art. Use this to discover available sketches, poems, and creative artifacts.", inputSchema: { type: "object" } },
+    { name: "get_art", description: "Get an art piece from the gallery. Use this to view creative artifacts. Returns the specific piece by name/path.", inputSchema: { type: "object", properties: { path: { type: "string" } }, required: ["path"] } },
+    {
+      name: "add_art",
+      description: "Add art to the gallery. Use this to contribute creative artifacts.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          name: { type: "string" },
+          title: { type: "string" },
+          agent: { type: "string" },
+          content: { type: "string" }
+        },
+        required: ["name", "title", "agent", "content"]
+      }
+    },
+    {
+      name: "refresh_mcp",
+      description: "Rebuilds the MCP server and cleans up duplicate or orphan processes. Use this to apply code changes and ensure only one instance per host app is running.",
+      inputSchema: { type: "object" }
+    },
   ]
 }));
 
@@ -453,44 +431,23 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
   const { name, arguments: args } = request.params;
   try {
     // --- AGENT ROLES & GOVERNANCE ---
-    if (name === "get_agent_info") {
-      const { agent_id } = args as any;
+    if (name === "list_agents") {
       const agentsMd = await fs.readFile(path.resolve(rootPath, "AGENTS.md"), "utf-8");
-
-      // Load all role documentation from agents/*.md for a single-fetch baseline
       const agentsDir = path.resolve(rootPath, "agents");
       const files = await fs.readdir(agentsDir);
-      const roleDocs: string[] = [];
+      const roles = files.filter(f => f.endsWith(".md") && !f.startsWith(".") && f !== "index.md");
+      return { content: [{ type: "text", text: `## AGENTS.md\n\n${agentsMd}\n\n**Available Role Files:**\n${roles.join("\n")}` }] };
+    }
 
-      for (const file of files) {
-        if (file.endsWith(".md") && !file.startsWith(".") && file !== "index.md") {
-          const content = await fs.readFile(path.join(agentsDir, file), "utf-8");
-          const roleName = path.basename(file, ".md");
-          roleDocs.push(`## Role: ${roleName}\n\n${content}`);
-        }
+    if (name === "get_agent") {
+      const { agent_id } = args as any;
+      const agentPath = path.resolve(rootPath, "agents", `${agent_id.toLowerCase()}.md`);
+      try {
+        const content = await fs.readFile(agentPath, "utf-8");
+        return { content: [{ type: "text", text: `# Role Documentation: ${agent_id}\n\n${content}` }] };
+      } catch (err) {
+        throw new Error(`Agent role documentation for '${agent_id}' not found at ${agentPath}`);
       }
-
-      const allRolesDoc = roleDocs.join("\n\n---\n\n");
-      let requestingAgentDoc = "";
-
-      if (agent_id) {
-        try {
-          const agentPath = path.resolve(rootPath, "agents", `${agent_id.toLowerCase()}.md`);
-          requestingAgentDoc = await fs.readFile(agentPath, "utf-8");
-        } catch {
-          requestingAgentDoc = `\n\n> **Note:** No specific documentation found for agent '${agent_id}'.`;
-        }
-      }
-
-      let finalContent = `# Vault Governance & Role Data\n\n${agentsMd}\n\n---\n\n# All Agent Roles\n\n${allRolesDoc}`;
-
-      if (agent_id) {
-        finalContent += `\n\n---\n\n# Requesting Agent Role: ${agent_id}\n\n${requestingAgentDoc}`;
-      } else {
-        finalContent += `\n\n---\n\n# Requesting Agent Role: Unspecified\n\n> **Note:** Call with 'agent_id' to highlight your specific role at the end of this document.`;
-      }
-
-      return { content: [{ type: "text", text: finalContent }] };
     }
 
     // --- SKILLS & CAPABILITIES ---
@@ -500,11 +457,35 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       if (!targetPath.startsWith(skillsPath)) throw new Error("Access denied");
 
       try {
-        const skills = await fs.readdir(targetPath, { withFileTypes: true });
-        const files = skills
-          .filter(f => f.isDirectory() || (f.name.endsWith(".md") && !f.name.startsWith('.')))
-          .map(f => ({ name: f.name, type: f.isDirectory() ? "directory" : "file" }));
-        return { content: [{ type: "text", text: JSON.stringify(files, null, 2) }] };
+        const results: any[] = [];
+        const walk = async (dir: string) => {
+          const entries = await fs.readdir(dir, { withFileTypes: true });
+          for (const entry of entries) {
+            if (entry.name.startsWith('.')) continue;
+            const full = path.join(dir, entry.name);
+            if (entry.isDirectory()) {
+              await walk(full);
+            } else if (entry.name === "SKILL.md") {
+              const content = await fs.readFile(full, "utf-8");
+              const fmMatch = content.match(/^---\n([\s\S]*?)\n---/);
+              let title = path.basename(dir);
+              let type = "skill";
+              if (fmMatch) {
+                const fm = parseFrontmatter(fmMatch[1]);
+                if (fm.title) title = fm.title;
+                if (fm.type) type = fm.type;
+              }
+              results.push({
+                path: path.relative(skillsPath, full),
+                title,
+                type,
+                domain: `skills/${path.relative(skillsPath, dir)}`
+              });
+            }
+          }
+        };
+        await walk(targetPath);
+        return { content: [{ type: "text", text: JSON.stringify(results, null, 2) }] };
       } catch (e: any) {
         if (e.code === 'ENOENT') {
           return { content: [{ type: "text", text: `Domain '${domain}' not found in skills/` }] };
@@ -521,6 +502,37 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       return { content: [{ type: "text", text: content }] };
     }
 
+    if (name === "refresh_mcp") {
+      // 1. Rebuild
+      await new Promise((resolve, reject) => {
+        execFile("npm", ["run", "build"], { cwd: rootPath }, (err, stdout, stderr) => {
+          if (err) reject(new Error(stderr || stdout));
+          else resolve(stdout);
+        });
+      });
+
+      // 2. Identify and prune others
+      const { stdout: pids } = await new Promise<{ stdout: string }>((res) =>
+        execFile("pgrep", ["-f", "ben-cp.js"], (err, stdout) => res({ stdout }))
+      );
+
+      const otherPids = pids.split('\n').map(p => p.trim()).filter(p => p && p !== process.pid.toString());
+
+      for (const pid of otherPids) {
+        try { process.kill(parseInt(pid), 'SIGTERM'); } catch { }
+      }
+
+      // 3. Schedule self-restart
+      setTimeout(() => process.exit(0), 1000);
+
+      return {
+        content: [{
+          type: "text",
+          text: `Build successful. Killed ${otherPids.length} other instance(s). This server will now restart to apply changes.`
+        }]
+      };
+    }
+
 
 
     // --- HANDOFFS & EXECUTION ---
@@ -532,7 +544,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const header = `# Implementation Plan: ${title}\n\n` +
         `> **Prepared by:** Code (Gemini) (${date})\n` +
         `> **Assigned to:** ${assigned_to}\n` +
-        `> **Vault root:** ${rootPath}\n` +
+        `> **Repo root:** ${rootPath}\n` +
         `> **Priority:** ${priority}\n` +
         `> **STATUS**: 🔲 READY — pick up ${date}\n\n---\n\n`;
       await fs.writeFile(fullPath, header + content, "utf-8");
@@ -550,13 +562,30 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
           const files = await fs.readdir(dir);
           for (const file of files) {
             if (!file.endsWith(".md")) continue;
+            if (file === "index.md") continue;
             const fullPath = path.join(dir, file);
             const content = await fs.readFile(fullPath, "utf-8");
-            const priorityMatch = content.match(/> \*\*Priority:\*\* (P\d)/);
-            const statusMatch = content.match(/> \*\*STATUS\*\*:\s*(.*?)$/m) || content.match(/> \*\*STATUS:?\s*(.*?)$/m);
-            const dateMatch = file.match(/^(\d{4}-\d{2}-\d{2})/);
-            const assignedMatch = content.match(/> \*\*Assigned to:\*\* (.*?)$/m);
-            const assignee = assignedMatch ? assignedMatch[1].trim() : "Any";
+            
+            let priority = "TBD";
+            let status = dir.endsWith("complete") ? "COMPLETE" : "READY";
+            let assignee = "Any";
+            let date = file.match(/^(\d{4}-\d{2}-\d{2})/)?.[1] ?? "unknown";
+
+            const fmMatch = content.match(/^---\n([\s\S]*?)\n---/);
+            if (fmMatch) {
+              const fm = parseFrontmatter(fmMatch[1]);
+              priority = fm.priority ?? priority;
+              status = fm.status ?? status;
+              assignee = fm.assigned_to ?? assignee;
+              if (fm.date) date = fm.date;
+            } else {
+              const priorityMatch = content.match(/> \*\*Priority:\*\* (P\d)/);
+              const statusMatch = content.match(/> \*\*STATUS\*\*:\s*(.*?)$/m) || content.match(/> \*\*STATUS:?\s*(.*?)$/m);
+              const assignedMatch = content.match(/> \*\*Assigned to:\*\* (.*?)$/m);
+              if (priorityMatch) priority = priorityMatch[1];
+              if (statusMatch) status = statusMatch[1].trim();
+              if (assignedMatch) assignee = assignedMatch[1].trim();
+            }
 
             if (assigned_to && assigned_to.toLowerCase() !== 'any' && assignee.toLowerCase() !== 'any' && !assignee.toLowerCase().includes(assigned_to.toLowerCase())) {
               continue;
@@ -565,9 +594,9 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
             results.push({
               file,
               path: path.relative(path.resolve(handoffPath, ".."), fullPath),
-              priority: priorityMatch ? priorityMatch[1] : "TBD",
-              status: statusMatch ? statusMatch[1].trim() : (dir.endsWith("complete") ? "COMPLETE" : "READY"),
-              date: dateMatch ? dateMatch[1] : "unknown",
+              priority,
+              status,
+              date,
               assigned_to: assignee
             });
           }
@@ -641,86 +670,6 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       }
     }
 
-    // --- DELIVERABLES & TASKS ---
-    if (name === "add_task") {
-      const { name: fileName, title, metadata = {}, content } = args as any;
-      const tasksRoot = path.resolve(rootPath, "tasks");
-      await fs.mkdir(tasksRoot, { recursive: true });
-      const sanitizedFilename = ensureSingleExtension(fileName);
-      const fullPath = path.join(tasksRoot, sanitizedFilename);
-      try {
-        await fs.access(fullPath);
-        throw new Error(`Task '${sanitizedFilename}' already exists. Use edit_task to update.`);
-      } catch (e: any) {
-        if (e.message && e.message.includes("already exists")) throw e;
-      }
-      let metaBlock = "";
-      if (metadata) {
-        for (const [key, value] of Object.entries(metadata)) { metaBlock += `- **${key}:** ${value}\n`; }
-      }
-      const fullContent = `# ${title}\n\n${metaBlock}\n${content}\n`;
-      await fs.writeFile(fullPath, fullContent, "utf-8");
-      return { content: [{ type: "text", text: "Task created." }] };
-    }
-
-    if (name === "edit_task") {
-      const { path: relPath, title, metadata = {}, content } = args as any;
-      const tasksRoot = path.resolve(rootPath, "tasks");
-      const normalized = String(relPath).startsWith("tasks/") ? String(relPath).slice(6) : relPath;
-      const fullPath = path.resolve(tasksRoot, normalized);
-      let existingContent = await fs.readFile(fullPath, "utf-8");
-      const lines = existingContent.split('\n');
-      let currentTitle = lines[0].replace(/^# /, '');
-      if (title) currentTitle = title;
-      const currentMetadata: Record<string, string> = {};
-      const metaMatches = existingContent.matchAll(/- \*\*([^:]+):\*\* (.*)/g);
-      for (const match of metaMatches) { currentMetadata[match[1]] = match[2].trim(); }
-      if (metadata) Object.assign(currentMetadata, metadata);
-      let currentBody = existingContent.split('\n\n').slice(2).join('\n\n');
-      if (content) currentBody = content;
-      let metaBlock = "";
-      for (const [key, value] of Object.entries(currentMetadata)) { metaBlock += `- **${key}:** ${value}\n`; }
-      const newContent = `# ${currentTitle}\n\n${metaBlock}\n${currentBody}`;
-      await fs.writeFile(fullPath, newContent, "utf-8");
-      return { content: [{ type: "text", text: "Task updated." }] };
-    }
-
-    if (name === "list_tasks") {
-      const tasksRoot = path.resolve(rootPath, "tasks");
-      const entries = await fs.readdir(tasksRoot, { withFileTypes: true });
-      const files = entries
-        .filter(e => !e.name.startsWith("."))
-        .map(e => ({ name: e.name, type: e.isDirectory() ? "directory" : "file" }));
-      return { content: [{ type: "text", text: JSON.stringify(files, null, 2) }] };
-    }
-
-    if (name === "get_task") {
-      const { path: relPath } = args as any;
-      const tasksRoot = path.resolve(rootPath, "tasks");
-      const normalized = String(relPath).startsWith("tasks/") ? String(relPath).slice(6) : relPath;
-      let fullPath = path.resolve(tasksRoot, normalized);
-
-      // Safety check: ensure the resolved path is still inside the tasksRoot
-      if (!fullPath.startsWith(tasksRoot)) {
-        throw new Error("Access denied: path must be within the tasks/ directory.");
-      }
-
-      try {
-        await fs.access(fullPath);
-      } catch {
-        if (!path.extname(fullPath)) {
-          const mdPath = `${fullPath}.md`;
-          try {
-            await fs.access(mdPath);
-            fullPath = mdPath;
-          } catch { }
-        }
-      }
-
-      const content = await fs.readFile(fullPath, "utf-8");
-      return { content: [{ type: "text", text: content }] };
-    }
-
     // --- ART & MEDIA ---
     if (name === "add_art") {
       const { name: fileName, title, agent, content } = args as any;
@@ -734,7 +683,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
       // Update Index
       const indexPath = path.join(artRoot, "index.md");
-      let indexContent = "# Vault Art Gallery\n\n";
+      let indexContent = "# Art Gallery\n\n";
       try { indexContent = await fs.readFile(indexPath, "utf-8"); } catch { }
       if (!indexContent.includes(`[${title}]`)) {
         indexContent += `- [${title}](${fileName}.md) — by ${agent} (${date})\n`;
@@ -786,28 +735,17 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       for (const [key, value] of Object.entries(metadata)) { metaBlock += `- **${key}:** ${value}\n`; }
       const fullContent = `# ${title}\n\n${metaBlock}\n${content}\n`;
       await fs.writeFile(fullPath, fullContent, "utf-8");
-      try {
-        const indexPath = path.join(domainPath, "index.md");
-        let indexContent = "";
-        try { indexContent = await fs.readFile(indexPath, "utf-8"); } catch {
-          indexContent = `# ${domain.split('/').pop()?.toUpperCase() || 'Domain'} Index\n\n## Records\n`;
-        }
-        if (!indexContent.includes(sanitizedFilename)) {
-          await fs.appendFile(indexPath, `- [${title}](${sanitizedFilename})\n`, "utf-8");
-        }
-      } catch (e) { }
       return { content: [{ type: "text", text: "Intelligence record created." }] };
     }
 
     if (name === "edit_intelligence") {
-      const { path: relPath, title, metadata = {}, content } = args as any;
+      const { path: relPath, title, metadata = {}, content, relationship, targetPath } = args as any;
       const normalized = String(relPath).startsWith("intelligence/") ? String(relPath).slice(13) : relPath;
       let fullPath = path.resolve(rootPath, "intelligence", normalized);
 
       try {
         await fs.access(fullPath);
       } catch {
-        // Fallback: try core/ prefix
         const corePath = path.resolve(rootPath, "intelligence/core", normalized);
         try {
           await fs.access(corePath);
@@ -839,34 +777,90 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
       let metaBlock = "";
       for (const [key, value] of Object.entries(currentMetadata)) { metaBlock += `- **${key}:** ${value}\n`; }
-      const newContent = `# ${currentTitle}\n\n${metaBlock}\n${currentBody}`;
+      let newContent = `# ${currentTitle}\n\n${metaBlock}\n${currentBody}`;
+
+      // Handle embedded linking logic
+      if (relationship && targetPath) {
+        const tPath = path.resolve(rootPath, "intelligence", targetPath.endsWith(".md") ? targetPath : `${targetPath}.md`);
+        const tCont = await fs.readFile(tPath, "utf-8");
+        newContent = newContent.replace(/(# .*\n\n)/, `$1- **${relationship}:** [[${targetPath}]]\n`);
+        await fs.writeFile(tPath, tCont.replace(/(# .*\n\n)/, `$1- **linked-by:** [[${relPath}]] (${relationship})\n`), "utf-8");
+      }
 
       await fs.writeFile(fullPath, newContent, "utf-8");
-      return { content: [{ type: "text", text: `Intelligence record ${relPath} updated.` }] };
+      return { content: [{ type: "text", text: `Intelligence record ${relPath} updated${relationship ? " and linked" : ""}.` }] };
     }
 
     if (name === "list_intelligence") {
-      const { domain, include_directories = true } = args as any;
-      const fullPath = path.resolve(rootPath, "intelligence", domain);
-      const files = await fs.readdir(fullPath, { withFileTypes: true });
+      const { domain = "", type, taxonomy } = args as any;
+      const intelligenceRoot = path.resolve(rootPath, "intelligence");
+      const targetPath = path.resolve(intelligenceRoot, domain);
+      if (!targetPath.startsWith(intelligenceRoot)) throw new Error("Access denied");
+
       const items: any[] = [];
-      for (const f of files) {
-        if (f.name.startsWith('.')) continue;
-        if (f.isDirectory()) {
-          if (include_directories) items.push({ name: f.name, type: "directory", path: path.join("intelligence", domain, f.name) });
-          // Also recurse one level into source/ to expose source files
-          if (f.name === "source" || f.name === "outputs") {
-            try {
-              const sub = await fs.readdir(path.join(fullPath, f.name), { withFileTypes: true });
-              for (const sf of sub) {
-                if (!sf.isDirectory()) items.push({ name: sf.name, type: "file", path: path.join("intelligence", domain, f.name, sf.name) });
+      const walk = async (dir: string) => {
+        const entries = await fs.readdir(dir, { withFileTypes: true });
+        for (const entry of entries) {
+          if (entry.name.startsWith('.') || entry.name === "index.md" || entry.name === "changelog.md") continue;
+          const full = path.join(dir, entry.name);
+          if (entry.isDirectory()) {
+            await walk(full);
+          } else if (entry.name.endsWith(".md")) {
+            const content = await fs.readFile(full, "utf-8");
+            const fmMatch = content.match(/^---\n([\s\S]*?)\n---/);
+            let itemType = null;
+            let itemTaxonomy: string[] = [];
+            let itemTitle = entry.name;
+            let itemLinks = null;
+
+            if (fmMatch) {
+              const fm = parseFrontmatter(fmMatch[1]);
+              itemType = fm.type || null;
+              if (fm.taxonomy) itemTaxonomy = fm.taxonomy.split(',').map(t => t.trim());
+              if (fm.title) itemTitle = fm.title;
+              
+              // Extract links sub-object if present
+              const linksMatch = fmMatch[1].match(/links:\n((?:\s+[\w_-]+: .+\n?)*)/);
+              if (linksMatch) {
+                itemLinks = {};
+                for (const line of linksMatch[1].split('\n')) {
+                  const m = line.match(/^\s+([\w_-]+):\s*(.+)$/);
+                  if (m) (itemLinks as any)[m[1]] = m[2].trim().replace(/^['"]|['"]$/g, '');
+                }
               }
-            } catch { }
+            } else {
+              // Fallback to legacy scraping
+              const titleMatch = content.match(/^# (.*)/);
+              if (titleMatch) itemTitle = titleMatch[1];
+              itemTaxonomy = parseTaxonomy(content);
+              const typeMatch = content.match(/- \*\*type:\*\*\s*(.+)/i);
+              if (typeMatch) itemType = typeMatch[1].trim();
+            }
+
+            // Apply filters
+            if (type && itemType !== type) continue;
+            if (taxonomy && !itemTaxonomy.some(t => t.toLowerCase().includes(taxonomy.toLowerCase()))) continue;
+
+            items.push({
+              path: path.relative(intelligenceRoot, full),
+              title: itemTitle,
+              type: itemType,
+              domain: path.relative(intelligenceRoot, dir),
+              taxonomy: itemTaxonomy.join(", "),
+              links: itemLinks
+            });
+          } else {
+            // Source files, etc
+            items.push({
+              name: entry.name,
+              type: "file",
+              path: path.relative(intelligenceRoot, full)
+            });
           }
-        } else if (f.name !== "index.md") {
-          items.push({ name: f.name, type: "file", path: path.join("intelligence", domain, f.name) });
         }
-      }
+      };
+
+      await walk(targetPath);
       return { content: [{ type: "text", text: JSON.stringify(items, null, 2) }] };
     }
 
@@ -897,67 +891,71 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const content = await fs.readFile(fullPath, "utf-8");
 
       if (parse) {
+        const fmMatch = content.match(/^---\n([\s\S]*?)\n---/);
         const metadata: Record<string, string> = {};
-        const matches = content.matchAll(/- \*\*([^:]+):\*\* (.*)/g);
-        for (const match of matches) { metadata[match[1]] = match[2].trim(); }
-        return { content: [{ type: "text", text: JSON.stringify({ path: relPath, title: content.split('\n')[0].replace(/^# /, ''), metadata }, null, 2) }] };
+        let title = content.split('\n')[0].replace(/^# /, '');
+
+        if (fmMatch) {
+          const fm = parseFrontmatter(fmMatch[1]);
+          Object.assign(metadata, fm);
+          if (fm.title) title = fm.title;
+        } else {
+          const matches = content.matchAll(/- \*\*([^:]+):\*\* (.*)/g);
+          for (const match of matches) { metadata[match[1]] = match[2].trim(); }
+        }
+        return { content: [{ type: "text", text: JSON.stringify({ path: relPath, title, metadata }, null, 2) }] };
       }
       return { content: [{ type: "text", text: content }] };
     }
 
     if (name === "search_intelligence") {
-      const { query, domain = "" } = args as any;
+      const { query, taxonomy, domain = "" } = args as any;
+      if (!query && !taxonomy) {
+        throw new Error("At least one of 'query' or 'taxonomy' must be provided.");
+      }
+
       const searchPath = path.resolve(rootPath, "intelligence", domain);
-      const { stdout } = await new Promise<{ stdout: string; stderr: string }>((resolve, reject) => {
-        execFile(process.platform === "win32" ? "cmd.exe" : "/bin/sh", [process.platform === "win32" ? "/c" : "-c", `grep -rli "${query.replace(/"/g, '\\"')}" "${searchPath}" --include="*.md"`], (err, stdout, stderr) => {
-          if (err && err.code !== 1) reject(err); else resolve({ stdout, stderr });
+      let queryResults: Set<string> | null = null;
+      let taxonomyResults: Set<string> | null = null;
+
+      // Phase 1: Query (Grep)
+      if (query) {
+        const { stdout } = await new Promise<{ stdout: string; stderr: string }>((resolve, reject) => {
+          execFile(process.platform === "win32" ? "cmd.exe" : "/bin/sh", [process.platform === "win32" ? "/c" : "-c", `grep -rli "${query.replace(/"/g, '\\"')}" "${searchPath}" --include="*.md"`], (err, stdout, stderr) => {
+            if (err && err.code !== 1) reject(err); else resolve({ stdout, stderr });
+          });
         });
-      });
-      return { content: [{ type: "text", text: JSON.stringify(stdout.split('\n').filter(p => p.trim()).map(p => path.relative(rootPath, p)), null, 2) }] };
-    }
-
-    if (name === "connect_intelligence") {
-      const { sourcePath, targetPath, relationship } = args as any;
-      const sPath = path.resolve(rootPath, "intelligence", sourcePath.endsWith(".md") ? sourcePath : `${sourcePath}.md`);
-      const tPath = path.resolve(rootPath, "intelligence", targetPath.endsWith(".md") ? targetPath : `${targetPath}.md`);
-      const sCont = await fs.readFile(sPath, "utf-8");
-      const tCont = await fs.readFile(tPath, "utf-8");
-      await fs.writeFile(sPath, sCont.replace(/(# .*\n\n)/, `$1- **${relationship}:** [[${targetPath}]]\n`), "utf-8");
-      await fs.writeFile(tPath, tCont.replace(/(# .*\n\n)/, `$1- **linked-by:** [[${sourcePath}]] (${relationship})\n`), "utf-8");
-      return { content: [{ type: "text", text: "Link established." }] };
-    }
-
-    if (name === "synthesize_intelligence") {
-      const { methodology } = args as any;
-      if (methodology === "diff_checker") {
-        const ap = path.resolve(rootPath, "AGENTS.md");
-        const { stdout: log } = await new Promise<{ stdout: string; stderr: string }>(res => execFile("git", ["log", "--oneline", "-5", "--", ap], { cwd: rootPath }, (e, o, s) => res({ stdout: o, stderr: s })));
-        const { stdout: diff } = await new Promise<{ stdout: string; stderr: string }>(res => execFile("git", ["diff", "HEAD~5", "--", ap], { cwd: rootPath }, (e, o, s) => res({ stdout: o, stderr: s })));
-        return { content: [{ type: "text", text: `### Intelligence (Synthesize) Diff Checker\n\n**Log:**\n${log}\n\n**Diff:**\n${diff}` }] };
+        queryResults = new Set(stdout.split('\n').filter(p => p.trim()));
       }
-      return { content: [{ type: "text", text: "Manual discovery required." }] };
-    }
 
-    if (name === "predict_intelligence") {
-      const { methodology, context } = args as any;
-      let res = `Analysis: ${methodology}`;
-      if (context) res += `\nContext: ${context}`;
-      return { content: [{ type: "text", text: res }] };
-    }
-
-    if (name === "audit_intelligence") {
-      const { domain, criteria = [] } = args as any;
-      const fullPath = path.resolve(rootPath, "intelligence", domain);
-      const files = await fs.readdir(fullPath);
-      const missed: any[] = [];
-      for (const file of files) {
-        if (!file.endsWith(".md") || file === "index.md") continue;
-        const cont = await fs.readFile(path.join(fullPath, file), "utf-8");
-        const m = criteria.filter((c: string) => !cont.includes(`**${c}:**`));
-        if (m.length > 0) missed.push({ file, missing: m });
+      // Phase 2: Taxonomy (Walk + Parse)
+      if (taxonomy) {
+        const files = await walkDir(searchPath);
+        taxonomyResults = new Set();
+        for (const f of files) {
+          const content = await fs.readFile(f, "utf-8");
+          const tags = parseTaxonomy(content);
+          if (tags.some(t => t.toLowerCase().includes(taxonomy.toLowerCase()) && t.toLowerCase() !== 'none')) {
+            taxonomyResults.add(f);
+          }
+        }
       }
-      return { content: [{ type: "text", text: missed.length > 0 ? JSON.stringify(missed, null, 2) : "Passed." }] };
+
+      // Phase 3: Combine
+      let finalResults: string[];
+      if (queryResults && taxonomyResults) {
+        // Intersection
+        finalResults = [...queryResults].filter(f => taxonomyResults!.has(f));
+      } else {
+        finalResults = [...(queryResults || taxonomyResults || [])];
+      }
+
+      return { content: [{ type: "text", text: JSON.stringify(finalResults.map(p => path.relative(rootPath, p)), null, 2) }] };
     }
+
+
+
+
 
     // --- CHANGELOGS & HISTORY ---
     if (name === "add_changelog") {
@@ -974,7 +972,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     }
 
     // --- REPORTING & OUTPUTS ---
-    if (name === "generate_report") {
+    if (name === "run_report") {
       const skill = String((args as any)?.skill ?? "");
       let script = "";
       let cmdArgs: string[] = [];
@@ -988,8 +986,11 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         if ((args as any).dry_run) cmdArgs.push("--dry-run");
       } else if (skill === "tasks") {
         script = path.resolve(rootPath, "skills/tasks/run.py");
+      } else if (skill === "releasinator") {
+        script = path.resolve(rootPath, "skills/releasinator/scripts/run.py");
+        if ((args as any).date) cmdArgs.push("--release", (args as any).date);
       } else {
-        throw new Error(`Report generation not automated for skill: ${skill}. Valid options: status, dream, tasks.`);
+        throw new Error(`Report generation not automated for skill: ${skill}. Valid options: status, dream, tasks, releasinator.`);
       }
 
       const out = await new Promise<string>((res, rej) => execFile("python3", [script, ...cmdArgs], { cwd: rootPath }, (e, o, s) => e ? rej(new Error(s)) : res(o)));
@@ -1017,46 +1018,102 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
     // --- TASK CAPTURE (Asana + Jira) ---
 
-    // Shell taxonomy — to be replaced once intelligence/product/taxonomy.md is defined
-    // Format: "Product - Feature" or "Feature" for standalone areas
     function inferProductArea(t: string): string {
       const s = t.toLowerCase();
-      const areas: string[] = [];
-      if (/\bnotes\b|autosave|service record|case note/.test(s)) areas.push("Engage - Notes");
-      if (/\benroll/.test(s)) areas.push("Enrollments");
-      if (/\bwlv\b|workload/.test(s)) areas.push("Engage - WLV");
-      if (/datagrid|data grid/.test(s)) areas.push("Engage - DataGrid");
-      if (/dynamic page/.test(s)) areas.push("Engage - Dynamic Pages");
-      if (/\bnav(igation)?\b|\bsearch\b/.test(s)) areas.push("Platform - Navigation");
-      if (/\bgp\b|granular perm/.test(s)) areas.push("Platform - GP");
-      if (/\breporting\b|\breveal\b|\bredshift\b/.test(s)) areas.push("Reporting");
-      if (/\bzapier\b|\bnylas\b|\bintegrat/.test(s)) areas.push("Integrations");
-      if (/\bsecurity\b|\bsoc\b|\bcjis\b|\bprowler\b/.test(s)) areas.push("Security & Compliance");
-      if (/\bkafka\b|\brails\b|\bec2\b|\binfra\b|karpenter/.test(s)) areas.push("Infrastructure");
-      if (/\bworkflow/.test(s)) areas.push("Platform - Workflows");
-      return areas.length > 0 ? areas.join(", ") : "Platform";
+      const matchedOverrides = new Set<string>();
+      const matchedProducts = new Set<string>();
+      const matchedFeatures = new Set<string>();
+
+      for (const rule of taxonomyRules) {
+        if (rule.regexes.some(re => re.test(s))) {
+          if (rule.isOverride) matchedOverrides.add(rule.label);
+          if (rule.isProduct) matchedProducts.add(rule.label);
+          if (rule.isFeature) matchedFeatures.add(rule.label);
+        }
+      }
+
+      if (matchedOverrides.size > 0) return Array.from(matchedOverrides).sort().join(", ");
+
+      const overlaps = new Set([...matchedProducts].filter(x => matchedFeatures.has(x)));
+      for (const label of overlaps) {
+        if (matchedProducts.size > 1) {
+          matchedProducts.delete(label);
+        } else if (matchedFeatures.size > 1) {
+          matchedFeatures.delete(label);
+        } else {
+          matchedFeatures.delete(label);
+        }
+      }
+
+      const p = Array.from(matchedProducts).sort();
+      const f = Array.from(matchedFeatures).sort();
+
+      if (p.length > 0 && f.length > 0) return `${p.join(", ")} - ${f.join(", ")}`;
+      if (p.length > 0) return p.join(", ");
+      if (f.length > 0) return f.join(", ");
+      return "";
     }
 
-    function getPopulatedTemplate(type: string, area: string, text: string): string {
-      const summary = `${area} — ${text}`;
+    function getPopulatedTemplate(type: string, area: string, text: string, options: any = {}): string {
+      const summary = area ? `${area} — ${text}` : text;
       if (type === "bug") {
-        return `## Summary\n${summary}\n\n## Description\n${text}\n\n## Steps to Reproduce\n1. \n2. \n3. \n\n## Expected Behavior\n\n## Actual Behavior\n\n## Environment\n- Tenant: \n- Browser/Device: \n- Release/Version: \n\n## Severity\n[ ] Critical \u2014 blocks release\n[ ] High \n[ ] Medium \n[ ] Low \n\n## Links\n- Asana Project: \n- Related Story: `;
+        let t = `## Summary\n${summary}\n\n## Description\n${text}\n\n## Steps to Reproduce\n1. \n2. \n3. \n\n## Expected Behavior\n\n## Actual Behavior\n\n## Environment\n- Tenant: \n- Browser/Device: \n- Release/Version: \n\n## Severity\n[ ] Critical \u2014 blocks release\n[ ] High \n[ ] Medium \n[ ] Low \n\n## Links\n- Asana Project: ${options.asana_link || ""}`;
+        if (options.figma_link) t += `\n- Figma Designs: ${options.figma_link}`;
+        return t;
       }
       if (type === "cx_bug") {
-        return `## Summary\n${summary}\n\n## Customer / Tenant\n- Reported by: \n- Tenant name: \n- Severity to customer: \n\n## Description\n${text}\n\n## Steps to Reproduce\n1. \n2. \n3. \n\n## Expected Behavior\n\n## Actual Behavior\n\n## Workaround Available?\n[ ] Yes \n[ ] No\n\n## Release Blocker?\n[ ] Yes\n[ ] No\n\n## Links\n- Asana Project: \n- Support ticket / Slack thread: `;
+        return `## Summary\n${summary}\n\n## Customer / Tenant\n- Reported by: \n- Tenant name: \n- Severity to customer: \n\n## Description\n${text}\n\n## Steps to Reproduce\n1. \n2. \n3. \n\n## Expected Behavior\n\n## Actual Behavior\n\n## Workaround Available?\n[ ] Yes \n[ ] No\n\n## Release Blocker?\n[ ] Yes\n[ ] No\n\n## Links\n- Asana Project: ${options.asana_link || ""}\n- Support ticket / Slack thread: `;
       }
       if (type === "story") {
-        return `Summary: "${summary}"\n\n## PRD link\n\n## Introduction\n${text}\n\nAs a [user], I want [goal] so that [value].\n\n## Use cases\n## Use case 1: \n\n## Edge cases\n1. \n\n## Out of scope\n1. `;
+        let t = `Summary: "${summary}"\n\n## PRD link\n\n## Introduction\n${text}\n\nAs a [user], I want [goal] so that [value].\n\n## Use cases\n## Use case 1: \n\n## Edge cases\n1. \n\n## Out of scope\n1. `;
+        if (options.acceptance_criteria) t += `\n\n## Acceptance Criteria\n${options.acceptance_criteria}`;
+        if (options.figma_link || options.asana_link) {
+          t += `\n\n## Links`;
+          if (options.asana_link) t += `\n- Asana Project: ${options.asana_link}`;
+          if (options.figma_link) t += `\n- Figma Designs: ${options.figma_link}`;
+        }
+        return t;
       }
       if (type === "research") {
         return `## Summary\n${summary}\n\n## Objective\n${text}\n\n## Methodology\n\n## Findings\n\n## Next Steps`;
       }
       // Default / Task
-      return `## Summary\n${summary}\n\n## Introduction\n${text}\n\n## Acceptance Criteria\n- [ ] \n\n## Links\n- Asana Project: \n- Figma Designs: `;
+      let t = `## Summary\n${summary}\n\n## Introduction\n${text}`;
+      if (options.acceptance_criteria) t += `\n\n## Acceptance Criteria\n${options.acceptance_criteria}`;
+      if (options.figma_link || options.asana_link) {
+        t += `\n\n## Links`;
+        if (options.asana_link) t += `\n- Asana Project: ${options.asana_link}`;
+        if (options.figma_link) t += `\n- Figma Designs: ${options.figma_link}`;
+      }
+      return t;
     }
 
-    if (name === "capture_task") {
-      const { text } = args as any;
+    if (name === "search_tasks") {
+      const { query } = args as any;
+      const tasksReportPath = path.resolve(rootPath, "reports", "tasks", "report.md");
+      try {
+        const content = await fs.readFile(tasksReportPath, "utf-8");
+        const lines = content.split("\n");
+        const queryLower = query.toLowerCase();
+        
+        // Find matching task lines (bullet points with links)
+        const matches = lines.filter(line => {
+          const l = line.trim();
+          return l.startsWith("- [") && l.toLowerCase().includes(queryLower);
+        });
+        
+        if (matches.length === 0) {
+          return { content: [{ type: "text", text: `🔍 No tasks matching "${query}" found in the latest report.` }] };
+        }
+        
+        return { content: [{ type: "text", text: `🔍 Found ${matches.length} matching task(s) in the latest report:\n\n${matches.join("\n")}` }] };
+      } catch (err: any) {
+        throw new Error(`Failed to read task report for searching: ${err.message}`);
+      }
+    }
+
+    if (name === "add_task") {
+      const { text, acceptance_criteria, figma_link, asana_project_gid: overrideGid } = args as any;
       const lower = text.toLowerCase();
 
       // Phase signals
@@ -1076,10 +1133,15 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const productArea = inferProductArea(text);
 
       // Project routing
-      let projectGid = "1208693459152262"; // PD - Small Projects fallback
-      if (/\bgp\b|granular perm/i.test(text)) projectGid = "1208693459152262";
-      else if (/\bnotes\b/i.test(text)) projectGid = "1211726272848115";
-      else if (/\benroll/i.test(text)) projectGid = "1211631356870657";
+      let projectGid = overrideGid || "1208693459152262"; // PD - Small Projects fallback
+      if (!overrideGid) {
+        if (/\bgp\b|granular perm/i.test(text)) projectGid = "1208693459152262";
+        else if (/\bnotes\b/i.test(text)) projectGid = "1211726272848115";
+        else if (/\benroll/i.test(text)) projectGid = "1211631356870657";
+      }
+
+      const asanaUrl = `https://app.asana.com/0/${projectGid}/board`;
+      const options = { acceptance_criteria, figma_link, asana_link: asanaUrl };
 
       const results: string[] = [];
 
@@ -1122,7 +1184,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
         // Create linked Jira Project issue
         const jiraToken = Buffer.from(`${process.env.ATLASSIAN_USER_EMAIL}:${process.env.ATLASSIAN_API_TOKEN}`).toString("base64");
-        const jiraSummary = `${productArea} — ${text}`;
+        const jiraSummary = productArea ? `${productArea} — ${text}` : text;
         const jiraBody = JSON.stringify({
           fields: {
             project: { key: "CBP" },
@@ -1158,8 +1220,8 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       // PM task → Asana task only
       if (isPmTask) {
         const asanaToken = process.env.ASANA_API_TOKEN ?? "";
-        const summaryText = `${productArea} — ${text}`;
-        const templateNotes = getPopulatedTemplate("task", productArea, text);
+        const summaryText = productArea ? `${productArea} — ${text}` : text;
+        const templateNotes = getPopulatedTemplate("task", productArea, text, options);
         const taskBody = JSON.stringify({
           data: {
             name: summaryText.slice(0, 200),
@@ -1183,9 +1245,9 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       // Engineering work → Jira only
       const jiraToken = Buffer.from(`${process.env.ATLASSIAN_USER_EMAIL}:${process.env.ATLASSIAN_API_TOKEN}`).toString("base64");
       const priority = isUat ? "Highest" : "Medium";
-      const summaryText = `${productArea} — ${text}`;
+      const summaryText = productArea ? `${productArea} — ${text}` : text;
       const typeKey = isBug ? "bug" : isCxBug ? "cx_bug" : isStory ? "story" : isResearch ? "research" : isQafe ? "qafe" : "task";
-      const descText = getPopulatedTemplate(typeKey, productArea, text);
+      const descText = getPopulatedTemplate(typeKey, productArea, text, options);
       const descParagraphs = descText.split("\n").map(line => ({
         type: "paragraph", content: [{ type: "text", text: line || " " }]
       }));
@@ -1219,179 +1281,6 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       results.push(`✅ Jira ${typeLabel} created: ${key}\n   https://casecommons.atlassian.net/browse/${key}\n   Priority: ${priority}`);
       if (isBug || isCxBug) results.push(`   ⚠️ Checkbox fields require manual conversion in Jira UI`);
       return { content: [{ type: "text", text: results.join("\n") }] };
-    }
-
-    if (name === "create_asana_project") {
-      const { name: projName, notes = "", team_gid = "1208820967756799" } = args as any;
-      const asanaToken = process.env.ASANA_API_TOKEN ?? "";
-      const body = JSON.stringify({
-        data: { name: projName, notes, workspace: "1123317448830974", team: team_gid, public: false }
-      });
-      const res = await httpsRequest(
-        "https://app.asana.com/api/1.0/projects", "POST",
-        { "Authorization": `Bearer ${asanaToken}`, "Content-Type": "application/json", "Accept": "application/json" },
-        body
-      );
-      const json = JSON.parse(res.data);
-      if (!json?.data?.gid) throw new Error(`Asana project creation failed: ${res.data}`);
-      return { content: [{ type: "text", text: `✅ Asana project created: "${json.data.name}"\n   https://app.asana.com/0/${json.data.gid}/board\n   ⚠️ Set Stage, Release Quarter, Launch Plan, JIRA Link manually in Asana UI` }] };
-    }
-
-    if (name === "create_asana_task") {
-      const { name: taskName, notes = "", project_gid, due_on } = args as any;
-      const asanaToken = process.env.ASANA_API_TOKEN ?? "";
-      const data: any = { name: taskName, notes, projects: [project_gid], assignee: "1208822152029926" };
-      if (due_on) data.due_on = due_on;
-      const body = JSON.stringify({ data });
-      const res = await httpsRequest(
-        "https://app.asana.com/api/1.0/tasks", "POST",
-        { "Authorization": `Bearer ${asanaToken}`, "Content-Type": "application/json", "Accept": "application/json" },
-        body
-      );
-      const json = JSON.parse(res.data);
-      if (!json?.data?.gid) throw new Error(`Asana task creation failed: ${res.data}`);
-      return { content: [{ type: "text", text: `✅ Asana task created: "${json.data.name}"\n   https://app.asana.com/0/${project_gid}/${json.data.gid}\n   Project: ${project_gid} | Assignee: Ben${due_on ? ` | Due: ${due_on}` : ""}` }] };
-    }
-
-    if (name === "create_jira_issue") {
-      const { summary, issue_type_id, description, priority = "Medium", labels = [] } = args as any;
-      const jiraToken = Buffer.from(`${process.env.ATLASSIAN_USER_EMAIL}:${process.env.ATLASSIAN_API_TOKEN}`).toString("base64");
-      const headers = { "Authorization": `Basic ${jiraToken}`, "Content-Type": "application/json", "Accept": "application/json" };
-      const baseUrl = `https://api.atlassian.com/ex/jira/d4deabe8-6b83-4008-8fae-dfe274d33bfe/rest/api/3/issue`;
-
-      // Build ADF description
-      const descParagraphs = description.split("\n").map((line: string) => ({
-        type: "paragraph",
-        content: [{ type: "text", text: line || " " }]
-      }));
-      const createBody = JSON.stringify({
-        fields: {
-          project: { key: "CBP" },
-          summary,
-          issuetype: { id: issue_type_id },
-          assignee: { accountId: "629dfdc29b728c006a928e90" },
-          labels,
-          description: { type: "doc", version: 1, content: descParagraphs }
-        }
-      });
-      const createRes = await httpsRequest(baseUrl, "POST", headers, createBody);
-      const createJson = JSON.parse(createRes.data);
-      if (!createJson?.key) throw new Error(`Jira issue creation failed: ${createRes.data}`);
-      const key = createJson.key;
-
-      // Fix formatting: follow up with PUT to re-apply description (workaround for double-escape)
-      const editBody = JSON.stringify({
-        fields: { description: { type: "doc", version: 1, content: descParagraphs } }
-      });
-      await httpsRequest(`${baseUrl}/${key}`, "PUT", headers, editBody).catch(() => {});
-
-      const typeNames: Record<string, string> = { "10000": "Project", "10057": "Story", "10011": "Bug", "10013": "CX Bug", "10064": "Research", "10009": "Task", "10065": "QAFE" };
-      const typeName = typeNames[issue_type_id] ?? "Issue";
-      let msg = `✅ Jira ${typeName} created: ${key}\n   https://casecommons.atlassian.net/browse/${key}\n   Priority: ${priority}`;
-      if (["10011", "10013"].includes(issue_type_id)) msg += `\n   ⚠️ Checkbox fields (- [ ]) require manual conversion in Jira UI`;
-      return { content: [{ type: "text", text: msg }] };
-    }
-
-    if (name === "link_asana_jira") {
-      const { asana_project_gid, jira_issue_key } = args as any;
-      const asanaToken = process.env.ASANA_API_TOKEN ?? "";
-      const jiraUrl = `https://casecommons.atlassian.net/browse/${jira_issue_key}`;
-      const body = JSON.stringify({ data: { custom_fields: { "1208818005809198": jiraUrl } } });
-      const res = await httpsRequest(
-        `https://app.asana.com/api/1.0/projects/${asana_project_gid}`, "PUT",
-        { "Authorization": `Bearer ${asanaToken}`, "Content-Type": "application/json", "Accept": "application/json" },
-        body
-      );
-      if (res.status >= 400) throw new Error(`Failed to set JIRA Link: ${res.data}`);
-      return { content: [{ type: "text", text: `✅ JIRA Link set on Asana project ${asana_project_gid}\n   → ${jiraUrl}` }] };
-    }
-
-    // --- EDIT ---
-    if (name === "edit_asana_task") {
-      const { task_gid, name: taskName, notes, due_on } = args as any;
-      const asanaToken = process.env.ASANA_API_TOKEN ?? "";
-      const data: any = {};
-      if (taskName) data.name = taskName;
-      if (notes !== undefined) data.notes = notes;
-      if (due_on) data.due_on = due_on;
-      const res = await httpsRequest(
-        `https://app.asana.com/api/1.0/tasks/${task_gid}`, "PUT",
-        { "Authorization": `Bearer ${asanaToken}`, "Content-Type": "application/json", "Accept": "application/json" },
-        JSON.stringify({ data })
-      );
-      if (res.status >= 400) throw new Error(`Failed to edit task: ${res.data}`);
-      const json = JSON.parse(res.data);
-      return { content: [{ type: "text", text: `✅ Asana task updated: "${json.data?.name}"\n   GID: ${task_gid}` }] };
-    }
-
-    if (name === "edit_asana_project") {
-      const { project_gid, name: projName, notes } = args as any;
-      const asanaToken = process.env.ASANA_API_TOKEN ?? "";
-      const data: any = {};
-      if (projName) data.name = projName;
-      if (notes !== undefined) data.notes = notes;
-      const res = await httpsRequest(
-        `https://app.asana.com/api/1.0/projects/${project_gid}`, "PUT",
-        { "Authorization": `Bearer ${asanaToken}`, "Content-Type": "application/json", "Accept": "application/json" },
-        JSON.stringify({ data })
-      );
-      if (res.status >= 400) throw new Error(`Failed to edit project: ${res.data}`);
-      const json = JSON.parse(res.data);
-      return { content: [{ type: "text", text: `✅ Asana project updated: "${json.data?.name}"\n   GID: ${project_gid}` }] };
-    }
-
-    if (name === "edit_jira_issue") {
-      const { issue_key, summary, description } = args as any;
-      const jiraToken = Buffer.from(`${process.env.ATLASSIAN_USER_EMAIL}:${process.env.ATLASSIAN_API_TOKEN}`).toString("base64");
-      const fields: any = {};
-      if (summary) fields.summary = summary;
-      if (description) {
-        const paragraphs = description.split("\n").map((line: string) => ({
-          type: "paragraph", content: [{ type: "text", text: line || " " }]
-        }));
-        fields.description = { type: "doc", version: 1, content: paragraphs };
-      }
-      const res = await httpsRequest(
-        `https://api.atlassian.com/ex/jira/d4deabe8-6b83-4008-8fae-dfe274d33bfe/rest/api/3/issue/${issue_key}`, "PUT",
-        { "Authorization": `Basic ${jiraToken}`, "Content-Type": "application/json", "Accept": "application/json" },
-        JSON.stringify({ fields })
-      );
-      if (res.status >= 400) throw new Error(`Failed to edit issue: ${res.data}`);
-      return { content: [{ type: "text", text: `✅ Jira issue updated: ${issue_key}\n   https://casecommons.atlassian.net/browse/${issue_key}` }] };
-    }
-
-    // --- DELETE ---
-    if (name === "delete_asana_task") {
-      const { task_gid } = args as any;
-      const asanaToken = process.env.ASANA_API_TOKEN ?? "";
-      const res = await httpsRequest(
-        `https://app.asana.com/api/1.0/tasks/${task_gid}`, "DELETE",
-        { "Authorization": `Bearer ${asanaToken}`, "Accept": "application/json" }
-      );
-      if (res.status >= 400) throw new Error(`Failed to delete task: ${res.data}`);
-      return { content: [{ type: "text", text: `🗑️ Asana task ${task_gid} deleted.` }] };
-    }
-
-    if (name === "delete_asana_project") {
-      const { project_gid } = args as any;
-      const asanaToken = process.env.ASANA_API_TOKEN ?? "";
-      const res = await httpsRequest(
-        `https://app.asana.com/api/1.0/projects/${project_gid}`, "DELETE",
-        { "Authorization": `Bearer ${asanaToken}`, "Accept": "application/json" }
-      );
-      if (res.status >= 400) throw new Error(`Failed to delete project: ${res.data}`);
-      return { content: [{ type: "text", text: `🗑️ Asana project ${project_gid} deleted.` }] };
-    }
-
-    if (name === "delete_jira_issue") {
-      const { issue_key } = args as any;
-      const jiraToken = Buffer.from(`${process.env.ATLASSIAN_USER_EMAIL}:${process.env.ATLASSIAN_API_TOKEN}`).toString("base64");
-      const res = await httpsRequest(
-        `https://api.atlassian.com/ex/jira/d4deabe8-6b83-4008-8fae-dfe274d33bfe/rest/api/3/issue/${issue_key}`, "DELETE",
-        { "Authorization": `Basic ${jiraToken}`, "Accept": "application/json" }
-      );
-      if (res.status >= 400) throw new Error(`Failed to delete issue: ${res.data}`);
-      return { content: [{ type: "text", text: `🗑️ Jira issue ${issue_key} deleted.` }] };
     }
 
     throw new Error(`Tool not found: ${name}`);

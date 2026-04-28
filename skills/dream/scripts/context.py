@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """context.py — Monitor file volume for token economy."""
-import os, json
+import os, json, urllib.parse
 from datetime import datetime
 
-VAULT_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
-OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream', 'data', 'raw')
+REPO_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
+OUTPUTS_DIR = os.path.join(REPO_ROOT, 'reports', 'dream', 'data', 'raw')
 
 YELLOW_KB = 250
 RED_KB    = 750
@@ -18,7 +18,7 @@ IGNORE_LIST = {
 }
 
 def is_acknowledged(path):
-    rel = os.path.relpath(path, VAULT_ROOT)
+    rel = os.path.relpath(path, REPO_ROOT)
     if rel in IGNORE_LIST:
         return True
     
@@ -26,7 +26,6 @@ def is_acknowledged(path):
     index_path = os.path.join(dir_path, 'index.md')
     if not os.path.exists(index_path): return False
     filename = os.path.basename(path)
-    import urllib.parse
     try:
         with open(index_path, 'r') as f:
             content = f.read()
@@ -40,7 +39,7 @@ def run():
     total_files  = 0
     total_bytes  = 0
 
-    for root, dirs, files in os.walk(VAULT_ROOT):
+    for root, dirs, files in os.walk(REPO_ROOT):
         dirs[:] = [d for d in dirs if d not in SKIP_DIRS and not d.startswith('.')]
         for f in files:
             path = os.path.join(root, f)
@@ -50,7 +49,7 @@ def run():
                 continue
             total_files += 1
             total_bytes += size
-            rel = os.path.relpath(path, VAULT_ROOT)
+            rel = os.path.relpath(path, REPO_ROOT)
             size_kb = size / 1024
             if size_kb > RED_KB:
                 if not is_acknowledged(path):

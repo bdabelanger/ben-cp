@@ -9,12 +9,12 @@ domain: handoffs/complete
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-10), updated Claude (Cowork) (2026-04-12)
 > **Assigned to:** Claude
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P2
 > **v1.3**
 > **STATUS**: ✅ COMPLETE
 
-Formally established the 'product' skill name and Strategic PM persona as the standard for all PM-facing vault operations. Confirmed all directory paths and tool references adhere to this naming convention. Deprecated the temporary session planning patterns in favor of the artifact-led workflow.
+Formally established the 'product' skill name and Strategic PM persona as the standard for all PM-facing repo operations. Confirmed all directory paths and tool references adhere to this naming convention. Deprecated the temporary session planning patterns in favor of the artifact-led workflow.
 
 ---
 

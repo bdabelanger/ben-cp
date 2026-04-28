@@ -2,7 +2,7 @@
 
 > **Prepared by:** Cowork (Sonnet 4.6) (2026-04-27)
 > **Assigned to:** Code
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P3
 > **STATUS**: ✅ COMPLETE — 2026-04-27
 
@@ -12,7 +12,7 @@ Updated src/ben-cp.ts to point to root tasks/ directory instead of orchestration
 
 ## Context
 
-During a smoke test session on 2026-04-27, Cowork (Sonnet 4.6) identified **two MCP tool path errors** both caused by stale directory references surviving the vault's structural normalization (1.18.x era).
+During a smoke test session on 2026-04-27, Cowork (Sonnet 4.6) identified **two MCP tool path errors** both caused by stale directory references surviving the repo's structural normalization (1.18.x era).
 
 ### Bug 1 — `list_tasks` ENOENT
 
@@ -22,7 +22,7 @@ Calling `list_tasks` throws:
 Error: ENOENT: no such file or directory, scandir '/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/orchestration/tasks'
 ```
 
-The tool is resolving to `orchestration/tasks` — a path that existed before the vault's directory restructure. Per AGENTS.md, the tasks directory now lives at vault root:
+The tool is resolving to `orchestration/tasks` — a path that existed before the repo's directory restructure. Per AGENTS.md, the tasks directory now lives at repo root:
 
 ```
 ├── tasks/  ← (Symlink to tasks/)
@@ -36,11 +36,11 @@ Calling `list_skills` with `domain: "product"` throws:
 Error: ENOENT: no such file or directory, scandir '...ben-cp/skills/product'
 ```
 
-The `skills/product/` subdomain was dissolved during the Unified Vault Architecture normalization (changelog v1.18.0). The current `skills/` root now contains: `asana`, `changelog.md`, `dream`, `handoff`, `index.md`, `intelligence`, `releasinator`, `rovo`, `standup`, `status`, `styles`, `tasks`. There is no `product/` subdirectory.
+The `skills/product/` subdomain was dissolved during the Unified Repo Architecture normalization (changelog v1.18.0). The current `skills/` root now contains: `asana`, `changelog.md`, `dream`, `handoff`, `index.md`, `intelligence`, `releasinator`, `rovo`, `standup`, `status`, `styles`, `tasks`. There is no `product/` subdirectory.
 
 This means either:
 - The `list_skills` tool is not validating domain existence before scanning, OR
-- Callers referencing the old `product` domain path need to be updated in vault documentation
+- Callers referencing the old `product` domain path need to be updated in repo documentation
 
 Both bugs share a common root cause: path references not updated after the 1.18.x structural normalization.
 
@@ -48,11 +48,11 @@ Both bugs share a common root cause: path references not updated after the 1.18.
 
 ## Logic
 
-For **Bug 1**: Update `list_tasks` path from `orchestration/tasks` → the correct resolved tasks path at vault root.
+For **Bug 1**: Update `list_tasks` path from `orchestration/tasks` → the correct resolved tasks path at repo root.
 
 For **Bug 2**: Two possible fixes — Code should determine which is appropriate:
 - **Option A (preferred):** Add a graceful error or "domain not found" response in `list_skills` when the subdomain doesn't exist, rather than throwing ENOENT. This prevents misleading errors for any caller using stale domain names.
-- **Option B:** If the tool already handles this correctly and the issue is documentation, update any vault docs still referencing `skills/product/` as a valid domain.
+- **Option B:** If the tool already handles this correctly and the issue is documentation, update any repo docs still referencing `skills/product/` as a valid domain.
 
 Both fixes are in `src/ben-cp.ts` and require a rebuild (`npm run build`).
 
@@ -61,7 +61,7 @@ Both fixes are in `src/ben-cp.ts` and require a rebuild (`npm run build`).
 ## Execution Steps
 
 - [ ] Open `src/ben-cp.ts` and locate the `list_tasks` tool definition — find the `scandir` path
-- [ ] Confirm the correct resolved path for the tasks directory (`ls` at vault root or check AGENTS.md vault tree)
+- [ ] Confirm the correct resolved path for the tasks directory (`ls` at repo root or check AGENTS.md repo tree)
 - [ ] Update `list_tasks` path reference to the correct location
 - [ ] Locate the `list_skills` tool definition — review how the `domain` param is resolved and whether ENOENT is caught
 - [ ] Implement Option A: wrap the `scandir` call for `list_skills` in a try/catch and return a clear "domain not found" message instead of throwing

@@ -9,13 +9,13 @@ domain: handoffs/complete
 
 > **Prepared by:** Code (Gemini) (2026-04-17)
 > **Assigned to:** Any
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P1
 > **STATUS**: ✅ COMPLETE — 2026-04-17
 
 1. Hardened handoff management by adding extension sanitization in src/ben-cp.ts.
 2. Improved list_handoffs filtering to strictly respect internal file status.
-3. Cleaned up vault state by renaming .md.md files and bulk-updating stale headers in the orchestration/handoff/complete/ directory.
+3. Cleaned up repo state by renaming .md.md files and bulk-updating stale headers in the orchestration/handoff/complete/ directory.
 
 ---
 

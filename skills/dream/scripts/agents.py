@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""agents.py — Monitor role compliance and tone across vault files."""
+"""agents.py — Monitor role compliance and tone across repo files."""
 import os, json, re
 from datetime import datetime
 
-VAULT_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
-OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream', 'data', 'raw')
+REPO_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
+OUTPUTS_DIR = os.path.join(REPO_ROOT, 'reports', 'dream', 'data', 'raw')
 
 SKIP_DIRS = {'.git', '__pycache__', 'node_modules', 'archived', 'complete', 'reports'}
 
@@ -20,7 +20,7 @@ AI_PHRASES = [
 
 # Code agent should not be the author of architecture/design decisions
 CODE_ARCH_PATTERN = re.compile(
-    r'^\s*[\*_\-]*\b(Prepared by|Agent)\b[\*_\-]*\s*[:\-]\s*Code.*?(architecture|vault structure|SOP design|new skill)',
+    r'^\s*[\*_\-]*\b(Prepared by|Agent)\b[\*_\-]*\s*[:\-]\s*Code.*?(architecture|repo structure|SOP design|new skill)',
     re.IGNORECASE | re.MULTILINE | re.DOTALL
 )
 
@@ -29,7 +29,7 @@ def strip_code_blocks(content):
 
 def collect_md_files():
     files = []
-    for root, dirs, fs in os.walk(VAULT_ROOT):
+    for root, dirs, fs in os.walk(REPO_ROOT):
         dirs[:] = [d for d in dirs if d not in SKIP_DIRS and not d.startswith('.')]
         for f in fs:
             if f.endswith('.md'):
@@ -37,7 +37,7 @@ def collect_md_files():
     return files
 
 def audit_file(path):
-    rel = os.path.relpath(path, VAULT_ROOT)
+    rel = os.path.relpath(path, REPO_ROOT)
     issues = []
     try:
         with open(path, errors='replace') as f:

@@ -7,7 +7,7 @@ domain: skills/status
 
 # Task Capture — Procedure
 
-> Vault-native documentation. The Cowork runtime version (agent-instruction framing) lives in the plugin. This document is the reference and edit target.
+> Repo-native documentation. The Cowork runtime version (agent-instruction framing) lives in the plugin. This document is the reference and edit target.
 
 ---
 

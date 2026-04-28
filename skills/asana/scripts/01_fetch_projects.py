@@ -9,11 +9,11 @@ except ImportError:
 from datetime import datetime
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-VAULT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../../.."))
-OUTPUT_PATH = os.path.join(VAULT_ROOT, "reports/asana/raw/all_projects.json")
+REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../../.."))
+OUTPUT_PATH = os.path.join(REPO_ROOT, "reports/asana/raw/all_projects.json")
 
 def _load_dotenv():
-    env_path = os.path.join(VAULT_ROOT, ".env")
+    env_path = os.path.join(REPO_ROOT, ".env")
     if not os.path.exists(env_path): return
     with open(env_path) as f:
         for line in f:

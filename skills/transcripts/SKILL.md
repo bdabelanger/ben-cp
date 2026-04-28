@@ -6,7 +6,7 @@ domain: skills/transcripts
 
 # Transcript Note Harvester
 
-> **Trigger:** "Harvest tasks from this transcript", "Process my notes from [date]", "Pull action items from the Discovery Review transcript"
+> **Trigger:** "Harvest tasks from this transcript", "Process my notes from [date]", "Pull action items from the Discovery Review transcript", "Run transcript harvester in rich mode"
 > **Agent:** Code (Claude)
 > **Output:** A handoff in `handoffs/` for Cowork to run task-capture with Ben
 
@@ -14,9 +14,13 @@ domain: skills/transcripts
 
 ## What it does
 
-Reads a Gemini meeting transcript or standup email, parses the "Suggested next steps" section, classifies each action item with a routing hint, and writes a structured handoff. Cowork then picks up the handoff and works through each item interactively with Ben using the task-capture skill.
+Reads a Gemini meeting transcript or standup email, parses the "Suggested next steps" section, classifies each action item with a routing hint, and writes a structured handoff. 
 
-This keeps task creation in an interactive session — not automated.
+**Modes:**
+- **standup** (default): Optimized for short standup emails.
+- **rich**: Optimized for long meeting transcripts. Extracts surrounding discussion context for each action item to ensure high-fidelity task creation.
+
+Cowork then picks up the handoff and works through each item interactively with Ben using the task-capture skill.
 
 ---
 
@@ -35,13 +39,15 @@ Ask Ben to paste the email body (or forward it). Save it to a temp file, e.g. `/
 ```bash
 python3 "skills/transcripts/scripts/run.py" \
   --email /tmp/transcript.txt \
-  --date "Apr 27, 2026"
+  --date "Apr 27, 2026" \
+  --mode rich
 ```
 
-All paths relative to vault root:
+All paths relative to repo root:
 `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 
 The `--date` flag is optional — defaults to today.
+The `--mode` flag is optional — defaults to `standup`. Use `rich` for narrative transcripts.
 
 ---
 

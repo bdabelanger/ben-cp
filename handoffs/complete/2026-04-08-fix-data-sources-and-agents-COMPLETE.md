@@ -9,8 +9,8 @@ domain: handoffs/complete
 # Claude Code Implementation Plan: Fix data_sources.md Portal Gaps + AGENTS.md SKILL.md Exemption
 
 > **Prepared by:** Claude (Cowork session, 2026-04-08)
-> **Source:** Vault Auditor report `reports/knowledge-report-2026-04-08.md` flags 6.1, 6.2, 7.1 naming note
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Source:** Repo Auditor report `reports/knowledge-report-2026-04-08.md` flags 6.1, 6.2, 7.1 naming note
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **v1.0**
 > **STATUS**: ✅ COMPLETE
 
@@ -22,7 +22,7 @@ domain: handoffs/complete
 
 ## Context
 
-Two small gaps flagged by Vault Auditor:
+Two small gaps flagged by Repo Auditor:
 
 1. `skills/okr-reporting/data_sources.md` is missing two Portal-related sources
    referenced in `2026-q2-kr-reference.md`. These KRs are currently blocked but
@@ -30,7 +30,7 @@ Two small gaps flagged by Vault Auditor:
 
 2. `AGENTS.md` naming convention rules don't address `SKILL.md` files, which use
    all-caps rather than underscores. This should be documented as an explicit
-   exemption to avoid future false positives in Vault Auditor Check 7.
+   exemption to avoid future false positives in Repo Auditor Check 7.
 
 ---
 
@@ -80,7 +80,7 @@ In the **File Naming** section, add one line after the existing naming rules:
 
 ```markdown
 - `SKILL.md` and `AGENTS.md` are exempt from the underscore convention — all-caps
-  filenames are valid for vault contracts and Cowork skill descriptors
+  filenames are valid for repo contracts and Cowork skill descriptors
 ```
 
 ---

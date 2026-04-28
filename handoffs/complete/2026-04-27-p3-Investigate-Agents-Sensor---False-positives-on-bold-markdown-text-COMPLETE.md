@@ -10,7 +10,7 @@ domain: handoffs/complete
 
 > **Prepared by:** Code (Gemini) (2026-04-27)
 > **Assigned to:** Code
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P3
 > **STATUS**: ✅ COMPLETE — 2026-04-27
 
@@ -20,7 +20,7 @@ Completed investigation and fix alongside the P3 handoff. 0 unknown agents repor
 
 > **Prepared by:** Code (Gemini) (2026-04-26)
 > **Assigned to:** Code
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P3
 > **STATUS**: 🔲 READY — pick up 2026-04-26
 

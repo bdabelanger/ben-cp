@@ -1,26 +1,44 @@
 #!/usr/bin/env python3
 """frontmatter.py — Enforce metadata schema and readability standards."""
-import os, json, re
+import os, json, re, yaml
 from datetime import datetime
+from utils import get_manifest_files
 
-VAULT_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
-OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream', 'data', 'raw')
+REPO_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
+OUTPUTS_DIR = os.path.join(REPO_ROOT, 'reports', 'dream', 'data', 'raw')
 
 SKIP_DIRS  = {'.git', '__pycache__', 'node_modules', 'dist', 'src', 'reports', 'art', 'complete', 'archive', 'archived'}
 REQUIRED_KEYS = {'title', 'type', 'domain'}
-VALID_TYPES = {'index', 'skill', 'intelligence', 'handoff', 'changelog', 'release', 'prd', 'agent', 'task', 'report', 'log', 'session', 'launch_plan'}
+VALID_TYPES = {'index', 'skill', 'intelligence', 'handoff', 'changelog', 'release', 'prd', 'agent', 'task', 'report', 'log', 'session', 'launch_plan', 'run_log', 'shareout', 'source', 'reference'}
 
-def collect_md_files():
-    files = []
-    for root, dirs, fs in os.walk(VAULT_ROOT):
-        dirs[:] = [d for d in dirs if d not in SKIP_DIRS and not d.startswith('.')]
-        for f in fs:
-            if f.endswith('.md'):
-                files.append(os.path.join(root, f))
-    return files
+def load_taxonomy_terms():
+    """Return set of valid taxonomy labels from intelligence/casebook/taxonomy.md."""
+    path = os.path.join(REPO_ROOT, 'intelligence', 'casebook', 'taxonomy.md')
+    try:
+        with open(path, errors='replace') as f:
+            content = f.read()
+    except OSError:
+        return set()
+    terms = set()
+    for section in ('## Products', '## Features'):
+        m = re.search(rf'{re.escape(section)}\n\n([\s\S]*?)\n---', content)
+        if m:
+            for row in m.group(1).splitlines():
+                if row.startswith('|') and '---' not in row and ('| Product |' not in row) and ('| Feature |' not in row):
+                    label = row.split('|')[1].strip()
+                    if label:
+                        terms.add(label.lower())
+    # Also add combined labels like "Cases - Notes", "Admin - Audit Log"
+    # These appear in the inference map — extract `backtick` values
+    for m in re.finditer(r'`([^`]+)`', content):
+        val = m.group(1)
+        if ' — ' not in val and val != '*(omit label; do not guess)*':
+            terms.add(val.lower())
+    return terms
+
+# Removed local collect_md_files, using utils.collect_md_files
 
 def parse_frontmatter(content):
-    import yaml
     m = re.match(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL)
     if not m:
         return None, content
@@ -36,10 +54,11 @@ def word_count(text):
 def run():
     issues = []
     scanned = 0
+    taxonomy_terms = load_taxonomy_terms()
 
-    for path in collect_md_files():
+    for path in get_manifest_files():
         scanned += 1
-        rel = os.path.relpath(path, VAULT_ROOT)
+        rel = os.path.relpath(path, REPO_ROOT)
         try:
             with open(path, errors='replace') as f:
                 content = f.read()
@@ -61,6 +80,17 @@ def run():
             # Type Validation
             if isinstance(fm_data, dict) and 'type' in fm_data and fm_data['type'] not in VALID_TYPES:
                 issues.append({"file": rel, "issue": "invalid_type", "value": fm_data['type']})
+
+            # Taxonomy check — intelligence files only
+            if rel.startswith('intelligence/') and os.path.basename(path) not in {'index.md', 'changelog.md', 'taxonomy.md'}:
+                taxonomy_val = fm_data.get('taxonomy') if isinstance(fm_data, dict) else None
+                if taxonomy_val is None:
+                    issues.append({"file": rel, "issue": "missing_taxonomy"})
+                elif str(taxonomy_val).strip().lower() != 'none':
+                    terms = [t.strip() for t in str(taxonomy_val).split(',')]
+                    unknown = [t for t in terms if t.lower() not in taxonomy_terms and not any(t.lower() in combo for combo in taxonomy_terms)]
+                    if unknown:
+                        issues.append({"file": rel, "issue": "unknown_taxonomy_term", "terms": unknown})
 
         # H1 check: strip code blocks first
         clean_content = re.sub(r'```.*?```', '', content, flags=re.DOTALL)

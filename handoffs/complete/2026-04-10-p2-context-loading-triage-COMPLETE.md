@@ -8,7 +8,7 @@ domain: handoffs/complete
 # Claude Code Implementation Plan: Context Loading Complexity Triage
 
 > **Prepared by:** Gemma (Executor) (Context Audit, 2026-04-10)
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P2 — Structural violation of expected workflow efficiency during meta-documentation.
 > **Source report:** Omit
 > **v1.0**
@@ -17,7 +17,7 @@ domain: handoffs/complete
 ---
 
 ## Context
-During the review of vault history and process documentation, I observed that the initial context loading sequence (reading AGENTS.md, role files, then calling get_changelog) is highly procedural and brittle. This complexity led to pathing errors when attempting to log meta-observations into the Handoff Skill's changelog.
+During the review of repo history and process documentation, I observed that the initial context loading sequence (reading AGENTS.md, role files, then calling get_changelog) is highly procedural and brittle. This complexity led to pathing errors when attempting to log meta-observations into the Handoff Skill's changelog.
 
 ---
 

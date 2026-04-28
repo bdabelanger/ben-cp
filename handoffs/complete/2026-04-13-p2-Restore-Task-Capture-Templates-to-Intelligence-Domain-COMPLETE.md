@@ -9,11 +9,11 @@ domain: handoffs/complete
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-13)
 > **Assigned to:** Claude
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P2
 > **STATUS**: ✅ COMPLETE
 
-Successfully retrieved the missing Task Capture templates from the Claude session cache and deployed them to the canonical intelligence domain. Updated the skill documentation to ensure all procedures point to these new vault-native paths.
+Successfully retrieved the missing Task Capture templates from the Claude session cache and deployed them to the canonical intelligence domain. Updated the skill documentation to ensure all procedures point to these new repo-native paths.
 
 ---
 
@@ -23,7 +23,7 @@ During the structural consolidation of the `projects` skill, it was discovered t
 
 ## Objective
 
-Restore the following template files to the vault's unified intelligence domain at `intelligence/product/projects/source/`:
+Restore the following template files to the repo's unified intelligence domain at `intelligence/product/projects/source/`:
 
 - `asana-custom-fields.md`
 - `user-story-template.md`
@@ -35,10 +35,10 @@ Restore the following template files to the vault's unified intelligence domain 
 ## Execution Steps
 
 1. **Locate Source**: Read each file from the active Cowork plugin at `.claude/skills/task-capture/references/`.
-2. **Deploy to Vault**: Create each file at `intelligence/product/projects/source/`.
+2. **Deploy to Repo**: Create each file at `intelligence/product/projects/source/`.
 3. **Update Index**: Mark "Pending Restoration" as complete in `skills/product/projects/index.md`.
 4. **Consistency Check**: Verify that `skills/product/projects/procedure.md` correctly references the new paths.
 
 ## Notes
 
-The Cowork plugin version must remain functional for runtime use. The vault copy is the canonical reference for logic and structure — keep them in sync.
+The Cowork plugin version must remain functional for runtime use. The repo copy is the canonical reference for logic and structure — keep them in sync.

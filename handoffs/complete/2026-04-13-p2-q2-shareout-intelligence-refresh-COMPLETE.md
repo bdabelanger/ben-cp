@@ -9,12 +9,12 @@ domain: handoffs/complete
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-13)
 > **Assigned to:** Gemma
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P2
 > **v1.0**
 > **STATUS**: ✅ COMPLETE
 
-Successfully synchronized the vault's strategic intelligence with the latest version of the Q2 Product Shareout deck. Captued the full multi-quarter roadmap and purged all legacy manager notes from the slide records.
+Successfully synchronized the repo's strategic intelligence with the latest version of the Q2 Product Shareout deck. Captued the full multi-quarter roadmap and purged all legacy manager notes from the slide records.
 
 ---
 

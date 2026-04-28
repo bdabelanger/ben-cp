@@ -1,7 +1,8 @@
 ---
-title: Data import - Clearer error messages
+title: Data Import - Clearer error messages
 type: intelligence
 domain: intelligence/product/projects/q2
+taxonomy: Data Import
 links:
   asana: https://app.asana.com/1/1123317448830974/project/1210860550580329
   jira: https://casecommons.atlassian.net/browse/CBP-498
@@ -9,7 +10,7 @@ links:
 ---
 
 
-# Data import - Clearer error messages
+# Data Import - Clearer error messages
 
 - **GID:** 1210860550580329
 - **Permalink:** https://app.asana.com/1/1123317448830974/project/1210860550580329
@@ -19,7 +20,7 @@ links:
 - **Jira Link:** https://casecommons.atlassian.net/browse/CBP-498
 
 ## Current Status Update
-**Title:** Data import - Clearer error messages - Apr 10
+**Title:** Data Import - Clearer error messages - Apr 10
 **Text:**
 Summary
 
@@ -37,8 +38,8 @@ Next steps
 Jira status
 
 https://casecommons.atlassian.net/browse/CBP-498
-13 done  ·  1 in progress  ·  0 to do
-29.4d estimated  ·  8.0d actual  ·  3.0d remaining (37%)
+13 done  ·  1 in progress  ·  0 to do
+29.4d estimated  ·  8.0d actual  ·  3.0d remaining (37%)
     ✅ QA Start - Mar 27
     ✅ UAT Start - Apr 3
     ❌ GA - Apr 9 (release shifted to next week)
@@ -76,4 +77,3 @@ In Progress: 1 issues · ~3.0d est remaining
 - **UAT Start:** 2026-04-03T00:00:00.000Z
 - **Roadmap:** Enhance Core Configurability
 - **Product Assignee:** Ben Belanger, Pierre Klein
-

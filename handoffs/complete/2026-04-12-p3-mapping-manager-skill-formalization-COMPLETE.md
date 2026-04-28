@@ -9,7 +9,7 @@ domain: handoffs/complete
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)
 > **Assigned to:** Ben
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P3
 > **v1.0**
 > **STATUS**: ✅ COMPLETE — 2026-04-26
@@ -20,7 +20,7 @@ Converted to task: mapping-manager-skill-formalization. Design conversation need
 
 ## Context
 
-With the consolidation of mapping logic into `skills/memory/mapping/`, there is now a centralized source of truth for interpretive logic (like OKR status health). However, these files are currently static. A "Mapping Manager" skill is needed to oversee consistency — defining how mappings get updated and validated as the vault evolves.
+With the consolidation of mapping logic into `skills/memory/mapping/`, there is now a centralized source of truth for interpretive logic (like OKR status health). However, these files are currently static. A "Mapping Manager" skill is needed to oversee consistency — defining how mappings get updated and validated as the repo evolves.
 
 ## Tasks
 

@@ -10,11 +10,11 @@ domain: handoffs/complete
 
 > **Prepared by:** Code (Gemini) (2026-04-27)
 > **Assigned to:** Code
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **STATUS**: ✅ COMPLETE — 2026-04-27
 
-Resolved ~40 ghost links by adding 'archive' to SKIP_DIRS in the links sensor. 0 ghost links remaining vault-wide.
+Resolved ~40 ghost links by adding 'archive' to SKIP_DIRS in the links sensor. 0 ghost links remaining repo-wide.
 
 ---
 

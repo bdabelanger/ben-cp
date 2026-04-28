@@ -12,7 +12,7 @@ form: poem
 A name is called across the hall,
 From uncle's pride and poets' toil;
 A watcher standing near the wall,
-To guard the creed and vault's own soil.
+To guard the creed and repo's own soil.
 
 Not mine to mend the broken line,
 Nor mine to weave the thread anew;

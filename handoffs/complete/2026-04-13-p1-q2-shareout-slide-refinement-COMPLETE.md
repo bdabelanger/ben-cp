@@ -9,7 +9,7 @@ domain: handoffs/complete
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-13)
 > **Assigned to:** Gemma
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P1
 > **STATUS**: ✅ COMPLETE
 
@@ -17,7 +17,7 @@ Synthesized customer quotes and live project status into a cohesive set of slide
 
 ---
 
-## Source Files (all in vault)
+## Source Files (all in repo)
 
 | File | Path |
 |------|------|

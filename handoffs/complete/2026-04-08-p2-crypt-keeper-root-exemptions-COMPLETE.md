@@ -7,8 +7,8 @@ domain: handoffs/complete
 
 # Claude Code Implementation Plan: Document Root-Level File Exemptions in AGENTS.md
 
-> **Prepared by:** Vault Auditor (scheduled run, 2026-04-08)
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Prepared by:** Repo Auditor (scheduled run, 2026-04-08)
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P2 — structural violation (AGENTS.md compliance)
 > **Source report:** `skills/knowledge/reports/knowledge-report-2026-04-08.md`
 > **v1.0**
@@ -22,9 +22,9 @@ On reading `AGENTS.md`, the exemption list already contained `CLAUDE.md` and `RE
 
 ## Context
 
-Vault Auditor Check 2 flagged two files at vault root that are not listed in
+Repo Auditor Check 2 flagged two files at repo root that are not listed in
 AGENTS.md's explicit exemptions: `CLAUDE.md` and `README.md`. The current rule
-reads: "Never create files at vault root (except `AGENTS.md`, `GEMMA.md`,
+reads: "Never create files at repo root (except `AGENTS.md`, `GEMMA.md`,
 `changelog.md`)."
 
 - `README.md` is standard GitHub convention — it belongs at root and should be
@@ -63,17 +63,17 @@ Assess:
 
 Find the line:
 ```
-**Never create files at vault root** (except `AGENTS.md`, `GEMMA.md`, `changelog.md`).
+**Never create files at repo root** (except `AGENTS.md`, `GEMMA.md`, `changelog.md`).
 ```
 
 Replace with:
 ```
-**Never create files at vault root** (except `AGENTS.md`, `CLAUDE.md`, `GEMMA.md`, `README.md`, `changelog.md`).
+**Never create files at repo root** (except `AGENTS.md`, `CLAUDE.md`, `GEMMA.md`, `README.md`, `changelog.md`).
 ```
 
 If Task 1 determined `CLAUDE.md` should be deleted, omit it from the exemption list and use:
 ```
-**Never create files at vault root** (except `AGENTS.md`, `GEMMA.md`, `README.md`, `changelog.md`).
+**Never create files at repo root** (except `AGENTS.md`, `GEMMA.md`, `README.md`, `changelog.md`).
 ```
 
 Use `edit_file` — do not `write_file` on AGENTS.md.
@@ -97,7 +97,7 @@ If retaining, skip this task.
 Write changelog entries using `write_changelog_entry`:
 
 **Subdirectory level** (`skills/knowledge/changelog.md`):
-- Note: AGENTS.md root exemption list updated per Vault Auditor flag 2.2–2.3
+- Note: AGENTS.md root exemption list updated per Repo Auditor flag 2.2–2.3
 - Include disposition of CLAUDE.md (retained or deleted)
 
 **Root level** (`changelog.md`):

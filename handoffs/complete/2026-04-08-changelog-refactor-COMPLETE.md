@@ -8,7 +8,7 @@ domain: handoffs/complete
 # Claude Code Implementation Plan: Wrap-Up & Changelog Refactor
 
 > **Prepared by:** Claude (Cowork session, 2026-04-08)
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **v1.0**
 > **STATUS**: ✅ COMPLETE
 
@@ -21,11 +21,11 @@ Agent files updated. See root `changelog.md` entry `[1.1.0]` for full record.
 
 ## Context
 
-The vault used `skills/gemma-wrap-up-latest.md` as a session handoff file —
+The repo used `skills/gemma-wrap-up-latest.md` as a session handoff file —
 a single file that gets overwritten each session. This approach loses history
 and is disconnected from the project's changelog methodology.
 
-**Goal:** Route session wrap-ups into `changelog.md` at vault root as the
+**Goal:** Route session wrap-ups into `changelog.md` at repo root as the
 single versioned record. Define the wrap-up procedure in `skills/changelog/`
 so all agents follow a consistent format. Retire `gemma-wrap-up-latest.md`.
 

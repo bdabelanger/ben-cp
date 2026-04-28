@@ -9,12 +9,12 @@ domain: handoffs/complete
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)
 > **Assigned to:** Claude (Cowork) / Claude Code
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **v1.1**
 > **STATUS**: ✅ COMPLETE
 
-Established a sealed proxy bucket using symlinks to map hidden local files (`~/.claude/` and `~/.gemini/`) natively into the `skills/access/agent-roots/` vault paths. To safeguard GitHub token leakage, deployed a high-priority `.gitignore` file masking the buckets entirely. Finally, updated Changelog Auditor to actively scan these files so Roz can successfully triangulate over-privileged tool sets or stale paths.
+Established a sealed proxy bucket using symlinks to map hidden local files (`~/.claude/` and `~/.gemini/`) natively into the `skills/access/agent-roots/` repo paths. To safeguard GitHub token leakage, deployed a high-priority `.gitignore` file masking the buckets entirely. Finally, updated Changelog Auditor to actively scan these files so Roz can successfully triangulate over-privileged tool sets or stale paths.
 
 **Changelog:** (see root changelog.md)
 
@@ -22,10 +22,10 @@ Established a sealed proxy bucket using symlinks to map hidden local files (`~/.
 ---
 
 ## Context
-Roz was recently launched as the Access Auditor for the `ben-cp` vault. Human user requested that Roz's access and auditing scope be expanded beyond the immediate vault directory to include the local configuration roots for the agents themselves.
+Roz was recently launched as the Access Auditor for the `ben-cp` repo. Human user requested that Roz's access and auditing scope be expanded beyond the immediate repo directory to include the local configuration roots for the agents themselves.
 
 ## The Antigravity Perspective
-For Antigravity, our contextual memory and app settings are natively stored inside `~/.gemini/antigravity/` (specifically, knowledge, persistent `task.md`/`implementation_plan.md` artifacts, and persistent system logs are found in `~/.gemini/antigravity/brain/`). Exposing this root to Roz allows her to formally audit *exactly* what Antigravity remembers, cross-referencing my persistent knowledge with actual vault state. Roz can identify cases where I am holding stale context and recommend cache-clearing procedures.
+For Antigravity, our contextual memory and app settings are natively stored inside `~/.gemini/antigravity/` (specifically, knowledge, persistent `task.md`/`implementation_plan.md` artifacts, and persistent system logs are found in `~/.gemini/antigravity/brain/`). Exposing this root to Roz allows her to formally audit *exactly* what Antigravity remembers, cross-referencing my persistent knowledge with actual repo state. Roz can identify cases where I am holding stale context and recommend cache-clearing procedures.
 
 ## The Claude Perspective
 > **Injected by:** Claude (Cowork) (2026-04-12)
@@ -33,7 +33,7 @@ For Antigravity, our contextual memory and app settings are natively stored insi
 For Claude, the most relevant config artifacts that Roz should audit fall into two directories:
 
 **`~/.claude/`**
-- `settings.json` — global Claude Code settings including permissions, `allowedTools`, and hook configurations. Staleness here means Claude may be operating with outdated tool grants or disallowed patterns that no longer reflect current vault/project state.
+- `settings.json` — global Claude Code settings including permissions, `allowedTools`, and hook configurations. Staleness here means Claude may be operating with outdated tool grants or disallowed patterns that no longer reflect current repo/project state.
 - `projects/` — per-project `.mcp.json` and settings overrides. Worth auditing for orphaned project configs pointing to directories that no longer exist or have changed ownership.
 - `statsig/` / cache files — local feature flag and telemetry cache. Low risk but worth flagging if stale.
 

@@ -1,13 +1,14 @@
 ---
-title: Notes - Global Notes WLV
+title: Notes - Global Notes Workload View
 type: intelligence
 domain: intelligence/product/projects/q2
+taxonomy: Notes, Workload View
 links:
   asana: https://app.asana.com/1/1123317448830974/project/1210368097846960
 ---
 
 
-# Notes - Global Notes WLV
+# Notes - Global Notes Workload View
 
 - **GID:** 1210368097846960
 - **Permalink:** https://app.asana.com/1/1123317448830974/project/1210368097846960
@@ -40,7 +41,7 @@ links:
 - **UAT Start:** 2026-06-18T00:00:00.000Z
 - **Roadmap:** Ease Navigation Burdens
 
-## Global Notes WLV (GID: 1210368097846960)
+## Global Notes Workload View (GID: 1210368097846960)
 
 ... [Existing Content] ...
 

@@ -9,12 +9,12 @@ domain: handoffs/complete
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-13)
 > **Assigned to:** Claude
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **v1.0**
 > **STATUS**: ✅ COMPLETE
 
-Migrated weekly-status-update skill into the vault at skills/product/weekly-status/. Source content taken from the Cowork plugin spec shared in-session. Created index.md, procedure.md (full four-step spec: Asana fetch + bucketing, Jira fetch + status overrides + batching, card format with all emoji/flag/time bar rules, report structure with data quality and summary sections), and changelog.md. Updated product/index.md and skills/index.md. Cowork plugin remains the runtime version; vault is now the canonical reference.
+Migrated weekly-status-update skill into the repo at skills/product/weekly-status/. Source content taken from the Cowork plugin spec shared in-session. Created index.md, procedure.md (full four-step spec: Asana fetch + bucketing, Jira fetch + status overrides + batching, card format with all emoji/flag/time bar rules, report structure with data quality and summary sections), and changelog.md. Updated product/index.md and skills/index.md. Cowork plugin remains the runtime version; repo is now the canonical reference.
 
 **Changelog:** (see root changelog.md)
 
@@ -23,7 +23,7 @@ Migrated weekly-status-update skill into the vault at skills/product/weekly-stat
 
 ## Context
 
-The `weekly-status-update` skill lives in Ben's Cowork plugin. It generates the Platform weekly status report from Asana project data and linked Jira child issues. This handoff tracks its migration into the vault.
+The `weekly-status-update` skill lives in Ben's Cowork plugin. It generates the Platform weekly status report from Asana project data and linked Jira child issues. This handoff tracks its migration into the repo.
 
 **Status:** ✅ Already executed this session (2026-04-12). Closing for record-keeping.
 
@@ -37,5 +37,5 @@ The `weekly-status-update` skill lives in Ben's Cowork plugin. It generates the 
 
 ## Next Tasks
 
-1. Keep vault procedure.md in sync when plugin SKILL.md is updated
+1. Keep repo procedure.md in sync when plugin SKILL.md is updated
 2. Consider whether weekly-status and status-reports/ should be consolidated — they cover similar ground from different angles

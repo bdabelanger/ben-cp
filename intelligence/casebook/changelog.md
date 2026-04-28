@@ -25,7 +25,7 @@ domain: intelligence/casebook
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/skill-builder/styles/index.md` — Created — new directory TOC for styles/ ✅ Complete
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/skill-builder/rules/` — Removed empty directory ✅ Complete
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/data_sources.md` — Added Database (Direct) — Portal KRs section + /portal GA proxy row with engineering note ✅ Complete
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Added SKILL.md/AGENTS.md naming exemption; updated vault tree (removed root reports/, added knowledge/reports/); updated File Placement table; root exemptions already had CLAUDE.md and README.md ✅ Complete
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Added SKILL.md/AGENTS.md naming exemption; updated repo tree (removed root reports/, added knowledge/reports/); updated File Placement table; root exemptions already had CLAUDE.md and README.md ✅ Complete
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/reports/` — Removed root reports/ directory (git rm -r); content already existed in skills/knowledge/reports/ ✅ Complete
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/procedure.md` — Updated output path from reports/ to skills/knowledge/reports/; added archive step to Pre-Flight ✅ Complete
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoff/complete/2026-04-08-changelog-refactor-COMPLETE.md` — Renamed from 2026-04-08-changelog-refactor.md (added -COMPLETE suffix) ✅ Complete
@@ -35,7 +35,7 @@ domain: intelligence/casebook
 
 **Handoff:** `handoff/2026-04-08-p2-changelog-factcheck-COMPLETE.md`
 
-**Next:** Run Vault Auditor to verify all P1/P2 flags from 2026-04-08 report are resolved
+**Next:** Run Repo Auditor to verify all P1/P2 flags from 2026-04-08 report are resolved
 
 
 ## [1.2.0] — All Unexposed Functions Wired as MCP Tools (2026-04-08)
@@ -56,7 +56,7 @@ domain: intelligence/casebook
 - `skills/casebook/admin/index.md` — fully documented: auth, 7 MCP tools, 3 unexposed API functions, key files
 - `skills/casebook/subscriptions/index.md` — fully documented: auth, 1 MCP tool, 3 unexposed API functions including write op flag, key files
 - `skills/casebook/index.md` — updated directory names, added port column
-- `AGENTS.md` — vault tree updated
+- `AGENTS.md` — repo tree updated
 
 **Flags:**
 - `chargebeeUpdateSubscriptionItems` in `casebook-billing-mcp/src/casebook-api.ts` is a write op not exposed as an MCP tool — flagged in subscriptions/index.md

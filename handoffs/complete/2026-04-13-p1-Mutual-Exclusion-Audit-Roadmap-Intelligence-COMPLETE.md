@@ -9,11 +9,11 @@ domain: handoffs/complete
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-13)
 > **Assigned to:** Claude
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P1
 > **STATUS**: ✅ COMPLETE
 
-Audited 18+ project files and 10+ OKR/KR files in the Q2 roadmap. Implemented 'OKR Mapping' in tactical project files and 'Constituent Projects' lists in strategic OKR/KR files using vault-relative paths. Verified the separation of concerns, ensuring project files focus on technical status while OKR files handle governance and measurement methodology.
+Audited 18+ project files and 10+ OKR/KR files in the Q2 roadmap. Implemented 'OKR Mapping' in tactical project files and 'Constituent Projects' lists in strategic OKR/KR files using repo-relative paths. Verified the separation of concerns, ensuring project files focus on technical status while OKR files handle governance and measurement methodology.
 
 ---
 
@@ -45,7 +45,7 @@ To prevent data duplication and agent confusion, we are enforcing a strict separ
 3. **Data Cleanup**:
     - If you find a Project file containing deep KR methodology/baselines, move that data to the OKR file.
     - If you find an OKR file containing tactical Jira updates, move that data to the Project file.
-4. **Link Integrity**: Use vault-relative paths for all links.
+4. **Link Integrity**: Use repo-relative paths for all links.
 
 ## Success Criteria
 - [ ] Every project in `roadmap/projects/q2/` has an "OKR Mapping" field or link.

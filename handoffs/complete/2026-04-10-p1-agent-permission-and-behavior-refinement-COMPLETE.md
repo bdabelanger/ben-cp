@@ -8,12 +8,12 @@ domain: handoffs/complete
 
 > **Prepared by:** Antigravity (Initial Concept, 2026-04-10) — updated by Claude via Dispatch (2026-04-11, 2026-04-12)
 > **Assigned to:** Claude
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P1 — Process refinement and new agent definition
 > **v1.3**
 > **STATUS**: ✅ COMPLETE
 
-Launched Roz (Access Auditor) and refined the synergy between her and Changelog Auditor. Implemented a mandatory Artifact-First Workflow policy in AGENTS.md to improve vault safety and human oversight. Verified Check 8 (Lingering Plans) with a successful decoy cleanup.
+Launched Roz (Access Auditor) and refined the synergy between her and Changelog Auditor. Implemented a mandatory Artifact-First Workflow policy in AGENTS.md to improve repo safety and human oversight. Verified Check 8 (Lingering Plans) with a successful decoy cleanup.
 
 **Changelog:** (see root changelog.md)
 
@@ -34,7 +34,7 @@ When an agent needs information or capability outside its defined scope, it does
 
 - **Roz** cannot directly audit changelog accuracy — that is Changelog Auditor's domain. If Roz needs changelog context to understand an agent's activity pattern, she reads Changelog Auditor's output, not the changelogs themselves.
 - **Changelog Auditor** cannot directly check current agent permission definitions — that is Roz's domain. If Changelog Auditor flags an out-of-scope file touch, it records the finding and yields to Roz for follow-up.
-- **Vault Auditor** does not enforce access policy — that is Roz's domain. If Vault Auditor finds a vault integrity issue that implicates agent permissions, it surfaces the finding for Roz.
+- **Repo Auditor** does not enforce access policy — that is Roz's domain. If Repo Auditor finds a repo integrity issue that implicates agent permissions, it surfaces the finding for Roz.
 - **Robert** monitors `AGENTS.md` integrity only. He does not read agent skill directories or session logs. If he needs to verify that a rule is being followed in practice, he surfaces it as an open question for Changelog Auditor or Roz.
 
 **Runners / mycelium layer** — still TBD as a concept, but the core idea is a stateless connective layer that moves structured outputs between agents without interpreting or deciding anything. Named agents define what to check and produce structured output; runners (or equivalent) transport it to where it needs to go. All judgment stays with named agents. This keeps lanes clean even as information flows between them. Design is human user's call — this is noted here for the receiving agent to confirm with human user before implementing.
@@ -98,7 +98,7 @@ In the dream cycle, Changelog Auditor runs before Roz. Roz may reference Changel
 
 ## Task 5: Define and Create Roz
 
-**Roz's role:** Access auditor for agents. She ensures each agent in the vault has the access needed for its functions and not more. She is not a gatekeeper in real-time — she audits after the fact and flags violations in her dream cycle segment.
+**Roz's role:** Access auditor for agents. She ensures each agent in the repo has the access needed for its functions and not more. She is not a gatekeeper in real-time — she audits after the fact and flags violations in her dream cycle segment.
 
 **Confirmed character details from Ben:**
 - Reports in short log format
@@ -106,7 +106,7 @@ In the dream cycle, Changelog Auditor runs before Roz. Roz may reference Changel
 - Focuses on outliers: agents touching files outside their defined scope, unexpected permission patterns, or access that has expanded without a corresponding AGENTS.md update
 - Works in tandem with Changelog Auditor (reads Changelog Auditor's output; does not re-audit changelogs directly)
 - Participates in nightly dream cycles
-- If Roz needs something checked that falls outside her defined access, she delegates to a runner or to Changelog Auditor/Vault Auditor based on their predefined access and output requirements — she does not expand her own access
+- If Roz needs something checked that falls outside her defined access, she delegates to a runner or to Changelog Auditor/Repo Auditor based on their predefined access and output requirements — she does not expand her own access
 
 **What to create:**
 
@@ -131,9 +131,9 @@ END
 
 No narrative. No "all clear" lines for clean agents. Timestamp, agent name, anomaly. If nothing to flag, Roz does not appear in the dream report.
 
-**Register Roz in `AGENTS.md`** after creating her skill directory. Include her phase in the dream cycle (Phase 4, after Vault Auditor).
+**Register Roz in `AGENTS.md`** after creating her skill directory. Include her phase in the dream cycle (Phase 4, after Repo Auditor).
 
-**Also create `character.md` files for existing agents** as part of this work — this is a new convention introduced with dream cycles. Create them for: Robert, Changelog Auditor, Vault Auditor, and Roz. Each file defines voice, tone, and dream cycle segment format.
+**Also create `character.md` files for existing agents** as part of this work — this is a new convention introduced with dream cycles. Create them for: Robert, Changelog Auditor, Repo Auditor, and Roz. Each file defines voice, tone, and dream cycle segment format.
 
 ---
 
@@ -145,7 +145,7 @@ Write changelog entries (subdirectory first, then root), then mark this file com
 
 ## Notes for This Agent
 
-- Roz is new and not yet in `AGENTS.md` or the vault. Do not assume she exists — create her from scratch using the description in Task 5.
+- Roz is new and not yet in `AGENTS.md` or the repo. Do not assume she exists — create her from scratch using the description in Task 5.
 - Confirm Roz's exact check list with human user before writing her `procedure.md`. The access log format is confirmed but the specific checks she runs (which files, which agents, what counts as out-of-scope) need to be defined collaboratively.
 - **The inter-agent collaboration model is a first-class rule, not a suggestion.** When encoding it in `AGENTS.md`, treat it as a constraint equal in weight to the artifact scoping policy. Every agent's `index.md` should include a section called "Delegation" that names which agents it may request from and for what.
 - Strategic PM is intended to eventually become an MCP-level tool. For now it is a manual documentation convention.

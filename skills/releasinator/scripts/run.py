@@ -24,10 +24,10 @@ except ImportError:
     sys.exit(1)
 
 SCRIPT_DIR    = os.path.dirname(os.path.abspath(__file__))
-VAULT_ROOT    = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "..", ".."))
-REPORT_DIR    = os.path.join(VAULT_ROOT, "reports", "releasinator")
+REPO_ROOT    = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "..", ".."))
+REPORT_DIR    = os.path.join(REPO_ROOT, "reports", "releasinator")
 REPORT_PATH   = os.path.join(REPORT_DIR, "report.md")
-ENV_PATH      = os.path.join(VAULT_ROOT, ".env")
+ENV_PATH      = os.path.join(REPO_ROOT, ".env")
 
 JIRA_BASE     = "https://casecommons.atlassian.net/rest/api/3"
 JIRA_DEV_BASE = "https://casecommons.atlassian.net/rest/dev-status/latest"
@@ -39,6 +39,9 @@ PROJECTS = {
     "CBP":  {"prefix": "Platform-", "label": "Platform"},
     "DATA": {"prefix": "Data-",     "label": "Data"},
 }
+
+STAGING_BRANCH = "develop"
+PRODUCTION_BRANCH = "master"
 
 BE_MIGRATION_TYPES = {"BE Migration", "Backend Migration"}
 
@@ -171,41 +174,72 @@ def get_prs_for_issue_via_jira(issue):
 # ---------------------------------------------------------------------------
 
 def search_github_prs(query):
+    """General GitHub search for PRs/Issues."""
     def _do():
         resp = requests.get(
             f"{GITHUB_BASE}/search/issues",
-            params={"q": query, "per_page": 50},
+            params={"q": query, "per_page": 100},
             auth=github_auth(), headers={"Accept": "application/vnd.github+json"}, timeout=30
         )
         resp.raise_for_status()
         return resp.json().get("items", [])
     return call_with_retry(_do)
 
+def get_last_production_commit_date(repo_path):
+    """Return the timestamp of the last commit on master."""
+    def _do():
+        resp = requests.get(
+            f"{GITHUB_BASE}/repos/{repo_path}/commits/{PRODUCTION_BRANCH}",
+            auth=github_auth(), headers={"Accept": "application/vnd.github+json"}, timeout=30
+        )
+        if resp.status_code == 404: return None
+        resp.raise_for_status()
+        return resp.json()["commit"]["committer"]["date"]
+    return call_with_retry(_do)
+
+def get_merged_prs_since(repo_path, date):
+    """Find PRs merged into develop since a given date."""
+    query = f"is:pr is:merged repo:{repo_path} base:{STAGING_BRANCH} merged:>{date}"
+    return search_github_prs(query)
+
+def get_staging_comparison(repo_path):
+    """Check if develop is ahead of master."""
+    def _do():
+        resp = requests.get(
+            f"{GITHUB_BASE}/repos/{repo_path}/compare/{PRODUCTION_BRANCH}...{STAGING_BRANCH}",
+            auth=github_auth(), headers={"Accept": "application/vnd.github+json"}, timeout=30
+        )
+        if resp.status_code == 404: return None
+        resp.raise_for_status()
+        return resp.json()
+    return call_with_retry(_do)
+
 def get_qa_to_master_prs():
-    return search_github_prs(f"is:pr is:open user:{GITHUB_ORG} head:qa base:master")
+    """Legacy check for open PRs - still useful for discovery but secondary to branch comparison."""
+    return search_github_prs(f"is:pr is:open user:{GITHUB_ORG} head:{STAGING_BRANCH} base:{PRODUCTION_BRANCH}")
 
 def repo_url_from_pr_url(html_url):
     idx = html_url.find("/pull")
     return html_url[:idx] if idx != -1 else html_url
 
 def get_in_flight_jira_keys(repo_url, project_key):
-    """Compare master...qa to find Jira keys riding out in this release."""
+    """Find Jira keys in PRs merged to develop since last production push. Returns dict: key -> list of PR objects."""
     repo_path = repo_url.replace("https://github.com/", "")
-    resp = requests.get(
-        f"{GITHUB_BASE}/repos/{repo_path}/compare/master...qa",
-        auth=github_auth(),
-        headers={"Accept": "application/vnd.github+json"},
-        timeout=30
-    )
-    if resp.status_code == 404:
-        return set()
-    resp.raise_for_status()
-    keys = set()
-    pattern = re.compile(rf'{project_key}-\d+')
-    for commit in resp.json().get("commits", []):
-        msg = commit.get("commit", {}).get("message", "")
-        keys.update(pattern.findall(msg))
-    return keys
+    last_push = get_last_production_commit_date(repo_path)
+    if not last_push:
+        return {}
+
+    prs = get_merged_prs_since(repo_path, last_push)
+    key_to_prs = {}
+    pattern = re.compile(rf'{project_key}-\d+', re.IGNORECASE)
+
+    for pr in prs:
+        text = f"{pr.get('title', '')} {pr.get('body', '')}"
+        keys = set(k.upper() for k in pattern.findall(text))
+        for key in keys:
+            key_to_prs.setdefault(key, []).append(pr)
+    
+    return key_to_prs
 
 # ---------------------------------------------------------------------------
 # PR normalisation
@@ -291,7 +325,7 @@ def _collect_prs(issues, label_prefix):
 
     return items, all_release_repos, already_merged_repos
 
-def run_project_pipeline(project_key, release_name, extra_jql, qa_master_items):
+def run_project_pipeline(project_key, release_name, extra_jql):
     label = PROJECTS[project_key]["label"]
     print(f"\n  [{label}]")
 
@@ -316,30 +350,50 @@ def run_project_pipeline(project_key, release_name, extra_jql, qa_master_items):
     all_release_repos    = repos_main | repos_migr
     already_merged_repos = merged_main | merged_migr
 
-    # Repos to bump: in-flight repos that have an open qa→master PR
-    qa_master_repos = {
-        repo_url_from_pr_url(item.get("html_url", ""))
-        for item in qa_master_items
-    }
-    repos_to_bump = all_release_repos & qa_master_repos
+    # Repos to bump: any repo in the release where develop is ahead of master
+    repos_to_bump = set()
+    for repo_url in all_release_repos:
+        repo_path = repo_url.replace("https://github.com/", "")
+        comparison = get_staging_comparison(repo_path)
+        if comparison and comparison.get("ahead_by", 0) > 0:
+            repos_to_bump.add(repo_url)
+    
+    print(f"  {len(repos_to_bump)} repos needing bump")
 
-    # Leak detection: compare master...qa per repo, extract keys not in this release
-    leaked_keys      = set()
+    # Leak detection: parse PRs merged to develop since last push
+    leaked_keys       = set()
     leaked_pr_sources = {}
     for repo in all_release_repos:
-        keys = get_in_flight_jira_keys(repo, project_key)
-        for key in keys:
+        key_to_prs = get_in_flight_jira_keys(repo, project_key)
+        for key, prs in key_to_prs.items():
             if key not in found_keys:
                 leaked_keys.add(key)
-                leaked_pr_sources.setdefault(key, []).append(repo)
+                # Store normalized PR objects for the report
+                leaked_pr_sources.setdefault(key, []).extend(
+                    normalise_pr(p, "github") for p in prs
+                )
 
-    print(f"  {len(leaked_keys)} potential leaks")
-    leaked_details_list = get_jira_issues_by_keys(list(leaked_keys), ff_field) if leaked_keys else []
-    leaked_details      = {i["key"]: i for i in leaked_details_list}
+    print(f"  {len(leaked_keys)} candidate leaks")
+    
+    # Filter leaks by Jira status
+    validated_leaked_keys = set()
+    if leaked_keys:
+        leak_details_list = get_jira_issues_by_keys(list(leaked_keys), ff_field)
+        for issue in leak_details_list:
+            status_category = (issue.get("fields", {}).get("status", {}).get("statusCategory") or {}).get("key")
+            # Filter out 'done' (green) category
+            if status_category != "done":
+                validated_leaked_keys.add(issue["key"])
+        
+        leaked_details = {i["key"]: i for i in leak_details_list if i["key"] in validated_leaked_keys}
+    else:
+        leaked_details = {}
+
+    print(f"  {len(validated_leaked_keys)} validated leaks (non-Done status)")
 
     all_leak_repos = set()
     leak_items     = []
-    for key in leaked_keys:
+    for key in validated_leaked_keys:
         issue_obj = leaked_details.get(key)
         if issue_obj:
             raw_prs = get_prs_for_issue_via_jira(issue_obj)
@@ -367,7 +421,7 @@ def run_project_pipeline(project_key, release_name, extra_jql, qa_master_items):
         "leak_items":          leak_items,
         "leak_repos":          all_leak_repos - all_release_repos,
         "flags_on":            extract_feature_flags(main_issues, ff_field),
-        "flags_leave":         extract_feature_flags(leaked_details_list, ff_field),
+        "flags_leave":         extract_feature_flags(list(leaked_details.values()), ff_field),
     }
 
 # ---------------------------------------------------------------------------
@@ -403,7 +457,7 @@ def render_issues_table(issues_with_prs):
     return "\n".join(lines)
 
 def render_leaks_table(leak_items):
-    lines = ["| Key | Summary | Status | Assignee | Found in Repo |", "|---|---|---|---|---|"]
+    lines = ["| Key | Summary | Status | Assignee | Found in PRs |", "|---|---|---|---|---|"]
     for item in sorted(leak_items, key=lambda x: x["key"]):
         key      = item["key"]
         details  = item.get("details") or {}
@@ -412,8 +466,8 @@ def render_leaks_table(leak_items):
         status   = f.get("status", {}).get("name", "")
         assignee = (f.get("assignee") or {}).get("displayName", "—")
         found_in = ", ".join(
-            f"[{u.split('/')[-1]}]({u})"
-            for u in item.get("found_in_prs", [])
+            pr_link(pr)
+            for pr in item.get("found_in_prs", [])
         ) or "—"
         lines.append(f"| {issue_link(key)} | {summary} | {status} | {assignee} | {found_in} |")
     return "\n".join(lines)
@@ -546,13 +600,9 @@ def main():
     project_str = " + ".join(args.project)
     print(f"🚀 Releasinator — {args.release} ({project_str})")
 
-    print("\n  Fetching open qa→master PRs...")
-    qa_master_items = get_qa_to_master_prs()
-    print(f"  Found {len(qa_master_items)} open qa→master PRs")
-
     results = []
     for project_key in args.project:
-        result = run_project_pipeline(project_key, args.release, args.jql, qa_master_items)
+        result = run_project_pipeline(project_key, args.release, args.jql)
         if result:
             results.append(result)
 

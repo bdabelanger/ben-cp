@@ -2,7 +2,7 @@
 
 > **Prepared by:** Code (Gemini) (2026-04-27)
 > **Assigned to:** Cowork (Sonnet 4.6)
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **STATUS**: ✅ COMPLETE — 2026-04-27
 
@@ -26,7 +26,7 @@ Run the Releasinator for `2026-5-1`, review the output with Ben, and confirm it'
 python3 "skills/releasinator/scripts/run.py" --release "2026-5-1"
 ```
 
-Vault root: `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+Repo root: `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 
 This will take a few minutes due to GitHub Search API rate limiting — that's expected and a known issue (a P2 handoff exists to fix it via Jira dev-status API).
 

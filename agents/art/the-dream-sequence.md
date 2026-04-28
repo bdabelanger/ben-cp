@@ -17,7 +17,7 @@ Before the morning's duty calls.
 The structural floor is swept and clean,
 The audit trail is traced and told;
 No drift within the creed is seen,
-The vault is firm, the structure bold.
+The repo is firm, the structure bold.
 
 We check the count, we fix the name,
 We archive days that went before;

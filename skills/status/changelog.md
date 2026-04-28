@@ -30,6 +30,6 @@ Resolved the data discrepancy issue where stale local caches were preventing acc
 - **Dream Report Fix**: Corrected data path in `tools/product/projects/report.py` to use fresh harvested data.
 - **UI Enhancements**: Standardized external links to open in new tabs and restored the Asana icon.
 
-## 2026-04-12 — Initial vault migration
+## 2026-04-12 — Initial repo migration
 
-Migrated project reporting skill components into vault.
+Migrated project reporting skill components into repo.

@@ -9,7 +9,7 @@ domain: handoffs/complete
 
 > **Prepared by:** Code (Gemini) (2026-04-26)
 > **Assigned to:** Code
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **STATUS**: ✅ COMPLETE — 2026-04-26
 
@@ -46,13 +46,13 @@ The `get_intelligence` tool is scoped to `intelligence/` only. The `get_handoff`
 
 This forced Cowork to fall back to `mcp__filesystem__read_text_file` with a raw absolute path — a brittle workaround that:
 - Exposes internal Google Drive mount paths to the agent context
-- Breaks if the vault is moved or remounted
+- Breaks if the repo is moved or remounted
 - Bypasses the ben-cp abstraction layer entirely
 - Is not reliable on Google Drive due to sync latency (files may not be flushed to disk at the moment of read, causing stale or missing content)
 
 ### Problem 3: Google Drive sync latency
 
-The vault lives on Google Drive (`/Users/benbelanger/My Drive (.../ben-cp`). Direct filesystem reads of pipeline outputs are unreliable because Google Drive does not guarantee immediate local availability of recently written files. The dream report written by the pipeline may not be readable via filesystem tools until Drive has synced — this is an intermittent failure mode with no clear error signal.
+The repo lives on Google Drive (`/Users/benbelanger/My Drive (.../ben-cp`). Direct filesystem reads of pipeline outputs are unreliable because Google Drive does not guarantee immediate local availability of recently written files. The dream report written by the pipeline may not be readable via filesystem tools until Drive has synced — this is an intermittent failure mode with no clear error signal.
 
 ---
 
@@ -82,4 +82,4 @@ Add a note in the ben-cp server README or AGENTS.md that direct filesystem reads
 
 - `generate_report(skill='dream')` runs successfully without a path error
 - Cowork can read `daily-report.md` via a ben-cp MCP tool without using `mcp__filesystem__read_text_file`
-- No raw Google Drive absolute paths appear in agent tool calls for routine vault operations
+- No raw Google Drive absolute paths appear in agent tool calls for routine repo operations

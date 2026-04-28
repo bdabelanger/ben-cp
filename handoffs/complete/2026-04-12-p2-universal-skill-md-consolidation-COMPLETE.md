@@ -9,12 +9,12 @@ domain: handoffs/complete
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)
 > **Assigned to:** Claude Code / Antigravity
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **v1.0**
 > **STATUS**: ✅ COMPLETE
 
-Audited the vault for the dual `procedure.md` / `SKILL.md` paradigm. Successfully identified the two domains (Knowledge and Access) containing structural duplicates. Rewrote both central `SKILL.md` files to natively incorporate exact procedural mechanisms, checklists, priorities, and workflow loops. Safely deleted the deprecated `procedure.md` files and routed all index pointers straight to `SKILL.md`.
+Audited the repo for the dual `procedure.md` / `SKILL.md` paradigm. Successfully identified the two domains (Knowledge and Access) containing structural duplicates. Rewrote both central `SKILL.md` files to natively incorporate exact procedural mechanisms, checklists, priorities, and workflow loops. Safely deleted the deprecated `procedure.md` files and routed all index pointers straight to `SKILL.md`.
 
 **Changelog:** (see root changelog.md)
 
@@ -22,7 +22,7 @@ Audited the vault for the dual `procedure.md` / `SKILL.md` paradigm. Successfull
 ---
 
 ## Context
-Currently, many functional domains within the vault (e.g. `skills/knowledge/`) suffer from mechanical redundancy by possessing both a `procedure.md` and a `SKILL.md` file. Claude's MCP conventions rely natively on parsing a defined `SKILL.md` file within a tool directory to understand its constraints and actions.
+Currently, many functional domains within the repo (e.g. `skills/knowledge/`) suffer from mechanical redundancy by possessing both a `procedure.md` and a `SKILL.md` file. Claude's MCP conventions rely natively on parsing a defined `SKILL.md` file within a tool directory to understand its constraints and actions.
 
 ## Execution Plan
 1. Audit the entire `skills/` directory tree.

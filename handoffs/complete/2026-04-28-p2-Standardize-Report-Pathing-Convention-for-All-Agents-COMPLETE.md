@@ -2,7 +2,7 @@
 
 > **Prepared by:** Cowork (2026-04-28)
 > **Assigned to:** Code
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **STATUS**: ✅ COMPLETE — 2026-04-28
 
@@ -14,7 +14,7 @@ Added list_reports row, cleaned up generate_report (removed hardcoded examples),
 
 Three documentation issues were found in the MCP Tools table in `AGENTS.md`:
 
-1. `generate_report` references `platform` as an example domain — this domain does not exist in the vault. Valid domains are discoverable via `list_reports`.
+1. `generate_report` references `platform` as an example domain — this domain does not exist in the repo. Valid domains are discoverable via `list_reports`.
 2. `get_report` has no row at all — agents have been guessing the path format and getting it wrong (e.g. `skills/status/report.md`).
 3. `list_reports` has no row at all — agents have no documented way to discover valid report domains.
 

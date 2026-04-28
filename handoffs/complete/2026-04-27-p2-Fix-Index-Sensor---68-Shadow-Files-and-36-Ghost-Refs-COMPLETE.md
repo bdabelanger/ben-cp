@@ -9,11 +9,11 @@ domain: handoffs
 
 > **Prepared by:** Code (Gemini) (2026-04-27) — patched by Dream (Claude) 2026-04-26T22:45
 > **Assigned to:** Code
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **STATUS**: ✅ COMPLETE — 2026-04-27
 
-Successfully resolved all shadow files and ghost refs. Fixed the underlying issue in the index sensor that was incorrectly flagging relative subdirectory links as ghost refs, and correctly implemented a script to add missing file references to index.md files across the vault. The index sensor now reports 0 issues.Scan
+Successfully resolved all shadow files and ghost refs. Fixed the underlying issue in the index sensor that was incorrectly flagging relative subdirectory links as ghost refs, and correctly implemented a script to add missing file references to index.md files across the repo. The index sensor now reports 0 issues.Scan
 
 ---
 

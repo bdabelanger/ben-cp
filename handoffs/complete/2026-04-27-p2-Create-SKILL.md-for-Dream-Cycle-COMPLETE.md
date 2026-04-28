@@ -9,7 +9,7 @@ domain: handoffs/complete
 
 > **Prepared by:** Code (Gemini) (2026-04-27)
 > **Assigned to:** Code
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **STATUS**: ✅ COMPLETE — 2026-04-27
 
@@ -26,7 +26,7 @@ Created skills/dream/SKILL.md with the full operating procedure for the Dream Cy
 
 ## Context
 
-The Dream cycle's full operational instructions currently live inside the scheduled task prompt in Cowork. The goal is to move them into a `SKILL.md` file in the vault so they're version-controlled, editable, and readable by any agent — and the scheduled task prompt becomes a thin launcher.
+The Dream cycle's full operational instructions currently live inside the scheduled task prompt in Cowork. The goal is to move them into a `SKILL.md` file in the repo so they're version-controlled, editable, and readable by any agent — and the scheduled task prompt becomes a thin launcher.
 
 ## Goal
 
@@ -41,13 +41,13 @@ Write the following content exactly to `skills/dream/SKILL.md`:
 
 > **Trigger:** Nightly automated run (22:00) or manual invocation
 > **Agent:** Cowork (Claude)
-> **Purpose:** Run all vault health sensors, triage findings, fix low-risk issues directly, create handoffs for Code, and raise Asana tasks for Ben.
+> **Purpose:** Run all repo health sensors, triage findings, fix low-risk issues directly, create handoffs for Code, and raise Asana tasks for Ben.
 
 ---
 
 ## Overview
 
-The Dream cycle is the vault's nightly health loop. It runs 11 sensors against the vault, analyzes the results, and routes work to the right destination — fixing trivial issues in-place, handing non-trivial work to Code, and surfacing decisions to Ben. Ben's morning briefing is a `Dream Report` handoff waiting for him when he signs in.
+The Dream cycle is the repo's nightly health loop. It runs 11 sensors against the repo, analyzes the results, and routes work to the right destination — fixing trivial issues in-place, handing non-trivial work to Code, and surfacing decisions to Ben. Ben's morning briefing is a `Dream Report` handoff waiting for him when he signs in.
 
 ---
 

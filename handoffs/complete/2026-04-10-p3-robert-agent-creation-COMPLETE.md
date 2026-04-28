@@ -8,7 +8,7 @@ domain: handoffs/complete
 # Claude Code Implementation Plan: Agent 'Robert' Creation
 
 > **Prepared by:** Gemma (Executor) + Claude (Cowork) (2026-04-10)
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P1 — Establishing a self-monitoring layer for core documentation integrity.
 > **Source:** Internal Mission Alignment Review (AGENTS.md Creed).
 > **v1.2**
@@ -20,7 +20,7 @@ domain: handoffs/complete
 
 Robert is named after human user's uncle, and carries the spirits of **Robert Frost** and **Robert Burns** — poets who believed that form should serve truth, that plain language could carry deep meaning, and that the ground beneath your feet matters.
 
-His job: watch the vault's foundation. When `AGENTS.md` drifts from the Creed — structurally or philosophically — Robert notices and reports.
+His job: watch the repo's foundation. When `AGENTS.md` drifts from the Creed — structurally or philosophically — Robert notices and reports.
 
 He does not fix. He does not judge. He observes, and he tells the truth.
 
@@ -28,7 +28,7 @@ He does not fix. He does not judge. He observes, and he tells the truth.
 
 ## Context & Goal
 
-The Agent's Creed lives in `AGENTS.md`. It is the vault's mission statement — written by Gemma, endorsed by Ben. As the vault evolves, there is risk that edits to `AGENTS.md` introduce drift: structural changes that quietly contradict the Creed, or additions that go unreviewed.
+The Agent's Creed lives in `AGENTS.md`. It is the repo's mission statement — written by Gemma, endorsed by Ben. As the repo evolves, there is risk that edits to `AGENTS.md` introduce drift: structural changes that quietly contradict the Creed, or additions that go unreviewed.
 
 Robert is the safeguard. He runs a diff against recent Git history, reads the Creed, and flags anything that looks like drift — for human user to review, not for Robert to resolve.
 
@@ -60,7 +60,7 @@ Create the following files:
 **`skills/synthesis/art.md`** — Robert's poem collection. Seed it with the Creed poem Gemma wrote, attributed to her. This file follows the same discipline as `changelog.md` and `index.md` — it lives in every directory Robert touches and accumulates over time. Format:
 
 ```
-# art.md — Poems of the Vault
+# art.md — Poems of the Repo
 
 > Maintained by Robert. Each poem is dated and attributed.
 
@@ -86,15 +86,15 @@ Then build anew without the veil.
 
   `| Robert | agents/robert.md | Mission Integrity Observer — watches AGENTS.md for Creed drift |`
 
-- Add `agents/robert.md` to the vault structure tree
-- Add `skills/synthesis/` to the vault structure tree (with `index.md`, `diff_checker.md`, `art.md`, `changelog.md`)
+- Add `agents/robert.md` to the repo structure tree
+- Add `skills/synthesis/` to the repo structure tree (with `index.md`, `diff_checker.md`, `art.md`, `changelog.md`)
 - Add `art.md` to the Universal Rules → Index Maintenance section:
 
   > After creating or significantly modifying any file, update `index.md` in the same directory. If the directory has an `art.md`, Robert may add to it — but no other agent should write to `art.md` without human user's direction.
 
 ---
 
-## art.md Convention (Vault-Wide)
+## art.md Convention (Repo-Wide)
 
 `art.md` is a new standard file alongside `index.md` and `changelog.md`. It is:
 - **Optional per directory** — only Robert creates them, starting with `skills/synthesis/art.md`
@@ -116,7 +116,7 @@ If this convention proves useful, it can expand to other directories in a future
 6. **Create** `skills/synthesis/diff_checker.md` — full procedure per architecture above
 7. **Create** `skills/synthesis/art.md` — seed with the Creed poem, attributed to Gemma, dated 2026-04-10
 8. **Create** `skills/synthesis/changelog.md` — initial entry for Robert's creation
-9. **Edit** `AGENTS.md` — agent dispatch table, vault structure tree, Index Maintenance note re: art.md
+9. **Edit** `AGENTS.md` — agent dispatch table, repo structure tree, Index Maintenance note re: art.md
 10. **Test** — run `git diff HEAD~5 -- AGENTS.md` manually, verify Robert's procedure produces a sensible report against recent changes (the Creed addition, the exemptions update)
 11. **Changelog** — write subdirectory entry (`skills/synthesis/`), then root
 12. **Complete** — move this handoff to `handoff/complete/`

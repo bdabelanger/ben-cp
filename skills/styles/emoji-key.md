@@ -7,7 +7,7 @@ domain: skills/styles
 
 # Styles: Visual Glossary (Emoji Indicators)
 
-This is the canonical reference for all visual status indicators and section markers used across the vault. All reports and documentation must adhere to these standards to ensure cognitive consistency.
+This is the canonical reference for all visual status indicators and section markers used across the repo. All reports and documentation must adhere to these standards to ensure cognitive consistency.
 
 ## Status Indicators
 

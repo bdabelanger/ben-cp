@@ -1,15 +1,15 @@
 ---
-title: 'Implementation Plan: Vault Intelligence Re-Indexing Audit'
+title: 'Implementation Plan: Repo Intelligence Re-Indexing Audit'
 type: handoff
 domain: handoffs/complete
 ---
 
 
-# Implementation Plan: Vault Intelligence Re-Indexing Audit
+# Implementation Plan: Repo Intelligence Re-Indexing Audit
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-13)
 > **Assigned to:** Gemma
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P1
 > **Constraint:** DO NOT create new intelligence records. FOCUS on updating `index.md` files and link integrity.
 > **STATUS**: ✅ COMPLETE
@@ -28,7 +28,7 @@ The `intelligence/product/` domain has been reorganized to align with a strategi
 2. **Path Correction**:
     - `intelligence/product/projects/` → `intelligence/product/roadmap/projects/`
     - `intelligence/product/shareout/` → `intelligence/product/roadmap/shareout/`
-3. **Link Verification**: Ensure all `file:///` and relative links in indices point to files that actually exist in the current vault structure.
+3. **Link Verification**: Ensure all `file:///` and relative links in indices point to files that actually exist in the current repo structure.
 4. **Link Consistency**: Prefer relative links within the `intelligence/` domain where possible.
 
 ## Execution Steps

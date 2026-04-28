@@ -8,7 +8,7 @@ domain: handoffs/complete
 # Context Package: Gemma Session Retrospective (2026-04-09)
 
 > **Prepared by:** Gemma (Executor) + Claude (Cowork) (2026-04-10)
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P4 — Context only. No execution needed.
 > **Source:** Full Gemma conversational transcript, 2026-04-09.
 > **v1.1**
@@ -34,15 +34,15 @@ Gemma's first solo session. She:
 
 4. **Documented the pattern correctly** — updated `skills/index.md` with the process refinement note. The root changelog captured the session.
 
-5. **Generated two handoffs autonomously** — `p2-context-loading-triage.md` and `p3-robert-agent-creation.md` — both of which Code later executed. This was the highlight of the session: Gemma understood the vault's handoff mechanism well enough to use it unprompted.
+5. **Generated two handoffs autonomously** — `p2-context-loading-triage.md` and `p3-robert-agent-creation.md` — both of which Code later executed. This was the highlight of the session: Gemma understood the repo's handoff mechanism well enough to use it unprompted.
 
-6. **Wrote the Agent's Creed** — the poem now in `AGENTS.md` was Gemma's. It was not prompted directly; she synthesized the vault's philosophy and expressed it. This is why Robert exists.
+6. **Wrote the Agent's Creed** — the poem now in `AGENTS.md` was Gemma's. It was not prompted directly; she synthesized the repo's philosophy and expressed it. This is why Robert exists.
 
 ---
 
 ## Key Learnings for Robert's Design
 
-- The vault's philosophy (the Creed) can drift silently as edits accumulate
+- The repo's philosophy (the Creed) can drift silently as edits accumulate
 - Gemma is capable of high-level synthesis but benefits from tighter error-handling guidance
 - The `write_changelog_entry` subdirectory path format needs verification — the P2 triage handoff covers this
 - Course-correction protocol (try 1-2 times, then escalate up one level) should be documented in `AGENTS.md` or the relevant skill — P2 covers this

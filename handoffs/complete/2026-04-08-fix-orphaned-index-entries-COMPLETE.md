@@ -8,12 +8,12 @@ domain: handoffs/complete
 # Claude Code Implementation Plan: Fix Orphaned Index Entries + Root Stub
 
 > **Prepared by:** Claude (Cowork session, 2026-04-08)
-> **Source:** Vault Auditor report `reports/knowledge-report-2026-04-08.md` flags 1.1, 1.2, 1.3, 4.1
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Source:** Repo Auditor report `reports/knowledge-report-2026-04-08.md` flags 1.1, 1.2, 1.3, 4.1
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **v1.0**
 > **STATUS**: ✅ COMPLETE
 
-All three tasks executed. `skills/knowledge/index.md` updated with SKILL.md, changelog.md, and reports/ entries. `skills/okr-reporting/index.md` updated with changelog.md entry. `crypt-keeper.md` root stub deleted via `git rm` (confirmed as redirect-only). `vault-cleanup.md` was not present at root — no action needed.
+All three tasks executed. `skills/knowledge/index.md` updated with SKILL.md, changelog.md, and reports/ entries. `skills/okr-reporting/index.md` updated with changelog.md entry. `crypt-keeper.md` root stub deleted via `git rm` (confirmed as redirect-only). `repo-cleanup.md` was not present at root — no action needed.
 
 **Changelog:** 1.6.0 — 2026-04-09 (see root `changelog.md`)
 
@@ -21,10 +21,10 @@ All three tasks executed. `skills/knowledge/index.md` updated with SKILL.md, cha
 
 ## Context
 
-Vault Auditor's first run flagged four quick fixes:
+Repo Auditor's first run flagged four quick fixes:
 - `skills/knowledge/index.md` is missing entries for `SKILL.md` and `changelog.md`
 - `skills/okr-reporting/index.md` is missing an entry for `changelog.md`
-- `crypt-keeper.md` at vault root is a dead redirect stub violating AGENTS.md rules
+- `crypt-keeper.md` at repo root is a dead redirect stub violating AGENTS.md rules
 
 All are small targeted edits. No new files needed.
 
@@ -34,7 +34,7 @@ All are small targeted edits. No new files needed.
 
 1. **Task 1** — Add `SKILL.md` and `changelog.md` to `skills/knowledge/index.md`
 2. **Task 2** — Add `changelog.md` to `skills/okr-reporting/index.md`
-3. **Task 3** — Delete `crypt-keeper.md` at vault root
+3. **Task 3** — Delete `crypt-keeper.md` at repo root
 4. **Task 4** — Final audit and completion report
 
 ---
@@ -64,7 +64,7 @@ Add one row to the contents table:
 
 ---
 
-## Task 3: Delete crypt-keeper.md at vault root
+## Task 3: Delete crypt-keeper.md at repo root
 
 **Read first:** `crypt-keeper.md` — confirm it is the redirect stub (should contain only "MOVED" notice pointing to `skills/knowledge/procedure.md`)
 
@@ -73,9 +73,9 @@ If confirmed as stub, delete it:
 git rm /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/crypt-keeper.md
 ```
 
-Also check `vault-cleanup.md` at vault root — if it is similarly a dead redirect stub, delete it too:
+Also check `repo-cleanup.md` at repo root — if it is similarly a dead redirect stub, delete it too:
 ```
-git rm /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/vault-cleanup.md
+git rm /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/repo-cleanup.md
 ```
 
 ---
@@ -84,7 +84,7 @@ git rm /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/vault-clea
 
 1. Read `skills/knowledge/index.md` — confirm both new entries present
 2. Read `skills/okr-reporting/index.md` — confirm changelog.md entry present
-3. Confirm `crypt-keeper.md` no longer exists at vault root
+3. Confirm `crypt-keeper.md` no longer exists at repo root
 4. Write changelog entry using `write_changelog_entry`
 
 ```
@@ -95,8 +95,8 @@ git rm /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/vault-clea
 - skills/okr-reporting/index.md — added changelog.md entry
 
 **Files deleted:**
-- crypt-keeper.md (vault root) — dead redirect stub
-- vault-cleanup.md (vault root) — dead redirect stub (if confirmed)
+- crypt-keeper.md (repo root) — dead redirect stub
+- repo-cleanup.md (repo root) — dead redirect stub (if confirmed)
 
 **Flags for Ben:** [anything unexpected]
 ```

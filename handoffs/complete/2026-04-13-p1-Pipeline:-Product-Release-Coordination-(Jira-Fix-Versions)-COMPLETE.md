@@ -9,7 +9,7 @@ domain: handoffs/complete
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-13)
 > **Assigned to:** Gemma
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P1
 > **STATUS**: ✅ COMPLETE
 
@@ -19,11 +19,11 @@ Established a robust release coordination domain that automatically links tactic
 
 ## Objective
 
-Establish a pipeline to coordinate Product Releases (Jira Fix Versions) with the vault's project and OKR intelligence, enabling real-time alignment risk detection between Engineering, Product, and Leadership.
+Establish a pipeline to coordinate Product Releases (Jira Fix Versions) with the repo's project and OKR intelligence, enabling real-time alignment risk detection between Engineering, Product, and Leadership.
 
 ## Context
 
-Release manifests are currently disorganized. By syncing Jira "Fix Versions" into the vault as intelligence records, we can track exactly what is shipping when and detect **alignment risks** between Engineering (tickets), Product (projects), and Leadership (OKRs).
+Release manifests are currently disorganized. By syncing Jira "Fix Versions" into the repo as intelligence records, we can track exactly what is shipping when and detect **alignment risks** between Engineering (tickets), Product (projects), and Leadership (OKRs).
 
 ## Proposed Pipeline
 

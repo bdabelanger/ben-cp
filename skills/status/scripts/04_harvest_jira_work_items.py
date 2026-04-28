@@ -3,9 +3,9 @@ import os
 from datetime import datetime
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-VAULT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../../.."))
-MANIFEST_PATH = os.path.join(VAULT_ROOT, "reports/status/data/manifest.json")
-REPO_ROOT = VAULT_ROOT
+REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../../.."))
+MANIFEST_PATH = os.path.join(REPO_ROOT, "reports/status/data/manifest.json")
+REPO_ROOT = REPO_ROOT
 
 def get_path_from_manifest(step_id):
     with open(MANIFEST_PATH, 'r') as f:
@@ -16,7 +16,7 @@ def get_path_from_manifest(step_id):
 def harvest():
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] harvest_jira_work_items.py")
     ASANA_ACTIVE = get_path_from_manifest("1_asana_ingest")
-    JIRA_RAW_DIR = os.path.join(VAULT_ROOT, "reports/status/data/raw/jira")
+    JIRA_RAW_DIR = os.path.join(REPO_ROOT, "reports/status/data/raw/jira")
     OUTPUT = get_path_from_manifest("4_jira_harvest")
 
     OVERRIDES = {

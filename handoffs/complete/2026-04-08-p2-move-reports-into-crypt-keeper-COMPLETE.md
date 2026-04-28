@@ -8,12 +8,12 @@ domain: handoffs/complete
 # Claude Code Implementation Plan: Move reports/ into skills/knowledge/
 
 > **Prepared by:** Claude (Cowork session, 2026-04-08)
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
-> **Priority:** P2 — structural consolidation, Vault Auditor owns its reports
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Priority:** P2 — structural consolidation, Repo Auditor owns its reports
 > **v1.0**
 > **STATUS**: ✅ COMPLETE
 
-`skills/knowledge/reports/` and its `archive/` subdirectory were already created in a prior session. The root `reports/` directory was removed via `git rm -r`. `skills/knowledge/procedure.md` updated: output path changed to `skills/knowledge/reports/`, Pre-Flight updated with archive step. `AGENTS.md` vault tree updated: root `reports/` removed, `crypt-keeper/` section expanded with SKILL.md, changelog.md, and `reports/` (with `archive/`). File Placement table updated. `crypt-keeper/index.md` reports/ entry and stale reference updated (done as part of handoff 1). `SKILL.md` was already correct — no change needed.
+`skills/knowledge/reports/` and its `archive/` subdirectory were already created in a prior session. The root `reports/` directory was removed via `git rm -r`. `skills/knowledge/procedure.md` updated: output path changed to `skills/knowledge/reports/`, Pre-Flight updated with archive step. `AGENTS.md` repo tree updated: root `reports/` removed, `crypt-keeper/` section expanded with SKILL.md, changelog.md, and `reports/` (with `archive/`). File Placement table updated. `crypt-keeper/index.md` reports/ entry and stale reference updated (done as part of handoff 1). `SKILL.md` was already correct — no change needed.
 
 **Changelog:** 1.6.0 — 2026-04-09 (see root `changelog.md`)
 
@@ -21,7 +21,7 @@ domain: handoffs/complete
 
 ## Context
 
-Reports are currently written to `reports/` at vault root. Since Vault Auditor
+Reports are currently written to `reports/` at repo root. Since Repo Auditor
 is the only thing that produces reports, they belong inside
 `skills/knowledge/reports/` alongside the procedure and templates that
 generate them. An `archive/` subdirectory will hold all runs except the most
@@ -37,7 +37,7 @@ recent, keeping the reports root clean.
 4. **Task 4** — Update `skills/knowledge/SKILL.md` output path
 5. **Task 5** — Update `skills/knowledge/procedure.md` output path
 6. **Task 6** — Update `skills/knowledge/report-template.md` output path reference
-7. **Task 7** — Update `AGENTS.md` vault structure tree
+7. **Task 7** — Update `AGENTS.md` repo structure tree
 8. **Task 8** — Update `skills/knowledge/index.md`
 9. **Task 9** — Final audit and completion report
 
@@ -65,7 +65,7 @@ git mv reports/.gitkeep skills/knowledge/reports/.gitkeep
 
 The existing report goes straight to `archive/` since it is no longer the
 active run — it's historical. Future runs write to `skills/knowledge/reports/`
-and Vault Auditor moves the previous report to `archive/` at the start of each run.
+and Repo Auditor moves the previous report to `archive/` at the start of each run.
 
 ---
 
@@ -130,11 +130,11 @@ If it contains any path reference to `reports/`, update to
 
 ---
 
-## Task 7: Update AGENTS.md Vault Structure Tree
+## Task 7: Update AGENTS.md Repo Structure Tree
 
 **Read first:** `AGENTS.md`
 
-Remove the `reports/` entry from the root level of the vault tree. Add
+Remove the `reports/` entry from the root level of the repo tree. Add
 `reports/` under `skills/knowledge/` instead:
 
 ```
@@ -176,10 +176,10 @@ Add a `reports/` entry to the contents table:
 
 1. `list_directory` on `skills/knowledge/reports/` — confirm `.gitkeep` present
 2. `list_directory` on `skills/knowledge/reports/archive/` — confirm 2026-04-08 report present
-3. Confirm `reports/` no longer exists at vault root
+3. Confirm `reports/` no longer exists at repo root
 4. Read `SKILL.md` — confirm output path and Archiving section updated
 5. Read `procedure.md` — confirm path updated
-6. Read `AGENTS.md` — confirm vault tree and file placement table updated
+6. Read `AGENTS.md` — confirm repo tree and file placement table updated
 7. Write changelog entry using `write_changelog_entry`
 
 ```
@@ -194,13 +194,13 @@ Add a `reports/` entry to the contents table:
 - reports/.gitkeep → skills/knowledge/reports/
 
 **Directories removed:**
-- reports/ (vault root)
+- reports/ (repo root)
 
 **Files modified:**
 - skills/knowledge/SKILL.md — output path + Archiving section
 - skills/knowledge/procedure.md — output path
 - skills/knowledge/report-template.md — path reference if present
-- AGENTS.md — vault tree + file placement table
+- AGENTS.md — repo tree + file placement table
 - skills/knowledge/index.md — added reports/ entry
 
 **Flags for Ben:** [anything unexpected]

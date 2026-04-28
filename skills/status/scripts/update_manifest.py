@@ -6,9 +6,9 @@ from datetime import datetime
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 # skills/pipelines/status/scripts/ -> ben-cp/
-VAULT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../../../.."))
-MANIFEST_PATH = os.path.join(VAULT_ROOT, "reports/status/data/manifest.json")
-REPO_ROOT = VAULT_ROOT
+REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../../../.."))
+MANIFEST_PATH = os.path.join(REPO_ROOT, "reports/status/data/manifest.json")
+REPO_ROOT = REPO_ROOT
 
 def load_manifest():
     with open(MANIFEST_PATH, 'r') as f:

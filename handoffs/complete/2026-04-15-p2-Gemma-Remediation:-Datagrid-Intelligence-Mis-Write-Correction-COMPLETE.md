@@ -9,7 +9,7 @@ domain: handoffs/complete
 
 > **Prepared by:** Code (Gemini) (2026-04-15)
 > **Assigned to:** Cowork
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **STATUS**: ✅ COMPLETE
 
@@ -21,7 +21,7 @@ All remediation steps executed directly by Cowork: skills/ violations removed, s
 
 > **Prepared by:** Cowork (2026-04-15)
 > **Assigned to:** Cowork
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P2 — Structural violation cleanup + intelligence correction
 > **STATUS**: ✅ COMPLETE
 

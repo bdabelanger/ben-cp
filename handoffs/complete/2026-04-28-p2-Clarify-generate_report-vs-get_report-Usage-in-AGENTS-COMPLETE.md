@@ -2,7 +2,7 @@
 
 > **Prepared by:** Cowork (2026-04-28)
 > **Assigned to:** Code
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **STATUS**: ✅ COMPLETE — 2026-04-28
 
@@ -16,7 +16,7 @@ Two related issues found in `generate_report`:
 
 **Issue 1 — `ben-cp.ts` has wrong/missing skill enums**
 The source code at `src/ben-cp.ts` lines 982–990 only wires two skills:
-- `"platform"` → maps to `skills/status/run.py` — but `"platform"` is not a real vault domain and confuses agents
+- `"platform"` → maps to `skills/status/run.py` — but `"platform"` is not a real repo domain and confuses agents
 - `"dream"` / `"reporting"` → maps to `skills/dream/run.py`
 - Everything else throws: `Report generation not automated for skill: {skill}`
 

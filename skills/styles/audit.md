@@ -11,7 +11,7 @@ domain: skills/styles
 
 ## Requirements
 - [ ] Emoji Consistency: Status indicators must match the definitions in `report.md`.
-- [ ] CSS Alignment: New reports must utilize `vault.css` classes for visual consistency.
+- [ ] CSS Alignment: New reports must utilize `repo.css` classes for visual consistency.
 - [ ] Nomenclature: Headings and section names must follow the Documentation Triad standard.
 
 ## Operating Procedure
@@ -22,4 +22,4 @@ domain: skills/styles
 2. **Aesthetic Audit:**
    - Spot-check rendered reports for "Premium" aesthetic compliance (spacing, typography, color harmony).
 3. **Glossary Maintenance:**
-   - Update the Visual Glossary in `report.md` if a new significant state (e.g., a "Pending" state) becomes a vault-wide requirement.
+   - Update the Visual Glossary in `report.md` if a new significant state (e.g., a "Pending" state) becomes a repo-wide requirement.

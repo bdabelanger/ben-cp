@@ -9,7 +9,7 @@ domain: handoffs/complete
 
 > **Prepared by:** Antigravity (Gemini) / Claude via Dispatch (2026-04-12)
 > **Assigned to:** human user + Claude (collaborative design)
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P1 — human user is an actor in this system and needs a defined interface
 > **v1.1**
 > **STATUS**: ✅ COMPLETE
@@ -23,9 +23,9 @@ Transformed the rigid 'weekly input' request into a natively nested 'Input' skil
 
 ## Context
 
-Human user is not just a user of the vault — he is a primary intelligence agent. He holds context that the system cannot derive on its own: stakeholder meetings, sudden priority shifts, real-world blockers, and intuitive learnings. 
+Human user is not just a user of the repo — he is a primary intelligence agent. He holds context that the system cannot derive on its own: stakeholder meetings, sudden priority shifts, real-world blockers, and intuitive learnings. 
 
-Without a defined channel for that information to enter the vault, the meta-agents are always operating from stale context, resulting in out-of-date OKR baselines and desynced Asana tickets.
+Without a defined channel for that information to enter the repo, the meta-agents are always operating from stale context, resulting in out-of-date OKR baselines and desynced Asana tickets.
 
 Originally conceptualized as a "Weekly Read In", human user correctly noted that scheduled, structured inputs create friction and don't reflect how human updates unfold. It needs to be an **Ad-Hoc / Stream of Consciousness** channel. He might write in three times on Tuesday and skip Wednesday entirely.
 
@@ -35,12 +35,12 @@ Originally conceptualized as a "Weekly Read In", human user correctly noted that
 
 **How do we capture human user's "human user notes" with zero friction?**
 
-The goal is to design an interface where human user can dump raw, unfiltered context whenever it hits him, seamlessly allowing the vault's meta-agents (and active Claude sessions) to harvest that ground truth in their next sequence.
+The goal is to design an interface where human user can dump raw, unfiltered context whenever it hits him, seamlessly allowing the repo's meta-agents (and active Claude sessions) to harvest that ground truth in their next sequence.
 
 ### Questions for Collaborative Design:
 
 1. **The Entry Interface:** Does human user want a single, continuous `captains-log.md` where he just keeps appending thoughts to the bottom? Or does he prefer talking to Claude/Gemini and having the agent parse his dictation into discrete `input-[datetime].md` files?
-2. **The "Character" Mapping:** Right now, Digest Editor edits, Changelog Auditor audits, and Roz accesses. What is human user's formal character in the vault architecture? *The Captain? The Oracle? The Operator?* Giving human user a formal persona allows the system to identify the absolute authority of his notes.
+2. **The "Character" Mapping:** Right now, Digest Editor edits, Changelog Auditor audits, and Roz accesses. What is human user's formal character in the repo architecture? *The Captain? The Oracle? The Operator?* Giving human user a formal persona allows the system to identify the absolute authority of his notes.
 3. **The Harvest:** When "Daily Progress Digest" spins up nightly via Digest Editor, how does it process human user's ad-hoc notes? Should there be a "From the Captain's Desk" section summarizing what human user taught the system that day?
 
 ## Proposed Starting Architecture (To Refine Together)

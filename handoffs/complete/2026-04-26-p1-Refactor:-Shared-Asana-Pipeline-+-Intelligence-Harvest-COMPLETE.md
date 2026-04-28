@@ -128,7 +128,7 @@ After steps above are done, update `orchestration/pipelines/intelligence/index.m
 | # | Script | Mode | What it does |
 |---|--------|------|--------------|
 | 01 | `01_harvest.py` | Automated | Walk intelligence records, refresh stale sources by system |
-| 02 | `02_parse.py` | Agent-assisted | Apply LLM extraction schema to produce/update vault records |
+| 02 | `02_parse.py` | Agent-assisted | Apply LLM extraction schema to produce/update repo records |
 | 03 | `03_scan_orphans.py` | Automated | Verify all source files have matching .md records |
 
 ---

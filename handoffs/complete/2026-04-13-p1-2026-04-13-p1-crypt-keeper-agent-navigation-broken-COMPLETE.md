@@ -9,7 +9,7 @@ domain: handoffs/complete
 
 > **Prepared by:** Claude (Cowork) (Intelligence (Memory) scheduled run, 2026-04-13)
 > **Assigned to:** Claude
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P1 — Agent navigation broken (missing AGENTS.md, missing index.md files, orphaned files)
 > **Source report:** `skills/knowledge/outputs/reports/knowledge-report-2026-04-13.md`
 > **v1.0**
@@ -21,13 +21,13 @@ Created missing index.md files for intelligence/report, memory/audit, memory/int
 
 ## Context
 
-The 2026-04-13 Intelligence (Memory) run identified critical P1 structural issues that break agent navigation. Most critically, `AGENTS.md` does not exist at the vault root — this is a hard blocker for any agent attempting to orient itself. Several subdirectories also lack `index.md` files, and orphaned files exist with no index entries. These must be resolved before agents can reliably navigate the vault.
+The 2026-04-13 Intelligence (Memory) run identified critical P1 structural issues that break agent navigation. Most critically, `AGENTS.md` does not exist at the repo root — this is a hard blocker for any agent attempting to orient itself. Several subdirectories also lack `index.md` files, and orphaned files exist with no index entries. These must be resolved before agents can reliably navigate the repo.
 
 ---
 
 ## Execution Order
 
-1. **Task 1** — Recreate or restore `AGENTS.md` at vault root
+1. **Task 1** — Recreate or restore `AGENTS.md` at repo root
 2. **Task 2** — Create missing `index.md` for `intelligence/report/`
 3. **Task 3** — Create missing `index.md` for `intelligence/memory/retrieval/`
 4. **Task 4** — Create missing `index.md` for `intelligence/memory/intake/`
@@ -35,14 +35,14 @@ The 2026-04-13 Intelligence (Memory) run identified critical P1 structural issue
 6. **Task 6** — Create missing `index.md` for `styles/`
 7. **Task 7** — Create missing `index.md` for `shared/`
 8. **Task 8** — Resolve orphaned `intelligence/report/report_spec.json` (add to index once Task 2 complete)
-9. **Task 9** — Reconcile memory index naming mismatch (index references `learn/`, `recall/`, `mapping/`, `watchdog/` but vault dirs are `retrieval/`, `intake/`, `audit/`)
+9. **Task 9** — Reconcile memory index naming mismatch (index references `learn/`, `recall/`, `mapping/`, `watchdog/` but repo dirs are `retrieval/`, `intake/`, `audit/`)
 10. **Task 10** — Write changelog and mark complete
 
 ---
 
 ## Task 1: Restore AGENTS.md
 
-AGENTS.md is referenced throughout the vault as the authoritative governance document — agent dispatch table, directory boundaries, universal rules, the Agent's Creed. It does not exist at `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md`. Check git history to see if it was accidentally deleted:
+AGENTS.md is referenced throughout the repo as the authoritative governance document — agent dispatch table, directory boundaries, universal rules, the Agent's Creed. It does not exist at `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md`. Check git history to see if it was accidentally deleted:
 
 ```
 git log --oneline --all -- AGENTS.md
@@ -83,12 +83,12 @@ For each of `intelligence/memory/retrieval/`, `intelligence/memory/intake/`, `in
 
 ## Task 6: Create `styles/index.md`
 
-`styles/` contains `SKILL.md`, `audit.md`, `report.md`, `vault.css` but no index.md. Starter:
+`styles/` contains `SKILL.md`, `audit.md`, `report.md`, `repo.css` but no index.md. Starter:
 
 ```markdown
 # Styles Index
 
-> **Purpose:** Visual syntax authority — emoji glossary, vault nomenclature, and global CSS.
+> **Purpose:** Visual syntax authority — emoji glossary, repo nomenclature, and global CSS.
 > **Last updated:** 2026-04-13
 
 ## Contents
@@ -98,7 +98,7 @@ For each of `intelligence/memory/retrieval/`, `intelligence/memory/intake/`, `in
 | `SKILL.md` | Skill descriptor |
 | `audit.md` | Audit procedure |
 | `report.md` | Visual glossary and report template |
-| `vault.css` | Global CSS tokens for HTML-rendered reports |
+| `repo.css` | Global CSS tokens for HTML-rendered reports |
 ```
 
 ---
@@ -110,14 +110,14 @@ For each of `intelligence/memory/retrieval/`, `intelligence/memory/intake/`, `in
 ```markdown
 # Shared Index
 
-> **Purpose:** Cross-cutting vault governance documents.
+> **Purpose:** Cross-cutting repo governance documents.
 > **Last updated:** 2026-04-13
 
 ## Contents
 
 | File | Purpose |
 | :--- | :--- |
-| `separation-policy.md` | Vault layer separation rules — what belongs where |
+| `separation-policy.md` | Repo layer separation rules — what belongs where |
 | `changelog.md` | Shared domain change history |
 ```
 
@@ -125,7 +125,7 @@ For each of `intelligence/memory/retrieval/`, `intelligence/memory/intake/`, `in
 
 ## Task 9: Reconcile Memory Index Naming
 
-`intelligence/memory/index.md` references sub-skills as `learn/`, `recall/`, `mapping/`, `watchdog/` but the actual vault directories (per list_vault) are `retrieval/`, `intake/`, `audit/`. Either:
+`intelligence/memory/index.md` references sub-skills as `learn/`, `recall/`, `mapping/`, `watchdog/` but the actual repo directories (per list_repo) are `retrieval/`, `intake/`, `audit/`. Either:
 - The index is outdated and the dirs were renamed — update the index to match physical dirs
 - The index is correct and the dirs were incorrectly renamed — restore correct names
 
@@ -141,7 +141,7 @@ Write changelog entries (subdirectory `knowledge` first, then root), then mark t
 
 ## Notes for This Agent
 - Read before every write — no exceptions
-- Never delete vault files — create or edit only
+- Never delete repo files — create or edit only
 - AGENTS.md restoration is the highest priority in this list; do it first
 - Do not guess at AGENTS.md content — recover from git or reconstruct conservatively from references
 - Character names are not used in any outputs — use generic skill names only

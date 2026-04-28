@@ -11,7 +11,7 @@ links:
 
 > **Prepared by:** Code (Gemini) (2026-04-27)
 > **Assigned to:** Ben
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P1
 > **STATUS**: ✅ COMPLETE — 2026-04-27
 
@@ -63,7 +63,7 @@ Nothing fixed directly this cycle — all issues required either bulk file edits
 
 3. **`2026-04-27-p3-Add-Missing-index.md-Files---14-Directories-Without-Index.md`** (P3)
    - 14 directories lack index.md, blocking agent navigation
-   - Includes vault root, handoffs/, handoffs/complete/, skills/dream/, intelligence/governance/, and several project subdirs
+   - Includes repo root, handoffs/, handoffs/complete/, skills/dream/, intelligence/governance/, and several project subdirs
 
 ---
 
@@ -80,6 +80,6 @@ Nothing fixed directly this cycle — all issues required either bulk file edits
 
 - **Links sensor is clean** — 0 ghost links across 224 files. The bulk ghost-link cleanup from prior cycles is holding.
 - **Index sensor is the biggest structural debt this cycle** — 68 shadow files and 36 ghost refs is significant. The pattern of truncated filenames (e.g. `data-import-bulk-import-for-notes-(1210860550580423.md` missing the closing `)`) suggests a prior pipeline write truncated filenames. Code should look for a systemic cause when fixing.
-- **497 files touched in 24h** — very high activity. The vault is healthy and active but index upkeep isn't keeping pace with file creation rate. Worth considering whether the intelligence ingestion pipeline auto-registers files in indexes on write.
+- **497 files touched in 24h** — very high activity. The repo is healthy and active but index upkeep isn't keeping pace with file creation rate. Worth considering whether the intelligence ingestion pipeline auto-registers files in indexes on write.
 - **Changelog sensor is clean** — all 21 subdirectory changelogs are up to date. No unlogged changes.
 - **Drift sensor is clean** — no unsanctioned directories.

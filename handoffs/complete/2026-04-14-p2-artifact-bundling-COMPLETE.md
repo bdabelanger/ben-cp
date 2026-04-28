@@ -15,7 +15,7 @@ domain: handoffs/complete
 ---
 
 ## 1. Problem Statement & Context
-The vault's current workflow is fragmented across three locations (Root, `/tasks/`, and `/handoff/`). This creates cognitive load and violates the "Root Rule" (no new files at root). 
+The repo's current workflow is fragmented across three locations (Root, `/tasks/`, and `/handoff/`). This creates cognitive load and violates the "Root Rule" (no new files at root). 
 
 We need to consolidate the **Handoff** and **Implementation Plan** into a single "request-ready" artifact. Additionally, we must clarify terminology to prevent agents from overwriting human-led task lists.
 
@@ -25,7 +25,7 @@ We need to consolidate the **Handoff** and **Implementation Plan** into a single
 - **Terminology Split**: 
     - **"Steps"**: Refers to agent-led execution items within an implementation plan.
     - **"Tasks"**: Refers to human-led work residing in the `tasks/` directory.
-- **Root Cleanliness**: All implementation logic is permanently moved out of the vault root.
+- **Root Cleanliness**: All implementation logic is permanently moved out of the repo root.
 
 ## 3. Technical Requirements
 - **Standardized Schema**: Every unified plan must follow the: *Context -> Logic -> Execution Steps* hierarchy.
@@ -42,10 +42,10 @@ We need to consolidate the **Handoff** and **Implementation Plan** into a single
 - [ ] **Terminology Enforcement**:
     - Ensure both files clearly distinguish between agent **"Steps"** and human **"Tasks."**
 - [ ] **Cleanup**:
-    - Delete or move any remaining `_IMPLEMENTATION_PLAN.md` files from the vault root to `handoff/complete/` or `archive/`.
+    - Delete or move any remaining `_IMPLEMENTATION_PLAN.md` files from the repo root to `handoff/complete/` or `archive/`.
 - [ ] **Version Control**:
     - Update root `changelog.md` to **v1.18.7**.
 
 ## 5. Verification
 - Confirm `AGENTS.md` and `cowork.md` are aligned on the "Unified Flat" standard.
-- Verify the vault root contains zero implementation plan markdown files.
+- Verify the repo root contains zero implementation plan markdown files.

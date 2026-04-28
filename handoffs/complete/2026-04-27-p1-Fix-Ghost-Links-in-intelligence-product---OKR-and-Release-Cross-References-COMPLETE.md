@@ -10,7 +10,7 @@ domain: handoffs/complete
 
 > **Prepared by:** Code (Gemini) (2026-04-27)
 > **Assigned to:** Code
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P1
 > **STATUS**: ✅ COMPLETE — 2026-04-27
 
@@ -22,7 +22,7 @@ Resolved ~39 ghost links in intelligence/product/ by correcting relative paths a
 
 ## Context
 
-The links sensor found 79 ghost links vault-wide. Approximately 39 originate in `intelligence/product/` across four clusters:
+The links sensor found 79 ghost links repo-wide. Approximately 39 originate in `intelligence/product/` across four clusters:
 
 **Cluster 1: OKR files linking to missing projects/q2/ subdirectories (~20 links)**
 Files in `intelligence/product/okrs/q2/planning-services-at-scale/`, `okrs/q2/elevate-notes/`, and `okrs/q2/reduce-admin-burden/` link to `../../projects/q2/` paths that don't exist, e.g.:

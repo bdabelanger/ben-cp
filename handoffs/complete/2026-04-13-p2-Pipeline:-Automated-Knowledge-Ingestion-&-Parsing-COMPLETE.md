@@ -9,7 +9,7 @@ domain: handoffs/complete
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-13)
 > **Assigned to:** Claude
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P2
 > **STATUS**: ✅ COMPLETE — 2026-04-26
 
@@ -19,11 +19,11 @@ Pipeline was already substantially built. Fixed two off-by-one REPO_ROOT path bu
 
 ## Goal
 
-Automate the extraction of structured intelligence records from raw source materials (PDFs, TXT, meeting notes, Confluence pages) staged in `source/` subdirectories — reducing the manual parsing load on Gemma and ensuring PRDs and specs flow into the vault consistently.
+Automate the extraction of structured intelligence records from raw source materials (PDFs, TXT, meeting notes, Confluence pages) staged in `source/` subdirectories — reducing the manual parsing load on Gemma and ensuring PRDs and specs flow into the repo consistently.
 
 ## Context
 
-There is currently a backlog of raw source materials in directories like `intelligence/product/tasks/q2-shareout/source/`. Agents are manually parsing these one at a time. Confluence PRDs are a particular gap — they are authoritative sources of truth that aren't yet flowing into the vault automatically.
+There is currently a backlog of raw source materials in directories like `intelligence/product/tasks/q2-shareout/source/`. Agents are manually parsing these one at a time. Confluence PRDs are a particular gap — they are authoritative sources of truth that aren't yet flowing into the repo automatically.
 
 ## Proposed Architecture
 

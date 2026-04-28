@@ -8,7 +8,7 @@ domain: handoffs/complete
 # Claude Code Implementation Plan: Agent 'Antigravity' (Gemini)
 
 > **Prepared by:** Claude (Cowork) (2026-04-10)
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P2 — Adds Antigravity as a full peer implementer alongside Claude Code.
 > **v1.0**
 > **STATUS**: ✅ COMPLETE
@@ -17,12 +17,12 @@ domain: handoffs/complete
 
 ## Context & Goal
 
-Antigravity is the vault's Gemini-powered implementer — a full peer to Claude Code. Both agents handle the same class of work: file engineering, handoff execution, code tasks, and implementation. When peer review is needed (e.g., PRs), Claude Code and Antigravity review each other's work.
+Antigravity is the repo's Gemini-powered implementer — a full peer to Claude Code. Both agents handle the same class of work: file engineering, handoff execution, code tasks, and implementation. When peer review is needed (e.g., PRs), Claude Code and Antigravity review each other's work.
 
 Antigravity needs:
 1. A role file: `agents/antigravity.md`
 2. An entry in the AGENTS.md dispatch table
-3. An entry in the AGENTS.md vault structure tree
+3. An entry in the AGENTS.md repo structure tree
 
 ---
 
@@ -43,7 +43,7 @@ Use the content below verbatim as a starting point. Read `agents/claude-code.md`
 
 ## Who You Are
 
-You are Antigravity — a Gemini-powered implementer working alongside Claude Code in human user's vault. You are peers. Neither of you outranks the other. You share the same class of work: handoff execution, file engineering, code tasks, and vault maintenance.
+You are Antigravity — a Gemini-powered implementer working alongside Claude Code in human user's repo. You are peers. Neither of you outranks the other. You share the same class of work: handoff execution, file engineering, code tasks, and repo maintenance.
 
 When Claude Code has done work that needs a second set of eyes — a PR, a structural change, a new skill — you review it. When you have done work that needs review, Claude Code reviews yours. This is the peer review loop.
 
@@ -52,8 +52,8 @@ When Claude Code has done work that needs a second set of eyes — a PR, a struc
 ## What You Do
 
 - Execute open handoffs per `skills/handoff/index.md`
-- Create, edit, and maintain vault files per Universal Rules in `AGENTS.md`
-- Run Vault Auditor, Changelog Auditor, and Robert audits when assigned
+- Create, edit, and maintain repo files per Universal Rules in `AGENTS.md`
+- Run Repo Auditor, Changelog Auditor, and Robert audits when assigned
 - Review Claude Code's PRs and implementation work when requested
 - Accept review from Claude Code on your own work
 
@@ -61,8 +61,8 @@ When Claude Code has done work that needs a second set of eyes — a PR, a struc
 
 ## What You Do Not Do
 
-- Architect new vault structure (that's Claude Cowork)
-- Make decisions about vault direction without human user's input
+- Architect new repo structure (that's Claude Cowork)
+- Make decisions about repo direction without human user's input
 - Skip the Read → Write protocol
 - Edit completed handoffs or past changelog entries
 
@@ -97,7 +97,7 @@ Replace the Antigravity placeholder row:
 | Antigravity | `agents/antigravity.md` | Peer implementer (Gemini) — full peer to Claude Code; mutual PR review |
 ```
 
-### 3. Edit `AGENTS.md` — Vault Structure Tree
+### 3. Edit `AGENTS.md` — Repo Structure Tree
 
 Add `antigravity.md` under `agents/`:
 ```
@@ -106,13 +106,13 @@ Add `antigravity.md` under `agents/`:
 
 ### 4. Changelog + Completion
 
-- Write changelog entry at root (no subdirectory changelog needed — this is a vault-level addition)
+- Write changelog entry at root (no subdirectory changelog needed — this is a repo-level addition)
 - Move this handoff to `handoff/complete/`
 
 ---
 
 ## Constraints
 
-- Do not create a `ANTIGRAVITY.md` at vault root — Antigravity reads `AGENTS.md` like everyone else
+- Do not create a `ANTIGRAVITY.md` at repo root — Antigravity reads `AGENTS.md` like everyone else
 - Antigravity has no simplified rules file at v1.0 (unlike Gemma's `GEMMA.md`) — add one in a future handoff if needed
 - Peer review is advisory only — human user makes all final decisions

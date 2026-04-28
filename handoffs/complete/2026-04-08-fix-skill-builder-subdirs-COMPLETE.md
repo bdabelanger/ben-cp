@@ -8,8 +8,8 @@ domain: handoffs/complete
 # Claude Code Implementation Plan: Fix skill-builder Subdirectory index.md Files
 
 > **Prepared by:** Claude (Cowork session, 2026-04-08)
-> **Source:** Vault Auditor report `reports/knowledge-report-2026-04-08.md` flags 3.1, 3.2, 3.3
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Source:** Repo Auditor report `reports/knowledge-report-2026-04-08.md` flags 3.1, 3.2, 3.3
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **v1.0**
 > **STATUS**: ✅ COMPLETE
 

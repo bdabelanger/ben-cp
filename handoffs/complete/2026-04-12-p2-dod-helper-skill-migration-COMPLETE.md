@@ -9,12 +9,12 @@ domain: handoffs/complete
 
 > **Prepared by:** Claude via Dispatch (2026-04-12)
 > **Assigned to:** Claude
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2 — skill migration, companion to task-capture-skill-migration
 > **v1.0**
 > **STATUS**: ✅ COMPLETE
 
-Migrated dod-helper skill into the vault at skills/product/dod-helper/. Source content taken from the Cowork plugin definition (task-dod-helper) shared in-session. Created index.md (purpose, modes, companion skills, source-of-truth note), procedure.md (mode detection, single-task flow, question sets by task type, DoD format rules with rationale, posting behavior for Asana vs Jira, batch mode flow), and changelog.md. The DoD quality bar rules — plain dashes, no markdown headers, 3–7 criteria — are preserved verbatim with rationale in procedure.md. Cowork plugin remains the runtime version; vault is now the canonical reference and edit target.
+Migrated dod-helper skill into the repo at skills/product/dod-helper/. Source content taken from the Cowork plugin definition (task-dod-helper) shared in-session. Created index.md (purpose, modes, companion skills, source-of-truth note), procedure.md (mode detection, single-task flow, question sets by task type, DoD format rules with rationale, posting behavior for Asana vs Jira, batch mode flow), and changelog.md. The DoD quality bar rules — plain dashes, no markdown headers, 3–7 criteria — are preserved verbatim with rationale in procedure.md. Cowork plugin remains the runtime version; repo is now the canonical reference and edit target.
 
 **Changelog:** (see root changelog.md)
 
@@ -42,10 +42,10 @@ The SKILL.md covers: mode detection, single-task flow (fetch → detect type →
 
 ## Execution Order
 
-1. **Load context** — Read `AGENTS.md`, vault root `index.md`, `skills/product/index.md` if it exists
+1. **Load context** — Read `AGENTS.md`, repo root `index.md`, `skills/product/index.md` if it exists
 2. **Coordinate with task-capture** — Both skills should land in the same destination. Confirm placement before creating anything.
-3. **Create skill directory** — Migrate content with vault-native formatting
-4. **Update vault root `index.md`**
+3. **Create skill directory** — Migrate content with repo-native formatting
+4. **Update repo root `index.md`**
 5. **Update Cowork plugin** — Add source-of-truth note
 6. **Changelog + completion**
 
@@ -55,7 +55,7 @@ The SKILL.md covers: mode detection, single-task flow (fetch → detect type →
 
 Read:
 - `AGENTS.md` — check for any agent that references task-dod-helper
-- Vault root `index.md` — understand current skill registry
+- Repo root `index.md` — understand current skill registry
 - `skills/product/index.md` — if product-skill-consolidation has run, both PM skills land here
 
 ---
@@ -67,19 +67,19 @@ Read:
 - Add to `skills/product/index.md`
 
 **If not:**
-- Create `skills/dod-helper/` at vault skill root
+- Create `skills/dod-helper/` at repo skill root
 - Add relocation note pointing to `2026-04-12-p2-product-skill-consolidation.md`
 
 Use the same placement logic as `task-capture`. Both should land together.
 
 ---
 
-## Task 3: Create the Vault Skill
+## Task 3: Create the Repo Skill
 
 ```
 skills/[product/]dod-helper/
   index.md          ← purpose, scope, mode overview, cross-reference to task-capture
-  procedure.md      ← adapted from SKILL.md content (vault-native doc format)
+  procedure.md      ← adapted from SKILL.md content (repo-native doc format)
   changelog.md
 ```
 
@@ -97,8 +97,8 @@ skills/[product/]dod-helper/
 Add at the top of `.claude/skills/task-dod-helper/SKILL.md`:
 
 ```
-> **Source of truth:** This skill is mirrored from the ben-cp vault at
-> `skills/[product/]dod-helper/procedure.md`. Update the vault version first;
+> **Source of truth:** This skill is mirrored from the ben-cp repo at
+> `skills/[product/]dod-helper/procedure.md`. Update the repo version first;
 > keep this file in sync manually until a symlink or auto-sync is in place.
 ```
 
@@ -108,7 +108,7 @@ Do not delete or replace the plugin version — it must remain functional for ru
 
 ## Task 5: Update Registry Files
 
-- Vault root `index.md`: add `dod-helper` entry
+- Repo root `index.md`: add `dod-helper` entry
 - `AGENTS.md`: check if any agent should reference dod-helper
 
 ---

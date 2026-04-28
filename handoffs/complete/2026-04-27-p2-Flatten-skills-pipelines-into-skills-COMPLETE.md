@@ -2,7 +2,7 @@
 
 > **Prepared by:** Code (Gemini) (2026-04-27)
 > **Assigned to:** Code
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **STATUS**: ✅ COMPLETE — 2026-04-27
 
@@ -34,7 +34,7 @@ Move all four pipeline skills up one level and remove the `skills/pipelines/` wr
 3. Move `skills/pipelines/status/` → `skills/status/`
 4. Move `skills/pipelines/tasks/` → `skills/tasks/`
 5. Delete `skills/pipelines/` (including its `index.md` and `changelog.md`)
-6. Update any references to `skills/pipelines/` across the vault (`AGENTS.md`, `skills/index.md`, any handoffs or intelligence records)
+6. Update any references to `skills/pipelines/` across the repo (`AGENTS.md`, `skills/index.md`, any handoffs or intelligence records)
 
 ## Verification
 

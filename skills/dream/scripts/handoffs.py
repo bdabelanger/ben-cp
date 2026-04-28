@@ -3,10 +3,10 @@
 import os, json, re
 from datetime import datetime
 
-VAULT_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
-OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream', 'data', 'raw')
-HANDOFF_DIR = os.path.join(VAULT_ROOT, 'handoffs')
-TASKS_DIR   = os.path.join(VAULT_ROOT, 'tasks')
+REPO_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
+OUTPUTS_DIR = os.path.join(REPO_ROOT, 'reports', 'dream', 'data', 'raw')
+HANDOFF_DIR = os.path.join(REPO_ROOT, 'handoffs')
+TASKS_DIR   = os.path.join(REPO_ROOT, 'tasks')
 
 REQUIRED_SECTIONS = {'## Context', '## Execution Steps'}
 # ## Logic is highly encouraged but optional for simple tasks
@@ -25,7 +25,7 @@ def scan_dir(path):
     return results
 
 def audit_file(path):
-    rel = os.path.relpath(path, VAULT_ROOT)
+    rel = os.path.relpath(path, REPO_ROOT)
     issues = []
     try:
         with open(path, errors='replace') as f:

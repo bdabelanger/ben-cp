@@ -9,7 +9,7 @@ domain: handoffs/complete
 # Claude Code Implementation Plan: Consolidate Project Status Reports Pipeline into skills/
 
 > **Prepared by:** Claude (Cowork session, 2026-04-08)
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **v1.0**
 > **STATUS**: ✅ COMPLETE
 
@@ -21,7 +21,7 @@ The project-status-reports pipeline currently lives in two places:
 
 | Location | Contents | Type |
 | :--- | :--- | :--- |
-| `project-status-reports/` (vault root) | Python scripts, manifest.json, inputs/, outputs/, logs/, run_pipeline.sh | **Executable pipeline** |
+| `project-status-reports/` (repo root) | Python scripts, manifest.json, inputs/, outputs/, logs/, run_pipeline.sh | **Executable pipeline** |
 | `skills/project-status-reports/` | index.md (runbook SOP), changelog.md, empty scripts/ and outputs/ dirs | **Documentation layer** |
 
 These are one system — the SOP documents the pipeline, the pipeline executes it.
@@ -38,7 +38,7 @@ Run tasks in sequence. Read before every write — no exceptions.
 2. **Task 2** — Move pipeline files into `skills/project-status-reports/`
 3. **Task 3** — Update run paths in `skills/project-status-reports/index.md`
 4. **Task 4** — Remove empty root directory and stale scaffolding
-5. **Task 5** — Update `AGENTS.md` vault structure tree
+5. **Task 5** — Update `AGENTS.md` repo structure tree
 6. **Task 6** — Update `skills/project-status-reports/changelog.md`
 7. **Task 7** — Final audit and completion report
 
@@ -103,7 +103,7 @@ the old `project-status-reports/` root location.
 
 After confirming all files have moved successfully:
 
-1. Confirm `project-status-reports/` at vault root is now empty (or only contains
+1. Confirm `project-status-reports/` at repo root is now empty (or only contains
    `.DS_Store` / git artifacts)
 2. Remove the empty root directory:
    ```
@@ -116,11 +116,11 @@ After confirming all files have moved successfully:
 
 ---
 
-## Task 5: Update AGENTS.md Vault Structure Tree
+## Task 5: Update AGENTS.md Repo Structure Tree
 
 **Read first:** `AGENTS.md`
 
-Update the vault structure tree to remove `project-status-reports/` from the
+Update the repo structure tree to remove `project-status-reports/` from the
 root level and ensure `skills/project-status-reports/` reflects its full contents:
 
 ```
@@ -149,7 +149,7 @@ Append a new entry documenting this consolidation:
 ## [1.1.0] - Pipeline Consolidation (2026-04-09)
 
 **Changes:**
-- Pipeline moved from `project-status-reports/` (vault root) into this directory
+- Pipeline moved from `project-status-reports/` (repo root) into this directory
 - `scripts/`, `inputs/`, `outputs/`, `logs/`, `tests/`, `manifest.json`,
   `run_pipeline.sh` all now live under `skills/project-status-reports/`
 - Run path updated in `index.md`: `skills/project-status-reports/scripts/full_run.py`
@@ -163,9 +163,9 @@ Append a new entry documenting this consolidation:
 ## Task 7: Final Audit and Completion Report
 
 1. `list_directory` on `skills/project-status-reports/` — confirm all files present
-2. Confirm `project-status-reports/` no longer exists at vault root
+2. Confirm `project-status-reports/` no longer exists at repo root
 3. Read `skills/project-status-reports/index.md` — confirm run paths updated
-4. Read `AGENTS.md` — confirm vault tree updated
+4. Read `AGENTS.md` — confirm repo tree updated
 
 Output:
 

@@ -1,19 +1,19 @@
-# Implementation Plan: Review Flattened Vault Orchestration
+# Implementation Plan: Review Flattened Repo Orchestration
 
 > **Prepared by:** Code (Gemini) (2026-04-27)
 > **Assigned to:** Cowork
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P1
 > **STATUS**: ✅ COMPLETE — 2026-04-27
 
-Audited all run.py files in skills/. Standardized REPO_ROOT paths. Fixed status pipeline imports and legacy path references. Smoke tested pipelines.Scan/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoffs/2026-04-27-p1-Review-Flattened-Vault-Orchestration.mdScan
+Audited all run.py files in skills/. Standardized REPO_ROOT paths. Fixed status pipeline imports and legacy path references. Smoke tested pipelines.Scan/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoffs/2026-04-27-p1-Review-Flattened-Repo-Orchestration.mdScan
 
 ---
 
-# Review Flattened Vault Orchestration
+# Review Flattened Repo Orchestration
 
 ## Context
-The vault has been flattened to remove redundant nesting:
+The repo has been flattened to remove redundant nesting:
 - `skills/pipelines/[skill]` -> `skills/[skill]`
 - `skills/skills/dream` -> `skills/dream`
 - `skills/intelligence/governance` -> `intelligence/governance`

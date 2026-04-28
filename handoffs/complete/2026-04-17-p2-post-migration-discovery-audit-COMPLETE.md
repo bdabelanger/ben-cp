@@ -9,7 +9,7 @@ domain: handoffs/complete
 
 > **Prepared by:** Gemma (Local)
 > **Assigned to:** Code (For Review)
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **STATUS**: ✅ COMPLETE — 2026-04-26
 

@@ -2,7 +2,7 @@
 import os
 import glob
 
-# Standard Vault Paths
+# Standard Repo Paths
 # skills/intelligence/03_scan_orphans.py -> ../.. -> ben-cp/
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 INTEL_DIR = os.path.join(REPO_ROOT, "intelligence")

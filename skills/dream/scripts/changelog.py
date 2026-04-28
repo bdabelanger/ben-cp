@@ -3,11 +3,11 @@
 import os, json, re, subprocess
 from datetime import datetime
 
-VAULT_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
-OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream', 'data', 'raw')
+REPO_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
+OUTPUTS_DIR = os.path.join(REPO_ROOT, 'reports', 'dream', 'data', 'raw')
 
 def parse_root_changelog():
-    path = os.path.join(VAULT_ROOT, 'changelog.md')
+    path = os.path.join(REPO_ROOT, 'changelog.md')
     if not os.path.exists(path):
         return [], []
 
@@ -44,9 +44,9 @@ SKIP_DIRS = {'node_modules', '__pycache__', '.git', 'reports', 'complete', 'arch
 
 def find_subdirectory_changelogs():
     logs = []
-    for root, dirs, files in os.walk(VAULT_ROOT):
+    for root, dirs, files in os.walk(REPO_ROOT):
         dirs[:] = [d for d in dirs if not d.startswith('.') and d not in SKIP_DIRS]
-        rel = os.path.relpath(root, VAULT_ROOT)
+        rel = os.path.relpath(root, REPO_ROOT)
         if rel == '.' :
             continue
         if 'changelog.md' in files:
@@ -57,7 +57,7 @@ def check_unlogged_changes():
     try:
         output = subprocess.check_output(
             ["git", "log", "--since=24.hours", "--name-only", "--pretty=format:"],
-            cwd=VAULT_ROOT,
+            cwd=REPO_ROOT,
             text=True
         )
         files = set(filter(None, output.split('\n')))

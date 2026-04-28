@@ -9,7 +9,7 @@ domain: handoffs
 
 > **Prepared by:** Code (Gemini) (2026-04-27)
 > **Assigned to:** Ben
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P1
 > **STATUS**: ✅ COMPLETE — 2026-04-27
 
@@ -47,7 +47,7 @@ Archived the Dream Report handoff as all issues outlined in it (shadow files, gh
 The prior Dream cycle (Code/Gemini, 22:06) ran first and created 3 Code handoffs and 1 Asana task. By the time this run executed at 22:45:
 
 - **Handoffs sensor flipped from 🟢 to 🔴** — The 3 handoffs Code created are missing required `## Logic` and `## Execution Steps` sections, which the handoffs sensor validates. This is the only new FAIL.
-- **File counts slightly higher** — 227 vs 224 scanned, 568 vs 497 files touched (active vault day).
+- **File counts slightly higher** — 227 vs 224 scanned, 568 vs 497 files touched (active repo day).
 - All other sensor results are identical to the prior run.
 
 ---
@@ -89,7 +89,7 @@ No new Asana tasks needed — the prior run covered everything requiring human j
 ## Notable Observations
 
 - **Two Dream cycles ran tonight** — both completed successfully but this creates duplicate morning briefing handoffs. Worth investigating why the scheduler triggered twice; may want to add a guard in the dream pipeline to skip if a report already exists for the current date.
-- **568 files touched in 24h** — the vault continues to be very active. The index debt (68 shadow files) is likely growing faster than Code can reconcile it because the ingestion pipeline doesn't auto-register files in indexes on write. This is worth a dedicated fix.
+- **568 files touched in 24h** — the repo continues to be very active. The index debt (68 shadow files) is likely growing faster than Code can reconcile it because the ingestion pipeline doesn't auto-register files in indexes on write. This is worth a dedicated fix.
 - **Links sensor is clean** for the second consecutive cycle — 0 ghost links across 227 files. Prior cleanup is holding.
 - **Drift sensor is clean** — no unsanctioned directories.
 - **Large files are unchanged** — the Q2 Shareout PDF (7.4 MB) and raw pipeline JSONs remain. Asana task raised in prior run covers the archiving decision.

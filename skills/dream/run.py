@@ -1,21 +1,25 @@
 #!/usr/bin/env python3
 """
 dream/run.py — Nightly audit cycle.
-Runs data pipelines, then 13 vault health sensors, and consolidates
+Runs data pipelines, then 13 repo health sensors, and consolidates
 everything into the daily report.
 Output: reports/dream/report.md
 """
 import os, sys, json, re, subprocess, importlib.util
 from datetime import datetime
 
-VAULT_ROOT   = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+REPO_ROOT   = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 SENSORS_DIR  = os.path.join(os.path.dirname(__file__), 'scripts')
-OUTPUTS_DIR  = os.path.join(VAULT_ROOT, 'reports', 'dream', 'data', 'raw')
-REPORT_DIR   = os.path.join(VAULT_ROOT, 'reports', 'dream')
+OUTPUTS_DIR  = os.path.join(REPO_ROOT, 'reports', 'dream', 'data', 'raw')
+REPORT_DIR   = os.path.join(REPO_ROOT, 'reports', 'dream')
 REPORT_MD    = os.path.join(REPORT_DIR, 'report.md')
 
+# Ensure sensors can import sibling utilities
+if SENSORS_DIR not in sys.path:
+    sys.path.append(SENSORS_DIR)
+
 SENSORS = [
-    'pulse', 'links', 'frontmatter', 'drift',
+    'reindex', 'pulse', 'links', 'frontmatter', 'drift',
     'handoffs', 'index', 'agents',
     'tasks', 'changelog', 'context', 'access',
     'paths', 'scripts',
@@ -24,26 +28,26 @@ SENSORS = [
 PIPELINES = [
     {
         'name': 'status',
-        'script': os.path.join(VAULT_ROOT, 'skills', 'status', 'scripts', 'run.py'),
+        'script': os.path.join(REPO_ROOT, 'skills', 'status', 'scripts', 'run.py'),
         'report': 'reports/status/report.md',
         'label': 'Platform Status',
     },
     {
         'name': 'tasks',
-        'script': os.path.join(VAULT_ROOT, 'skills', 'tasks', 'run.py'),
+        'script': os.path.join(REPO_ROOT, 'skills', 'tasks', 'run.py'),
         'report': 'reports/tasks/report.md',
         'label': 'My Tasks',
     },
     {
         'name': 'intelligence-harvest',
-        'script': os.path.join(VAULT_ROOT, 'skills', 'intelligence', 'run.py'),
+        'script': os.path.join(REPO_ROOT, 'skills', 'intelligence', 'run.py'),
         'args': ['--harvest'],
         'report': None,
         'label': 'Intelligence Harvest',
     },
     {
         'name': 'intelligence-scan',
-        'script': os.path.join(VAULT_ROOT, 'skills', 'intelligence', 'run.py'),
+        'script': os.path.join(REPO_ROOT, 'skills', 'intelligence', 'run.py'),
         'args': ['--scan'],
         'report': None,
         'label': 'Intelligence Scan',
@@ -64,7 +68,7 @@ def run_pipelines():
             proc = subprocess.run(
                 cmd,
                 capture_output=True, text=True, timeout=180,
-                cwd=VAULT_ROOT,
+                cwd=REPO_ROOT,
             )
             ok = proc.returncode == 0
             results[name] = {'ok': ok, 'stdout': proc.stdout, 'error': None if ok else proc.stderr[-300:]}
@@ -79,7 +83,7 @@ def run_pipelines():
 
 
 def _read_report(rel_path):
-    path = os.path.join(VAULT_ROOT, rel_path)
+    path = os.path.join(REPO_ROOT, rel_path)
     if not os.path.exists(path):
         return None
     with open(path, errors='replace') as f:
@@ -137,7 +141,9 @@ def build_pipeline_section(pipeline_results):
 
         content = _read_report(p['report'])
         if content:
-            lines.append(f'[Full report]({p["report"]})')
+            # Markdown links need to be relative to the reports/dream/ directory
+            rel_link = p['report'].replace('reports/', '../')
+            lines.append(f'[Full report]({rel_link})')
         else:
             lines.append('_Report not found._')
         lines.append('')

@@ -22,7 +22,7 @@ domain: skills/dream
 ## 2026-04-27 — Complete three handoffs (Link Standardization, Large File Convention, JSON Archive Retention) and improve Dream Sensor health.
 
 **Files changed:**
-- `intelligence/` — Standardized link headers to `## Links` across 11 `index.md` files in the vault. DONE
+- `intelligence/` — Standardized link headers to `## Links` across 11 `index.md` files in the repo. DONE
 - `skills/dream/sensors/context.py` — Introduced the large file flag convention `_(SIZE)_` and an `IGNORE_LIST` in `context.py`. Applied the convention to Q2 Shareout source index. DONE
 - `skills/status/scripts/update_manifest.py` — Created `retention_policy.md` enforcing a 7-day TTL on JSON archives. Implemented `cleanup_old_archives` in `update_manifest.py` and purged >50 expired JSON files. DONE
 - `skills/dream/sensors/links.py` — Fixed links sensor parsing to handle URL decoding and angle brackets cleanly, eliminating false-positive ghost links. DONE
@@ -33,7 +33,7 @@ domain: skills/dream
 
 **Files changed:**
 - `orchestration/dream/run.py` — New dream cycle master — runs all 11 sensors, consolidates output into daily-report.md + daily-report.html, writes dream_run.json run log new
-- `orchestration/dream/sensors/` — Moved from orchestration/utilities/sensors/ — VAULT_ROOT depth unchanged, no path fixes required moved
+- `orchestration/dream/sensors/` — Moved from orchestration/utilities/sensors/ — REPO_ROOT depth unchanged, no path fixes required moved
 - `orchestration/utilities/` — Retired entirely — all report.py scripts were superseded by new sensor suite; dream.py absorbed into dream/run.py deleted
 - `reports/dream/daily-report.md` — Now written by dream/run.py with sensor summary table, highlights, large files, and ghost links sample updated
 - `reports/dream/daily-report.html` — HTML render of daily-report.md, co-written each run updated

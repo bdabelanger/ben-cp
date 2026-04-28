@@ -31,7 +31,7 @@ Gemma ran the redesigned smoke test on 2026-04-25. The test asked her to read th
 | Readable in under 90 seconds | ✅ Pass | Clean, well-structured, no fluff |
 | Both 🟡 flags identified with specifics | ✅ Pass | Changelog (14 files, locations named) and Handoff (16 active, both P1s named) |
 | No hallucinated items | ✅ Pass | Everything maps directly to the report |
-| Plain language, no vault jargon | ✅ Pass | "Memory Growth" framing was a nice touch |
+| Plain language, no repo jargon | ✅ Pass | "Memory Growth" framing was a nice touch |
 | Clear opinionated action for Ben | ✅ Pass | Correctly prioritized P1 handoffs as potential blockers |
 
 **Minor issue:** Gemma placed the 🟢 "Memory Growth" metric (172 records / 47 domains) inside "What needs attention" — it's a clean stat, not a flag. Small framing error, not a failure. Worth noting in her role documentation.

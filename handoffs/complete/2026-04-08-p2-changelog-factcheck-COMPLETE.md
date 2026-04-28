@@ -8,7 +8,7 @@ domain: handoffs/complete
 # Claude Code Implementation Plan: Changelog Fact-Check Fixes
 
 > **Prepared by:** Claude Code (2026-04-08)
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P2 — changelog inaccuracies mislead agents loading session context
 > **Source report:** manual fact-check; Changelog Auditor skill created at `skills/changelog/`
 > **v1.0**
@@ -113,7 +113,7 @@ Entry to prepend below `## [Unreleased]`:
 - `skills/changelog/changelog.md` (if exists)
 
 **Changes:**
-- `skills/changelog/` — new skill created: changelog auditing (7 checks, flag-only, companion to Vault Auditor)
+- `skills/changelog/` — new skill created: changelog auditing (7 checks, flag-only, companion to Repo Auditor)
 - `skills/handoff/index.md` + `skills/changelog/index.md` + `skills/changelog/entry_template.md` — bidirectional handoff ↔ changelog cross-reference added
 - `src/ben-cp.ts` — `write_changelog_entry` upgraded: `subdirectories` array (replaces single `subdirectory`), `handoff` param, `get_changelog` scope param, `failed_actions` surfaced at root level
 - `src/ben-cp.ts` — `package.json` build script fixed: `tsc -p tsconfig.json` (was broken inline flags)
@@ -167,7 +167,7 @@ Read `changelog.md` before any edits.
 | `lumberjack/` | Changelog auditing — accuracy, completeness, cross-reference checks |
 ```
 
-**Read `AGENTS.md` first.** Add `lumberjack/` to the vault structure tree under `skills/`:
+**Read `AGENTS.md` first.** Add `lumberjack/` to the repo structure tree under `skills/`:
 ```
     ├── lumberjack/              ← changelog auditing (accuracy + completeness checks)
 ```

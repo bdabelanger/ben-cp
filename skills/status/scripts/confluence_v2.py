@@ -4,7 +4,7 @@ import sys
 import json
 from atlassian import Confluence
 
-# Standard Vault Paths
+# Standard Repo Paths
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
 
 def load_env():
@@ -23,7 +23,7 @@ def get_confluence_client():
     env = load_env()
     email = env.get("ATLASSIAN_USER_EMAIL")
     token = env.get("ATLASSIAN_API_TOKEN")
-    url = "https://casecommons.atlassian.net" # Default for this vault
+    url = "https://casecommons.atlassian.net" # Default for this repo
     
     if not email or not token:
         print("Error: Missing credentials in .env", file=sys.stderr)

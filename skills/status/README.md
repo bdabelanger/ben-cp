@@ -22,7 +22,7 @@ python3 tools/status-reports/scripts/full_run.py
 ./tools/status-reports/run_pipeline.sh --force
 ```
 
-Run from vault root (`ben-cp/`). Requires `ASANA_API_TOKEN`, `ATLASSIAN_USER_EMAIL`, and `ATLASSIAN_API_TOKEN` in `.env` at vault root.
+Run from repo root (`ben-cp/`). Requires `ASANA_API_TOKEN`, `ATLASSIAN_USER_EMAIL`, and `ATLASSIAN_API_TOKEN` in `.env` at repo root.
 
 ## Layout
 

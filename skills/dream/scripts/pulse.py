@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """pulse.py — Monitor physical sync health and boundary rules."""
-import os, sys, json, re
-from datetime import datetime, timezone
+import os, re, json
+from datetime import datetime
+from utils import get_manifest, get_manifest_all_files
 
-VAULT_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
-OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream', 'data', 'raw')
+REPO_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
+OUTPUTS_DIR = os.path.join(REPO_ROOT, 'reports', 'dream', 'data', 'raw')
 
 def check_changelog_staleness():
-    path = os.path.join(VAULT_ROOT, 'changelog.md')
+    path = os.path.join(REPO_ROOT, 'changelog.md')
     if not os.path.exists(path):
         return {"status": "ERROR", "detail": "changelog.md not found"}
     mtime = os.path.getmtime(path)
@@ -26,45 +27,31 @@ def check_changelog_staleness():
 
 def scan_boundary_violations():
     violations = []
-    intel_dir = os.path.join(VAULT_ROOT, 'intelligence')
-    for root, dirs, files in os.walk(intel_dir):
-        dirs[:] = [d for d in dirs if not d.startswith('.')]
-        for f in files:
-            if f.endswith(('.py', '.ts')):
-                rel = os.path.relpath(os.path.join(root, f), VAULT_ROOT)
-                violations.append({"path": rel, "rule": "code_in_intelligence"})
+    manifest = get_manifest()
+    if not manifest:
+        return []
 
-    # Non-functional data files in skills/ or orchestration/
-    data_exts = {'.json', '.csv', '.xml', '.html', '.txt'}
-    for check_dir in ['skills', 'orchestration']:
-        dir_path = os.path.join(VAULT_ROOT, check_dir)
-        if not os.path.isdir(dir_path):
-            continue
-        for root, dirs, files in os.walk(dir_path):
-            dirs[:] = [d for d in dirs if not d.startswith('.') and d != 'node_modules']
-            for f in files:
-                ext = os.path.splitext(f)[1].lower()
-                if ext in data_exts:
-                    # Allow schemas and templates
-                    rel_dir = os.path.relpath(root, VAULT_ROOT)
-                    if 'schemas' in rel_dir or 'templates' in rel_dir:
-                        continue
-                    rel = os.path.join(rel_dir, f)
-                    violations.append({"path": rel, "rule": "data_file_in_skills_or_orchestration"})
+    for rel, meta in manifest.get('files', {}).items():
+        # Code in intelligence
+        if rel.startswith('intelligence/') and rel.endswith(('.py', '.ts')):
+            violations.append({"path": rel, "rule": "code_in_intelligence"})
+        
+        # Data files in skills or orchestration
+        data_exts = {'.json', '.csv', '.xml', '.html', '.txt'}
+        if any(rel.startswith(d) for d in ['skills/', 'orchestration/']):
+            ext = os.path.splitext(rel)[1].lower()
+            if ext in data_exts:
+                if 'schemas/' in rel or 'templates/' in rel or 'inputs/' in rel or 'outputs/' in rel:
+                    continue
+                violations.append({"path": rel, "rule": "data_file_in_skills_or_orchestration"})
+    
     return violations
 
 def check_index_coverage():
-    missing = []
-    ignore_dirs = {'.', 'node_modules', 'reports', 'dist', 'src', '.git', '.gemini', 'complete', 'archive', 'archived'}
-    for root, dirs, files in os.walk(VAULT_ROOT):
-        dirs[:] = [d for d in dirs if not d.startswith('.') and d not in ignore_dirs and d != '__pycache__']
-        rel_root = os.path.relpath(root, VAULT_ROOT)
-        md_files = [f for f in files if f.endswith('.md')]
-        if md_files and 'index.md' not in files:
-            if rel_root == '.' and 'README.md' in files:
-                continue
-            missing.append(rel_root)
-    return missing
+    # Only root index.md is required now
+    if not os.path.exists(os.path.join(REPO_ROOT, 'index.md')):
+        return ["."]
+    return []
 
 def run():
     staleness = check_changelog_staleness()

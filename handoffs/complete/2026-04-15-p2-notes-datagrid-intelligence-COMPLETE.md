@@ -11,7 +11,7 @@ domain: handoffs/complete
 
 > **Prepared by:** Cowork (Gemini) (2026-04-15)
 > **Assigned to:** Gemma
-> **Vault root:** ben-cp/
+> **Repo root:** ben-cp/
 > **Priority:** P2
 > **STATUS**: ✅ COMPLETE
 

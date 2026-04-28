@@ -2,11 +2,11 @@
 
 > **Prepared by:** Code (Gemini) (2026-04-27)
 > **Assigned to:** Code
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **STATUS**: ✅ COMPLETE — 2026-04-27
 
-Successfully sanitized frontmatter and body content vault-wide. Removed redundant metadata blocks, restored proper punctuation to titles, and migrated external platform URLs into the structured `links` frontmatter block for better agentic retrieval. Scan
+Successfully sanitized frontmatter and body content repo-wide. Removed redundant metadata blocks, restored proper punctuation to titles, and migrated external platform URLs into the structured `links` frontmatter block for better agentic retrieval. Scan
 
 ---
 
@@ -32,7 +32,7 @@ The `links:` frontmatter block from the schema is not being populated. Files lik
 
 ## Goal
 
-Fix all three issues across the vault.
+Fix all three issues across the repo.
 
 ## Execution Steps
 

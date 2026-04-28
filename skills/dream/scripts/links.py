@@ -1,22 +1,16 @@
 #!/usr/bin/env python3
 """links.py — Validate internal reference integrity across all .md files."""
-import os, json, re
+import os, json, re, urllib.parse
 from datetime import datetime
+from utils import get_manifest_files
 
-VAULT_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
-OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream', 'data', 'raw')
+REPO_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
+OUTPUTS_DIR = os.path.join(REPO_ROOT, 'reports', 'dream', 'data', 'raw')
 
-SKIP_DIRS = {'.git', '__pycache__', 'node_modules', 'archived', 'archive', 'complete'}
+SKIP_DIRS = {'.git', '__pycache__', 'node_modules', 'dist', 'src', 'reports', 'archived', 'archive', 'complete'}
 SKIP_SCHEMES = ('http://', 'https://', 'mailto:', 'ftp://', '#')
 
-def collect_md_files():
-    files = []
-    for root, dirs, fs in os.walk(VAULT_ROOT):
-        dirs[:] = [d for d in dirs if d not in SKIP_DIRS and not d.startswith('.')]
-        for f in fs:
-            if f.endswith('.md'):
-                files.append(os.path.join(root, f))
-    return files
+# Removed local collect_md_files, using utils.collect_md_files
 
 def strip_code_blocks(content):
     # Remove fenced code blocks (``` ... ```) to avoid false positives
@@ -33,8 +27,6 @@ def extract_links(path):
     # [[wiki-links]]
     for m in re.finditer(r'\[\[([^\]]+)\]\]', content):
         links.append(('wiki', m.group(1).strip()))
-    
-    import urllib.parse
     idx = 0
     while True:
         idx = content.find('](', idx)
@@ -68,17 +60,17 @@ def resolve(link_target, source_path):
 def run():
     ghost_links = []
     scanned = 0
-    md_files = collect_md_files()
+    md_files = get_manifest_files()
     for path in md_files:
         scanned += 1
         for kind, target in extract_links(path):
             if kind == 'wiki':
-                # Wiki links: search for any file matching the name anywhere under vault
+                # Wiki links: search for any file matching the name anywhere under repo
                 name = target.split('|')[0].strip()
                 candidates = [p for p in md_files if os.path.splitext(os.path.basename(p))[0] == name]
                 if not candidates:
                     ghost_links.append({
-                        "source": os.path.relpath(path, VAULT_ROOT),
+                        "source": os.path.relpath(path, REPO_ROOT),
                         "link": f"[[{target}]]",
                         "type": "wiki",
                     })
@@ -86,7 +78,7 @@ def run():
                 resolved = resolve(target, path)
                 if not os.path.exists(resolved):
                     ghost_links.append({
-                        "source": os.path.relpath(path, VAULT_ROOT),
+                        "source": os.path.relpath(path, REPO_ROOT),
                         "link": target,
                         "type": "md",
                     })

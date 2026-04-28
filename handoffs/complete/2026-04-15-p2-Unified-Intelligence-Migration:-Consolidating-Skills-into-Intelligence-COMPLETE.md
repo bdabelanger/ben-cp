@@ -9,7 +9,7 @@ domain: handoffs/complete
 
 > **Prepared by:** Human User / Cowork (Unified Intelligence Migration, 2026-04-15)
 > **Assigned to:** Code
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P2 — Major structural consolidation
 > **STATUS**: ✅ COMPLETE
 
@@ -18,7 +18,7 @@ Successfully migrated procedural Skills into the Intelligence domain. Repointed 
 ---
 
 ## Context
-The project is moving toward a **NotebookLM-centric** intelligence model. In this model, the distinction between "Skill Logic" (SOPs) and "Vault Truth" (Data) is an artificial barrier to synthesis. By consolidating `skills/` into the `intelligence/` domain, we enable unified search, cross-domain discovery, and automated indexing for our procedural knowledge.
+The project is moving toward a **NotebookLM-centric** intelligence model. In this model, the distinction between "Skill Logic" (SOPs) and "Repo Truth" (Data) is an artificial barrier to synthesis. By consolidating `skills/` into the `intelligence/` domain, we enable unified search, cross-domain discovery, and automated indexing for our procedural knowledge.
 
 This migration addresses structural debt where tools (like `sync.py`) and agents have to hunt across multiple top-level directories to find "what to do" vs "how to do it."
 

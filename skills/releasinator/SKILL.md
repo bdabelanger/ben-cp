@@ -17,12 +17,13 @@ domain: skills/releasinator
 Replaces the legacy `cbp-pivotal-tracker-doc-generator` Electron app. For a given CBP release:
 
 1. Fetches all Jira issues assigned to that fix version
-2. Finds GitHub PRs for each issue (by branch name and PR title)
-3. Identifies which repos have open `qa→master` PRs that need to be bumped
-4. Detects "leaked" issues — Jira keys found in qa→master PR bodies that aren't in the release
-5. Extracts feature flags to enable vs. leave alone
-6. Separates BE Migrations into their own section
-7. Writes `reports/releasinator/report.md`
+2. Discovers all involved repositories from these issues
+3. Compares `master...develop` for each repo to identify everything "in flight"
+4. Identifies repos that need a bump (`develop` ahead of `master`)
+5. Deep scans PRs merged into `develop` since the last production push for "leaked" Jira keys
+6. Filters leaks to exclude issues already in the release or marked as "Done" in Jira
+7. Extracts feature flags and BE Migrations
+8. Writes `reports/releasinator/report.md`
 
 ---
 
@@ -40,14 +41,14 @@ With an optional JQL filter:
 python3 "skills/releasinator/scripts/run.py" --release "2026-5-1" --jql "assignee = bisoye"
 ```
 
-All paths are relative to the vault root:
+All paths are relative to the repo root:
 `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 
 ---
 
 ## Credentials
 
-The script reads from the vault root `.env`:
+The script reads from the repo root `.env`:
 `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/.env`
 
 - `GITHUB_USERNAME`

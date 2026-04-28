@@ -9,13 +9,13 @@ domain: handoffs/complete
 
 > **Prepared by:** Claude (Cowork) via knowledge skill run (2026-04-12)
 > **Assigned to:** Claude Code
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P1 — agent navigation broken
 > **Source report:** `skills/knowledge/outputs/reports/knowledge-report-2026-04-12.md`
 > **v1.0**
 > **STATUS**: ✅ COMPLETE
 
-Synchronized AGENTS.md and the skills index with the post-cleanup vault structure, ensuring agents are no longer misrouted to defunct paths.
+Synchronized AGENTS.md and the skills index with the post-cleanup repo structure, ensuring agents are no longer misrouted to defunct paths.
 
 **Changelog:** (see root changelog.md)
 
@@ -30,7 +30,7 @@ The knowledge skill run on 2026-04-12 identified that `AGENTS.md` and `skills/in
 ## Execution Order
 
 1. **Update `AGENTS.md` Session Pattern** — fix `notes.md` reference
-2. **Update `AGENTS.md` vault structure diagram** — reflect current `skills/` layout
+2. **Update `AGENTS.md` repo structure diagram** — reflect current `skills/` layout
 3. **Update `AGENTS.md` "Who Are You?" table** — fix Roz dispatch entry
 4. **Rewrite `skills/index.md`** — reflect current directory structure
 5. Write changelog and mark complete
@@ -49,7 +49,7 @@ Also update step 6 cleanup line from "Delete the `quartermaster.md` file" to "De
 
 ---
 
-## Task 2: Update AGENTS.md Vault Structure Diagram
+## Task 2: Update AGENTS.md Repo Structure Diagram
 
 The diagram currently shows:
 ```
@@ -69,7 +69,7 @@ Update to reflect actual current structure:
     ├── dream/         ← nightly Digest orchestration
     ├── handoff/
     ├── input/
-    ├── knowledge/     ← vault quality watchdog
+    ├── knowledge/     ← repo quality watchdog
     ├── okr-reporting/
     ├── pmm/           ← session planning (Strategic PM convention)
     ├── predict/
@@ -79,7 +79,7 @@ Update to reflect actual current structure:
     └── synthesis/
 ```
 
-Also update file placement table — `Vault Auditor watchdog` entry points to `skills/knowledge/`, and `Roz audit reports` entry points to `skills/access/outputs/reports/`. Confirm these are already correct and update any remaining `crypt-keeper/` or `lumberjack/` path references.
+Also update file placement table — `Repo Auditor watchdog` entry points to `skills/knowledge/`, and `Roz audit reports` entry points to `skills/access/outputs/reports/`. Confirm these are already correct and update any remaining `crypt-keeper/` or `lumberjack/` path references.
 
 ---
 
@@ -104,7 +104,7 @@ Current `skills/index.md` (last updated 2026-04-08) lists defunct directories an
 ```markdown
 # Skills Index
 
-> Master index for all skills in this vault.
+> Master index for all skills in this repo.
 > Last updated: 2026-04-12
 
 ---
@@ -119,7 +119,7 @@ Current `skills/index.md` (last updated 2026-04-08) lists defunct directories an
 | `dream/` | Nightly Digest orchestration — runs all skill agents and compiles output |
 | `handoff/` | Cross-agent handoff protocol and file format |
 | `input/` | Session input capture and captain's log |
-| `knowledge/` | Weekly vault quality watchdog — 8 checks, flags only |
+| `knowledge/` | Weekly repo quality watchdog — 8 checks, flags only |
 | `okr-reporting/` | Platform OKR measurement runbooks and KR SOPs |
 | `pmm/` | Session planning (Strategic PM convention) — ephemeral notes.md artifacts |
 | `predict/` | Forward-looking analysis skill (in development) |

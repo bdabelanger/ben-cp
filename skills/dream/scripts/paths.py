@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""paths.py — Detect stale hardcoded vault paths in Python scripts.
+"""paths.py — Detect stale hardcoded repo paths in Python scripts.
 
-Scans all .py files for string literals that look like vault-relative paths
+Scans all .py files for string literals that look like repo-relative paths
 (e.g. reports/projects/data, reports/dream/report.md) and checks whether the
 referenced top-level directory actually exists. Flags any that do not.
 
@@ -11,20 +11,20 @@ but script path constants are not updated to match.
 import os, json, re, ast
 from datetime import datetime
 
-VAULT_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
-OUTPUTS_DIR = os.path.join(VAULT_ROOT, 'reports', 'dream', 'data', 'raw')
+REPO_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
+OUTPUTS_DIR = os.path.join(REPO_ROOT, 'reports', 'dream', 'data', 'raw')
 
 SKIP_DIRS = {'.git', '__pycache__', 'node_modules', 'dist', 'complete', 'archive', 'archived'}
 
-# Vault-relative path pattern: starts with a known top-level dir name,
+# Repo-relative path pattern: starts with a known top-level dir name,
 # followed by / and more path components. We extract the first segment
-# and check it exists under VAULT_ROOT.
+# and check it exists under REPO_ROOT.
 # Only flag paths with at least 2 segments (avoids single-word false positives).
 PATH_PATTERN = re.compile(r'["\']([a-zA-Z][\w\-]+/[\w\-\./]+)["\']')
 
-# Known vault top-level directories — only flag paths whose root is one of these.
+# Known repo top-level directories — only flag paths whose root is one of these.
 # This prevents MIME types like "application/json" from triggering false positives.
-VAULT_ROOTS = {
+REPO_ROOTS = {
     'reports', 'skills', 'intelligence', 'handoffs', 'tasks',
     'agents', 'src', 'dist', 'orchestration', 'tools',
 }
@@ -35,7 +35,7 @@ IGNORE_ROOTS = {'dist', 'node_modules', '__pycache__'}
 
 def collect_py_files():
     files = []
-    for root, dirs, fs in os.walk(VAULT_ROOT):
+    for root, dirs, fs in os.walk(REPO_ROOT):
         dirs[:] = [d for d in dirs if d not in SKIP_DIRS and not d.startswith('.')]
         for f in fs:
             if f.endswith('.py'):
@@ -44,7 +44,7 @@ def collect_py_files():
 
 
 def extract_path_strings(filepath):
-    """Extract string literals from a Python file that look like vault paths."""
+    """Extract string literals from a Python file that look like repo paths."""
     try:
         with open(filepath, errors='replace') as f:
             source = f.read()
@@ -62,16 +62,16 @@ def extract_path_strings(filepath):
 
 def check_path(path_str):
     """
-    Check if the vault-relative path's top-level directory exists.
+    Check if the repo-relative path's top-level directory exists.
     Returns (root_segment, exists, skip) where skip=True means ignore this path.
     """
     root_segment = path_str.split('/')[0]
-    # Only check paths whose root is a known vault directory
-    if root_segment not in VAULT_ROOTS:
-        return root_segment, True, True  # skip — not a vault path
+    # Only check paths whose root is a known repo directory
+    if root_segment not in REPO_ROOTS:
+        return root_segment, True, True  # skip — not a repo path
     if root_segment in IGNORE_ROOTS:
         return root_segment, True, False
-    full = os.path.join(VAULT_ROOT, root_segment)
+    full = os.path.join(REPO_ROOT, root_segment)
     return root_segment, os.path.exists(full), False
 
 
@@ -82,7 +82,7 @@ def run():
 
     for filepath in py_files:
         scanned += 1
-        rel = os.path.relpath(filepath, VAULT_ROOT)
+        rel = os.path.relpath(filepath, REPO_ROOT)
         candidates = extract_path_strings(filepath)
 
         for path_str, line_num in candidates:

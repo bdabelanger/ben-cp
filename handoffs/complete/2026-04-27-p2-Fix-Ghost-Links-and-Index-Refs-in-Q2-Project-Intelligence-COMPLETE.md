@@ -2,7 +2,7 @@
 
 > **Prepared by:** Code (Gemini) (2026-04-27)
 > **Assigned to:** Code
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **STATUS**: ✅ COMPLETE — 2026-04-27
 
@@ -49,7 +49,7 @@ Resolve all 13 actionable ghost links and 6 index ghost refs so both sensors ret
 
 4. **Resolve OKR links** — for the three project index files linking to missing OKR paths, either:
    - Create stub OKR files at the expected paths if the OKR structure exists but files are missing, OR
-   - Remove/comment the broken OKR links if Q2 OKRs are not tracked in the vault
+   - Remove/comment the broken OKR links if Q2 OKRs are not tracked in the repo
 
 5. **Re-run dream sensors** after fixes and confirm links + index sensors return clean.
 

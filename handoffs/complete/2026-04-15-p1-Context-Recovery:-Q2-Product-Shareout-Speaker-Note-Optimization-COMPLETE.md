@@ -9,7 +9,7 @@ domain: handoffs/complete
 
 > **Prepared by:** Code (Gemini) (2026-04-15)
 > **Assigned to:** Gemma
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P1
 > **STATUS**: ✅ COMPLETE
 

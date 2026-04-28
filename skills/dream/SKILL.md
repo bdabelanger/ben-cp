@@ -9,13 +9,13 @@ domain: skills/dream
 
 > **Trigger:** Nightly automated run (22:00) or manual invocation
 > **Agent:** Cowork (Claude)
-> **Purpose:** Run all vault health sensors, triage findings, fix low-risk issues directly, and create handoffs for Code/Cowork (avoiding Asana tasks).
+> **Purpose:** Run all repo health sensors, triage findings, fix low-risk issues directly, and create handoffs for Code/Cowork (avoiding Asana tasks).
 
 ---
 
 ## Overview
 
-The Dream cycle is the vault's nightly health loop. It runs all sensors against the vault, analyzes results, routes work to the right destination, then harvests fresh data (tasks, status, intelligence) so everything is current by morning. Ben's briefing is a `Dream Report` handoff waiting for him when he signs in.
+The Dream cycle is the repo's nightly health loop. It runs all sensors against the repo, analyzes results, routes work to the right destination, then harvests fresh data (tasks, status, intelligence) so everything is current by morning. Ben's briefing is a `Dream Report` handoff waiting for him when he signs in.
 
 Terminal output during the run stays terse — no narration until the final handoff is written.
 

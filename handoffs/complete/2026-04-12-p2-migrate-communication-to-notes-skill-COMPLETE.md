@@ -9,7 +9,7 @@ domain: handoffs/complete
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)
 > **Assigned to:** Any
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **v1.0**
 > **STATUS**: ✅ COMPLETE
@@ -21,7 +21,7 @@ Successfully migrated the communication skill logic from its old location to a s
 
 ---
 
-**Goal:** Refactor the `orchestration/communication` skill into a dedicated, standardized `orchestration/notes` structure to better reflect its function as the vault's primary collaborative scratchpad.
+**Goal:** Refactor the `orchestration/communication` skill into a dedicated, standardized `orchestration/notes` structure to better reflect its function as the repo's primary collaborative scratchpad.
 
 **Execution Plan (Migration):**
 1. **Create New Structure:** Create the directory `orchestration/notes/` if it does not exist.

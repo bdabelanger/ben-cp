@@ -8,7 +8,7 @@ domain: handoffs/complete
 # Claude Code Implementation Plan: Handoff Editability Rule
 
 > **Prepared by:** Claude (Cowork) (2026-04-10)
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P1 — Corrects a rule ambiguity that blocks iterative handoff development.
 > **v1.0**
 > **STATUS**: ✅ COMPLETE
@@ -19,7 +19,7 @@ domain: handoffs/complete
 
 Handoffs cannot currently be edited after creation. This is the wrong constraint — handoffs are living implementation plans, not historical records. The append-only / never-edit discipline belongs to `changelog.md` files only.
 
-The confusion likely arose from changelog rules being applied too broadly across all vault documents.
+The confusion likely arose from changelog rules being applied too broadly across all repo documents.
 
 ---
 
@@ -65,4 +65,4 @@ After step 4 ("If human user confirms, execute using the handoff protocol"), add
 ## Constraints
 
 - Do not touch any files in `handoff/complete/` — those remain immutable
-- This change does not affect changelog discipline anywhere in the vault
+- This change does not affect changelog discipline anywhere in the repo

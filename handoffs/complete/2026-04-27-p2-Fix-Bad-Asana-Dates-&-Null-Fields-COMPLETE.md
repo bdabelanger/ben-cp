@@ -2,7 +2,7 @@
 
 > **Prepared by:** Code (Gemini) (2026-04-27)
 > **Assigned to:** Code
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **STATUS**: ✅ COMPLETE — 2026-04-27
 
@@ -14,7 +14,7 @@ Scanned all 22 Q2 intelligence files for null/TBD/stale fields and correlated ag
 
 > **Prepared by:** Code (Gemini) (2026-04-27)
 > **Assigned to:** Local (Gemma 2 27B)
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **STATUS**: 🔲 READY — pick up 2026-04-27
 
@@ -22,7 +22,7 @@ Scanned all 22 Q2 intelligence files for null/TBD/stale fields and correlated ag
 
 ## Context
 
-A recent audit of the Q2 project intelligence records reveals a high volume of `null`, `TBD`, and `stale` values in critical date fields (e.g., **Discovery Start**, **GA Date**, **CEO Meeting**). These appear to be artifacts of incomplete Asana exports or unpopulated custom fields. Maintaining high-fidelity dates is critical for accurate strategic reporting and the "Pulse" of the vault.
+A recent audit of the Q2 project intelligence records reveals a high volume of `null`, `TBD`, and `stale` values in critical date fields (e.g., **Discovery Start**, **GA Date**, **CEO Meeting**). These appear to be artifacts of incomplete Asana exports or unpopulated custom fields. Maintaining high-fidelity dates is critical for accurate strategic reporting and the "Pulse" of the repo.
 
 ## Logic
 

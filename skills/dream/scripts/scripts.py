@@ -9,9 +9,9 @@ Checks that:
 import os, json, re, ast
 from datetime import datetime
 
-VAULT_ROOT   = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
-SKILLS_DIR   = os.path.join(VAULT_ROOT, 'skills')
-OUTPUTS_DIR  = os.path.join(VAULT_ROOT, 'reports', 'dream', 'data', 'raw')
+REPO_ROOT   = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
+SKILLS_DIR   = os.path.join(REPO_ROOT, 'skills')
+OUTPUTS_DIR  = os.path.join(REPO_ROOT, 'reports', 'dream', 'data', 'raw')
 
 SKIP_DIRS = {'.git', '__pycache__', 'node_modules', 'dist', 'complete', 'archive', 'archived'}
 
@@ -98,7 +98,7 @@ def find_referenced_scripts(filepath, base_dir):
                 if not os.path.exists(candidate3):
                     missing.append({
                         "ref": ref,
-                        "resolved": os.path.relpath(candidate, VAULT_ROOT),
+                        "resolved": os.path.relpath(candidate, REPO_ROOT),
                     })
     return missing
 
@@ -115,7 +115,7 @@ def run():
             continue
 
         skills_checked += 1
-        rel = os.path.relpath(run_py, VAULT_ROOT)
+        rel = os.path.relpath(run_py, REPO_ROOT)
 
         # 1. Syntax check
         err = check_syntax(run_py)
@@ -155,7 +155,7 @@ def run():
             for entry in os.scandir(scripts_dir):
                 if not entry.name.endswith('.py') or entry.name.startswith('_'):
                     continue
-                srel = os.path.relpath(entry.path, VAULT_ROOT)
+                srel = os.path.relpath(entry.path, REPO_ROOT)
                 serr = check_syntax(entry.path)
                 if serr:
                     findings.append({

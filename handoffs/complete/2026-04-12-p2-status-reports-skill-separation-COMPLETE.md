@@ -9,12 +9,12 @@ domain: handoffs/complete
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)
 > **Assigned to:** Claude Code
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **v1.0**
 > **STATUS**: ✅ COMPLETE
 
-Migrated skills/product/status-reports/ from a three-layer mixed directory to a clean two-file skill stub. All execution tooling moved to tools/status-reports/ (scripts, run_pipeline.sh, tests). All live data moved to inputs/status-reports/ (raw/, processed/, archive/, manifest.json). Generated log moved to outputs/status-reports/. Updated all path constants in 8 Python scripts + shell wrapper to compute VAULT_ROOT from __file__ and resolve all data paths from vault root. Updated manifest.json config and step file paths. Updated index.md kickstart commands. Wrote READMEs for tools/ and inputs/ layers. Smoke tested — all paths resolve correctly. Note: files were untracked (never committed), so filesystem mv was used rather than git mv; no git history existed to preserve.
+Migrated skills/product/status-reports/ from a three-layer mixed directory to a clean two-file skill stub. All execution tooling moved to tools/status-reports/ (scripts, run_pipeline.sh, tests). All live data moved to inputs/status-reports/ (raw/, processed/, archive/, manifest.json). Generated log moved to outputs/status-reports/. Updated all path constants in 8 Python scripts + shell wrapper to compute REPO_ROOT from __file__ and resolve all data paths from repo root. Updated manifest.json config and step file paths. Updated index.md kickstart commands. Wrote READMEs for tools/ and inputs/ layers. Smoke tested — all paths resolve correctly. Note: files were untracked (never committed), so filesystem mv was used rather than git mv; no git history existed to preserve.
 
 **Changelog:** (see root changelog.md)
 
@@ -23,7 +23,7 @@ Migrated skills/product/status-reports/ from a three-layer mixed directory to a 
 
 ## Context
 
-`skills/product/status-reports/` is the primary violation of the vault's skill separation policy (see companion handoff `2026-04-12-p2-skill-separation-architecture-policy.md`, which must be completed first). It currently mixes three layers in one directory:
+`skills/product/status-reports/` is the primary violation of the repo's skill separation policy (see companion handoff `2026-04-12-p2-skill-separation-architecture-policy.md`, which must be completed first). It currently mixes three layers in one directory:
 
 - **Skill logic** (correct): `index.md`, `SKILL.md`, `changelog.md`
 - **Execution tooling** (wrong location): `scripts/full_run.py`, `step_*.py`, `render_html.py`, `platform_report.py`, `update_manifest.py`, `run_pipeline.sh`
@@ -74,8 +74,8 @@ Key path vars to track:
 After the move:
 - Scripts live at `tools/status-reports/scripts/full_run.py`
 - `MANIFEST_PATH` must navigate from the script to `inputs/status-reports/manifest.json`
-- `REPO_ROOT` will change meaning — it should now point to the vault root (`ben-cp/`), not `skills/project-status-reports/`
-- `.env` loader: navigate from vault root to repo root (one level up, not two)
+- `REPO_ROOT` will change meaning — it should now point to the repo root (`ben-cp/`), not `skills/project-status-reports/`
+- `.env` loader: navigate from repo root to repo root (one level up, not two)
 
 ---
 
@@ -147,13 +147,13 @@ In `tools/status-reports/scripts/full_run.py`, update:
 MANIFEST_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../manifest.json")
 REPO_ROOT = os.path.dirname(os.path.abspath(MANIFEST_PATH))
 
-# NEW — navigate from tools/status-reports/scripts/ up to vault root, then into inputs/
+# NEW — navigate from tools/status-reports/scripts/ up to repo root, then into inputs/
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-VAULT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../../.."))   # tools/status-reports/scripts/ → vault root
-MANIFEST_PATH = os.path.join(VAULT_ROOT, "inputs/status-reports/manifest.json")
+REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../../.."))   # tools/status-reports/scripts/ → repo root
+MANIFEST_PATH = os.path.join(REPO_ROOT, "inputs/status-reports/manifest.json")
 ```
 
-Update the `.env` loader to walk one level up from `VAULT_ROOT` (to repo root), not two.
+Update the `.env` loader to walk one level up from `REPO_ROOT` (to repo root), not two.
 
 Update `OUTPUT_PATH` default target — report output should resolve to `outputs/status-reports/`.
 
@@ -184,13 +184,13 @@ Open `inputs/status-reports/manifest.json` and update the `config` block:
 }
 ```
 
-Also update any `file` values in the `steps` array that reference relative paths — they should now be relative to vault root.
+Also update any `file` values in the `steps` array that reference relative paths — they should now be relative to repo root.
 
 ---
 
 ## Task 9: Smoke Test
 
-Run from vault root:
+Run from repo root:
 ```bash
 python3 tools/status-reports/scripts/full_run.py
 ```

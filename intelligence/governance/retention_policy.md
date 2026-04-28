@@ -10,7 +10,7 @@ domain: intelligence/governance
 
 ## Ephemeral Pipeline Data
 
-Data files produced by data ingestion pipelines (e.g., Asana, Jira) are ephemeral and strictly bound by time-to-live (TTL) rules to prevent vault bloat and token economy risks.
+Data files produced by data ingestion pipelines (e.g., Asana, Jira) are ephemeral and strictly bound by time-to-live (TTL) rules to prevent repo bloat and token economy risks.
 
 ### JSON Archives
 

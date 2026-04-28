@@ -8,7 +8,7 @@ domain: handoffs/complete
 # Handoff: Mandatory Adoption of Artifact-Led Workflow
 
 ## Goal
-Codify and enforce the **Plan → Task → Walkthrough** workflow across all agentic operations within the ben-cp vault, governed by the newly established [Complexity Threshold Policy](file:///Users/benbelanger/My%20Drive%20(ben.belanger@casebook.net)/ben-cp/orchestration/handoff/2026-04-14-p2-Artifact-Led-Threshold-Policy.md).
+Codify and enforce the **Plan → Task → Walkthrough** workflow across all agentic operations within the ben-cp repo, governed by the newly established [Complexity Threshold Policy](file:///Users/benbelanger/My%20Drive%20(ben.belanger@casebook.net)/ben-cp/orchestration/handoff/2026-04-14-p2-Artifact-Led-Threshold-Policy.md).
 
 ## Context
 To ensure human oversight, safety, and cross-agent continuity, we are moving away from ephemeral `notes.md` planning. This handoff executes the transition to the tiered artifact standards defined by Gemini.

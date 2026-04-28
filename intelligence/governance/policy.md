@@ -1,10 +1,10 @@
 ---
-title: Vault Separation Policy
+title: Repo Separation Policy
 type: intelligence
 domain: intelligence/governance
 ---
 
-# Vault Separation Policy
+# Repo Separation Policy
 
 > Effective: 2026-04-12
 > Authority: AGENTS.md § Directory Boundaries
@@ -19,7 +19,7 @@ domain: intelligence/governance
 | **Agent artifacts** | `agents/` | `logs/`, `sessions/`, `art/` — anything produced by an agent that isn't a strategic report |
 | **Live data / WIP** | `skills/inputs/` | Raw API responses, processed JSON, `manifest.json` — anything produced *during* a run |
 | **Outputs** | `skills/outputs/` | Final reports, HTML, archives — strategic reports produced by a run |
-| **Vault source of truth**| `intelligence/` | Domain knowledge and strategic core |
+| **Source of truth**| `intelligence/` | Domain knowledge and strategic core |
 
 ---
 
@@ -92,7 +92,7 @@ These files should also be added to the `IGNORE_LIST` in `skills/dream/sensors/c
 
 ### Structural Bugs
 
-- ✅ `skills/product/shared/shared/vault.css` — double-nesting artifact; removed (2026-04-14)
+- ✅ `skills/product/shared/shared/repo.css` — double-nesting artifact; removed (2026-04-14)
 
 ### Stale Ephemeral Session Files
 

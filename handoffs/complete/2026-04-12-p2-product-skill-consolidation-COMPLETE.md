@@ -9,7 +9,7 @@ domain: handoffs/complete
 
 > **Prepared by:** Antigravity (Gemini) (2026-04-12)
 > **Assigned to:** Claude
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **v1.0**
 > **STATUS**: ✅ COMPLETE
@@ -25,8 +25,8 @@ Created skills/product/ as a new peer-level domain. Moved project-status-reports
 
 > **Prepared by:** Claude via Cowork/Dispatch (2026-04-11)
 > **Assigned to:** Claude (desktop)
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
-> **Priority:** P2 — vault reorganization, no urgency but improves agent navigation
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Priority:** P2 — repo reorganization, no urgency but improves agent navigation
 > **v1.0**
 > **STATUS**: ✅ COMPLETE
 
@@ -34,18 +34,18 @@ Created skills/product/ as a new peer-level domain. Moved project-status-reports
 
 ## Context
 
-Human user's two most active PM skills — `project-status-reports/` and `okr-reporting/` — are currently stored as sibling directories at the vault root. They share significant overlap: both are about measuring and communicating platform delivery health, both draw from the same Asana and Jira data sources, and both serve human user's primary duties as a Product Manager.
+Human user's two most active PM skills — `project-status-reports/` and `okr-reporting/` — are currently stored as sibling directories at the repo root. They share significant overlap: both are about measuring and communicating platform delivery health, both draw from the same Asana and Jira data sources, and both serve human user's primary duties as a Product Manager.
 
-The goal is to consolidate them under a new `product/` skill directory that serves as the canonical home for PM-facing knowledge and tooling. This makes the vault easier to navigate for both agents and Ben, and reduces duplication in data source references and shared conventions.
+The goal is to consolidate them under a new `product/` skill directory that serves as the canonical home for PM-facing knowledge and tooling. This makes the repo easier to navigate for both agents and Ben, and reduces duplication in data source references and shared conventions.
 
 ---
 
 ## Execution Order
 
-1. **Load context** — Read `AGENTS.md`, `project-status-reports/index.md`, `okr-reporting/index.md`, and `index.md` (vault root)
+1. **Load context** — Read `AGENTS.md`, `project-status-reports/index.md`, `okr-reporting/index.md`, and `index.md` (repo root)
 2. **Design the new structure** — Confirm proposed layout before touching anything (see Task 2)
 3. **Create `product/` directory** — New index, move sub-skills, update all internal cross-references
-4. **Update vault root `index.md`** — Replace the two old entries with one `product/` entry
+4. **Update repo root `index.md`** — Replace the two old entries with one `product/` entry
 5. **Update `AGENTS.md`** — Reflect the new skill location for any agent that references these skills
 6. **Changelog + completion** — Write changelogs and mark complete
 
@@ -57,7 +57,7 @@ Before starting, read:
 - `AGENTS.md` — check which agents reference `project-status-reports/` or `okr-reporting/` by name
 - `project-status-reports/index.md` — understand the pipeline structure
 - `okr-reporting/index.md` — understand the KR reporting structure
-- `index.md` at vault root — understand the current skill directory listing
+- `index.md` at repo root — understand the current skill directory listing
 
 ---
 
@@ -99,7 +99,7 @@ Steps:
 
 ---
 
-## Task 4: Update Vault Root `index.md`
+## Task 4: Update Repo Root `index.md`
 
 Replace the two existing entries:
 - `project-status-reports/` → remove

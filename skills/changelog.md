@@ -22,7 +22,7 @@ domain: skills
 **Next:** Validate the alignment data mapping against Asana Push corrections
 
 
-## 2026-04-12 — Build vault-native CRU tools for notes.md so agents never need shell or filesystem access to read, write, or correct notes.
+## 2026-04-12 — Build repo-native CRU tools for notes.md so agents never need shell or filesystem access to read, write, or correct notes.
 
 **Files changed:**
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/src/ben-cp.ts` — Added read_notes, append_note, edit_note tools with NOTES_DOMAIN_MAP and server-side ownership enforcement ✅ Complete
@@ -45,10 +45,10 @@ domain: skills
 ## 2026-04-12 — Verify structural integrity of intelligence/ and orchestration/ domains post-refactor, and clean up side-effects from prior agent session.
 
 **Files changed:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/orchestration/notes/` — Deleted rogue directory created at repo root by prior agent (Gemma) — was not in vault path ✅ Complete
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/orchestration/notes/` — Deleted rogue directory created at repo root by prior agent (Gemma) — was not in repo path ✅ Complete
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/index.md` — Fixed broken link: collaboration/index.md → communication/index.md ✅ Complete
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/intelligence/index.md` — Verified clean — no corruption from prior agent's failed shell commands ✅ Complete
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/notes/notes.md` — Verified readable at correct vault-relative path (smoke test step 3 had wrong path in handoff) ✅ Complete
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/notes/notes.md` — Verified readable at correct repo-relative path (smoke test step 3 had wrong path in handoff) ✅ Complete
 
 **Handoff:** `handoff/complete/2026-04-12-p4-intelligence-smoke-test-fresh-chat-COMPLETE.md`
 

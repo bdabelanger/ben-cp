@@ -16,7 +16,7 @@ REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "..", ".."))
 MANIFEST_PATH = os.path.join(REPO_ROOT, "reports/status/data/manifest.json")
 
 def _load_dotenv():
-    """Load .env from vault root (ben-cp/.env)."""
+    """Load .env from repo root (ben-cp/.env)."""
     env_path = os.path.join(REPO_ROOT, ".env")
     if not os.path.exists(env_path):
         return
@@ -53,6 +53,16 @@ def build_epic_keys_from_asana(asana_path):
                 if 'CBP-' in val:
                     keys.append(val.split('/')[-1].strip())
     return list(dict.fromkeys(keys))  # dedupe, preserve order
+
+def prune_archive(archive_dir, keep=3):
+    """Maintain rolling retention of snapshots."""
+    if not os.path.isdir(archive_dir):
+        return
+    files = [os.path.join(archive_dir, f) for f in os.listdir(archive_dir) if os.path.isfile(os.path.join(archive_dir, f))]
+    files.sort(key=os.path.getmtime, reverse=True)
+    for f in files[keep:]:
+        print(f"🗑️  Pruning old archive: {f}")
+        os.remove(f)
 
 def main():
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] run.py (platform/projects)")
@@ -137,11 +147,28 @@ def main():
     print("\n🧠 Running Intelligence Harvest (Confluence Fetch)...")
     subprocess.run(["python3", os.path.join(script_dir, "05_harvest_confluence_docs.py")])
 
-    # Vault Normalization
-    print("🏗️  Running Vault Normalization...")
-    subprocess.run(["python3", os.path.join(script_dir, "99_normalize_vault.py")])
+    # Repo Normalization
+    print("🏗️  Running Repo Normalization...")
+    subprocess.run(["python3", os.path.join(script_dir, "99_normalize_repo.py")])
 
-
+    # Token Economy Remediation
+    print("📉 Performing Token Economy Remediation...")
+    
+    # 1. Prune Archive
+    status_archive = os.path.join(REPO_ROOT, "reports/status/data/archive")
+    prune_archive(status_archive)
+    
+    # 2. Purge Raw Data
+    raw_dirs = [
+        os.path.join(REPO_ROOT, "reports/asana/raw"),
+        os.path.join(REPO_ROOT, "reports/status/data/raw")
+    ]
+    for rd in raw_dirs:
+        if os.path.isdir(rd):
+            for f in os.listdir(rd):
+                if f.endswith(".json"):
+                    print(f"🔥 Purging raw artifact: {f}")
+                    os.remove(os.path.join(rd, f))
 
     print(f"\n--- PREVIEW ---\n")
     print(report_md)

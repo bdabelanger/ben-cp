@@ -13,12 +13,12 @@ from datetime import datetime
 
 # Manifest path resolution
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-VAULT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../../.."))
-MANIFEST_PATH = os.path.join(VAULT_ROOT, "reports/status/data/manifest.json")
-REPO_ROOT = VAULT_ROOT
+REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "../../.."))
+MANIFEST_PATH = os.path.join(REPO_ROOT, "reports/status/data/manifest.json")
+REPO_ROOT = REPO_ROOT
 
 def _load_dotenv():
-    env_path = os.path.join(VAULT_ROOT, ".env")
+    env_path = os.path.join(REPO_ROOT, ".env")
     if not os.path.exists(env_path): return
     with open(env_path) as f:
         for line in f:

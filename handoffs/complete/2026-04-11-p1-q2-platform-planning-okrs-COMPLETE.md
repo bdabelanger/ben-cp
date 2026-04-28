@@ -12,7 +12,7 @@ links:
 > **Prepared by:** Claude via Cowork/Dispatch (2026-04-11)
 > **Target date:** 2026-04-12
 > **Assignee:** Claude (Cowork) / human user
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P1 — recurring weekly input required from human user before Claude can act
 > **v1.5**
 > **STATUS**: ✅ COMPLETE
@@ -36,7 +36,7 @@ Pushed 11 of 12 queued Asana date corrections from the Q2 planning session. All 
 
 The user completed a full Q2 quarterly planning session on 2026-04-11 via Cowork/Dispatch (mobile). The session produced a finalized biweekly release calendar, dev allocation analysis, QA/UAT date derivations, risk flags, and a staffing observations doc. Two immediate work items remain: (1) OKR writing for a manager meeting tomorrow, and (2) pushing 17 Asana date corrections once approved.
 
-A third meta-task is also captured here: the concept of **Dispatch as a proxy messenger agent** needs to be formally added to `AGENTS.md` at the vault root. This should be treated as a separate sub-task within this handoff, not the primary focus.
+A third meta-task is also captured here: the concept of **Dispatch as a proxy messenger agent** needs to be formally added to `AGENTS.md` at the repo root. This should be treated as a separate sub-task within this handoff, not the primary focus.
 
 > **Note on scope:** This handoff is large and covers three distinct areas — OKR writing, Asana corrections, and AGENTS.md update. If it grows further, consider splitting into separate handoff files per task. For now they are grouped because they share a common session origin and human user wants a single pickup point.
 
@@ -44,7 +44,7 @@ A third meta-task is also captured here: the concept of **Dispatch as a proxy me
 
 ## Execution Order
 
-1. **Load vault context** — Read `AGENTS.md` at vault root and `okr-reporting/q2-2026/index.md`
+1. **Load repo context** — Read `AGENTS.md` at repo root and `okr-reporting/q2-2026/index.md`
 2. **OKR writing session** — Collaborate with human user on Q2 OKR targets (see Task 2)
 3. **Asana corrections** — Push 17 date corrections after human user's explicit approval (see Task 3)
 4. **AGENTS.md update** — Add Dispatch agent definition (see Task 4)
@@ -55,11 +55,11 @@ A third meta-task is also captured here: the concept of **Dispatch as a proxy me
 ## Task 1: Load Context
 
 Before starting, read:
-- `AGENTS.md` — vault root, understand current agent roster and conventions
+- `AGENTS.md` — repo root, understand current agent roster and conventions
 - `okr-reporting/q2-2026/index.md` — understand what OKR structure already exists for Q2
 - `okr-reporting/q2-2026/planning-services-at-scale/index.md` and `okr-reporting/q2-2026/elevate-notes/index.md` — existing KR files that may already have baselines or targets relevant to this session
 
-This is essential before the OKR session — the vault already has Q2 OKR structure in place.
+This is essential before the OKR session — the repo already has Q2 OKR structure in place.
 
 ---
 
@@ -113,11 +113,11 @@ The user's OKR format is approved by his manager. He has a meeting on 2026-04-12
 
 ## Task 4: AGENTS.md — Add Dispatch
 
-Add a new agent entry to `AGENTS.md` for **Dispatch**. This is not a vault agent like Strategic PM or Changelog Auditor — it is an external relay agent (Claude running on mobile via the Dispatch tab in the Claude app). It needs to be documented so all vault agents and desktop Claude understand how to interpret and respond to messages from it.
+Add a new agent entry to `AGENTS.md` for **Dispatch**. This is not a repo agent like Strategic PM or Changelog Auditor — it is an external relay agent (Claude running on mobile via the Dispatch tab in the Claude app). It needs to be documented so all repo agents and desktop Claude understand how to interpret and respond to messages from it.
 
 **What to add to AGENTS.md:**
 
-Dispatch is Claude running on mobile (iOS/Android) in the Dispatch tab of the Claude app. It acts as a proxy messenger — relaying human user's instructions from mobile into active desktop Cowork sessions or Claude Code sessions. It is not a vault agent and does not read or write vault files directly.
+Dispatch is Claude running on mobile (iOS/Android) in the Dispatch tab of the Claude app. It acts as a proxy messenger — relaying human user's instructions from mobile into active desktop Cowork sessions or Claude Code sessions. It is not a repo agent and does not read or write repo files directly.
 
 Key behavioral rules for all agents when receiving a Dispatch message:
 
@@ -129,7 +129,7 @@ Key behavioral rules for all agents when receiving a Dispatch message:
 
 When Dispatch introduces itself in a fresh session or task, it should identify as a proxy: "Message from human user via Dispatch: [message]" or "human user is on mobile via Dispatch — [context]. Here's what he'd like: [message]"
 
-The user-cp is not currently connected on mobile. Dispatch cannot read vault files or run skills directly. Until that changes, Dispatch relies on handoff files and session context to carry continuity between mobile and desktop sessions.
+The user-cp is not currently connected on mobile. Dispatch cannot read repo files or run skills directly. Until that changes, Dispatch relies on handoff files and session context to carry continuity between mobile and desktop sessions.
 
 ---
 
@@ -184,13 +184,13 @@ Feature flags: 1:1 with projects except BAU. Bulk Service Notes feature-flagged 
 
 ## Task 5: Changelog + Completion
 
-Write changelog entries for any vault files touched (subdirectory first, then root), mark this file complete, and move to `handoff/complete/`.
+Write changelog entries for any repo files touched (subdirectory first, then root), mark this file complete, and move to `handoff/complete/`.
 
 ---
 
 ## Notes for This Agent
 
-- The okr-reporting Q2 structure already exists in the vault — read it before proposing anything new. Do not create duplicate KR files.
+- The okr-reporting Q2 structure already exists in the repo — read it before proposing anything new. Do not create duplicate KR files.
 - Do not push Asana corrections without human user's explicit go-ahead in the session.
 - The Dispatch AGENTS.md entry is low-urgency relative to OKRs — if the session runs long, defer to a follow-up handoff.
 - This handoff may need to be split if scope grows. Flag this to human user if tasks 2–4 cannot be completed in a single session.

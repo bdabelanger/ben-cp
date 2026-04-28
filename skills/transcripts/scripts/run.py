@@ -7,16 +7,15 @@ classifies each action item, and writes a handoff for Cowork to run
 the task-capture skill with Ben in an interactive session.
 
 Usage:
-    python3 run.py --email /path/to/notes.txt [--date "Apr 27, 2026"]
+    python3 run.py --email /path/to/notes.txt [--date "Apr 27, 2026"] [--mode rich|standup]
 """
-import os, sys, re, json, argparse
+import os, sys, re, json, argparse, textwrap
 from datetime import datetime
 
 SCRIPT_DIR     = os.path.dirname(os.path.abspath(__file__))
-VAULT_ROOT     = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "..", ".."))
+REPO_ROOT     = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "..", ".."))
 PEOPLE_PATH    = os.path.join(SCRIPT_DIR, "..", "schemas", "people.json")
-HANDOFFS_DIR   = os.path.join(VAULT_ROOT, "handoffs")
-HANDOFFS_INDEX = os.path.join(HANDOFFS_DIR, "index.md")
+HANDOFFS_DIR   = os.path.join(REPO_ROOT, "handoffs")
 
 BEN_NAME = "Ben"
 
@@ -43,8 +42,8 @@ ITEM_PATTERN = re.compile(
 JIRA_KEY_PATTERN = re.compile(r'\b(?:ticket|PR|issue|CBP-)?(\d{4,})\b', re.IGNORECASE)
 CBP_KEY_PATTERN  = re.compile(r'\bCBP-(\d+)\b', re.IGNORECASE)
 
-def parse_email(text):
-    """Extract action items from Gemini standup email body."""
+def parse_transcript(text, mode="standup"):
+    """Extract action items and context from Gemini transcript/email."""
     match = NEXT_STEPS_PATTERN.search(text)
     section = match.group(1) if match else text
 
@@ -53,19 +52,33 @@ def parse_email(text):
         raw_assignees = m.group(1)
         action_label  = m.group(2).strip()
         description   = m.group(3).strip()
-
-        assignees = [a.strip() for a in raw_assignees.split(",")]
+        assignees     = [a.strip() for a in raw_assignees.split(",")]
 
         # Extract bare ticket numbers as CBP references
         bare_numbers = JIRA_KEY_PATTERN.findall(description + " " + action_label)
         explicit_keys = CBP_KEY_PATTERN.findall(description + " " + action_label)
         jira_refs = list({f"CBP-{n}" for n in bare_numbers + explicit_keys})
 
+        context = ""
+        if mode == "rich":
+            try:
+                search_term = description[:50]
+                idx = text.find(search_term)
+                if idx != -1:
+                    start_ctx = max(0, text.rfind('\n', 0, idx - 1))
+                    end_ctx = text.find('\n', idx + len(description) + 100)
+                    if end_ctx == -1: end_ctx = len(text)
+                    context = text[start_ctx:end_ctx].strip()
+                    context = "\n".join([line.strip() for line in context.split('\n') if line.strip()][:10])
+            except:
+                pass
+
         items.append({
             "assignees":    assignees,
             "action_label": action_label,
             "description":  description,
             "jira_refs":    sorted(jira_refs),
+            "context":      context
         })
 
     return items
@@ -95,8 +108,7 @@ def classify_hint(item, people):
                 roles.append(info.get("role", ""))
                 break
 
-    all_devs = all("dev" in r for r in roles if r)
-    any_dev  = any("dev" in r for r in roles if r)
+    any_dev = any("dev" in r for r in roles if r)
 
     if BUG_SIGNALS.search(description):
         dest = "Jira Bug"
@@ -111,6 +123,8 @@ def classify_hint(item, people):
         return dest
 
     if PM_SIGNALS.search(description) or not any_dev:
+        if "note" in description.lower(): return "Asana → Ben (Notes)"
+        if "enroll" in description.lower(): return "Asana → Ben (Service Plan)"
         return f"Asana → Ben"
 
     return "Asana → Ben (default)"
@@ -119,20 +133,17 @@ def classify_hint(item, people):
 # Handoff generation
 # ---------------------------------------------------------------------------
 
-def write_handoff(items, meeting_date, people):
+def write_handoff(items, meeting_date, people, meeting_mode="standup"):
     today = datetime.now().strftime("%Y-%m-%d")
-    date_slug = today
-
-    # Filename: 2026-04-27-p2-Transcript-Harvest-Apr-27.md
     month_day = datetime.now().strftime("%b-%-d").replace(" ", "-")
-    filename = f"{date_slug}-p2-Transcript-Harvest-{month_day}.md"
+    filename = f"{today}-p2-Transcript-Harvest-{month_day}.md"
     filepath = os.path.join(HANDOFFS_DIR, filename)
 
     lines = [
         "---",
         f"title: Transcript Harvest — {meeting_date}",
         "priority: P2",
-        "assigned_to: Cowork (Sonnet 4.6)",
+        "assigned_to: Cowork",
         "status: READY",
         f"date: {today}",
         "---",
@@ -148,26 +159,36 @@ def write_handoff(items, meeting_date, people):
         "",
         "## Context",
         "",
-        f"Gemini notes from {meeting_date} have been parsed. The action items below need to be captured as tasks. Work through them with Ben using the **task-capture skill** — present each item, confirm routing, and fire off creation.",
+        f"Gemini notes from {meeting_date} have been parsed in **{meeting_mode}** mode.",
+        "The action items below need to be captured as tasks. Work through them with Ben — present each item, confirm routing, and fire off creation.",
         "",
         "---",
         "",
         "## Action Items",
         "",
-        "| # | Assignee(s) | Action | Description | Jira Refs | Suggested Route |",
-        "|---|---|---|---|---|---|",
     ]
 
     for i, item in enumerate(items, 1):
         assignees_str = ", ".join(item["assignees"])
         action        = item["action_label"]
-        description   = item["description"].replace("|", "\\|")[:80]
+        description   = item["description"]
         jira_refs     = ", ".join(item["jira_refs"]) if item["jira_refs"] else "—"
         hint          = classify_hint(item, people)
-        lines.append(f"| {i} | {assignees_str} | {action} | {description} | {jira_refs} | {hint} |")
+
+        lines += [
+            f"### {i}. {action}: {description}",
+            f"- **Assignee(s)**: {assignees_str}",
+            f"- **Suggested Route**: {hint}",
+            f"- **Jira Refs**: {jira_refs}",
+        ]
+
+        if item.get("context"):
+            ctx_block = textwrap.indent(item["context"], "  > ")
+            lines.append(f"- **Meeting Context**:\n{ctx_block}")
+
+        lines.append("")
 
     lines += [
-        "",
         "---",
         "",
         "## Execution Steps",
@@ -175,13 +196,13 @@ def write_handoff(items, meeting_date, people):
         "1. Read each action item above.",
         "2. For each item, present it to Ben with the suggested route.",
         "3. Confirm or adjust with Ben, then use the **task-capture skill** to create it.",
-        "4. Work through all items in order. Do not skip — Ben can defer or dismiss individually.",
+        "4. Work through all items in order. Ben can skip, defer, or adjust any item.",
         "5. Confirm concisely after each creation (key/GID + title).",
         "",
         "## Verification",
         "",
         "- [ ] All action items reviewed with Ben",
-        f"- [ ] Tasks/issues created for all {len(items)} items (or explicitly deferred)",
+        f"- [ ] Tasks/issues created for all {len(items)} items (or explicitly deferred/skipped)",
         "",
     ]
 
@@ -190,37 +211,15 @@ def write_handoff(items, meeting_date, people):
 
     return filename, filepath
 
-def update_index(filename):
-    today = datetime.now().strftime("%Y-%m-%d")
-    new_row = f"| [{filename}]({filename}) | P2 | Cowork (Sonnet 4.6) | {today} |"
-
-    with open(HANDOFFS_INDEX) as f:
-        content = f.read()
-
-    # Insert after the last row in the Active Handoffs table
-    insert_marker = "| Cowork (Sonnet 4.6) |"
-    last_idx = content.rfind(insert_marker)
-    if last_idx != -1:
-        end_of_line = content.find("\n", last_idx)
-        content = content[:end_of_line + 1] + new_row + "\n" + content[end_of_line + 1:]
-    else:
-        # Fallback: append after the table header
-        content = content.replace(
-            "| File | Priority | Assigned To | Date |\n|------|----------|-------------|------|",
-            f"| File | Priority | Assigned To | Date |\n|------|----------|-------------|------|\n{new_row}"
-        )
-
-    with open(HANDOFFS_INDEX, "w") as f:
-        f.write(content)
-
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
 def main():
     parser = argparse.ArgumentParser(description="Transcript note harvester → handoff")
-    parser.add_argument("--email", required=True, help="Path to email text file")
+    parser.add_argument("--email", required=True, help="Path to email/transcript text file")
     parser.add_argument("--date",  help='Meeting date string, e.g. "Apr 27, 2026"')
+    parser.add_argument("--mode",  choices=["standup", "rich"], default="standup", help="Processing mode")
     args = parser.parse_args()
 
     with open(args.email) as f:
@@ -229,24 +228,21 @@ def main():
     meeting_date = args.date or datetime.now().strftime("%b %-d, %Y")
     people = load_people()
 
-    items = parse_email(email_text)
+    items = parse_transcript(email_text, args.mode)
     if not items:
         print("❌ No action items found. Check that the source text contains a '[Name] Action: Description' format.")
         sys.exit(1)
 
     print(f"📋 Parsed {len(items)} action items from {meeting_date} notes\n")
-
     for i, item in enumerate(items, 1):
         hint = classify_hint(item, people)
         assignees = ", ".join(item["assignees"])
         print(f"  {i}. [{assignees}] {item['action_label']}: {item['description'][:60]} → {hint}")
 
-    filename, filepath = write_handoff(items, meeting_date, people)
-    update_index(filename)
+    filename, filepath = write_handoff(items, meeting_date, people, args.mode)
 
     print(f"\n✅ Handoff written: handoffs/{filename}")
     print(f"   Cowork will work through these with Ben using task-capture.")
 
 if __name__ == "__main__":
     main()
-

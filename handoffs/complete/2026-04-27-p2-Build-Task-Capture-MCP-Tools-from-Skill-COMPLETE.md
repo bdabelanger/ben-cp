@@ -2,7 +2,7 @@
 
 > **Prepared by:** Code (Gemini) (2026-04-27)
 > **Assigned to:** Code
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **STATUS**: ✅ COMPLETE — 2026-04-27
 
@@ -14,7 +14,7 @@
 
 > **Prepared by:** Cowork (2026-04-27)
 > **Assigned to:** Code
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
 > **STATUS**: 🔲 READY — pick up 2026-04-27
 
@@ -34,7 +34,7 @@ The skill covers:
 
 ## Source Material
 
-All reference material is already in the vault:
+All reference material is already in the repo:
 
 ### Skill Logic
 The full system prompt lives in the skill instructions shared with this handoff. Key logic to encode:

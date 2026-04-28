@@ -11,7 +11,7 @@ domain: handoffs/complete
 **Status:** ✅ COMPLETE — 2026-04-14  
 
 ## Summary
-Replaced all hard-coded absolute paths containing `/Users/benbelanger/GitHub/ben-cp` with dynamic or relative references. Vault is now portable across the new Google Drive architecture.
+Replaced all hard-coded absolute paths containing `/Users/benbelanger/GitHub/ben-cp` with dynamic or relative references. Repo is now portable across the new Google Drive architecture.
 
 ## Completed Actions
 
@@ -23,11 +23,11 @@ Replaced all hard-coded absolute paths containing `/Users/benbelanger/GitHub/ben
 - Line 97: Changed absolute path for `character.md` to root-relative: `./character.md`.
 
 ### 3. Global Metadata Cleanup
-- Performed a global search and replace across all `.md` files in the vault.
+- Performed a global search and replace across all `.md` files in the repo.
 - Replaced `/Users/benbelanger/GitHub/ben-cp` with `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`.
 
 ### 4. Technical Debt Cleanup
-- Updated `tools/orchestration/changelog/sync.py` to use dynamic `VAULT_ROOT`.
+- Updated `tools/orchestration/changelog/sync.py` to use dynamic `REPO_ROOT`.
 
 ## Verification Results
 - `grep -r "GitHub/ben-cp" .` returns no instances.

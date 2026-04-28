@@ -8,15 +8,15 @@ domain: handoffs/complete
 # Any Agent Implementation Plan: Data Sources Gap + Orphaned Index Entries
 
 > **Prepared by:** Claude (Cowork) via knowledge skill run (2026-04-12)
-> **Reviewed by:** Claude (Cowork) (2026-04-12) — file state verified against vault
+> **Reviewed by:** Claude (Cowork) (2026-04-12) — file state verified against repo
 > **Assigned to:** Any
-> **Vault root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
+> **Repo root:** `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp`
 > **Priority:** P3 — data quality gaps
 > **Source report:** `skills/knowledge/outputs/reports/knowledge-report-2026-04-12.md`
 > **v1.2**
 > **STATUS**: ✅ COMPLETE
 
-Added KR #6 (Locked/Signed Notes) to skills/product/okr-reporting/data_sources.md. Tasks 2 and 3 from the original report were invalidated: character content now lives in report.md files (no standalone character.md), and skills/input/ does not exist in the vault. Changelog written at okr-reporting and root level.
+Added KR #6 (Locked/Signed Notes) to skills/product/okr-reporting/data_sources.md. Tasks 2 and 3 from the original report were invalidated: character content now lives in report.md files (no standalone character.md), and skills/input/ does not exist in the repo. Changelog written at okr-reporting and root level.
 
 **Changelog:** (see root changelog.md)
 
@@ -32,7 +32,7 @@ The knowledge skill run on 2026-04-12 identified a data quality gap: one KR miss
 
 - **Task 1 (data_sources.md):** Confirmed gap. KRs 1–5 and 16 are present; entry for Locked/Signed Notes (proposed as #6) is missing. Existing numbering is non-sequential (5 → 16) — intentional, do not renumber.
 - **Task 2 (handoff/index.md character.md):** Invalidated. Character content now lives in `report.md` files — no standalone `character.md` files are used. Skip.
-- **Task 3 (skills/input/index.md):** Invalidated. `skills/input/` does not exist in the vault. Source report reference was stale. Skip.
+- **Task 3 (skills/input/index.md):** Invalidated. `skills/input/` does not exist in the repo. Source report reference was stale. Skip.
 
 ---
 

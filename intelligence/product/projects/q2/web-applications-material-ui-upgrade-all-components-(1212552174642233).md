@@ -1,14 +1,15 @@
 ---
-title: Web applications - Material UI upgrade (all components)
+title: Web Applications - Material UI upgrade (all components)
 type: intelligence
 domain: intelligence/product/projects/q2
+taxonomy: none — cross-cutting tech modernization
 links:
   asana: https://app.asana.com/1/1123317448830974/project/1212552174642233
   jira: https://casecommons.atlassian.net/browse/CBP-2917
 ---
 
 
-# Web applications - Material UI upgrade (all components)
+# Web Applications - Material UI upgrade (all components)
 
 - **GID:** 1212552174642233
 - **Permalink:** https://app.asana.com/1/1123317448830974/project/1212552174642233
@@ -18,7 +19,7 @@ links:
 - **Jira Link:** https://casecommons.atlassian.net/browse/CBP-2917
 
 ## Current Status Update
-**Title:** Web applications - Material UI upgrade (all components) - Apr 10
+**Title:** Web Applications - Material UI upgrade (all components) - Apr 10
 **Text:**
 Summary
 
@@ -58,4 +59,3 @@ Next steps
 - **Launch Plan:** null
 - **UAT Start:** 2026-04-03T00:00:00.000Z
 - **Roadmap:** Tech Modernization
-

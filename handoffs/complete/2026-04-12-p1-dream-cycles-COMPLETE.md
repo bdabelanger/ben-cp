@@ -9,12 +9,12 @@ domain: handoffs/complete
 
 > **Prepared by:** Claude via Cowork/Dispatch (2026-04-11)
 > **Assigned to:** Claude (desktop)
-> **Vault root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
-> **Priority:** P1 — introduces the nightly automation system for the vault
+> **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
+> **Priority:** P1 — introduces the nightly automation system for the repo
 > **v1.1**
 > **STATUS**: ✅ COMPLETE
 
-Finalized the architectural design for "Daily Progress Digest," establishing the flow sequence (Strategic PM -> Changelog Auditor -> Vault Auditor -> Roz -> Robert -> Bryan -> Digest Editor) and character voices for the vault's nightly orchestration report. Broke down the build phase into discrete P1 and P2 handoffs to preserve focus during execution.
+Finalized the architectural design for "Daily Progress Digest," establishing the flow sequence (Strategic PM -> Changelog Auditor -> Repo Auditor -> Roz -> Robert -> Bryan -> Digest Editor) and character voices for the repo's nightly orchestration report. Broke down the build phase into discrete P1 and P2 handoffs to preserve focus during execution.
 
 **Changelog:** (see root changelog.md)
 
@@ -23,7 +23,7 @@ Finalized the architectural design for "Daily Progress Digest," establishing the
 
 ## Context
 
-Human user wants to introduce "dream cycles" — a nightly local automation that runs all meta-agents in sequence to close loops, surface gaps, and keep the vault healthy after each day's work. The concept mirrors how large language models consolidate learning during rest cycles: each night, the system reviews the day's changes, checks for drift, updates indexes, audits changelogs, and prepares a clean state for the next session.
+Human user wants to introduce "dream cycles" — a nightly local automation that runs all meta-agents in sequence to close loops, surface gaps, and keep the repo healthy after each day's work. The concept mirrors how large language models consolidate learning during rest cycles: each night, the system reviews the day's changes, checks for drift, updates indexes, audits changelogs, and prepares a clean state for the next session.
 
 Dream cycles run locally (on human user's machine, not in the cloud). They are scheduled, automated, and largely silent — flagging issues for human user to review in the morning rather than requiring real-time interaction.
 
@@ -49,7 +49,7 @@ Before designing anything, read:
 - `AGENTS.md` — understand all current meta-agents and their roles
 - `robert/index.md` and `robert/diff_checker.md` — Robert monitors AGENTS.md for Creed drift
 - `lumberjack/index.md` and `lumberjack/procedure.md` — Changelog Auditor audits changelogs
-- `crypt-keeper/index.md` and `crypt-keeper/procedure.md` — Vault Auditor runs 7-check vault quality watchdog
+- `crypt-keeper/index.md` and `crypt-keeper/procedure.md` — Repo Auditor runs 7-check repo quality watchdog
 - `rovo/index.md` — Rovo synthesizes Atlassian context (on-demand only, not nightly)
 - `quartermaster/index.md` — Strategic PM is session-level and ephemeral, not nightly
 - `handoff/2026-04-12-p1-roz-agent-definition.md` — Roz's role and character (must be defined first)
@@ -74,7 +74,7 @@ Produce a written design proposal for human user's review before any implementat
 |---|---|---|
 | 1 | Robert | Diffs AGENTS.md against the Creed, flags drift |
 | 2 | Changelog Auditor | Audits changelogs for accuracy, completeness, and cross-references |
-| 3 | Vault Auditor | Runs 7-check vault quality watchdog |
+| 3 | Repo Auditor | Runs 7-check repo quality watchdog |
 | 4 | Roz | Checks external connectors and integrations, logs outliers only |
 | 5 | Strategic PM cleanup | Flags any lingering quartermaster.md files from today's sessions |
 | 6 | Handoff queue review | Surfaces open P1 handoffs older than 3 days |
@@ -97,7 +97,7 @@ LUMBERJACK — Field Notes, April 12
 -- version sequence clean across all other subdirectories
 ```
 
-**Vault Auditor** — structured report with check numbers and flags, clinical and precise. Matches the existing `report-template.md` format already defined in `skills/knowledge/`.
+**Repo Auditor** — structured report with check numbers and flags, clinical and precise. Matches the existing `report-template.md` format already defined in `skills/knowledge/`.
 
 **Robert** — spare, philosophical. Short observation on whether the Creed held today. If nothing drifted, silence. If something drifted, a single measured paragraph.
 
@@ -118,7 +118,7 @@ END
 
 ### What dream cycles are NOT
 - No external system writes (no Asana, Jira, or Confluence)
-- No autonomous vault changes
+- No autonomous repo changes
 - Flag and surface only — human user or desktop Claude acts the next day
 
 ### Agents excluded from the nightly cycle
@@ -128,7 +128,7 @@ END
 
 ### Stretch goals for future cycles
 - A synthesis phase where an LLM reviews the day's handoff completions and updates a rolling knowledge summary
-- Cross-referencing open Jira P1s against vault flags to surface patterns
+- Cross-referencing open Jira P1s against repo flags to surface patterns
 - A morning briefing file human user can open with his coffee
 
 ---
@@ -161,7 +161,7 @@ This is a new convention being introduced with dream cycles. Every meta-agent th
 Create `character.md` for:
 - **Robert** — `skills/synthesis/character.md`
 - **Changelog Auditor** — `skills/changelog/character.md`
-- **Vault Auditor** — `skills/knowledge/character.md`
+- **Repo Auditor** — `skills/knowledge/character.md`
 - **Roz** — `skills/access/character.md` (created as part of the Roz handoff, verify it exists)
 
 Each `character.md` must include:

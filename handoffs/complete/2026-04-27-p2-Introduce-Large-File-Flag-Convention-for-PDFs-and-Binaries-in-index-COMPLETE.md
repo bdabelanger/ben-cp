@@ -10,7 +10,7 @@ domain: handoffs
 
 The context sensor red-flags files over 750KB. Some of these (e.g. `intelligence/product/shareout/q2/source/Q2 2026 Product Shareout.pdf` at 7.2MB) are intentional and should be kept — they are source materials, not pipeline artifacts.
 
-Ben's decision: large binaries (PDFs, source files) should be maintained in the vault, but we need two complementary mechanisms:
+Ben's decision: large binaries (PDFs, source files) should be maintained in the repo, but we need two complementary mechanisms:
 1. A convention to call out file size explicitly in `index.md` and any markdown links referencing them, so readers know what they're linking to
 2. An `ignore` list in the context sensor config so that explicitly-flagged large files are skipped during scanning — consistent with the `ignore` pattern being adopted across all sensors
 

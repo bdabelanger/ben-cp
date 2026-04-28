@@ -1,0 +1,173 @@
+---
+title: ben-cp — Repo Index
+type: index
+domain: root
+updated: 2026-04-28
+---
+
+# ben-cp
+
+> Ben Belanger's personal co-pilot repo. Multi-agent system for product management, engineering coordination, and knowledge management at Casebook.
+> This file is the single source of structural truth. It is auto-regenerated nightly by the dream cycle's `index` sensor.
+
+---
+
+## Agents
+
+Human-in-the-loop roles and personas. Each `.md` file is a role definition loaded at session start.
+
+```
+agents/
+├── cowork.md          — Architect and session lead (Claude + Gemini)
+├── code.md            — Implementation executor (Claude Code + Gemini CLI)
+├── local.md           — Local task runner and data entry
+├── art/               — Creative artifacts from agent sessions
+│   ├── the-agents-creed.md
+│   ├── the-alchemists-grid.md
+│   ├── the-dream-sequence.md
+│   ├── the-ground-beneath.md
+│   └── the-weightless-archive.md
+├── agent-data/        — Per-agent persistent context (anthropic, antigravity, claude)
+├── logs/              — Dream cycle run logs (YYYY-MM-DD-dream-cycle*.md)
+└── sessions/          — Session transcripts and summaries
+```
+
+---
+
+## Handoffs
+
+Cross-agent implementation plans. Active handoffs are in root; completed handoffs are archived to `complete/`.
+
+```
+handoffs/
+├── YYYY-MM-DD-<priority>-<slug>.md   — Active implementation plan
+└── complete/                          — Archived completed handoffs
+```
+
+**Convention:** `list_handoffs()` is the authoritative source — never read this file for current state.
+
+---
+
+## Intelligence
+
+Strategic knowledge base. Domain knowledge, project records, OKRs, releases, and source data.
+
+```
+intelligence/
+├── casebook/                          — Casebook platform domain knowledge
+│   ├── taxonomy.md                    — ⭐ Authoritative product-feature taxonomy
+│   ├── admin/                         — Casebook Admin MCP reference (port 3002)
+│   ├── reporting/                     — Reveal BI schemas and query reference
+│   │   ├── casebook-cases.md
+│   │   ├── casebook-intake.md
+│   │   ├── casebook-people.md
+│   │   ├── casebook-tenants.md
+│   │   ├── casebook-users.md
+│   │   ├── reveal_bi_syntax.md
+│   │   ├── reveal_bi_visualizations.md
+│   │   └── schema_joins.md
+│   └── subscriptions/                 — Casebook Subscriptions MCP (Chargebee, port 3003)
+│
+├── governance/                        — Repo rules and retention policy
+│   ├── policy.md
+│   └── retention_policy.md
+│
+├── product/                           — Product roadmap and PM intelligence
+│   ├── okrs/q2/                       — Q2 2026 OKR tracking
+│   │   ├── elevate-notes/
+│   │   ├── planning-services-at-scale/
+│   │   └── reduce-admin-burden/
+│   ├── projects/                      — Project intelligence records
+│   │   ├── asana_field_definitions.md — Asana custom field GID catalog
+│   │   ├── source/                    — Jira issue templates
+│   │   └── q2/                        — Q2 2026 active projects
+│   │       ├── <project-name>/        — Per-project: index.md, prd.md, launch_plan.md, source/
+│   │       └── *.md                   — Flat project records (no sub-docs)
+│   ├── releases/                      — Release notes by date
+│   ├── shareout/q2/                   — Q2 2026 shareout slide content
+│   └── skills/                        — Intelligence supporting skill execution
+│
+└── skills/                            — Intelligence records for skill SOPs
+    └── tasks/                         — Task capture skill knowledge
+```
+
+---
+
+## Skills
+
+Procedural SOPs and pipeline scripts. Each skill directory has a `SKILL.md` as the canonical entry point.
+
+```
+skills/
+├── asana/             — Asana API patterns and field schemas
+├── dream/             — Nightly repo health audit cycle
+│   ├── SKILL.md       — Dream cycle SOP
+│   ├── run.py         — Main pipeline runner
+│   └── scripts/       — Individual sensors (pulse, links, frontmatter, drift, ...)
+├── handoff/           — Handoff authoring standards
+├── intelligence/      — Intelligence harvest and scan pipelines
+├── releasinator/      — Release note generation
+├── rovo/              — Rovo search integration
+├── status/            — Platform status report pipeline
+├── styles/            — Writing and formatting style guides
+├── tasks/             — Task capture SOP
+└── transcripts/       — Transcript processing pipeline
+```
+
+---
+
+## Source
+
+```
+src/
+└── ben-cp.ts          — MCP server (all tool definitions and handlers)
+```
+
+---
+
+## Reports
+
+Pipeline outputs. Never edit manually — generated by `run_report()`.
+
+```
+reports/
+├── dream/             — Nightly audit report + raw sensor JSON
+├── status/            — Platform project status report
+└── tasks/             — My tasks report (Asana + Jira)
+```
+
+---
+
+## Root Files
+
+| File | Purpose |
+|---|---|
+| `AGENTS.md` | Governance contract — agent roles, directory boundaries, naming rules |
+| `README.md` | Human-facing project overview |
+| `changelog.md` | Root version changelog |
+| `index.md` | This file — structural map of the repo |
+| `.env` | API keys and environment config (gitignored) |
+| `package.json` | Node project config |
+| `tsconfig.json` | TypeScript config |
+---
+## Auto-generated Stats
+> Last updated: 2026-04-28 14:51 by dream/reindex
+
+| Metric | Value |
+|--------|-------|
+| Directories | 252 |
+| Markdown files | 1000 |
+| Frontmatter coverage | 91.9% |
+| Missing frontmatter | 81 |
+| Unknown taxonomy terms | 2 |
+
+**Missing frontmatter (first 5):**
+- `agents/agent-data/antigravity/brain/00f7157d-b654-48ca-94dc-28f3459f22c3/implementation_plan.md`
+- `agents/agent-data/antigravity/brain/00f7157d-b654-48ca-94dc-28f3459f22c3/task.md`
+- `agents/agent-data/antigravity/brain/00f7157d-b654-48ca-94dc-28f3459f22c3/walkthrough.md`
+- `agents/agent-data/antigravity/brain/011cd0b1-e415-4c85-92e8-c79b25e35190/artifacts/implementation_plan.md`
+- `agents/agent-data/antigravity/brain/011cd0b1-e415-4c85-92e8-c79b25e35190/artifacts/task.md`
+
+**Unknown taxonomy terms (first 5):**
+- `intelligence/product/projects/q2/accessibility-2026-vpat-accessibility-audit-(1213564552809143).md` — none — cross-cutting concern, not product-specific
+- `intelligence/product/projects/q2/web-applications-material-ui-upgrade-all-components-(1212552174642233).md` — none — cross-cutting tech modernization

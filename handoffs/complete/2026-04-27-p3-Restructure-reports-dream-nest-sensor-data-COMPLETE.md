@@ -32,7 +32,7 @@ reports/<skill>/
 reports/dream/
   access_report.json
   agents_report.json
-  changelog.md          ← pipeline-internal changelog (not vault changelog)
+  changelog.md          ← pipeline-internal changelog (not repo changelog)
   changelog_report.json
   context_report.json
   dream_run.json

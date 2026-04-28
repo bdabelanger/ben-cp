@@ -21,4 +21,4 @@ This session successfully verified the new reporting architecture and domain-dri
 2. **Platform Weekly Status Report:** Execution failed due to missing external dependencies (`requests` library) and required API credentials (`ASANA_API_TOKEN`, etc.). The SOP documentation confirms this is an environmental requirement for the automated script (`full_run.py`).
 
 ## 🛠️ Final Handover:
-The vault is structurally stable and backward-compatible. The dependency blocker has been identified and documented in triage notes (pending write). No further architectural changes are required for report orchestration.
+The repo is structurally stable and backward-compatible. The dependency blocker has been identified and documented in triage notes (pending write). No further architectural changes are required for report orchestration.

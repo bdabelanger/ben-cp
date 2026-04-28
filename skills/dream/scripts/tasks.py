@@ -3,10 +3,10 @@
 import os, json, re
 from datetime import datetime
 
-VAULT_ROOT   = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
-OUTPUTS_DIR  = os.path.join(VAULT_ROOT, 'reports', 'dream', 'data', 'raw')
-TASKS_DIR    = os.path.join(VAULT_ROOT, 'tasks')
-PROJECTS_DIR = os.path.join(VAULT_ROOT, 'intelligence', 'product', 'projects')
+REPO_ROOT   = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
+OUTPUTS_DIR  = os.path.join(REPO_ROOT, 'reports', 'dream', 'data', 'raw')
+TASKS_DIR    = os.path.join(REPO_ROOT, 'tasks')
+PROJECTS_DIR = os.path.join(REPO_ROOT, 'intelligence', 'product', 'projects')
 
 STALE_HOURS = 48
 SKIP_FILES  = {'index.md', 'asana.md', 'jira.md'}
@@ -32,7 +32,7 @@ def run():
     files = collect_task_files()
 
     for path in files:
-        rel = os.path.relpath(path, VAULT_ROOT)
+        rel = os.path.relpath(path, REPO_ROOT)
         try:
             with open(path, errors='replace') as f:
                 content = f.read()
@@ -52,7 +52,7 @@ def run():
 
         # Verify project links resolve
         for link in extract_project_links(content):
-            target = os.path.normpath(os.path.join(VAULT_ROOT, link.lstrip('/')))
+            target = os.path.normpath(os.path.join(REPO_ROOT, link.lstrip('/')))
             if not os.path.exists(target):
                 issues.append({"file": rel, "issue": "broken_project_link", "link": link})
 

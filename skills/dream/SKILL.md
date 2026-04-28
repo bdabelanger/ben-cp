@@ -50,7 +50,7 @@ Read the summary first, then pull individual sensor JSONs for any WARN or FAIL s
 | frontmatter | `dream/frontmatter.json` | Missing or malformed frontmatter |
 | drift | `dream/drift.json` | Unsanctioned directories |
 | handoffs | `dream/handoffs.json` | Handoff structural issues |
-| index | `dream/index.json` | Shadow files and ghost refs in indexes |
+| index | `dream/index_report.json` | Ghost refs and shadow files in root index.md |
 | agents | `dream/agents.json` | Unknown agent references |
 | tasks | `dream/tasks.json` | Task file audit |
 | changelog | `dream/changelog.json` | Changelog currency |

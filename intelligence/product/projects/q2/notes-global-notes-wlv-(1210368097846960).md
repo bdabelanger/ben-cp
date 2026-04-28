@@ -12,7 +12,7 @@ links:
 
 - **GID:** 1210368097846960
 - **Permalink:** https://app.asana.com/1/1123317448830974/project/1210368097846960
-- **OKR Mapping:** [Elevate Notes](../../okrs/q2/elevate-notes/index.md)
+- **OKR Mapping:** [Elevate Notes](../../okrs/q2/elevate-notes/overview.md)
 - **Team:** Platform
 - **Stage:** Backlog
 - **Status:** on_track
@@ -57,4 +57,4 @@ links:
 - **Customer Validation**:
     - **The Wellmet Project**: Explicitly stated the need for this: "I don't want them to have to go into 12 cases or people in order to write their notes. What I'd like is one central place… where all the notes are just in one area."
 
-**Related:** [Notes Datagrid](notes-notes-datagrid/index.md) provides the underlying table technology.
+**Related:** [Notes Datagrid](notes-notes-datagrid/overview.md) provides the underlying table technology.

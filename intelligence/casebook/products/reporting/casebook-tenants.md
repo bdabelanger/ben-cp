@@ -2,9 +2,8 @@
 title: 'Dataset: Tenants'
 type: intelligence
 domain: intelligence/casebook/reporting
+taxonomy: none
 ---
-
-
 # Dataset: Tenants
 
 ## Context

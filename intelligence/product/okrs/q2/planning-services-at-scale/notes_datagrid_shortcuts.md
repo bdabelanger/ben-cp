@@ -2,9 +2,8 @@
 title: 'KR Measurement SOP: Notes Datagrid Navigation Shortcuts'
 type: intelligence
 domain: intelligence/product/okrs/q2/planning-services-at-scale
+taxonomy: none
 ---
-
-
 # KR Measurement SOP: Notes Datagrid Navigation Shortcuts
 
 > [!NOTE]
@@ -112,7 +111,7 @@ See master inventory: `../../data_sources.md`
 ## 🔗 Constituent Projects
 
 The following initiatives contribute to this KR:
-- [**Notes - Notes WLV / Datagrid**](../../../projects/q2/notes-notes-datagrid/index.md)
+- [**Notes - Notes WLV / Datagrid**](../../../projects/q2/notes-notes-datagrid/overview.md)
 
 ---
 

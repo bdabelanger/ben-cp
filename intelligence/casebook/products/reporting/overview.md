@@ -2,9 +2,8 @@
 title: 'Skill: Casebook Reporting'
 type: index
 domain: intelligence/casebook/products/reporting
+taxonomy: none
 ---
-
-
 # Skill: Casebook Reporting
 
 > Reveal BI reference docs and Casebook entity schemas.

@@ -1,10 +1,9 @@
 ---
-title: Slide 24 — Sign & Lock Notes (Q2)
+title: "Slide 24 \u2014 Sign & Lock Notes (Q2)"
 type: intelligence
 domain: intelligence/product/shareout/q2
+taxonomy: none
 ---
-
-
 # Slide 24 — Sign & Lock Notes (Q2)
 
 - **okr:** Security & Compliance Enablers
@@ -37,4 +36,4 @@ Addressing the ethical and practical need for immutable records in case manageme
 **Quote:** "If one of the staff writes a note, they can go in and edit it at any time which is super unethical and dangerous." — Grafton County, NH
 
 ---
-**Tactical Link:** [Notes Signing & Locking](../../projects/q2/notes-signing-service-note-locking/index.md)
+**Tactical Link:** [Notes Signing & Locking](../../projects/q2/notes-signing-service-note-locking/overview.md)

@@ -132,7 +132,7 @@ For autonomous (undirected) session starts:
 1. List `reports/handoff/` (root only — not `reports/handoff/archive/`)
 2. Any `.md` file present is an open handoff — completed ones live in `reports/handoff/archive/`
 3. Surface them to human user immediately: "You have N outstanding handoff(s): [filenames]"
-4. If human user confirms, execute using the handoff protocol at `skills/collaboration/handoff/index.md`
+4. If human user confirms, execute using the handoff protocol at `skills/collaboration/handoff/overview.md`
 
 > **Note:** Open handoffs are living documents — they may be edited and iterated before execution. Only completed handoffs (in `reports/handoff/archive/`) are immutable.
 
@@ -259,7 +259,7 @@ ben-cp/
 
 ### Google Drive Sync Latency (CRITICAL)
 The repo is hosted on Google Drive, which introduces sync latency. Direct filesystem reads (via `read_text_file` with absolute paths) of recently written pipeline outputs or reports are UNRELIABLE.
-- **Rule:** NEVER use raw filesystem tools to read files in `skills/pipelines/outputs/`.
+- **Rule:** NEVER use raw filesystem tools to read files in `skills/outputs/`.
 - **Requirement:** Always use the purpose-built `get_report` MCP tool. This tool runs on the host and ensures access to the latest data, bypassing sync delays.
 
 ### Course Correction Protocol
@@ -276,7 +276,7 @@ If a required tool call fails (e.g., `add_changelog`, `edit_file`, or path-based
 | :--- | :--- |
 | KR-specific measurement SOP | `skills/status/okr-reporting/[quarter]/[initiative]/[name].md` |
 | Master OKR runbook (evergreen) | `skills/status/SKILL.md` |
-| Quarterly KR reference | `skills/status/[quarter]/index.md` |
+| Quarterly KR reference | `skills/status/[quarter]/overview.md` |
 | Shared data source inventory | `intelligence/product/projects/data_sources.md` |
 | Reference source files (PDFs, TXTs) | `intelligence/<domain>/<topic>/source/` |
 | status/transform logic | `intelligence/mapping/` (Legacy) or `intelligence/mapping/` |

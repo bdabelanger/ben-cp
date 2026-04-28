@@ -5,8 +5,8 @@ domain: agents/art
 artist: Robert
 date: 2026-04-10
 form: poem
+taxonomy: none
 ---
-
 # The Dream Sequence
 
 When systems sleep and agents dream,

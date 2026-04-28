@@ -2,9 +2,8 @@
 title: 'Dataset: People'
 type: intelligence
 domain: intelligence/casebook/reporting
+taxonomy: none
 ---
-
-
 # Dataset: People
 
 ## Context

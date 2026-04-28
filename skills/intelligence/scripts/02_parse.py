@@ -19,7 +19,7 @@ def parse_file(file_path):
     print(f"1. Read the content of: {file_path}")
     print(f"2. Apply the extraction logic defined in the schema above.")
     print(f"3. Use 'add_intelligence' to create the record in the parent directory.")
-    print(f"4. Once created, run 'scan_orphans.py' to verify completion.")
+    print(f"4. Once created, run '03_scan_orphans.py' to verify completion.")
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:

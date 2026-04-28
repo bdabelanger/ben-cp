@@ -31,7 +31,7 @@ Call the `mcp_rovo_searchJiraIssuesUsingJql` tool:
 - **maxResults**: 100+ (ensure you capture the full project scope).
 
 ### 4. Save to Raw
-Write the resulting issues list to `project-status-reports/inputs/raw/jira_issues.json` in JSON format. Ensure the structure maintains the `{"key": ..., "fields": {...}}` pattern required by the harvest script.
+Write the resulting issues list to `skills/status/inputs/raw/jira_issues.json` in JSON format. Ensure the structure maintains the `{"key": ..., "fields": {...}}` pattern required by the harvest script.
 
 ---
 > [!IMPORTANT]

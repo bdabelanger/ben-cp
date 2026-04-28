@@ -2,8 +2,8 @@
 title: Data Source Inventory
 type: intelligence
 domain: intelligence/product/okrs
+taxonomy: none
 ---
-
 # Data Source Inventory
 
 This document serves as the authoritative map for all data sources used to calculate Key Results (KRs) within the OKR Reporting skill. It details where each metric's components (Denominator and Numerator) are sourced.
@@ -45,7 +45,7 @@ This document serves as the authoritative map for all data sources used to calcu
 *   **SOP Reference:** `q2-2026/planning-services-at-scale/service_notes_roster_association.md`
 
 ### 5. Q2 KR Baselines (General)
-*   **Source:** `q2-2026/index.md`. This dashboard aggregates status and baseline values, referencing the specific SOPs above for measurement methodology.
+*   **Source:** `q2-2026/overview.md`. This dashboard aggregates status and baseline values, referencing the specific SOPs above for measurement methodology.
 
 ### 6. Locked / Signed Notes
 *   **KR Definition:** % of high-confidentiality tenants using locked or signed notes.

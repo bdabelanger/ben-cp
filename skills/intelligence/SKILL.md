@@ -1,9 +1,9 @@
 ---
-title: Intelligence — Ingestion & Parsing Pipeline
+title: "Intelligence \u2014 Ingestion & Parsing Pipeline"
 type: skill
 domain: skills/intelligence
+taxonomy: none
 ---
-
 # Intelligence — Ingestion & Parsing Pipeline
 
 > **Agent:** Local (for parsing/refining), Code (for running scripts)

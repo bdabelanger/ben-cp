@@ -2,8 +2,8 @@
 title: Asana Custom Field GID Reference Catalog
 type: intelligence
 domain: intelligence/product/projects
+taxonomy: none
 ---
-
 # Asana Custom Field GID Reference Catalog
 
 - **source_file:** ../../../skills/asana/schemas/asana-custom-fields.md

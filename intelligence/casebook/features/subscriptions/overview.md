@@ -2,8 +2,8 @@
 title: Subscriptions Feature
 type: index
 domain: intelligence/casebook/features/subscriptions
+taxonomy: none
 ---
-
 # Subscriptions Feature
 
 > [!IMPORTANT]

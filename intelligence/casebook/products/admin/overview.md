@@ -2,8 +2,8 @@
 title: Admin Product
 type: index
 domain: intelligence/casebook/products/admin
+taxonomy: none
 ---
-
 # Admin Product
 
 > [!IMPORTANT]

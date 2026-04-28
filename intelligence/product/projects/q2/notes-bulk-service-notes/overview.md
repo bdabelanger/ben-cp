@@ -6,9 +6,8 @@ links:
   asana: https://app.asana.com/1/1123317448830974/project/1211757637943244
   jira: https://casecommons.atlassian.net/browse/CBP-2924
   confluence: https://casecommons.atlassian.net/wiki/x/A4AN9
+taxonomy: none
 ---
-
-
 # Notes - Bulk Service Notes
 
 - **GID:** 1211757637943244

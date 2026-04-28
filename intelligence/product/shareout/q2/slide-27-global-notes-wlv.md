@@ -1,10 +1,9 @@
 ---
-title: Slide 27 — Global Notes WLV (Q2)
+title: "Slide 27 \u2014 Global Notes WLV (Q2)"
 type: intelligence
 domain: intelligence/product/shareout/q2
+taxonomy: none
 ---
-
-
 # Slide 27 — Global Notes WLV (Q2)
 
 - **okr:** Ease Navigation Burdens

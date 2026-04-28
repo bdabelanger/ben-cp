@@ -11,7 +11,7 @@ REPO_ROOT   = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'
 OUTPUTS_DIR = os.path.join(REPO_ROOT, 'reports', 'dream', 'data', 'raw')
 INDEX_PATH  = os.path.join(REPO_ROOT, 'index.md')
 
-SKIP_DIRS  = {'.git', '__pycache__', 'node_modules', 'dist', 'complete', 'archive', 'archived'}
+SKIP_DIRS  = {'.git', '__pycache__', 'node_modules', 'dist', 'reports', 'complete', 'archive', 'archived'}
 SKIP_FILES = {'.DS_Store', '.env', '.gitignore'}
 
 def parse_frontmatter(content):

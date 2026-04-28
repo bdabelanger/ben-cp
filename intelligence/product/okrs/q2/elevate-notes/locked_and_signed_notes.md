@@ -2,9 +2,8 @@
 title: 'KR Measurement SOP: Locked and Signed Notes (High-Confidentiality)'
 type: intelligence
 domain: intelligence/product/okrs/q2/elevate-notes
+taxonomy: none
 ---
-
-
 # KR Measurement SOP: Locked and Signed Notes (High-Confidentiality)
 
 > [!NOTE]
@@ -96,14 +95,14 @@ Because "Signed Notes" is a late-Q2/Q3 launch (Beta 7/27, GA 8/24), the current 
 ## 🔗 Constituent Projects
 
 The following initiatives contribute to this KR:
-- [**Notes - Locked Notes**](../../../projects/q2/notes-locked-notes/index.md)
-- [**Notes - Signing / Service Note Locking**](../../../projects/q2/notes-signing-service-note-locking/index.md)
+- [**Notes - Locked Notes**](../../../projects/q2/notes-locked-notes/overview.md)
+- [**Notes - Signing / Service Note Locking**](../../../projects/q2/notes-signing-service-note-locking/overview.md)
 
 ---
 
 ## 🔗 References
 
 - Parent procedure: `../../procedure.md`
-- Elevate Notes Index: `./index.md`
+- Elevate Notes Index: `./overview.md`
 - Status logic: `../../../../skills/status/schemas/status_mapping.md`
 - Visual standards: `../../../skill-builder/styles/emoji_key.md`

@@ -2,9 +2,8 @@
 title: Schema Relationships & Data Joins
 type: intelligence
 domain: intelligence/casebook/reporting
+taxonomy: none
 ---
-
-
 # Schema Relationships & Data Joins
 
 This document serves as a quick reference for spinning up SQL joins or BI tool data models based on the Joining Guide.

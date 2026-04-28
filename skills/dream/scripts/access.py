@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""access.py — Verify repo boundaries, permission integrity, and resource bloat."""
+"""access.py — Verify vault boundaries, permission integrity, and resource bloat."""
 import os, json, subprocess
 from datetime import datetime
 

@@ -2,8 +2,8 @@
 title: Q2 2026 Projects Index
 type: index
 domain: intelligence/product/projects/q2
+taxonomy: none
 ---
-
 # Q2 2026 Projects Index
 
 > **Domain:** Tactical Execution
@@ -15,16 +15,16 @@ domain: intelligence/product/projects/q2
 | Project | GID | Status | Stage |
 | :--- | :--- | :--- | :--- |
 | [Accessibility VPAT](<./accessibility-2026-vpat-accessibility-audit-(1213564552809143).md>) | 1213564552809143 | on_track | Audit |
-| [Portal - Client Dashboard](./portal-client-dashboard/index.md) | 1213506659163435 | N/A | Discovery |
-| [Service Plan - Enrollment dialog bulk section](./enrollment-dialog-bulk-services-section/index.md) | 1211631356870657 | on_track | Beta |
-| [Notes Datagrid](./notes-notes-datagrid/index.md) | 1209963394727039 | on_track | GA |
-| [Notes - Locked Notes](./notes-locked-notes/index.md) | 1211786365522017 | on_track | In QA |
-| [Notes - Signing](./notes-signing-service-note-locking/index.md) | 1213685097670626 | on_track | Development |
-| [Integrations - Zapier Improvements](./integrations-zapier-improvements/index.md) | 1213496879668016 | on_track | Development |
+| [Portal - Client Dashboard](./portal-client-dashboard/overview.md) | 1213506659163435 | N/A | Discovery |
+| [Service Plan - Enrollment dialog bulk section](./enrollment-dialog-bulk-services-section/overview.md) | 1211631356870657 | on_track | Beta |
+| [Notes Datagrid](./notes-notes-datagrid/overview.md) | 1209963394727039 | on_track | GA |
+| [Notes - Locked Notes](./notes-locked-notes/overview.md) | 1211786365522017 | on_track | In QA |
+| [Notes - Signing](./notes-signing-service-note-locking/overview.md) | 1213685097670626 | on_track | Development |
+| [Integrations - Zapier Improvements](./integrations-zapier-improvements/overview.md) | 1213496879668016 | on_track | Development |
 | [Communication - Text message syncing routing improvements](<./communications-text-message-syncing-routing-improvements-(1213880656869265).md>) | 1213880656869265 | on_track | Development |
-| [Data Import - Bulk import for Notes](./data-import-bulk-import-for-notes/index.md) | 1210860550580423 | on_track | Development |
-| [Services - Service Plan Datagrid](./services-service-plan-datagrid-with-bulk-actions/index.md) | 1211631360190563 | on_track | Development |
-| [Service Plan - Workload View bulk actions](./services-wlv-bulk-actions/index.md) | 1211733450555414 | on_track | Development |
+| [Data Import - Bulk import for Notes](./data-import-bulk-import-for-notes/overview.md) | 1210860550580423 | on_track | Development |
+| [Services - Service Plan Datagrid](./services-service-plan-datagrid-with-bulk-actions/overview.md) | 1211631360190563 | on_track | Development |
+| [Service Plan - Workload View bulk actions](./services-wlv-bulk-actions/overview.md) | 1211733450555414 | on_track | Development |
 
 ## Maintenance & Infrastructure
 

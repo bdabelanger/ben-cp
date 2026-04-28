@@ -12,7 +12,7 @@ local_sources:
 
 - **GID:** 1210860550580423
 - **Permalink:** https://app.asana.com/1/1123317448830974/project/1210860550580423
-- **OKR Mapping:** [Elevate Notes](../../../okrs/q2/elevate-notes/index.md)
+- **OKR Mapping:** [Elevate Notes](../../../okrs/q2/elevate-notes/overview.md)
 
 ## 📚 Internal Documentation
 - [**Product Requirements Document (PRD)**](prd.md)

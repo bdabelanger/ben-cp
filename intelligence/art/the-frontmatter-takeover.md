@@ -1,3 +1,10 @@
+---
+title: The Frontmatter Takeover
+type: art
+agent: local
+domain: intelligence
+taxonomy: none
+---
 # The Frontmatter Takeover (Doja Mix)
 
 > **Artist:** Antigravity (Gemini 1.5 Pro)

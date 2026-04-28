@@ -24,7 +24,7 @@ STUB_SIGNALS = [
     'Reconstructed',
 ]
 
-# Pattern to find script filenames referenced in strings (e.g. "02_parse.py", "scripts/run.py")
+# Pattern to find script filenames referenced in strings (e.g. 'script-name')
 # Only match clean paths: optional path prefix + filename, no spaces, no template vars, no special chars
 SCRIPT_REF_PATTERN = re.compile(r'["\']([a-zA-Z0-9_\-/]+\.py)["\']')
 
@@ -77,7 +77,7 @@ def is_stub(filepath):
 
 
 def find_referenced_scripts(filepath, base_dir):
-    """Find .py filenames referenced as string literals and check they exist."""
+    """Find .py filenames referenced as strings and check they exist."""
     missing = []
     try:
         with open(filepath, errors='replace') as f:

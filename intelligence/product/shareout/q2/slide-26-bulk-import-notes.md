@@ -1,10 +1,9 @@
 ---
-title: 'Slide 26 — Bulk Import for Notes: Faster Onboarding (Q2)'
+title: "Slide 26 \u2014 Bulk Import for Notes: Faster Onboarding (Q2)"
 type: intelligence
 domain: intelligence/product/shareout/q2
+taxonomy: none
 ---
-
-
 # Slide 26 — Bulk Import for Notes: Faster Onboarding (Q2)
 
 - **okr:** Ease Navigation Burdens
@@ -36,4 +35,4 @@ Focusing on key deliverables for data migration: bulk note importing and improve
 **Quote:** "If we can't import into notes… if we can only have narrative… do I need to basically also shrink down these notes?" — Kentucky Humane Society
 
 ---
-**Tactical Link:** [Bulk Import notes](../../projects/q2/data-import-bulk-import-for-notes/index.md)
+**Tactical Link:** [Bulk Import notes](../../projects/q2/data-import-bulk-import-for-notes/overview.md)

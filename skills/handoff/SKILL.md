@@ -97,7 +97,7 @@ Write changelog entry, then mark this file complete via `edit_handoff`.
 **File naming:** `reports/handoff/YYYY-MM-DD-p[N]-[kebab-title].md`
 
 Priority levels (governed by `AGENTS.md` Thresholds):
-- **P1 (Critical)** — agent navigation broken (orphaned files, missing index.md, misplaced files) or core pipeline logic failure. Requires `implementation_plan.md` + `walkthrough.md`.
+- **P1 (Critical)** — agent navigation broken (orphaned files, missing overview.md, misplaced files) or core pipeline logic failure. Requires `implementation_plan.md` + `walkthrough.md`.
 - **P2 (Major)** — structural violations (AGENTS.md compliance, root-level stubs, duplicates). Requires `implementation_plan.md`.
 - **P3 (Minor)** — data quality gaps (data_sources.md sync, stale flags, low-urgency cleanup). Plan included within handoff.
 - **P4 (Trivial)** — Typos, formatting, or atomic dependency updates. No handoff required (Atomic execution).

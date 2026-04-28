@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""paths.py — Detect stale hardcoded repo paths in Python scripts.
+"""paths.py — Detect stale hardcoded vault paths in Python scripts.
 
-Scans all .py files for string literals that look like repo-relative paths
+Scans all .py files for string literals that look like vault-relative paths
 (e.g. reports/projects/data, reports/dream/report.md) and checks whether the
 referenced top-level directory actually exists. Flags any that do not.
 
@@ -16,13 +16,13 @@ OUTPUTS_DIR = os.path.join(REPO_ROOT, 'reports', 'dream', 'data', 'raw')
 
 SKIP_DIRS = {'.git', '__pycache__', 'node_modules', 'dist', 'complete', 'archive', 'archived'}
 
-# Repo-relative path pattern: starts with a known top-level dir name,
+# Vault-relative path pattern: starts with a known top-level dir name,
 # followed by / and more path components. We extract the first segment
 # and check it exists under REPO_ROOT.
 # Only flag paths with at least 2 segments (avoids single-word false positives).
 PATH_PATTERN = re.compile(r'["\']([a-zA-Z][\w\-]+/[\w\-\./]+)["\']')
 
-# Known repo top-level directories — only flag paths whose root is one of these.
+# Known vault top-level directories — only flag paths whose root is one of these.
 # This prevents MIME types like "application/json" from triggering false positives.
 REPO_ROOTS = {
     'reports', 'skills', 'intelligence', 'handoffs', 'tasks',
@@ -44,7 +44,7 @@ def collect_py_files():
 
 
 def extract_path_strings(filepath):
-    """Extract string literals from a Python file that look like repo paths."""
+    """Extract string literals from a Python file that look like vault paths."""
     try:
         with open(filepath, errors='replace') as f:
             source = f.read()
@@ -62,13 +62,13 @@ def extract_path_strings(filepath):
 
 def check_path(path_str):
     """
-    Check if the repo-relative path's top-level directory exists.
+    Check if the vault-relative path's top-level directory exists.
     Returns (root_segment, exists, skip) where skip=True means ignore this path.
     """
     root_segment = path_str.split('/')[0]
-    # Only check paths whose root is a known repo directory
+    # Only check paths whose root is a known vault directory
     if root_segment not in REPO_ROOTS:
-        return root_segment, True, True  # skip — not a repo path
+        return root_segment, True, True  # skip — not a vault path
     if root_segment in IGNORE_ROOTS:
         return root_segment, True, False
     full = os.path.join(REPO_ROOT, root_segment)

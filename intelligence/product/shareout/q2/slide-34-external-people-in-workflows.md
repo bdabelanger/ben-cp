@@ -2,9 +2,8 @@
 title: 'Slide 34: External People in Workflows'
 type: intelligence
 domain: intelligence/product/shareout/q2
+taxonomy: none
 ---
-
-
 # Slide 34: External People in Workflows
 
 - **okr:** Enhance Workflow Engine

@@ -1,11 +1,10 @@
 ---
-title: 'Slide 17 — Sort, filter, and enrollment shortcuts: Service Plan + Services
-  WLV'
+title: "Slide 17 \u2014 Sort, filter, and enrollment shortcuts: Service Plan + Services\
+  \ WLV"
 type: intelligence
 domain: intelligence/product/shareout/q2
+taxonomy: none
 ---
-
-
 # Slide 17 — Sort, filter, and enrollment shortcuts: Service Plan + Services WLV
 
 
@@ -31,4 +30,4 @@ A new Service Plan datagrid will help users locate enrollments immediately with 
 **Quote:** "Can I bulk [add] the service enrollments? Like … all five of them go on?" — Arc of the Capital
 
 ---
-**Tactical Link:** [Enrollment Bulk Services](../../projects/q2/enrollment-dialog-bulk-services-section/index.md)
+**Tactical Link:** [Enrollment Bulk Services](../../projects/q2/enrollment-dialog-bulk-services-section/overview.md)

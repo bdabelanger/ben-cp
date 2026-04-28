@@ -7,9 +7,9 @@ from utils import get_manifest_files
 REPO_ROOT  = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
 OUTPUTS_DIR = os.path.join(REPO_ROOT, 'reports', 'dream', 'data', 'raw')
 
-SKIP_DIRS  = {'.git', '__pycache__', 'node_modules', 'dist', 'src', 'reports', 'art', 'complete', 'archive', 'archived'}
+SKIP_DIRS  = {'.git', '__pycache__', 'node_modules', 'dist', 'src', 'reports', 'complete', 'archive', 'archived'}
 REQUIRED_KEYS = {'title', 'type', 'domain'}
-VALID_TYPES = {'index', 'skill', 'intelligence', 'handoff', 'changelog', 'release', 'prd', 'agent', 'task', 'report', 'log', 'session', 'launch_plan', 'run_log', 'shareout', 'source', 'reference'}
+VALID_TYPES = {'index', 'skill', 'intelligence', 'handoff', 'changelog', 'release', 'prd', 'agent', 'task', 'report', 'log', 'session', 'launch_plan', 'run_log', 'shareout', 'source', 'reference', 'governance', 'art', 'design'}
 
 def load_taxonomy_terms():
     """Return set of valid taxonomy labels from intelligence/casebook/taxonomy.md."""
@@ -94,7 +94,7 @@ def run():
 
         # H1 check: strip code blocks first
         clean_content = re.sub(r'```.*?```', '', content, flags=re.DOTALL)
-        h1_md = re.findall(r'^# (.+)$', clean_content, re.MULTILINE)
+        h1_md = re.findall(r'^#\s+(.+)$', clean_content, re.MULTILINE)
         h1_html = re.findall(r'<h1[^>]*>(.*?)</h1>', clean_content, re.DOTALL | re.IGNORECASE)
         h1_count = len(h1_md) + len(h1_html)
         

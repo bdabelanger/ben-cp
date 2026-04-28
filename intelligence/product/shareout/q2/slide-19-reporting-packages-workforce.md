@@ -2,9 +2,8 @@
 title: 'Slide 19: Workforce Reporting Package'
 type: intelligence
 domain: intelligence/product/shareout/q2
+taxonomy: none
 ---
-
-
 # Slide 19: Workforce Reporting Package
 
 - **okr:** Simplify Reporting

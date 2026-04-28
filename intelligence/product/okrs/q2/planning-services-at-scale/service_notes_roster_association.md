@@ -1,10 +1,9 @@
 ---
-title: 'KR Measurement SOP: Service Notes — Roster Association'
+title: "KR Measurement SOP: Service Notes \u2014 Roster Association"
 type: intelligence
 domain: intelligence/product/okrs/q2/planning-services-at-scale
+taxonomy: none
 ---
-
-
 # KR Measurement SOP: Service Notes — Roster Association
 
 > [!NOTE]

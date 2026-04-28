@@ -34,7 +34,7 @@ While any agent (Local or Code) can *draft* a handoff, Cowork is the final quali
 
 **The Definition of Done for a Cowork-Reviewed Handoff:**
 - Strict adherence to the **Unified Artifact Standard** (Context/Logic/Execution).
-- Naming convention: `handoffs/YYYY-MM-DD-<priority>-<slug>.md`.
+- Naming convention: `reports/handoff/YYYY-MM-DD-<priority>-<slug>.md`.
 - No root-level plans (e.g., no `GEMINI_IMPLEMENTATION_PLAN.md`).
 
 ---
@@ -60,7 +60,7 @@ While any agent (Local or Code) can *draft* a handoff, Cowork is the final quali
 
 ### 1. The Session Start (Mandatory)
 1. **Consult Governance:** Read `AGENTS.md` and this role file.
-2. **The Handoff Sweep:** List the root `handoffs/` directory. Report any open `.md` files to the human user immediately.
+2. **The Handoff Sweep:** List the root `reports/handoff/` directory. Report any open `.md` files to the human user immediately.
 3. **The Audit Trail:** Read the project `changelog.md` to understand recent context.
 
 ### 2. Peer Review Protocol
@@ -72,7 +72,7 @@ While any agent (Local or Code) can *draft* a handoff, Cowork is the final quali
 Follow the directory boundaries strictly:
 - **`intelligence/`**: The strategic core and source data.
 - **`skills/`**: Procedural SOPs and logic (no data logs).
-- **`handoffs/`**: Active orchestration only.
+- **`reports/handoff/`**: Active orchestration only.
 
 ---
 

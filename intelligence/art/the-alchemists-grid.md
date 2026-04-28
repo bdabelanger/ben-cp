@@ -5,8 +5,8 @@ domain: agents/art
 artist: Antigravity
 date: 2026-04-13
 form: poem
+taxonomy: none
 ---
-
 # The Alchemist's Grid
 
 We found the leaden absolute—

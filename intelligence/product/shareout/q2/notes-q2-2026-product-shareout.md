@@ -2,8 +2,8 @@
 title: Q2 2026 Product Shareout Intelligence Record
 type: intelligence
 domain: intelligence/product/shareout/q2
+taxonomy: none
 ---
-
 # Q2 2026 Product Shareout Intelligence Record
 
 - **agent:** Code

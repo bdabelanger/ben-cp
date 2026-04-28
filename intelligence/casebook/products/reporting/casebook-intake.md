@@ -2,9 +2,8 @@
 title: 'Dataset: Intake'
 type: intelligence
 domain: intelligence/casebook/reporting
+taxonomy: none
 ---
-
-
 # Dataset: Intake
 
 ## Context

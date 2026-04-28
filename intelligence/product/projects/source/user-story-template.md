@@ -2,8 +2,8 @@
 title: User Story Template
 type: intelligence
 domain: intelligence/product/projects/source
+taxonomy: none
 ---
-
 # User Story Template
 
 Summary: "[Product Area] - [Brief readable description of the change]"

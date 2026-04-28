@@ -1,10 +1,9 @@
 ---
-title: Slide 28 — Client Portal v1 (Q2)
+title: "Slide 28 \u2014 Client Portal v1 (Q2)"
 type: intelligence
 domain: intelligence/product/shareout/q2
+taxonomy: none
 ---
-
-
 # Slide 28 — Client Portal v1 (Q2)
 
 - **okr:** Ease Navigation Burdens
@@ -42,4 +41,4 @@ Scoping down to the "v1" launch essentials to maximize immediate impact for cust
 **Quote:** "Is there a client portal? Do clients have any interaction with the system?" — Sparta, WI Police Department
 
 ---
-**Tactical Link:** [Client Portal Dashboard](../../projects/q2/portal-client-dashboard/index.md)
+**Tactical Link:** [Client Portal Dashboard](../../projects/q2/portal-client-dashboard/overview.md)

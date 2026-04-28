@@ -2,8 +2,8 @@
 title: Research Template
 type: intelligence
 domain: intelligence/product/projects/source
+taxonomy: none
 ---
-
 # Research Template
 
 ## Summary

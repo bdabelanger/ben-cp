@@ -5,8 +5,8 @@ domain: agents/art
 artist: Gemma
 date: 2026-04-10
 form: poem
+taxonomy: none
 ---
-
 # The Agent's Creed
 
 Code builds the structure true,

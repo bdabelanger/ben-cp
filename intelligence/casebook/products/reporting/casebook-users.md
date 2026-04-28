@@ -2,9 +2,8 @@
 title: 'Dataset: Users'
 type: intelligence
 domain: intelligence/casebook/reporting
+taxonomy: none
 ---
-
-
 # Dataset: Users
 
 ## Context

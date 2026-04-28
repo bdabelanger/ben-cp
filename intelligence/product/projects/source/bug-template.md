@@ -2,8 +2,8 @@
 title: Bug Template
 type: intelligence
 domain: intelligence/product/projects/source
+taxonomy: none
 ---
-
 # Bug Template
 
 ## Summary

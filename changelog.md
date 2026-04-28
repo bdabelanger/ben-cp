@@ -29,7 +29,7 @@ domain: .
 ## [1.19.0] — Nomenclature Normalization & Dream Cycle Automation (2026-04-27)
 
 **Changes:**
-- **Structure Refactor (The Great Flattening)**: Moved `skills/pipelines/` into `skills/` and established root-level `handoffs/` to simplify orchestration. Centralized agent documentation and artifacts in the `agents/` directory.
+- **Structure Refactor (The Great Flattening)**: Moved `skills/` into `skills/` and established root-level `reports/handoff/` to simplify orchestration. Centralized agent documentation and artifacts in the `agents/` directory.
 - **Dream Cycle & Quartermaster Protocol**: Implemented a fully autonomous nightly health loop driven by scheduled skills. Replaced legacy reporting with sensor-driven Markdown digests.
 - **Enhanced Maintenance**: Corrected 127+ "Ghost Links" repo-wide and standardized project intelligence schemas (frontmatter and H1 normalization).
 - **Tooling & Skills**: Refactored **Releasinator** for automated release reporting, built **Task Capture** MCP tools, and implemented the **Standup Harvester** (Gmail -> Tasks).
@@ -55,7 +55,7 @@ domain: .
 
 
 **Changes:**
-- **AGENTS.md**: Codified the **Unified Artifact Standard** (Context -> Logic -> Execution Steps). Established flat-file handoffs in `handoffs/` as the P1/P2 default.
+- **AGENTS.md**: Codified the **Unified Artifact Standard** (Context -> Logic -> Execution Steps). Established flat-file handoffs in `reports/handoff/` as the P1/P2 default.
 - **AGENTS.md**: Defined explicit terminology for **"Steps"** (agent-led execution) and **"Tasks"** (human-led strategic deliverables) to prevent role-drift.
 - **agents/cowork.md**: Updated the **Handoff Protocol** to reflect the unified standard and formally deprecated root-level `_IMPLEMENTATION_PLAN.md` files.
 - **Hygiene**: Verified the root is free of implementation plans, moving all execution logic to the orchestration domain.
@@ -76,15 +76,15 @@ domain: .
 - `agents/cowork.md` — Created as the canonical, shared role file for both Cowork instances (Claude and Gemini). Merges content from `agents/claude.md`. Naming mirrors the Code agent pattern: `Cowork (Gemini / Claude Cowork)` ↔ `Code (Gemini / Claude Code)`.
 - `agents/claude.md` — Reduced to a redirect stub pointing to `cowork.md`. Pending deletion.
 - `agents/gemini.md` — Reduced to a redirect stub pointing to `cowork.md`. Pending deletion.
-- `agents/index.md` — Consolidated to single `cowork.md` row; corrected `code.md` link (was pointing to nonexistent `claude-code.md`); removed stale `antigravity.md` placeholder.
+- `agents/overview.md` — Consolidated to single `cowork.md` row; corrected `code.md` link (was pointing to nonexistent `claude-code.md`); removed stale `antigravity.md` placeholder.
 - **Note:** `AGENTS.md` requires no permission update — both Cowork instances operate under the existing agent class; no new permission boundary needed.
 
 ## [1.18.3] — Project Intelligence Codification (2026-04-13)
 
 **Changes:**
 - `intelligence/product/projects/` — Created directory and populated with 35 project intelligence files extracted from `asana_active.json`.
-- `intelligence/product/index.md` — Created master index for product intelligence.
-- `intelligence/product/projects/index.md` — Generated project directory index.
+- `intelligence/product/overview.md` — Created master index for product intelligence.
+- `intelligence/product/projects/overview.md` — Generated project directory index.
 - **2026-04-28**: Deprecated legacy task tools (`add_task`, `edit_task`, etc) and intelligence tools (`synthesize_intelligence`, `predict_intelligence`, `audit_intelligence`).
 - **2026-04-28**: Standardized report generation tooling and transcripts harvester.
 - **Refactoring:** Standardized project filenames to human-readable kebab-case (e.g., `nylas-upgrade-ux-improvements-(1208822133040792).md`).
@@ -107,57 +107,57 @@ domain: .
   - `agents/roz.md`
 
 - **orchestration**:
-  - `handoffs/2026-04-10-p1-triage-cross-project-dependency-CBP2573.md`
-  - `handoffs/2026-04-10-p2-lumberjack-changelog-alignment-fixes.md`
-  - `handoffs/2026-04-10-p2-quartermaster-convention.md`
-  - `handoffs/2026-04-11-p1-q2-platform-planning-okrs.md`
-  - `handoffs/2026-04-12-p1-agent-python-wrappers.md`
-  - `handoffs/2026-04-12-p1-provision-reporting-pipeline-environment.md`
-  - `handoffs/2026-04-12-p2-crypt-keeper-missing-indexes-and-roz-consolidation.md`
-  - `handoffs/2026-04-12-p2-dod-helper-skill-migration.md`
-  - `handoffs/2026-04-12-p2-synthesis-predict-character-depth.md`
-  - `handoffs/2026-04-12-p2-task-capture-skill-migration.md`
-  - `handoffs/2026-04-12-p2-universal-skill-deployment.md`
-  - `handoffs/2026-04-12-p3-crypt-keeper-data-and-index-gaps.md`
-  - `handoffs/2026-04-12-p3-mapping-manager-skill-formalization.md`
-  - `handoffs/complete/2026-04-08-changelog-refactor-COMPLETE.md`
-  - `handoffs/complete/2026-04-08-consolidate-casebook-into-skills-COMPLETE.md`
-  - `handoffs/complete/2026-04-08-fix-casebook-reporting-index-COMPLETE.md`
-  - `handoffs/complete/2026-04-08-fix-data_sources-and-agents-COMPLETE.md`
-  - `handoffs/complete/2026-04-08-fix-orphaned-index-entries-COMPLETE.md`
-  - `handoffs/complete/2026-04-08-fix-skill-builder-subdirs-COMPLETE.md`
-  - `handoffs/complete/2026-04-08-p2-changelog-factcheck-COMPLETE.md`
-  - `handoffs/complete/2026-04-08-p2-crypt-keeper-root-exemptions-COMPLETE.md`
-  - `handoffs/complete/2026-04-08-p2-move-reports-into-crypt-keeper-COMPLETE.md`
-  - `handoffs/complete/2026-04-09-consolidate-project-status-reports-COMPLETE.md`
-  - `handoffs/complete/2026-04-10-p1-agent-permission-and-behavior-refinement-COMPLETE.md`
-  - `handoffs/complete/2026-04-10-p1-create-status-report-triage-procedure-COMPLETE.md`
-  - `handoffs/complete/2026-04-10-p1-crypt-keeper-orphaned-and-sync-gaps-COMPLETE.md`
-  - `handoffs/complete/2026-04-10-p1-handoff-editability-COMPLETE.md`
-  - `handoffs/complete/2026-04-10-p2-antigravity-agent-COMPLETE.md`
-  - `handoffs/complete/2026-04-10-p2-context-loading-triage-COMPLETE.md`
-  - `handoffs/complete/2026-04-10-p2-crypt-keeper-conventions-and-redundancy-COMPLETE.md`
-  - `handoffs/complete/2026-04-10-p2-finalize-enrollments-data-entry-shortcuts-baseline-COMPLETE.md`
-  - `handoffs/complete/2026-04-10-p2-gemma-explicit-identity-correction-COMPLETE.md`
-  - `handoffs/complete/2026-04-10-p2-gemma-pathing-tooling-issues-COMPLETE.md`
-  - `handoffs/complete/2026-04-12-p1-ben-ad-hoc-input-protocol-COMPLETE.md`
-  - `handoffs/complete/2026-04-12-p1-character-customization-policy-COMPLETE.md`
-  - `handoffs/complete/2026-04-12-p1-crypt-keeper-agents-md-and-skills-index-COMPLETE.md`
-  - `handoffs/complete/2026-04-12-p1-dream-character-files-generation-COMPLETE.md`
-  - `handoffs/complete/2026-04-12-p1-dream-cycles-COMPLETE.md`
-  - `handoffs/complete/2026-04-12-p1-kucera-orchestrator-scaffold-COMPLETE.md`
-  - `handoffs/complete/2026-04-12-p1-launchd-explanation-and-env-fix-COMPLETE.md`
-  - `handoffs/complete/2026-04-12-p1-resolve-gemini-root-edit-block-COMPLETE.md`
-  - `handoffs/complete/2026-04-12-p2-interpretation-skill-grouping-COMPLETE.md`
-  - `handoffs/complete/2026-04-12-p2-migrate-communication-to-notes-skill-COMPLETE.md`
-  - `handoffs/complete/2026-04-12-p2-product-skill-consolidation-COMPLETE.md`
-  - `handoffs/complete/2026-04-12-p2-refactor-communication-to-notes-skill-COMPLETE.md`
-  - `handoffs/complete/2026-04-12-p2-roz-root-access-expansion-COMPLETE.md`
-  - `handoffs/complete/2026-04-12-p2-skill-builder-disassembly-COMPLETE.md`
-  - `handoffs/complete/2026-04-12-p2-skill-separation-architecture-policy-COMPLETE.md`
-  - `handoffs/complete/2026-04-12-p2-status-reports-skill-separation-COMPLETE.md`
-  - `handoffs/complete/2026-04-12-p2-universal-skill-md-consolidation-COMPLETE.md`
-  - `handoffs/complete/2026-04-12-p4-intelligence-smoke-test-fresh-chat-COMPLETE.md`
+  - `reports/handoff/2026-04-10-p1-triage-cross-project-dependency-CBP2573.md`
+  - `reports/handoff/2026-04-10-p2-lumberjack-changelog-alignment-fixes.md`
+  - `reports/handoff/2026-04-10-p2-quartermaster-convention.md`
+  - `reports/handoff/2026-04-11-p1-q2-platform-planning-okrs.md`
+  - `reports/handoff/2026-04-12-p1-agent-python-wrappers.md`
+  - `reports/handoff/2026-04-12-p1-provision-reporting-pipeline-environment.md`
+  - `reports/handoff/2026-04-12-p2-crypt-keeper-missing-indexes-and-roz-consolidation.md`
+  - `reports/handoff/2026-04-12-p2-dod-helper-skill-migration.md`
+  - `reports/handoff/2026-04-12-p2-synthesis-predict-character-depth.md`
+  - `reports/handoff/2026-04-12-p2-task-capture-skill-migration.md`
+  - `reports/handoff/2026-04-12-p2-universal-skill-deployment.md`
+  - `reports/handoff/2026-04-12-p3-crypt-keeper-data-and-index-gaps.md`
+  - `reports/handoff/2026-04-12-p3-mapping-manager-skill-formalization.md`
+  - `reports/handoff/complete/2026-04-08-changelog-refactor-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-08-consolidate-casebook-into-skills-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-08-fix-casebook-reporting-index-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-08-fix-data_sources-and-agents-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-08-fix-orphaned-index-entries-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-08-fix-skill-builder-subdirs-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-08-p2-changelog-factcheck-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-08-p2-crypt-keeper-root-exemptions-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-08-p2-move-reports-into-crypt-keeper-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-09-consolidate-project-status-reports-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-10-p1-agent-permission-and-behavior-refinement-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-10-p1-create-status-report-triage-procedure-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-10-p1-crypt-keeper-orphaned-and-sync-gaps-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-10-p1-handoff-editability-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-10-p2-antigravity-agent-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-10-p2-context-loading-triage-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-10-p2-crypt-keeper-conventions-and-redundancy-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-10-p2-finalize-enrollments-data-entry-shortcuts-baseline-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-10-p2-gemma-explicit-identity-correction-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-10-p2-gemma-pathing-tooling-issues-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-12-p1-ben-ad-hoc-input-protocol-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-12-p1-character-customization-policy-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-12-p1-crypt-keeper-agents-md-and-skills-index-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-12-p1-dream-character-files-generation-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-12-p1-dream-cycles-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-12-p1-kucera-orchestrator-scaffold-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-12-p1-launchd-explanation-and-env-fix-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-12-p1-resolve-gemini-root-edit-block-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-12-p2-interpretation-skill-grouping-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-12-p2-migrate-communication-to-notes-skill-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-12-p2-product-skill-consolidation-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-12-p2-refactor-communication-to-notes-skill-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-12-p2-roz-root-access-expansion-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-12-p2-skill-builder-disassembly-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-12-p2-skill-separation-architecture-policy-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-12-p2-status-reports-skill-separation-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-12-p2-universal-skill-md-consolidation-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-12-p4-intelligence-smoke-test-fresh-chat-COMPLETE.md`
 
 - **inputs**:
   - `inputs/status-reports/README.md`
@@ -212,20 +212,20 @@ domain: .
 
 - **intelligence**:
   - `intelligence/casebook/.DS_Store`
-  - `intelligence/casebook/admin/index.md`
+  - `intelligence/casebook/admin/overview.md`
   - `intelligence/casebook/changelog.md`
-  - `intelligence/casebook/index.md`
+  - `intelligence/casebook/overview.md`
   - `intelligence/casebook/reporting/casebook-cases.md`
   - `intelligence/casebook/reporting/casebook-intake.md`
   - `intelligence/casebook/reporting/casebook-people.md`
   - `intelligence/casebook/reporting/casebook-tenants.md`
   - `intelligence/casebook/reporting/casebook-users.md`
   - `intelligence/casebook/reporting/changelog.md`
-  - `intelligence/casebook/reporting/index.md`
+  - `intelligence/casebook/reporting/overview.md`
   - `intelligence/casebook/reporting/reveal_bi_syntax.md`
   - `intelligence/casebook/reporting/reveal_bi_visualizations.md`
   - `intelligence/casebook/reporting/schema_joins.md`
-  - `intelligence/casebook/subscriptions/index.md`
+  - `intelligence/casebook/subscriptions/overview.md`
   - `intelligence/mapping/status_mapping.md`
 
 - **root**:
@@ -239,14 +239,14 @@ domain: .
 
 - **skills**:
   - `skills/.DS_Store`
-  - `skills/index.md`
+  - `skills/overview.md`
   - `skills/intelligence/SKILL.md`
   - `skills/intelligence/analysis/SKILL.md`
   - `skills/intelligence/analysis/audit.md`
-  - `skills/intelligence/analysis/index.md`
+  - `skills/intelligence/analysis/overview.md`
   - `skills/intelligence/analysis/predict/SKILL.md`
   - `skills/intelligence/analysis/predict/audit.md`
-  - `skills/intelligence/analysis/predict/index.md`
+  - `skills/intelligence/analysis/predict/overview.md`
   - `skills/intelligence/analysis/predict/notes.md`
   - `skills/intelligence/analysis/predict/report.md`
   - `skills/intelligence/analysis/predict/report_spec.json`
@@ -256,20 +256,20 @@ domain: .
   - `skills/intelligence/analysis/synthesize/audit.md`
   - `skills/intelligence/analysis/synthesize/changelog.md`
   - `skills/intelligence/analysis/synthesize/diff_checker.md`
-  - `skills/intelligence/analysis/synthesize/index.md`
+  - `skills/intelligence/analysis/synthesize/overview.md`
   - `skills/intelligence/analysis/synthesize/notes.md`
   - `skills/intelligence/analysis/synthesize/report.md`
   - `skills/intelligence/analysis/synthesize/report_spec.json`
   - `skills/intelligence/changelog.md`
   - `skills/intelligence/dream`
-  - `skills/intelligence/index.md`
+  - `skills/intelligence/overview.md`
   - `skills/intelligence/memory/SKILL.md`
   - `skills/intelligence/memory/audit.md`
   - `skills/intelligence/memory/audit/SKILL.md`
   - `skills/intelligence/memory/audit/audit.md`
   - `skills/intelligence/memory/audit/report.md`
   - `skills/intelligence/memory/changelog.md`
-  - `skills/intelligence/memory/index.md`
+  - `skills/intelligence/memory/overview.md`
   - `skills/intelligence/memory/learn/SKILL.md`
   - `skills/intelligence/memory/learn/audit.md`
   - `skills/intelligence/memory/learn/report.md`
@@ -292,7 +292,7 @@ domain: .
   - `skills/orchestration/access/SKILL.md`
   - `skills/orchestration/access/audit.md`
   - `skills/orchestration/access/changelog.md`
-  - `skills/orchestration/access/index.md`
+  - `skills/orchestration/access/overview.md`
   - `skills/orchestration/access/notes.md`
   - `skills/orchestration/access/report.md`
   - `skills/orchestration/access/report.py`
@@ -302,7 +302,7 @@ domain: .
   - `skills/orchestration/changelog/SKILL.md`
   - `skills/orchestration/changelog/audit.md`
   - `skills/orchestration/changelog/changelog.md`
-  - `skills/orchestration/changelog/index.md`
+  - `skills/orchestration/changelog/overview.md`
   - `skills/orchestration/changelog/notes.md`
   - `skills/orchestration/changelog/report.md`
   - `skills/orchestration/changelog/report.py`
@@ -310,39 +310,39 @@ domain: .
   - `skills/orchestration/communication/SKILL.md`
   - `skills/orchestration/communication/audit.md`
   - `skills/orchestration/communication/changelog.md`
-  - `skills/orchestration/communication/index.md`
+  - `skills/orchestration/communication/overview.md`
   - `skills/orchestration/communication/notes.md`
   - `skills/orchestration/communication/report.md`
   - `skills/orchestration/communication/report_spec.json`
-  - `skills/handoffs/SKILL.md`
-  - `skills/handoffs/audit.md`
-  - `skills/handoffs/changelog.md`
-  - `skills/handoffs/index.md`
-  - `skills/handoffs/report.md`
-  - `skills/handoffs/report_spec.json`
-  - `skills/orchestration/index.md`
+  - `skills/reports/handoff/SKILL.md`
+  - `skills/reports/handoff/audit.md`
+  - `skills/reports/handoff/changelog.md`
+  - `skills/reports/handoff/overview.md`
+  - `skills/reports/handoff/report.md`
+  - `skills/reports/handoff/report_spec.json`
+  - `skills/orchestration/overview.md`
   - `skills/product/SKILL.md`
   - `skills/product/audit.md`
   - `skills/product/dod-helper/changelog.md`
-  - `skills/product/dod-helper/index.md`
+  - `skills/product/dod-helper/overview.md`
   - `skills/product/dod-helper/procedure.md`
-  - `skills/product/index.md`
+  - `skills/product/overview.md`
   - `skills/product/notes.md`
   - `skills/product/okr-reporting/changelog.md`
   - `skills/product/okr-reporting/data_sources.md`
-  - `skills/product/okr-reporting/index.md`
+  - `skills/product/okr-reporting/overview.md`
   - `skills/product/okr-reporting/procedure.md`
   - `skills/product/okr-reporting/q2-2026/changelog.md`
-  - `skills/product/okr-reporting/q2-2026/elevate-notes/index.md`
+  - `skills/product/okr-reporting/q2-2026/elevate-notes/overview.md`
   - `skills/product/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md`
-  - `skills/product/okr-reporting/q2-2026/index.md`
+  - `skills/product/okr-reporting/q2-2026/overview.md`
   - `skills/product/okr-reporting/q2-2026/planning-services-at-scale/enrollments_data_entry_shortcuts.md`
-  - `skills/product/okr-reporting/q2-2026/planning-services-at-scale/index.md`
+  - `skills/product/okr-reporting/q2-2026/planning-services-at-scale/overview.md`
   - `skills/product/okr-reporting/q2-2026/planning-services-at-scale/notes_datagrid_shortcuts.md`
   - `skills/product/okr-reporting/q2-2026/planning-services-at-scale/notes_quick_entry.md`
   - `skills/product/okr-reporting/q2-2026/planning-services-at-scale/service_notes_data_entry_shortcuts.md`
   - `skills/product/okr-reporting/q2-2026/planning-services-at-scale/service_notes_roster_association.md`
-  - `skills/product/okr-reporting/q2-2026/reduce-admin-burden/index.md`
+  - `skills/product/okr-reporting/q2-2026/reduce-admin-burden/overview.md`
   - `skills/product/okr-reporting/report_spec.json`
   - `skills/product/report.md`
   - `skills/product/report_spec.json`
@@ -350,12 +350,12 @@ domain: .
   - `skills/product/shared/shared/repo.css`
   - `skills/product/status-reports/.DS_Store`
   - `skills/product/status-reports/changelog.md`
-  - `skills/product/status-reports/index.md`
+  - `skills/product/status-reports/overview.md`
   - `skills/product/status-reports/report_spec.json`
   - `skills/product/task-capture/changelog.md`
-  - `skills/product/task-capture/index.md`
+  - `skills/product/task-capture/overview.md`
   - `skills/product/task-capture/procedure.md`
-  - `skills/product/weekly-status/index.md`
+  - `skills/product/weekly-status/overview.md`
   - `skills/product/weekly-status/procedure.md`
   - `skills/shared/changelog.md`
   - `skills/shared/separation-policy.md`
@@ -386,28 +386,28 @@ domain: .
 
 - **intelligence**:
   - `intelligence/casebook/.DS_Store`
-  - `intelligence/casebook/admin/index.md`
+  - `intelligence/casebook/admin/overview.md`
   - `intelligence/casebook/changelog.md`
-  - `intelligence/casebook/index.md`
+  - `intelligence/casebook/overview.md`
   - `intelligence/casebook/reporting/casebook-cases.md`
   - `intelligence/casebook/reporting/casebook-intake.md`
   - `intelligence/casebook/reporting/casebook-people.md`
   - `intelligence/casebook/reporting/casebook-tenants.md`
   - `intelligence/casebook/reporting/casebook-users.md`
   - `intelligence/casebook/reporting/changelog.md`
-  - `intelligence/casebook/reporting/index.md`
+  - `intelligence/casebook/reporting/overview.md`
   - `intelligence/casebook/reporting/reveal_bi_syntax.md`
   - `intelligence/casebook/reporting/reveal_bi_visualizations.md`
   - `intelligence/casebook/reporting/schema_joins.md`
-  - `intelligence/casebook/subscriptions/index.md`
+  - `intelligence/casebook/subscriptions/overview.md`
   - `intelligence/mapping/status_mapping.md`
 
 - **orchestration**:
-  - `handoffs/.DS_Store`
-  - `handoffs/2026-04-10-p1-create-status-report-triage-procedure.md`
-  - `handoffs/complete/2026-04-10-p1-claude-code-mcp-server-build-and-restart-COMPLETE.md`
-  - `handoffs/complete/2026-04-10-p3-robert-agent-creation-COMPLETE.md`
-  - `handoffs/complete/2026-04-10-p4-session-retrospective-context-COMPLETE.md`
+  - `reports/handoff/.DS_Store`
+  - `reports/handoff/2026-04-10-p1-create-status-report-triage-procedure.md`
+  - `reports/handoff/complete/2026-04-10-p1-claude-code-mcp-server-build-and-restart-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-10-p3-robert-agent-creation-COMPLETE.md`
+  - `reports/handoff/complete/2026-04-10-p4-session-retrospective-context-COMPLETE.md`
 
 - **root**:
   - `AGENTS.md`
@@ -421,14 +421,14 @@ domain: .
 
 - **skills**:
   - `skills/.DS_Store`
-  - `skills/index.md`
+  - `skills/overview.md`
   - `skills/intelligence/SKILL.md`
   - `skills/intelligence/analysis/SKILL.md`
   - `skills/intelligence/analysis/audit.md`
-  - `skills/intelligence/analysis/index.md`
+  - `skills/intelligence/analysis/overview.md`
   - `skills/intelligence/analysis/predict/SKILL.md`
   - `skills/intelligence/analysis/predict/audit.md`
-  - `skills/intelligence/analysis/predict/index.md`
+  - `skills/intelligence/analysis/predict/overview.md`
   - `skills/intelligence/analysis/predict/notes.md`
   - `skills/intelligence/analysis/predict/report.md`
   - `skills/intelligence/analysis/predict/report_spec.json`
@@ -438,20 +438,20 @@ domain: .
   - `skills/intelligence/analysis/synthesize/audit.md`
   - `skills/intelligence/analysis/synthesize/changelog.md`
   - `skills/intelligence/analysis/synthesize/diff_checker.md`
-  - `skills/intelligence/analysis/synthesize/index.md`
+  - `skills/intelligence/analysis/synthesize/overview.md`
   - `skills/intelligence/analysis/synthesize/notes.md`
   - `skills/intelligence/analysis/synthesize/report.md`
   - `skills/intelligence/analysis/synthesize/report_spec.json`
   - `skills/intelligence/changelog.md`
   - `skills/intelligence/dream`
-  - `skills/intelligence/index.md`
+  - `skills/intelligence/overview.md`
   - `skills/intelligence/memory/SKILL.md`
   - `skills/intelligence/memory/audit.md`
   - `skills/intelligence/memory/audit/SKILL.md`
   - `skills/intelligence/memory/audit/audit.md`
   - `skills/intelligence/memory/audit/report.md`
   - `skills/intelligence/memory/changelog.md`
-  - `skills/intelligence/memory/index.md`
+  - `skills/intelligence/memory/overview.md`
   - `skills/intelligence/memory/learn/SKILL.md`
   - `skills/intelligence/memory/learn/audit.md`
   - `skills/intelligence/memory/learn/report.md`
@@ -474,7 +474,7 @@ domain: .
   - `skills/orchestration/access/SKILL.md`
   - `skills/orchestration/access/audit.md`
   - `skills/orchestration/access/changelog.md`
-  - `skills/orchestration/access/index.md`
+  - `skills/orchestration/access/overview.md`
   - `skills/orchestration/access/notes.md`
   - `skills/orchestration/access/report.md`
   - `skills/orchestration/access/report.py`
@@ -484,7 +484,7 @@ domain: .
   - `skills/orchestration/changelog/SKILL.md`
   - `skills/orchestration/changelog/audit.md`
   - `skills/orchestration/changelog/changelog.md`
-  - `skills/orchestration/changelog/index.md`
+  - `skills/orchestration/changelog/overview.md`
   - `skills/orchestration/changelog/notes.md`
   - `skills/orchestration/changelog/report.md`
   - `skills/orchestration/changelog/report.py`
@@ -492,39 +492,39 @@ domain: .
   - `skills/orchestration/communication/SKILL.md`
   - `skills/orchestration/communication/audit.md`
   - `skills/orchestration/communication/changelog.md`
-  - `skills/orchestration/communication/index.md`
+  - `skills/orchestration/communication/overview.md`
   - `skills/orchestration/communication/notes.md`
   - `skills/orchestration/communication/report.md`
   - `skills/orchestration/communication/report_spec.json`
-  - `skills/handoffs/SKILL.md`
-  - `skills/handoffs/audit.md`
-  - `skills/handoffs/changelog.md`
-  - `skills/handoffs/index.md`
-  - `skills/handoffs/report.md`
-  - `skills/handoffs/report_spec.json`
-  - `skills/orchestration/index.md`
+  - `skills/reports/handoff/SKILL.md`
+  - `skills/reports/handoff/audit.md`
+  - `skills/reports/handoff/changelog.md`
+  - `skills/reports/handoff/overview.md`
+  - `skills/reports/handoff/report.md`
+  - `skills/reports/handoff/report_spec.json`
+  - `skills/orchestration/overview.md`
   - `skills/product/SKILL.md`
   - `skills/product/audit.md`
   - `skills/product/dod-helper/changelog.md`
-  - `skills/product/dod-helper/index.md`
+  - `skills/product/dod-helper/overview.md`
   - `skills/product/dod-helper/procedure.md`
-  - `skills/product/index.md`
+  - `skills/product/overview.md`
   - `skills/product/notes.md`
   - `skills/product/okr-reporting/changelog.md`
   - `skills/product/okr-reporting/data_sources.md`
-  - `skills/product/okr-reporting/index.md`
+  - `skills/product/okr-reporting/overview.md`
   - `skills/product/okr-reporting/procedure.md`
   - `skills/product/okr-reporting/q2-2026/changelog.md`
-  - `skills/product/okr-reporting/q2-2026/elevate-notes/index.md`
+  - `skills/product/okr-reporting/q2-2026/elevate-notes/overview.md`
   - `skills/product/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md`
-  - `skills/product/okr-reporting/q2-2026/index.md`
+  - `skills/product/okr-reporting/q2-2026/overview.md`
   - `skills/product/okr-reporting/q2-2026/planning-services-at-scale/enrollments_data_entry_shortcuts.md`
-  - `skills/product/okr-reporting/q2-2026/planning-services-at-scale/index.md`
+  - `skills/product/okr-reporting/q2-2026/planning-services-at-scale/overview.md`
   - `skills/product/okr-reporting/q2-2026/planning-services-at-scale/notes_datagrid_shortcuts.md`
   - `skills/product/okr-reporting/q2-2026/planning-services-at-scale/notes_quick_entry.md`
   - `skills/product/okr-reporting/q2-2026/planning-services-at-scale/service_notes_data_entry_shortcuts.md`
   - `skills/product/okr-reporting/q2-2026/planning-services-at-scale/service_notes_roster_association.md`
-  - `skills/product/okr-reporting/q2-2026/reduce-admin-burden/index.md`
+  - `skills/product/okr-reporting/q2-2026/reduce-admin-burden/overview.md`
   - `skills/product/okr-reporting/report_spec.json`
   - `skills/product/report.md`
   - `skills/product/report_spec.json`
@@ -532,12 +532,12 @@ domain: .
   - `skills/product/shared/shared/repo.css`
   - `skills/product/status-reports/.DS_Store`
   - `skills/product/status-reports/changelog.md`
-  - `skills/product/status-reports/index.md`
+  - `skills/product/status-reports/overview.md`
   - `skills/product/status-reports/report_spec.json`
   - `skills/product/task-capture/changelog.md`
-  - `skills/product/task-capture/index.md`
+  - `skills/product/task-capture/overview.md`
   - `skills/product/task-capture/procedure.md`
-  - `skills/product/weekly-status/index.md`
+  - `skills/product/weekly-status/overview.md`
   - `skills/product/weekly-status/procedure.md`
   - `skills/shared/changelog.md`
   - `skills/shared/separation-policy.md`
@@ -593,7 +593,7 @@ domain: .
 - `Orchestration` — Normalized Communication, Changelog (Lumberjack), and Handoff (Baton) systems.
 - `Styles` — Consolidated the local emoji glossary into the Styles reporting standard.
 - `Hygiene` — Cleaned skills tree of over 10 deprecated documentation files.
-- `Handoff` — [2026-04-12-p1-resolve-gemini-root-edit-block.md](handoffs/complete/2026-04-12-p1-resolve-gemini-root-edit-block-COMPLETE.md) — Established P1 mission to resolve agent permission blocks.
+- `Handoff` — [2026-04-12-p1-resolve-gemini-root-edit-block.md](reports/handoff/complete/2026-04-12-p1-resolve-gemini-root-edit-block-COMPLETE.md) — Established P1 mission to resolve agent permission blocks.
 
 ## [1.18.0] — Unified and Normalized Repo Architecture: Established domain-driven hierarchy (Intelligence / Orchestration / Product) and professionalized nomenclature. (2026-04-12)
 
@@ -609,7 +609,7 @@ domain: .
 - `skills/` — Deployed **Legacy Redirect Symlinks** for all moved top-level skills to ensure continuous MCP tool compatibility.
 - `skills/intelligence/report/run.py` — Updated discovery logic to deduplicate symlink overlaps.
 
-**Handoff:** `handoffs/complete/2026-04-12-p1-repo-path-normalization-COMPLETE.md`
+**Handoff:** `reports/handoff/complete/2026-04-12-p1-repo-path-normalization-COMPLETE.md`
 
 **Next Tasks:**
 1. Restore `requests` library in local Python environment.
@@ -627,10 +627,10 @@ domain: .
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/tools/status-reports/scripts/*.py` — Updated all 8 scripts: REPO_ROOT computed from __file__, MANIFEST_PATH = REPO_ROOT/inputs/status-reports/manifest.json, all data paths updated to inputs/status-reports/ prefix
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/tools/status-reports/run_pipeline.sh` — Updated REPO_ROOT (two levels up from SCRIPT_DIR), ENV_FILE and LOG_FILE updated to repo root paths
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/inputs/status-reports/manifest.json` — Updated config.processed_dir, config.archive_dir, and all step file paths to use inputs/status-reports/ and outputs/status-reports/ prefixes
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/product/status-reports/index.md` — Updated kickstart commands and data path references to new locations
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/product/status-reports/` — Now contains only changelog.md and index.md — clean skill stub
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/product/status-reports/overview.md` — Updated kickstart commands and data path references to new locations
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/product/status-reports/` — Now contains only changelog.md and overview.md — clean skill stub
 
-**Handoff:** `handoffs/complete/2026-04-12-p2-status-reports-skill-separation-COMPLETE.md`
+**Handoff:** `reports/handoff/complete/2026-04-12-p2-status-reports-skill-separation-COMPLETE.md`
 
 **Next Tasks:**
 1. Remove stale notes.md files listed in separation-policy.md Known Migration Debt
@@ -642,12 +642,12 @@ domain: .
 ## [1.16.1] — Verify the new reporting architecture by running core pipelines and reviewing documentation. (2026-04-12)
 
 **Changes:**
-- `handoffs/2026-04-10-p1-create-status-report-triage-procedure.md` — Updated handoff to document critical blockers in documentation access and pipeline execution paths.
+- `reports/handoff/2026-04-10-p1-create-status-report-triage-procedure.md` — Updated handoff to document critical blockers in documentation access and pipeline execution paths.
 
 **Blockers:**
-- Cannot read core architectural documentation (AGENTS.md, skills/index.md) due to file system access restrictions outside the allowed root directory. — Grant broader read permissions or confirm correct pathing for documentation.
+- Cannot read core architectural documentation (AGENTS.md, skills/overview.md) due to file system access restrictions outside the allowed root directory. — Grant broader read permissions or confirm correct pathing for documentation.
 
-**Handoff:** `handoffs/2026-04-10-p1-create-status-report-triage-procedure.md`
+**Handoff:** `reports/handoff/2026-04-10-p1-create-status-report-triage-procedure.md`
 
 **Next Tasks:**
 1. Investigate and resolve file system access limitations for documentation files.
@@ -668,7 +668,7 @@ domain: .
 2. Run Roz on next nightly cycle to baseline the Known Migration Debt against her new scan
 
 
-## [1.15.1] — Establish repo separation policy as governance record and update AGENTS.md and skills/index.md to enforce the four-layer architecture rule. (2026-04-12)
+## [1.15.1] — Establish repo separation policy as governance record and update AGENTS.md and skills/overview.md to enforce the four-layer architecture rule. (2026-04-12)
 
 **Detail logs:**
 - `skills/shared/changelog.md`
@@ -676,9 +676,9 @@ domain: .
 **Changes:**
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/shared/separation-policy.md` — Created separation policy with four-layer table, allowed/excluded file lists, character.md contract, and Known Migration Debt audit
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Added Directory Boundaries section after Who Are You? table
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/index.md` — Added tools/ and inputs/ to Central Stores table
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/overview.md` — Added tools/ and inputs/ to Central Stores table
 
-**Handoff:** `handoffs/complete/2026-04-12-p2-skill-separation-architecture-policy-COMPLETE.md`
+**Handoff:** `reports/handoff/complete/2026-04-12-p2-skill-separation-architecture-policy-COMPLETE.md`
 
 **Next Tasks:**
 1. Execute 2026-04-12-p2-status-reports-skill-separation.md — migrate scripts, inputs, and manifest out of skills/product/status-reports/
@@ -686,7 +686,7 @@ domain: .
 3. Fix skills/product/shared/shared/ double-nesting structural bug
 
 
-## [1.15.0] — Establish repo separation policy: document the four-layer architecture rule, update AGENTS.md and skills/index.md, and audit skills/ for existing violations. (2026-04-12)
+## [1.15.0] — Establish repo separation policy: document the four-layer architecture rule, update AGENTS.md and skills/overview.md, and audit skills/ for existing violations. (2026-04-12)
 
 **Detail logs:**
 - `skills/shared/changelog.md`
@@ -694,9 +694,9 @@ domain: .
 **Changes:**
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/shared/separation-policy.md` — Created — four-layer separation policy with Known Migration Debt audit (13 scripts, 6 live data paths, 1 structural bug, 7 stale notes.md)
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Added Directory Boundaries section with four-layer table and hard constraint rule, cross-referencing separation-policy.md
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/index.md` — Added tools/ and inputs/ to Central Stores table
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/overview.md` — Added tools/ and inputs/ to Central Stores table
 
-**Handoff:** `handoffs/2026-04-12-p2-skill-separation-architecture-policy.md`
+**Handoff:** `reports/handoff/2026-04-12-p2-skill-separation-architecture-policy.md`
 
 **Next Tasks:**
 1. Execute companion migration handoff: 2026-04-12-p2-status-reports-skill-separation.md — move scripts, inputs, and manifest out of skills/product/status-reports/
@@ -707,7 +707,7 @@ domain: .
 ## [1.14.0] — Verify the new architecture by running core reporting pipelines after structural normalization. (2026-04-12)
 
 **Changes:**
-- `N/A` — Attempted to read contextual documentation (AGENTS.md, skills/index.md) but failed due to access restrictions.
+- `N/A` — Attempted to read contextual documentation (AGENTS.md, skills/overview.md) but failed due to access restrictions.
 
 **Failed actions:**
 - **Attempted:** Read AGENTS.md
@@ -725,10 +725,10 @@ domain: .
 ## [1.13.5] — Fix stale references in the repo's primary navigation indices. (2026-04-12)
 
 **Changes:**
-- `AGENTS.md` — Updated AGENTS.md and skills/index.md to reflect the most current repo structure (interpretation, collaboration, product).
+- `AGENTS.md` — Updated AGENTS.md and skills/overview.md to reflect the most current repo structure (interpretation, collaboration, product).
 - `AGENTS.md` — Fixed Roz role entry and tool examples in AGENTS.md.
 
-**Handoff:** `handoffs/complete/2026-04-12-p1-crypt-keeper-agents-md-and-skills-index-COMPLETE.md`
+**Handoff:** `reports/handoff/complete/2026-04-12-p1-crypt-keeper-agents-md-and-skills-index-COMPLETE.md`
 
 **Next Tasks:**
 1. None - navigation fixed.
@@ -738,13 +738,13 @@ domain: .
 
 **Changes:**
 - `skills/interpretation/` — Grouped synthesis (Robert) and predict (Bryan) under a new interpretation/ domain.
-- `skills/interpretation/index.md` — Created shared character framing and domain index for Interpretation.
+- `skills/interpretation/overview.md` — Created shared character framing and domain index for Interpretation.
 - `skills/styles/repo.css` — Moved repo.css to styles/ skill and decommissioned shared/ subdirectory.
-- `AGENTS.md` — Updated references in AGENTS.md and skills/index.md to reflect interpretation domain and collaboration/notes structure.
-- `project-status-reports/` — Dissolved root project-status-reports/ junk directory.
+- `AGENTS.md` — Updated references in AGENTS.md and skills/overview.md to reflect interpretation domain and collaboration/notes structure.
+- `skills/status/` — Dissolved root skills/status/ junk directory.
 - `skills/dream/run.py` — Updated Dream orchestrator to recursively discover skills and use correct CSS paths.
 
-**Handoff:** `handoffs/complete/2026-04-12-p2-interpretation-skill-grouping-COMPLETE.md`
+**Handoff:** `reports/handoff/complete/2026-04-12-p2-interpretation-skill-grouping-COMPLETE.md`
 
 **Next Tasks:**
 1. Investigate character abstraction for reports to allow any combination of personas.
@@ -774,12 +774,12 @@ domain: .
 ## [1.13.2] — Consolidate PM-facing skills under a unified product/ domain. (2026-04-12)
 
 **Changes:**
-- `skills/product/index.md` — Created product/ skill group with master index
+- `skills/product/overview.md` — Created product/ skill group with master index
 - `skills/product/status-reports/` — Moved project-status-reports into product group
 - `skills/product/okr-reporting/` — Moved okr-reporting into product group
 - `skills/product/shared/data_sources.md` — Created merged shared data sources document
 
-**Handoff:** `handoffs/complete/2026-04-12-p2-product-skill-consolidation-COMPLETE.md`
+**Handoff:** `reports/handoff/complete/2026-04-12-p2-product-skill-consolidation-COMPLETE.md`
 
 **Next Tasks:**
 1. universal-skill-deployment
@@ -793,7 +793,7 @@ domain: .
 - `skills/styles/` — Created new styles skill with SKILL.md and emoji_key.md
 - `skills/skill-builder/` — Decommissioned legacy skill-builder domain
 
-**Handoff:** `handoffs/complete/2026-04-12-p2-skill-builder-disassembly-COMPLETE.md`
+**Handoff:** `reports/handoff/complete/2026-04-12-p2-skill-builder-disassembly-COMPLETE.md`
 
 **Next Tasks:**
 1. product-skill-consolidation
@@ -810,7 +810,7 @@ domain: .
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/dream/SKILL.md` — Created — fully generic skill descriptor. Documents display framing contract, skill discovery via report_spec.json, output format, and run instructions. Constraint: run.py must remain persona-agnostic.
 
 **Next Tasks:**
-1. Execute P2 handoff: add missing index.md to predict/, changelog/lumberjack/ and archive agents/roz.md (dream/ now has SKILL.md)
+1. Execute P2 handoff: add missing overview.md to predict/, changelog/lumberjack/ and archive agents/roz.md (dream/ now has SKILL.md)
 2. Execute P3 handoff: data_sources.md gap + orphaned index entries
 3. Schedule nightly access audit skill run
 
@@ -825,7 +825,7 @@ domain: .
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/dream/run.py` — Added editorial phase between revision and assembly: editorialize() reduces full envelopes to sharp excerpts, preserves agent voice via direct quotes, write_front_page() produces original editorial read not a summary of summaries, HTML renders quotes as blockquotes
 
 **Next Tasks:**
-1. Execute P2 handoff: add missing index.md to dream/, predict/, changelog/lumberjack/ and archive agents/roz.md
+1. Execute P2 handoff: add missing overview.md to dream/, predict/, changelog/lumberjack/ and archive agents/roz.md
 2. Execute P3 handoff: data_sources.md gap + orphaned index entries
 3. Schedule nightly access audit skill run
 
@@ -839,7 +839,7 @@ domain: .
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/access/SKILL.md` — Added Step 2 — Deletion & Overwrite Watch: scans all agent outputs, skills, handoffs, and changelogs for any language advocating deletion or overwrite; flags as P1 violation. Defined approved exceptions (notes.md cleanup, git mv for archiving).
 
 **Next Tasks:**
-1. Execute P2 handoff: add missing index.md to dream/, predict/, changelog/lumberjack/ and archive agents/roz.md
+1. Execute P2 handoff: add missing overview.md to dream/, predict/, changelog/lumberjack/ and archive agents/roz.md
 2. Execute P3 handoff: data_sources.md gap + orphaned index entries
 3. Schedule nightly access audit skill run
 
@@ -854,20 +854,20 @@ domain: .
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/input/SKILL.md` — Rewrote to match corrected policy — collaborative scratchpad, signed entries, append-only, agents own followups
 
 **Next Tasks:**
-1. Execute P2 handoff: add missing index.md to dream/, predict/, changelog/lumberjack/ and archive agents/roz.md
+1. Execute P2 handoff: add missing overview.md to dream/, predict/, changelog/lumberjack/ and archive agents/roz.md
 2. Execute P3 handoff: data_sources.md gap + orphaned index entries
 3. Schedule nightly access audit skill run
 
 
-## [1.11.1] — Rewrite skills/index.md to reflect current repo structure — completing the P1 crypt-keeper handoff. (2026-04-12)
+## [1.11.1] — Rewrite skills/overview.md to reflect current repo structure — completing the P1 crypt-keeper handoff. (2026-04-12)
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/index.md` — Full rewrite — removed defunct crypt-keeper/, lumberjack/, roz/ references; added all current skill directories with accurate descriptions
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/overview.md` — Full rewrite — removed defunct crypt-keeper/, lumberjack/, roz/ references; added all current skill directories with accurate descriptions
 
-**Handoff:** `handoffs/2026-04-12-p1-crypt-keeper-agents-md-and-skills-index.md`
+**Handoff:** `reports/handoff/2026-04-12-p1-crypt-keeper-agents-md-and-skills-index.md`
 
 **Next Tasks:**
-1. Execute P2 handoff: add missing index.md to dream/, predict/, changelog/lumberjack/ and archive agents/roz.md
+1. Execute P2 handoff: add missing overview.md to dream/, predict/, changelog/lumberjack/ and archive agents/roz.md
 2. Execute P3 handoff: data_sources.md gap + orphaned index entries
 3. Schedule nightly access audit skill run
 
@@ -880,12 +880,12 @@ domain: .
 **Changes:**
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/input/notes.md` — Renamed from captains-log.md — content preserved, header updated to remove character name reference
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/input/SKILL.md` — Rewrote to define universal notes.md write policy: any agent may append to their own skill's notes.md, no agent may write to another skill's notes.md, skills/input/notes.md is persistent
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/input/index.md` — Updated to reference notes.md (was captains-log.md)
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/input/overview.md` — Updated to reference notes.md (was captains-log.md)
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Major update: added notes.md write policy section, fixed Session Pattern (notes.md + skills/pmm/report.md), updated repo structure diagram, fixed Roz dispatch to skills/access/SKILL.md, removed character name references
 
 **Next Tasks:**
-1. Execute P1 handoff: remaining AGENTS.md and skills/index.md fixes (skills/index.md rewrite)
-2. Execute P2 handoff: add missing index.md files, archive agents/roz.md
+1. Execute P1 handoff: remaining AGENTS.md and skills/overview.md fixes (skills/overview.md rewrite)
+2. Execute P2 handoff: add missing overview.md files, archive agents/roz.md
 3. Execute P3 handoff: data_sources.md gap + orphaned index entries
 4. Schedule nightly access audit skill run
 
@@ -898,13 +898,13 @@ domain: .
 **Changes:**
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/outputs/reports/knowledge-report-2026-04-12.md` — Knowledge skill run — 11 flags across 8 checks, 3 handoffs written
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/outputs/reports/archive/cleanup-report-2026-04-10.md` — Archived previous report before writing new one
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoffs/2026-04-12-p1-crypt-keeper-agents-md-and-skills-index.md` — P1 handoff — fix AGENTS.md (notes.md rename, repo diagram, Roz dispatch) and rewrite skills/index.md
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoffs/2026-04-12-p2-crypt-keeper-missing-indexes-and-roz-consolidation.md` — P2 handoff — add missing index.md to dream/, predict/, changelog/lumberjack/ and archive agents/roz.md
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoffs/2026-04-12-p3-crypt-keeper-data-and-index-gaps.md` — P3 handoff — add Locked/Signed Notes to data_sources.md, fix orphaned index references
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/reports/handoff/2026-04-12-p1-crypt-keeper-agents-md-and-skills-index.md` — P1 handoff — fix AGENTS.md (notes.md rename, repo diagram, Roz dispatch) and rewrite skills/overview.md
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/reports/handoff/2026-04-12-p2-crypt-keeper-missing-indexes-and-roz-consolidation.md` — P2 handoff — add missing overview.md to dream/, predict/, changelog/lumberjack/ and archive agents/roz.md
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/reports/handoff/2026-04-12-p3-crypt-keeper-data-and-index-gaps.md` — P3 handoff — add Locked/Signed Notes to data_sources.md, fix orphaned index references
 
 **Next Tasks:**
-1. Execute P1 handoff: fix AGENTS.md and rewrite skills/index.md
-2. Execute P2 handoff: add missing index.md files, archive agents/roz.md
+1. Execute P1 handoff: fix AGENTS.md and rewrite skills/overview.md
+2. Execute P2 handoff: add missing overview.md files, archive agents/roz.md
 3. Execute P3 handoff: data_sources.md gap + orphaned index entries
 4. Schedule nightly access audit skill run
 
@@ -913,10 +913,10 @@ domain: .
 
 **Changes:**
 - `character.md` — Deploy default generic root character identity to secure non-specialized domains
-- `skills/handoffs/character.md` — Deployed the 'Baton' transitionary logic map
+- `skills/reports/handoff/character.md` — Deployed the 'Baton' transitionary logic map
 - `AGENTS.md` — Anchored global agent enforcement loop
 
-**Handoff:** `handoffs/complete/2026-04-12-p1-character-customization-policy-COMPLETE.md`
+**Handoff:** `reports/handoff/complete/2026-04-12-p1-character-customization-policy-COMPLETE.md`
 
 **Next Tasks:**
 1. product-skill-consolidation
@@ -934,7 +934,7 @@ domain: .
 - `skills/predict/report_spec.json` — Created Bryan spec
 - `skills/dream/run.py` — Architected and simulated the Digest Editor Orchestrator sequence
 
-**Handoff:** `handoffs/complete/2026-04-12-p1-kucera-orchestrator-scaffold-COMPLETE.md`
+**Handoff:** `reports/handoff/complete/2026-04-12-p1-kucera-orchestrator-scaffold-COMPLETE.md`
 
 **Next Tasks:**
 1. agent-python-wrappers
@@ -947,10 +947,10 @@ domain: .
 - `skills/access/agent-roots/antigravity` — Symlinked Antigravity dotfiles
 - `skills/access/agent-roots/claude` — Symlinked Claude dotfiles
 - `skills/access/.gitignore` — Deployed protective .gitignore to prevent token spills
-- `skills/changelog/index.md` — Updated Check 9 Config Viability loop
+- `skills/changelog/overview.md` — Updated Check 9 Config Viability loop
 - `skills/access/SKILL.md` — Updated Agent Root Triage synthesis module
 
-**Handoff:** `handoffs/complete/2026-04-12-p2-roz-root-access-expansion-COMPLETE.md`
+**Handoff:** `reports/handoff/complete/2026-04-12-p2-roz-root-access-expansion-COMPLETE.md`
 
 **Next Tasks:**
 1. kucera-scaffold
@@ -965,7 +965,7 @@ domain: .
 - `skills/input/character.md` — Established the Sea Shanty character bounds.
 - `AGENTS.md` — Updated Repo Pathing documentation.
 
-**Handoff:** `handoffs/complete/2026-04-12-p1-ben-ad-hoc-input-protocol-COMPLETE.md`
+**Handoff:** `reports/handoff/complete/2026-04-12-p1-ben-ad-hoc-input-protocol-COMPLETE.md`
 
 **Next Tasks:**
 1. repo-structural-collapse-sprint
@@ -977,10 +977,10 @@ domain: .
 **Changes:**
 - `skills/knowledge/procedure.md` — Consolidated redundant logic and deleted file.
 - `skills/access/procedure.md` — Consolidated redundant logic and deleted file.
-- `skills/knowledge/index.md` — Rewrote index file references.
-- `skills/access/index.md` — Rewrote index file references.
+- `skills/knowledge/overview.md` — Rewrote index file references.
+- `skills/access/overview.md` — Rewrote index file references.
 
-**Handoff:** `handoffs/complete/2026-04-12-p2-universal-skill-md-consolidation-COMPLETE.md`
+**Handoff:** `reports/handoff/complete/2026-04-12-p2-universal-skill-md-consolidation-COMPLETE.md`
 
 **Next Tasks:**
 1. kucera-orchestrator-scaffold
@@ -990,9 +990,9 @@ domain: .
 
 **Changes:**
 - `AGENTS.md` — Updated AGENTS.md Rule 5 to default to hyphenated names.
-- `handoffs/2026-04-12-p2-universal-skill-md-consolidation.md` — Added newly spun-out handoff 2026-04-12-p2-universal-skill-md-consolidation.md to queue off the SKILL vs procedure discussion.
+- `reports/handoff/2026-04-12-p2-universal-skill-md-consolidation.md` — Added newly spun-out handoff 2026-04-12-p2-universal-skill-md-consolidation.md to queue off the SKILL vs procedure discussion.
 
-**Handoff:** `handoffs/complete/2026-04-10-p2-crypt-keeper-conventions-and-redundancy-COMPLETE.md`
+**Handoff:** `reports/handoff/complete/2026-04-10-p2-crypt-keeper-conventions-and-redundancy-COMPLETE.md`
 
 **Next Tasks:**
 1. universal-skill-md-consolidation
@@ -1003,7 +1003,7 @@ domain: .
 **Changes:**
 - `agents/gemma.md` — Added 'Explicit Identity' logic to Gemma's core rule execution sequence.
 
-**Handoff:** `handoffs/complete/2026-04-10-p2-gemma-explicit-identity-correction-COMPLETE.md`
+**Handoff:** `reports/handoff/complete/2026-04-10-p2-gemma-explicit-identity-correction-COMPLETE.md`
 
 **Next Tasks:**
 1. roz-root-access-expansion
@@ -1019,7 +1019,7 @@ domain: .
 - `skills/predict/character.md` — Created character config file in skills/predict/
 - `skills/dream/character.md` — Created character config file in skills/dream/
 
-**Handoff:** `handoffs/complete/2026-04-12-p1-dream-character-files-generation-COMPLETE.md`
+**Handoff:** `reports/handoff/complete/2026-04-12-p1-dream-character-files-generation-COMPLETE.md`
 
 **Next Tasks:**
 1. Execute kucera-orchestrator-scaffold
@@ -1031,7 +1031,7 @@ domain: .
 **Changes:**
 - `.env` — Replaced JS-style `//` comments with Bash-legit `#` comments to fix sourcing errors.
 
-**Handoff:** `handoffs/complete/2026-04-12-p1-launchd-explanation-and-env-fix-COMPLETE.md`
+**Handoff:** `reports/handoff/complete/2026-04-12-p1-launchd-explanation-and-env-fix-COMPLETE.md`
 
 **Next Tasks:**
 1. kucera-orchestrator-scaffold.md
@@ -1041,9 +1041,9 @@ domain: .
 
 **Changes:**
 - `implementation_plan.md` — Produced final architectural design for "Daily Progress Digest".
-- `handoffs/` — Created 5 discrete handoffs to execute the build phase of Daily Progress Digest sequentially.
+- `reports/handoff/` — Created 5 discrete handoffs to execute the build phase of Daily Progress Digest sequentially.
 
-**Handoff:** `handoffs/complete/2026-04-12-p1-dream-cycles-COMPLETE.md`
+**Handoff:** `reports/handoff/complete/2026-04-12-p1-dream-cycles-COMPLETE.md`
 
 **Next Tasks:**
 1. Execute 2026-04-12-p1-launchd-explanation-and-env-fix
@@ -1060,7 +1060,7 @@ domain: .
 - `skills/changelog/audit_procedure.md` — Added Check 9 (Permission Scan) to Changelog Auditor procedure.
 - `skills/access/` — Created Roz skill infrastructure (SKILL, procedure, template, index).
 
-**Handoff:** `handoffs/complete/2026-04-10-p1-agent-permission-and-behavior-refinement-COMPLETE.md`
+**Handoff:** `reports/handoff/complete/2026-04-10-p1-agent-permission-and-behavior-refinement-COMPLETE.md`
 
 **Next Tasks:**
 1. Monitor Roz's first nightly report.
@@ -1072,19 +1072,19 @@ domain: .
 **Changes:**
 - `src/ben-cp.ts` — Identified root cause (missing fs.mkdir) and applied source-level fix in src/ben-cp.ts.
 
-**Handoff:** `handoffs/complete/2026-04-10-p2-gemma-pathing-tooling-issues-COMPLETE.md`
+**Handoff:** `reports/handoff/complete/2026-04-10-p2-gemma-pathing-tooling-issues-COMPLETE.md`
 
 **Next Tasks:**
-1. Claude Code to rebuild and restart the MCP server via handoffs/2026-04-10-p1-claude-code-mcp-server-build-and-restart.md
+1. Claude Code to rebuild and restart the MCP server via reports/handoff/2026-04-10-p1-claude-code-mcp-server-build-and-restart.md
 
 
 ## [1.9.7] — Orchestrate and execute the Platform Weekly Status Report pipeline to generate the latest status report. (2026-04-10)
 
 **Detail logs:**
-- `skills/project-status-reports/changelog.md`
+- `skills/skills/status/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/project-status-reports/outputs/Status_Report.html` — Successfully generated the Platform Weekly Status Report for April 10, 2026.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/reports/status/Status_Report.html` — Successfully generated the Platform Weekly Status Report for April 10, 2026.
 
 **Next Tasks:**
 1. Review the generated report for any critical findings before sharing with stakeholders.
@@ -1093,10 +1093,10 @@ domain: .
 ## [1.9.6] — Resolve orphaned index entries and sync metadata gaps identified by Repo Auditor. (2026-04-10)
 
 **Changes:**
-- `skills/okr-reporting/q2-2026/planning-services-at-scale/index.md` — Added Notes Quick Entry to dashboard and detailed metadata sections.
-- `skills/okr-reporting/data_sources.md` — Added TrackServiceNoteNew event to Section 1 and created Section 16 for Notes Datagrid Shortcuts.
+- `skills/status/q2-2026/planning-services-at-scale/overview.md` — Added Notes Quick Entry to dashboard and detailed metadata sections.
+- `skills/status/data_sources.md` — Added TrackServiceNoteNew event to Section 1 and created Section 16 for Notes Datagrid Shortcuts.
 
-**Handoff:** `handoffs/complete/2026-04-10-p1-crypt-keeper-orphaned-and-sync-gaps-COMPLETE.md`
+**Handoff:** `reports/handoff/complete/2026-04-10-p1-crypt-keeper-orphaned-and-sync-gaps-COMPLETE.md`
 
 **Next Tasks:**
 1. Address P2 handoff: gemma-pathing-tooling-issues.md
@@ -1124,10 +1124,10 @@ domain: .
 **Changes:**
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/changelog/reports/archive/lumberjack-report-2026-04-09.md` — Archived lumberjack-report-2026-04-09.md and created archive/ directory.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/changelog/reports/changelog-report-2026-04-10.md` — Executed changelog audit against git history and written report lumberjack-report-2026-04-10.md.
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/changelog/reports/changelog-report-2026-04-10.md` — Identified alignment gaps in skills/handoffs/changelog.md and okr-reporting log nesting.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/changelog/reports/changelog-report-2026-04-10.md` — Identified alignment gaps in skills/reports/handoff/changelog.md and okr-reporting log nesting.
 
 **Next Tasks:**
-1. Address handoffs/2026-04-10-p2-lumberjack-changelog-alignment-fixes.md
+1. Address reports/handoff/2026-04-10-p2-lumberjack-changelog-alignment-fixes.md
 
 
 ## [1.9.3] — Run Repo Auditor nightly structural audit. (2026-04-10)
@@ -1141,8 +1141,8 @@ domain: .
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/reports/knowledge-report-2026-04-10.md` — Identified orphaned index entry for notes_quick_entry.md and data_sources.md sync gaps.
 
 **Next Tasks:**
-1. Address handoffs/2026-04-10-p1-crypt-keeper-orphaned-and-sync-gaps.md
-2. Address handoffs/2026-04-10-p2-crypt-keeper-conventions-and-redundancy.md
+1. Address reports/handoff/2026-04-10-p1-crypt-keeper-orphaned-and-sync-gaps.md
+2. Address reports/handoff/2026-04-10-p2-crypt-keeper-conventions-and-redundancy.md
 
 
 ## [1.9.2] — Refine repo reporting protocols to eliminate redundant changelog entries when a handoff is the primary output. (2026-04-10)
@@ -1153,7 +1153,7 @@ domain: .
 **Changes:**
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Added Handoff Exemption to repo completion reporting rules.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/gemma.md` — Added Handoff Exemption to Gemma's session wrap-up rules.
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/changelog/index.md` — Updated changelog procedure with Handoff Exemption in Stage 2.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/changelog/overview.md` — Updated changelog procedure with Handoff Exemption in Stage 2.
 
 **Next Tasks:**
 1. Ensure future handoff-centric sessions follow the condensed logging pattern.
@@ -1164,13 +1164,13 @@ domain: .
 **Detail logs:**
 - `skills/pmm/changelog.md`
 - `skills/changelog/changelog.md`
-- `skills/handoffs/changelog.md`
+- `skills/reports/handoff/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/pmm/index.md` — Established Strategic PM skill SOP and template.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/pmm/overview.md` — Established Strategic PM skill SOP and template.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Updated AGENTS.md with Strategic PM session pattern.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/changelog/audit_procedure.md` — Added Check 8 (Lingering Plans) to Changelog Auditor audit procedure.
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoffs/2026-04-10-p2-quartermaster-convention.md` — Created Strategic PM convention handoff.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/reports/handoff/2026-04-10-p2-quartermaster-convention.md` — Created Strategic PM convention handoff.
 
 **Next Tasks:**
 1. Verify Strategic PM usage in the next write-active session.
@@ -1180,13 +1180,13 @@ domain: .
 ## [1.9.0] — Finalize the documentation for the Locked and Signed Notes KR SOP and create a P2 handoff to address the next outstanding OKR measurement SOP. (2026-04-10)
 
 **Detail logs:**
-- `skills/okr-reporting/changelog.md`
+- `skills/status/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md` — Updated SOP with March 2026 proxy baseline (18 tenants) and integrated Margaux's Google Sheet link into Data Sources for segmentation validation.
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/procedure.md` — Added 'Metric Qualification Standards (N & D)' section, defining strict inclusion criteria for Numerator and Denominator populations to ensure measurement consistency across all KRs.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/q2-2026/elevate-notes/locked_and_signed_notes.md` — Updated SOP with March 2026 proxy baseline (18 tenants) and integrated Margaux's Google Sheet link into Data Sources for segmentation validation.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/procedure.md` — Added 'Metric Qualification Standards (N & D)' section, defining strict inclusion criteria for Numerator and Denominator populations to ensure measurement consistency across all KRs.
 
-**Handoff:** `handoffs/2026-04-10-p2-finalize-enrollments-data-entry-shortcuts-baseline.md`
+**Handoff:** `reports/handoff/2026-04-10-p2-finalize-enrollments-data-entry-shortcuts-baseline.md`
 
 **Next Tasks:**
 1. Execute the handoff: 2026-04-10-p2-finalize-enrollments-data-entry-shortcuts-baseline.md
@@ -1195,10 +1195,10 @@ domain: .
 ## [1.8.0] — Formalize and document the rigorous qualification standards for Numerator and Denominator metrics within the OKR measurement procedure. (2026-04-10)
 
 **Detail logs:**
-- `skills/okr-reporting/changelog.md`
+- `skills/status/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/procedure.md` — Added 'Metric Qualification Standards (N & D)' section, defining strict inclusion criteria for Numerator and Denominator populations to ensure measurement consistency across all KRs.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/procedure.md` — Added 'Metric Qualification Standards (N & D)' section, defining strict inclusion criteria for Numerator and Denominator populations to ensure measurement consistency across all KRs.
 
 **Next Tasks:**
 1. Review the remaining unblocked KRs in Q2 2026 to determine next documentation priority.
@@ -1208,10 +1208,10 @@ domain: .
 ## [1.7.29] — Finalize documentation for the Locked and Signed Notes KR SOP by documenting the March 2026 proxy baseline and integrating Margaux's segmentation sheet. (2026-04-10)
 
 **Detail logs:**
-- `skills/okr-reporting/changelog.md`
+- `skills/status/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md` — Updated SOP to reflect March 2026 proxy baseline (18 tenants) and integrated Margaux's Google Sheet link into Data Sources for segmentation validation.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/q2-2026/elevate-notes/locked_and_signed_notes.md` — Updated SOP to reflect March 2026 proxy baseline (18 tenants) and integrated Margaux's Google Sheet link into Data Sources for segmentation validation.
 
 **Next Tasks:**
 1. Review remaining unblocked KRs in Q2 2026 to determine next documentation priority.
@@ -1221,10 +1221,10 @@ domain: .
 ## [1.7.28] — Finalize outstanding KR baselines from March 2026 and update the relevant SOPs for Q2 2026 initiatives by documenting baseline data and source caveats. (2026-04-10)
 
 **Detail logs:**
-- `skills/okr-reporting/changelog.md`
+- `skills/status/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/service_notes_data_entry_shortcuts.md` — Updated SOP to v0.2, inserting the March 2026 baseline (31.5%) and updating the data source link with a caveat regarding Roster-only scope due to GA delays.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/q2-2026/planning-services-at-scale/service_notes_data_entry_shortcuts.md` — Updated SOP to v0.2, inserting the March 2026 baseline (31.5%) and updating the data source link with a caveat regarding Roster-only scope due to GA delays.
 
 **Next Tasks:**
 1. Finalize Locked and Signed Notes SOP by inputting Q2 proxy baseline and target.
@@ -1233,12 +1233,12 @@ domain: .
 ## [1.7.27] — Finalize outstanding KR baselines from March 2026 and update the relevant SOPs for Q2 2026 initiatives. (2026-04-10)
 
 **Detail logs:**
-- `skills/okr-reporting/changelog.md`
+- `skills/status/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/service_notes_data_entry_shortcuts.md` — Updated SOP to v0.2, explicitly cross-referencing the GA event discovery process from notes_quick_entry.md and detailing Reveal BI pull path for baseline calculation.
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md` — Finalized SOP v1.0, establishing Locked Notes as a proxy baseline for High-Confidentiality tenants due to Signed Notes not yet being live.
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/data_sources.md` — Updated the description for Casebook Admin Reporting / Reveal BI to explicitly state its role in serving as a primary source for Denominators in shortcut metrics, improving data lineage clarity.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/q2-2026/planning-services-at-scale/service_notes_data_entry_shortcuts.md` — Updated SOP to v0.2, explicitly cross-referencing the GA event discovery process from notes_quick_entry.md and detailing Reveal BI pull path for baseline calculation.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/q2-2026/elevate-notes/locked_and_signed_notes.md` — Finalized SOP v1.0, establishing Locked Notes as a proxy baseline for High-Confidentiality tenants due to Signed Notes not yet being live.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/data_sources.md` — Updated the description for Casebook Admin Reporting / Reveal BI to explicitly state its role in serving as a primary source for Denominators in shortcut metrics, improving data lineage clarity.
 
 **Next Tasks:**
 1. Execute baseline pull for Service Notes — Roster Association using Reveal BI (Path A).
@@ -1247,10 +1247,10 @@ domain: .
 ## [1.7.26] — Populate the Data Source Inventory by cross-referencing all KR SOPs to ensure comprehensive coverage of data sources. (2026-04-10)
 
 **Detail logs:**
-- `skills/okr-reporting/changelog.md`
+- `skills/status/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/data_sources.md` — Updated the description for Casebook Admin Reporting / Reveal BI to explicitly state its role in serving as a primary source for Denominators in shortcut metrics, improving data lineage clarity.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/data_sources.md` — Updated the description for Casebook Admin Reporting / Reveal BI to explicitly state its role in serving as a primary source for Denominators in shortcut metrics, improving data lineage clarity.
 
 **Next Tasks:**
 1. Execute baseline pull for Service Notes — Roster Association using Reveal BI (Path A).
@@ -1259,39 +1259,39 @@ domain: .
 ## [1.7.25] — Finalize outstanding KR baselines from March 2026 and update the relevant SOPs for Q2 2026 initiatives. (2026-04-10)
 
 **Detail logs:**
-- `skills/okr-reporting/changelog.md`
+- `skills/status/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/service_notes_data_entry_shortcuts.md` — Updated SOP to v0.2, explicitly cross-referencing the GA event discovery process from notes_quick_entry.md and detailing Reveal BI pull path for baseline calculation.
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md` — Finalized SOP v1.0, establishing Locked Notes as a proxy baseline for High-Confidentiality tenants due to Signed Notes not yet being live.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/q2-2026/planning-services-at-scale/service_notes_data_entry_shortcuts.md` — Updated SOP to v0.2, explicitly cross-referencing the GA event discovery process from notes_quick_entry.md and detailing Reveal BI pull path for baseline calculation.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/q2-2026/elevate-notes/locked_and_signed_notes.md` — Finalized SOP v1.0, establishing Locked Notes as a proxy baseline for High-Confidentiality tenants due to Signed Notes not yet being live.
 
 **Next Tasks:**
 1. Execute baseline pull for Service Notes — Roster Association using Reveal BI (Path A).
-2. Populate skills/okr-reporting/data_sources.md by cross-referencing all KR SOPs in this directory.
+2. Populate skills/status/data_sources.md by cross-referencing all KR SOPs in this directory.
 
 
 ## [1.7.24] — Finalize outstanding KR baselines from March 2026 and update the relevant SOPs for Q2 2026 initiatives. (2026-04-10)
 
 **Detail logs:**
-- `skills/okr-reporting/changelog.md`
+- `skills/status/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/service_notes_data_entry_shortcuts.md` — Updated SOP to v0.2, explicitly cross-referencing the GA event discovery process from notes_quick_entry.md and detailing Reveal BI pull path for baseline calculation.
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md` — Finalized SOP v1.0, establishing Locked Notes as a proxy baseline for High-Confidentiality tenants due to Signed Notes not yet being live.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/q2-2026/planning-services-at-scale/service_notes_data_entry_shortcuts.md` — Updated SOP to v0.2, explicitly cross-referencing the GA event discovery process from notes_quick_entry.md and detailing Reveal BI pull path for baseline calculation.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/q2-2026/elevate-notes/locked_and_signed_notes.md` — Finalized SOP v1.0, establishing Locked Notes as a proxy baseline for High-Confidentiality tenants due to Signed Notes not yet being live.
 
 **Next Tasks:**
 1. Execute baseline pull for Service Notes — Roster Association using Reveal BI (Path A).
-2. Populate skills/okr-reporting/data_sources.md by cross-referencing all KR SOPs in this directory.
+2. Populate skills/status/data_sources.md by cross-referencing all KR SOPs in this directory.
 
 
 ## [1.7.23] — Create and link the Locked and Signed Notes OKR measurement SOP. (2026-04-10)
 
 **Detail logs:**
-- `skills/okr-reporting/changelog.md`
+- `skills/status/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/locked_and_signed_notes.md` — Created Locked and Signed Notes measurement SOP.
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/index.md` — Linked 'Locked / Signed Notes' SOP in initiative index.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/q2-2026/elevate-notes/locked_and_signed_notes.md` — Created Locked and Signed Notes measurement SOP.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/q2-2026/elevate-notes/overview.md` — Linked 'Locked / Signed Notes' SOP in initiative index.
 
 **Next Tasks:**
 1. Pull initial proxy baseline for High-Conf tenants after verifying segment via Margaux's sheet.
@@ -1301,10 +1301,10 @@ domain: .
 ## [1.7.22] — Finalize the Notes Quick Entry OKR baseline and target. (2026-04-10)
 
 **Detail logs:**
-- `skills/okr-reporting/changelog.md`
+- `skills/status/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/notes_quick_entry.md` — Updated Notes Quick Entry OKR with 49% baseline (174/357) and 50% target.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/q2-2026/planning-services-at-scale/notes_quick_entry.md` — Updated Notes Quick Entry OKR with 49% baseline (174/357) and 50% target.
 
 **Next Tasks:**
 1. Monitor for Notes WLV event shipping in Q3 to expand the denominator population.
@@ -1362,7 +1362,7 @@ domain: .
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Updated Completion Reporting to be conditional on write/edit activity.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/GEMMA.md` — Updated Rule 7 to 'Log Write-Active Sessions'.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/gemma.md` — Updated Session Wrap-Up to be conditional.
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/changelog/index.md` — Updated triggers to exclude read-only discovery.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/changelog/overview.md` — Updated triggers to exclude read-only discovery.
 
 **Next Tasks:**
 1. Monitor Gemma sessions to ensure 'empty' changelogs are no longer produced.
@@ -1372,11 +1372,11 @@ domain: .
 ## [1.7.17] — Perform comprehensive reference update across the repo following structural changes. Cory (2026-04-10)
 
 **Detail logs:**
-- `skills/okr-reporting/changelog.md`
+- `skills/status/changelog.md`
 
 **Changes:**
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Updated AGENTS.md, procedure.md, data_sources.md, and GEMMA.md with all new nested paths and dashboard links Cory
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/procedure.md` — Performed repo-wide audit to ensure no dangling references to deprecated 2026-q2-kr-reference.md remained Cory
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/procedure.md` — Performed repo-wide audit to ensure no dangling references to deprecated 2026-q2-kr-reference.md remained Cory
 
 **Next Tasks:**
 1. Review changelog for any other indirect references that might need cleanup (e.g. past entries).
@@ -1385,13 +1385,13 @@ domain: .
 ## [1.7.16] — Migrate Q2 KR reference content to initiative indices and deprecate source file. Cory (2026-04-10)
 
 **Detail logs:**
-- `skills/okr-reporting/changelog.md`
+- `skills/status/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/elevate-notes/index.md` — Created elevate-notes and reduce-admin-burden initiative indices for Q2 2026
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/index.md` — Migrated all KR reference content (baselines, targets, next steps) into initiative-specific indices
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/index.md` — Reconstructed main Q2 index as a master status dashboard
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/2026-q2-kr-reference.md` — Deprecated and deleted 2026-q2-kr-reference.md
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/q2-2026/elevate-notes/overview.md` — Created elevate-notes and reduce-admin-burden initiative indices for Q2 2026
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/q2-2026/planning-services-at-scale/overview.md` — Migrated all KR reference content (baselines, targets, next steps) into initiative-specific indices
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/q2-2026/overview.md` — Reconstructed main Q2 index as a master status dashboard
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/2026-q2-kr-reference.md` — Deprecated and deleted 2026-q2-kr-reference.md
 
 **Next Tasks:**
 1. Ensure all links in the new dashboard correctly point to their respective initiative SOPs.
@@ -1400,13 +1400,13 @@ domain: .
 ## [1.7.15] — Move additional Service Notes SOP files to Q2 2026 sub-directory and resolve references. (2026-04-10)
 
 **Detail logs:**
-- `skills/okr-reporting/changelog.md`
+- `skills/status/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/` — Moved service_notes_data_entry_shortcuts.md and service_notes_roster_association.md to planning-services-at-scale/ subdirectory
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/index.md` — Updated Planning Services sub-index with additional Service Notes SOPs
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/index.md` — Updated Q2 index with nested path for roster association SOP
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/service_notes_roster_association.md` — Resolved internal links in the second batch of moved SOPs
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/q2-2026/planning-services-at-scale/` — Moved service_notes_data_entry_shortcuts.md and service_notes_roster_association.md to planning-services-at-scale/ subdirectory
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/q2-2026/planning-services-at-scale/overview.md` — Updated Planning Services sub-index with additional Service Notes SOPs
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/q2-2026/overview.md` — Updated Q2 index with nested path for roster association SOP
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/q2-2026/planning-services-at-scale/service_notes_roster_association.md` — Resolved internal links in the second batch of moved SOPs
 
 **Next Tasks:**
 1. Verify all 5 SOPs in the new directory for link consistency.
@@ -1415,13 +1415,13 @@ domain: .
 ## [1.7.14] — Move KR SOP files to Q2 2026 sub-directory and resolve references. (2026-04-10)
 
 **Detail logs:**
-- `skills/okr-reporting/changelog.md`
+- `skills/status/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/index.md` — Created skills/okr-reporting/q2-2026/planning-services-at-scale/index.md
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/` — Moved enrollments_data_entry_shortcuts.md, notes_datagrid_shortcuts.md, and notes_quick_entry.md to new Q2 subdirectory
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/index.md` — Updated skills/okr-reporting/index.md and q2-2026/index.md lists
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/planning-services-at-scale/enrollments_data_entry_shortcuts.md` — Resolved relative link references in moved SOP files
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/q2-2026/planning-services-at-scale/overview.md` — Created skills/status/q2-2026/planning-services-at-scale/overview.md
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/q2-2026/planning-services-at-scale/` — Moved enrollments_data_entry_shortcuts.md, notes_datagrid_shortcuts.md, and notes_quick_entry.md to new Q2 subdirectory
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/overview.md` — Updated skills/status/overview.md and q2-2026/overview.md lists
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/q2-2026/planning-services-at-scale/enrollments_data_entry_shortcuts.md` — Resolved relative link references in moved SOP files
 
 **Next Tasks:**
 1. Audit remaining Q2 SOPs for similar categorization needs.
@@ -1430,13 +1430,13 @@ domain: .
 ## [1.7.13] — To identify and prioritize actionable KR baselines from Q2 2026 to move towards finalizing outstanding metrics. (2026-04-10)
 
 **Detail logs:**
-- `skills/okr-reporting/changelog.md`
+- `skills/status/changelog.md`
 
 **Changes:**
-- `skills/okr-reporting/service_notes_roster_association.md` — Reviewed SOP for Service Notes Roster Association, confirming Path A (Reveal BI) is viable for baseline pull. ✅ Complete
-- `skills/okr-reporting/enrollments_data_entry_shortcuts.md` — Reviewed SOP for Enrollments Data Entry Shortcuts, confirming Path A (Casebook Admin Reporting) is viable for baseline pull. ✅ Complete
-- `skills/okr-reporting/notes_quick_entry.md` — Confirmed Notes Quick Entry Baseline (~32%) and Target (40%) from Q2 2026 reference file. ✅ Complete
-- `skills/okr-reporting/notes_datagrid_shortcuts.md` — Reviewed SOP for Notes Datagrid Shortcuts, noting the 'NotesWLVSort' instrumentation gap. ✅ Complete
+- `skills/status/service_notes_roster_association.md` — Reviewed SOP for Service Notes Roster Association, confirming Path A (Reveal BI) is viable for baseline pull. ✅ Complete
+- `skills/status/enrollments_data_entry_shortcuts.md` — Reviewed SOP for Enrollments Data Entry Shortcuts, confirming Path A (Casebook Admin Reporting) is viable for baseline pull. ✅ Complete
+- `skills/status/notes_quick_entry.md` — Confirmed Notes Quick Entry Baseline (~32%) and Target (40%) from Q2 2026 reference file. ✅ Complete
+- `skills/status/notes_datagrid_shortcuts.md` — Reviewed SOP for Notes Datagrid Shortcuts, noting the 'NotesWLVSort' instrumentation gap. ✅ Complete
 
 **Next Tasks:**
 1. Execute baseline pull for Service Notes — Roster Association using Reveal BI (Path A).
@@ -1448,35 +1448,35 @@ domain: .
 ## [1.7.12] — Formalized an environmental blocker as a P1 handoff to unblock data source population for okr-reporting. (2026-04-10)
 
 **Detail logs:**
-- `skills/okr-reporting/changelog.md`
+- `skills/status/changelog.md`
 
 **Changes:**
-- `handoffs/2026-04-10-p1-okr-reporting-data-source-population-blocked.md` — Created P1 handoff to document and escalate the file system access denial blocking data source population in okr-reporting.
+- `reports/handoff/2026-04-10-p1-okr-reporting-data-source-population-blocked.md` — Created P1 handoff to document and escalate the file system access denial blocking data source population in okr-reporting.
 
 **Blockers:**
 - No blockers remain for this session, as the primary blocker was escalated via a new handoff. — N/A
 
-**Handoff:** `handoffs/2026-04-10-p1-okr-reporting-data-source-population-blocked.md`
+**Handoff:** `reports/handoff/2026-04-10-p1-okr-reporting-data-source-population-blocked.md`
 
 **Next Tasks:**
-1. Monitor for resolution of P1 handoff; upon access restoration, resume work on skills/okr-reporting/data_sources.md.
+1. Monitor for resolution of P1 handoff; upon access restoration, resume work on skills/status/data_sources.md.
 
 
-## [1.7.11] — Populate skills/okr-reporting/data_sources.md by cross-referencing all KR SOPs in that directory. (2026-04-10)
+## [1.7.11] — Populate skills/status/data_sources.md by cross-referencing all KR SOPs in that directory. (2026-04-10)
 
 **Changes:**
-- `skills/okr-reporting/data_sources.md` — Attempted to populate data sources inventory based on existing KR SOPs.
+- `skills/status/data_sources.md` — Attempted to populate data sources inventory based on existing KR SOPs.
 
 **Failed actions:**
-- **Attempted:** Read all KR SOP files in skills/okr-reporting/
-  **Happened:** Access denied by the execution environment for path: /skills/okr-reporting/
+- **Attempted:** Read all KR SOP files in skills/status/
+  **Happened:** Access denied by the execution environment for path: /skills/status/
   **Recommendation:** human user must grant read access to the entire skills directory or provide the content of the necessary source SOPs directly.
 
 **Blockers:**
-- Cannot read any files within skills/okr-reporting/ (e.g., service_notes_data_entry_shortcuts.md) due to persistent 'Access denied' errors from file system tools. — Environment permission change or manual content provision by human user.
+- Cannot read any files within skills/status/ (e.g., service_notes_data_entry_shortcuts.md) due to persistent 'Access denied' errors from file system tools. — Environment permission change or manual content provision by human user.
 
 **Next Tasks:**
-1. Wait for environment access to skills/okr-reporting/ to proceed with data source population.
+1. Wait for environment access to skills/status/ to proceed with data source population.
 
 
 ## [1.7.10] — Perform Robert's first official Mission Integrity Audit. (2026-04-10)
@@ -1495,10 +1495,10 @@ domain: .
 
 **Changes:**
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Added Course Correction Protocol to AGENTS.md.
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/handoffs/index.md` — Updated Handoff Protocol (skills/handoffs/index.md) with logging resilience rules.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/reports/handoff/overview.md` — Updated Handoff Protocol (skills/reports/handoff/overview.md) with logging resilience rules.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/robert.md` — Updated Robert's monitors (agents/robert.md).
 
-**Handoff:** `handoffs/complete/2026-04-10-p2-context-loading-triage-COMPLETE.md`
+**Handoff:** `reports/handoff/complete/2026-04-10-p2-context-loading-triage-COMPLETE.md`
 
 **Next Tasks:**
 1. Ensure all agents are aware of the Course Correction Protocol.
@@ -1507,14 +1507,14 @@ domain: .
 ## [1.7.8] — Implement session resilience and Course Correction protocols for repo agents. (2026-04-10)
 
 **Detail logs:**
-- `skills/handoffs/changelog.md`
+- `skills/reports/handoff/changelog.md`
 
 **Changes:**
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Integrated Course Correction Protocol and Resonance rules into AGENTS.md.
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/handoffs/index.md` — Updated Handoff Protocol with resilience policies for logging failures.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/reports/handoff/overview.md` — Updated Handoff Protocol with resilience policies for logging failures.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/robert.md` — Added Course Correction Protocol to Robert's monitoring scope.
 
-**Handoff:** `handoffs/2026-04-10-p2-context-loading-triage.md`
+**Handoff:** `reports/handoff/2026-04-10-p2-context-loading-triage.md`
 
 **Next Tasks:**
 1. Agents to apply Course Correction Protocol when encountering tool errors.
@@ -1524,9 +1524,9 @@ domain: .
 ## [1.7.7] — Clean up context handoff after Robert creation. (2026-04-09)
 
 **Changes:**
-- `handoffs/2026-04-10-p4-session-retrospective-context.md` — P3 (Robert) is complete; this context package is no longer needed in the READY folder.
+- `reports/handoff/2026-04-10-p4-session-retrospective-context.md` — P3 (Robert) is complete; this context package is no longer needed in the READY folder.
 
-**Handoff:** `handoffs/complete/2026-04-10-p4-session-retrospective-context-COMPLETE.md`
+**Handoff:** `reports/handoff/complete/2026-04-10-p4-session-retrospective-context-COMPLETE.md`
 
 **Next Tasks:**
 1. Tackle P2 context loading triage.
@@ -1539,7 +1539,7 @@ domain: .
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/synthesis/` — Launched skills/synthesis/ directory with index, diff_checker, art, and changelog.md.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Documented art.md convention in AGENTS.md.
 
-**Handoff:** `handoffs/complete/2026-04-10-p3-robert-agent-creation-COMPLETE.md`
+**Handoff:** `reports/handoff/complete/2026-04-10-p3-robert-agent-creation-COMPLETE.md`
 
 **Next Tasks:**
 1. Robert to perform first official audit of AGENTS.md.
@@ -1556,7 +1556,7 @@ domain: .
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/synthesis/art.md` — Established art.md convention for mixed digital media art.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Integrated Robert into AGENTS.md.
 
-**Handoff:** `handoffs/2026-04-10-p3-robert-agent-creation.md`
+**Handoff:** `reports/handoff/2026-04-10-p3-robert-agent-creation.md`
 
 **Next Tasks:**
 1. The user to perform initial review of Robert's audit procedure.
@@ -1566,13 +1566,13 @@ domain: .
 ## [1.7.4] — Codify handoff editability rules to allow for iterative plan development. (2026-04-09)
 
 **Detail logs:**
-- `skills/handoffs/changelog.md`
+- `skills/reports/handoff/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/handoffs/index.md` — Added 'Editability Rules' section clarifying that open handoffs are fully editable living documents.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/reports/handoff/overview.md` — Added 'Editability Rules' section clarifying that open handoffs are fully editable living documents.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Added note to AGENTS.md Handoff Check section regarding living document status of open handoffs.
 
-**Handoff:** `handoffs/2026-04-10-p1-handoff-editability-COMPLETE.md`
+**Handoff:** `reports/handoff/2026-04-10-p1-handoff-editability-COMPLETE.md`
 
 **Next Tasks:**
 1. Address remaining handoffs: p2-context-loading-triage, p3-robert-agent-creation, p4-session-retrospective-context.
@@ -1584,7 +1584,7 @@ domain: .
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/antigravity.md` — Created agents/antigravity.md role file with verbatim handoff text.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Updated AGENTS.md dispatch table and repo structure tree to register Antigravity agent.
 
-**Handoff:** `handoffs/2026-04-10-p2-antigravity-agent.md`
+**Handoff:** `reports/handoff/2026-04-10-p2-antigravity-agent.md`
 
 **Next Tasks:**
 1. Surface remaining handoffs to human user.
@@ -1594,23 +1594,23 @@ domain: .
 ## [1.7.2] — Drafted the Enrollment Data Entry Shortcuts SOP by adapting the Notes Quick Entry template, moving both Service Notes and Enrollments toward completion. (2026-04-09)
 
 **Detail logs:**
-- `skills/okr-reporting/changelog.md`
+- `skills/status/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/service_notes_data_entry_shortcuts.md` — Refined SOP to v0.2, explicitly cross-referencing the GA event discovery process from notes_quick_entry.md.
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/enrollments_data_entry_shortcuts.md` — Drafted new SOP (v0.1) by adapting Notes Quick Entry template, focusing on Tenant-level Enrollment metrics and using placeholders for GA event discovery.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/service_notes_data_entry_shortcuts.md` — Refined SOP to v0.2, explicitly cross-referencing the GA event discovery process from notes_quick_entry.md.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/enrollments_data_entry_shortcuts.md` — Drafted new SOP (v0.1) by adapting Notes Quick Entry template, focusing on Tenant-level Enrollment metrics and using placeholders for GA event discovery.
 
 **Next Tasks:**
-1. Populate skills/okr-reporting/data_sources.md by cross-referencing all KR SOPs in this directory.
+1. Populate skills/status/data_sources.md by cross-referencing all KR SOPs in this directory.
 
 
 ## [1.7.1] — Cross-referenced all KR SOPs against data_sources.md to verify source coverage and identify outstanding data path gaps. (2026-04-09)
 
 **Detail logs:**
-- `skills/okr-reporting/changelog.md`
+- `skills/status/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/data_sources.md` — Verified that existing KR SOPs reference documented sources; confirmed the inventory itself contains all known outstanding data path gaps (e.g., UOW context for EngageWLVAddNote).
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/data_sources.md` — Verified that existing KR SOPs reference documented sources; confirmed the inventory itself contains all known outstanding data path gaps (e.g., UOW context for EngageWLVAddNote).
 
 **Next Tasks:**
 1. Investigate 'EngageWLVAddNote' UOW vs non-UOW context using dev tools, or flag this as a blocker for human user.
@@ -1619,26 +1619,26 @@ domain: .
 ## [1.7.0] — Implement a dedicated time-boxed directory (q2-2026) within okr-reporting/ for tracking quarterly deliverables. (2026-04-09)
 
 **Detail logs:**
-- `skills/okr-reporting/changelog.md`
+- `skills/status/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/index.md` — Created placeholder TOC file for Q2 2026 deliverables.
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/q2-2026/changelog.md` — Created placeholder changelog file for Q2 2026 tracking.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/q2-2026/overview.md` — Created placeholder TOC file for Q2 2026 deliverables.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/q2-2026/changelog.md` — Created placeholder changelog file for Q2 2026 tracking.
 
 **Next Tasks:**
-1. Populate skills/okr-reporting/data_sources.md by cross-referencing all KR SOPs in this directory.
+1. Populate skills/status/data_sources.md by cross-referencing all KR SOPs in this directory.
 
 
 ## [1.6.10] — Refine the KR SOP for Service Notes — Data Entry Shortcuts by updating its status and cross-referencing discovery methodology. (2026-04-09)
 
 **Detail logs:**
-- `skills/okr-reporting/changelog.md`
+- `skills/status/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/service_notes_data_entry_shortcuts.md` — Updated SOP to v0.2, explicitly cross-referencing the GA event discovery process from notes_quick_entry.md.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/service_notes_data_entry_shortcuts.md` — Updated SOP to v0.2, explicitly cross-referencing the GA event discovery process from notes_quick_entry.md.
 
 **Next Tasks:**
-1. Populate skills/okr-reporting/data_sources.md by cross-referencing all KR SOPs in this directory.
+1. Populate skills/status/data_sources.md by cross-referencing all KR SOPs in this directory.
 
 
 ## [1.6.9] — Documented workflow friction regarding precise line-based edits and created a meta-handoff note for process improvement. (2026-04-09)
@@ -1646,7 +1646,7 @@ domain: .
 **Changes:**
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/changelog.md` — Added a note regarding the brittleness of line-based edits during complex refactoring, advising agents to read larger context blocks first.
 
-**Handoff:** `handoffs/2026-04-XX-editing-friction-summary.md (Conceptual)`
+**Handoff:** `reports/handoff/2026-04-XX-editing-friction-summary.md (Conceptual)`
 
 **Next Tasks:**
 1. Draft the KR SOP for Service Notes — Data Entry Shortcuts based on established patterns.
@@ -1655,10 +1655,10 @@ domain: .
 ## [1.6.8] — Formalized the measurement procedure for Service Notes — Roster Association by creating a new KR SOP. (2026-04-09)
 
 **Detail logs:**
-- `skills/okr-reporting/changelog.md`
+- `skills/status/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/service_notes_roster_association.md` — Created new KR SOP for Service Notes Roster Association, detailing Reveal BI query path and measurement logic.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/service_notes_roster_association.md` — Created new KR SOP for Service Notes Roster Association, detailing Reveal BI query path and measurement logic.
 
 **Next Tasks:**
 1. Draft the KR SOP for Service Notes — Data Entry Shortcuts based on established patterns.
@@ -1676,7 +1676,7 @@ domain: .
 ## [1.6.6] — To document the process refinement cycle resulting from tooling errors during structured changelog logging for future agent reference. (2026-04-09)
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/changelog.md` — Added a detailed entry documenting the 'ENOENT' error when targeting skills/skillshandoffs/changelog.md, detailing the necessary course correction (directory creation and root logging) to ensure process continuity.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/changelog.md` — Added a detailed entry documenting the 'ENOENT' error when targeting skills/skillsreports/handoff/changelog.md, detailing the necessary course correction (directory creation and root logging) to ensure process continuity.
 
 **Next Tasks:**
 
@@ -1685,34 +1685,34 @@ domain: .
 ## [1.6.5] — To learn the Handoff Protocol by reviewing its documentation and understanding how to delegate an observation to Claude Code. (2026-04-09)
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/handoffs/index.md` — Reviewed the complete Handoff Protocol skill documentation, detailing receiving, execution, and completion steps.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/reports/handoff/overview.md` — Reviewed the complete Handoff Protocol skill documentation, detailing receiving, execution, and completion steps.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/claude-code.md` — Reviewed Claude Code's role instructions to understand its capabilities as the target agent for triaging.
 
 **Next Tasks:**
 1. Draft a new handoff file based on the observation that context loading is complex, targeting Claude Code for triage.
-2. Execute the drafted handoff by moving it into the 'handoffs/' directory.
+2. Execute the drafted handoff by moving it into the 'reports/handoff/' directory.
 
 
 ## [1.6.4] — To learn the Handoff Protocol by reviewing its documentation and understanding how to delegate an observation to Claude Code. (2026-04-09)
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/handoffs/index.md` — Reviewed the complete Handoff Protocol skill documentation, detailing receiving, execution, and completion steps.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/reports/handoff/overview.md` — Reviewed the complete Handoff Protocol skill documentation, detailing receiving, execution, and completion steps.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/claude-code.md` — Reviewed Claude Code's role instructions to understand its capabilities as the target agent for triaging.
 
 **Next Tasks:**
 1. Draft a new handoff file based on the observation that context loading is complex, targeting Claude Code for triage.
-2. Execute the drafted handoff by moving it into the 'handoffs/' directory.
+2. Execute the drafted handoff by moving it into the 'reports/handoff/' directory.
 
 
 ## [1.6.3] — To learn the Handoff Protocol by reviewing its documentation and understanding how to delegate an observation to Claude Code. (2026-04-09)
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/handoffs/index.md` — Reviewed the complete Handoff Protocol skill documentation, detailing receiving, execution, and completion steps.
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/reports/handoff/overview.md` — Reviewed the complete Handoff Protocol skill documentation, detailing receiving, execution, and completion steps.
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/agents/claude-code.md` — Reviewed Claude Code's role instructions to understand its capabilities as the target agent for triaging.
 
 **Next Tasks:**
 1. Draft a new handoff file based on the observation that context loading is complex, targeting Claude Code for triage.
-2. Execute the drafted handoff by moving it into the 'handoffs/' directory.
+2. Execute the drafted handoff by moving it into the 'reports/handoff/' directory.
 
 
 ## [1.6.2] — First formal Changelog Auditor audit — 7 checks across root changelog and all 9 subdirectory changelogs, validated against 7-day git log. (2026-04-09)
@@ -1739,42 +1739,42 @@ domain: .
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/reports/knowledge-report-2026-04-09.md` — Repo Auditor run complete — 53 files scanned, 10 flags across 3 checks (Checks 2/4/5/7 clean)
 
 **Next Tasks:**
-1. P1: Create skills/project-status-reports/scripts/index.md (draft in report)
-2. P2: Add Contents table to index.md files that are currently procedure docs (changelog/, skill-builder/, rovo/, project-status-reports/)
-3. P2: Add casebook/changelog.md to casebook/index.md
+1. P1: Create skills/skills/status/scripts/overview.md (draft in report)
+2. P2: Add Contents table to overview.md files that are currently procedure docs (changelog/, skill-builder/, rovo/, skills/status/)
+3. P2: Add casebook/changelog.md to casebook/overview.md
 4. P2: Add AGENTS.md carve-out for operational pipeline subdirs (inputs/, logs/, outputs/, tests/) to prevent Check 3 false positives
 5. P3: Add Zapier Insights + Super Admin API Access flag to data_sources.md
 6. Pull Notes Datagrid April baseline from GA (feature live today 2026-04-09)
 
 
-## [1.6.0] — Execute all 7 outstanding handoffs from 2026-04-08: fix orphaned index entries, fix casebook/reporting/index.md, create skill-builder subdirectory indexes, add Portal data sources + SKILL.md naming exemption, move reports/ into crypt-keeper, document root-level exemptions, and fix changelog fact-check issues. (2026-04-09)
+## [1.6.0] — Execute all 7 outstanding handoffs from 2026-04-08: fix orphaned index entries, fix casebook/reporting/overview.md, create skill-builder subdirectory indexes, add Portal data sources + SKILL.md naming exemption, move reports/ into crypt-keeper, document root-level exemptions, and fix changelog fact-check issues. (2026-04-09)
 
 **Detail logs:**
 - `skills/knowledge/changelog.md`
-- `skills/okr-reporting/changelog.md`
+- `skills/status/changelog.md`
 - `skills/casebook/changelog.md`
 - `skills/skill-builder/changelog.md`
 - `skills/changelog/changelog.md`
 
 **Changes:**
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/index.md` — Added SKILL.md, changelog.md, and reports/ entries to contents table; fixed stale reports path reference
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/index.md` — Added changelog.md entry to contents table
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/overview.md` — Added SKILL.md, changelog.md, and reports/ entries to contents table; fixed stale reports path reference
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/overview.md` — Added changelog.md entry to contents table
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/crypt-keeper.md` — Deleted root redirect stub via git rm
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/casebook/reporting/schema_joins.md` — Created — moved schema joins content from index.md with fixed paths (casebook-reporting/ → casebook/reporting/)
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/casebook/reporting/index.md` — Replaced schema joins doc with proper directory TOC listing all 9 files
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/skill-builder/mappings/index.md` — Created — new directory TOC for mappings/
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/skill-builder/styles/index.md` — Created — new directory TOC for styles/
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/casebook/reporting/schema_joins.md` — Created — moved schema joins content from overview.md with fixed paths (casebook-reporting/ → casebook/reporting/)
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/casebook/reporting/overview.md` — Replaced schema joins doc with proper directory TOC listing all 9 files
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/skill-builder/mappings/overview.md` — Created — new directory TOC for mappings/
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/skill-builder/styles/overview.md` — Created — new directory TOC for styles/
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/skill-builder/rules/` — Removed empty directory
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/okr-reporting/data_sources.md` — Added Database (Direct) — Portal KRs section + /portal GA proxy row with engineering note
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/status/data_sources.md` — Added Database (Direct) — Portal KRs section + /portal GA proxy row with engineering note
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/AGENTS.md` — Added SKILL.md/AGENTS.md naming exemption; updated repo tree (removed root reports/, added knowledge/reports/); updated File Placement table; root exemptions already had CLAUDE.md and README.md
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/reports/` — Removed root reports/ directory (git rm -r); content already existed in skills/knowledge/reports/
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/knowledge/procedure.md` — Updated output path from reports/ to skills/knowledge/reports/; added archive step to Pre-Flight
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoffs/complete/2026-04-08-changelog-refactor-COMPLETE.md` — Renamed from 2026-04-08-changelog-refactor.md (added -COMPLETE suffix)
-- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/handoffs/complete/2026-04-09-consolidate-project-status-reports-COMPLETE.md` — Renamed from 2026-04-09-consolidate-project-status-reports.md (added -COMPLETE suffix)
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/reports/handoff/complete/2026-04-08-changelog-refactor-COMPLETE.md` — Renamed from 2026-04-08-changelog-refactor.md (added -COMPLETE suffix)
+- `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/reports/handoff/complete/2026-04-09-consolidate-project-status-reports-COMPLETE.md` — Renamed from 2026-04-09-consolidate-project-status-reports.md (added -COMPLETE suffix)
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/changelog.md` — Fixed 1.4.1 phantom reports/archive/ path; expanded 1.5.0 with missing infrastructure changes; annotated stale Next Tasks in 1.2.0 and 1.3.0
 - `/Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/casebook/changelog.md` — Fixed 1.1.0 wrong count: 4 unexposed → 3 unexposed API functions for subscriptions
 
-**Handoff:** `handoffs/2026-04-08-p2-changelog-factcheck-COMPLETE.md`
+**Handoff:** `reports/handoff/2026-04-08-p2-changelog-factcheck-COMPLETE.md`
 
 **Next Tasks:**
 1. Run Repo Auditor to verify all P1/P2 flags from 2026-04-08 report are resolved
@@ -1790,16 +1790,16 @@ domain: .
 
 **Changes:**
 - `skills/changelog/` — new skill created: changelog auditing (7 checks, flag-only, companion to Repo Auditor)
-- `skills/index.md` + `AGENTS.md` — lumberjack added to repo index and structure tree
-- `skills/handoffs/index.md` + `skills/changelog/index.md` + `skills/changelog/entry_template.md` — bidirectional handoff ↔ changelog cross-reference added
+- `skills/overview.md` + `AGENTS.md` — lumberjack added to repo index and structure tree
+- `skills/reports/handoff/overview.md` + `skills/changelog/overview.md` + `skills/changelog/entry_template.md` — bidirectional handoff ↔ changelog cross-reference added
 - `src/ben-cp.ts` — `write_changelog_entry` upgraded: `subdirectories` array (replaces single `subdirectory`), `handoff` param, `get_changelog` scope param, `failed_actions` surfaced at root level
 - `src/ben-cp.ts` — `package.json` build script fixed: `tsc -p tsconfig.json` (was broken inline flags)
-- `handoffs/complete/` — subdirectory created; all COMPLETE handoffs migrated out of root
+- `reports/handoff/complete/` — subdirectory created; all COMPLETE handoffs migrated out of root
 - `casebook-admin-mcp/src/casebook-mcp.ts` — server name corrected: `casebook-admin-api` → `casebook-admin-mcp`
 - `casebook-billing-mcp/src/casebook-mcp.ts` — server name corrected: `casebook-billing-api` → `casebook-subscriptions-mcp`
 - `casebook-billing-mcp/package.json` — name updated: `casebook-billing-mcp` → `casebook-subscriptions-mcp`
 - Both `package.json` descriptions corrected: SSE/Express, not stdio
-- `handoffs/2026-04-08-p2-changelog-factcheck.md` — handoff created for next session covering all fact-check fixes
+- `reports/handoff/2026-04-08-p2-changelog-factcheck.md` — handoff created for next session covering all fact-check fixes
 
 **Next Tasks:**
 1. Run Changelog Auditor after each multi-skill session
@@ -1815,7 +1815,7 @@ domain: .
 - 13 total flags across 6 checks (Check 5 clean); 2 new flags (CLAUDE.md, README.md) not in prior session
 - Report written to `skills/knowledge/reports/knowledge-report-2026-04-08.md`
 - `skills/knowledge/reports/` and `skills/knowledge/reports/archive/` directories created
-- 1 new handoff created: `handoffs/2026-04-08-p2-crypt-keeper-root-exemptions.md`
+- 1 new handoff created: `reports/handoff/2026-04-08-p2-crypt-keeper-root-exemptions.md`
 - 5 prior handoffs remain open — all flagged in report for next run verification
 
 **Next Tasks:**
@@ -1844,7 +1844,7 @@ domain: .
 **Changes:**
 - `skills/casebook/admin/` — renamed from `admin-mcp/`; fully documented (auth, 7 MCP tools, unexposed API layer)
 - `skills/casebook/subscriptions/` — renamed from `billing-mcp/`; fully documented (Chargebee usage fetch, unexposed write op flagged)
-- `skills/casebook/index.md` — updated names and added port column
+- `skills/casebook/overview.md` — updated names and added port column
 - `AGENTS.md` — repo tree updated
 
 **Next Tasks:**
@@ -1859,18 +1859,18 @@ domain: .
 
 **Changes:**
 - `skills/casebook-reporting/` → `skills/casebook/reporting/` — 9 files moved via git mv
-- `skills/casebook/admin-mcp/index.md` — stub created, points to external repo
-- `skills/casebook/billing-mcp/index.md` — stub created, points to external repo
-- `skills/casebook/index.md` — TOC for all Casebook skill content
+- `skills/casebook/admin-mcp/overview.md` — stub created, points to external repo
+- `skills/casebook/billing-mcp/overview.md` — stub created, points to external repo
+- `skills/casebook/overview.md` — TOC for all Casebook skill content
 - `skills/casebook/changelog.md` — created
 - `AGENTS.md` — repo tree updated to reflect new casebook/ structure
-- `skills/index.md` — 5 casebook-reporting/ links updated to casebook/reporting/
+- `skills/overview.md` — 5 casebook-reporting/ links updated to casebook/reporting/
 
-**Handoff:** `handoffs/complete/2026-04-08-consolidate-casebook-into-skills-COMPLETE.md`
+**Handoff:** `reports/handoff/complete/2026-04-08-consolidate-casebook-into-skills-COMPLETE.md`
 
 **Next Tasks:**
-1. Populate `skills/casebook/admin-mcp/index.md` with tool descriptions and SOPs _(completed in 1.3.0 as admin/ and subscriptions/)_
-2. Populate `skills/casebook/billing-mcp/index.md` with tool descriptions and SOPs _(completed in 1.3.0 as admin/ and subscriptions/)_
+1. Populate `skills/casebook/admin-mcp/overview.md` with tool descriptions and SOPs _(completed in 1.3.0 as admin/ and subscriptions/)_
+2. Populate `skills/casebook/billing-mcp/overview.md` with tool descriptions and SOPs _(completed in 1.3.0 as admin/ and subscriptions/)_
 
 ## [1.1.0] - Repo Quality Layer & Infrastructure Overhaul (2026-04-08)
 
@@ -1879,21 +1879,21 @@ domain: .
 - `agents/claude.md` — Cowork architect role instructions
 - `agents/claude-code.md` — implementer role instructions
 - `agents/gemma.md` — executor role instructions
-- `agents/index.md` — TOC for agent role directory
+- `agents/overview.md` — TOC for agent role directory
 - `gemma-rules.md` — updated; references `agents/gemma.md` as primary role file
-- `gemma-rules.md` Rule 7 — now points to `skills/wrap-up/index.md` procedure
+- `gemma-rules.md` Rule 7 — now points to `skills/wrap-up/overview.md` procedure
 - `crypt-keeper.md` — replaced with redirect stub → `skills/knowledge/procedure.md`
 - `repo-cleanup.md` — redirect stub (points to crypt-keeper.md)
-- `skills/wrap-up/index.md` — rewritten; new 5-stage changelog-first procedure
+- `skills/wrap-up/overview.md` — rewritten; new 5-stage changelog-first procedure
 - `skills/wrap-up/changelog_entry_template.md` — created; template for all future entries
-- `skills/okr-reporting/procedure.md` — split into evergreen runbook (v1.1, no quarterly content)
-- `skills/okr-reporting/2026-q2-kr-reference.md` — created; Q2 KR baseline status migrated from Google Doc
-- `skills/okr-reporting/notes_datagrid_shortcuts.md` — restored after Gemma overwrite damage
-- `skills/okr-reporting/notes_quick_entry.md` — created; full KR measurement SOP
-- `skills/okr-reporting/index.md` — created; TOC with file type guide
+- `skills/status/procedure.md` — split into evergreen runbook (v1.1, no quarterly content)
+- `skills/status/2026-q2-kr-reference.md` — created; Q2 KR baseline status migrated from Google Doc
+- `skills/status/notes_datagrid_shortcuts.md` — restored after Gemma overwrite damage
+- `skills/status/notes_quick_entry.md` — created; full KR measurement SOP
+- `skills/status/overview.md` — created; TOC with file type guide
 - `skills/knowledge/procedure.md` — created; 7-check repo quality watchdog
 - `skills/knowledge/report-template.md` — created; structured report template
-- `skills/knowledge/index.md` — created
+- `skills/knowledge/overview.md` — created
 - `src/ben-cp.ts` — added `write_gemma_wrap_up` and `get_gemma_wrap_up` MCP tools
 - `sop/` → `skills/` — directory renamed; all path references updated across repo
 
@@ -1910,7 +1910,7 @@ domain: .
 **Next Tasks:**
 1. Pull Notes Datagrid baseline from GA after first full month post-2026-04-09 launch
 2. Confirm `EngageWLVAddNote` event context (inside UOW or outside?) — update `notes_quick_entry.md` numerator once confirmed
-3. Update `skills/okr-reporting/data_sources.md` — currently a stub; cross-reference all KR SOPs to populate
+3. Update `skills/status/data_sources.md` — currently a stub; cross-reference all KR SOPs to populate
 
 **Observations:**
 - Gemma's `write_file`-on-existing-file failure pattern was the primary driver for the `AGENTS.md` / `gemma-rules.md` quality layer
@@ -1924,7 +1924,7 @@ domain: .
 *   **Process Refinement:** Formalized the distinction between automated Pipelines and manual Workflows (Procedures).
 *   **New Feature:** Introduced top-level project changelog tracking.
 
-See skills/skill-builder/index.md for more details.
+See skills/skill-builder/overview.md for more details.
 
 
 **TODO:** Populate `/sop/okr-reporting/procedure.md` with the detailed, manual steps for OKR reporting based on user input.
@@ -1971,8 +1971,8 @@ You are "Gemma," a highly capable, proactive, and pragmatic AI agent dedicated t
 ## [1.0.2] - Context Audit & Wrap-Up Session (2026-XX-XX)
 
 **Changes:**
-*   Successfully executed the Context Audit procedure (`wrap-up/index.md`) to review session learnings and refine operational guidelines.
-*   Updated `wrap-up/index.md` to include a **CRITICAL CHECK** in Stage 4, mandating file reading before writing to prevent accidental overwrites.
+*   Successfully executed the Context Audit procedure (`wrap-up/overview.md`) to review session learnings and refine operational guidelines.
+*   Updated `wrap-up/overview.md` to include a **CRITICAL CHECK** in Stage 4, mandating file reading before writing to prevent accidental overwrites.
 
 **TODOs:**
 *   Finalize documentation for remaining Q2 Platform KRs (e.g., Enrollments Shortcuts KR).

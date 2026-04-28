@@ -20,38 +20,17 @@ if SENSORS_DIR not in sys.path:
 
 SENSORS = [
     'reindex', 'pulse', 'links', 'frontmatter', 'drift',
-    'handoff', 'index', 'agents',
-    'tasks', 'changelog', 'context', 'access',
-    'paths', 'scripts',
+    'handoffs', 'index', 'agents',
+    'bloat', 'changelog', 'intelligence',
+    'scripts',
 ]
 
 PIPELINES = [
-    {
-        'name': 'status',
-        'script': os.path.join(REPO_ROOT, 'skills', 'status', 'scripts', 'run.py'),
-        'report': 'reports/status/report.md',
-        'label': 'Platform Status',
-    },
-    {
-        'name': 'tasks',
-        'script': os.path.join(REPO_ROOT, 'skills', 'tasks', 'run.py'),
-        'report': 'reports/tasks/report.md',
-        'label': 'My Tasks',
-    },
-    {
-        'name': 'intelligence-harvest',
-        'script': os.path.join(REPO_ROOT, 'skills', 'intelligence', 'run.py'),
-        'args': ['--harvest'],
-        'report': None,
-        'label': 'Intelligence Harvest',
-    },
-    {
-        'name': 'intelligence-scan',
-        'script': os.path.join(REPO_ROOT, 'skills', 'intelligence', 'run.py'),
-        'args': ['--scan'],
-        'report': None,
-        'label': 'Intelligence Scan',
-    },
+    { 'name': 'asana',        'label': 'Asana Data Fetch',    'report': None },
+    { 'name': 'tasks',        'label': 'My Tasks',            'report': 'reports/tasks/report.md' },
+    { 'name': 'releasinator', 'label': 'Release Readiness',   'report': 'reports/releasinator/report.md' },
+    { 'name': 'status',       'label': 'Platform Status',     'report': 'reports/status/report.md' },
+    { 'name': 'intelligence', 'label': 'Intelligence',        'report': None },
 ]
 
 # ---------------------------------------------------------------------------
@@ -62,9 +41,18 @@ def run_pipelines():
     results = {}
     for p in PIPELINES:
         name = p['name']
+        script_path = os.path.join(REPO_ROOT, 'skills', name, 'run.py')
+        if name == 'releasinator':
+            script_path = os.path.join(REPO_ROOT, 'skills', 'releasinator', 'scripts', 'run.py')
+        elif name == 'status':
+            script_path = os.path.join(REPO_ROOT, 'skills', 'status', 'scripts', 'run.py')
+        elif name == 'intelligence':
+            script_path = os.path.join(REPO_ROOT, 'skills', 'intelligence', 'run.py')
+            p['args'] = ['--harvest']
+
         print(f'  ⚙️  {name} pipeline…', end=' ', flush=True)
         try:
-            cmd = ['python3', p['script']] + p.get('args', [])
+            cmd = ['python3', script_path] + p.get('args', [])
             proc = subprocess.run(
                 cmd,
                 capture_output=True, text=True, timeout=180,
@@ -168,6 +156,21 @@ def build_pipeline_section(pipeline_results):
             else:
                 lines.append('No overdue tasks.')
 
+        elif name == 'releasinator':
+            if content:
+                # Extract release name
+                m = re.search(r'# Release Readiness — (.+)$', content, re.MULTILINE)
+                rel_name = m.group(1) if m else '?'
+                # Count repos to bump
+                bump_m = re.search(r'Repositories to Bump .* \((\d+)\)', content)
+                bumps = bump_m.group(1) if bump_m else '?'
+                # Count leaks
+                leak_m = re.search(r'Potential Leaks .* \((\d+)\)', content)
+                leaks = leak_m.group(1) if leak_m else '0'
+                lines.append(f'Release `{rel_name}` — {bumps} repos to bump, {leaks} leaks')
+            else:
+                lines.append('_Summary not available_')
+
         lines.append('')
     return lines
 
@@ -177,10 +180,7 @@ def build_pipeline_section(pipeline_results):
 # ---------------------------------------------------------------------------
 
 def load_sensor(name):
-    if name == 'handoff':
-        path = os.path.join(REPO_ROOT, 'skills', 'handoff', 'run.py')
-    else:
-        path = os.path.join(SENSORS_DIR, f'{name}.py')
+    path = os.path.join(SENSORS_DIR, f'{name}.py')
     spec = importlib.util.spec_from_file_location(name, path)
     mod  = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
@@ -214,7 +214,8 @@ def sensor_status_line(name, data):
     detail = ', '.join(parts) if parts else 'clean'
 
     # subdirectory_changelogs is informational — per-skill changelogs are expected
-    issue_parts = [p for p in parts if 'scanned' not in p.lower() and 'total' not in p.lower() and 'subdirectory changelogs' not in p.lower()]
+    ignore_keywords = {'scanned', 'total', 'subdirectory changelogs', 'checked', 'touched', 'audited', 'orphaned'}
+    issue_parts = [p for p in parts if not any(k in p.lower() for k in ignore_keywords)]
     scanned_count = summary.get('files_scanned', summary.get('skills_checked', 1))
 
     finding_count = 0
@@ -250,15 +251,19 @@ def build_highlights(results):
                 lines.append(f'- **{len(missing)} directories** missing `index.md`')
         if name == 'links' and r.get('ghost_links'):
             lines.append(f'- **{len(r["ghost_links"])} ghost links** — broken internal references')
-        if name == 'context':
+        if name == 'bloat':
+            if r.get('critical_flags'):
+                lines.append(f'- **{len(r["critical_flags"])} critical files over 10MB**')
             if r.get('red_flags'):
                 lines.append(f'- **{len(r["red_flags"])} files over 750KB** — token economy risk')
             elif r.get('yellow_flags'):
                 lines.append(f'- {len(r["yellow_flags"])} files over 250KB (watch list)')
-        if name == 'handoff' and r.get('issues'):
+        if name == 'handoffs' and r.get('issues'):
             lines.append(f'- **{len(r["issues"])} handoff issues** — missing sections or stale READY files')
         if name == 'drift' and r.get('findings'):
             lines.append(f'- **{len(r["findings"])} drift findings** — unsanctioned directories')
+        if name == 'intelligence' and r.get('summary', {}).get('orphaned_sources', 0) > 0:
+            lines.append(f'- **{r["summary"]["orphaned_sources"]} orphaned source files** found')
     return lines or ['- No critical issues detected']
 
 
@@ -287,10 +292,10 @@ def build_report(results, failures, pipeline_results, start, elapsed):
     lines += ['', '## Highlights', '']
     lines += build_highlights(results)
 
-    if results.get('context', {}).get('report', {}).get('red_flags'):
-        ctx = results['context']['report']
+    if results.get('bloat', {}).get('report', {}).get('red_flags'):
+        bloat = results['bloat']['report']
         lines += ['', '## Large Files (>750KB)', '']
-        for f in ctx['red_flags'][:5]:
+        for f in bloat['red_flags'][:5]:
             lines.append(f'- `{f["file"]}` — {f["size_kb"]}KB')
 
     if results.get('links', {}).get('report', {}).get('ghost_links'):

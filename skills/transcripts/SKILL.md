@@ -8,7 +8,7 @@ domain: skills/transcripts
 
 > **Trigger:** "Harvest tasks from this transcript", "Process my notes from [date]", "Pull action items from the Discovery Review transcript", "Run transcript harvester in rich mode"
 > **Agent:** Code (Claude)
-> **Output:** A handoff in `handoffs/` for Cowork to run task-capture with Ben
+> **Output:** A handoff in `reports/handoff/` for Cowork to run task-capture with Ben
 
 ---
 
@@ -57,7 +57,7 @@ The script will print a summary of parsed items and the handoff filename. Show B
 
 ```
 ✅ Transcript harvested — Apr 27, 2026 (8 action items)
-   Handoff ready for Cowork: handoffs/2026-04-27-p2-Transcript-Harvest-Apr-27.md
+   Handoff ready for Cowork: reports/handoff/2026-04-27-p2-Transcript-Harvest-Apr-27.md
 ```
 
 Cowork will pick it up and work through the items with Ben using task-capture.

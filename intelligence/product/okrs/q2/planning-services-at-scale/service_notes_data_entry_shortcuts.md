@@ -1,10 +1,9 @@
 ---
-title: 'KR Measurement SOP: Service Notes — Data Entry Shortcuts'
+title: "KR Measurement SOP: Service Notes \u2014 Data Entry Shortcuts"
 type: intelligence
 domain: intelligence/product/okrs/q2/planning-services-at-scale
+taxonomy: none
 ---
-
-
 # KR Measurement SOP: Service Notes — Data Entry Shortcuts
 
 > [!NOTE]
@@ -95,7 +94,7 @@ See master inventory: `../../data_sources.md`
 ## 🔗 Constituent Projects
 
 The following initiatives contribute to this KR:
-- [**Notes - Bulk Service Notes**](../../../projects/q2/notes-bulk-service-notes/index.md)
+- [**Notes - Bulk Service Notes**](../../../projects/q2/notes-bulk-service-notes/overview.md)
 
 ---
 

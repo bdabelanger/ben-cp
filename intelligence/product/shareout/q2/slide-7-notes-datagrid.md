@@ -1,10 +1,9 @@
 ---
-title: 'Slide 7 — Notes Datagrid: Optimized Review (Q1)'
+title: "Slide 7 \u2014 Notes Datagrid: Optimized Review (Q1)"
 type: intelligence
 domain: intelligence/product/shareout/q2
+taxonomy: none
 ---
-
-
 # Slide 7 — Notes Datagrid: Optimized Review (Q1)
 
 - **priority:** P1
@@ -19,7 +18,7 @@ domain: intelligence/product/shareout/q2
 Focus on the notes table/datagrid experience, enabling fast filtering and scanning of narrative content.
 
 ## Capabilities
-- **Advanced Filtering:** Quick filtering by note type, start/end dates, and author across the grid.
+- **Advanced Filtering:** Quick filtering by note type, stintelligence/intelligence/intelligence/intelligence/intelligence/art/end dates, and author across the grid.
 - **Narrative Preview:** Scan narrative content directly from the grid column without opening individual records.
 - **Rich Note Preview:** Open a structured preview of rich-text notes including service data and people directly from the grid.
 
@@ -30,5 +29,5 @@ Focus on the notes table/datagrid experience, enabling fast filtering and scanni
 **Quote:** "The ability to sort by the two types of dates has been very helpful… the chronological view as to what was going on in that student's life. That's been very positive." — North Cook ISC
 
 ---
-**Tactical Link:** [Notes Datagrid](../../projects/q2/notes-notes-datagrid/index.md)
+**Tactical Link:** [Notes Datagrid](../../projects/q2/notes-notes-datagrid/overview.md)
 

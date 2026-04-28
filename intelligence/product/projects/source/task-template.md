@@ -2,8 +2,8 @@
 title: Introduction
 type: intelligence
 domain: intelligence/product/projects/source
+taxonomy: none
 ---
-
 > Task/Sub-Task Template
 > Summary: "[Product Area] - [Brief readable description of the task in sentence case with object/entity names capitalized (e.g. "Case", "Report", or "Person")]"
 > If this is a Task related to a Jira Project, link Project as Parent

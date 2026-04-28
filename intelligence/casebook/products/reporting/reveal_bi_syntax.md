@@ -2,9 +2,8 @@
 title: Reveal BI Formula Syntax & Rules
 type: intelligence
 domain: intelligence/casebook/reporting
+taxonomy: none
 ---
-
-
 # Reveal BI Formula Syntax & Rules
 
 ## Core Syntax Rules

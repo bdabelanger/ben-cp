@@ -39,7 +39,7 @@ A purpose-built [Model Context Protocol](https://modelcontextprotocol.io) server
 | **Changelogs** | `add_changelog` / `get_changelog` | Maintain the audit trail of all changes. |
 
 ### ⚠️ Google Drive Sync Warning
-The repo is hosted on Google Drive. Agents and scripts should **NEVER** use raw filesystem reads (e.g., `read_text_file` with absolute paths) for recently generated pipeline outputs in `skills/pipelines/outputs/`. 
+The repo is hosted on Google Drive. Agents and scripts should **NEVER** use raw filesystem reads (e.g., `read_text_file` with absolute paths) for recently generated pipeline outputs in `skills/outputs/`. 
 
 **Requirement:** Always use the `get_report` tool. It runs on the host and guarantees access to the latest data, bypassing Google Drive's local sync latency.
 
@@ -65,7 +65,7 @@ python3 skills/dream/run.py
 | Layer | Lives in | Contents |
 | :--- | :--- | :--- |
 | **Intelligence** | `intelligence/` | Domain knowledge, strategic core, and source documents. |
-| **Orchestration** | `handoffs/` | Active work (handoffs, tasks) and implementation plans. |
+| **Orchestration** | `reports/handoff/` | Active work (handoffs, tasks) and implementation plans. |
 | **Skills** | `skills/` | Procedural SOPs and agent instructions. |
 | **Agents** | `agents/` | Specific role documentation for Cowork, Local, and Code. |
 

@@ -2,8 +2,8 @@
 title: 2026 CBP Roadmap
 type: intelligence
 domain: intelligence/product/shareout/q2
+taxonomy: none
 ---
-
 # 2026 CBP Roadmap
 
 - **priority:** P2
@@ -95,5 +95,5 @@ domain: intelligence/product/shareout/q2
 - Workflow - Assign to team/supervisor
 
 ---
-**Navigation:** [Q2 Shareout Index](./index.md)
+**Navigation:** [Q2 Shareout Index](./overview.md)
 

@@ -4,9 +4,8 @@ type: intelligence
 domain: intelligence/product/projects/source
 links:
   jira: https://casecommons.atlassian.net/browse/CBP-XXXX`
+taxonomy: none
 ---
-
-
 # Asana Custom Field GID Reference
 
 Use these GIDs directly when creating or updating Asana projects. Never search for them at runtime.

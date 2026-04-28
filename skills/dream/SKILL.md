@@ -138,7 +138,17 @@ If you made direct fixes, re-run `generate_report(skill='dream')` and confirm th
 
 ## Step 9 — Harvest Fresh Data
 
-All four pipelines (status, tasks, intelligence harvest, intelligence scan) run automatically inside `generate_report`. You do not need to run any of them manually.
+The dream pipeline runs these specialized reports and harvests in sequence:
+
+| Pipeline | Report | Purpose |
+| :--- | :--- | :--- |
+| asana | — | Fetches raw projects + tasks from Asana API |
+| tasks | `reports/tasks/report.md` | My Tasks (Asana + Jira) |
+| releasinator | `reports/releasinator/report.md` | Release readiness — auto |
+| status | `reports/status/report.md` | Platform Status |
+| intelligence | — | Intelligence harvest |
+
+All pipelines run automatically inside `generate_report`. You do not need to run any of them manually.
 
 Log any pipeline failures surfaced in the Dream Report. Do not block on failures — note and move on.
 
@@ -199,7 +209,7 @@ The handoff should be professional and concise — no narrative, no prose. Use t
 ## Step 11.5 — Update Root Changelog
 
 If the `changelog` sensor flags **unlogged_changes**, or if significant milestones (handoff completions) occurred:
-1. Review the `handoffs/complete/` files from the last 24h.
+1. Review the `reports/handoff/complete/` files from the last 24h.
 2. Draft a summary of major changes and structural improvements.
 3. Update the root `changelog.md` with a new version entry and date.
 4. If work is routine maintenance, append to the existing version entry.
@@ -220,7 +230,7 @@ Create a run log in `agents/logs/` using `add_intelligence`:
 Content:
 - Execution timestamp
 - Sensor status summary
-- Total fixes/handoffs/tasks generated
+- Total fixes/reports/handoff/tasks generated
 - Harvest results (pipelines run, failures, orphans found)
 - Any significant errors encountered
 

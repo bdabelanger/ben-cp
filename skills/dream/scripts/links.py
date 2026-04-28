@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""links.py — Validate internal reference integrity across all .md files."""
+\"\"\"links.py — Validate internal reference integrity across all .md files and .py scripts.
+Merges logic from retired paths.py sensor.
+\"\"\"
 import os, json, re, urllib.parse
 from datetime import datetime
 from utils import get_manifest_files
@@ -10,10 +12,15 @@ OUTPUTS_DIR = os.path.join(REPO_ROOT, 'reports', 'dream', 'data', 'raw')
 SKIP_DIRS = {'.git', '__pycache__', 'node_modules', 'dist', 'src', 'reports', 'archived', 'archive', 'complete'}
 SKIP_SCHEMES = ('http://', 'https://', 'mailto:', 'ftp://', '#')
 
-# Removed local collect_md_files, using utils.collect_md_files
+# Repo-relative path pattern for .py files
+PATH_PATTERN = re.compile(r'["\']([a-zA-Z][\w\-]+/[\w\-\./]+)["\']')
+REPO_ROOTS = {
+    'reports', 'skills', 'intelligence', 'handoffs', 'tasks',
+    'agents', 'src', 'dist', 'orchestration', 'tools',
+}
+IGNORE_ROOTS = {'dist', 'node_modules', '__pycache__'}
 
 def strip_code_blocks(content):
-    # Remove fenced code blocks (``` ... ```) to avoid false positives
     return re.sub(r'```.*?```', '', content, flags=re.DOTALL)
 
 def extract_links(path):
@@ -44,7 +51,6 @@ def extract_links(path):
             if target.startswith('<') and target.endswith('>'):
                 target = target[1:-1]
             target = target.split('#')[0].strip()
-            target = target.split()[0] if target else ''
             target = urllib.parse.unquote(target)
             if target and not target.startswith(SKIP_SCHEMES):
                 links.append(('md', target))
@@ -57,15 +63,58 @@ def resolve(link_target, source_path):
     base = os.path.dirname(source_path)
     return os.path.normpath(os.path.join(base, link_target))
 
+def check_stale_paths():
+    findings = []
+    py_files = []
+    for root, dirs, fs in os.walk(REPO_ROOT):
+        dirs[:] = [d for d in dirs if d not in SKIP_DIRS and not d.startswith('.')]
+        for f in fs:
+            if f.endswith('.py'):
+                py_files.append(os.path.join(root, f))
+    
+    for filepath in py_files:
+        try:
+            with open(filepath, errors='replace') as f:
+                source = f.read()
+        except OSError:
+            continue
+        
+        rel_file = os.path.relpath(filepath, REPO_ROOT)
+        for m in PATH_PATTERN.finditer(source):
+            path_str = m.group(1)
+            root_segment = path_str.split('/')[0]
+            if root_segment not in REPO_ROOTS or root_segment in IGNORE_ROOTS:
+                continue
+            full = os.path.join(REPO_ROOT, root_segment)
+            if not os.path.exists(full):
+                line_num = source[:m.start()].count('\n') + 1
+                findings.append({
+                    "file": rel_file,
+                    "line": line_num,
+                    "path": path_str,
+                    "missing_root": root_segment
+                })
+    
+    # Deduplicate
+    seen = set()
+    deduped = []
+    for f in findings:
+        key = (f["file"], f["missing_root"])
+        if key not in seen:
+            seen.add(key)
+            deduped.append(f)
+    return deduped
+
 def run():
     ghost_links = []
     scanned = 0
     md_files = get_manifest_files()
     for path in md_files:
+        if os.path.basename(path).lower() == 'changelog.md':
+            continue
         scanned += 1
         for kind, target in extract_links(path):
             if kind == 'wiki':
-                # Wiki links: search for any file matching the name anywhere under repo
                 name = target.split('|')[0].strip()
                 candidates = [p for p in md_files if os.path.splitext(os.path.basename(p))[0] == name]
                 if not candidates:
@@ -83,14 +132,18 @@ def run():
                         "type": "md",
                     })
 
+    stale_paths = check_stale_paths()
+
     report = {
         "sensor": "links",
         "timestamp": datetime.now().isoformat(),
         "summary": {
             "files_scanned": scanned,
             "ghost_links": len(ghost_links),
+            "stale_paths": len(stale_paths)
         },
         "ghost_links": ghost_links,
+        "stale_paths": stale_paths
     }
     os.makedirs(OUTPUTS_DIR, exist_ok=True)
     out = os.path.join(OUTPUTS_DIR, 'links_report.json')

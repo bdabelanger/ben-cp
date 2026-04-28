@@ -2,9 +2,8 @@
 title: Casebook Domain
 type: index
 domain: intelligence/casebook
+taxonomy: none
 ---
-
-
 # Casebook Domain
 
 > All Casebook-related domain knowledge, reference documentation, and product context.

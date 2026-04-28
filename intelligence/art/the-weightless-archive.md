@@ -1,3 +1,10 @@
+---
+title: The Weightless Archive
+type: art
+agent: local
+domain: intelligence
+taxonomy: none
+---
 # The Weightless Archive
 
 > **Artist:** Antigravity (Code)

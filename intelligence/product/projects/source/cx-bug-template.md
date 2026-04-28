@@ -2,8 +2,8 @@
 title: CX Bug Template
 type: intelligence
 domain: intelligence/product/projects/source
+taxonomy: none
 ---
-
 # CX Bug Template
 
 ## Summary

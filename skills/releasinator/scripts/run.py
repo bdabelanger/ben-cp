@@ -13,7 +13,7 @@ Usage:
 
 Output: reports/releasinator/report.md
 """
-import os, sys, re, time, argparse
+import os, sys, re, time, argparse, json
 from datetime import datetime
 
 try:
@@ -75,6 +75,50 @@ def jira_auth():
 
 def github_auth():
     return HTTPBasicAuth(os.environ["GITHUB_USERNAME"], os.environ["GITHUB_API_TOKEN"])
+
+def fetch_jira_versions(project_key="CBP"):
+    """
+    Returns (next_release, upcoming, recent) where:
+    - next_release: the soonest unreleased version with a future releaseDate
+    - upcoming: list of unreleased versions after next_release, sorted by date
+    - recent: last 5 released versions, sorted by date descending
+    Each version is a dict: { name, releaseDate, released, id }
+    """
+    resp = requests.get(
+        f"{JIRA_BASE}/project/{project_key}/versions",
+        auth=jira_auth(),
+        headers={"Accept": "application/json"},
+        timeout=30
+    )
+    resp.raise_for_status()
+    versions = resp.json()
+
+    today = datetime.now().date().isoformat()
+    released = []
+    unreleased_future = []
+
+    for v in versions:
+        if not v.get("releaseDate"):
+            continue
+        entry = {
+            "name": v["name"],
+            "releaseDate": v["releaseDate"],
+            "released": v.get("released", False),
+            "id": v["id"],
+        }
+        if v.get("released"):
+            released.append(entry)
+        elif v["releaseDate"] >= today:
+            unreleased_future.append(entry)
+
+    unreleased_future.sort(key=lambda x: x["releaseDate"])
+    released.sort(key=lambda x: x["releaseDate"], reverse=True)
+
+    next_release = unreleased_future[0] if unreleased_future else None
+    upcoming = unreleased_future[1:] if len(unreleased_future) > 1 else []
+    recent = released[:5]
+
+    return next_release, upcoming, recent
 
 # ---------------------------------------------------------------------------
 # HTTP helpers
@@ -483,9 +527,10 @@ def render_migrations_table(issues):
         lines.append(f"| {issue_link(key)} | {summary} | {status} | {assignee} |")
     return "\n".join(lines)
 
-def write_report(release_name, results):
+def write_report(release_name, results, next_release=None, upcoming=None, recent=None):
     os.makedirs(REPORT_DIR, exist_ok=True)
     now = datetime.now().strftime("%Y-%m-%d")
+    release_date = next_release["releaseDate"] if next_release else now
 
     lines = [
         f"---",
@@ -494,7 +539,9 @@ def write_report(release_name, results):
         f"release: {release_name}",
         f"---",
         f"",
-        f"# 🚀 Release Readiness — {release_name}",
+        f"# Release Readiness — {release_name}",
+        f"",
+        f"_Generated: {now} · Next release: {release_date}_",
         f"",
     ]
 
@@ -579,8 +626,82 @@ def write_report(release_name, results):
                 "",
             ]
 
+    # --- Upcoming Releases ---
+    if upcoming is not None:
+        lines += ["---", "", "## Upcoming Releases", "", "| Release | Date | Days away |", "|---------|------|-----------|"]
+        if upcoming:
+            today_date = datetime.now().date()
+            for v in upcoming:
+                rel_date = datetime.strptime(v["releaseDate"], "%Y-%m-%d").date()
+                days_away = (rel_date - today_date).days
+                lines.append(f"| {v['name']} | {v['releaseDate']} | {days_away} days |")
+        else:
+            lines.append("_No additional releases scheduled._")
+        lines.append("")
+
+    # --- Recent Releases ---
+    if recent is not None:
+        lines += ["---", "", "## Recent Releases", "", "| Release | Date |", "|---------|------|"]
+        if recent:
+            for v in recent:
+                lines.append(f"| {v['name']} | {v['releaseDate']} |")
+        else:
+            lines.append("_No recent releases found._")
+        lines.append("")
+
     with open(REPORT_PATH, "w") as f:
         f.write("\n".join(lines))
+
+    # --- Sidecar summary.json ---
+    total_bump   = len(set().union(*(r["repos_to_bump"] for r in results))) if results else 0
+    total_leaks  = sum(len(r["leak_items"]) for r in results) if results else 0
+    summary_data = {
+        "release": release_name,
+        "repos_to_bump": total_bump,
+        "leaks_found": total_leaks,
+        "run_date": now
+    }
+    with open(os.path.join(REPORT_DIR, "summary.json"), "w") as f:
+        json.dump(summary_data, f, indent=2)
+
+    # --- Release Summary file for reports/releases/ ---
+    release_summary_dir = os.path.join(REPO_ROOT, "reports", "releases")
+    os.makedirs(release_summary_dir, exist_ok=True)
+    summary_path = os.path.join(release_summary_dir, f"{release_date}-release.md")
+
+    all_bump_repos = set().union(*(r["repos_to_bump"] for r in results)) if results else set()
+    leaks = []
+    if results:
+        for r in results:
+            leaks.extend(r.get("leak_items", []))
+
+    leaks_text = chr(10).join(f"- {l['key']} — {l.get('details', {}).get('fields', {}).get('summary', '')}" for l in leaks) if leaks else "- None"
+    repos_text = chr(10).join(f"- {r.split('/')[-1]}" for r in all_bump_repos) if all_bump_repos else "- None"
+
+    summary_md = f"""---
+title: Release {release_name}
+type: release
+date: {release_date}
+jira_fix_version: {release_name}
+repos_to_bump: {len(all_bump_repos)}
+leaks_found: {len(leaks)}
+---
+
+# Release {release_name}
+
+- **Date:** {release_date}
+- **Repos to bump:** {len(all_bump_repos)}
+- **Leaked issues:** {len(leaks)}
+- **Full report:** ../releasinator/report.md
+
+## Repos to bump
+{repos_text}
+
+## Leaked issues
+{leaks_text}
+"""
+    with open(summary_path, "w") as f:
+        f.write(summary_md)
 
 # ---------------------------------------------------------------------------
 # Main
@@ -588,38 +709,53 @@ def write_report(release_name, results):
 
 def main():
     parser = argparse.ArgumentParser(description="Release readiness report")
-    parser.add_argument("--release",  required=True, help='Release name, e.g. "2026-5-1"')
+    parser.add_argument("--release",  required=False, help='Release name, e.g. "2026-5-1"')
+    parser.add_argument("--auto",     action="store_true", help="Auto-detect next release from Jira fix versions")
     parser.add_argument("--project",  nargs="+", choices=["CBP", "DATA"],
                         default=["CBP", "DATA"],
                         help="Projects to include (default: CBP DATA)")
     parser.add_argument("--jql",      default="", help="Additional JQL filter")
     args = parser.parse_args()
 
+    if not args.release and not args.auto:
+        parser.error("Either --release or --auto must be specified.")
+
     load_env()
 
+    next_release, upcoming, recent = fetch_jira_versions()
+
+    if args.auto:
+        if not next_release:
+            print("⚠️  --auto: no upcoming release found in Jira, skipping releasinator")
+            sys.exit(0)
+        release_name = next_release["name"]
+        print(f"🔍 Auto-detected next release: {release_name} ({next_release['releaseDate']})")
+    else:
+        release_name = args.release
+
     project_str = " + ".join(args.project)
-    print(f"🚀 Releasinator — {args.release} ({project_str})")
+    print(f"🚀 Releasinator — {release_name} ({project_str})")
 
     results = []
     for project_key in args.project:
-        result = run_project_pipeline(project_key, args.release, args.jql)
+        result = run_project_pipeline(project_key, release_name, args.jql)
         if result:
             results.append(result)
 
     if not results:
-        print(f"\n❌ No issues found for release '{args.release}' in any project.")
+        print(f"\n❌ No issues found for release '{release_name}' in any project.")
         print("   Check the release name matches a Jira fix version (e.g. '2026-5-1' → 'Platform-2026-5-1')")
         sys.exit(1)
 
     print("\n  Writing report...")
-    write_report(args.release, results)
+    write_report(release_name, results, next_release=next_release, upcoming=upcoming, recent=recent)
 
     total_issues = sum(len(r["issues_with_prs"]) for r in results)
     total_bump   = len(set().union(*(r["repos_to_bump"] for r in results)))
     total_leaks  = sum(len(r["leak_items"]) for r in results)
     total_repos  = len(set().union(*(r["all_release_repos"] for r in results)))
 
-    print(f"\n✅ Releasinator complete for {args.release}")
+    print(f"\n✅ Releasinator complete for {release_name}")
     print(f"   {total_repos} repos touched · {total_issues} issues · {total_bump} repos to bump · {total_leaks} leaks")
     print(f"   Report: {REPORT_PATH}")
 

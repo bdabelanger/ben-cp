@@ -56,17 +56,11 @@ Strategic knowledge base. Domain knowledge, project records, OKRs, releases, and
 intelligence/
 ├── casebook/                          — Casebook platform domain knowledge
 │   ├── taxonomy.md                    — ⭐ Authoritative product-feature taxonomy
-│   ├── admin/                         — Casebook Admin MCP reference (port 3002)
-│   ├── reporting/                     — Reveal BI schemas and query reference
-│   │   ├── casebook-cases.md
-│   │   ├── casebook-intake.md
-│   │   ├── casebook-people.md
-│   │   ├── casebook-tenants.md
-│   │   ├── casebook-users.md
-│   │   ├── reveal_bi_syntax.md
-│   │   ├── reveal_bi_visualizations.md
-│   │   └── schema_joins.md
-│   └── subscriptions/                 — Casebook Subscriptions MCP (Chargebee, port 3003)
+│   ├── products/                      — Product-specific domain intelligence
+│   │   ├── admin/                     — Casebook Admin application
+│   │   └── reporting/                 — Reveal BI schemas and query reference
+│   └── features/                      — Feature-specific domain intelligence
+│       └── subscriptions/             — Casebook Subscriptions (Chargebee)
 │
 ├── governance/                        — Repo rules and retention policy
 │   ├── policy.md
@@ -87,8 +81,7 @@ intelligence/
 │   ├── shareout/q2/                   — Q2 2026 shareout slide content
 │   └── skills/                        — Intelligence supporting skill execution
 │
-└── skills/                            — Intelligence records for skill SOPs
-    └── tasks/                         — Task capture skill knowledge
+└── skills/                            — Procedural SOPs and pipeline scripts
 ```
 
 ---

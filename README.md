@@ -1,6 +1,6 @@
 ---
 title: ben-cp (v2.1.1)
-type: task
+type: readme
 domain: .
 ---
 

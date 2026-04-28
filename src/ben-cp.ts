@@ -217,7 +217,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "get_agent",
-      description: "Get specific agent instructions. Use this to establish persona and rules. Returns the role file for the requested agent_id.",
+      description: "Get specific agent instructions. Use this to establish persona and rules. Returns the role file for the requested agent_id and the global repository index.",
       inputSchema: {
         type: "object",
         properties: {
@@ -442,9 +442,18 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     if (name === "get_agent") {
       const { agent_id } = args as any;
       const agentPath = path.resolve(rootPath, "agents", `${agent_id.toLowerCase()}.md`);
+      const indexPath = path.resolve(rootPath, "index.md");
       try {
-        const content = await fs.readFile(agentPath, "utf-8");
-        return { content: [{ type: "text", text: `# Role Documentation: ${agent_id}\n\n${content}` }] };
+        const [agentContent, indexContent] = await Promise.all([
+          fs.readFile(agentPath, "utf-8"),
+          fs.readFile(indexPath, "utf-8").catch(() => "Index not found.")
+        ]);
+        return {
+          content: [
+            { type: "text", text: `# Role Documentation: ${agent_id}\n\n${agentContent}` },
+            { type: "text", text: `## Repository Index\n\n${indexContent}` }
+          ]
+        };
       } catch (err) {
         throw new Error(`Agent role documentation for '${agent_id}' not found at ${agentPath}`);
       }

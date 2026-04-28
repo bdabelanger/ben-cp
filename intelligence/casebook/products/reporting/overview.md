@@ -1,7 +1,7 @@
 ---
 title: 'Skill: Casebook Reporting'
 type: index
-domain: intelligence/casebook/reporting
+domain: intelligence/casebook/products/reporting
 ---
 
 

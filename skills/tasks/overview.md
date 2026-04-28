@@ -7,4 +7,4 @@ domain: skills/tasks
 
 # Tasks Index
 
-- [Skill: Task Management (Deliverable Governance)](SKILL.md)
+- [Skill: Task Capture (Standardized Intake)](SKILL.md)

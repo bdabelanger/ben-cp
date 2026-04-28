@@ -1,6 +1,6 @@
 ---
-title: Asana Pipeline
-type: index
+title: Asana — Platform Data Pipeline
+type: skill
 domain: skills/asana
 ---
 

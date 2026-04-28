@@ -1,14 +1,14 @@
 ---
-title: 'Skill: Casebook'
+title: Casebook Domain
 type: index
 domain: intelligence/casebook
 ---
 
 
-# Skill: Casebook
+# Casebook Domain
 
-> All Casebook-related skills, reference documentation, and MCP context.
-> Last updated: 2026-04-27
+> All Casebook-related domain knowledge, reference documentation, and product context.
+> Last updated: 2026-04-28
 
 ---
 
@@ -20,13 +20,20 @@ domain: intelligence/casebook
 
 ---
 
-## Subdirectories
+## Products
 
 | Directory | Contents |
 | :--- | :--- |
-| `reporting/` | Reveal BI reference docs, entity schemas (cases, intake, people, tenants, users) |
-| `admin/` | Casebook Admin MCP — CRUD across 6 resource domains, OAuth 2.0 auth |
-| `subscriptions/` | Casebook Subscriptions MCP — Chargebee billing usage data |
+| [`products/reporting/`](products/reporting/overview.md) | Reveal BI reference docs, entity schemas (cases, intake, people, tenants, users) |
+| [`products/admin/`](products/admin/overview.md) | Casebook Admin application reference |
+
+---
+
+## Features
+
+| Directory | Contents |
+| :--- | :--- |
+| [`features/subscriptions/`](features/subscriptions/overview.md) | Casebook Subscriptions (Chargebee) reference |
 
 ---
 

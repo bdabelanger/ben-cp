@@ -78,7 +78,7 @@ def _generate_simple_detailed_report(active_list, total_intel, live_active):
 
     # Markdown Version
     with open(os.path.join(DETAILED_REPORT_DIR, "report.md"), "w") as rf:
-        rf.write(f"# Detailed Project Status — {datetime.now().strftime('%Y-%m-%d')}\n\n")
+        rf.write(f"# Detailed Project Status — {datetime.now().strftime('%Y-%m-%d %H:%M')}\n\n")
         rf.write(f"## Active Scorecard\n")
         rf.write(f"- **Intelligence Records**: {total_intel} (Q2 initiatives)\n")
         rf.write(f"- **Asana Live Active**: {live_active}\n\n")

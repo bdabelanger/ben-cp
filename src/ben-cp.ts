@@ -433,11 +433,11 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     // --- REPORTING & OUTPUTS ---
     {
       name: "generate_report",
-      description: "Generate a strategic or platform report by executing relevant pipelines.",
+      description: "Runs a pipeline to produce a new report — do NOT use this to read reports. After this call completes, always follow up with get_report to fetch the full report content. Valid skills: 'status', 'dream', 'tasks'. Calling with any other value will fail.",
       inputSchema: {
         type: "object",
         properties: {
-          skill: { type: "string", description: "The skill or domain (e.g. 'platform', 'dream')." },
+          skill: { type: "string", description: "The skill or domain to run. Valid values: 'status', 'dream', 'tasks'." },
           date: { type: "string" },
           dry_run: { type: "boolean" }
         },
@@ -445,7 +445,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
       }
     },
     { name: "list_reports", description: "List reports in outputs. Optional domain (e.g. 'dream/reports').", inputSchema: { type: "object", properties: { domain: { type: "string" } } } },
-    { name: "get_report", description: "Read a report file by path relative to reports/.", inputSchema: { type: "object", properties: { path: { type: "string" } }, required: ["path"] } }
+    { name: "get_report", description: "Read a generated report by skill name — e.g. get_report(skill='status') or get_report(skill='dream'). Use list_reports to see available skills. Do NOT pass a file path.", inputSchema: { type: "object", properties: { skill: { type: "string", description: "The skill/domain name e.g. 'status', 'dream', 'tasks'." } }, required: ["skill"] } }
   ]
 }));
 
@@ -975,19 +975,21 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
     // --- REPORTING & OUTPUTS ---
     if (name === "generate_report") {
-      const skill = String((args as any)?.skill ?? "platform");
+      const skill = String((args as any)?.skill ?? "");
       let script = "";
       let cmdArgs: string[] = [];
 
-      if (skill === "platform") {
+      if (skill === "status") {
         script = path.resolve(rootPath, "skills/status/run.py");
         cmdArgs = ["--force", "--team", "platform"];
       } else if (skill === "dream" || skill === "reporting") {
         script = path.resolve(rootPath, "skills/dream/run.py");
         if ((args as any).date) cmdArgs.push("--date", (args as any).date);
         if ((args as any).dry_run) cmdArgs.push("--dry-run");
+      } else if (skill === "tasks") {
+        script = path.resolve(rootPath, "skills/tasks/run.py");
       } else {
-        throw new Error(`Report generation not automated for skill: ${skill}`);
+        throw new Error(`Report generation not automated for skill: ${skill}. Valid options: status, dream, tasks.`);
       }
 
       const out = await new Promise<string>((res, rej) => execFile("python3", [script, ...cmdArgs], { cwd: rootPath }, (e, o, s) => e ? rej(new Error(s)) : res(o)));
@@ -1004,9 +1006,10 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     }
 
     if (name === "get_report") {
-      const { path: relPath } = args as any;
+      const { skill } = args as any;
+      if (!skill) throw new Error("'skill' is required. e.g. get_report(skill='status')");
       const baseReportsPath = path.resolve(rootPath, "reports");
-      const fullPath = path.resolve(baseReportsPath, relPath);
+      const fullPath = path.resolve(baseReportsPath, String(skill), "report.md");
       if (!fullPath.startsWith(baseReportsPath)) throw new Error("Access denied: Outside reports directory.");
       const content = await fs.readFile(fullPath, "utf-8");
       return { content: [{ type: "text", text: content }] };

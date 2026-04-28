@@ -64,7 +64,7 @@ def fetch_asana_tasks(token):
     return tasks
 
 def build_asana_md(tasks):
-    today = datetime.now().strftime("%Y-%m-%d")
+    today = datetime.now().strftime("%Y-%m-%d %H:%M")
     lines = ["# Asana — My Tasks", "", f"_Last synced: {today} · {len(tasks)} tasks_", ""]
 
     by_project = {}
@@ -119,7 +119,7 @@ def fetch_jira_issues(email, token):
     return issues
 
 def build_jira_md(issues):
-    today = datetime.now().strftime("%Y-%m-%d")
+    today = datetime.now().strftime("%Y-%m-%d %H:%M")
     lines = ["# Jira — My Issues", "", f"_Last synced: {today} · {len(issues)} issues_", ""]
 
     by_project = {}
@@ -150,7 +150,7 @@ def build_jira_md(issues):
 # ---------------------------------------------------------------------------
 
 def build_report(asana_tasks, jira_issues):
-    today = datetime.now().strftime("%Y-%m-%d")
+    today = datetime.now().strftime("%Y-%m-%d %H:%M")
     today_date = date.today()
     lines = [
         f"# Task Report — {today}",

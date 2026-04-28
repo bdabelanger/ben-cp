@@ -8,7 +8,7 @@ domain: .
 # AGENTS.md — Vault Agent Dispatch
 
 > **All agents working in this vault must read this file before taking any action.**
-> Last updated: 2026-04-25
+> Last updated: 2026-04-28
 
 ---
 
@@ -189,7 +189,9 @@ This vault exposes purpose-built MCP tools. Use them instead of raw file reads/w
 | `add_art` / `get_art` / `list_art` | Contribute to and explore the vault's gallery (poems, sketches, etc) |
 | `get_changelog` | Read changelog entries by scope |
 | `add_changelog` | Append a new entry — always write deepest level first, then root |
-| `generate_report` | Generate a strategic or platform report (e.g. `platform`, `dream`) |
+| `list_reports` | List available report domains. |
+| `get_report` | **Default tool for reading any report.** Path is relative to `reports/` — e.g. `get_report(path="status/report.md")`. Never prefix with `reports/` or `skills/`. Use this to fetch the latest report. |
+| `generate_report` | **Runs a pipeline to produce a new report — do NOT use this to read reports.** Valid skills: `status`, `dream`, `tasks`. Calling with any other value will fail. **Always follow up with `get_report` to fetch the full report content.** |
 | `edit_handoff` | Update a handoff or mark it as complete (archives to complete/ folder) |
 
 **Session pattern:**

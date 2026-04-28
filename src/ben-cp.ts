@@ -47,7 +47,7 @@ const rootPath = path.resolve(__dirname, "..");
 await loadEnv(rootPath);
 const skillsPath = path.resolve(rootPath, "skills");
 const rootChangelogPath = path.resolve(rootPath, "changelog.md");
-const handoffPath = path.resolve(rootPath, "handoffs");
+const handoffPath = path.resolve(rootPath, "reports/handoff");
 
 interface TaxonomyRule {
   label: string;
@@ -61,7 +61,7 @@ interface TaxonomyRule {
 let taxonomyRules: TaxonomyRule[] = [];
 
 async function loadTaxonomy(): Promise<TaxonomyRule[]> {
-  const taxonomyPath = path.resolve(rootPath, "intelligence/casebook/taxonomy.md");
+  const taxonomyPath = path.resolve(rootPath, "governance/taxonomy.md");
   let content = "";
   try {
     content = await fs.readFile(taxonomyPath, "utf-8");
@@ -158,33 +158,11 @@ async function walkDir(dir: string): Promise<string[]> {
 
 async function writeChangelogInternal(a: any, skillsPath: string, date: string): Promise<string[]> {
   const written: string[] = [];
-  const rawSubs: string[] = Array.isArray(a.subdirectories) ? a.subdirectories : [];
   const changesLines = (a.completed_work ?? []).map((w: any) => `- \`${w.path}\` — ${w.change} ${w.status}`).join("\n");
   const failedLines = (a.failed_actions ?? []).length > 0 ? (a.failed_actions as any[]).map((f: any) => `- **Attempted:** ${f.attempted}\n  **Happened:** ${f.happened}\n  **Recommendation:** ${f.recommendation}`).join("\n") : null;
-  const krLines = (a.kr_state ?? []).length > 0 ? (a.kr_state as any[]).map((k: any) => `- **${k.kr_name}** (\`${k.file_path}\`): ${k.blocker_status}${k.baseline ? ` — baseline ${k.baseline}` : ""}${k.target ? `, target ${k.target}` : ""}\n  Next: ${k.next_action}`).join("\n") : null;
   const blockerLines = (a.blockers ?? []).length > 0 ? (a.blockers as any[]).map((b: any) => `- ${b.description} — ${b.needed_to_unblock}`).join("\n") : null;
   const nextLines = (a.next_tasks ?? []).map((t: any, i: number) => `${i + 1}. ${t}`).join("\n");
   const handoffRef = a.handoff ? `handoffs/${String(a.handoff)}` : null;
-
-  for (const rawSub of rawSubs) {
-    const subDir = rawSub.replace(/[^a-z0-9\-_/]/gi, "");
-    const subPath = path.resolve(skillsPath, subDir, "changelog.md");
-    await fs.mkdir(path.dirname(subPath), { recursive: true });
-    let subContent: string;
-    try { subContent = await fs.readFile(subPath, "utf-8"); } catch {
-      const skillName = subDir.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
-      subContent = `# ${skillName} Changelog\n\n## [Unreleased]\n`;
-    }
-    let subEntry = `## ${date} — ${a.session_goal}\n\n**Files changed:**\n${changesLines}\n`;
-    if (krLines) subEntry += `\n**KR State:**\n${krLines}\n`;
-    if (failedLines) subEntry += `\n**Failed actions:**\n${failedLines}\n`;
-    if (blockerLines) subEntry += `\n**Blockers:**\n${blockerLines}\n`;
-    if (handoffRef) subEntry += `\n**Handoff:** \`${handoffRef}\`\n`;
-    subEntry += `\n**Next:** ${(a.next_tasks as string[])[0] ?? "—"}\n`;
-    const updatedSub = subContent.replace("## [Unreleased]", `## [Unreleased]\n\n${subEntry}`);
-    await fs.writeFile(subPath, updatedSub, "utf-8");
-    written.push(subPath);
-  }
 
   const rootContent = await fs.readFile(rootChangelogPath, "utf-8");
   const versionMatch = rootContent.match(/## \[(\d+)\.(\d+)\.(\d+)\]/);
@@ -195,8 +173,7 @@ async function writeChangelogInternal(a: any, skillsPath: string, date: string):
     newVersion = bump === "major" ? `${maj + 1}.0.0` : bump === "minor" ? `${maj}.${min + 1}.0` : `${maj}.${min}.${pat + 1}`;
   }
   const rootChanges = (a.completed_work ?? []).map((w: any) => `- \`${w.path}\` — ${w.change}`).join("\n");
-  const subPointers = rawSubs.length > 0 ? "\n\n**Detail logs:**\n" + rawSubs.map(s => `- \`skills/${s}/changelog.md\``).join("\n") : "";
-  let rootEntry = `## [${newVersion}] — ${a.session_goal} (${date})${subPointers}\n\n**Changes:**\n${rootChanges}\n`;
+  let rootEntry = `## [${newVersion}] — ${a.session_goal} (${date})\n\n**Changes:**\n${rootChanges}\n`;
   if (failedLines) rootEntry += `\n**Failed actions:**\n${failedLines}\n`;
   if (blockerLines) rootEntry += `\n**Blockers:**\n${blockerLines}\n`;
   if (handoffRef) rootEntry += `\n**Handoff:** \`${handoffRef}\`\n`;
@@ -300,7 +277,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
 
     // --- CHANGELOGS ---
-    { name: "get_changelog", description: "Get changelogs by scope. Use this to understand recent session context. Returns records for the specified directory or root.", inputSchema: { type: "object", properties: { scope: { type: "string" } } } },
+    { name: "get_changelog", description: "Get the project changelog. Use this to understand recent session context and version history.", inputSchema: { type: "object" } },
     {
       name: "add_changelog",
       description: "Add a changelog. Use this to track functional or structural changes. Supports subdirectory and root synchronization.",
@@ -433,25 +410,28 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     // --- AGENT ROLES & GOVERNANCE ---
     if (name === "list_agents") {
       const agentsMd = await fs.readFile(path.resolve(rootPath, "AGENTS.md"), "utf-8");
-      const agentsDir = path.resolve(rootPath, "agents");
+      const agentsDir = path.resolve(rootPath, "governance/agents");
       const files = await fs.readdir(agentsDir);
-      const roles = files.filter(f => f.endsWith(".md") && !f.startsWith(".") && f !== "index.md");
+      const roles = files.filter(f => f.endsWith(".md") && !f.startsWith(".") && !["index.md", "overview.md", "policies.md", "taxonomy.md"].includes(f));
       return { content: [{ type: "text", text: `## AGENTS.md\n\n${agentsMd}\n\n**Available Role Files:**\n${roles.join("\n")}` }] };
     }
 
     if (name === "get_agent") {
       const { agent_id } = args as any;
-      const agentPath = path.resolve(rootPath, "agents", `${agent_id.toLowerCase()}.md`);
+      const agentPath = path.resolve(rootPath, "governance/agents", `${agent_id.toLowerCase()}.md`);
       const indexPath = path.resolve(rootPath, "index.md");
+      const policiesPath = path.resolve(rootPath, "governance/policies.md");
       try {
-        const [agentContent, indexContent] = await Promise.all([
+        const [agentContent, indexContent, policiesContent] = await Promise.all([
           fs.readFile(agentPath, "utf-8"),
-          fs.readFile(indexPath, "utf-8").catch(() => "Index not found.")
+          fs.readFile(indexPath, "utf-8").catch(() => "Index not found."),
+          fs.readFile(policiesPath, "utf-8").catch(() => "Policies not found.")
         ]);
         return {
           content: [
             { type: "text", text: `# Role Documentation: ${agent_id}\n\n${agentContent}` },
-            { type: "text", text: `## Repository Index\n\n${indexContent}` }
+            { type: "text", text: `## Repository Index\n\n${indexContent}` },
+            { type: "text", text: `## Global Policies\n\n${policiesContent}` }
           ]
         };
       } catch (err) {
@@ -662,15 +642,15 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
       if (a.mark_complete) {
         const date = new Date().toISOString().split('T')[0];
-        const targetFilename = `${path.basename(relPath, ".md")}-COMPLETE.md`;
-        const targetPath = path.join(handoffPath, "complete", targetFilename);
+        const targetFilename = `${path.basename(relPath, ".md")}-ARCHIVE.md`;
+        const targetPath = path.join(handoffPath, "archive", targetFilename);
         const content = await fs.readFile(sourcePath, "utf-8");
         const statusRegex = /> \*\*STATUS:?.*$/m;
         const updatedContent = content.replace(statusRegex, `> **STATUS**: ✅ COMPLETE — ${date}\n\n${a.summary}`);
-        await fs.mkdir(path.join(handoffPath, "complete"), { recursive: true });
+        await fs.mkdir(path.join(handoffPath, "archive"), { recursive: true });
         await fs.writeFile(targetPath, updatedContent, "utf-8");
         await fs.unlink(sourcePath);
-        await writeChangelogInternal({ ...a, handoff: `complete/${targetFilename}` }, skillsPath, date);
+        await writeChangelogInternal({ ...a, handoff: `archive/${targetFilename}` }, skillsPath, date);
         return { content: [{ type: "text", text: `Handoff completed and archived to ${targetFilename}.` }] };
       } else {
         if (!a.content) throw new Error("Content required for non-completion edit.");
@@ -682,7 +662,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     // --- ART & MEDIA ---
     if (name === "add_art") {
       const { name: fileName, title, agent, content } = args as any;
-      const artRoot = path.resolve(rootPath, "agents/art");
+      const artRoot = path.resolve(rootPath, "intelligence/art");
       await fs.mkdir(artRoot, { recursive: true });
       const sanitizedFilename = ensureSingleExtension(fileName);
       const fullPath = path.join(artRoot, sanitizedFilename);
@@ -691,7 +671,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       await fs.writeFile(fullPath, fullContent, "utf-8");
 
       // Update Index
-      const indexPath = path.join(artRoot, "index.md");
+      const indexPath = path.join(artRoot, "overview.md");
       let indexContent = "# Art Gallery\n\n";
       try { indexContent = await fs.readFile(indexPath, "utf-8"); } catch { }
       if (!indexContent.includes(`[${title}]`)) {
@@ -699,29 +679,22 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         await fs.writeFile(indexPath, indexContent, "utf-8");
       }
 
-      // Update Changelog
-      const changelogPath = path.join(artRoot, "changelog.md");
-      let logContent = "# Art Changelog\n\n";
-      try { logContent = await fs.readFile(changelogPath, "utf-8"); } catch { }
-      logContent += `- **${date}**: ${agent} contributed "${title}"\n`;
-      await fs.writeFile(changelogPath, logContent, "utf-8");
-
       return { content: [{ type: "text", text: `Art piece "${title}" added to gallery.` }] };
     }
 
     if (name === "list_art") {
-      const artRoot = path.resolve(rootPath, "agents/art");
+      const artRoot = path.resolve(rootPath, "intelligence/art");
       const entries = await fs.readdir(artRoot, { withFileTypes: true });
       const files = entries
-        .filter(e => !e.name.startsWith(".") && e.name.endsWith(".md") && e.name !== "index.md" && e.name !== "changelog.md")
+        .filter(e => !e.name.startsWith(".") && e.name.endsWith(".md") && !["index.md", "overview.md", "changelog.md"].includes(e.name))
         .map(e => e.name);
       return { content: [{ type: "text", text: JSON.stringify(files, null, 2) }] };
     }
 
     if (name === "get_art") {
       const { path: relPath } = args as any;
-      const artRoot = path.resolve(rootPath, "agents/art");
-      const normalized = String(relPath).startsWith("agents/art/") ? String(relPath).slice(11) : (String(relPath).startsWith("art/") ? String(relPath).slice(4) : relPath);
+      const artRoot = path.resolve(rootPath, "intelligence/art");
+      const normalized = String(relPath).startsWith("intelligence/art/") ? String(relPath).slice(17) : (String(relPath).startsWith("art/") ? String(relPath).slice(4) : relPath);
       const fullPath = path.resolve(artRoot, normalized);
       const content = await fs.readFile(fullPath, "utf-8");
       return { content: [{ type: "text", text: content }] };
@@ -974,9 +947,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     }
 
     if (name === "get_changelog") {
-      const scope = String((args as any)?.scope ?? "root").trim();
-      const cp = scope === "root" ? rootChangelogPath : path.resolve(skillsPath, scope.replace("skills/", ""), "changelog.md");
-      const content = await fs.readFile(cp, "utf-8");
+      const content = await fs.readFile(rootChangelogPath, "utf-8");
       return { content: [{ type: "text", text: content }] };
     }
 

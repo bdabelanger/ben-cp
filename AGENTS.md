@@ -1,6 +1,6 @@
 ---
 title: AGENTS.md — Agent Dispatch
-type: agent
+type: governance
 domain: .
 ---
 
@@ -43,7 +43,7 @@ To prevent architectural drift and maintain clarity between agentic processes an
 
 | Term | Definition | Primary Location |
 | :--- | :--- | :--- |
-| **Steps** | Executable, agent-led actions defined within an implementation plan or handoff. | `handoffs/` |
+| **Steps** | Executable, agent-led actions defined within an implementation plan or handoff. | `reports/handoff/` |
 | **Tasks** | Human-led work items synchronized automatically from Asana and Jira. This directory is a **read-only sync target** — agents MUST NOT create, edit, or delete task files here. To read current tasks, use `run_report(skill='tasks')` or `get_report(skill='tasks')`. To create a task for Ben, use the `add_task` tool. | `tasks/` |
 
 ### The Token Economy Rule
@@ -104,9 +104,9 @@ Find your role file and read it next. All agents MUST identify using the format 
 | Agent | Role file | Role summary |
 | :--- | :--- | :--- |
 | **Human** | N/A | Project Owner |
-| **Cowork** | `agents/cowork.md` | Architect, session lead, handoff reviewer |
-| **Local** | `agents/local.md` | Reviewer, parser, intelligence refresher |
-| **Code** | `agents/code.md` | Implementer, code executor, file engineer |
+| **Cowork** | `governance/agents/cowork.md` | Architect, session lead, handoff reviewer |
+| **Local** | `governance/agents/local.md` | Reviewer, parser, intelligence refresher |
+| **Code** | `governance/agents/code.md` | Implementer, code executor, file engineer |
 
 ---
 
@@ -118,7 +118,7 @@ Before executing a procedure against `skills/[skill_name]/`, an agent MUST seque
 
 Agents MUST default to parsing `./character.md` for tone and voice. No generalized fluffy assistant speak is allowed inside the repo boundary.
 
-**Visual Authority**: All reports must adhere to the visual and nomenclature standards defined in `skills/styles/emoji-key.md`. Check this guide before selecting status icons or formatting markers.
+**Visual Authority**: All reports must adhere to the visual and nomenclature standards defined in `governance/visual-standards.md`. Check this guide before selecting status icons or formatting markers.
 
 
 ---
@@ -129,12 +129,12 @@ Agents MUST default to parsing `./character.md` for tone and voice. No generaliz
 If the human has already told you what to work on — by naming a handoff, a file, or a task — skip this check entirely and go directly to that work.
 
 For autonomous (undirected) session starts:
-1. List `handoffs/` (root only — not `handoffs/complete/`)
-2. Any `.md` file present is an open handoff — completed ones live in `handoffs/complete/`
+1. List `reports/handoff/` (root only — not `reports/handoff/archive/`)
+2. Any `.md` file present is an open handoff — completed ones live in `reports/handoff/archive/`
 3. Surface them to human user immediately: "You have N outstanding handoff(s): [filenames]"
 4. If human user confirms, execute using the handoff protocol at `skills/collaboration/handoff/index.md`
 
-> **Note:** Open handoffs are living documents — they may be edited and iterated before execution. Only completed handoffs (in `handoffs/complete/`) are immutable.
+> **Note:** Open handoffs are living documents — they may be edited and iterated before execution. Only completed handoffs (in `reports/handoff/archive/`) are immutable.
 
 Do not proceed with other autonomous work until open handoffs are acknowledged by human user.
 
@@ -160,17 +160,18 @@ The user-cp is not currently connected on mobile. Dispatch cannot read files or 
 
 ## Directory Boundaries
 
-> See `intelligence/governance/policy.md` for the full policy.
+> See `governance/policy.md` for the full policy.
 
-The repository is organized into four distinct layers. Writing data files, scripts, or run artifacts into `skills/` is a violation.
+The repository is organized into five distinct layers. Writing data files, scripts, or run artifacts into `skills/` is a violation.
 
-| Skill logic | `skills/` | `SKILL.md`, `character.md`, `index.md`, `changelog.md`, templates, report specs |
-| Execution tooling | `skills/utilities/` | Scripts, pipeline runners, automation harnesses |
-| Live data / WIP | `skills/inputs/` | Raw API responses, processed JSON, `manifest.json` |
-| Outputs | `skills/outputs/` | Final reports, HTML, archives |
-| Source of truth | `intelligence/` | Domain knowledge and strategic core |
-| Core logic / Skills | `skills/` | Skill SOPs and procedural logic |
-| Reference source files | `intelligence/<domain>/<topic>/source/` | Raw input files (PDFs, TXTs, exports) tied to active work |
+| Layer | Path | Contents |
+| :--- | :--- | :--- |
+| **Governance** | `governance/` | Global Policies (`policies.md`), agent roles, and taxonomy |
+| **Skill logic** | `skills/` | `SKILL.md`, `character.md`, `index.md`, templates, report specs |
+| **Source of truth** | `intelligence/` | Domain knowledge and strategic core |
+| **Live data / WIP** | `skills/inputs/` | Raw API responses, processed JSON, `manifest.json` |
+| **Outputs** | `skills/outputs/` | Final reports, HTML, archives |
+| **Reference source** | `intelligence/<domain>/source/` | Raw input files (PDFs, TXTs, exports) |
 
 **Hard constraint:** Any agent writing data files, scripts (`*.py`, `*.sh`), `manifest.json`, archived reports, or session logs into `intelligence/` is in violation of this policy. Flag the violation in a handoff rather than proceeding.
 
@@ -189,20 +190,20 @@ This repo exposes purpose-built MCP tools. Use them instead of raw file reads/wr
 | `get_intelligence` / `add_intelligence` / `edit_intelligence` | Get, add, and maintain intelligence and domain knowledge. |
 | `get_skill` / `list_skills` | Get and list skills from the repo. |
 | `list_art` / `get_art` / `add_art` | Explore and contribute to the gallery (poems, sketches, etc) |
-| `get_changelog` / `add_changelog` | Get and add changelogs to track session changes. |
+| `get_changelog` / `add_changelog` | Get and add entries to the project changelog. |
 | `list_reports` / `get_report` / `run_report` | Discover, retrieve, and execute report pipelines. |
-| `edit_handoff` | Update a handoff or mark it as complete (archives to complete/ folder) |
+| `edit_handoff` | Update a handoff or mark it as complete (archives to archive/ folder) |
 | `add_handoff` | Add a handoff to stage implementation plans. |
 | `search_tasks` | Search keywords in the latest tasks report to prevent duplication. |
 | `add_task` | Add a task to external systems (Asana/Jira) via raw capture. Use specialized `asana` and `atlassian` MCP servers for subsequent task management (updates, deletes, etc). |
 
 **Session pattern:**
 1. `get_agent(agent_id='your_name')` → Load `AGENTS.md` + your role file to confirm identity and rules.
-2. `get_changelog` scoped to the work area → understand recent context
+2. `get_changelog` → understand recent context
 4. Do the work
-5. `add_changelog` at subdirectory level → then at root
+5. `add_changelog` → document functional or structural changes
 
-The human user will tell you which changelog scope is relevant for the session. If not specified, ask before pulling root.
+The project changelog is the single source of truth for session history.
 
 ---
 
@@ -211,31 +212,22 @@ The human user will tell you which changelog scope is relevant for the session. 
 ```
 ben-cp/
 ├── AGENTS.md                        ← this file — read first, always
-├── agents/                          ← role instructions AND agent artifacts
-│   ├── logs/                        ← automated run logs
-│   ├── sessions/                    ← notable session summaries
-│   └── art/                         ← agent creative output
+├── governance/                      ← policies and agent rules
+│   ├── agents/                      ← role instructions and agent artifacts
+│   └── visual-standards.md          ← emoji and nomenclature keys
 ├── reports/                         ← sensor and pipeline report outputs (Sanctioned)
 ├── src/                             ← source code (Sanctioned)
 ├── skills/                          ← all skill SOPs and procedures
-│   ├── asana/                       ← Asana harvest/push pipeline
-│   ├── intelligence/                ← Intelligence parsing pipeline
-│   ├── status/                      ← PM-facing status skill & report pipeline
-│   ├── tasks/                       ← Task sync pipeline
-│   ├── dream/                       ← Nightly synthesis cycle
-│   ├── handoff/                     ← Handoff management skill
-│   ├── rovo/                        ← Rovo context generator
-│   ├── styles/                      ← Visual standards & emoji keys
-│   ├── utilities/                   ← Repo-wide scripts & helpers
-│   ├── inputs/                      ← Live run data (API responses)
-│   └── outputs/                     ← Generated reports & audit logs
+│   ├── inputs/                      ← live run data (API responses)
+│   └── outputs/                     ← generated reports & audit logs
 ├── changelog.md                     ← root project changelog (versioned milestones)
-├── handoffs/                        ← open cross-agent implementation plans (READY)
-│   └── complete/                    ← executed handoffs (COMPLETE)
+├── reports/handoff/                 ← open cross-agent implementation plans (READY)
+│   └── archive/                     ← executed handoffs (COMPLETE)
 ├── tasks/                           ← (Symlink to tasks/)
 └── intelligence/                    ← source of truth (Unified Domain)
+    ├── art/                         ← agent creative output
     ├── casebook/                    ← Casebook domain knowledge
-    ├── governance/                  ← logic policies and agent rules
+    ├── governance/                  ← legacy logic policies (being retired)
     └── product/projects/            ← product roadmap and strategic data
 ```
 
@@ -300,7 +292,7 @@ If a required tool call fails (e.g., `add_changelog`, `edit_file`, or path-based
 
 ### File Naming
 
-- **Use hyphens** (`-`) for separating words in document titles (e.g., `handoffs/2026-04-12-p1-sprint-plan.md`, `changelog.md`).
+- **Use hyphens** (`-`) for separating words in document titles (e.g., `reports/handoff/2026-04-12-p1-sprint-plan.md`, `changelog.md`).
 - Scripts or specific code files requiring underscores by native language formats (e.g., Python `run_pipeline.py`) are exempt, but general knowledge markdown defaults to hyphens.
 - Keep names short and descriptive. No camelCase.
 - `SKILL.md` and `AGENTS.md` are exempt from the convention — all-caps filenames are valid for contracts and Cowork skill descriptors.
@@ -315,7 +307,7 @@ After creating or significantly modifying any file, update `index.md` in the sam
 
 Every session that involves writing, editing, or structural modification must end with a changelog entry — use the `add_changelog` MCP tool. Read-only or discovery sessions do not require a changelog unless a significant insight or blocker was identified.
 
-**Handoff Exemption:** If a session's primary output is a newly created READY handoff (`handoffs/[name].md`) and no other significant SOP or structural changes occurred, the agent SHOULD skip the detailed subdirectory changelog. In this case, the root `changelog.md` entry should be a concise one-line pointer to the handoff.
+**Handoff Exemption:** If a session's primary output is a newly created READY handoff (`reports/handoff/[name].md`) and no other significant SOP or structural changes occurred, the agent SHOULD skip the detailed changelog entry. In this case, the root `changelog.md` entry should be a concise one-line pointer to the handoff.
 
 ### Artifact-First Workflow (MANDATORY)
 
@@ -325,13 +317,13 @@ To ensure human oversight and safety, agents MUST interact with specialized arti
 
 To reduce cognitive load and structural clutter, P1 and P2 workflows follow a **Unified Artifact** model.
 
-1.  **The Unified Handoff**: For most work, the *Handoff* and *Implementation Plan* are merged into a single flat file in `handoffs/`.
+1.  **The Unified Handoff**: For most work, the *Handoff* and *Implementation Plan* are merged into a single flat file in `reports/handoff/`.
 2.  **Mandatory Schema**: Every unified artifact MUST follow this hierarchy:
     - **Context**: The problem statement and background.
     - **Logic**: The proposed technical solution or strategy.
     - **Execution Steps**: A checklist of agent-led "Steps."
-3.  **Feature Bundles (The Exception)**: Use a sub-directory in `handoffs/` (e.g., `handoffs/feature-name/`) ONLY when the task requires auxiliary support files (scripts, images, schemas).
-4.  **Root Cleanliness**: All implementation logic resides in `handoffs/`. No implementation plans are allowed at the root.
+3.  **Feature Bundles (The Exception)**: Use a sub-directory in `reports/handoff/` (e.g., `reports/handoff/feature-name/`) ONLY when the task requires auxiliary support files (scripts, images, schemas).
+4.  **Root Cleanliness**: All implementation logic resides in `reports/handoff/`. No implementation plans are allowed at the root.
 
 #### Complexity Threshold Decision Matrix (Tiered Rigor)
 
@@ -354,7 +346,7 @@ To reduce cognitive load and structural clutter, P1 and P2 workflows follow a **
 The access skill will flag sessions that bypass this artifact-led workflow as violations.
 
 ### Operational Meta-Agent Handoffs
-As meta-agents analyze the repository over their nightly cycles, they are actively encouraged to generate new `handoffs/` artifacts containing ideas for operational improvements, workflow coordinations, or structural delegations.
+As meta-agents analyze the repository over their nightly cycles, they are actively encouraged to generate new `reports/handoff/` artifacts containing ideas for operational improvements, workflow coordinations, or structural delegations.
 
 **Rules for Meta-Agent Ideation:**
 1. These ideation handoffs MUST be assigned to the specific agent who makes the most functional sense for the task.

@@ -1,6 +1,6 @@
 ---
 title: ben-cp — Repo Index
-type: index
+type: governance
 domain: root
 updated: 2026-04-28
 ---
@@ -12,23 +12,22 @@ updated: 2026-04-28
 
 ---
 
-## Agents
+## Governance
 
-Human-in-the-loop roles and personas. Each `.md` file is a role definition loaded at session start.
+Authoritative rules, roles, and policies.
 
 ```
-agents/
-├── cowork.md          — Architect and session lead (Claude + Gemini)
-├── code.md            — Implementation executor (Claude Code + Gemini CLI)
-├── local.md           — Local task runner and data entry
-├── art/               — Creative artifacts from agent sessions
-│   ├── the-agents-creed.md
-│   ├── the-alchemists-grid.md
-│   ├── the-dream-sequence.md
-│   ├── the-ground-beneath.md
-│   └── the-weightless-archive.md
-├── agent-data/        — Per-agent persistent context (anthropic, antigravity, claude)
-├── logs/              — Dream cycle run logs (YYYY-MM-DD-dream-cycle*.md)
+governance/
+├── AGENTS.md          — Core governance contract (Root)
+├── taxonomy.md        — ⭐ Product-feature taxonomy
+├── policy.md          — Repo separation policy
+├── retention_policy.md — Data retention policy
+├── cowork.md          — Architect and session lead (Agent Role)
+├── code.md            — Implementation executor (Agent Role)
+├── local.md           — Local task runner (Agent Role)
+├── art/               — Creative artifacts
+├── agent-data/        — Per-agent persistent context
+├── logs/              — Dream cycle run logs
 └── sessions/          — Session transcripts and summaries
 ```
 
@@ -39,9 +38,9 @@ agents/
 Cross-agent implementation plans. Active handoffs are in root; completed handoffs are archived to `complete/`.
 
 ```
-handoffs/
+reports/handoff/
 ├── YYYY-MM-DD-<priority>-<slug>.md   — Active implementation plan
-└── complete/                          — Archived completed handoffs
+└── archive/                          — Archived completed handoffs
 ```
 
 **Convention:** `list_handoffs()` is the authoritative source — never read this file for current state.
@@ -55,16 +54,11 @@ Strategic knowledge base. Domain knowledge, project records, OKRs, releases, and
 ```
 intelligence/
 ├── casebook/                          — Casebook platform domain knowledge
-│   ├── taxonomy.md                    — ⭐ Authoritative product-feature taxonomy
 │   ├── products/                      — Product-specific domain intelligence
 │   │   ├── admin/                     — Casebook Admin application
 │   │   └── reporting/                 — Reveal BI schemas and query reference
 │   └── features/                      — Feature-specific domain intelligence
 │       └── subscriptions/             — Casebook Subscriptions (Chargebee)
-│
-├── governance/                        — Repo rules and retention policy
-│   ├── policy.md
-│   └── retention_policy.md
 │
 ├── product/                           — Product roadmap and PM intelligence
 │   ├── okrs/q2/                       — Q2 2026 OKR tracking

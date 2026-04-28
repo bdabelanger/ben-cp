@@ -20,7 +20,7 @@ if SENSORS_DIR not in sys.path:
 
 SENSORS = [
     'reindex', 'pulse', 'links', 'frontmatter', 'drift',
-    'handoffs', 'index', 'agents',
+    'handoff', 'index', 'agents',
     'tasks', 'changelog', 'context', 'access',
     'paths', 'scripts',
 ]
@@ -177,7 +177,10 @@ def build_pipeline_section(pipeline_results):
 # ---------------------------------------------------------------------------
 
 def load_sensor(name):
-    path = os.path.join(SENSORS_DIR, f'{name}.py')
+    if name == 'handoff':
+        path = os.path.join(REPO_ROOT, 'skills', 'handoff', 'run.py')
+    else:
+        path = os.path.join(SENSORS_DIR, f'{name}.py')
     spec = importlib.util.spec_from_file_location(name, path)
     mod  = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
@@ -252,7 +255,7 @@ def build_highlights(results):
                 lines.append(f'- **{len(r["red_flags"])} files over 750KB** — token economy risk')
             elif r.get('yellow_flags'):
                 lines.append(f'- {len(r["yellow_flags"])} files over 250KB (watch list)')
-        if name == 'handoffs' and r.get('issues'):
+        if name == 'handoff' and r.get('issues'):
             lines.append(f'- **{len(r["issues"])} handoff issues** — missing sections or stale READY files')
         if name == 'drift' and r.get('findings'):
             lines.append(f'- **{len(r["findings"])} drift findings** — unsanctioned directories')

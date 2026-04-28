@@ -1,6 +1,6 @@
 ---
 title: Project Changelog
-type: changelog
+type: governance
 domain: .
 ---
 

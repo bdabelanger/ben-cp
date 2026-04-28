@@ -8,19 +8,8 @@ import re
 from datetime import datetime
 
 # ---------------------------------------------------------------------------
-# CSS — loaded from skills/shared/repo.css if available
+# CSS — Inline styles
 # ---------------------------------------------------------------------------
-
-_SCRIPT_DIR  = os.path.dirname(os.path.abspath(__file__))
-_REPO_CSS   = os.path.normpath(os.path.join(_SCRIPT_DIR, "..", "..", "..", "skills", "styles", "repo.css"))
-
-
-def _load_css():
-    """Load repo.css from skills/shared/, falling back to the inline default."""
-    if os.path.exists(_REPO_CSS):
-        with open(_REPO_CSS, "r") as f:
-            return f.read()
-    return _CSS_FALLBACK
 
 
 _CSS_FALLBACK = """
@@ -280,7 +269,7 @@ code {
 }
 """
 
-CSS = _load_css()
+CSS = _CSS_FALLBACK
 
 # ---------------------------------------------------------------------------
 # Brand icons (inline SVG, shown only in project card headings)

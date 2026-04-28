@@ -1,5 +1,5 @@
 ---
-title: Task Capture Skill — Standardized Intake
+title: Task Capture — Skill & Procedure
 type: skill
 domain: skills/tasks
 ---
@@ -24,6 +24,26 @@ This is the primary entry point for capturing work items into Asana and Jira. It
 
 ---
 
+## Classification System
+
+Work items fall into two destinations, sometimes both:
+
+| Item type | Destination |
+| :--- | :--- |
+| Initiative / Epic-level work | Asana (Platform team project) |
+| User Story / Feature | Jira (CBP project) — may also create Asana task |
+| Bug (internal) | Jira Bug issue type |
+| Bug (CX-reported) | Jira CX Bug issue type |
+| Task / chore | Jira Task or Asana task depending on scope |
+| Research / Spike | Jira Research issue type |
+
+**Routing decision tree:**
+1. Is this a new initiative or project-level work? → Asana
+2. Is this a story, bug, or spike against an existing CBP epic? → Jira
+3. Does it need both? → Create Asana task linked to Jira ticket
+
+---
+
 ## Usage
 
 Agents should use the `capture_task` tool directly.
@@ -41,24 +61,40 @@ Agents should use the `capture_task` tool directly.
 
 ---
 
-## Classification Logic
+## Jira Issue Type Mapping
 
-| Signal | Result |
-| :--- | :--- |
-| "bug", "broken", "regression" | Jira Bug |
-| "user story", "story" | Jira Story |
-| "research", "investigate" | Jira Research |
-| "prep", "demo", "launch plan" | Asana Task (PM) |
-| "new feature", "new initiative" | Asana Project + Jira Project |
+| Work item | Jira issue type | Template |
+| :--- | :--- | :--- |
+| Feature / Story | User Story | `../../intelligence/product/projects/source/user-story-template.md` |
+| Task / chore | Task | `../../intelligence/product/projects/source/task-template.md` |
+| Internal bug | Bug | `../../intelligence/product/projects/source/bug-template.md` |
+| CX-reported bug | CX Bug | `../../intelligence/product/projects/source/cx-bug-template.md` |
+| Research / Spike | Research | `../../intelligence/product/projects/source/research-template.md` |
 
 ---
 
-## Routing (Asana)
+## Execution Steps (Manual/Agentic)
 
-| Keyword | Project GID |
-| :--- | :--- |
-| "GP", "Permissions" | PD - Small Projects (Default) |
-| "Notes", "Service Record" | Engage - Notes |
-| "Enroll", "Intake" | Enrollments |
-| (Default) | PD - Small Projects |
+1. **Classify** the work item using the routing decision tree above.
+2. **Identify destination** — Asana, Jira, or both.
+3. **Select template** from `../../intelligence/product/projects/source/` based on issue type.
+4. **Apply metadata** — assignee, priority, fix version (release), parent epic, custom fields.
+5. **Create the item** via MCP tool (`capture_task` or specialized Atlassian tools).
+6. **Confirm concisely** — one line: item type, key/GID, title. No preamble.
 
+---
+
+## Workspace & Project Config
+
+- **Asana workspace GID:** `1123317448830974`
+- **Jira cloud ID:** `casecommons.atlassian.net`
+- **Jira project:** `CBP`
+
+---
+
+## Confirmation Format
+
+```
+✅ [Jira Bug] CBP-XXXX — "Summary text here"
+✅ [Asana Task] #GID — "Task name here"
+```

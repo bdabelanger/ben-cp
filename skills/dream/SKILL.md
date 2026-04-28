@@ -7,9 +7,13 @@ domain: skills/dream
 
 # Dream Cycle — Skill
 
+> **Purpose:** Nightly repo health, sensor synthesis, and health reporting.
 > **Trigger:** Nightly automated run (22:00) or manual invocation
 > **Agent:** Cowork (Claude)
-> **Purpose:** Run all repo health sensors, triage findings, fix low-risk issues directly, and create handoffs for Code/Cowork (avoiding Asana tasks).
+
+## Links
+- [Master Runner (run.py)](run.py)
+- [Sensor Scripts (scripts/)](scripts/)
 
 ---
 

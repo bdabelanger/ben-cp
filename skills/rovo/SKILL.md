@@ -18,7 +18,18 @@ domain: skills/rovo
 
 3.  **Link Exploration (Tool: getJiraIssueRemoteIssueLinks):** If available, execute this tool to map out related discussions or linked entities. Note that an empty list here is a common occurrence and does not indicate failure.
 
+---
+
+## Status Report Synthesis
+
+When acting as part of the **Status Report Orchestrator**, use Rovo tools to provide qualitative context that Jira tickets alone cannot capture.
+
+### Tooling Usage
+- **Search Context:** Use `searchAtlassian` with project names to locate high-level decisions in Confluence or Slack.
+- **Sentiment Analysis:** Use `getJiraIssue` on "Anchor" issues or Epics to determine the current 'vibe' of the project.
+- **Synthesis:** Group findings into a "Decisions & Context" block for each project to be consumed by the final report generator.
+
 ### 💡 Key Takeaways & Best Practices
-*   `searchAtlassian` is your initial compass; always refine the query for precision.
-*   `getJiraIssue` provides the bedrock data—treat its output as definitive context.
-*   This streamlined process minimizes unnecessary tool calls, making investigations faster and less prone to guesswork when tackling "CBP-XXXX" issues.
+- `searchAtlassian` is your initial compass; always refine the query for precision.
+- `getJiraIssue` provides the bedrock data—treat its output as definitive context.
+- This streamlined process minimizes unnecessary tool calls, making investigations faster and less prone to guesswork when tackling "CBP-XXXX" issues.

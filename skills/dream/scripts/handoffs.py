@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-\"\"\"handoffs.py — Audit implementation plan standards and staleness.\"\"\"
+"""handoffs.py — Audit implementation plan standards and staleness."""
 import os, json, re
 from datetime import datetime
 

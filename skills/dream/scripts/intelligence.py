@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-\"\"\"intelligence.py — Monitor intelligence record integrity.
+"""intelligence.py — Monitor intelligence record integrity.
 Wraps the existing intelligence scan pipeline as a sensor.
-\"\"\"
+"""
 import os, json, subprocess
 from datetime import datetime
 

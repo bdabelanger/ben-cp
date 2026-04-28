@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-\"\"\"bloat.py — Monitor file volume and recent activity for resource hygiene.
+"""bloat.py — Monitor file volume and recent activity for resource hygiene.
 Merges logic from retired access.py and context.py sensors.
-\"\"\"
+"""
 import os, json, subprocess
 from datetime import datetime
 

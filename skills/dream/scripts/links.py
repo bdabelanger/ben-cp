@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-\"\"\"links.py — Validate internal reference integrity across all .md files and .py scripts.
+"""links.py — Validate internal reference integrity across all .md files and .py scripts.
 Merges logic from retired paths.py sensor.
-\"\"\"
+"""
 import os, json, re, urllib.parse
 from datetime import datetime
 from utils import get_manifest_files

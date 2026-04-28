@@ -1,9 +1,14 @@
 {
   "sensor": "tasks",
-  "timestamp": "2026-04-28T17:03:06.929560",
+  "timestamp": "2026-04-28T21:47:37.167818",
   "summary": {
-    "files_audited": 0,
-    "issues_found": 0
+    "issues_found": 1
   },
-  "issues": []
+  "issues": [
+    {
+      "file": "reports/tasks/report.md",
+      "issue": "overdue_tasks",
+      "count": 6
+    }
+  ]
 }

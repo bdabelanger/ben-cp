@@ -1,6 +1,6 @@
 # Jira — My Issues
 
-_Last synced: 2026-04-28 17:01 · 50 issues_
+_Last synced: 2026-04-28 17:52 · 50 issues_
 
 ## Ideas
 - [IDEA-74 — Subscription enforcement](https://casecommons.atlassian.net/browse/IDEA-74) _(P2 · Released)_

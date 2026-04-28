@@ -1,6 +1,6 @@
 # Asana — My Tasks
 
-_Last synced: 2026-04-28 17:01 · 63 tasks_
+_Last synced: 2026-04-28 17:52 · 63 tasks_
 
 ## Case Notes Campaign
 - [Additional Assets for Clips](https://app.asana.com/1/1123317448830974/project/1213823056173464/task/1213823056236759) · due 2026-04-28

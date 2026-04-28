@@ -1,9 +1,9 @@
 {
   "sensor": "reindex",
-  "timestamp": "2026-04-28T17:03:06.724890",
+  "timestamp": "2026-04-28T17:52:36.573873",
   "summary": {
-    "directories": 133,
-    "files_scanned": 500,
+    "directories": 142,
+    "files_scanned": 501,
     "frontmatter_missing": 2,
     "unknown_taxonomy_terms": 15
   },
@@ -40,6 +40,60 @@
         "frontmatter_coverage": 1.0
       },
       "governance/agents/antigravity/brain": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/brain/0c1c8713-68be-4002-b6db-0ed2171b9775": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/brain/146c5a42-1921-4940-8abc-1670c0bd9b88": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/brain/2bcc0bdc-0995-4d2a-82bc-524f66ad9d17": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/brain/52028d00-c4d6-4242-8785-1560676115ee": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/brain/6c22925c-5127-4e91-8cc8-82be5d702a82": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/brain/76ff73a0-f7f2-4cad-aaa4-860fa32882e4": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/brain/91f153fd-910e-4ded-a447-9c86bbd54f07": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/brain/c2a60ba6-c1ef-4628-96c9-10c752062fe1": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/brain/c494ff59-d348-4361-8bdd-56b68f24b36b": {
         "file_count": 0,
         "md_count": 0,
         "fm_count": 0,
@@ -712,13 +766,13 @@
         "frontmatter_coverage": 1.0
       },
       "skills/dream/scripts": {
-        "file_count": 14,
+        "file_count": 16,
         "md_count": 0,
         "fm_count": 0,
         "frontmatter_coverage": 1.0
       },
       "skills/handoff": {
-        "file_count": 2,
+        "file_count": 1,
         "md_count": 1,
         "fm_count": 1,
         "frontmatter_coverage": 1.0
@@ -2690,11 +2744,11 @@
         "has_frontmatter": false,
         "type": "file"
       },
-      "skills/dream/scripts/changelog.py": {
+      "skills/dream/scripts/bloat.py": {
         "has_frontmatter": false,
         "type": "file"
       },
-      "skills/dream/scripts/context.py": {
+      "skills/dream/scripts/changelog.py": {
         "has_frontmatter": false,
         "type": "file"
       },
@@ -2706,7 +2760,15 @@
         "has_frontmatter": false,
         "type": "file"
       },
+      "skills/dream/scripts/handoffs.py": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
       "skills/dream/scripts/index.py": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "skills/dream/scripts/intelligence.py": {
         "has_frontmatter": false,
         "type": "file"
       },
@@ -2746,10 +2808,6 @@
         "has_frontmatter": true,
         "type": "skill",
         "taxonomy": null
-      },
-      "skills/handoff/run.py": {
-        "has_frontmatter": false,
-        "type": "file"
       },
       "skills/handoff/SKILL.md": {
         "has_frontmatter": true,

@@ -131,10 +131,13 @@ If the human has already told you what to work on — by naming a handoff, a fil
 For autonomous (undirected) session starts:
 1. List `reports/handoff/` (root only — not `reports/handoff/archive/`)
 2. Any `.md` file present is an open handoff — completed ones live in `reports/handoff/archive/`
-3. Surface them to human user immediately: "You have N outstanding handoff(s): [filenames]"
+3. **Surface only handoffs assigned to you** (matching your agent identity). Mention that other handoffs exist, but do not describe or act on them — they belong to agents that are not currently active.
+   - Example: "You have 2 handoff(s) I can work on: [filenames]. There are also N other handoff(s) assigned to other agents."
 4. If human user confirms, execute using the handoff protocol at `skills/collaboration/handoff/overview.md`
 
 > **Note:** Open handoffs are living documents — they may be edited and iterated before execution. Only completed handoffs (in `reports/handoff/archive/`) are immutable.
+
+> **Agent Scope Rule:** Each agent only speaks to handoffs it can execute. Cowork handles Cowork handoffs. Local handles Local handoffs. Code handles Code handoffs. If you are not the assigned agent, acknowledge the handoff exists but do not surface its details or attempt to action it — the right agent isn't up right now.
 
 Do not proceed with other autonomous work until open handoffs are acknowledged by human user.
 

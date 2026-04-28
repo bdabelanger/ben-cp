@@ -1,14 +1,14 @@
 {
   "run_date": "2026-04-28",
-  "started": "2026-04-28T17:01:41.722386",
-  "elapsed_s": 85.82,
-  "sensors_ok": 14,
+  "started": "2026-04-28T17:52:14.891272",
+  "elapsed_s": 22.15,
+  "sensors_ok": 12,
   "failures": [],
   "pipelines": {
+    "asana": true,
     "tasks": true,
-    "releasinator": true,
+    "releasinator": false,
     "status": true,
-    "intelligence-harvest": true,
-    "intelligence-scan": true
+    "intelligence": true
   }
 }

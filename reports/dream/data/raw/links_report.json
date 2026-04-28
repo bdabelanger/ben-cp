@@ -1,9 +1,10 @@
 {
   "sensor": "links",
-  "timestamp": "2026-04-28T17:03:06.743577",
+  "timestamp": "2026-04-28T17:52:36.602639",
   "summary": {
     "files_scanned": 109,
-    "ghost_links": 8
+    "ghost_links": 9,
+    "stale_paths": 0
   },
   "ghost_links": [
     {
@@ -45,6 +46,12 @@
       "source": "intelligence/product/overview.md",
       "link": "../casebook/taxonomy.md",
       "type": "md"
+    },
+    {
+      "source": "skills/handoff/SKILL.md",
+      "link": "run.py",
+      "type": "md"
     }
-  ]
+  ],
+  "stale_paths": []
 }

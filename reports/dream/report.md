@@ -1,31 +1,29 @@
 # Dream Report — 2026-04-28
 
-**Run:** 17:01 · **Sensors:** 14/14 OK · **Duration:** 85.8s
+**Run:** 17:52 · **Sensors:** 12/12 OK · **Duration:** 22.2s
 
 ## Sensor Summary
 
 | Sensor | Status | Detail |
 |--------|--------|--------|
-| reindex | 🟡 | 133 directories, 500 files scanned, 2 frontmatter missing, 15 unknown taxonomy terms |
+| reindex | 🟡 | 142 directories, 501 files scanned, 2 frontmatter missing, 15 unknown taxonomy terms |
 | pulse | 🟢 | clean |
-| links | 🟡 | 109 files scanned, 8 ghost links |
+| links | 🟡 | 109 files scanned, 9 ghost links |
 | frontmatter | 🔴 | 109 files scanned, 60 issues found |
 | drift | 🟢 | clean |
-| handoff | 🔴 | 6 files audited, 6 issues found |
+| handoffs | 🔴 | 11 files audited, 66 issues found |
 | index | 🟢 | clean |
 | agents | 🟡 | 106 files scanned, 2 issues found |
-| tasks | 🟢 | clean |
+| bloat | 🟡 | 258 total files, 2 yellow flags, 512 files touched 24h |
 | changelog | 🟢 | clean |
-| context | 🟡 | 251 total files, 1 yellow flags |
-| access | 🟢 | 369 files touched 24h |
-| paths | 🟢 | 40 files scanned |
-| scripts | 🟢 | 6 skills checked |
+| intelligence | 🟢 | clean |
+| scripts | 🟢 | 5 skills checked |
 
 ## Highlights
 
-- **8 ghost links** — broken internal references
-- **6 handoff issues** — missing sections or stale READY files
-- 1 files over 250KB (watch list)
+- **9 ghost links** — broken internal references
+- **66 handoff issues** — missing sections or stale READY files
+- 2 files over 250KB (watch list)
 
 ## Ghost Links (sample)
 
@@ -37,17 +35,26 @@
 - `intelligence/product/projects/q2/notes-global-notes-wlv-(1210368097846960).md` → `../../okrs/q2/elevate-notes/overview.md`
 - `intelligence/product/overview.md` → `okrs/q2/overview.md`
 - `intelligence/product/overview.md` → `../casebook/taxonomy.md`
+- `skills/handoff/SKILL.md` → `run.py`
 
 ## Pipeline Reports
+
+### ✅ Asana Data Fetch
+
+`--- Running 01_fetch_projects.py ---`
+``
+`--- Running 02_fetch_tasks.py ---`
+``
+`✅ Asana pipeline completed successfully.`
 
 ### ✅ My Tasks
 
 [Full report](../tasks/report.md)
 
-_Last synced: 2026-04-28 17:01 · 63 Asana tasks · 50 Jira issues_
+_Last synced: 2026-04-28 17:52 · 63 Asana tasks · 50 Jira issues_
 **11 overdue tasks** — see full report for details.
 
-### ✅ Release Readiness
+### ⚠️ Release Readiness
 
 [Full report](../releasinator/report.md)
 
@@ -67,18 +74,10 @@ Release `Platform-2026-4-2` — 1 repos to bump, 0 leaks
 8. [Notes - Bulk Service Notes](#CBP-2924) (Development)
 9. [Integrations - Zapier improvements](#CBP-3158) (Development)
 
-### ✅ Intelligence Harvest
+### ✅ Intelligence
 
 `   Refreshed: 0`
 `   Failed:    0`
 `   Skipped:   0`
-``
-`📉 Performing Token Economy Remediation...`
-
-### ✅ Intelligence Scan
-
-`--- Intelligence Source Scan ---`
-`Scanning: /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp/skills/intelligence`
-`✅ No orphaned source files found.`
 ``
 `📉 Performing Token Economy Remediation...`

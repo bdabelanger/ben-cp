@@ -1,6 +1,6 @@
-# Task Report — 2026-04-28 17:01
+# Task Report — 2026-04-28 17:52
 
-_Last synced: 2026-04-28 17:01 · 63 Asana tasks · 50 Jira issues_
+_Last synced: 2026-04-28 17:52 · 63 Asana tasks · 50 Jira issues_
 
 ## Asana Scorecard
 
@@ -29,7 +29,7 @@ _Last synced: 2026-04-28 17:01 · 63 Asana tasks · 50 Jira issues_
 - [Iterate on an AI-driven discovery engine](https://app.asana.com/1/1123317448830974/project/1208693459152262/task/1214087440655865) · due 2026-04-27
 - [Generate google doc split into three sections: 1. what everyone did to fix the issue 2. discuss the possibility of backloading historical data to the new add-on (and explain the back-billing risks associated with it) 3. explain the other ways this add-on could be set-up in Chargebee and a recommendation. Once done with this google doc, let's send an email to Brian/Jess C/Jess J/Nicole for input. Collab with Anthony on the doc ahead of sending it.](https://app.asana.com/1/1123317448830974/task/1213964079045362) · due 2026-04-27
 
-### Due Today (2026-04-28 17:01)
+### Due Today (2026-04-28 17:52)
 
 - [PFF - schema fixed?](https://app.asana.com/1/1123317448830974/project/1208693459152262/task/1214003604735366) · due 2026-04-28
 - [Refresh side-by-side video](https://app.asana.com/1/1123317448830974/project/1211838817183809/task/1213970637290751) · due 2026-04-28

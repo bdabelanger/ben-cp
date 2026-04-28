@@ -4,7 +4,9 @@
 > **Assigned to:** Code
 > **Repo root:** /Users/benbelanger/My Drive (ben.belanger@casebook.net)/ben-cp
 > **Priority:** P2
-> **STATUS**: 🔲 READY — pick up 2026-04-28
+> **STATUS**: ✅ COMPLETE — 2026-04-28
+
+Task was already successfully implemented during the previous frontmatter migration session. search_intelligence now supports taxonomy filtering (via recursive walk + frontmatter parsing), keyword query (via grep), and combined intersection logic. The list_handoffs index.md exclusion was also applied. Handoff marked complete.
 
 ---
 

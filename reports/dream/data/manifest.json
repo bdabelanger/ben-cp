@@ -1,0 +1,10 @@
+{
+  "skill": "dream",
+  "last_restructured": "2026-04-27",
+  "data_layout": "standard-v1",
+  "contents": {
+    "raw": "Individual sensor outputs and run logs",
+    "processed": "Synthesized data for reporting",
+    "archive": "Historical snapshots (rotational)"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "sensor": "agents",
+  "timestamp": "2026-04-28T17:03:06.928737",
+  "summary": {
+    "files_scanned": 106,
+    "issues_found": 2
+  },
+  "issues": [
+    {
+      "file": "intelligence/art/the-weightless-archive.md",
+      "issue": "invalid_agent_format",
+      "value": "local",
+      "expected": "Name (Model)"
+    },
+    {
+      "file": "intelligence/art/the-frontmatter-takeover.md",
+      "issue": "invalid_agent_format",
+      "value": "local",
+      "expected": "Name (Model)"
+    }
+  ]
+}

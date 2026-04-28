@@ -1,0 +1,50 @@
+{
+  "sensor": "links",
+  "timestamp": "2026-04-28T17:03:06.743577",
+  "summary": {
+    "files_scanned": 109,
+    "ghost_links": 8
+  },
+  "ghost_links": [
+    {
+      "source": "intelligence/casebook/overview.md",
+      "link": "taxonomy.md",
+      "type": "md"
+    },
+    {
+      "source": "intelligence/product/projects/q2/data-import-bulk-import-for-notes/overview.md",
+      "link": "../../../okrs/q2/elevate-notes/overview.md",
+      "type": "md"
+    },
+    {
+      "source": "intelligence/product/projects/q2/integrations-zapier-improvements/overview.md",
+      "link": "../../../okrs/q2/reduce-admin-burden/overview.md",
+      "type": "md"
+    },
+    {
+      "source": "intelligence/product/projects/q2/portal-client-dashboard/overview.md",
+      "link": "../../../okrs/q2/reduce-admin-burden/overview.md",
+      "type": "md"
+    },
+    {
+      "source": "intelligence/product/projects/q2/services-service-plan-datagrid-with-bulk-actions/overview.md",
+      "link": "../../../okrs/q2/planning-services-at-scale/overview.md",
+      "type": "md"
+    },
+    {
+      "source": "intelligence/product/projects/q2/notes-global-notes-wlv-(1210368097846960).md",
+      "link": "../../okrs/q2/elevate-notes/overview.md",
+      "type": "md"
+    },
+    {
+      "source": "intelligence/product/overview.md",
+      "link": "okrs/q2/overview.md",
+      "type": "md"
+    },
+    {
+      "source": "intelligence/product/overview.md",
+      "link": "../casebook/taxonomy.md",
+      "type": "md"
+    }
+  ]
+}

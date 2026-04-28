@@ -1,0 +1,26 @@
+{
+    "project": "Asana Shared Cache",
+    "last_run": null,
+    "config": {
+        "raw_dir": "reports/asana/data/raw",
+        "processed_dir": "reports/asana/data/processed",
+        "archive_dir": "reports/asana/data/archive"
+    },
+    "steps": [
+        {
+            "id": "1_fetch_projects",
+            "status": "pending",
+            "file": "reports/asana/data/raw/all_projects.json"
+        },
+        {
+            "id": "2_fetch_tasks",
+            "status": "pending",
+            "file": "reports/asana/data/raw/all_tasks.json"
+        },
+        {
+            "id": "3_normalize",
+            "status": "pending",
+            "file": "reports/asana/data/processed/platform_projects.json"
+        }
+    ]
+}

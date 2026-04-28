@@ -1,0 +1,47 @@
+{
+  "sensor": "scripts",
+  "timestamp": "2026-04-27T04:10:18.529955",
+  "summary": {
+    "skills_checked": 5,
+    "total_findings": 5,
+    "errors": 0,
+    "warnings": 5
+  },
+  "findings": [
+    {
+      "skill": "status",
+      "file": "skills/status/run.py",
+      "issue": "missing_script_ref",
+      "detail": "References full_run.py but skills/status/full_run.py not found",
+      "severity": "WARN"
+    },
+    {
+      "skill": "status",
+      "file": "skills/status/scripts/run.py",
+      "issue": "missing_script_ref",
+      "detail": "References skills/asana/run.py but skills/status/scripts/skills/asana/run.py not found",
+      "severity": "WARN"
+    },
+    {
+      "skill": "asana",
+      "file": "skills/asana/run.py",
+      "issue": "missing_script_ref",
+      "detail": "References 01_fetch_projects.py but skills/asana/01_fetch_projects.py not found",
+      "severity": "WARN"
+    },
+    {
+      "skill": "asana",
+      "file": "skills/asana/run.py",
+      "issue": "missing_script_ref",
+      "detail": "References 02_fetch_tasks.py but skills/asana/02_fetch_tasks.py not found",
+      "severity": "WARN"
+    },
+    {
+      "skill": "asana",
+      "file": "skills/asana/run.py",
+      "issue": "missing_script_ref",
+      "detail": "References 03_normalize.py but skills/asana/03_normalize.py not found",
+      "severity": "WARN"
+    }
+  ]
+}

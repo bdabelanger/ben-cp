@@ -1,0 +1,40 @@
+{
+  "sensor": "handoff",
+  "timestamp": "2026-04-28T17:03:06.838919",
+  "summary": {
+    "files_audited": 6,
+    "issues_found": 6
+  },
+  "issues": [
+    {
+      "file": "reports/handoff/2026-04-28-p2-Deprecate-shareout-directory-and-merge-slide-content-into-project-intelligence.md",
+      "issue": "missing_section",
+      "section": "## Execution Steps"
+    },
+    {
+      "file": "reports/handoff/2026-04-28-p2-Deprecate-shareout-directory-and-merge-slide-content-into-project-intelligence.md",
+      "issue": "missing_section",
+      "section": "## Context"
+    },
+    {
+      "file": "reports/handoff/2026-04-28-p2-Restructure-releasinator-report-with-next-release-primary-section-plus-upcoming-and-recent-releases.md",
+      "issue": "missing_section",
+      "section": "## Execution Steps"
+    },
+    {
+      "file": "reports/handoff/2026-04-28-p2-Move-releases-from-intelligence-to-reports-and-update-releasinator-output.md",
+      "issue": "missing_section",
+      "section": "## Execution Steps"
+    },
+    {
+      "file": "reports/handoff/2026-04-28-p2-Move-releases-from-intelligence-to-reports-and-update-releasinator-output.md",
+      "issue": "missing_section",
+      "section": "## Context"
+    },
+    {
+      "file": "reports/handoff/2026-04-28-p2-Add-releasinator-to-dream-pipeline-between-tasks-and-status-with-auto-release-detection.md",
+      "issue": "missing_section",
+      "section": "## Execution Steps"
+    }
+  ]
+}

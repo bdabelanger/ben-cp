@@ -1,0 +1,25 @@
+{
+  "sensor": "handoffs",
+  "timestamp": "2026-04-28T14:51:31.962382",
+  "summary": {
+    "files_audited": 3,
+    "issues_found": 3
+  },
+  "issues": [
+    {
+      "file": "handoffs/2026-04-28-p2-Make-list-and-search-tools-frontmatter-native-and-retire-index.md-dependency.md",
+      "issue": "missing_section",
+      "section": "## Execution Steps"
+    },
+    {
+      "file": "handoffs/2026-04-28-p2-Make-list-and-search-tools-frontmatter-native-and-retire-index.md-dependency.md",
+      "issue": "missing_section",
+      "section": "## Context"
+    },
+    {
+      "file": "handoffs/2026-04-28-p2-Upgrade-search_intelligence-to-support-taxonomy-and-keyword-filtering.md",
+      "issue": "missing_section",
+      "section": "## Execution Steps"
+    }
+  ]
+}

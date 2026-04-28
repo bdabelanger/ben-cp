@@ -1,0 +1,13 @@
+{
+  "sensor": "changelog",
+  "timestamp": "2026-04-28T17:03:07.206992",
+  "summary": {
+    "root_versions_found": 0,
+    "version_issues": 0,
+    "subdirectory_changelogs": 0,
+    "unlogged_changes": 0
+  },
+  "version_issues": [],
+  "subdirectory_changelogs": [],
+  "unlogged_changes": []
+}

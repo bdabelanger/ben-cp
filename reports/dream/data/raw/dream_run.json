@@ -1,0 +1,14 @@
+{
+  "run_date": "2026-04-28",
+  "started": "2026-04-28T17:01:41.722386",
+  "elapsed_s": 85.82,
+  "sensors_ok": 14,
+  "failures": [],
+  "pipelines": {
+    "tasks": true,
+    "releasinator": true,
+    "status": true,
+    "intelligence-harvest": true,
+    "intelligence-scan": true
+  }
+}

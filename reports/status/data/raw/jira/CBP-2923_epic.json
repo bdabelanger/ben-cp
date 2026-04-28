@@ -1,0 +1,34 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "40374",
+  "self": "https://casecommons.atlassian.net/rest/api/3/issue/40374",
+  "key": "CBP-2923",
+  "fields": {
+    "summary": "Notes - Access section in new Note dialog",
+    "issuetype": {
+      "self": "https://casecommons.atlassian.net/rest/api/3/issuetype/10000",
+      "id": "10000",
+      "description": "A roadmapped initiative",
+      "iconUrl": "https://casecommons.atlassian.net/images/icons/issuetypes/epic.svg",
+      "name": "Project",
+      "subtask": false,
+      "hierarchyLevel": 1
+    },
+    "timespent": null,
+    "timeoriginalestimate": null,
+    "status": {
+      "self": "https://casecommons.atlassian.net/rest/api/3/status/10011",
+      "description": "Ready for QA review in QA environment",
+      "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+      "name": "Merged to QA",
+      "id": "10011",
+      "statusCategory": {
+        "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+        "id": 4,
+        "key": "indeterminate",
+        "colorName": "yellow",
+        "name": "In Progress"
+      }
+    }
+  }
+}

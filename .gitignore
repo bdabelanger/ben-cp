@@ -177,5 +177,4 @@ dist
 
 # pm2 ecosystem (contains secrets)
 ecosystem.config.cjs
-reports/
 # intelligence/

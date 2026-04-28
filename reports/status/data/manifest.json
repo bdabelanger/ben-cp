@@ -1,0 +1,35 @@
+{
+    "project": "Platform Weekly Status",
+    "last_run": "2026_04_16",
+    "config": {
+        "processed_dir": "reports/status/data/processed",
+        "archive_dir": "reports/status/data/archive"
+    },
+    "steps": [
+        {
+            "id": "1_asana_ingest",
+            "status": "pending",
+            "file": "reports/status/data/processed/asana_active.json"
+        },
+        {
+            "id": "2_atlassian_fetch",
+            "status": "pending",
+            "file": "reports/status/data/raw/jira"
+        },
+        {
+            "id": "3_rovo_context",
+            "status": "pending",
+            "file": "reports/status/data/processed/rovo_insights.json"
+        },
+        {
+            "id": "4_jira_harvest",
+            "status": "pending",
+            "file": "reports/status/data/processed/jira_issues.json"
+        },
+        {
+            "id": "5_report_generation",
+            "status": "pending",
+            "file": "reports/status/report.md"
+        }
+    ]
+}

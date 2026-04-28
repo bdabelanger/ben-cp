@@ -1,0 +1,17 @@
+{
+  "sensor": "context",
+  "timestamp": "2026-04-28T17:03:07.255068",
+  "summary": {
+    "total_files": 251,
+    "total_size_mb": 4.48,
+    "red_flags": 0,
+    "yellow_flags": 1
+  },
+  "red_flags": [],
+  "yellow_flags": [
+    {
+      "file": "intelligence/art/antigravity_core.png",
+      "size_kb": 730.6
+    }
+  ]
+}

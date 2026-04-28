@@ -1,0 +1,26 @@
+{
+    "project": "Tasks Sync",
+    "last_run": "2026-04-26",
+    "config": {
+        "raw_dir": "reports/tasks/data/raw",
+        "processed_dir": "reports/tasks/data/processed",
+        "archive_dir": "reports/tasks/data/archive"
+    },
+    "steps": [
+        {
+            "id": "1_asana_sync",
+            "status": "pending",
+            "file": "reports/tasks/data/raw/asana.md"
+        },
+        {
+            "id": "2_jira_sync",
+            "status": "pending",
+            "file": "reports/tasks/data/raw/jira.md"
+        },
+        {
+            "id": "3_normalize",
+            "status": "pending",
+            "file": "reports/tasks/data/processed/"
+        }
+    ]
+}

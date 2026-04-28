@@ -56,7 +56,7 @@ def audit_file(path):
 
     # Skip AGENTS.md as it defines the standard
     # Skip index.md files to avoid template/registry false positives
-    if rel == 'AGENTS.md' or rel.endswith('index.md'):
+    if rel in ('AGENTS.md', 'index.md'):
         return issues
 
     # Unknown agent in Prepared by / Agent lines

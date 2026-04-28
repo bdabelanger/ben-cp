@@ -1,66 +1,61 @@
 #!/usr/bin/env python3
-"""tasks.py — Track strategic momentum across active tasks."""
+"""tasks.py — Audit reports/tasks/report.md for currency and overdue items."""
 import os, json, re
 from datetime import datetime
 
-REPO_ROOT   = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
+REPO_ROOT    = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
 OUTPUTS_DIR  = os.path.join(REPO_ROOT, 'reports', 'dream', 'data', 'raw')
-TASKS_DIR    = os.path.join(REPO_ROOT, 'tasks')
-PROJECTS_DIR = os.path.join(REPO_ROOT, 'intelligence', 'product', 'projects')
+TASKS_REPORT = os.path.join(REPO_ROOT, 'reports', 'tasks', 'report.md')
 
 STALE_HOURS = 48
-SKIP_FILES  = {'index.md', 'asana.md', 'jira.md'}
 
-def collect_task_files():
-    files = []
-    if not os.path.isdir(TASKS_DIR):
-        return files
-    for f in os.listdir(TASKS_DIR):
-        if f.endswith('.md') and f not in SKIP_FILES:
-            files.append(os.path.join(TASKS_DIR, f))
-    return files
 
-def extract_priority(content):
-    m = re.search(r'\*\*priority\*\*\s*[:\-]\s*(\w+)', content, re.IGNORECASE)
-    return m.group(1).upper() if m else None
+def count_overdue(content):
+    today = datetime.now().date()
+    count = 0
+    for line in content.splitlines():
+        m = re.search(r'due\s+(\d{4}-\d{2}-\d{2})', line)
+        if m:
+            try:
+                d = datetime.strptime(m.group(1), '%Y-%m-%d').date()
+                if d < today:
+                    count += 1
+            except ValueError:
+                pass
+    return count
 
-def extract_project_links(content):
-    return re.findall(r'\[.*?\]\(([^)]*intelligence/product/projects[^)]*)\)', content)
 
 def run():
     issues = []
-    files = collect_task_files()
 
-    for path in files:
-        rel = os.path.relpath(path, REPO_ROOT)
-        try:
-            with open(path, errors='replace') as f:
-                content = f.read()
-        except OSError:
-            continue
-
-        priority = extract_priority(content)
-        age_h = (datetime.now().timestamp() - os.path.getmtime(path)) / 3600
-
-        if priority in ('P1', 'P2') and age_h > STALE_HOURS:
+    if not os.path.exists(TASKS_REPORT):
+        issues.append({"file": "reports/tasks/report.md", "issue": "report_missing"})
+    else:
+        age_h = (datetime.now().timestamp() - os.path.getmtime(TASKS_REPORT)) / 3600
+        if age_h > STALE_HOURS:
             issues.append({
-                "file": rel,
-                "issue": "high_priority_stale",
-                "priority": priority,
+                "file": "reports/tasks/report.md",
+                "issue": "report_stale",
                 "hours_since_update": round(age_h, 1),
             })
 
-        # Verify project links resolve
-        for link in extract_project_links(content):
-            target = os.path.normpath(os.path.join(REPO_ROOT, link.lstrip('/')))
-            if not os.path.exists(target):
-                issues.append({"file": rel, "issue": "broken_project_link", "link": link})
+        try:
+            with open(TASKS_REPORT, errors='replace') as f:
+                content = f.read()
+            overdue = count_overdue(content)
+            if overdue > 0:
+                issues.append({
+                    "file": "reports/tasks/report.md",
+                    "issue": "overdue_tasks",
+                    "count": overdue,
+                })
+        except OSError:
+            issues.append({"file": "reports/tasks/report.md", "issue": "unreadable"})
 
     report = {
         "sensor": "tasks",
         "timestamp": datetime.now().isoformat(),
         "summary": {
-            "files_audited": len(files),
             "issues_found": len(issues),
         },
         "issues": issues,
@@ -71,6 +66,7 @@ def run():
         json.dump(report, f, indent=2)
     print(f"✅ tasks → {out}")
     return report
+
 
 if __name__ == '__main__':
     run()

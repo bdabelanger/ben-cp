@@ -7,6 +7,14 @@ domain: .
 
 # Project Changelog
 
+## [1.19.3] — Dream Sensor Hardening: index, tasks, agents (2026-04-28)
+
+**Changes:**
+- **index.py**: Removed dead `audit_directory()` function; inlined root-only ghost-ref and shadow-file logic directly in `run()`. Sensor now explicitly scopes to root `index.md` only.
+- **tasks.py**: Repurposed from broken `tasks/` directory scanner to a live audit of `reports/tasks/report.md` — flags missing report, staleness (>48h), and overdue task count.
+- **agents.py**: Fixed over-broad `index.md` skip (`endswith` → exact match `in (...)`) to prevent false-positive suppression of subdirectory files named `index.md`.
+- **SKILL.md**: Updated index sensor row to reflect correct output path (`index_report.json`) and scoped description.
+
 ## [1.19.2] — Dynamic Task Taxonomy & capture_task Integration (2026-04-28)
 
 **Changes:**

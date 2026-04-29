@@ -1,6 +1,6 @@
 # Dream Report — 2026-04-29
 
-**Run:** 15:30 · **Sensors:** 12/12 OK · **Duration:** 1.6s
+**Run:** 15:41 · **Sensors:** 12/12 OK · **Duration:** 1.5s
 
 ## Sensor Summary
 
@@ -41,9 +41,7 @@
 
 ### ⚠️ Asana Data Fetch
 
-`--- Running 01_fetch_projects.py ---`
-`[2026-04-29 15:30:17] fetch_asana_projects.py`
-`❌ Error running 01_fetch_projects.py`
+? projects fetched — stage breakdown in index.md
 
 ### ⚠️ My Tasks
 

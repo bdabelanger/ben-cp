@@ -174,19 +174,19 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-16T00:25:50.222-0400",
+      "updated": "2026-04-29T10:12:54.320-0400",
       "status": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
-        "description": "Ready for development in DEV environment",
-        "iconUrl": "https://casecommons.atlassian.net/",
-        "name": "To do",
-        "id": "10007",
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
+        "description": "Development in progress in DEV environment",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
+        "name": "In development",
+        "id": "3",
         "statusCategory": {
-          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
-          "id": 2,
-          "key": "new",
-          "colorName": "blue-gray",
-          "name": "To Do"
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+          "id": 4,
+          "key": "indeterminate",
+          "colorName": "yellow",
+          "name": "In Progress"
         }
       }
     }
@@ -270,19 +270,19 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-16T00:25:52.697-0400",
+      "updated": "2026-04-29T10:14:32.951-0400",
       "status": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
-        "description": "Ready for development in DEV environment",
-        "iconUrl": "https://casecommons.atlassian.net/",
-        "name": "To do",
-        "id": "10007",
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
+        "description": "Development in progress in DEV environment",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
+        "name": "In development",
+        "id": "3",
         "statusCategory": {
-          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
-          "id": 2,
-          "key": "new",
-          "colorName": "blue-gray",
-          "name": "To Do"
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+          "id": 4,
+          "key": "indeterminate",
+          "colorName": "yellow",
+          "name": "In Progress"
         }
       }
     }

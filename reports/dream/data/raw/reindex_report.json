@@ -1,10 +1,10 @@
 {
   "sensor": "reindex",
-  "timestamp": "2026-04-29T15:47:27.457322",
+  "timestamp": "2026-04-29T11:54:41.520833",
   "summary": {
-    "directories": 68,
-    "files_scanned": 165,
-    "frontmatter_missing": 0,
+    "directories": 141,
+    "files_scanned": 491,
+    "frontmatter_missing": 2,
     "unknown_taxonomy_terms": 2
   },
   "manifest": {
@@ -22,9 +22,435 @@
         "frontmatter_coverage": 1.0
       },
       "governance/agents": {
-        "file_count": 6,
+        "file_count": 4,
         "md_count": 3,
         "fm_count": 3,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity": {
+        "file_count": 3,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/annotations": {
+        "file_count": 15,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/brain": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/brain/0c1c8713-68be-4002-b6db-0ed2171b9775": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/brain/146c5a42-1921-4940-8abc-1670c0bd9b88": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/brain/2bcc0bdc-0995-4d2a-82bc-524f66ad9d17": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/brain/52028d00-c4d6-4242-8785-1560676115ee": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/brain/6c22925c-5127-4e91-8cc8-82be5d702a82": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/brain/76ff73a0-f7f2-4cad-aaa4-860fa32882e4": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/brain/91f153fd-910e-4ded-a447-9c86bbd54f07": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/brain/c2a60ba6-c1ef-4628-96c9-10c752062fe1": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/brain/c494ff59-d348-4361-8bdd-56b68f24b36b": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/brain/fef1d4da-d71d-451a-afb2-7f85e4de1893": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/brain/tempmediaStorage": {
+        "file_count": 1,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/context_state": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/conversations": {
+        "file_count": 81,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/html_artifacts": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/implicit": {
+        "file_count": 4,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/knowledge": {
+        "file_count": 1,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/scratch": {
+        "file_count": 2,
+        "md_count": 1,
+        "fm_count": 0,
+        "frontmatter_coverage": 0.0
+      },
+      "governance/agents/claude": {
+        "file_count": 3,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/backups": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/cache": {
+        "file_count": 1,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/debug": {
+        "file_count": 1,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/downloads": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/ide": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/plugins": {
+        "file_count": 2,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/projects": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-Desktop": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-Desktop/4db0622c-10c1-41dd-9598-663ae711a560": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-Desktop/4db0622c-10c1-41dd-9598-663ae711a560/subagents": {
+        "file_count": 1,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-Desktop/c41c6568-f06a-4bb5-9091-98a592a032e2": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-Desktop/c41c6568-f06a-4bb5-9091-98a592a032e2/subagents": {
+        "file_count": 3,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-Desktop-api-docs": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-Desktop-api-docs/9d45f5ca-113e-4c92-9fc8-e7be22937047": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-Desktop-api-docs/9d45f5ca-113e-4c92-9fc8-e7be22937047/subagents": {
+        "file_count": 3,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-Desktop-api-docs/cf2bc37d-b412-46c6-917b-333d26c2ff92": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-Desktop-api-docs/cf2bc37d-b412-46c6-917b-333d26c2ff92/subagents": {
+        "file_count": 3,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp": {
+        "file_count": 13,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/530ad880-f7bf-4a38-8fcb-678811ce5587": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/530ad880-f7bf-4a38-8fcb-678811ce5587/subagents": {
+        "file_count": 3,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/6512eca6-1c40-4ded-98e0-7fe826184828": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/6512eca6-1c40-4ded-98e0-7fe826184828/subagents": {
+        "file_count": 3,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/memory": {
+        "file_count": 2,
+        "md_count": 2,
+        "fm_count": 1,
+        "frontmatter_coverage": 0.5
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-casebook-mcp": {
+        "file_count": 1,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-casebook-mcp/291bb006-e552-4170-952a-00f7f96a7dbc": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-casebook-mcp/291bb006-e552-4170-952a-00f7f96a7dbc/subagents": {
+        "file_count": 1,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-casebook-mcp/878191fa-04f0-4a06-ae16-c0fe73a25e9e": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-casebook-mcp/878191fa-04f0-4a06-ae16-c0fe73a25e9e/subagents": {
+        "file_count": 1,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-My-Drive--ben-belanger-casebook-net--ben-cp": {
+        "file_count": 4,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-My-Drive--ben-belanger-casebook-net--ben-cp/48a9254d-c818-4583-bcea-28804384a231": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-My-Drive--ben-belanger-casebook-net--ben-cp/48a9254d-c818-4583-bcea-28804384a231/tool-results": {
+        "file_count": 1,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/scheduled-tasks": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/scheduled-tasks/dream": {
+        "file_count": 1,
+        "md_count": 1,
+        "fm_count": 1,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/scheduled-tasks/rem": {
+        "file_count": 1,
+        "md_count": 1,
+        "fm_count": 1,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/session-env": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/session-env/07552dd1-6207-44d6-b57e-e96be6e38d35": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/session-env/48a9254d-c818-4583-bcea-28804384a231": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/session-env/530ad880-f7bf-4a38-8fcb-678811ce5587": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/session-env/6512eca6-1c40-4ded-98e0-7fe826184828": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/session-env/706e16ac-8cfa-46d6-b7a6-898b440e7f9c": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/session-env/94a35ffa-aae0-47c2-b79e-d40417079d5e": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/session-env/b815e46f-1de3-4dd6-8dc5-8e4e59df2faf": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/session-env/c28a6c4d-4179-43d8-a6f0-2342fe1904c2": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/session-env/dbe1d1a1-c007-437d-b01c-8e034d23cf47": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/session-env/f17fc6db-a508-4c91-9f70-5cdffb783e1f": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/sessions": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/shell-snapshots": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/statsig": {
+        "file_count": 4,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/telemetry": {
+        "file_count": 12,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/claude/todos": {
+        "file_count": 156,
+        "md_count": 0,
+        "fm_count": 0,
         "frontmatter_coverage": 1.0
       },
       "intelligence": {
@@ -103,6 +529,12 @@
         "file_count": 5,
         "md_count": 5,
         "fm_count": 5,
+        "frontmatter_coverage": 1.0
+      },
+      "intelligence/product/okrs/q2/reduce-admin-burden": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
         "frontmatter_coverage": 1.0
       },
       "intelligence/product/projects": {
@@ -214,9 +646,9 @@
         "frontmatter_coverage": 1.0
       },
       "intelligence/product/projects/q2/notes-notes-datagrid": {
-        "file_count": 3,
-        "md_count": 3,
-        "fm_count": 3,
+        "file_count": 4,
+        "md_count": 4,
+        "fm_count": 4,
         "frontmatter_coverage": 1.0
       },
       "intelligence/product/projects/q2/notes-notes-datagrid/source": {
@@ -256,9 +688,9 @@
         "frontmatter_coverage": 1.0
       },
       "intelligence/product/projects/q2/services-service-plan-datagrid-with-bulk-actions": {
-        "file_count": 2,
-        "md_count": 2,
-        "fm_count": 2,
+        "file_count": 3,
+        "md_count": 3,
+        "fm_count": 3,
         "frontmatter_coverage": 1.0
       },
       "intelligence/product/projects/q2/services-service-plan-datagrid-with-bulk-actions/source": {
@@ -393,6 +825,12 @@
         "fm_count": 1,
         "frontmatter_coverage": 1.0
       },
+      "skills/tasks/scripts": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
       "skills/transcripts": {
         "file_count": 1,
         "md_count": 1,
@@ -419,15 +857,1316 @@
       }
     },
     "files": {
+      "governance/agents/antigravity/annotations/06af0192-2a44-43db-a983-f6b1f6857b34.pbtxt": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/annotations/290d8d90-1e8c-45ec-bad6-b9a0ce87d2a3.pbtxt": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/annotations/3a0cf48c-e926-49cf-bdb9-b99e203ae7d6.pbtxt": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/annotations/3b098758-da61-4c51-aafb-a2358c0fca0e.pbtxt": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/annotations/46791d79-f1ef-4064-8e90-1a5857130757.pbtxt": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/annotations/5c1205db-f05d-4d0b-9583-91f05c77d630.pbtxt": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/annotations/633fabd7-51f3-48d7-8c9a-4719538feb7b.pbtxt": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/annotations/6654ef2a-ff53-4eb6-b97c-5dd3147444dc.pbtxt": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/annotations/69203d8d-0d68-4fb1-8969-7dfb23e85281.pbtxt": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/annotations/71294d36-3000-4efd-89a3-65303f80be29.pbtxt": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/annotations/96ca96fc-afe6-44b0-aa62-4335a3d98144.pbtxt": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/annotations/af0c3cda-2f86-4b31-bf65-01dd2d056747.pbtxt": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/annotations/c64e8fbb-c9ce-4f7c-847b-6dee449a8c15.pbtxt": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/annotations/dc26dd74-1902-4a2c-91d2-0ce57d7b5722.pbtxt": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/annotations/f79a193b-53f4-4311-9d67-fff2f4677aa3.pbtxt": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/brain/tempmediaStorage/media__1775269596070.png": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/00f7157d-b654-48ca-94dc-28f3459f22c3.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/011cd0b1-e415-4c85-92e8-c79b25e35190.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/01ab7203-83f4-47b6-a4d6-54ec6a25ffd7.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/03e93b93-9af3-4b1d-bd6f-0e72eb4d29a1.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/06af0192-2a44-43db-a983-f6b1f6857b34.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/0913c82b-700d-42d6-b1e0-9236821104ca.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/0c1c8713-68be-4002-b6db-0ed2171b9775.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/146c5a42-1921-4940-8abc-1670c0bd9b88.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/14f8bad6-98f1-49e7-9cc2-3af655a6efb9.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/1bb29b29-0caa-415f-b055-683d77542f3f.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/215dd804-0e32-426c-9a24-26c726c8a551.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/290d8d90-1e8c-45ec-bad6-b9a0ce87d2a3.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/297a3fb0-8e5d-4e15-8cd2-023d987e9450.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/2bcc0bdc-0995-4d2a-82bc-524f66ad9d17.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/3a0cf48c-e926-49cf-bdb9-b99e203ae7d6.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/3dfe2cc5-e532-4a2f-81eb-48e9a7611025.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/424aba59-a94b-41c0-880f-f1c87221deb0.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/47849f04-cfb4-4a1a-8da7-1a5e0fe2734d.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/52028d00-c4d6-4242-8785-1560676115ee.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/530eb3f2-6249-4df7-8fb8-f145397318a9.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/57ab8d19-82f0-4b80-a826-f98380314a52.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/59cb1bce-2701-4afe-a4c6-7f8a6ee196f3.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/5c1205db-f05d-4d0b-9583-91f05c77d630.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/5e61f295-24f6-4926-8a0e-d0a516c3abe1.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/5ea7beee-789e-4031-8462-726450920306.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/633fabd7-51f3-48d7-8c9a-4719538feb7b.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/6654ef2a-ff53-4eb6-b97c-5dd3147444dc.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/69203d8d-0d68-4fb1-8969-7dfb23e85281.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/6c22925c-5127-4e91-8cc8-82be5d702a82.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/6cb9e1b6-8819-484a-b6aa-1b653e2de897.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/6e622549-3786-48c5-93b0-0448444facee.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/70d4499a-a072-4275-81f2-06033ea3f663.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/71294d36-3000-4efd-89a3-65303f80be29.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/723bd46e-5ad8-497a-8fcf-9dff821d0ffd.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/76bbfc8e-e4ef-41c2-acec-299bd048ae44.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/76ff73a0-f7f2-4cad-aaa4-860fa32882e4.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/794a0cbb-022d-4f1d-a3b3-7818dc969836.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/821c1184-2dc9-4c47-afd0-9907c013bbad.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/896812be-12b0-4420-8ea5-bd686903eecf.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/91f153fd-910e-4ded-a447-9c86bbd54f07.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/93ac8bd1-f4e2-467d-9a9b-6cdcf4588c73.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/94540bed-444d-46c3-9c7b-969107bba553.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/96ca96fc-afe6-44b0-aa62-4335a3d98144.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/9711a9da-f793-4df1-9fe9-06f059c5b52b.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/98a6d630-3d4f-46f6-97de-cbd07529f80e.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/ab1f1227-9c89-4590-83ee-8c77add517e1.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/abe82408-5ab4-4fdc-8d6a-d7c95d17497d.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/ac470bda-b323-446a-b3f4-61bb8b97d3e2.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/af0c3cda-2f86-4b31-bf65-01dd2d056747.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/b0f389ef-7447-4f61-ba07-440adfdbf6e5.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/b1d9bc87-1666-42a7-8202-09c6d1f333ae.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/b2bcf055-9724-4673-bd2e-58e06492c0db.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/b78cb2b5-cc9a-49eb-a672-e02ccb4b2acb.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/ba9ae48b-3b3c-47a4-b930-e964aa2ba1bc.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/bdacba77-9135-4ef3-981d-a4b19d41d64b.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/c0b1b5f4-99da-47ca-a5ec-962ace985dbd.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/c2a60ba6-c1ef-4628-96c9-10c752062fe1.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/c3a34a32-521a-48df-a3ad-ab40cb06050d.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/c494ff59-d348-4361-8bdd-56b68f24b36b.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/c53aec7c-0290-40a0-935d-e818513b7c04.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/c64e8fbb-c9ce-4f7c-847b-6dee449a8c15.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/c74b5294-9c39-4fe2-968f-fa016c506d07.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/cc8091be-fb19-4f72-a017-77cd9d73af69.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/cdb9d090-5e82-4e6b-846c-0afc8f8586ed.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/ce51facb-a9fa-476b-9f16-ae3294048e69.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/d2f52d1a-b8c0-4c30-9ede-87cabb9f369e.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/d33f4d16-9a2c-4682-b306-ff38fda6e74f.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/dc26dd74-1902-4a2c-91d2-0ce57d7b5722.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/dd8a3c49-3e83-4fb7-b53a-b01de1f51db3.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/e123770c-fcca-4622-b604-b910baefb2be.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/e2707fe9-c8dc-4679-8aba-92c5706d3739.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/e52fa337-dc70-40eb-9958-392a5cc08d31.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/e809f1d5-fac6-41aa-a031-8274c91fec46.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/ea426695-4fa1-4b93-a2f3-3329de3c375d.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/f17201c6-60a2-4030-9be7-9225969fd02a.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/f1f6d0bf-33e0-424a-a16f-e957806903ac.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/f5a5bafe-2062-41ca-8918-9c3df52ada99.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/f5eba6af-c9c2-4128-bcca-42f6db46ba5b.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/f80d1496-cc23-44aa-a96e-0e3bcfd7eb5a.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/faa020a3-6f39-4215-a1b3-20de3def8883.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/fef1d4da-d71d-451a-afb2-7f85e4de1893.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/implicit/631f8604-a290-4e3a-8151-cd021c4cdffd.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/implicit/94095124-616e-43e6-ad3f-55987a5501e7.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/implicit/ab19394c-f13c-48fa-8469-53c617421d98.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/implicit/d8a7f347-d6c8-4774-9191-060806d674d6.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/knowledge/knowledge.lock": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/scratch/codify_projects.py": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/scratch/documentation_triad_templates.md": {
+        "has_frontmatter": false,
+        "type": null,
+        "taxonomy": null
+      },
+      "governance/agents/antigravity/installation_id": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/mcp_config.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/skills.txt": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/debug/latest": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/plugins/blocklist.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/plugins/install-counts-cache.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-Desktop/4db0622c-10c1-41dd-9598-663ae711a560/subagents/agent-a0b721b.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-Desktop/c41c6568-f06a-4bb5-9091-98a592a032e2/subagents/agent-a8c6318.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-Desktop/c41c6568-f06a-4bb5-9091-98a592a032e2/subagents/agent-abb66df.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-Desktop/c41c6568-f06a-4bb5-9091-98a592a032e2/subagents/agent-ac9d3d5.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-Desktop-api-docs/9d45f5ca-113e-4c92-9fc8-e7be22937047/subagents/agent-acf4275.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-Desktop-api-docs/9d45f5ca-113e-4c92-9fc8-e7be22937047/subagents/agent-ad304c9.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-Desktop-api-docs/9d45f5ca-113e-4c92-9fc8-e7be22937047/subagents/agent-af74782.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-Desktop-api-docs/cf2bc37d-b412-46c6-917b-333d26c2ff92/subagents/agent-a3a3ff1.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-Desktop-api-docs/cf2bc37d-b412-46c6-917b-333d26c2ff92/subagents/agent-a3bbb7e.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-Desktop-api-docs/cf2bc37d-b412-46c6-917b-333d26c2ff92/subagents/agent-a9fb72b.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/530ad880-f7bf-4a38-8fcb-678811ce5587/subagents/agent-acompact-15fcf490f6c9c595.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/530ad880-f7bf-4a38-8fcb-678811ce5587/subagents/agent-acompact-4a9fa9c10d8fa813.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/530ad880-f7bf-4a38-8fcb-678811ce5587/subagents/agent-acompact-cab826e44b12d1c6.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/6512eca6-1c40-4ded-98e0-7fe826184828/subagents/agent-a4530495d0b60d5ba.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/6512eca6-1c40-4ded-98e0-7fe826184828/subagents/agent-a4530495d0b60d5ba.meta.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/6512eca6-1c40-4ded-98e0-7fe826184828/subagents/agent-acompact-9bd5b9d6a6d197b0.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/memory/MEMORY.md": {
+        "has_frontmatter": false,
+        "type": null,
+        "taxonomy": null
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/memory/project_separation_policy_audits.md": {
+        "has_frontmatter": true,
+        "type": "project",
+        "taxonomy": null
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/07552dd1-6207-44d6-b57e-e96be6e38d35.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/0af851fa-b1bb-437e-8afa-e11e3f7f46c9.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/1c8e2099-15f6-4d87-b3cf-29951e5dba93.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/530ad880-f7bf-4a38-8fcb-678811ce5587.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/6512eca6-1c40-4ded-98e0-7fe826184828.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/6da4a93a-fe04-4b96-9ed9-c49cbd586d13.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/706e16ac-8cfa-46d6-b7a6-898b440e7f9c.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/9276e7e4-65d5-4a05-9f57-eb47bb4974ef.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/b815e46f-1de3-4dd6-8dc5-8e4e59df2faf.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/c28a6c4d-4179-43d8-a6f0-2342fe1904c2.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/d285ec60-3836-455d-8326-7dcd03f5726b.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/e84fd967-ad00-4858-964a-07623b10969b.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/fe327a83-33f9-4e9c-ab1b-a04e397e8f83.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-casebook-mcp/291bb006-e552-4170-952a-00f7f96a7dbc/subagents/agent-acae128.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-casebook-mcp/878191fa-04f0-4a06-ae16-c0fe73a25e9e/subagents/agent-abfbba5.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-casebook-mcp/sessions-index.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-My-Drive--ben-belanger-casebook-net--ben-cp/48a9254d-c818-4583-bcea-28804384a231/tool-results/bi2hik1s5.txt": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-My-Drive--ben-belanger-casebook-net--ben-cp/48a9254d-c818-4583-bcea-28804384a231.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-My-Drive--ben-belanger-casebook-net--ben-cp/94a35ffa-aae0-47c2-b79e-d40417079d5e.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-My-Drive--ben-belanger-casebook-net--ben-cp/dbe1d1a1-c007-437d-b01c-8e034d23cf47.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/projects/-Users-benbelanger-My-Drive--ben-belanger-casebook-net--ben-cp/f17fc6db-a508-4c91-9f70-5cdffb783e1f.jsonl": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/scheduled-tasks/dream/SKILL.md": {
+        "has_frontmatter": true,
+        "type": null,
+        "taxonomy": null
+      },
+      "governance/agents/claude/scheduled-tasks/rem/SKILL.md": {
+        "has_frontmatter": true,
+        "type": null,
+        "taxonomy": null
+      },
+      "governance/agents/claude/statsig/statsig.cached.evaluations.5b44dfbd95": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/statsig/statsig.last_modified_time.evaluations": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/statsig/statsig.session_id.2656274335": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/statsig/statsig.stable_id.2656274335": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/telemetry/1p_failed_events.033da4d5-bea0-4b04-8671-e5de1df611e0.fda32950-a0ef-4f42-a010-ab11d39a5bc2.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/telemetry/1p_failed_events.0bd67088-18f5-4e91-9165-36c5f0fb3bea.a08c2e7c-6708-4609-8b62-a3a85a1e3eb2.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/telemetry/1p_failed_events.3e70278b-f19b-4e19-8ede-047382d14cd1.18ae1065-4232-4a2b-9f89-47965277e79d.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/telemetry/1p_failed_events.5f1a7feb-e57c-42e9-a3af-6502faa28ed9.6d3ad8ee-67a0-4ff6-9529-8670cae0c2b1.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/telemetry/1p_failed_events.878191fa-04f0-4a06-ae16-c0fe73a25e9e.32fc7a97-d070-4813-829d-fd6108f93ac3.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/telemetry/1p_failed_events.878191fa-04f0-4a06-ae16-c0fe73a25e9e.8ef9a378-6c73-4b69-8cfe-afbaed0031ae.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/telemetry/1p_failed_events.878191fa-04f0-4a06-ae16-c0fe73a25e9e.baf88bb1-56e0-40af-bf57-9bed06307581.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/telemetry/1p_failed_events.8c4dfb72-7c4d-4673-9c0f-116e4a03ee94.5c6bf85a-0d1c-4286-9c33-ce43ff23ef70.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/telemetry/1p_failed_events.94a8fae1-4cc9-4af1-9a23-684175f938c8.c6bae4d4-5a32-46fd-a9c4-8b13db3cb178.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/telemetry/1p_failed_events.a6e49f30-134d-4c29-acfe-0971674a7594.5862a532-4e64-44e8-8b21-70e4361f0737.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/telemetry/1p_failed_events.ccc5ca61-785b-41d0-be29-98bb21c5e45a.39eda6bf-ab64-42ce-aa74-7e9e5bfc52ba.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/telemetry/1p_failed_events.fe327a83-33f9-4e9c-ab1b-a04e397e8f83.3f161caa-024c-4fa5-b58c-a627d6707d36.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/0156f949-34e7-4467-8af3-fd5b0b375356-agent-0156f949-34e7-4467-8af3-fd5b0b375356.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/01b47d08-75ea-40e6-9313-a0559eb2d9bf-agent-01b47d08-75ea-40e6-9313-a0559eb2d9bf.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/033da4d5-bea0-4b04-8671-e5de1df611e0-agent-033da4d5-bea0-4b04-8671-e5de1df611e0.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/04483f08-241c-4fa9-9ccf-a0ed4e17beea-agent-04483f08-241c-4fa9-9ccf-a0ed4e17beea.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/07f9bb72-bbdd-4c87-8d74-2d581088cf5e-agent-07f9bb72-bbdd-4c87-8d74-2d581088cf5e.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/0814abc8-484b-46d8-a249-11b3395002f1-agent-0814abc8-484b-46d8-a249-11b3395002f1.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/08465055-686b-4f12-b5b6-1cbb1ae27b3f-agent-08465055-686b-4f12-b5b6-1cbb1ae27b3f.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/09fa8d5f-74a8-4710-ab72-abc41c358c0e-agent-09fa8d5f-74a8-4710-ab72-abc41c358c0e.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/0e755519-0a4d-4475-a152-96d2064ee1b1-agent-0e755519-0a4d-4475-a152-96d2064ee1b1.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/0f7d63c4-f60f-4188-b7f6-71560672961e-agent-0f7d63c4-f60f-4188-b7f6-71560672961e.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/10b79331-102b-4a1d-a94c-7cd1f2ae8a5e-agent-10b79331-102b-4a1d-a94c-7cd1f2ae8a5e.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/1152b254-edc9-4623-9c80-8e2c8082ce89-agent-1152b254-edc9-4623-9c80-8e2c8082ce89.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/1249dd62-09f6-4add-884a-7c981aa9b8b9-agent-1249dd62-09f6-4add-884a-7c981aa9b8b9.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/141047a7-7e9c-47dd-b9a5-88de663edc63-agent-141047a7-7e9c-47dd-b9a5-88de663edc63.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/169a6df7-8795-476e-9b7f-db0c990991e3-agent-169a6df7-8795-476e-9b7f-db0c990991e3.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/16e829c7-1437-4312-826f-f2e28ff50b6d-agent-16e829c7-1437-4312-826f-f2e28ff50b6d.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/190bd75e-64ac-449e-8298-69d610d22bc2-agent-190bd75e-64ac-449e-8298-69d610d22bc2.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/19f1c4a9-9906-47c0-b7f5-28b4e07a6ce0-agent-19f1c4a9-9906-47c0-b7f5-28b4e07a6ce0.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/1a9c7a12-c90a-4866-824e-1b384074422d-agent-1a9c7a12-c90a-4866-824e-1b384074422d.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/1bee46a2-4b6e-41df-85c9-179ea679d7f9-agent-1bee46a2-4b6e-41df-85c9-179ea679d7f9.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/1f54c08d-6a86-4223-9522-a77cdec4a201-agent-1f54c08d-6a86-4223-9522-a77cdec4a201.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/202e4893-b74f-49ba-aedc-42dc8effd5b7-agent-202e4893-b74f-49ba-aedc-42dc8effd5b7.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/21d012f5-6863-4a89-aea9-4df52fe3df9e-agent-21d012f5-6863-4a89-aea9-4df52fe3df9e.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/226d6084-b782-4be1-a110-2ace9218da6b-agent-226d6084-b782-4be1-a110-2ace9218da6b.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/24904d49-fa3c-49eb-81db-41e338cbbc2e-agent-24904d49-fa3c-49eb-81db-41e338cbbc2e.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/26c051b6-30d0-4a16-97e1-4e7b771d9bdd-agent-26c051b6-30d0-4a16-97e1-4e7b771d9bdd.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/26e9be2b-3838-4de3-8ed7-112018aeb507-agent-26e9be2b-3838-4de3-8ed7-112018aeb507.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/291bb006-e552-4170-952a-00f7f96a7dbc-agent-291bb006-e552-4170-952a-00f7f96a7dbc.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/2b9c9fc1-e35f-4297-bd9b-5b2b0347a6bd-agent-2b9c9fc1-e35f-4297-bd9b-5b2b0347a6bd.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/2df83faf-f1d3-4001-b27f-c70080eb136d-agent-2df83faf-f1d3-4001-b27f-c70080eb136d.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/309c381c-7648-4fef-80aa-bc1e7f5ab00f-agent-309c381c-7648-4fef-80aa-bc1e7f5ab00f.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/3337bd73-eb2e-439a-ad7a-a2dd232e5353-agent-3337bd73-eb2e-439a-ad7a-a2dd232e5353.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/333846ad-d6f8-419f-8b8a-b34ddc117388-agent-333846ad-d6f8-419f-8b8a-b34ddc117388.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/35c5f24f-ce8f-4849-ae43-77ff3be3d9ab-agent-35c5f24f-ce8f-4849-ae43-77ff3be3d9ab.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/36d687e4-ca12-4423-860c-f6a0f0c0f523-agent-36d687e4-ca12-4423-860c-f6a0f0c0f523.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/39108750-ffc1-46b4-bc85-4a97c60ac91e-agent-39108750-ffc1-46b4-bc85-4a97c60ac91e.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/398036a6-f591-4099-bf6c-663b087df221-agent-398036a6-f591-4099-bf6c-663b087df221.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/3bbe8a72-9636-4ce6-aee7-3df99a05259c-agent-3bbe8a72-9636-4ce6-aee7-3df99a05259c.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/3c01e9bb-4437-477c-a489-1e32bd2672fb-agent-3c01e9bb-4437-477c-a489-1e32bd2672fb.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/3e70278b-f19b-4e19-8ede-047382d14cd1-agent-3e70278b-f19b-4e19-8ede-047382d14cd1.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/3eecf430-2f37-4d79-9b6c-22fab4eae2b0-agent-3eecf430-2f37-4d79-9b6c-22fab4eae2b0.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/40e9148c-0b27-4160-a063-6860039a61b4-agent-40e9148c-0b27-4160-a063-6860039a61b4.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/411b4e9d-312b-43eb-bd42-7c02181b9296-agent-411b4e9d-312b-43eb-bd42-7c02181b9296.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/46ef92bb-ebcd-404a-94e2-8fb656b89e31-agent-46ef92bb-ebcd-404a-94e2-8fb656b89e31.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/484d77c7-6586-455e-bd82-9213c7e12900-agent-484d77c7-6586-455e-bd82-9213c7e12900.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/4a5cbc99-fb6a-4dbc-afaf-0a4f74404956-agent-4a5cbc99-fb6a-4dbc-afaf-0a4f74404956.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/4a86ffaf-3871-4f10-9df2-11268cb75eac-agent-4a86ffaf-3871-4f10-9df2-11268cb75eac.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/4b323981-9a8c-4870-96fe-10876fd7dd5b-agent-4b323981-9a8c-4870-96fe-10876fd7dd5b.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/4cc1db6c-d98b-406e-9517-598ceba84e05-agent-4cc1db6c-d98b-406e-9517-598ceba84e05.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/4db0622c-10c1-41dd-9598-663ae711a560-agent-4db0622c-10c1-41dd-9598-663ae711a560.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/4df7bf83-388b-4ac6-bdd4-86ee27cd6759-agent-4df7bf83-388b-4ac6-bdd4-86ee27cd6759.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/4e6bbd3f-b6bb-4083-baea-5ecff12fc85d-agent-4e6bbd3f-b6bb-4083-baea-5ecff12fc85d.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/4ef8e04e-1aa7-4414-b101-8512411956f3-agent-4ef8e04e-1aa7-4414-b101-8512411956f3.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/5103b782-b933-420d-b1ca-c189ad91dea8-agent-5103b782-b933-420d-b1ca-c189ad91dea8.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/5192b50d-cd3f-4974-9d30-9f42c40fe527-agent-5192b50d-cd3f-4974-9d30-9f42c40fe527.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/51c24536-e245-47f9-a63c-b1c8a99231f0-agent-51c24536-e245-47f9-a63c-b1c8a99231f0.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/53422761-a0ab-4d89-ad8b-de6d730354ec-agent-53422761-a0ab-4d89-ad8b-de6d730354ec.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/57751f20-513f-4c8d-9eda-7cac5c792c2b-agent-57751f20-513f-4c8d-9eda-7cac5c792c2b.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/589d5435-3be5-4cc9-86f1-74b437a0f86a-agent-589d5435-3be5-4cc9-86f1-74b437a0f86a.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/5a2054c6-3044-4860-bb3e-cced0feb3803-agent-5a2054c6-3044-4860-bb3e-cced0feb3803.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/5f1a7feb-e57c-42e9-a3af-6502faa28ed9-agent-5f1a7feb-e57c-42e9-a3af-6502faa28ed9.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/5fc8e13d-3d6e-4545-b606-574d55fcb77f-agent-5fc8e13d-3d6e-4545-b606-574d55fcb77f.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/60e684b9-9052-4274-8543-2273fb24626b-agent-60e684b9-9052-4274-8543-2273fb24626b.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/61381059-9f21-466a-8800-fe156e428bf5-agent-61381059-9f21-466a-8800-fe156e428bf5.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/61f0120d-ad86-4dc6-a4bf-8353989a2f5e-agent-61f0120d-ad86-4dc6-a4bf-8353989a2f5e.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/64ccf176-d27e-46c2-ab58-11b9147eb697-agent-64ccf176-d27e-46c2-ab58-11b9147eb697.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/66b7113d-5233-4def-8088-c84c5ab128f0-agent-66b7113d-5233-4def-8088-c84c5ab128f0.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/67149831-e5bf-4698-9fa4-d5fb6a516857-agent-67149831-e5bf-4698-9fa4-d5fb6a516857.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/69e50f22-f5ff-4b13-9b9d-d3c3fac34d3e-agent-69e50f22-f5ff-4b13-9b9d-d3c3fac34d3e.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/6c865946-60de-4aac-9ad3-649381846d63-agent-6c865946-60de-4aac-9ad3-649381846d63.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/6d91185e-a779-485d-8ebd-d3a10156ce2a-agent-6d91185e-a779-485d-8ebd-d3a10156ce2a.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/6ecf3acb-3906-440b-b09e-73ca47479280-agent-6ecf3acb-3906-440b-b09e-73ca47479280.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/6f51bfc4-b14a-4f01-a192-b3cb0d5756a2-agent-6f51bfc4-b14a-4f01-a192-b3cb0d5756a2.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/72fa8d61-d4f0-4907-a22f-f78205cf5df7-agent-72fa8d61-d4f0-4907-a22f-f78205cf5df7.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/787efe56-edcd-498f-9e65-29d654434567-agent-787efe56-edcd-498f-9e65-29d654434567.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/792ca9f9-f883-4d94-a3dd-18f904272438-agent-792ca9f9-f883-4d94-a3dd-18f904272438.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/79b6c277-7004-4464-b137-dc35e76e15db-agent-79b6c277-7004-4464-b137-dc35e76e15db.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/7d1abf2c-2884-4048-9f31-76717c3e71ce-agent-7d1abf2c-2884-4048-9f31-76717c3e71ce.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/8133f24a-bff5-463f-95ab-98db3e2c790f-agent-8133f24a-bff5-463f-95ab-98db3e2c790f.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/815dda86-74ef-44bb-9ae3-4e5cbaeaae7b-agent-815dda86-74ef-44bb-9ae3-4e5cbaeaae7b.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/81828f95-ca80-4402-adc4-2b1b873e7411-agent-81828f95-ca80-4402-adc4-2b1b873e7411.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/81aa4755-629a-4870-be6c-8ceb84c1e0c7-agent-81aa4755-629a-4870-be6c-8ceb84c1e0c7.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/8315682a-94e9-4ef9-b3a7-765855bebf2b-agent-8315682a-94e9-4ef9-b3a7-765855bebf2b.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/8482c1b4-baef-4260-af85-f17cd0707af3-agent-8482c1b4-baef-4260-af85-f17cd0707af3.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/85cc9184-2108-43a0-8022-52cb92b5d92d-agent-85cc9184-2108-43a0-8022-52cb92b5d92d.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/878191fa-04f0-4a06-ae16-c0fe73a25e9e-agent-878191fa-04f0-4a06-ae16-c0fe73a25e9e.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/892f8185-b4b3-4ce7-a6f8-7194cc7109ca-agent-892f8185-b4b3-4ce7-a6f8-7194cc7109ca.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/8a6f2d87-780d-41d8-9049-a9cef2c236f4-agent-8a6f2d87-780d-41d8-9049-a9cef2c236f4.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/8ae793c3-25ae-455c-9585-9ec3fb8ba66a-agent-8ae793c3-25ae-455c-9585-9ec3fb8ba66a.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/8b034a03-20ce-47c6-993c-d6e61a147e6f-agent-8b034a03-20ce-47c6-993c-d6e61a147e6f.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/8b4fdca0-58f3-42cd-9f69-8d470a1b9de0-agent-8b4fdca0-58f3-42cd-9f69-8d470a1b9de0.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/8c4dfb72-7c4d-4673-9c0f-116e4a03ee94-agent-8c4dfb72-7c4d-4673-9c0f-116e4a03ee94.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/8ddaef5b-4628-4985-a6ec-76b624355604-agent-8ddaef5b-4628-4985-a6ec-76b624355604.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/8f641e83-74b3-4373-9813-82cd77f634f4-agent-8f641e83-74b3-4373-9813-82cd77f634f4.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/9152a19d-3e68-435f-8e52-656f8aa87189-agent-9152a19d-3e68-435f-8e52-656f8aa87189.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/91f3678e-3c6c-4b48-b420-7b768033f3c6-agent-91f3678e-3c6c-4b48-b420-7b768033f3c6.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/9215c191-7817-4b19-8c64-21176c7372fb-agent-9215c191-7817-4b19-8c64-21176c7372fb.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/9361561e-724a-4179-9ed3-ddb8a424f52d-agent-9361561e-724a-4179-9ed3-ddb8a424f52d.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/94a8fae1-4cc9-4af1-9a23-684175f938c8-agent-94a8fae1-4cc9-4af1-9a23-684175f938c8.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/9919b843-79f9-4454-a817-e79afb6ed8a2-agent-9919b843-79f9-4454-a817-e79afb6ed8a2.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/9aee6394-709e-48fe-bbfe-54920bc2c756-agent-9aee6394-709e-48fe-bbfe-54920bc2c756.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/9b082fc8-a5bb-4f36-8d4d-549cc05c1e4e-agent-9b082fc8-a5bb-4f36-8d4d-549cc05c1e4e.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/9d016402-726c-422f-bc06-444d443689a3-agent-9d016402-726c-422f-bc06-444d443689a3.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/9d45f5ca-113e-4c92-9fc8-e7be22937047-agent-9d45f5ca-113e-4c92-9fc8-e7be22937047.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/a0f28ad9-9298-4274-8832-20ca0696e30a-agent-a0f28ad9-9298-4274-8832-20ca0696e30a.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/a5dfb265-452d-42c2-ab69-cae7fe9a1d54-agent-a5dfb265-452d-42c2-ab69-cae7fe9a1d54.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/a6ce0b5c-1819-443e-9a1c-62b51b84cc33-agent-a6ce0b5c-1819-443e-9a1c-62b51b84cc33.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/a6e49f30-134d-4c29-acfe-0971674a7594-agent-a6e49f30-134d-4c29-acfe-0971674a7594.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/a7c1ff37-d6e3-4878-ba5e-994f72e0f8f1-agent-a7c1ff37-d6e3-4878-ba5e-994f72e0f8f1.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/abda406e-78e6-41d8-bbe8-12f8dcd09121-agent-abda406e-78e6-41d8-bbe8-12f8dcd09121.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/b26c7425-97ea-4783-8045-f90c88234d52-agent-b26c7425-97ea-4783-8045-f90c88234d52.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/b295229b-d856-4f70-bed1-844b5beb21b1-agent-b295229b-d856-4f70-bed1-844b5beb21b1.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/b2cb199f-caf6-4c5d-bfe3-97a2a66141cd-agent-b2cb199f-caf6-4c5d-bfe3-97a2a66141cd.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/b53ec106-0a72-4716-a7e0-49daed34606c-agent-b53ec106-0a72-4716-a7e0-49daed34606c.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/b6c4d379-596a-4a69-8a72-36056ae022b4-agent-b6c4d379-596a-4a69-8a72-36056ae022b4.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/b83e3208-b746-44c0-b986-2e93b6eb41b9-agent-b83e3208-b746-44c0-b986-2e93b6eb41b9.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/b8a73ba9-6d6b-4619-b3b0-9b4b975d01ca-agent-b8a73ba9-6d6b-4619-b3b0-9b4b975d01ca.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/b9079eed-0f18-48b7-8845-6cd671fd5b08-agent-b9079eed-0f18-48b7-8845-6cd671fd5b08.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/b9c76166-3788-4c33-bd53-bc94167d687b-agent-b9c76166-3788-4c33-bd53-bc94167d687b.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/bc9f95a6-5112-4525-aedf-a44c6bbc8026-agent-bc9f95a6-5112-4525-aedf-a44c6bbc8026.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/bd4e7cbc-d1f8-4291-8295-65d4f1588ca6-agent-bd4e7cbc-d1f8-4291-8295-65d4f1588ca6.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/bd8dfe87-2d19-4466-b254-17b4e10dd1e7-agent-bd8dfe87-2d19-4466-b254-17b4e10dd1e7.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/bdb6b5a4-f0f1-4524-a296-1bc85b64753a-agent-bdb6b5a4-f0f1-4524-a296-1bc85b64753a.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/c41c6568-f06a-4bb5-9091-98a592a032e2-agent-c41c6568-f06a-4bb5-9091-98a592a032e2.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/c43667cb-fe65-49c6-a92b-de8b53eab9cc-agent-c43667cb-fe65-49c6-a92b-de8b53eab9cc.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/c4b7c5b1-328f-40cf-8611-14b2cf85e203-agent-c4b7c5b1-328f-40cf-8611-14b2cf85e203.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/c5bc3efe-fd86-4a06-86fd-d83d875e759f-agent-c5bc3efe-fd86-4a06-86fd-d83d875e759f.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/c5dc1d37-9312-486a-bd91-395aeaca9b9d-agent-c5dc1d37-9312-486a-bd91-395aeaca9b9d.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/c5dc2859-92a7-4a29-b823-d3586c4a9813-agent-c5dc2859-92a7-4a29-b823-d3586c4a9813.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/c9452c96-834a-426b-b252-c995a966fc01-agent-c9452c96-834a-426b-b252-c995a966fc01.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/ccc5ca61-785b-41d0-be29-98bb21c5e45a-agent-ccc5ca61-785b-41d0-be29-98bb21c5e45a.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/cf1754b1-6b7e-46de-ab69-2986e37a3ba5-agent-cf1754b1-6b7e-46de-ab69-2986e37a3ba5.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/cf2bc37d-b412-46c6-917b-333d26c2ff92-agent-cf2bc37d-b412-46c6-917b-333d26c2ff92.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/cf87adea-a9af-4ba0-b9f1-d16f8259279d-agent-cf87adea-a9af-4ba0-b9f1-d16f8259279d.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/d45acc58-35d0-488a-b5d4-dcda824f1097-agent-d45acc58-35d0-488a-b5d4-dcda824f1097.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/d5b25ed5-50d0-4d16-9d1e-a701e79f2df2-agent-d5b25ed5-50d0-4d16-9d1e-a701e79f2df2.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/d5b8c551-df23-436d-a7c3-375847682f21-agent-d5b8c551-df23-436d-a7c3-375847682f21.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/d6694708-8e12-4612-b8b9-a65413fcf0e2-agent-d6694708-8e12-4612-b8b9-a65413fcf0e2.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/d6876617-d129-47dc-aa08-d9ec4fe50cb1-agent-d6876617-d129-47dc-aa08-d9ec4fe50cb1.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/d6898ca6-8005-45c6-9fd6-825bfe4b670a-agent-d6898ca6-8005-45c6-9fd6-825bfe4b670a.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/d867e56f-d599-460b-8439-c7cf8144182d-agent-d867e56f-d599-460b-8439-c7cf8144182d.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/dce9e11b-583d-480a-bc03-b2f8107fc9a6-agent-dce9e11b-583d-480a-bc03-b2f8107fc9a6.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/dd2dcc68-aa7e-4179-865c-791e90831653-agent-dd2dcc68-aa7e-4179-865c-791e90831653.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/de91eb17-667b-4238-961b-43a2c73f061b-agent-de91eb17-667b-4238-961b-43a2c73f061b.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/e0e053f0-29ed-4892-9a59-75f858e1e1aa-agent-e0e053f0-29ed-4892-9a59-75f858e1e1aa.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/e7d84533-42ea-4bf6-a450-b6cf2d3c79e9-agent-e7d84533-42ea-4bf6-a450-b6cf2d3c79e9.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/ea855644-6aa3-4971-8eb0-f83a34832178-agent-ea855644-6aa3-4971-8eb0-f83a34832178.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/ec410bcf-3271-4d08-9269-a103ba2045b9-agent-ec410bcf-3271-4d08-9269-a103ba2045b9.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/f20b2eab-1059-4c28-87b0-fd16296865d4-agent-f20b2eab-1059-4c28-87b0-fd16296865d4.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/f242e3b3-5853-4856-a595-37a5fbd7099b-agent-f242e3b3-5853-4856-a595-37a5fbd7099b.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/f2b60c9a-d56c-456d-93b9-569de54b55bf-agent-f2b60c9a-d56c-456d-93b9-569de54b55bf.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/f3902835-0daa-4915-987c-9a72744d74e6-agent-f3902835-0daa-4915-987c-9a72744d74e6.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/f3de404b-c0e2-4992-95bb-a7fb15845952-agent-f3de404b-c0e2-4992-95bb-a7fb15845952.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/f404909a-fb65-4c3f-86f2-e38a7d98cd90-agent-f404909a-fb65-4c3f-86f2-e38a7d98cd90.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/fc11ac90-11e2-4cf9-bb8d-68a58f992d3d-agent-fc11ac90-11e2-4cf9-bb8d-68a58f992d3d.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/todos/fcc89965-7f76-473f-9106-961eb4dfaaa0-agent-fcc89965-7f76-473f-9106-961eb4dfaaa0.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/mcp-needs-auth-cache.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/settings.local.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/claude/stats-cache.json": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
       "governance/agents/anthropic": {
-        "has_frontmatter": false,
-        "type": "file"
-      },
-      "governance/agents/antigravity": {
-        "has_frontmatter": false,
-        "type": "file"
-      },
-      "governance/agents/claude": {
         "has_frontmatter": false,
         "type": "file"
       },
@@ -740,6 +2479,11 @@
         "has_frontmatter": false,
         "type": "file"
       },
+      "intelligence/product/projects/q2/notes-notes-datagrid/demo.md": {
+        "has_frontmatter": true,
+        "type": "demo",
+        "taxonomy": "Notes"
+      },
       "intelligence/product/projects/q2/notes-notes-datagrid/launch_plan.md": {
         "has_frontmatter": true,
         "type": "launch_plan",
@@ -795,6 +2539,11 @@
       "intelligence/product/projects/q2/services-service-plan-datagrid-with-bulk-actions/source/launch_plan.txt": {
         "has_frontmatter": false,
         "type": "file"
+      },
+      "intelligence/product/projects/q2/services-service-plan-datagrid-with-bulk-actions/demo.md": {
+        "has_frontmatter": true,
+        "type": "demo",
+        "taxonomy": "Cases - Service Plan"
       },
       "intelligence/product/projects/q2/services-service-plan-datagrid-with-bulk-actions/launch_plan.md": {
         "has_frontmatter": true,
@@ -1175,7 +2924,10 @@
         "type": "file"
       }
     },
-    "frontmatter_missing": [],
+    "frontmatter_missing": [
+      "governance/agents/antigravity/scratch/documentation_triad_templates.md",
+      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/memory/MEMORY.md"
+    ],
     "unknown_taxonomy_terms": [
       {
         "file": "intelligence/product/projects/q2/accessibility-2026-vpat-accessibility-audit-(1213564552809143).md",

@@ -1,20 +1,20 @@
 # Dream Report — 2026-04-29
 
-**Run:** 15:47 · **Sensors:** 12/12 OK · **Duration:** 1.3s
+**Run:** 11:53 · **Sensors:** 12/12 OK · **Duration:** 53.5s
 
 ## Sensor Summary
 
 | Sensor | Status | Detail |
 |--------|--------|--------|
-| reindex | 🟡 | 68 directories, 165 files scanned, 2 unknown taxonomy terms |
+| reindex | 🟡 | 141 directories, 491 files scanned, 2 frontmatter missing, 2 unknown taxonomy terms |
 | pulse | 🟢 | clean |
-| links | 🟡 | 95 files scanned, 10 ghost links |
-| frontmatter | 🔴 | 95 files scanned, 40 issues found |
+| links | 🟡 | 102 files scanned, 10 ghost links |
+| frontmatter | 🔴 | 102 files scanned, 53 issues found |
 | drift | 🟢 | clean |
-| handoffs | 🔴 | 12 files audited, 72 issues found |
+| handoffs | 🔴 | 15 files audited, 90 issues found |
 | index | 🟢 | clean |
-| agents | 🟡 | 97 files scanned, 2 issues found |
-| bloat | 🟡 | 249 total files, 2 yellow flags, 523 files touched 24h |
+| agents | 🟡 | 99 files scanned, 2 issues found |
+| bloat | 🟡 | 254 total files, 2 yellow flags, 528 files touched 24h |
 | changelog | 🟢 | clean |
 | intelligence | 🟢 | clean |
 | scripts | 🟢 | 5 skills checked |
@@ -22,7 +22,7 @@
 ## Highlights
 
 - **10 ghost links** — broken internal references
-- **72 handoff issues** — missing sections or stale READY files
+- **90 handoff issues** — missing sections or stale READY files
 - 2 files over 250KB (watch list)
 
 ## Ghost Links (sample)
@@ -40,16 +40,16 @@
 
 ## Pipeline Reports
 
-### ⚠️ Asana Data Fetch
+### ✅ Asana Data Fetch
 
 ? projects fetched — stage breakdown in index.md
 
-### ⚠️ My Tasks
+### ✅ My Tasks
 
 [Full report](../tasks/report.md)
 
-_Last synced: 2026-04-28 17:52 · 63 Asana tasks · 50 Jira issues_
-**11 overdue tasks** — see full report for details.
+_Last synced: 2026-04-29 11:53 · 63 Asana tasks · 46 Jira issues_
+**13 overdue tasks** — see full report for details.
 
 ### ⚠️ Release Readiness
 
@@ -57,7 +57,7 @@ _Last synced: 2026-04-28 17:52 · 63 Asana tasks · 50 Jira issues_
 
 Release `Platform-2026-4-2` — 1 repos to bump, 0 leaks
 
-### ⚠️ Platform Status
+### ✅ Platform Status
 
 [Full report](../status/report.md)
 

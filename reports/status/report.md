@@ -1,7 +1,7 @@
-# Platform Weekly Status — April 28, 2026
+# Platform Weekly Status — April 29, 2026
 
 ## 📋 Summary
-1. [Notes - Notes datagrid](#CBP-2736) [stage:GA]||👀 1 P1, 6 P2, 4 P3, 1 P4 left
+1. [Notes - Notes datagrid](#CBP-2736) [stage:GA]||👀 1 P1, 4 P2, 4 P3, 1 P4 left
 2. [Web applications - Material UI upgrade (all components)](#CBP-2917) [stage:GA]||1 P2 left
 3. [Enrollment dialog - Bulk Services section](#CBP-2992) [stage:Beta]||2 P2 left
 4. [Notes - Bulk "General Notes"](#CBP-2752) [stage:Beta]||1 P3 left
@@ -29,31 +29,29 @@ PRD: https://casecommons.atlassian.net/wiki/spaces/PROD/pages/3812753669
 [jira:CBP-2736]
 
 **Status** (Grain: Stories)
-`▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░▒░░▒▒▓▓▒▓▒▒░▒ 22 done · 7 in progress · 5 to do`
+`▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░▒░░▓▒▓▓▒▓▒▒░▓ 24 done · 5 in progress · 5 to do`
 
 **Readiness** (Grain: Stories)
-`Readiness: ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓!!!!!------- (5 Lagging · 7 Unmapped · 22 Done)`
+`Readiness: ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓!!!------- (3 Lagging · 7 Unmapped · 24 Done)`
 
 **Estimate** (Grain: Days)
-`35.1d estimated · 18.2d actual · 4.0d remaining (63%)`
+`35.1d estimated · 18.2d actual · 3.0d remaining (60%)`
 
-> **🛑 Off Track / ⚠️ At Risk Escalation**: 41% of open issues are Lagging or Stalled.
+> **🛑 Off Track / ⚠️ At Risk Escalation**: 30% of open issues are Lagging or Stalled.
 
 **Readiness Details**
 | 🎯 Aligned | ⚠️ Stalled | 🛑 Lagging | 👀 Unmapped |
 |---|---|---|---|
-| 0 | 0 | 5 | 7 |
+| 0 | 0 | 3 | 7 |
 
 
-**Done:** 22 issues
-~~31.1d estimated · 18.2d actual
+**Done:** 24 issues
+~~32.1d estimated · 18.2d actual
 
-**In Progress:** 7 issues · ~4.0d est remaining
+**In Progress:** 5 issues · ~3.0d est remaining
 - 🛑 [CBP-3183](https://casecommons.atlassian.net/browse/CBP-3183) — Notes - Lagging Case Details page when page size = 50||Russell · Product approved · 👀 Unestimated · 👀 No actual · P1 · Release: 2026-4-2
-- 🛑 [CBP-3105](https://casecommons.atlassian.net/browse/CBP-3105) — Notes - Migrate Start/End dates from service interactions to service notes||Tuan · Product approved · 1.0d estimated · 👀 No actual · P2 · Release: 2026-4-2
 - 👀 [CBP-3107](https://casecommons.atlassian.net/browse/CBP-3107) — Notes - Rename date fields for Services section||Bisoye · Merged to QA · 👀 Unestimated · 👀 No actual · P2 · 👀 No release
 - 🛑 [CBP-3150](https://casecommons.atlassian.net/browse/CBP-3150) — Notes - Synchronize note_people and service_interaction_people attributes||Tuan · Merged to QA · 2.0d estimated · 👀 No actual · P2 · Release: 2026-5-1
-- 🛑 [CBP-3254](https://casecommons.atlassian.net/browse/CBP-3254) — FE - write the note start/end date on the old service note module||Tuan · Product approved · 👀 Unestimated · 👀 No actual · P2 · Release: 2026-4-2
 - 👀 [CBP-3186](https://casecommons.atlassian.net/browse/CBP-3186) — Notes - Clean up "Locked Note" FE handling||Bisoye · In QA · 👀 Unestimated · 👀 No actual · P3 · 👀 No release
 - 🛑 [CBP-3059](https://casecommons.atlassian.net/browse/CBP-3059) — Notes datagrid - Display Services data in Note preview as structured list||Blessing · Merged to QA · 1.0d estimated · 👀 No actual · P4 · Release: 2026-5-1
 
@@ -174,8 +172,8 @@ PRD: https://casecommons.atlassian.net/wiki/x/TYD0BwE
 **Launch Plan**
 * ✅ QA Start - Apr 6
 * ✅ UAT Start - Apr 16
-* 🎯 Beta Start - Apr 28
-* 🎯 GA - May 14
+* ❌ Beta Start - Apr 28
+* ⚠️ GA - May 14
 [jira:CBP-2923]
 
 **Status** (Grain: Stories)
@@ -195,7 +193,7 @@ PRD: https://casecommons.atlassian.net/wiki/x/TYD0BwE
 
 **In Progress:** 3 issues · ~2.4d est remaining
 - [CBP-2756](https://casecommons.atlassian.net/browse/CBP-2756) — Notes - Show "Access" section for all note types||Russell · Product approved · 4.0d estimated · 3.6d actual · P2 · Release: 2026-4-2
-- [CBP-2990](https://casecommons.atlassian.net/browse/CBP-2990) — Notes - Search and populate the "Access" section||Russell · In development · 👀 Unestimated · 👀 No actual · P2 · Release: 2026-4-2
+- [CBP-2990](https://casecommons.atlassian.net/browse/CBP-2990) — Notes - Search and populate the "Access" section||Russell · Merged to QA · 👀 Unestimated · 👀 No actual · P2 · Release: 2026-4-2
 - [CBP-3125](https://casecommons.atlassian.net/browse/CBP-3125) — FE - Issues found on the Note v2 access(locking note)||Russell · Merged to QA · 2.0d estimated · 👀 No actual · P2 · Release: 2026-4-2
 
 #### Development
@@ -248,7 +246,7 @@ PRD: https://casecommons.atlassian.net/wiki/x/TYD0BwE
 [jira:CBP-3121]
 
 **Status** (Grain: Stories)
-`▒░░░░ 0 done · 1 in progress · 4 to do`
+`▒▒▒░░ 0 done · 3 in progress · 2 to do`
 
 **Readiness** (Grain: Stories)
 `Readiness: ----- (5 Unmapped)`
@@ -261,14 +259,14 @@ PRD: https://casecommons.atlassian.net/wiki/x/TYD0BwE
 |---|---|---|---|
 | 0 | 0 | 0 | 5 |
 
-⚠️ QA Start was 8d ago but 5 stories still open — worth a check?
+⚠️ QA Start was 9d ago but 5 stories still open — worth a check?
 
-**In Progress:** 1 issues
+**In Progress:** 3 issues
 - 👀 [CBP-3151](https://casecommons.atlassian.net/browse/CBP-3151) — Services WLV - Implement bulk actions menu||Blessing · In development · 👀 Unestimated · 👀 No actual · P2 · 👀 No release
+- 👀 [CBP-3152](https://casecommons.atlassian.net/browse/CBP-3152) — Services WLV - "Add service enrollment" bulk action||Blessing · In development · 👀 Unestimated · 👀 No actual · P2 · 👀 No release
+- 👀 [CBP-3153](https://casecommons.atlassian.net/browse/CBP-3153) — Services WLV - "Add service note" bulk action||Blessing · In development · 👀 Unestimated · 👀 No actual · P2 · 👀 No release
 
-**To Do:** 4 issues
-- 👀 [CBP-3152](https://casecommons.atlassian.net/browse/CBP-3152) — Services WLV - "Add service enrollment" bulk action||Blessing · To do · 👀 Unestimated · 👀 No actual · P2 · 👀 No release
-- 👀 [CBP-3153](https://casecommons.atlassian.net/browse/CBP-3153) — Services WLV - "Add service note" bulk action||Blessing · To do · 👀 Unestimated · 👀 No actual · P2 · 👀 No release
+**To Do:** 2 issues
 - 👀 [CBP-3154](https://casecommons.atlassian.net/browse/CBP-3154) — Services WLV - "End all enrollments" bulk action||Blessing · To do · 👀 Unestimated · 👀 No actual · P2 · 👀 No release
 - 👀 [CBP-3155](https://casecommons.atlassian.net/browse/CBP-3155) — Services WLV - "Delete services" bulk action||Blessing · To do · 👀 Unestimated · 👀 No actual · P2 · 👀 No release
 
@@ -298,7 +296,7 @@ PRD: https://casecommons.atlassian.net/wiki/x/TYD0BwE
 |---|---|---|---|
 | 14 | 0 | 0 | 6 |
 
-⚠️ QA Start was 22d ago but 20 stories still open — worth a check?
+⚠️ QA Start was 23d ago but 20 stories still open — worth a check?
 
 **Done:** 1 issues
 
@@ -541,23 +539,23 @@ PRD: https://casecommons.atlassian.net/wiki/x/BQBN2w
 * GA [tw:not set]
 
 ## ⚙️ Data Quality
-**Estimates:** 19/38 in-progress (50%)
-**Actuals:** 6/28 in QA (21%)
+**Estimates:** 18/38 in-progress (47%)
+**Actuals:** 6/29 in QA (20%)
 
 | Engineer | Estimates | Actuals |
 |---|---|---|
 | Bisoye | 4/14 (28%) | 👀 2/12 (16%) |
-| Blessing | 6/11 (54%) | 👀 0/10 (0%) |
-| Russell | 5/7 (71%) | 👏 3/4 (75%) |
-| Tuan | 4/5 (80%) | 1/2 (50%) |
+| Blessing | 6/13 (46%) | 👀 0/10 (0%) |
+| Russell | 5/7 (71%) | 👏 3/5 (60%) |
+| Tuan | 3/3 (100%) | 1/2 (50%) |
 | Uday | 👀 0/1 (0%) | — |
 
-**Unprioritized:** 8 of 38 in-progress issues have no fix version set (21%)
+**Unprioritized:** 10 of 38 in-progress issues have no fix version set (26%)
 
 | Project | Unprioritized |
 |---|---|
 | Notes - Bulk Service Notes | 4/18 (22%) |
-| Notes - Notes datagrid | 2/7 (28%) |
+| Services WLV - Bulk actions | 👀 3/3 (100%) |
+| Notes - Notes datagrid | 2/5 (40%) |
 | Services - Service plan datagrid with bulk actions | 1/9 (11%) |
-| Services WLV - Bulk actions | 👀 1/1 (100%) |
 

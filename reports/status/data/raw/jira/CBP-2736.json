@@ -2673,19 +2673,19 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-27T15:37:48.026-0400",
+      "updated": "2026-04-29T03:23:59.473-0400",
       "status": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/status/10059",
-        "description": "Product approved in QA environment, ready for UAT",
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10051",
+        "description": "QA approved in UAT environment, ready for release",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
-        "name": "Product approved",
-        "id": "10059",
+        "name": "UAT approved",
+        "id": "10051",
         "statusCategory": {
-          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
-          "id": 4,
-          "key": "indeterminate",
-          "colorName": "yellow",
-          "name": "In Progress"
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/3",
+          "id": 3,
+          "key": "done",
+          "colorName": "green",
+          "name": "Done"
         }
       }
     }
@@ -3597,19 +3597,19 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-27T15:38:12.761-0400",
+      "updated": "2026-04-29T03:23:41.605-0400",
       "status": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/status/10059",
-        "description": "Product approved in QA environment, ready for UAT",
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10051",
+        "description": "QA approved in UAT environment, ready for release",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
-        "name": "Product approved",
-        "id": "10059",
+        "name": "UAT approved",
+        "id": "10051",
         "statusCategory": {
-          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
-          "id": 4,
-          "key": "indeterminate",
-          "colorName": "yellow",
-          "name": "In Progress"
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/3",
+          "id": 3,
+          "key": "done",
+          "colorName": "green",
+          "name": "Done"
         }
       }
     }

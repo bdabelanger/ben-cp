@@ -1,38 +1,98 @@
 {
   "sensor": "handoffs",
-  "timestamp": "2026-04-29T15:47:27.565851",
+  "timestamp": "2026-04-29T11:54:41.644949",
   "summary": {
-    "files_audited": 12,
-    "issues_found": 72
+    "files_audited": 15,
+    "issues_found": 90
   },
   "issues": [
     {
-      "file": "reports/handoff/2026-04-28-p2-Move-taxonomy.md-to-intelligence-root-and-wire-into-get_agent.md",
+      "file": "reports/handoff/2026-04-28-p2-Restructure-releasinator-with-auto-mode-and-three-section-report.md",
       "issue": "missing_frontmatter",
       "field": "title"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Move-taxonomy.md-to-intelligence-root-and-wire-into-get_agent.md",
+      "file": "reports/handoff/2026-04-28-p2-Restructure-releasinator-with-auto-mode-and-three-section-report.md",
       "issue": "missing_frontmatter",
       "field": "priority"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Move-taxonomy.md-to-intelligence-root-and-wire-into-get_agent.md",
+      "file": "reports/handoff/2026-04-28-p2-Restructure-releasinator-with-auto-mode-and-three-section-report.md",
       "issue": "missing_frontmatter",
       "field": "assigned_to"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Move-taxonomy.md-to-intelligence-root-and-wire-into-get_agent.md",
+      "file": "reports/handoff/2026-04-28-p2-Restructure-releasinator-with-auto-mode-and-three-section-report.md",
       "issue": "missing_frontmatter",
       "field": "status"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Move-taxonomy.md-to-intelligence-root-and-wire-into-get_agent.md",
+      "file": "reports/handoff/2026-04-28-p2-Restructure-releasinator-with-auto-mode-and-three-section-report.md",
       "issue": "missing_frontmatter",
       "field": "date"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Move-taxonomy.md-to-intelligence-root-and-wire-into-get_agent.md",
+      "file": "reports/handoff/2026-04-28-p2-Restructure-releasinator-with-auto-mode-and-three-section-report.md",
+      "issue": "missing_section",
+      "section": "## Execution Steps"
+    },
+    {
+      "file": "reports/handoff/2026-04-28-p2-Restructure-dream-sensors---merge-bloat,-links-paths,-fix-handoff,-move-intelligence-scan,-remove-tasks.md",
+      "issue": "missing_frontmatter",
+      "field": "title"
+    },
+    {
+      "file": "reports/handoff/2026-04-28-p2-Restructure-dream-sensors---merge-bloat,-links-paths,-fix-handoff,-move-intelligence-scan,-remove-tasks.md",
+      "issue": "missing_frontmatter",
+      "field": "priority"
+    },
+    {
+      "file": "reports/handoff/2026-04-28-p2-Restructure-dream-sensors---merge-bloat,-links-paths,-fix-handoff,-move-intelligence-scan,-remove-tasks.md",
+      "issue": "missing_frontmatter",
+      "field": "assigned_to"
+    },
+    {
+      "file": "reports/handoff/2026-04-28-p2-Restructure-dream-sensors---merge-bloat,-links-paths,-fix-handoff,-move-intelligence-scan,-remove-tasks.md",
+      "issue": "missing_frontmatter",
+      "field": "status"
+    },
+    {
+      "file": "reports/handoff/2026-04-28-p2-Restructure-dream-sensors---merge-bloat,-links-paths,-fix-handoff,-move-intelligence-scan,-remove-tasks.md",
+      "issue": "missing_frontmatter",
+      "field": "date"
+    },
+    {
+      "file": "reports/handoff/2026-04-28-p2-Restructure-dream-sensors---merge-bloat,-links-paths,-fix-handoff,-move-intelligence-scan,-remove-tasks.md",
+      "issue": "missing_section",
+      "section": "## Execution Steps"
+    },
+    {
+      "file": "reports/handoff/2026-04-29-p1-Enhance-Tasks-Report-Output-Specification.md",
+      "issue": "missing_frontmatter",
+      "field": "title"
+    },
+    {
+      "file": "reports/handoff/2026-04-29-p1-Enhance-Tasks-Report-Output-Specification.md",
+      "issue": "missing_frontmatter",
+      "field": "priority"
+    },
+    {
+      "file": "reports/handoff/2026-04-29-p1-Enhance-Tasks-Report-Output-Specification.md",
+      "issue": "missing_frontmatter",
+      "field": "assigned_to"
+    },
+    {
+      "file": "reports/handoff/2026-04-29-p1-Enhance-Tasks-Report-Output-Specification.md",
+      "issue": "missing_frontmatter",
+      "field": "status"
+    },
+    {
+      "file": "reports/handoff/2026-04-29-p1-Enhance-Tasks-Report-Output-Specification.md",
+      "issue": "missing_frontmatter",
+      "field": "date"
+    },
+    {
+      "file": "reports/handoff/2026-04-29-p1-Enhance-Tasks-Report-Output-Specification.md",
       "issue": "missing_section",
       "section": "## Execution Steps"
     },
@@ -67,92 +127,92 @@
       "section": "## Execution Steps"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Restructure-releasinator-with-auto-mode-and-three-section-report.md",
+      "file": "reports/handoff/2026-04-29-p1-Refresh-side-by-side-video,-Ben's-assets,-and-Clip-assets.md",
       "issue": "missing_frontmatter",
       "field": "title"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Restructure-releasinator-with-auto-mode-and-three-section-report.md",
+      "file": "reports/handoff/2026-04-29-p1-Refresh-side-by-side-video,-Ben's-assets,-and-Clip-assets.md",
       "issue": "missing_frontmatter",
       "field": "priority"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Restructure-releasinator-with-auto-mode-and-three-section-report.md",
+      "file": "reports/handoff/2026-04-29-p1-Refresh-side-by-side-video,-Ben's-assets,-and-Clip-assets.md",
       "issue": "missing_frontmatter",
       "field": "assigned_to"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Restructure-releasinator-with-auto-mode-and-three-section-report.md",
+      "file": "reports/handoff/2026-04-29-p1-Refresh-side-by-side-video,-Ben's-assets,-and-Clip-assets.md",
       "issue": "missing_frontmatter",
       "field": "status"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Restructure-releasinator-with-auto-mode-and-three-section-report.md",
+      "file": "reports/handoff/2026-04-29-p1-Refresh-side-by-side-video,-Ben's-assets,-and-Clip-assets.md",
       "issue": "missing_frontmatter",
       "field": "date"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Restructure-releasinator-with-auto-mode-and-three-section-report.md",
+      "file": "reports/handoff/2026-04-29-p1-Refresh-side-by-side-video,-Ben's-assets,-and-Clip-assets.md",
       "issue": "missing_section",
       "section": "## Execution Steps"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Wire-capture_task-inference-to-Casebook-taxonomy-intelligence-record.md",
+      "file": "reports/handoff/2026-04-29-p3-Standardize-due_date-and-priority-frontmatter-fields-across-all-reports-and-tasks.md",
       "issue": "missing_frontmatter",
       "field": "title"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Wire-capture_task-inference-to-Casebook-taxonomy-intelligence-record.md",
+      "file": "reports/handoff/2026-04-29-p3-Standardize-due_date-and-priority-frontmatter-fields-across-all-reports-and-tasks.md",
       "issue": "missing_frontmatter",
       "field": "priority"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Wire-capture_task-inference-to-Casebook-taxonomy-intelligence-record.md",
+      "file": "reports/handoff/2026-04-29-p3-Standardize-due_date-and-priority-frontmatter-fields-across-all-reports-and-tasks.md",
       "issue": "missing_frontmatter",
       "field": "assigned_to"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Wire-capture_task-inference-to-Casebook-taxonomy-intelligence-record.md",
+      "file": "reports/handoff/2026-04-29-p3-Standardize-due_date-and-priority-frontmatter-fields-across-all-reports-and-tasks.md",
       "issue": "missing_frontmatter",
       "field": "status"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Wire-capture_task-inference-to-Casebook-taxonomy-intelligence-record.md",
+      "file": "reports/handoff/2026-04-29-p3-Standardize-due_date-and-priority-frontmatter-fields-across-all-reports-and-tasks.md",
       "issue": "missing_frontmatter",
       "field": "date"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Wire-capture_task-inference-to-Casebook-taxonomy-intelligence-record.md",
+      "file": "reports/handoff/2026-04-29-p3-Standardize-due_date-and-priority-frontmatter-fields-across-all-reports-and-tasks.md",
       "issue": "missing_section",
       "section": "## Execution Steps"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Frontmatter-native-tools,-index.md-retirement,-and-reindex-sensor-wiring.md",
+      "file": "reports/handoff/2026-04-28-p2-Deprecate-shareout-directory-and-merge-slide-content-into-project-intelligence.md",
       "issue": "missing_frontmatter",
       "field": "title"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Frontmatter-native-tools,-index.md-retirement,-and-reindex-sensor-wiring.md",
+      "file": "reports/handoff/2026-04-28-p2-Deprecate-shareout-directory-and-merge-slide-content-into-project-intelligence.md",
       "issue": "missing_frontmatter",
       "field": "priority"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Frontmatter-native-tools,-index.md-retirement,-and-reindex-sensor-wiring.md",
+      "file": "reports/handoff/2026-04-28-p2-Deprecate-shareout-directory-and-merge-slide-content-into-project-intelligence.md",
       "issue": "missing_frontmatter",
       "field": "assigned_to"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Frontmatter-native-tools,-index.md-retirement,-and-reindex-sensor-wiring.md",
+      "file": "reports/handoff/2026-04-28-p2-Deprecate-shareout-directory-and-merge-slide-content-into-project-intelligence.md",
       "issue": "missing_frontmatter",
       "field": "status"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Frontmatter-native-tools,-index.md-retirement,-and-reindex-sensor-wiring.md",
+      "file": "reports/handoff/2026-04-28-p2-Deprecate-shareout-directory-and-merge-slide-content-into-project-intelligence.md",
       "issue": "missing_frontmatter",
       "field": "date"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Frontmatter-native-tools,-index.md-retirement,-and-reindex-sensor-wiring.md",
+      "file": "reports/handoff/2026-04-28-p2-Deprecate-shareout-directory-and-merge-slide-content-into-project-intelligence.md",
       "issue": "missing_section",
       "section": "## Execution Steps"
     },
@@ -217,92 +277,62 @@
       "section": "## Execution Steps"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Deprecate-shareout-directory-and-merge-slide-content-into-project-intelligence.md",
+      "file": "reports/handoff/2026-04-28-p2-Frontmatter-native-tools,-index.md-retirement,-and-reindex-sensor-wiring.md",
       "issue": "missing_frontmatter",
       "field": "title"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Deprecate-shareout-directory-and-merge-slide-content-into-project-intelligence.md",
+      "file": "reports/handoff/2026-04-28-p2-Frontmatter-native-tools,-index.md-retirement,-and-reindex-sensor-wiring.md",
       "issue": "missing_frontmatter",
       "field": "priority"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Deprecate-shareout-directory-and-merge-slide-content-into-project-intelligence.md",
+      "file": "reports/handoff/2026-04-28-p2-Frontmatter-native-tools,-index.md-retirement,-and-reindex-sensor-wiring.md",
       "issue": "missing_frontmatter",
       "field": "assigned_to"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Deprecate-shareout-directory-and-merge-slide-content-into-project-intelligence.md",
+      "file": "reports/handoff/2026-04-28-p2-Frontmatter-native-tools,-index.md-retirement,-and-reindex-sensor-wiring.md",
       "issue": "missing_frontmatter",
       "field": "status"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Deprecate-shareout-directory-and-merge-slide-content-into-project-intelligence.md",
+      "file": "reports/handoff/2026-04-28-p2-Frontmatter-native-tools,-index.md-retirement,-and-reindex-sensor-wiring.md",
       "issue": "missing_frontmatter",
       "field": "date"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Deprecate-shareout-directory-and-merge-slide-content-into-project-intelligence.md",
+      "file": "reports/handoff/2026-04-28-p2-Frontmatter-native-tools,-index.md-retirement,-and-reindex-sensor-wiring.md",
       "issue": "missing_section",
       "section": "## Execution Steps"
     },
     {
-      "file": "reports/handoff/2026-04-29-p3-Standardize-due_date-and-priority-frontmatter-fields-across-all-reports-and-tasks.md",
+      "file": "reports/handoff/2026-04-28-p2-Upgrade-frontmatter-sensor-with-taxonomy-check-and-optimize-dream-sensor-suite.md",
       "issue": "missing_frontmatter",
       "field": "title"
     },
     {
-      "file": "reports/handoff/2026-04-29-p3-Standardize-due_date-and-priority-frontmatter-fields-across-all-reports-and-tasks.md",
+      "file": "reports/handoff/2026-04-28-p2-Upgrade-frontmatter-sensor-with-taxonomy-check-and-optimize-dream-sensor-suite.md",
       "issue": "missing_frontmatter",
       "field": "priority"
     },
     {
-      "file": "reports/handoff/2026-04-29-p3-Standardize-due_date-and-priority-frontmatter-fields-across-all-reports-and-tasks.md",
+      "file": "reports/handoff/2026-04-28-p2-Upgrade-frontmatter-sensor-with-taxonomy-check-and-optimize-dream-sensor-suite.md",
       "issue": "missing_frontmatter",
       "field": "assigned_to"
     },
     {
-      "file": "reports/handoff/2026-04-29-p3-Standardize-due_date-and-priority-frontmatter-fields-across-all-reports-and-tasks.md",
+      "file": "reports/handoff/2026-04-28-p2-Upgrade-frontmatter-sensor-with-taxonomy-check-and-optimize-dream-sensor-suite.md",
       "issue": "missing_frontmatter",
       "field": "status"
     },
     {
-      "file": "reports/handoff/2026-04-29-p3-Standardize-due_date-and-priority-frontmatter-fields-across-all-reports-and-tasks.md",
+      "file": "reports/handoff/2026-04-28-p2-Upgrade-frontmatter-sensor-with-taxonomy-check-and-optimize-dream-sensor-suite.md",
       "issue": "missing_frontmatter",
       "field": "date"
     },
     {
-      "file": "reports/handoff/2026-04-29-p3-Standardize-due_date-and-priority-frontmatter-fields-across-all-reports-and-tasks.md",
-      "issue": "missing_section",
-      "section": "## Execution Steps"
-    },
-    {
-      "file": "reports/handoff/2026-04-28-p2-Restructure-dream-sensors---merge-bloat,-links-paths,-fix-handoff,-move-intelligence-scan,-remove-tasks.md",
-      "issue": "missing_frontmatter",
-      "field": "title"
-    },
-    {
-      "file": "reports/handoff/2026-04-28-p2-Restructure-dream-sensors---merge-bloat,-links-paths,-fix-handoff,-move-intelligence-scan,-remove-tasks.md",
-      "issue": "missing_frontmatter",
-      "field": "priority"
-    },
-    {
-      "file": "reports/handoff/2026-04-28-p2-Restructure-dream-sensors---merge-bloat,-links-paths,-fix-handoff,-move-intelligence-scan,-remove-tasks.md",
-      "issue": "missing_frontmatter",
-      "field": "assigned_to"
-    },
-    {
-      "file": "reports/handoff/2026-04-28-p2-Restructure-dream-sensors---merge-bloat,-links-paths,-fix-handoff,-move-intelligence-scan,-remove-tasks.md",
-      "issue": "missing_frontmatter",
-      "field": "status"
-    },
-    {
-      "file": "reports/handoff/2026-04-28-p2-Restructure-dream-sensors---merge-bloat,-links-paths,-fix-handoff,-move-intelligence-scan,-remove-tasks.md",
-      "issue": "missing_frontmatter",
-      "field": "date"
-    },
-    {
-      "file": "reports/handoff/2026-04-28-p2-Restructure-dream-sensors---merge-bloat,-links-paths,-fix-handoff,-move-intelligence-scan,-remove-tasks.md",
+      "file": "reports/handoff/2026-04-28-p2-Upgrade-frontmatter-sensor-with-taxonomy-check-and-optimize-dream-sensor-suite.md",
       "issue": "missing_section",
       "section": "## Execution Steps"
     },
@@ -337,32 +367,92 @@
       "section": "## Execution Steps"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Upgrade-frontmatter-sensor-with-taxonomy-check-and-optimize-dream-sensor-suite.md",
+      "file": "reports/handoff/2026-04-28-p2-Wire-capture_task-inference-to-Casebook-taxonomy-intelligence-record.md",
       "issue": "missing_frontmatter",
       "field": "title"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Upgrade-frontmatter-sensor-with-taxonomy-check-and-optimize-dream-sensor-suite.md",
+      "file": "reports/handoff/2026-04-28-p2-Wire-capture_task-inference-to-Casebook-taxonomy-intelligence-record.md",
       "issue": "missing_frontmatter",
       "field": "priority"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Upgrade-frontmatter-sensor-with-taxonomy-check-and-optimize-dream-sensor-suite.md",
+      "file": "reports/handoff/2026-04-28-p2-Wire-capture_task-inference-to-Casebook-taxonomy-intelligence-record.md",
       "issue": "missing_frontmatter",
       "field": "assigned_to"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Upgrade-frontmatter-sensor-with-taxonomy-check-and-optimize-dream-sensor-suite.md",
+      "file": "reports/handoff/2026-04-28-p2-Wire-capture_task-inference-to-Casebook-taxonomy-intelligence-record.md",
       "issue": "missing_frontmatter",
       "field": "status"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Upgrade-frontmatter-sensor-with-taxonomy-check-and-optimize-dream-sensor-suite.md",
+      "file": "reports/handoff/2026-04-28-p2-Wire-capture_task-inference-to-Casebook-taxonomy-intelligence-record.md",
       "issue": "missing_frontmatter",
       "field": "date"
     },
     {
-      "file": "reports/handoff/2026-04-28-p2-Upgrade-frontmatter-sensor-with-taxonomy-check-and-optimize-dream-sensor-suite.md",
+      "file": "reports/handoff/2026-04-28-p2-Wire-capture_task-inference-to-Casebook-taxonomy-intelligence-record.md",
+      "issue": "missing_section",
+      "section": "## Execution Steps"
+    },
+    {
+      "file": "reports/handoff/2026-04-28-p2-Move-taxonomy.md-to-intelligence-root-and-wire-into-get_agent.md",
+      "issue": "missing_frontmatter",
+      "field": "title"
+    },
+    {
+      "file": "reports/handoff/2026-04-28-p2-Move-taxonomy.md-to-intelligence-root-and-wire-into-get_agent.md",
+      "issue": "missing_frontmatter",
+      "field": "priority"
+    },
+    {
+      "file": "reports/handoff/2026-04-28-p2-Move-taxonomy.md-to-intelligence-root-and-wire-into-get_agent.md",
+      "issue": "missing_frontmatter",
+      "field": "assigned_to"
+    },
+    {
+      "file": "reports/handoff/2026-04-28-p2-Move-taxonomy.md-to-intelligence-root-and-wire-into-get_agent.md",
+      "issue": "missing_frontmatter",
+      "field": "status"
+    },
+    {
+      "file": "reports/handoff/2026-04-28-p2-Move-taxonomy.md-to-intelligence-root-and-wire-into-get_agent.md",
+      "issue": "missing_frontmatter",
+      "field": "date"
+    },
+    {
+      "file": "reports/handoff/2026-04-28-p2-Move-taxonomy.md-to-intelligence-root-and-wire-into-get_agent.md",
+      "issue": "missing_section",
+      "section": "## Execution Steps"
+    },
+    {
+      "file": "reports/handoff/2026-04-29-p1-Review-and-reconcile-launch-plan-dates-for-Notes-projects.md",
+      "issue": "missing_frontmatter",
+      "field": "title"
+    },
+    {
+      "file": "reports/handoff/2026-04-29-p1-Review-and-reconcile-launch-plan-dates-for-Notes-projects.md",
+      "issue": "missing_frontmatter",
+      "field": "priority"
+    },
+    {
+      "file": "reports/handoff/2026-04-29-p1-Review-and-reconcile-launch-plan-dates-for-Notes-projects.md",
+      "issue": "missing_frontmatter",
+      "field": "assigned_to"
+    },
+    {
+      "file": "reports/handoff/2026-04-29-p1-Review-and-reconcile-launch-plan-dates-for-Notes-projects.md",
+      "issue": "missing_frontmatter",
+      "field": "status"
+    },
+    {
+      "file": "reports/handoff/2026-04-29-p1-Review-and-reconcile-launch-plan-dates-for-Notes-projects.md",
+      "issue": "missing_frontmatter",
+      "field": "date"
+    },
+    {
+      "file": "reports/handoff/2026-04-29-p1-Review-and-reconcile-launch-plan-dates-for-Notes-projects.md",
       "issue": "missing_section",
       "section": "## Execution Steps"
     }

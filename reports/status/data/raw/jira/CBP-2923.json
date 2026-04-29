@@ -194,13 +194,13 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-28T02:28:42.796-0400",
+      "updated": "2026-04-29T10:42:03.457-0400",
       "status": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
-        "description": "Development in progress in DEV environment",
-        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
-        "name": "In development",
-        "id": "3",
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10011",
+        "description": "Ready for QA review in QA environment",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+        "name": "Merged to QA",
+        "id": "10011",
         "statusCategory": {
           "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
           "id": 4,
@@ -300,7 +300,7 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-27T16:52:35.795-0400",
+      "updated": "2026-04-29T07:20:38.910-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10011",
         "description": "Ready for QA review in QA environment",

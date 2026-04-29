@@ -1,6 +1,6 @@
 # Jira — My Issues
 
-_Last synced: 2026-04-28 17:52 · 50 issues_
+_Last synced: 2026-04-29 11:53 · 46 issues_
 
 ## Ideas
 - [IDEA-74 — Subscription enforcement](https://casecommons.atlassian.net/browse/IDEA-74) _(P2 · Released)_
@@ -14,19 +14,16 @@ _Last synced: 2026-04-28 17:52 · 50 issues_
 - [CBP-3157 — Issue in Client Communications Email Section ](https://casecommons.atlassian.net/browse/CBP-3157) _(P3 · To do)_
 - [CBP-2661 — Forms - PDF forms are rendered incorrectly on mobile](https://casecommons.atlassian.net/browse/CBP-2661) _(P3 · Blocked - Needs Review)_
 - [CBP-1532 — Investigate "(Roles unknown)" error from bulk importer](https://casecommons.atlassian.net/browse/CBP-1532) _(P3 · To do)_
-- [CBP-2815 — Involvements incorrectly filtered out by the FE - Which ends up looking like an issue in reporting](https://casecommons.atlassian.net/browse/CBP-2815) _(P3 · Blocked - Needs Review)_
 - [CBP-2857 — Email Note Shows Email Address Instead of User’s Name](https://casecommons.atlassian.net/browse/CBP-2857) _(P3 · Blocked - Needs Review)_
 - [CBP-2026 — Dashboard - "Inactive tasks" and "Inactive workflows" button state should persist on expanded view](https://casecommons.atlassian.net/browse/CBP-2026) _(P3 · To do)_
 - [CBP-3214 — People - Dynamic pages (personDetails) > Duplicate "Employment and finances" section.](https://casecommons.atlassian.net/browse/CBP-3214) _(P2 · To do)_
 - [CBP-3191 — Notes - Synchronize note_resources and service_interaction_people_resources attributes](https://casecommons.atlassian.net/browse/CBP-3191) _(P2 · To do)_
-- [CBP-2998 — Display Services editable datagrid](https://casecommons.atlassian.net/browse/CBP-2998) _(P2 · In QA)_
 - [CBP-3208 — Notes - Migrate note_resources to restore missing non-service notes](https://casecommons.atlassian.net/browse/CBP-3208) _(P2 · To do)_
 - [CBP-2967 — Update Item/Item Price ID processing in Chargebee](https://casecommons.atlassian.net/browse/CBP-2967) _(P2 · To do)_
 - [CBP-2962 — Subscriptions - Update item price ID for "Text message syncing"](https://casecommons.atlassian.net/browse/CBP-2962) _(P2 · To do)_
 - [CBP-2969 — Notes - Cannot add Attachments from new dialog when creating a note from Dashboard](https://casecommons.atlassian.net/browse/CBP-2969) _(P2 · QA revise)_
 - [CBP-2935 — Note dialog v2 - Notes do not autosave while typing](https://casecommons.atlassian.net/browse/CBP-2935) _(P2 · To do)_
 - [CBP-3094 — FE - Service Enrollment - Default value is not reflected in the Add Service enrollment (For ex: Method of delivery)](https://casecommons.atlassian.net/browse/CBP-3094) _(P2 · To do)_
-- [CBP-3139 — Text Message Syncing - Handle participant phone number updated or deleted](https://casecommons.atlassian.net/browse/CBP-3139) _(P2 · In development)_
 - [CBP-3188 — Date validation should block entering non-date data](https://casecommons.atlassian.net/browse/CBP-3188) _(P2 · To do)_
 - [CBP-3182 — Notes Datagrid - Add long-text handling for "People" column](https://casecommons.atlassian.net/browse/CBP-3182) _(P2 · To do)_
 - [CBP-3078 — Communications - Text message syncing bugs](https://casecommons.atlassian.net/browse/CBP-3078) _(P2 · To do)_
@@ -41,7 +38,6 @@ _Last synced: 2026-04-28 17:52 · 50 issues_
 - [CBP-2979 — More than 4 buttons in right hand nav makes some buttons inaccessible on mobile](https://casecommons.atlassian.net/browse/CBP-2979) _(P2 · To do)_
 - [CBP-2805 — MFA enforcement - Users without MFA are not prompted to enable it](https://casecommons.atlassian.net/browse/CBP-2805) _(P2 · Blocked - Needs Review)_
 - [CBP-2716 — Service offerings - Multiple service rosters](https://casecommons.atlassian.net/browse/CBP-2716) _(P2 · To do)_
-- [CBP-2487 — Service WLV - "Unknown" text and invalid link is displayed when user doesn't have access to a person](https://casecommons.atlassian.net/browse/CBP-2487) _(P2 · QA revise)_
 - [CBP-71 — Engage - Expand intake syncing](https://casecommons.atlassian.net/browse/CBP-71) _(P2 · Product review)_
 - [CBP-2598 —  FE - Cannot clear "Restrict to 4 digits" and "SSN" fields from quick edit](https://casecommons.atlassian.net/browse/CBP-2598) _(P2 · QA revise)_
 - [CBP-2615 — SPIKE - Migrate all tenants to custom_schema](https://casecommons.atlassian.net/browse/CBP-2615) _(P2 · Product review)_

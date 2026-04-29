@@ -2663,24 +2663,24 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-27T15:37:48.026-0400",
+      "updated": "2026-04-29T03:23:59.473-0400",
       "status": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/status/10059",
-        "description": "Product approved in QA environment, ready for UAT",
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10051",
+        "description": "QA approved in UAT environment, ready for release",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
-        "name": "Product approved",
-        "id": "10059",
+        "name": "UAT approved",
+        "id": "10051",
         "statusCategory": {
-          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
-          "id": 4,
-          "key": "indeterminate",
-          "colorName": "yellow",
-          "name": "In Progress"
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/3",
+          "id": 3,
+          "key": "done",
+          "colorName": "green",
+          "name": "Done"
         }
       }
     },
-    "effective_category": "In Progress",
-    "jira_status": "Product approved",
+    "effective_category": "Done",
+    "jira_status": "UAT approved",
     "effective_release_date": "2026-04-29"
   },
   {
@@ -3614,24 +3614,24 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-27T15:38:12.761-0400",
+      "updated": "2026-04-29T03:23:41.605-0400",
       "status": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/status/10059",
-        "description": "Product approved in QA environment, ready for UAT",
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10051",
+        "description": "QA approved in UAT environment, ready for release",
         "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
-        "name": "Product approved",
-        "id": "10059",
+        "name": "UAT approved",
+        "id": "10051",
         "statusCategory": {
-          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
-          "id": 4,
-          "key": "indeterminate",
-          "colorName": "yellow",
-          "name": "In Progress"
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/3",
+          "id": 3,
+          "key": "done",
+          "colorName": "green",
+          "name": "Done"
         }
       }
     },
-    "effective_category": "In Progress",
-    "jira_status": "Product approved",
+    "effective_category": "Done",
+    "jira_status": "UAT approved",
     "effective_release_date": "2026-04-29"
   },
   {
@@ -5665,7 +5665,7 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-14T12:41:47.218-0400",
+      "updated": "2026-04-29T10:52:09.837-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10052",
         "description": "Released to Production environment (US and CA)",
@@ -6210,13 +6210,13 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-28T02:28:42.796-0400",
+      "updated": "2026-04-29T10:42:03.457-0400",
       "status": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
-        "description": "Development in progress in DEV environment",
-        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
-        "name": "In development",
-        "id": "3",
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/10011",
+        "description": "Ready for QA review in QA environment",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/generic.png",
+        "name": "Merged to QA",
+        "id": "10011",
         "statusCategory": {
           "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
           "id": 4,
@@ -6227,7 +6227,7 @@
       }
     },
     "effective_category": "In Progress",
-    "jira_status": "In development",
+    "jira_status": "Merged to QA",
     "effective_release_date": "2026-04-29"
   },
   {
@@ -6319,7 +6319,7 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-27T16:52:35.795-0400",
+      "updated": "2026-04-29T07:20:38.910-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10011",
         "description": "Ready for QA review in QA environment",
@@ -6503,7 +6503,7 @@
         "name": "P1",
         "id": "2"
       },
-      "updated": "2026-04-27T15:13:14.007-0400",
+      "updated": "2026-04-29T10:49:14.426-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
         "description": "Development in progress in DEV environment",
@@ -8533,7 +8533,7 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-27T12:43:38.458-0400",
+      "updated": "2026-04-29T07:43:40.703-0400",
       "status": {
         "self": "https://casecommons.atlassian.net/rest/api/3/status/10010",
         "description": "QA review in progress in QA environment",
@@ -12352,24 +12352,24 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-16T00:25:50.222-0400",
+      "updated": "2026-04-29T10:12:54.320-0400",
       "status": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
-        "description": "Ready for development in DEV environment",
-        "iconUrl": "https://casecommons.atlassian.net/",
-        "name": "To do",
-        "id": "10007",
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
+        "description": "Development in progress in DEV environment",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
+        "name": "In development",
+        "id": "3",
         "statusCategory": {
-          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
-          "id": 2,
-          "key": "new",
-          "colorName": "blue-gray",
-          "name": "To Do"
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+          "id": 4,
+          "key": "indeterminate",
+          "colorName": "yellow",
+          "name": "In Progress"
         }
       }
     },
-    "effective_category": "To Do",
-    "jira_status": "To do",
+    "effective_category": "In Progress",
+    "jira_status": "In development",
     "effective_release_date": null
   },
   {
@@ -12451,24 +12451,24 @@
         "name": "P2",
         "id": "3"
       },
-      "updated": "2026-04-16T00:25:52.697-0400",
+      "updated": "2026-04-29T10:14:32.951-0400",
       "status": {
-        "self": "https://casecommons.atlassian.net/rest/api/3/status/10007",
-        "description": "Ready for development in DEV environment",
-        "iconUrl": "https://casecommons.atlassian.net/",
-        "name": "To do",
-        "id": "10007",
+        "self": "https://casecommons.atlassian.net/rest/api/3/status/3",
+        "description": "Development in progress in DEV environment",
+        "iconUrl": "https://casecommons.atlassian.net/images/icons/statuses/inprogress.png",
+        "name": "In development",
+        "id": "3",
         "statusCategory": {
-          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/2",
-          "id": 2,
-          "key": "new",
-          "colorName": "blue-gray",
-          "name": "To Do"
+          "self": "https://casecommons.atlassian.net/rest/api/3/statuscategory/4",
+          "id": 4,
+          "key": "indeterminate",
+          "colorName": "yellow",
+          "name": "In Progress"
         }
       }
     },
-    "effective_category": "To Do",
-    "jira_status": "To do",
+    "effective_category": "In Progress",
+    "jira_status": "In development",
     "effective_release_date": null
   },
   {

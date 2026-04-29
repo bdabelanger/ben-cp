@@ -121,7 +121,11 @@ def build_pipeline_section(pipeline_results):
         if not p.get('report'):
             # Pipeline with no report file — show stdout summary
             stdout = pipeline_results[name].get('stdout', '').strip()
-            if stdout:
+            if name == 'asana':
+                m = re.search(r'projects_fetched:\s*(\d+)', stdout or '')
+                count = m.group(1) if m else '?'
+                lines.append(f'{count} projects fetched — stage breakdown in index.md')
+            elif stdout:
                 for line in stdout.splitlines()[-5:]:
                     lines.append(f'`{line}`')
             lines.append('')

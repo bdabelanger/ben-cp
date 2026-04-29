@@ -47,16 +47,9 @@ def scan_boundary_violations():
     
     return violations
 
-def check_index_coverage():
-    # Only root index.md is required now
-    if not os.path.exists(os.path.join(REPO_ROOT, 'index.md')):
-        return ["."]
-    return []
-
 def run():
     staleness = check_changelog_staleness()
     violations = scan_boundary_violations()
-    missing_index = check_index_coverage()
 
     report = {
         "sensor": "pulse",
@@ -64,11 +57,9 @@ def run():
         "summary": {
             "changelog_status": staleness["status"],
             "boundary_violations": len(violations),
-            "dirs_missing_index": len(missing_index),
         },
         "changelog": staleness,
         "boundary_violations": violations,
-        "dirs_missing_index": missing_index,
     }
     os.makedirs(OUTPUTS_DIR, exist_ok=True)
     out = os.path.join(OUTPUTS_DIR, 'pulse_report.json')

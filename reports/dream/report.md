@@ -1,20 +1,20 @@
-# Dream Report — 2026-04-28
+# Dream Report — 2026-04-29
 
-**Run:** 17:52 · **Sensors:** 12/12 OK · **Duration:** 22.2s
+**Run:** 15:41 · **Sensors:** 12/12 OK · **Duration:** 1.5s
 
 ## Sensor Summary
 
 | Sensor | Status | Detail |
 |--------|--------|--------|
-| reindex | 🟡 | 142 directories, 501 files scanned, 2 frontmatter missing, 15 unknown taxonomy terms |
+| reindex | 🟡 | 69 directories, 174 files scanned, 2 unknown taxonomy terms |
 | pulse | 🟢 | clean |
-| links | 🟡 | 109 files scanned, 9 ghost links |
-| frontmatter | 🔴 | 109 files scanned, 60 issues found |
+| links | 🟡 | 104 files scanned, 9 ghost links |
+| frontmatter | 🔴 | 104 files scanned, 50 issues found |
 | drift | 🟢 | clean |
-| handoffs | 🔴 | 11 files audited, 66 issues found |
+| handoffs | 🔴 | 12 files audited, 72 issues found |
 | index | 🟢 | clean |
 | agents | 🟡 | 106 files scanned, 2 issues found |
-| bloat | 🟡 | 258 total files, 2 yellow flags, 512 files touched 24h |
+| bloat | 🟡 | 258 total files, 2 yellow flags, 516 files touched 24h |
 | changelog | 🟢 | clean |
 | intelligence | 🟢 | clean |
 | scripts | 🟢 | 5 skills checked |
@@ -22,7 +22,7 @@
 ## Highlights
 
 - **9 ghost links** — broken internal references
-- **66 handoff issues** — missing sections or stale READY files
+- **72 handoff issues** — missing sections or stale READY files
 - 2 files over 250KB (watch list)
 
 ## Ghost Links (sample)
@@ -39,15 +39,11 @@
 
 ## Pipeline Reports
 
-### ✅ Asana Data Fetch
+### ⚠️ Asana Data Fetch
 
-`--- Running 01_fetch_projects.py ---`
-``
-`--- Running 02_fetch_tasks.py ---`
-``
-`✅ Asana pipeline completed successfully.`
+? projects fetched — stage breakdown in index.md
 
-### ✅ My Tasks
+### ⚠️ My Tasks
 
 [Full report](../tasks/report.md)
 
@@ -60,7 +56,7 @@ _Last synced: 2026-04-28 17:52 · 63 Asana tasks · 50 Jira issues_
 
 Release `Platform-2026-4-2` — 1 repos to bump, 0 leaks
 
-### ✅ Platform Status
+### ⚠️ Platform Status
 
 [Full report](../status/report.md)
 

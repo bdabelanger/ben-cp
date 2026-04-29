@@ -45,7 +45,7 @@ Read the summary first, then pull individual sensor JSONs for any WARN or FAIL s
 
 | Sensor | Path | What it checks |
 | :----- | :--- | :------------- |
-| pulse | `dream/pulse.json` | Directories missing `index.md` |
+| pulse | `dream/pulse.json` | Changelog staleness and boundary violations |
 | links | `dream/links.json` | Broken internal references (ghost links) |
 | frontmatter | `dream/frontmatter.json` | Missing or malformed frontmatter |
 | drift | `dream/drift.json` | Unsanctioned directories |
@@ -76,7 +76,6 @@ For each WARN or FAIL sensor, read the full JSON and sort every finding into one
 Low-risk, deterministic corrections with no downstream risk:
 - Stale index entries pointing to moved files
 - Minor metadata fixes on intelligence records
-- Missing `index.md` files that are trivially creatable (stub only)
 - Frontmatter field corrections (wrong type, empty required field)
 - Root changelog sync (summarizing completed handoffs)
 

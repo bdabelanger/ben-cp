@@ -139,23 +139,16 @@ reports/
 | `tsconfig.json` | TypeScript config |
 ---
 ## Auto-generated Stats
-> Last updated: 2026-04-28 17:52 by dream/reindex
+> Last updated: 2026-04-29 02:44 by dream/reindex
 
 | Metric | Value |
 |--------|-------|
-| Directories | 142 |
-| Markdown files | 501 |
-| Frontmatter coverage | 99.6% |
-| Missing frontmatter | 2 |
-| Unknown taxonomy terms | 15 |
-
-**Missing frontmatter (first 5):**
-- `governance/agents/antigravity/scratch/documentation_triad_templates.md`
-- `governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/memory/MEMORY.md`
+| Directories | 69 |
+| Markdown files | 177 |
+| Frontmatter coverage | 100.0% |
+| Missing frontmatter | 0 |
+| Unknown taxonomy terms | 2 |
 
 **Unknown taxonomy terms (first 5):**
-- `intelligence/product/projects/q2/data-import-bulk-import-for-notes/overview.md` — Data Import, Notes
-- `intelligence/product/projects/q2/enrollment-dialog-bulk-services-section/overview.md` — Cases - Service Plan
-- `intelligence/product/projects/q2/integrations-zapier-improvements/overview.md` — Integrations
-- `intelligence/product/projects/q2/notes-locked-notes/overview.md` — Notes
-- `intelligence/product/projects/q2/notes-notes-datagrid/overview.md` — Notes, Workload View
+- `intelligence/product/projects/q2/accessibility-2026-vpat-accessibility-audit-(1213564552809143).md` — none — cross-cutting concern, not product-specific
+- `intelligence/product/projects/q2/web-applications-material-ui-upgrade-all-components-(1212552174642233).md` — none — cross-cutting tech modernization

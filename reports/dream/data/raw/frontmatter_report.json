@@ -1,62 +1,11 @@
 {
   "sensor": "frontmatter",
-  "timestamp": "2026-04-28T17:52:36.661189",
+  "timestamp": "2026-04-29T03:01:31.996750",
   "summary": {
-    "files_scanned": 109,
-    "issues_found": 60
+    "files_scanned": 104,
+    "issues_found": 50
   },
   "issues": [
-    {
-      "file": "governance/agents/antigravity/scratch/documentation_triad_templates.md",
-      "issue": "missing_frontmatter"
-    },
-    {
-      "file": "governance/agents/antigravity/scratch/documentation_triad_templates.md",
-      "issue": "multiple_h1",
-      "count": 2
-    },
-    {
-      "file": "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/memory/MEMORY.md",
-      "issue": "missing_frontmatter"
-    },
-    {
-      "file": "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/memory/project_separation_policy_audits.md",
-      "issue": "missing_keys",
-      "keys": [
-        "domain",
-        "title"
-      ]
-    },
-    {
-      "file": "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/memory/project_separation_policy_audits.md",
-      "issue": "invalid_type",
-      "value": "project"
-    },
-    {
-      "file": "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/memory/project_separation_policy_audits.md",
-      "issue": "no_h1"
-    },
-    {
-      "file": "governance/agents/claude/scheduled-tasks/dream/SKILL.md",
-      "issue": "malformed_frontmatter"
-    },
-    {
-      "file": "governance/agents/claude/scheduled-tasks/dream/SKILL.md",
-      "issue": "no_h1"
-    },
-    {
-      "file": "governance/agents/claude/scheduled-tasks/rem/SKILL.md",
-      "issue": "missing_keys",
-      "keys": [
-        "domain",
-        "title",
-        "type"
-      ]
-    },
-    {
-      "file": "governance/agents/claude/scheduled-tasks/rem/SKILL.md",
-      "issue": "no_h1"
-    },
     {
       "file": "intelligence/product/projects/q2/data-import-bulk-import-for-notes/overview.md",
       "issue": "unknown_taxonomy_term",

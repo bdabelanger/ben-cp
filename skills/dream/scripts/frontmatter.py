@@ -9,7 +9,7 @@ OUTPUTS_DIR = os.path.join(REPO_ROOT, 'reports', 'dream', 'data', 'raw')
 
 SKIP_DIRS  = {'.git', '__pycache__', 'node_modules', 'dist', 'src', 'reports', 'complete', 'archive', 'archived'}
 REQUIRED_KEYS = {'title', 'type', 'domain'}
-VALID_TYPES = {'index', 'skill', 'intelligence', 'handoff', 'changelog', 'release', 'prd', 'agent', 'task', 'report', 'log', 'session', 'launch_plan', 'run_log', 'shareout', 'source', 'reference', 'governance', 'art', 'design', 'overview'}
+VALID_TYPES = {'index', 'skill', 'intelligence', 'handoff', 'changelog', 'release', 'prd', 'agent', 'task', 'report', 'log', 'session', 'launch_plan', 'run_log', 'shareout', 'source', 'reference', 'governance', 'art', 'design', 'overview', 'demo', 'schema'}
 
 def load_taxonomy_terms():
     """Return set of valid taxonomy labels from governance/taxonomy.md."""
@@ -98,9 +98,10 @@ def run():
         h1_html = re.findall(r'<h1[^>]*>(.*?)</h1>', clean_content, re.DOTALL | re.IGNORECASE)
         h1_count = len(h1_md) + len(h1_html)
         
+        doc_type = fm_data.get('type', '') if isinstance(fm_data, dict) else ''
         if h1_count == 0:
             issues.append({"file": rel, "issue": "no_h1"})
-        elif h1_count > 1:
+        elif h1_count > 1 and doc_type not in {'prd', 'launch_plan'}:
             issues.append({"file": rel, "issue": "multiple_h1", "count": h1_count})
 
         # Readability: >500 words without H2

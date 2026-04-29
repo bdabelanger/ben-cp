@@ -3,6 +3,7 @@ title: Notes - Notes datagrid
 type: launch_plan
 domain: product/projects/q2
 status: active
+taxonomy: Notes
 ---
 
 # Launch Plan: Notes - Notes datagrid

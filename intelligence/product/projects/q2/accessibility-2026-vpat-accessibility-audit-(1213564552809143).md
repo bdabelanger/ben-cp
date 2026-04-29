@@ -2,7 +2,7 @@
 title: Accessibility - 2026 VPAT accessibility audit
 type: intelligence
 domain: intelligence/product/projects/q2
-taxonomy: none — cross-cutting concern, not product-specific
+taxonomy: none
 links:
   asana: https://app.asana.com/1/1123317448830974/project/1213564552809143
   jira: https://casecommons.atlassian.net/browse/CBP-3085

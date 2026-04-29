@@ -1,8 +1,8 @@
 {
   "sensor": "agents",
-  "timestamp": "2026-04-29T11:54:41.724002",
+  "timestamp": "2026-04-29T16:13:28.678987",
   "summary": {
-    "files_scanned": 99,
+    "files_scanned": 102,
     "issues_found": 2
   },
   "issues": [

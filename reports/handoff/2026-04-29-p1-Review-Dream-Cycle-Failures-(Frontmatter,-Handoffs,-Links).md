@@ -1,3 +1,10 @@
+---
+title: "Review Dream Cycle Failures (Frontmatter, Handoffs, Links)"
+priority: P1
+assigned_to: Code
+status: READY
+date: 2026-04-29
+---
 # Implementation Plan: Review Dream Cycle Failures (Frontmatter, Handoffs, Links)
 
 > **Prepared by:** Code (Gemini) (2026-04-29)
@@ -15,3 +22,6 @@ The nightly 'dream' report flagged significant issues across the repository:
 - **🟡 Ghost Links:** 10 broken internal references identified.
 
 The Code agent needs to review the relevant reports and begin remediation steps for these structural integrity failures.
+## Execution Steps
+
+_Steps to be defined during execution._

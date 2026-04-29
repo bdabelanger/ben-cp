@@ -15,7 +15,7 @@ taxonomy: none
 
 | File | Contents |
 | :--- | :--- |
-| [`taxonomy.md`](taxonomy.md) | Authoritative product-feature taxonomy — canonical labels, keyword inference map, format convention |
+| [`taxonomy.md`](../../governance/taxonomy.md) | Authoritative product-feature taxonomy — canonical labels, keyword inference map, format convention |
 
 ---
 

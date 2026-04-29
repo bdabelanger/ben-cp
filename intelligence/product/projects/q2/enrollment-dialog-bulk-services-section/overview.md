@@ -2,7 +2,7 @@
 title: Service Plan - Enrollment dialog bulk section
 type: index
 domain: intelligence/product/projects/q2/enrollment-dialog-bulk-services-section
-taxonomy: Cases - Service Plan
+taxonomy: Service Plan
 links:
   asana: https://app.asana.com/1/1123317448830974/project/1211631356870657
   jira: https://casecommons.atlassian.net/browse/CBP-2992

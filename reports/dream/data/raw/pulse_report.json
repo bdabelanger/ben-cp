@@ -1,13 +1,13 @@
 {
   "sensor": "pulse",
-  "timestamp": "2026-04-29T11:54:41.529986",
+  "timestamp": "2026-04-29T16:13:28.512191",
   "summary": {
     "changelog_status": "OK",
     "boundary_violations": 0
   },
   "changelog": {
     "status": "OK",
-    "last_modified_hours_ago": 0.2,
+    "last_modified_hours_ago": 13.5,
     "last_date_in_content": "2026-04-12"
   },
   "boundary_violations": []

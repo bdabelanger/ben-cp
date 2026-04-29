@@ -1,9 +1,129 @@
 {
   "sensor": "frontmatter",
-  "timestamp": "2026-04-29T16:13:28.594139",
+  "timestamp": "2026-04-29T12:27:21.120200",
   "summary": {
-    "files_scanned": 100,
-    "issues_found": 0
+    "files_scanned": 105,
+    "issues_found": 27
   },
-  "issues": []
+  "issues": [
+    {
+      "file": "governance/agents/antigravity/scratch/documentation_triad_templates.md",
+      "issue": "missing_frontmatter"
+    },
+    {
+      "file": "governance/agents/antigravity/scratch/documentation_triad_templates.md",
+      "issue": "multiple_h1",
+      "count": 2
+    },
+    {
+      "file": "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/memory/MEMORY.md",
+      "issue": "missing_frontmatter"
+    },
+    {
+      "file": "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/memory/project_separation_policy_audits.md",
+      "issue": "missing_keys",
+      "keys": [
+        "domain",
+        "title"
+      ]
+    },
+    {
+      "file": "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/memory/project_separation_policy_audits.md",
+      "issue": "invalid_type",
+      "value": "project"
+    },
+    {
+      "file": "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/memory/project_separation_policy_audits.md",
+      "issue": "no_h1"
+    },
+    {
+      "file": "governance/agents/claude/scheduled-tasks/dream/SKILL.md",
+      "issue": "malformed_frontmatter"
+    },
+    {
+      "file": "governance/agents/claude/scheduled-tasks/dream/SKILL.md",
+      "issue": "no_h1"
+    },
+    {
+      "file": "governance/agents/claude/scheduled-tasks/rem/SKILL.md",
+      "issue": "missing_keys",
+      "keys": [
+        "domain",
+        "title",
+        "type"
+      ]
+    },
+    {
+      "file": "governance/agents/claude/scheduled-tasks/rem/SKILL.md",
+      "issue": "no_h1"
+    },
+    {
+      "file": "intelligence/product/projects/q2/data-import-bulk-import-for-notes/prd.md",
+      "issue": "missing_taxonomy"
+    },
+    {
+      "file": "intelligence/product/projects/q2/data-import-clearer-ids/prd.md",
+      "issue": "missing_taxonomy"
+    },
+    {
+      "file": "intelligence/product/projects/q2/enrollment-dialog-bulk-services-section/launch_plan.md",
+      "issue": "missing_taxonomy"
+    },
+    {
+      "file": "intelligence/product/projects/q2/enrollment-dialog-bulk-services-section/prd.md",
+      "issue": "missing_taxonomy"
+    },
+    {
+      "file": "intelligence/product/projects/q2/integrations-zapier-improvements/prd.md",
+      "issue": "missing_taxonomy"
+    },
+    {
+      "file": "intelligence/product/projects/q2/notes-bulk-general-notes/launch_plan.md",
+      "issue": "missing_taxonomy"
+    },
+    {
+      "file": "intelligence/product/projects/q2/notes-bulk-general-notes/prd.md",
+      "issue": "missing_taxonomy"
+    },
+    {
+      "file": "intelligence/product/projects/q2/notes-bulk-service-notes/launch_plan.md",
+      "issue": "missing_taxonomy"
+    },
+    {
+      "file": "intelligence/product/projects/q2/notes-bulk-service-notes/prd.md",
+      "issue": "missing_taxonomy"
+    },
+    {
+      "file": "intelligence/product/projects/q2/notes-locked-notes/launch_plan.md",
+      "issue": "missing_taxonomy"
+    },
+    {
+      "file": "intelligence/product/projects/q2/notes-locked-notes/prd.md",
+      "issue": "missing_taxonomy"
+    },
+    {
+      "file": "intelligence/product/projects/q2/notes-notes-datagrid/launch_plan.md",
+      "issue": "missing_taxonomy"
+    },
+    {
+      "file": "intelligence/product/projects/q2/notes-notes-datagrid/prd.md",
+      "issue": "missing_taxonomy"
+    },
+    {
+      "file": "intelligence/product/projects/q2/portal-client-dashboard/prd.md",
+      "issue": "missing_taxonomy"
+    },
+    {
+      "file": "intelligence/product/projects/q2/services-multiple-rosters-for-enrollments-and-notes/prd.md",
+      "issue": "missing_taxonomy"
+    },
+    {
+      "file": "intelligence/product/projects/q2/services-service-plan-datagrid-with-bulk-actions/launch_plan.md",
+      "issue": "missing_taxonomy"
+    },
+    {
+      "file": "intelligence/product/projects/q2/services-wlv-bulk-actions/launch_plan.md",
+      "issue": "missing_taxonomy"
+    }
+  ]
 }

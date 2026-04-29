@@ -1,6 +1,6 @@
-# Task Report — 2026-04-29 11:53
+# Task Report — 2026-04-29 12:26
 
-_Last synced: 2026-04-29 11:53 · 63 Asana tasks · 46 Jira issues_
+_Last synced: 2026-04-29 12:26 · 64 Asana tasks · 46 Jira issues_
 
 ## Asana Scorecard
 
@@ -16,7 +16,7 @@ _Last synced: 2026-04-29 11:53 · 63 Asana tasks · 46 Jira issues_
 | Notes - Global Notes WLV | 1 |
 | Notes - Notes datagrid | 1 |
 | Notes - Signing + Service Note Locking | 2 |
-| PD - Small Projects | 16 |
+| PD - Small Projects | 17 |
 | Portal - Client Dashboard | 2 |
 | Service Notes - Populate Services with service groups | 1 |
 
@@ -28,7 +28,7 @@ _Last synced: 2026-04-29 11:53 · 63 Asana tasks · 46 Jira issues_
 - [Assets from Ben: Static images and short video/gif](https://app.asana.com/1/1123317448830974/task/1213823056236787) · due 2026-04-28
 - [PFF - schema fixed?](https://app.asana.com/1/1123317448830974/project/1208693459152262/task/1214003604735366) · due 2026-04-28
 
-### Due Today (2026-04-29 11:53)
+### Due Today (2026-04-29 12:26)
 
 - [Please update the status of Notes - Bulk "General Notes"](https://app.asana.com/1/1123317448830974/project/1211838817183809/task/1214261075626471) · due 2026-04-29
 - [Notes datagrid - Update launch plan](https://app.asana.com/1/1123317448830974/project/1209963394727039/task/1213634494785182) · due 2026-04-29

@@ -3,7 +3,6 @@ title: Integrations - Zapier improvements
 type: prd
 domain: product/projects/q2
 status: active
-taxonomy: Integrations
 ---
 
 # PRD: Integrations - Zapier improvements

@@ -3,7 +3,6 @@ title: Services - Service plan datagrid with bulk actions
 type: launch_plan
 domain: product/projects/q2
 status: active
-taxonomy: Service Plan
 ---
 
 # Launch Plan: Services - Service plan datagrid with bulk actions

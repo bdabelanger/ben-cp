@@ -1,6 +1,6 @@
 # Asana — My Tasks
 
-_Last synced: 2026-04-29 11:53 · 63 tasks_
+_Last synced: 2026-04-29 12:26 · 64 tasks_
 
 ## Case Notes Campaign
 - [Additional Assets for Clips](https://app.asana.com/1/1123317448830974/project/1213823056173464/task/1213823056236759) · due 2026-04-30
@@ -74,6 +74,7 @@ _Last synced: 2026-04-29 11:53 · 63 tasks_
 - [SMSs analysis/audit - Messages sent in November and December](https://app.asana.com/1/1123317448830974/project/1208693459152262/task/1212515810541353) · due 2026-04-30
 - [Finish refresh all to clean-up failed chargebee endpoints](https://app.asana.com/1/1123317448830974/project/1208693459152262/task/1213961427691851) · due 2026-04-30
 - [Review initiatives for end of Q2/beginning of Q3 in Asana](https://app.asana.com/1/1123317448830974/project/1208693459152262/task/1213964079045354) · due 2026-04-30
+- [Remove confirmation modal when deleting service interactions added via bulk service notes](https://app.asana.com/1/1123317448830974/project/1208693459152262/task/1214398253706481) · due 2026-05-01
 - [Iterate on an AI-driven discovery engine](https://app.asana.com/1/1123317448830974/project/1208693459152262/task/1214087440655865) · due 2026-05-01
 - [Metrics review: refresh all Q2 OKRs with April data](https://app.asana.com/1/1123317448830974/project/1208693459152262/task/1214310243958214) · due 2026-05-01
 - [Q2 planning feature request clean-up](https://app.asana.com/1/1123317448830974/project/1208693459152262/task/1213338216640426) · due 2026-05-01

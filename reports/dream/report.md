@@ -1,20 +1,20 @@
 # Dream Report — 2026-04-29
 
-**Run:** 16:13 · **Sensors:** 12/12 OK · **Duration:** 1.1s
+**Run:** 12:26 · **Sensors:** 12/12 OK · **Duration:** 59.7s
 
 ## Sensor Summary
 
 | Sensor | Status | Detail |
 |--------|--------|--------|
-| reindex | 🟡 | 69 directories, 170 files scanned |
+| reindex | 🟡 | 141 directories, 494 files scanned, 2 frontmatter missing |
 | pulse | 🟢 | clean |
-| links | 🟢 | 100 files scanned |
-| frontmatter | 🟢 | 100 files scanned |
+| links | 🟢 | 105 files scanned |
+| frontmatter | 🔴 | 105 files scanned, 27 issues found |
 | drift | 🟢 | clean |
 | handoffs | 🔴 | 6 files audited, 6 issues found |
 | index | 🟢 | clean |
 | agents | 🟡 | 102 files scanned, 2 issues found |
-| bloat | 🟡 | 248 total files, 2 yellow flags, 530 files touched 24h |
+| bloat | 🟡 | 248 total files, 2 yellow flags, 561 files touched 24h |
 | changelog | 🟢 | clean |
 | intelligence | 🟢 | clean |
 | scripts | 🟢 | 5 skills checked |
@@ -26,15 +26,15 @@
 
 ## Pipeline Reports
 
-### ⚠️ Asana Data Fetch
+### ✅ Asana Data Fetch
 
 ? projects fetched — stage breakdown in index.md
 
-### ⚠️ My Tasks
+### ✅ My Tasks
 
 [Full report](../tasks/report.md)
 
-_Last synced: 2026-04-29 11:53 · 63 Asana tasks · 46 Jira issues_
+_Last synced: 2026-04-29 12:26 · 64 Asana tasks · 46 Jira issues_
 **13 overdue tasks** — see full report for details.
 
 ### ⚠️ Release Readiness
@@ -43,7 +43,7 @@ _Last synced: 2026-04-29 11:53 · 63 Asana tasks · 46 Jira issues_
 
 Release `Platform-2026-4-2` — 1 repos to bump, 0 leaks
 
-### ⚠️ Platform Status
+### ✅ Platform Status
 
 [Full report](../status/report.md)
 

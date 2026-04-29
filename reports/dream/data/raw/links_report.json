@@ -1,8 +1,8 @@
 {
   "sensor": "links",
-  "timestamp": "2026-04-29T16:13:28.523880",
+  "timestamp": "2026-04-29T12:27:21.037510",
   "summary": {
-    "files_scanned": 100,
+    "files_scanned": 105,
     "ghost_links": 0,
     "stale_paths": 0
   },

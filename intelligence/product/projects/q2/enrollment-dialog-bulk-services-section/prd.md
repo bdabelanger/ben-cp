@@ -3,7 +3,6 @@ title: Enrollment dialog - Bulk Services section
 type: prd
 domain: product/projects/q2
 status: active
-taxonomy: Service Plan
 ---
 
 # PRD: Enrollment dialog - Bulk Services section

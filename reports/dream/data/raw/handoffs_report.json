@@ -1,21 +1,21 @@
 {
   "sensor": "handoffs",
-  "timestamp": "2026-04-29T16:13:28.596480",
+  "timestamp": "2026-04-29T12:27:21.125392",
   "summary": {
     "files_audited": 6,
     "issues_found": 6
   },
   "issues": [
     {
+      "file": "reports/handoff/2026-04-29-p1-Review-Dream-Cycle-Failures-(Frontmatter,-Handoffs,-Links).md",
+      "issue": "ready_no_checkboxes"
+    },
+    {
       "file": "reports/handoff/2026-04-29-p3-Improve-add_task-tool:-resolve-project-GID-before-calling,-prevent-accidental-project-creation.md",
       "issue": "ready_no_checkboxes"
     },
     {
-      "file": "reports/handoff/2026-04-29-p1-Review-and-reconcile-launch-plan-dates-for-Notes-projects.md",
-      "issue": "ready_no_checkboxes"
-    },
-    {
-      "file": "reports/handoff/2026-04-29-p1-Review-Dream-Cycle-Failures-(Frontmatter,-Handoffs,-Links).md",
+      "file": "reports/handoff/2026-04-29-p1-Enhance-Tasks-Report-Output-Specification.md",
       "issue": "ready_no_checkboxes"
     },
     {
@@ -27,7 +27,7 @@
       "issue": "ready_no_checkboxes"
     },
     {
-      "file": "reports/handoff/2026-04-29-p1-Enhance-Tasks-Report-Output-Specification.md",
+      "file": "reports/handoff/2026-04-29-p1-Review-and-reconcile-launch-plan-dates-for-Notes-projects.md",
       "issue": "ready_no_checkboxes"
     }
   ]

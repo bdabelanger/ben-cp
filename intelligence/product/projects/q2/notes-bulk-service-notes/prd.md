@@ -3,7 +3,6 @@ title: Notes - Bulk Service Notes
 type: prd
 domain: product/projects/q2
 status: active
-taxonomy: Notes
 ---
 
 # PRD: Notes - Bulk Service Notes

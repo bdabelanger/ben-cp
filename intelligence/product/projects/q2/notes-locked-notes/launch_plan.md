@@ -3,7 +3,6 @@ title: Notes - Locked Notes
 type: launch_plan
 domain: product/projects/q2
 status: active
-taxonomy: Notes
 ---
 
 # Launch Plan: Notes - Locked Notes

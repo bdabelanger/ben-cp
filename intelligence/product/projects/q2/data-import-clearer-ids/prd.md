@@ -3,7 +3,6 @@ title: Data import - Clearer IDs
 type: prd
 domain: product/projects/q2
 status: active
-taxonomy: Data Import
 ---
 
 # PRD: Data import - Clearer IDs

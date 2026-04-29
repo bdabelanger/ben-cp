@@ -1,3 +1,10 @@
+---
+title: "Standardize due_date and priority frontmatter fields across all reports and tasks"
+priority: P3
+assigned_to: Code
+status: READY
+date: 2026-04-29
+---
 # Implementation Plan: Standardize due_date and priority frontmatter fields across all reports and tasks
 
 > **Prepared by:** Code (Gemini) (2026-04-29)
@@ -35,3 +42,7 @@ status: overdue | active | done    # optional, can be derived
 
 ## Source
 Conversation with Claude — 2026-04-28
+
+## Execution Steps
+
+_Steps to be defined during execution._

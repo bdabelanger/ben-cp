@@ -1,3 +1,10 @@
+---
+title: "Enhance Tasks Report Output Specification"
+priority: P1
+assigned_to: Cowork
+status: READY
+date: 2026-04-29
+---
 # Implementation Plan: Enhance Tasks Report Output Specification
 
 > **Prepared by:** Code (Gemini) (2026-04-29)
@@ -18,3 +25,6 @@
 5.  **Utility vs. Actionable Data:** Task counts are useful for high-level dashboards but should not be the primary focus of the actionable task list.
 
 This change requires modification to the `tasks/SKILL.md` or associated pipeline scripts within the repository structure. Please coordinate with Code Agent for implementation.
+## Execution Steps
+
+_Steps to be defined during execution._

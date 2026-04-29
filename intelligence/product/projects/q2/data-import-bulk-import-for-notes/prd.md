@@ -3,6 +3,7 @@ title: Data import - Bulk import for Notes
 type: prd
 domain: product/projects/q2
 status: active
+taxonomy: Data Import, Notes
 ---
 
 # PRD: Data import - Bulk import for Notes

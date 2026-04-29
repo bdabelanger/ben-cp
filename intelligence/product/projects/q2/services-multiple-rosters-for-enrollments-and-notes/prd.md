@@ -3,6 +3,7 @@ title: Services - Multiple rosters for enrollments and notes
 type: prd
 domain: product/projects/q2
 status: active
+taxonomy: Services, Notes
 ---
 
 # PRD: Services - Multiple rosters for enrollments and notes

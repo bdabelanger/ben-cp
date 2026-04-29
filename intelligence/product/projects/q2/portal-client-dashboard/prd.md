@@ -3,6 +3,7 @@ title: Portal - Client Dashboard
 type: prd
 domain: product/projects/q2
 status: active
+taxonomy: Portal
 ---
 
 # PRD: Portal - Client Dashboard

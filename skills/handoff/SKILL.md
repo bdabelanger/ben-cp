@@ -119,4 +119,4 @@ Priority levels (governed by `AGENTS.md` Thresholds):
 ---
 
 ## Links
-- [Audit logic (run.py)](run.py)
+- [Audit logic (handoffs.py)](../dream/scripts/handoffs.py)

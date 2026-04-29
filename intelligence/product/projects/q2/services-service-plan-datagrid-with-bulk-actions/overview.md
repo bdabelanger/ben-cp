@@ -2,7 +2,7 @@
 title: Service Plan - Service Plan Datagrid with bulk actions
 type: index
 domain: intelligence/product/projects/q2/services-service-plan-datagrid-with-bulk-actions
-taxonomy: Cases - Service Plan, Workload View
+taxonomy: Service Plan, Workload View
 links:
   asana: https://app.asana.com/1/1123317448830974/project/1211631360190563
   jira: https://casecommons.atlassian.net/browse/CBP-3066

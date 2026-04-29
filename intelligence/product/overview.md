@@ -9,12 +9,11 @@ taxonomy: none
 > Repo source of truth for the Product domain.
 
 ## Links
-- **Current Cycle:** [Q2 2026 Roadmap Shareout](shareout/q2/overview.md)
+- **Current Cycle:** [Q2 2026 Shareout Summary](shareout-q2-summary.md)
 - **Active Initiatives:** [Q2 Projects](projects/q2/overview.md)
-- **Governance:** [Q2 OKR Dashboard](okrs/q2/overview.md)
 - **Latest Status:** [Platform Report](projects/q2/overview.md)
 
 ## Reference
 
-> The product-feature taxonomy lives in the Casebook domain as it describes the product surface, not the roadmap.
-> See [`../casebook/taxonomy.md`](../casebook/taxonomy.md) for canonical product and feature labels.
+> The product-feature taxonomy lives in governance as it describes the product surface, not the roadmap.
+> See [`../../governance/taxonomy.md`](../../governance/taxonomy.md) for canonical product and feature labels.

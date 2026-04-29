@@ -2,7 +2,7 @@
 title: Service Plan - Service Plan Datagrid with Bulk Actions — Demo Guide
 type: demo
 domain: product/projects/q2/services-service-plan-datagrid-with-bulk-actions
-taxonomy: Cases - Service Plan
+taxonomy: Service Plan
 ---
 
 # Demo Guide: Service Plan — Bulk Enrollments + Datagrid

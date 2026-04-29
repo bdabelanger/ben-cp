@@ -3,6 +3,7 @@ title: Enrollment dialog - Bulk Services section
 type: launch_plan
 domain: product/projects/q2
 status: active
+taxonomy: Service Plan
 ---
 
 # Launch Plan: Enrollment dialog - Bulk Services section

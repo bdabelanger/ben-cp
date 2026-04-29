@@ -1,3 +1,10 @@
+---
+title: "Improve add_task tool: resolve project GID before calling, prevent accidental project creation"
+priority: P3
+assigned_to: Code
+status: READY
+date: 2026-04-29
+---
 # Implementation Plan: Improve add_task tool: resolve project GID before calling, prevent accidental project creation
 
 > **Prepared by:** Code (Gemini) (2026-04-29)
@@ -39,3 +46,7 @@ Update the `add_task` tool description to include a note like:
 > "If adding to an existing project, you MUST resolve the project GID first via `asana_typeahead_search` before calling this tool."
 
 This primes Claude to do the right thing without code changes.
+
+## Execution Steps
+
+_Steps to be defined during execution._

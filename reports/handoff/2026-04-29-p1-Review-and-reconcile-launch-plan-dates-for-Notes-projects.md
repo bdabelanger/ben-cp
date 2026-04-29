@@ -1,3 +1,10 @@
+---
+title: "Review and reconcile launch plan dates for Notes projects"
+priority: P1
+assigned_to: Cowork
+status: READY
+date: 2026-04-29
+---
 # Implementation Plan: Review and reconcile launch plan dates for Notes projects
 
 > **Prepared by:** Code (Gemini) (2026-04-29)
@@ -16,3 +23,7 @@ The following tasks require a review of project launch plans, as Asana milestone
 3. Enrollments dialog - Update launch plan
 
 **Context for Cowork:** The Asana report provides milestone dates, but the official project intelligence files should be used as the source of truth for final release timing. Please compare these two sources per project.
+
+## Execution Steps
+
+_Steps to be defined during execution._

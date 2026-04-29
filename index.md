@@ -139,20 +139,12 @@ reports/
 | `tsconfig.json` | TypeScript config |
 ---
 ## Auto-generated Stats
-> Last updated: 2026-04-29 11:54 by dream/reindex
+> Last updated: 2026-04-29 16:13 by dream/reindex
 
 | Metric | Value |
 |--------|-------|
-| Directories | 141 |
-| Markdown files | 491 |
-| Frontmatter coverage | 99.6% |
-| Missing frontmatter | 2 |
-| Unknown taxonomy terms | 2 |
-
-**Missing frontmatter (first 5):**
-- `governance/agents/antigravity/scratch/documentation_triad_templates.md`
-- `governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/memory/MEMORY.md`
-
-**Unknown taxonomy terms (first 5):**
-- `intelligence/product/projects/q2/accessibility-2026-vpat-accessibility-audit-(1213564552809143).md` — none — cross-cutting concern, not product-specific
-- `intelligence/product/projects/q2/web-applications-material-ui-upgrade-all-components-(1212552174642233).md` — none — cross-cutting tech modernization
+| Directories | 69 |
+| Markdown files | 170 |
+| Frontmatter coverage | 100.0% |
+| Missing frontmatter | 0 |
+| Unknown taxonomy terms | 0 |

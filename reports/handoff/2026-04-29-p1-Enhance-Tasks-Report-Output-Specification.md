@@ -28,3 +28,39 @@ This change requires modification to the `tasks/SKILL.md` or associated pipeline
 ## Execution Steps
 
 _Steps to be defined during execution._
+
+---
+
+## Scoping Notes (Cowork, 2026-04-29)
+
+### Current State of `skills/tasks/run.py`
+
+The script fetches Asana tasks and Jira issues, writes raw snapshots to `reports/tasks/data/raw/`, and generates `reports/tasks/report.md`.
+
+**What's already fetched but not surfaced:**
+- `notes` field on Asana tasks ✅ already in `opt_fields`
+- `description` field on Jira issues ✅ already in `fields` param
+
+**What's missing:**
+- Notes/description not rendered in `build_report()`
+- No cross-system Asana ↔ Jira linking logic
+- Sort is `modified_at` (Asana default) — not due date or priority
+- No presentation layer toggle (verbose vs. titles-only)
+
+### Required Changes → Code Locations
+
+| # | Change | Where |
+|---|---|---|
+| 1 | Surface task content in report | `build_report()` — add notes under each task entry |
+| 2 | Cross-system linking | New helper function — parse Asana `notes` for `CBP-XXXX` keys; check Jira `description` for Asana URLs |
+| 3 | Sort by due date → priority | `build_report()` — sort tasks before rendering |
+| 4 | Default titles+links only; `--verbose` for full content | Add `argparse` flag; gate notes rendering on flag |
+
+### Key Notes for Code Agent
+- Jira `description` is ADF (Atlassian Document Format JSON) — needs an ADF-to-plaintext helper before rendering
+- Asana has no native `priority` field in the standard API — check `intelligence/product/projects/asana_field_definitions.md` for the custom field GID
+- Priority sort order: P1 > P2 > P3 > P4 > no priority
+
+### Files to Modify
+- `skills/tasks/run.py` — primary
+- `skills/tasks/SKILL.md` — update output spec description

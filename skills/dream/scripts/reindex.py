@@ -126,8 +126,8 @@ def scan_repo():
     return manifest
 
 def load_taxonomy_terms():
-    """Return set of valid taxonomy labels from intelligence/casebook/taxonomy.md."""
-    path = os.path.join(REPO_ROOT, 'intelligence', 'casebook', 'taxonomy.md')
+    """Return set of valid taxonomy labels from governance/taxonomy.md."""
+    path = os.path.join(REPO_ROOT, 'governance', 'taxonomy.md')
     try:
         with open(path, errors='replace') as f:
             content = f.read()

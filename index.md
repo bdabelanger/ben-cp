@@ -139,12 +139,12 @@ reports/
 | `tsconfig.json` | TypeScript config |
 ---
 ## Auto-generated Stats
-> Last updated: 2026-04-29 15:41 by dream/reindex
+> Last updated: 2026-04-29 15:47 by dream/reindex
 
 | Metric | Value |
 |--------|-------|
-| Directories | 69 |
-| Markdown files | 174 |
+| Directories | 68 |
+| Markdown files | 165 |
 | Frontmatter coverage | 100.0% |
 | Missing frontmatter | 0 |
 | Unknown taxonomy terms | 2 |

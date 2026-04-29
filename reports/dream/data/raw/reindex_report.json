@@ -1,9 +1,9 @@
 {
   "sensor": "reindex",
-  "timestamp": "2026-04-29T15:41:05.233694",
+  "timestamp": "2026-04-29T15:47:27.457322",
   "summary": {
-    "directories": 69,
-    "files_scanned": 174,
+    "directories": 68,
+    "files_scanned": 165,
     "frontmatter_missing": 0,
     "unknown_taxonomy_terms": 2
   },
@@ -76,9 +76,9 @@
         "frontmatter_coverage": 1.0
       },
       "intelligence/product": {
-        "file_count": 1,
-        "md_count": 1,
-        "fm_count": 1,
+        "file_count": 4,
+        "md_count": 4,
+        "fm_count": 4,
         "frontmatter_coverage": 1.0
       },
       "intelligence/product/okrs": {
@@ -124,9 +124,9 @@
         "frontmatter_coverage": 1.0
       },
       "intelligence/product/projects/q2": {
-        "file_count": 8,
-        "md_count": 8,
-        "fm_count": 8,
+        "file_count": 10,
+        "md_count": 10,
+        "fm_count": 10,
         "frontmatter_coverage": 1.0
       },
       "intelligence/product/projects/q2/data-import-bulk-import-for-notes": {
@@ -285,19 +285,13 @@
         "fm_count": 5,
         "frontmatter_coverage": 1.0
       },
-      "intelligence/product/shareout": {
+      "intelligence/product/source": {
         "file_count": 0,
         "md_count": 0,
         "fm_count": 0,
         "frontmatter_coverage": 1.0
       },
-      "intelligence/product/shareout/q2": {
-        "file_count": 14,
-        "md_count": 14,
-        "fm_count": 14,
-        "frontmatter_coverage": 1.0
-      },
-      "intelligence/product/shareout/q2/source": {
+      "intelligence/product/source/shareout-q2": {
         "file_count": 1,
         "md_count": 0,
         "fm_count": 0,
@@ -861,6 +855,16 @@
         "type": "index",
         "taxonomy": "none"
       },
+      "intelligence/product/projects/q2/reporting-workforce-analytics.md": {
+        "has_frontmatter": true,
+        "type": "intelligence",
+        "taxonomy": "Reporting"
+      },
+      "intelligence/product/projects/q2/track-external-people-in-workflows.md": {
+        "has_frontmatter": true,
+        "type": "intelligence",
+        "taxonomy": "Track, Workflows"
+      },
       "intelligence/product/projects/q2/web-applications-material-ui-upgrade-all-components-(1212552174642233).md": {
         "has_frontmatter": true,
         "type": "intelligence",
@@ -896,83 +900,28 @@
         "type": "intelligence",
         "taxonomy": "none"
       },
-      "intelligence/product/shareout/q2/source/Q2 2026 Product Shareout.txt": {
+      "intelligence/product/source/shareout-q2/Q2 2026 Product Shareout.txt": {
         "has_frontmatter": false,
         "type": "file"
-      },
-      "intelligence/product/shareout/q2/bulk-service-plan-tools.md": {
-        "has_frontmatter": true,
-        "type": "intelligence",
-        "taxonomy": "none"
-      },
-      "intelligence/product/shareout/q2/notes-authoring-experience.md": {
-        "has_frontmatter": true,
-        "type": "intelligence",
-        "taxonomy": "none"
-      },
-      "intelligence/product/shareout/q2/notes-q2-2026-product-shareout.md": {
-        "has_frontmatter": true,
-        "type": "intelligence",
-        "taxonomy": "none"
-      },
-      "intelligence/product/shareout/q2/overview.md": {
-        "has_frontmatter": true,
-        "type": "index",
-        "taxonomy": "none"
-      },
-      "intelligence/product/shareout/q2/roadmap-2026.md": {
-        "has_frontmatter": true,
-        "type": "intelligence",
-        "taxonomy": "none"
-      },
-      "intelligence/product/shareout/q2/slide-19-reporting-packages-workforce.md": {
-        "has_frontmatter": true,
-        "type": "intelligence",
-        "taxonomy": "none"
-      },
-      "intelligence/product/shareout/q2/slide-24-sign-and-lock-notes.md": {
-        "has_frontmatter": true,
-        "type": "intelligence",
-        "taxonomy": "none"
-      },
-      "intelligence/product/shareout/q2/slide-26-bulk-import-notes.md": {
-        "has_frontmatter": true,
-        "type": "intelligence",
-        "taxonomy": "none"
-      },
-      "intelligence/product/shareout/q2/slide-27-global-notes-wlv.md": {
-        "has_frontmatter": true,
-        "type": "intelligence",
-        "taxonomy": "none"
-      },
-      "intelligence/product/shareout/q2/slide-28-client-portal.md": {
-        "has_frontmatter": true,
-        "type": "intelligence",
-        "taxonomy": "none"
-      },
-      "intelligence/product/shareout/q2/slide-30-zapier-improvements.md": {
-        "has_frontmatter": true,
-        "type": "intelligence",
-        "taxonomy": "none"
-      },
-      "intelligence/product/shareout/q2/slide-34-external-people-in-workflows.md": {
-        "has_frontmatter": true,
-        "type": "intelligence",
-        "taxonomy": "none"
-      },
-      "intelligence/product/shareout/q2/slide-7-notes-datagrid.md": {
-        "has_frontmatter": true,
-        "type": "intelligence",
-        "taxonomy": "none"
-      },
-      "intelligence/product/shareout/q2/speaker-notes-draft.md": {
-        "has_frontmatter": true,
-        "type": "intelligence",
-        "taxonomy": "none"
       },
       "intelligence/product/overview.md": {
         "has_frontmatter": true,
         "type": "index",
+        "taxonomy": "none"
+      },
+      "intelligence/product/roadmap-2026.md": {
+        "has_frontmatter": true,
+        "type": "intelligence",
+        "taxonomy": "none"
+      },
+      "intelligence/product/shareout-q2-summary.md": {
+        "has_frontmatter": true,
+        "type": "intelligence",
+        "taxonomy": "none"
+      },
+      "intelligence/product/speaker-notes-q2.md": {
+        "has_frontmatter": true,
+        "type": "intelligence",
         "taxonomy": "none"
       },
       "skills/asana/schemas/asana-custom-fields.md": {

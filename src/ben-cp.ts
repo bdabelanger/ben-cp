@@ -419,19 +419,19 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     if (name === "get_agent") {
       const { agent_id } = args as any;
       const agentPath = path.resolve(rootPath, "governance/agents", `${agent_id.toLowerCase()}.md`);
+      const agentsMdPath = path.resolve(rootPath, "AGENTS.md");
       const indexPath = path.resolve(rootPath, "index.md");
-      const policiesPath = path.resolve(rootPath, "governance/policies.md");
       try {
-        const [agentContent, indexContent, policiesContent] = await Promise.all([
+        const [agentsMdContent, agentContent, indexContent] = await Promise.all([
+          fs.readFile(agentsMdPath, "utf-8").catch(() => "AGENTS.md not found."),
           fs.readFile(agentPath, "utf-8"),
-          fs.readFile(indexPath, "utf-8").catch(() => "Index not found."),
-          fs.readFile(policiesPath, "utf-8").catch(() => "Policies not found.")
+          fs.readFile(indexPath, "utf-8").catch(() => "Index not found.")
         ]);
         return {
           content: [
+            { type: "text", text: `## AGENTS.md\n\n${agentsMdContent}` },
             { type: "text", text: `# Role Documentation: ${agent_id}\n\n${agentContent}` },
-            { type: "text", text: `## Repository Index\n\n${indexContent}` },
-            { type: "text", text: `## Global Policies\n\n${policiesContent}` }
+            { type: "text", text: `## Repository Index\n\n${indexContent}` }
           ]
         };
       } catch (err) {

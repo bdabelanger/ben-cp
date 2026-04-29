@@ -1,27 +1,27 @@
 # Dream Report — 2026-04-29
 
-**Run:** 15:41 · **Sensors:** 12/12 OK · **Duration:** 1.5s
+**Run:** 15:47 · **Sensors:** 12/12 OK · **Duration:** 1.3s
 
 ## Sensor Summary
 
 | Sensor | Status | Detail |
 |--------|--------|--------|
-| reindex | 🟡 | 69 directories, 174 files scanned, 2 unknown taxonomy terms |
+| reindex | 🟡 | 68 directories, 165 files scanned, 2 unknown taxonomy terms |
 | pulse | 🟢 | clean |
-| links | 🟡 | 104 files scanned, 9 ghost links |
-| frontmatter | 🔴 | 104 files scanned, 50 issues found |
+| links | 🟡 | 95 files scanned, 10 ghost links |
+| frontmatter | 🔴 | 95 files scanned, 40 issues found |
 | drift | 🟢 | clean |
 | handoffs | 🔴 | 12 files audited, 72 issues found |
 | index | 🟢 | clean |
-| agents | 🟡 | 106 files scanned, 2 issues found |
-| bloat | 🟡 | 258 total files, 2 yellow flags, 516 files touched 24h |
+| agents | 🟡 | 97 files scanned, 2 issues found |
+| bloat | 🟡 | 249 total files, 2 yellow flags, 523 files touched 24h |
 | changelog | 🟢 | clean |
 | intelligence | 🟢 | clean |
 | scripts | 🟢 | 5 skills checked |
 
 ## Highlights
 
-- **9 ghost links** — broken internal references
+- **10 ghost links** — broken internal references
 - **72 handoff issues** — missing sections or stale READY files
 - 2 files over 250KB (watch list)
 
@@ -33,6 +33,7 @@
 - `intelligence/product/projects/q2/portal-client-dashboard/overview.md` → `../../../okrs/q2/reduce-admin-burden/overview.md`
 - `intelligence/product/projects/q2/services-service-plan-datagrid-with-bulk-actions/overview.md` → `../../../okrs/q2/planning-services-at-scale/overview.md`
 - `intelligence/product/projects/q2/notes-global-notes-wlv-(1210368097846960).md` → `../../okrs/q2/elevate-notes/overview.md`
+- `intelligence/product/overview.md` → `shareout/q2/overview.md`
 - `intelligence/product/overview.md` → `okrs/q2/overview.md`
 - `intelligence/product/overview.md` → `../casebook/taxonomy.md`
 - `skills/handoff/SKILL.md` → `run.py`

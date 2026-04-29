@@ -1,19 +1,11 @@
 {
   "sensor": "frontmatter",
-  "timestamp": "2026-04-29T15:41:05.342618",
+  "timestamp": "2026-04-29T15:47:27.562984",
   "summary": {
-    "files_scanned": 104,
-    "issues_found": 50
+    "files_scanned": 95,
+    "issues_found": 40
   },
   "issues": [
-    {
-      "file": "intelligence/product/projects/q2/data-import-bulk-import-for-notes/overview.md",
-      "issue": "unknown_taxonomy_term",
-      "terms": [
-        "Data Import",
-        "Notes"
-      ]
-    },
     {
       "file": "intelligence/product/projects/q2/data-import-bulk-import-for-notes/prd.md",
       "issue": "missing_taxonomy"
@@ -56,13 +48,6 @@
       "file": "intelligence/product/projects/q2/enrollment-dialog-bulk-services-section/prd.md",
       "issue": "multiple_h1",
       "count": 6
-    },
-    {
-      "file": "intelligence/product/projects/q2/integrations-zapier-improvements/overview.md",
-      "issue": "unknown_taxonomy_term",
-      "terms": [
-        "Integrations"
-      ]
     },
     {
       "file": "intelligence/product/projects/q2/integrations-zapier-improvements/prd.md",
@@ -119,13 +104,6 @@
       "count": 5
     },
     {
-      "file": "intelligence/product/projects/q2/notes-locked-notes/overview.md",
-      "issue": "unknown_taxonomy_term",
-      "terms": [
-        "Notes"
-      ]
-    },
-    {
       "file": "intelligence/product/projects/q2/notes-locked-notes/prd.md",
       "issue": "missing_taxonomy"
     },
@@ -144,14 +122,6 @@
       "count": 5
     },
     {
-      "file": "intelligence/product/projects/q2/notes-notes-datagrid/overview.md",
-      "issue": "unknown_taxonomy_term",
-      "terms": [
-        "Notes",
-        "Workload View"
-      ]
-    },
-    {
       "file": "intelligence/product/projects/q2/notes-notes-datagrid/prd.md",
       "issue": "missing_taxonomy"
     },
@@ -159,14 +129,6 @@
       "file": "intelligence/product/projects/q2/notes-notes-datagrid/prd.md",
       "issue": "multiple_h1",
       "count": 5
-    },
-    {
-      "file": "intelligence/product/projects/q2/notes-signing-service-note-locking/overview.md",
-      "issue": "unknown_taxonomy_term",
-      "terms": [
-        "Notes",
-        "Audit Log"
-      ]
     },
     {
       "file": "intelligence/product/projects/q2/portal-client-dashboard/prd.md",
@@ -199,8 +161,7 @@
       "file": "intelligence/product/projects/q2/services-service-plan-datagrid-with-bulk-actions/overview.md",
       "issue": "unknown_taxonomy_term",
       "terms": [
-        "Cases - Service Plan",
-        "Workload View"
+        "Cases - Service Plan"
       ]
     },
     {
@@ -216,8 +177,7 @@
       "file": "intelligence/product/projects/q2/services-wlv-bulk-actions/overview.md",
       "issue": "unknown_taxonomy_term",
       "terms": [
-        "Cases - Service Plan",
-        "Workload View"
+        "Cases - Service Plan"
       ]
     },
     {
@@ -226,42 +186,6 @@
       "terms": [
         "none \u2014 cross-cutting concern",
         "not product-specific"
-      ]
-    },
-    {
-      "file": "intelligence/product/projects/q2/communications-text-message-syncing-routing-improvements-(1213880656869265).md",
-      "issue": "unknown_taxonomy_term",
-      "terms": [
-        "Communication"
-      ]
-    },
-    {
-      "file": "intelligence/product/projects/q2/data-import-clearer-error-messages-(1210860550580329).md",
-      "issue": "unknown_taxonomy_term",
-      "terms": [
-        "Data Import"
-      ]
-    },
-    {
-      "file": "intelligence/product/projects/q2/dynamic-pages-schema-migration-and-duplicate-prevention-(1212560621975480).md",
-      "issue": "unknown_taxonomy_term",
-      "terms": [
-        "Dynamic Pages"
-      ]
-    },
-    {
-      "file": "intelligence/product/projects/q2/notes-global-notes-wlv-(1210368097846960).md",
-      "issue": "unknown_taxonomy_term",
-      "terms": [
-        "Notes",
-        "Workload View"
-      ]
-    },
-    {
-      "file": "intelligence/product/projects/q2/notifications-eliminate-html-injectionxss-vulnerability-kpp-(1212555058482954).md",
-      "issue": "unknown_taxonomy_term",
-      "terms": [
-        "Notifications"
       ]
     },
     {

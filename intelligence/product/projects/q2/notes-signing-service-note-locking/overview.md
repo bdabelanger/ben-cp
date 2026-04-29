@@ -41,4 +41,15 @@ This capability formalizes the approval process, building sequentially on the Im
 
 **Related:** The backend governance mechanism aligns with [accessibility-2026-vpat-accessibility-audit-(1213564552809143).md].
 
+## Shareout
+
+> **Headline:** Sign and lock notes for better compliance mgmt
+> **Theme:** Security & Compliance Enablers
+
+### Customer quotes
+- "If one of the staff writes a note, they can go in and edit it at any time which is super unethical and dangerous." — Grafton County, NH
+
+### Positioning
+Addressing ethical/practical need for immutable records. Service note locking to beta June 2026. Note signing as follow-on capability. Enables HIPAA compliance and prevents dangerous editing of historical records.
+
 ## 📚 Internal Documentation

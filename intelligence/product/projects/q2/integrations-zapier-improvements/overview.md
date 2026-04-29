@@ -62,3 +62,14 @@ Next steps
 
 ## 📚 Internal Documentation
 - [**Product Requirements Document (PRD)**](prd.md)
+
+## Shareout
+
+> **Headline:** Better no-code automations - Zapier
+> **Theme:** Enhance Core Configurability
+
+### Customer quotes
+- "I could not really work on Zapier by myself because I know that setting up APIs… I need a developer or someone with me because I tried to do that on my own but I wasn't able to." — North Cook ISD
+
+### Positioning
+Custom field support + dynamic schema rendering. Direct custom field population for Intakes/People. Extended lookup/write (Search Cases, Create Note). No developer required. GA target 6/11.

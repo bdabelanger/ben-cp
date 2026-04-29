@@ -35,4 +35,3 @@ Overview of the Casebook Platform roadmap for Q2 2026, focusing on strategic upd
 - **Integration Depth**: How will the automated task routing for external users integrate with granular permissions?
 - **Timeline Precision**: Are the "Likely moving out of 2026" items (e.g., Budgets for services) formally de-prioritized in the active sprint logs?
 - **TechMod Impact**: What is the estimated performance gain from the CRNK replacement and PostgreSQL upgrades mentioned in the TechMod tracks?
-

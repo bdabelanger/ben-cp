@@ -70,3 +70,15 @@ Notes have been upgraded to streamline bulk data entry, centralizing inline data
 ## 📚 Internal Documentation
 - [**Product Requirements Document (PRD)**](prd.md)
 - [**Launch Plan**](launch_plan.md)
+
+## Shareout
+
+> **Headline:** Notes Datagrid: Optimized Review + Intuitive Authoring
+> **Theme:** Notes Workload View / Advanced Filtering
+
+### Customer quotes
+- "The ability to sort by the two types of dates has been very helpful… the chronological view as to what was going on in that student's life. That's been very positive." — North Cook ISC
+- "[Case Workers] input bulk notes so that they don't have to write the same thing five to eight times." — Path of Life (Discovery call)
+
+### Positioning
+Notes table/datagrid enables fast filtering and scanning of narrative content. GA Target: April 23 (4-2 release). Audit-ready: locked notes excluded from search/grid for users without permissions. Tabbed authoring design with clean separation of note narrative, services, and people. Inline selection, service groups, auto-completer for attendance.

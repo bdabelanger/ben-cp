@@ -16,3 +16,14 @@ local_sources:
 
 ## 📚 Internal Documentation
 - [**Product Requirements Document (PRD)**](prd.md)
+
+## Shareout
+
+> **Headline:** Get off to a great start: Bulk import notes
+> **Theme:** Ease Navigation Burdens
+
+### Customer quotes
+- "If we can't import into notes… if we can only have narrative… do I need to basically also shrink down these notes?" — Kentucky Humane Society
+
+### Positioning
+Faster onboarding for new customers. Bulk import for general notes + improved bulk error reporting (all errors at once). Reduces import-triage loop. Admin self-service with clear, actionable feedback.

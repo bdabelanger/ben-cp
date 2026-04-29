@@ -58,3 +58,14 @@ links:
     - **The Wellmet Project**: Explicitly stated the need for this: "I don't want them to have to go into 12 cases or people in order to write their notes. What I'd like is one central place… where all the notes are just in one area."
 
 **Related:** [Notes Datagrid](notes-notes-datagrid/overview.md) provides the underlying table technology.
+
+## Shareout
+
+> **Headline:** All your notes in one place: Notes WLV
+> **Theme:** Ease Navigation Burdens
+
+### Customer quotes
+- "I don't want them to have to go into 12 cases or people in order to write their notes. What I'd like is one central place… where all the notes are just in one area." — Wellmet Project
+
+### Positioning
+Central hub for all notes across units of work. Cross-UoW visibility, 'My Content' filter, global keyword search. Ideal for supervisors scanning activity across teams.

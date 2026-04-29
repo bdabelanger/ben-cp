@@ -1,5 +1,5 @@
 ---
-title: "Q2 2026 Product Shareout \u2014 Speaker Notes Draft"
+title: "Q2 2026 Product Shareout — Speaker Notes Draft"
 type: intelligence
 domain: intelligence/product/shareout/q2
 taxonomy: none

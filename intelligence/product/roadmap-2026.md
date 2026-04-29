@@ -52,7 +52,7 @@ taxonomy: none
 
 ### Q3 Planned
 - Admin - Undelete in Admin
-- Audit Logs - Track “View” events
+- Audit Logs - Track "View" events
 - Automated Tenant Creation
 - Cascading Deletes
 - Cases - Forms from linked Intakes
@@ -70,7 +70,7 @@ taxonomy: none
 
 ### Q4 Planned
 - Attachments - Attachments WLV
-- Audit Logs - Track “View” events
+- Audit Logs - Track "View" events
 - Cases - Attachments from linked Intakes
 - Cases - Notes from linked Intakes
 - Dynamic Pages - Attachments
@@ -96,4 +96,3 @@ taxonomy: none
 
 ---
 **Navigation:** [Q2 Shareout Index](./overview.md)
-

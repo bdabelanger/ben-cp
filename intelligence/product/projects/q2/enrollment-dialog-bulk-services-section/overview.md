@@ -62,3 +62,14 @@ links:
 ## 📚 Internal Documentation
 - [PRD](prd.md)
 - [Launch Plan](launch_plan.md)
+
+## Shareout
+
+> **Headline:** Sort, filter, and enrollment shortcuts: Service Plan + Services WLV
+> **Theme:** Bulk actions for enrollment management
+
+### Customer quotes
+- "Can I bulk [add] the service enrollments? Like … all five of them go on?" — Arc of the Capital
+
+### Positioning
+New Service Plan datagrid with keyword search, filter, sort. Bulk actions: End enrollments, Delete enrollments, Create service note. Up to 60% reduction in enrollment maintenance time for high-volume programs.

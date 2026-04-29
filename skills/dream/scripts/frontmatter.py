@@ -9,11 +9,11 @@ OUTPUTS_DIR = os.path.join(REPO_ROOT, 'reports', 'dream', 'data', 'raw')
 
 SKIP_DIRS  = {'.git', '__pycache__', 'node_modules', 'dist', 'src', 'reports', 'complete', 'archive', 'archived'}
 REQUIRED_KEYS = {'title', 'type', 'domain'}
-VALID_TYPES = {'index', 'skill', 'intelligence', 'handoff', 'changelog', 'release', 'prd', 'agent', 'task', 'report', 'log', 'session', 'launch_plan', 'run_log', 'shareout', 'source', 'reference', 'governance', 'art', 'design'}
+VALID_TYPES = {'index', 'skill', 'intelligence', 'handoff', 'changelog', 'release', 'prd', 'agent', 'task', 'report', 'log', 'session', 'launch_plan', 'run_log', 'shareout', 'source', 'reference', 'governance', 'art', 'design', 'overview'}
 
 def load_taxonomy_terms():
-    """Return set of valid taxonomy labels from intelligence/casebook/taxonomy.md."""
-    path = os.path.join(REPO_ROOT, 'intelligence', 'casebook', 'taxonomy.md')
+    """Return set of valid taxonomy labels from governance/taxonomy.md."""
+    path = os.path.join(REPO_ROOT, 'governance', 'taxonomy.md')
     try:
         with open(path, errors='replace') as f:
             content = f.read()

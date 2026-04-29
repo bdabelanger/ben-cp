@@ -16,3 +16,14 @@ taxonomy: none
 
 ## 📚 Internal Documentation
 - [**Product Requirements Document (PRD)**](prd.md)
+
+## Shareout
+
+> **Headline:** Collaborative data entry: Client Portal
+> **Theme:** Ease Navigation Burdens
+
+### Customer quotes
+- "Is there a client portal? Do clients have any interaction with the system?" — Sparta, WI Police Department
+
+### Positioning
+V1 scope: Editable person profiles, form submission, collaborative data collection. Eliminates redundant data entry. Clients enter once; workers review/approve. Self-service visibility into submission history.

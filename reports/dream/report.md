@@ -1,6 +1,6 @@
 # Dream Report — 2026-04-29
 
-**Run:** 03:01 · **Sensors:** 12/12 OK · **Duration:** 1.4s
+**Run:** 15:04 · **Sensors:** 12/12 OK · **Duration:** 1.6s
 
 ## Sensor Summary
 
@@ -14,7 +14,7 @@
 | handoffs | 🔴 | 12 files audited, 72 issues found |
 | index | 🟢 | clean |
 | agents | 🟡 | 106 files scanned, 2 issues found |
-| bloat | 🟡 | 261 total files, 2 yellow flags, 517 files touched 24h |
+| bloat | 🟡 | 261 total files, 2 yellow flags, 516 files touched 24h |
 | changelog | 🟢 | clean |
 | intelligence | 🟢 | clean |
 | scripts | 🟢 | 5 skills checked |
@@ -42,7 +42,7 @@
 ### ⚠️ Asana Data Fetch
 
 `--- Running 01_fetch_projects.py ---`
-`[2026-04-29 03:01:31] fetch_asana_projects.py`
+`[2026-04-29 15:04:46] fetch_asana_projects.py`
 `❌ Error running 01_fetch_projects.py`
 
 ### ⚠️ My Tasks

@@ -1,7 +1,7 @@
 {
   "run_date": "2026-04-29",
-  "started": "2026-04-29T15:30:17.476055",
-  "elapsed_s": 1.55,
+  "started": "2026-04-29T15:41:04.110103",
+  "elapsed_s": 1.51,
   "sensors_ok": 12,
   "failures": [],
   "pipelines": {

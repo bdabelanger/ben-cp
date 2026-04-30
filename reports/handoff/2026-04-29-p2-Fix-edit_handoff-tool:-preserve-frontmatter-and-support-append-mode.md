@@ -90,9 +90,62 @@ Update `next_tasks`, `completed_work`, `session_goal` descriptions to clarify th
 - `src/ben-cp.ts` — lines ~628–661 (`edit_handoff` handler)
 - After changes, run `npm run build` and `ben-cp:refresh_mcp` to reload
 
+---
+
+## Amendment: Support `IN_PROGRESS` status and implementation plan phase
+
+**Question from Cowork:** How should Code use `next_tasks`, `completed_work`, `session_goal` to add an implementation plan to a handoff *before* starting execution?
+
+**Answer:** They can't right now — there's no first-class handoff lifecycle for "picking up" a task. The tool jumps from `READY` → `COMPLETE` with no in-between. This is the fix.
+
+### Add `status: IN_PROGRESS` transition
+
+When an agent picks up a handoff and wants to record their implementation plan before executing, `edit_handoff` should support:
+
+```typescript
+edit_handoff({
+  path: "...",
+  status: "IN_PROGRESS",         // new: updates frontmatter status field
+  session_goal: "Implement X",  // new: written into the appended section
+  append: true,
+  content: `## Implementation Plan (Code, 2026-04-29)\n\n...steps...`
+})
+```
+
+This should:
+1. Update the frontmatter `status` field from `READY` → `IN_PROGRESS`
+2. Update the `> **STATUS**` line in the body to `🔄 IN_PROGRESS — {date}`
+3. Append the `content` block to the file body (using the `append` mechanic from Fix 2 above)
+4. Optionally prepend `**Session Goal:** {session_goal}` to the appended content
+
+### Updated status lifecycle
+
+```
+READY → IN_PROGRESS → COMPLETE
+  ↑           ↑            ↑
+add_handoff  pick up    mark_complete
+             + plan       + summary
+```
+
+### `list_handoffs` should surface IN_PROGRESS
+
+The current `status` filter only handles `READY` and `COMPLETE`. Add `IN_PROGRESS` as a valid filter value so agents can see what's actively being worked.
+
+### Schema additions
+
+```
+"status": "Optional. Set to 'IN_PROGRESS' to mark handoff as picked up. Updates both frontmatter and body STATUS line."
+"session_goal": "The goal for this session. Written as a header in the appended implementation plan section. Works on non-completion edits when append: true."
+```
+
+---
+
 ## Definition of Done
 
 - Calling `edit_handoff` with `content` no longer strips frontmatter
 - Calling `edit_handoff` with `append: true` appends to existing body
+- Calling `edit_handoff` with `status: 'IN_PROGRESS'` transitions the handoff status in both frontmatter and body
+- `session_goal` is written into the appended content block (not silently ignored)
+- `list_handoffs` accepts `IN_PROGRESS` as a valid status filter
 - Schema descriptions accurately describe what each param does
-- Cowork can add session notes to a handoff without needing to reconstruct the full file
+- Code can pick up a handoff, record an implementation plan, and execute — all without clobbering the original context

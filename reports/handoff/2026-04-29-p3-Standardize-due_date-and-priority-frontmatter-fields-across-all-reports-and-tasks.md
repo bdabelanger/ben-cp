@@ -44,5 +44,7 @@ status: overdue | active | done    # optional, can be derived
 Conversation with Claude — 2026-04-28
 
 ## Execution Steps
-
-_Steps to be defined during execution._
+- [ ] Audit all report types inventoried for current frontmatter usage.
+- [ ] Propose canonical field spec for human approval.
+- [ ] Update report generation scripts to emit compliant fields.
+- [ ] Document schema in governance.

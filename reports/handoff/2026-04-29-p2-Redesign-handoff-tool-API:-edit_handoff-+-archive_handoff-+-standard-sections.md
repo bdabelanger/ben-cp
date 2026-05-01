@@ -1,3 +1,10 @@
+---
+title: "Redesign handoff tool API: edit_handoff + archive_handoff + standard sections"
+priority: P2
+assigned_to: Code
+status: READY
+date: 2026-04-29
+---
 # Implementation Plan: Redesign handoff tool API: edit_handoff + archive_handoff + standard sections
 
 > **Prepared by:** Code (Gemini) (2026-04-29)
@@ -212,13 +219,13 @@ Also add to **Cowork agent role** (`governance/agents/cowork.md`): Cowork is the
 
 ## Execution Steps
 
-1. **`src/ben-cp.ts`** — implement `archive_handoff` tool handler (extract from `edit_handoff` `mark_complete` path)
-2. **`src/ben-cp.ts`** — update `edit_handoff` handler: add `append`, `status: IN_PROGRESS`, `session_goal`; remove `mark_complete` + changelog params; preserve frontmatter on all writes
-3. **`src/ben-cp.ts`** — add `IN_PROGRESS` to `list_handoffs` status filter
-4. **`src/ben-cp.ts`** — register `archive_handoff` in the tools list
-5. **`skills/handoff/SKILL.md`** — add Lifecycle section, Standard Sections, update Tool Utility table
-6. **`AGENTS.md`** — update MCP Tools table rows for `edit_handoff` and `archive_handoff`
-7. `npm run build` + `ben-cp:refresh_mcp`
+- [ ] `src/ben-cp.ts` — implement `archive_handoff` tool handler (extract from `edit_handoff` `mark_complete` path)
+- [ ] `src/ben-cp.ts` — update `edit_handoff` handler: add `append`, `status: IN_PROGRESS`, `session_goal`; remove `mark_complete` + changelog params; preserve frontmatter on all writes
+- [ ] `src/ben-cp.ts` — add `IN_PROGRESS` to `list_handoffs` status filter
+- [ ] `src/ben-cp.ts` — register `archive_handoff` in the tools list
+- [ ] `skills/handoff/SKILL.md` — add Lifecycle section, Standard Sections, update Tool Utility table
+- [ ] `AGENTS.md` — update MCP Tools table rows for `edit_handoff` and `archive_handoff`
+- [ ] `npm run build` + `ben-cp:refresh_mcp`
 
 ## Definition of Done
 

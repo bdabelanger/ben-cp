@@ -342,7 +342,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
 
     // --- HANDOFFS ---
-    { name: "list_handoffs", description: "List active handoffs. Use this to discover open implementation plans and cross-agent tasks. Can filter by status or assigned agent.", inputSchema: { type: "object", properties: { status: { type: "string", enum: ["READY", "COMPLETE", "ALL"] }, limit: { type: "number" }, assigned_to: { type: "string" } } } },
+    { name: "list_handoffs", description: "List active handoffs. Use this to discover open implementation plans and cross-agent tasks. Can filter by status or assigned agent.", inputSchema: { type: "object", properties: { status: { type: "string", enum: ["READY", "IN_PROGRESS", "COMPLETE", "ALL"] }, limit: { type: "number" }, assigned_to: { type: "string" } } } },
     { name: "get_handoff", description: "Get a handoff by filename. Use this to retrieve implementation plans. Omit 'handoff/' prefix from the path.", inputSchema: { type: "object", properties: { path: { type: "string" } }, required: ["path"] } },
     {
       name: "add_handoff",
@@ -360,21 +360,33 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "edit_handoff",
-      description: "Edit a handoff or mark it as complete. Use this to update plan progress. Completion automatically archives the file.",
+      description: "Update a live handoff. Use append: true to add a section without replacing existing content (frontmatter is always preserved). Use status: 'IN_PROGRESS' to signal the handoff has been picked up.",
       inputSchema: {
         type: "object",
         properties: {
           path: { type: "string" },
-          content: { type: "string" },
-          mark_complete: { type: "boolean" },
-          summary: { type: "string" },
-          session_goal: { type: "string" },
-          completed_work: { type: "array", items: { type: "object", properties: { path: { type: "string" }, change: { type: "string" }, status: { type: "string" } } } },
-          next_tasks: { type: "array", items: { type: "string" } },
-          subdirectories: { type: "array", items: { type: "string" } },
-          version_bump: { type: "string" }
+          content: { type: "string", description: "Section content to write. Replaces body unless append: true." },
+          append: { type: "boolean", description: "If true, appends content to existing body. Use this for adding implementation plans, review notes, or progress updates." },
+          status: { type: "string", enum: ["IN_PROGRESS"], description: "Set to IN_PROGRESS when picking up a handoff. Updates both frontmatter status field and body STATUS line." },
+          session_goal: { type: "string", description: "Written as a bold header above the appended content block. Only used when append: true." }
         },
         required: ["path"]
+      }
+    },
+    {
+      name: "archive_handoff",
+      description: "Mark a handoff complete and archive it. Moves the file to reports/handoff/archive/, updates STATUS to COMPLETE, and writes a changelog entry. Use only when all execution steps are done.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          path: { type: "string", description: "Handoff filename (omit handoff/ prefix)" },
+          summary: { type: "string", description: "One-paragraph summary of what was done and any flags for human user" },
+          session_goal: { type: "string", description: "Goal of the session, used as changelog entry title" },
+          completed_work: { type: "array", items: { type: "object", properties: { path: { type: "string" }, change: { type: "string" }, status: { type: "string" } }, required: ["path", "change", "status"] } },
+          next_tasks: { type: "array", items: { type: "string" }, description: "Follow-on tasks for the next agent or human" },
+          version_bump: { type: "string", enum: ["major", "minor", "patch"] }
+        },
+        required: ["path", "summary", "session_goal", "completed_work", "next_tasks"]
       }
     },
 
@@ -648,7 +660,8 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         ? results
         : results.filter(r => {
           const rStatus = r.status.toLowerCase();
-          if (status === "READY") return rStatus.includes("ready") && !rStatus.includes("complete");
+          if (status === "READY") return rStatus.includes("ready") && !rStatus.includes("complete") && !rStatus.includes("progress");
+          if (status === "IN_PROGRESS") return rStatus.includes("progress");
           if (status === "COMPLETE") return rStatus.includes("complete");
           return true;
         });
@@ -685,30 +698,84 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       } catch {
         if (!path.extname(sourcePath)) {
           const mdPath = `${sourcePath}.md`;
-          try {
-            await fs.access(mdPath);
-            sourcePath = mdPath;
-          } catch { }
+          try { await fs.access(mdPath); sourcePath = mdPath; } catch { }
         }
       }
 
-      if (a.mark_complete) {
-        const date = new Date().toISOString().split('T')[0];
-        const targetFilename = `${path.basename(relPath, ".md")}-ARCHIVE.md`;
-        const targetPath = path.join(handoffPath, "archive", targetFilename);
-        const content = await fs.readFile(sourcePath, "utf-8");
-        const statusRegex = /> \*\*STATUS:?.*$/m;
-        const updatedContent = content.replace(statusRegex, `> **STATUS**: ✅ COMPLETE — ${date}\n\n${a.summary}`);
-        await fs.mkdir(path.join(handoffPath, "archive"), { recursive: true });
-        await fs.writeFile(targetPath, updatedContent, "utf-8");
-        await fs.unlink(sourcePath);
-        await writeChangelogInternal({ ...a, handoff: `archive/${targetFilename}` }, skillsPath, date);
-        return { content: [{ type: "text", text: `Handoff completed and archived to ${targetFilename}.` }] };
-      } else {
-        if (!a.content) throw new Error("Content required for non-completion edit.");
-        await fs.writeFile(sourcePath, a.content, "utf-8");
-        return { content: [{ type: "text", text: "Handoff updated." }] };
+      const existingContent = await fs.readFile(sourcePath, "utf-8");
+      const { metadata: currentMetadata, body: currentBody } = extractFrontmatterAndBody(existingContent);
+
+      const date = new Date().toISOString().split('T')[0];
+
+      // Update Metadata
+      if (a.status) {
+        currentMetadata.status = a.status;
       }
+
+      let finalBody = currentBody;
+      if (a.append) {
+        let block = "";
+        if (a.session_goal) {
+          block += `\n\n### ${a.session_goal}\n`;
+        } else {
+          block += `\n\n--- (Update ${date}) ---\n`;
+        }
+        block += a.content || "";
+        finalBody = currentBody + block;
+      } else if (a.content) {
+        finalBody = a.content;
+      }
+
+      // Sync body STATUS line if it exists
+      if (a.status) {
+        finalBody = finalBody.replace(/^> \*\*STATUS\*\*:.*$/m, `> **STATUS**: 🔲 ${a.status} — updated ${date}`);
+      }
+
+      const newContent = stringifyFrontmatter(currentMetadata) + "\n" + finalBody;
+      await fs.writeFile(sourcePath, newContent, "utf-8");
+      return { content: [{ type: "text", text: "Handoff updated." }] };
+    }
+
+    if (name === "archive_handoff") {
+      const a = args as any;
+      const relPath = String(a.path);
+      const normalized = relPath.startsWith("handoff/") ? relPath.slice(8) : relPath;
+      let sourcePath = path.resolve(handoffPath, normalized);
+
+      try {
+        await fs.access(sourcePath);
+      } catch {
+        if (!path.extname(sourcePath)) {
+          const mdPath = `${sourcePath}.md`;
+          try { await fs.access(mdPath); sourcePath = mdPath; } catch { }
+        }
+      }
+
+      const existingContent = await fs.readFile(sourcePath, "utf-8");
+      const { metadata: currentMetadata, body: currentBody } = extractFrontmatterAndBody(existingContent);
+      const date = new Date().toISOString().split('T')[0];
+
+      const targetFilename = `${path.basename(sourcePath, ".md")}-ARCHIVE.md`;
+      const targetPath = path.join(handoffPath, "archive", targetFilename);
+      
+      // Update Metadata for completion
+      currentMetadata.status = `✅ COMPLETE — ${date}`;
+      
+      let finalBody = currentBody;
+      if (a.summary) {
+        finalBody += `\n\n## Completion Summary\n${a.summary}`;
+      }
+      
+      const updatedContent = stringifyFrontmatter(currentMetadata) + "\n" + finalBody;
+      
+      await fs.mkdir(path.join(handoffPath, "archive"), { recursive: true });
+      await fs.writeFile(targetPath, updatedContent, "utf-8");
+      await fs.unlink(sourcePath);
+      
+      // Root changelog entry
+      await writeChangelogInternal({ ...a, handoff: `archive/${targetFilename}` }, skillsPath, date);
+      
+      return { content: [{ type: "text", text: `Handoff completed and archived to ${targetFilename}.` }] };
     }
 
     // --- ART & MEDIA ---

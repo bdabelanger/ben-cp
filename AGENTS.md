@@ -195,8 +195,9 @@ This repo exposes purpose-built MCP tools. Use them instead of raw file reads/wr
 | `list_art` / `get_art` / `add_art` | Explore and contribute to the gallery (poems, sketches, etc) |
 | `get_changelog` / `add_changelog` | Get and add entries to the project changelog. |
 | `list_reports` / `get_report` / `run_report` | Discover, retrieve, and execute report pipelines. |
-| `edit_handoff` | Update a handoff or mark it as complete (archives to archive/ folder) |
-| `add_handoff` | Add a handoff to stage implementation plans. |
+| `edit_handoff` | Update a live handoff by appending standard sections (Plan, Review, Update). Never clobbers existing body. |
+| `archive_handoff` | **Cowork only**. Mark a handoff complete, move to archive, and write root changelog entry. |
+| `add_handoff` | Add a handoff to stage cross-agent implementation plans. |
 | `search_tasks` | Search keywords in the latest tasks report to prevent duplication. |
 | `add_task` | Add a task to external systems (Asana/Jira) via raw capture. Use specialized `asana` and `atlassian` MCP servers for subsequent task management (updates, deletes, etc). |
 

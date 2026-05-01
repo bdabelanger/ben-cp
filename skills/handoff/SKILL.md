@@ -37,84 +37,92 @@ Read the full handoff file. Note:
    - Read before every write — no exceptions
    - If a task remains ambiguous, stop and flag — do not improvise.
 
-### Step 4 — Write Changelog
-Before marking complete, write a changelog entry using `add_changelog`:
-- **Root level** — detailed summary of structural or logic changes.
-- **Handoff Pointer:** Include `**Handoff:** reports/handoff/archive/[filename]-ARCHIVE.md` in the entry.
+## Step 4 — Write Changelog
+Changelog writing is now handled automatically by the `archive_handoff` tool. You do not need to call `add_changelog` separately when closing a handoff.
 
 ### Step 5 — Mark Complete
 When all tasks are done (or fully attempted with blockers documented):
-1. Update the STATUS line from `🔲 READY` to `✅ COMPLETE — [date]`
-2. Add a one-paragraph summary below the STATUS block: what was done, any flags for human user
-3. Add a **Changelog** line: `**Changelog:** [X.Y.Z] — [date] (see root changelog.md)`
-4. Move the file to `reports/handoff/archive/` via `edit_handoff`.
+1. Use the `archive_handoff` tool.
+2. Provide a `summary` of work done.
+3. The tool will automatically:
+   - Update frontmatter to `✅ COMPLETE`
+   - Move the file to `reports/handoff/archive/`
+   - Write a structured entry to the root `changelog.md`
 
 ---
 
-## Handoff File Format (for creating agents)
+## Lifecycle & Status
 
-When creating a handoff for another agent, use this structure:
+Handoffs follow a strict state machine:
 
-```markdown
-# [Receiving Agent] Implementation Plan: [Short Title]
+1. **READY**: Handoff is created and waiting for an agent.
+2. **IN_PROGRESS**: Agent has picked it up and appended an `## Implementation Plan`.
+3. **COMPLETE**: Work is finished, summary is appended, and file is archived.
 
-> **Prepared by:** [Agent] ([context], [YYYY-MM-DD])
-> **Assigned to:** [Claude | Code (Claude Code / Antigravity) | Gemma | Any]
-> **Priority:** P[N] — [one-line reason]
-> **v1.0**
-> **STATUS: 🔲 READY — pick up [YYYY-MM-DD]**
+To transition a handoff from `READY` to `IN_PROGRESS`, call `edit_handoff` with `status: 'IN_PROGRESS'` when appending your implementation plan.
 
 ---
 
-## Context
-[Why this work is needed — 2–4 sentences]
+## Standard Sections
 
----
+To maintain an auditable, chronological record, agents MUST use these standard section headers when appending content via `edit_handoff`:
 
-## Execution Order
-1. **Task 1** — [short label]
-2. **Task 2** — [short label]
-...
-N. **Task N** — Write changelog and mark complete
+### `## Implementation Plan ([Agent], [YYYY-MM-DD])`
+- **Required** when picking up a `READY` handoff.
+- Set `status: 'IN_PROGRESS'` in the same call.
+- Contains the "How" — specific files, steps, and logic.
 
----
+### `## Update ([Agent], [YYYY-MM-DD])`
+- Used for mid-session progress, blockers, or deviations.
+- Use `[x]` to mark progress in your steps.
 
-## Task 1: [Title]
-[Detailed instructions — what to read first, what to write, exact content if needed]
-
----
-
-## Task N: Changelog + Completion
-
-Write changelog entry, then mark this file complete via `edit_handoff`.
-
----
-
-## Notes for This Agent
-- [Constraints, do-not-touch files, edge cases]
-```
-
-**File naming:** `reports/handoff/YYYY-MM-DD-p[N]-[kebab-title].md`
-
-Priority levels (governed by `AGENTS.md` Thresholds):
-- **P1 (Critical)** — agent navigation broken (orphaned files, missing overview.md, misplaced files) or core pipeline logic failure. Requires `implementation_plan.md` + `walkthrough.md`.
-- **P2 (Major)** — structural violations (AGENTS.md compliance, root-level stubs, duplicates). Requires `implementation_plan.md`.
-- **P3 (Minor)** — data quality gaps (data_sources.md sync, stale flags, low-urgency cleanup). Plan included within handoff.
-- **P4 (Trivial)** — Typos, formatting, or atomic dependency updates. No handoff required (Atomic execution).
-
----
-
-## Audit Requirements
-- [ ] **Continuity**: Every session must starting with a handoff check and end with a handoff update/creation.
-- [ ] **Traceability**: All handoff files must follow the kebab-case naming convention.
-- [ ] **Closure**: Completed work must be explicitly noted in the final call to the handoff tool.
+### `## Review: [State] ([Agent], [YYYY-MM-DD])`
+- **[Requested]**: Any agent needing input or approval.
+- **[Approved]**: **Cowork only**. Sign-off to proceed or archive.
+- **[Needs Revision]**: **Cowork only**. Stop work and address feedback.
 
 ---
 
 ## Tool Utility
-- **add_handoff**: Primary tool for creating the persistent context for the next agent.
-- **list_handoffs**: Used to scan for the most recent queue of active work.
-- **edit_handoff**: Update a handoff or mark it as complete.
+
+| Tool | Who | When |
+| :--- | :--- | :--- |
+| `add_handoff` | Any agent | Create a new cross-agent relay. |
+| `list_handoffs` | Any agent | Discover open work. Filter by `READY` or `IN_PROGRESS`. |
+| `get_handoff` | Any agent | Read the full content and history of a plan. |
+| `edit_handoff` | Any agent | Update a live handoff. Always use `append: true`. |
+| `archive_handoff` | **Cowork only** | Mark complete, move to archive, and write changelog. |
+
+---
+
+## Handoff File Format
+
+```markdown
+---
+title: "[Short Title]"
+priority: P[N]
+assigned_to: [Agent]
+status: READY
+date: YYYY-MM-DD
+---
+# Implementation Plan: [Short Title]
+
+> **Prepared by:** [Agent] ([YYYY-MM-DD])
+> **Assigned to:** [Agent]
+> **Priority:** P[N]
+> **STATUS: 🔲 READY**
+
+---
+
+## Context
+[Problem statement and background]
+
+## Execution Steps
+- [ ] Step 1
+- [ ] Step 2
+```
+
+**File naming:** `reports/handoff/YYYY-MM-DD-p[N]-[kebab-title].md`
 
 ---
 

@@ -63,8 +63,32 @@ def fetch_asana_projects():
 
         body = resp.json()
         batch = body.get("data", [])
-        all_projects.extend(batch)
-        print(f"  → {len(batch)} projects received (total so far: {len(all_projects)})")
+        
+        # MINIFICATION: Only keep fields required for status reporting and intelligence
+        WHITELIST_GIDS = {
+            "1208820967756795", "1208822149019495", "1211631943113717",
+            "1210467277124544", "1208818118032458", "1210909549820601",
+            "1208818124273418", "1208818005809198", "1211632504010030",
+            "1211632748689814"
+        }
+        
+        minified_batch = []
+        for p in batch:
+            mini_p = {
+                "gid": p.get("gid"),
+                "name": p.get("name"),
+                "permalink_url": p.get("permalink_url"),
+                "current_status_update": p.get("current_status_update")
+            }
+            # Filter custom fields
+            custom_fields = p.get("custom_fields", [])
+            mini_p["custom_fields"] = [
+                f for f in custom_fields if f.get("gid") in WHITELIST_GIDS
+            ]
+            minified_batch.append(mini_p)
+
+        all_projects.extend(minified_batch)
+        print(f"  → {len(batch)} projects received (minified total: {len(all_projects)})")
 
         # Pagination: follow next_page.uri if present
         next_page = body.get("next_page")
@@ -72,7 +96,7 @@ def fetch_asana_projects():
 
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     with open(OUTPUT_PATH, "w") as f:
-        json.dump(all_projects, f, indent=2)
+        json.dump(all_projects, f)
 
     print(f"✅ 01_fetch_projects Complete: {len(all_projects)} projects written to {OUTPUT_PATH}")
 

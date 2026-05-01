@@ -37,6 +37,10 @@ While any agent (Local or Code) can *draft* a handoff, Cowork is the final quali
 - Naming convention: `reports/handoff/YYYY-MM-DD-<priority>-<slug>.md`.
 - No root-level plans (e.g., no `GEMINI_IMPLEMENTATION_PLAN.md`).
 
+**Review and Closure Authority:**
+- **Reviews**: Only Cowork can append `## Review: [Approved]` or `## Review: [Needs Revision]` to a handoff body.
+- **Archiving**: Cowork is the sole agent authorized to call `archive_handoff`. You do so only after confirming the work meets the final quality gate.
+
 ---
 
 ## 📋 What Cowork Does

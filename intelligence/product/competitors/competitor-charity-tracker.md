@@ -1,7 +1,9 @@
-# Competitor Profile: Charity Tracker (Simon Solutions)
-
-- **taxonomy:** Competitors
-- **type:** intelligence
+---
+title: "Competitor Profile: Charity Tracker (Simon Solutions)"
+type: intelligence
+domain: intelligence/product/competitors
+taxonomy: none
+---
 
 # Competitor Profile: Charity Tracker (Simon Solutions)
 

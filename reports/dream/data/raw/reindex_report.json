@@ -1,10 +1,10 @@
 {
   "sensor": "reindex",
-  "timestamp": "2026-04-29T12:27:21.007509",
+  "timestamp": "2026-04-30T22:43:54.720381",
   "summary": {
-    "directories": 141,
-    "files_scanned": 494,
-    "frontmatter_missing": 2,
+    "directories": 147,
+    "files_scanned": 516,
+    "frontmatter_missing": 0,
     "unknown_taxonomy_terms": 0
   },
   "manifest": {
@@ -57,7 +57,19 @@
         "fm_count": 0,
         "frontmatter_coverage": 1.0
       },
+      "governance/agents/antigravity/brain/148c68a3-a7a8-4152-869c-7f48a2550917": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
       "governance/agents/antigravity/brain/2bcc0bdc-0995-4d2a-82bc-524f66ad9d17": {
+        "file_count": 0,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "governance/agents/antigravity/brain/382e4f77-3685-4dee-b6d3-1366236f9ca2": {
         "file_count": 0,
         "md_count": 0,
         "fm_count": 0,
@@ -118,7 +130,7 @@
         "frontmatter_coverage": 1.0
       },
       "governance/agents/antigravity/conversations": {
-        "file_count": 81,
+        "file_count": 83,
         "md_count": 0,
         "fm_count": 0,
         "frontmatter_coverage": 1.0
@@ -144,8 +156,8 @@
       "governance/agents/antigravity/scratch": {
         "file_count": 2,
         "md_count": 1,
-        "fm_count": 0,
-        "frontmatter_coverage": 0.0
+        "fm_count": 1,
+        "frontmatter_coverage": 1.0
       },
       "governance/agents/claude": {
         "file_count": 3,
@@ -288,8 +300,8 @@
       "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/memory": {
         "file_count": 2,
         "md_count": 2,
-        "fm_count": 1,
-        "frontmatter_coverage": 0.5
+        "fm_count": 2,
+        "frontmatter_coverage": 1.0
       },
       "governance/agents/claude/projects/-Users-benbelanger-GitHub-casebook-mcp": {
         "file_count": 1,
@@ -466,9 +478,9 @@
         "frontmatter_coverage": 1.0
       },
       "intelligence/casebook": {
-        "file_count": 1,
-        "md_count": 1,
-        "fm_count": 1,
+        "file_count": 5,
+        "md_count": 5,
+        "fm_count": 5,
         "frontmatter_coverage": 1.0
       },
       "intelligence/casebook/features": {
@@ -501,10 +513,22 @@
         "fm_count": 9,
         "frontmatter_coverage": 1.0
       },
+      "intelligence/governance": {
+        "file_count": 2,
+        "md_count": 2,
+        "fm_count": 2,
+        "frontmatter_coverage": 1.0
+      },
       "intelligence/product": {
-        "file_count": 4,
-        "md_count": 4,
-        "fm_count": 4,
+        "file_count": 5,
+        "md_count": 5,
+        "fm_count": 5,
+        "frontmatter_coverage": 1.0
+      },
+      "intelligence/product/competitors": {
+        "file_count": 7,
+        "md_count": 7,
+        "fm_count": 7,
         "frontmatter_coverage": 1.0
       },
       "intelligence/product/okrs": {
@@ -760,7 +784,7 @@
         "frontmatter_coverage": 1.0
       },
       "skills/dream/scripts": {
-        "file_count": 13,
+        "file_count": 14,
         "md_count": 0,
         "fm_count": 0,
         "frontmatter_coverage": 1.0
@@ -773,6 +797,12 @@
       },
       "skills/intelligence": {
         "file_count": 2,
+        "md_count": 1,
+        "fm_count": 1,
+        "frontmatter_coverage": 1.0
+      },
+      "skills/intelligence/schemas": {
+        "file_count": 1,
         "md_count": 1,
         "fm_count": 1,
         "frontmatter_coverage": 1.0
@@ -819,16 +849,16 @@
         "fm_count": 1,
         "frontmatter_coverage": 1.0
       },
-      "skills/tasks": {
-        "file_count": 2,
-        "md_count": 1,
-        "fm_count": 1,
+      "skills/styles": {
+        "file_count": 3,
+        "md_count": 2,
+        "fm_count": 2,
         "frontmatter_coverage": 1.0
       },
-      "skills/tasks/scripts": {
-        "file_count": 0,
-        "md_count": 0,
-        "fm_count": 0,
+      "skills/tasks": {
+        "file_count": 3,
+        "md_count": 2,
+        "fm_count": 2,
         "frontmatter_coverage": 1.0
       },
       "skills/transcripts": {
@@ -845,6 +875,12 @@
       },
       "skills/transcripts/scripts": {
         "file_count": 1,
+        "md_count": 0,
+        "fm_count": 0,
+        "frontmatter_coverage": 1.0
+      },
+      "skills/utilities": {
+        "file_count": 0,
         "md_count": 0,
         "fm_count": 0,
         "frontmatter_coverage": 1.0
@@ -953,6 +989,10 @@
         "has_frontmatter": false,
         "type": "file"
       },
+      "governance/agents/antigravity/conversations/148c68a3-a7a8-4152-869c-7f48a2550917.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
       "governance/agents/antigravity/conversations/14f8bad6-98f1-49e7-9cc2-3af655a6efb9.pb": {
         "has_frontmatter": false,
         "type": "file"
@@ -974,6 +1014,10 @@
         "type": "file"
       },
       "governance/agents/antigravity/conversations/2bcc0bdc-0995-4d2a-82bc-524f66ad9d17.pb": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "governance/agents/antigravity/conversations/382e4f77-3685-4dee-b6d3-1366236f9ca2.pb": {
         "has_frontmatter": false,
         "type": "file"
       },
@@ -1270,9 +1314,9 @@
         "type": "file"
       },
       "governance/agents/antigravity/scratch/documentation_triad_templates.md": {
-        "has_frontmatter": false,
-        "type": null,
-        "taxonomy": null
+        "has_frontmatter": true,
+        "type": "intelligence",
+        "taxonomy": "none"
       },
       "governance/agents/antigravity/installation_id": {
         "has_frontmatter": false,
@@ -1363,14 +1407,14 @@
         "type": "file"
       },
       "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/memory/MEMORY.md": {
-        "has_frontmatter": false,
-        "type": null,
-        "taxonomy": null
+        "has_frontmatter": true,
+        "type": "intelligence",
+        "taxonomy": "none"
       },
       "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/memory/project_separation_policy_audits.md": {
         "has_frontmatter": true,
-        "type": "project",
-        "taxonomy": null
+        "type": "intelligence",
+        "taxonomy": "none"
       },
       "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/07552dd1-6207-44d6-b57e-e96be6e38d35.jsonl": {
         "has_frontmatter": false,
@@ -1458,12 +1502,12 @@
       },
       "governance/agents/claude/scheduled-tasks/dream/SKILL.md": {
         "has_frontmatter": true,
-        "type": null,
+        "type": "skill",
         "taxonomy": null
       },
       "governance/agents/claude/scheduled-tasks/rem/SKILL.md": {
         "has_frontmatter": true,
-        "type": null,
+        "type": "skill",
         "taxonomy": null
       },
       "governance/agents/claude/statsig/statsig.cached.evaluations.5b44dfbd95": {
@@ -2289,9 +2333,74 @@
         "type": "intelligence",
         "taxonomy": "none"
       },
+      "intelligence/casebook/acronym-abbreviation-guide.md": {
+        "has_frontmatter": true,
+        "type": "intelligence",
+        "taxonomy": "none"
+      },
+      "intelligence/casebook/human-service-subdomains.md": {
+        "has_frontmatter": true,
+        "type": "intelligence",
+        "taxonomy": "none"
+      },
+      "intelligence/casebook/ideal-customer-profile.md": {
+        "has_frontmatter": true,
+        "type": "intelligence",
+        "taxonomy": "none"
+      },
       "intelligence/casebook/overview.md": {
         "has_frontmatter": true,
         "type": "index",
+        "taxonomy": "none"
+      },
+      "intelligence/casebook/service-delivery-research.md": {
+        "has_frontmatter": true,
+        "type": "intelligence",
+        "taxonomy": "Service Plan, Services"
+      },
+      "intelligence/governance/policy.md": {
+        "has_frontmatter": true,
+        "type": "intelligence",
+        "taxonomy": "none"
+      },
+      "intelligence/governance/retention_policy.md": {
+        "has_frontmatter": true,
+        "type": "intelligence",
+        "taxonomy": "none"
+      },
+      "intelligence/product/competitors/casebook-self-profile.md": {
+        "has_frontmatter": true,
+        "type": "intelligence",
+        "taxonomy": "none"
+      },
+      "intelligence/product/competitors/competitor-binti.md": {
+        "has_frontmatter": true,
+        "type": "intelligence",
+        "taxonomy": "none"
+      },
+      "intelligence/product/competitors/competitor-bonterra-apricot.md": {
+        "has_frontmatter": true,
+        "type": "intelligence",
+        "taxonomy": "none"
+      },
+      "intelligence/product/competitors/competitor-caseworthy-clienttrack.md": {
+        "has_frontmatter": true,
+        "type": "intelligence",
+        "taxonomy": "none"
+      },
+      "intelligence/product/competitors/competitor-charity-tracker.md": {
+        "has_frontmatter": true,
+        "type": "intelligence",
+        "taxonomy": "none"
+      },
+      "intelligence/product/competitors/competitor-penelope.md": {
+        "has_frontmatter": true,
+        "type": "intelligence",
+        "taxonomy": "none"
+      },
+      "intelligence/product/competitors/competitor-social-solutions-eto.md": {
+        "has_frontmatter": true,
+        "type": "intelligence",
         "taxonomy": "none"
       },
       "intelligence/product/okrs/q2/elevate-notes/locked_and_signed_notes.md": {
@@ -2369,7 +2478,7 @@
       "intelligence/product/projects/q2/data-import-bulk-import-for-notes/prd.md": {
         "has_frontmatter": true,
         "type": "prd",
-        "taxonomy": null
+        "taxonomy": "Data Import, Notes"
       },
       "intelligence/product/projects/q2/data-import-clearer-ids/source/prd.txt": {
         "has_frontmatter": false,
@@ -2378,7 +2487,7 @@
       "intelligence/product/projects/q2/data-import-clearer-ids/prd.md": {
         "has_frontmatter": true,
         "type": "prd",
-        "taxonomy": null
+        "taxonomy": "Data Import"
       },
       "intelligence/product/projects/q2/enrollment-dialog-bulk-services-section/source/launch_plan.txt": {
         "has_frontmatter": false,
@@ -2391,7 +2500,7 @@
       "intelligence/product/projects/q2/enrollment-dialog-bulk-services-section/launch_plan.md": {
         "has_frontmatter": true,
         "type": "launch_plan",
-        "taxonomy": null
+        "taxonomy": "Service Plan"
       },
       "intelligence/product/projects/q2/enrollment-dialog-bulk-services-section/overview.md": {
         "has_frontmatter": true,
@@ -2401,7 +2510,7 @@
       "intelligence/product/projects/q2/enrollment-dialog-bulk-services-section/prd.md": {
         "has_frontmatter": true,
         "type": "prd",
-        "taxonomy": null
+        "taxonomy": "Service Plan"
       },
       "intelligence/product/projects/q2/integrations-zapier-improvements/source/prd.txt": {
         "has_frontmatter": false,
@@ -2415,7 +2524,7 @@
       "intelligence/product/projects/q2/integrations-zapier-improvements/prd.md": {
         "has_frontmatter": true,
         "type": "prd",
-        "taxonomy": null
+        "taxonomy": "Integrations"
       },
       "intelligence/product/projects/q2/notes-bulk-general-notes/source/launch_plan.txt": {
         "has_frontmatter": false,
@@ -2428,7 +2537,7 @@
       "intelligence/product/projects/q2/notes-bulk-general-notes/launch_plan.md": {
         "has_frontmatter": true,
         "type": "launch_plan",
-        "taxonomy": null
+        "taxonomy": "Notes"
       },
       "intelligence/product/projects/q2/notes-bulk-general-notes/overview.md": {
         "has_frontmatter": true,
@@ -2438,7 +2547,7 @@
       "intelligence/product/projects/q2/notes-bulk-general-notes/prd.md": {
         "has_frontmatter": true,
         "type": "prd",
-        "taxonomy": null
+        "taxonomy": "Notes"
       },
       "intelligence/product/projects/q2/notes-bulk-service-notes/source/launch_plan.txt": {
         "has_frontmatter": false,
@@ -2451,7 +2560,7 @@
       "intelligence/product/projects/q2/notes-bulk-service-notes/launch_plan.md": {
         "has_frontmatter": true,
         "type": "launch_plan",
-        "taxonomy": null
+        "taxonomy": "Notes, Service Plan"
       },
       "intelligence/product/projects/q2/notes-bulk-service-notes/overview.md": {
         "has_frontmatter": true,
@@ -2461,7 +2570,7 @@
       "intelligence/product/projects/q2/notes-bulk-service-notes/prd.md": {
         "has_frontmatter": true,
         "type": "prd",
-        "taxonomy": null
+        "taxonomy": "Notes, Service Plan"
       },
       "intelligence/product/projects/q2/notes-locked-notes/source/launch_plan.txt": {
         "has_frontmatter": false,
@@ -2474,7 +2583,7 @@
       "intelligence/product/projects/q2/notes-locked-notes/launch_plan.md": {
         "has_frontmatter": true,
         "type": "launch_plan",
-        "taxonomy": null
+        "taxonomy": "Notes"
       },
       "intelligence/product/projects/q2/notes-locked-notes/overview.md": {
         "has_frontmatter": true,
@@ -2484,7 +2593,7 @@
       "intelligence/product/projects/q2/notes-locked-notes/prd.md": {
         "has_frontmatter": true,
         "type": "prd",
-        "taxonomy": null
+        "taxonomy": "Notes"
       },
       "intelligence/product/projects/q2/notes-notes-datagrid/source/launch_plan.txt": {
         "has_frontmatter": false,
@@ -2502,7 +2611,7 @@
       "intelligence/product/projects/q2/notes-notes-datagrid/launch_plan.md": {
         "has_frontmatter": true,
         "type": "launch_plan",
-        "taxonomy": null
+        "taxonomy": "Notes"
       },
       "intelligence/product/projects/q2/notes-notes-datagrid/overview.md": {
         "has_frontmatter": true,
@@ -2512,7 +2621,7 @@
       "intelligence/product/projects/q2/notes-notes-datagrid/prd.md": {
         "has_frontmatter": true,
         "type": "prd",
-        "taxonomy": null
+        "taxonomy": "Notes"
       },
       "intelligence/product/projects/q2/notes-signing-service-note-locking/overview.md": {
         "has_frontmatter": true,
@@ -2535,7 +2644,7 @@
       "intelligence/product/projects/q2/portal-client-dashboard/prd.md": {
         "has_frontmatter": true,
         "type": "prd",
-        "taxonomy": null
+        "taxonomy": "Portal"
       },
       "intelligence/product/projects/q2/services-multiple-rosters-for-enrollments-and-notes/source/prd.txt": {
         "has_frontmatter": false,
@@ -2549,7 +2658,7 @@
       "intelligence/product/projects/q2/services-multiple-rosters-for-enrollments-and-notes/prd.md": {
         "has_frontmatter": true,
         "type": "prd",
-        "taxonomy": null
+        "taxonomy": "Service Plan, Notes"
       },
       "intelligence/product/projects/q2/services-service-plan-datagrid-with-bulk-actions/source/launch_plan.txt": {
         "has_frontmatter": false,
@@ -2563,7 +2672,7 @@
       "intelligence/product/projects/q2/services-service-plan-datagrid-with-bulk-actions/launch_plan.md": {
         "has_frontmatter": true,
         "type": "launch_plan",
-        "taxonomy": null
+        "taxonomy": "Service Plan"
       },
       "intelligence/product/projects/q2/services-service-plan-datagrid-with-bulk-actions/overview.md": {
         "has_frontmatter": true,
@@ -2577,7 +2686,7 @@
       "intelligence/product/projects/q2/services-wlv-bulk-actions/launch_plan.md": {
         "has_frontmatter": true,
         "type": "launch_plan",
-        "taxonomy": null
+        "taxonomy": "Service Plan, Workload View"
       },
       "intelligence/product/projects/q2/services-wlv-bulk-actions/overview.md": {
         "has_frontmatter": true,
@@ -2678,6 +2787,11 @@
         "type": "intelligence",
         "taxonomy": "none"
       },
+      "intelligence/product/roadmap-themes-2026.md": {
+        "has_frontmatter": true,
+        "type": "intelligence",
+        "taxonomy": "none"
+      },
       "intelligence/product/shareout-q2-summary.md": {
         "has_frontmatter": true,
         "type": "intelligence",
@@ -2758,6 +2872,10 @@
         "has_frontmatter": false,
         "type": "file"
       },
+      "skills/dream/scripts/tasks.py": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
       "skills/dream/scripts/utils.py": {
         "has_frontmatter": false,
         "type": "file"
@@ -2775,6 +2893,11 @@
         "has_frontmatter": true,
         "type": "skill",
         "taxonomy": null
+      },
+      "skills/intelligence/schemas/source-to-intelligence-prompt.md": {
+        "has_frontmatter": true,
+        "type": "schema",
+        "taxonomy": "none"
       },
       "skills/intelligence/scripts/01_harvest.py": {
         "has_frontmatter": false,
@@ -2886,6 +3009,25 @@
         "type": "skill",
         "taxonomy": null
       },
+      "skills/styles/repo.css": {
+        "has_frontmatter": false,
+        "type": "file"
+      },
+      "skills/styles/report.md": {
+        "has_frontmatter": true,
+        "type": "task",
+        "taxonomy": null
+      },
+      "skills/styles/SKILL.md": {
+        "has_frontmatter": true,
+        "type": "skill",
+        "taxonomy": null
+      },
+      "skills/tasks/overview.md": {
+        "has_frontmatter": true,
+        "type": "index",
+        "taxonomy": null
+      },
       "skills/tasks/run.py": {
         "has_frontmatter": false,
         "type": "file"
@@ -2939,10 +3081,7 @@
         "type": "file"
       }
     },
-    "frontmatter_missing": [
-      "governance/agents/antigravity/scratch/documentation_triad_templates.md",
-      "governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/memory/MEMORY.md"
-    ],
+    "frontmatter_missing": [],
     "unknown_taxonomy_terms": []
   }
 }

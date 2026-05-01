@@ -1,9 +1,12 @@
+---
+title: "Acronym and Abbreviation Guide — Human Services"
+type: intelligence
+domain: intelligence/casebook
+taxonomy: none
+---
+
 # Acronym and Abbreviation Guide — Human Services
 
-- **taxonomy:** none
-- **type:** intelligence
-
-# Acronym and Abbreviation Guide — Human Services
 
 > **Source:** Confluence — [Acronym and Abbreviation Guide](https://casecommons.atlassian.net/wiki/spaces/PROD/pages/472154229/Acronym+and+Abbreviation+Guide)
 > **Last updated in Confluence:** 2021-11-04

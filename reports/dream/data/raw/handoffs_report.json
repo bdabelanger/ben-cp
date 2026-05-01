@@ -1,18 +1,44 @@
 {
   "sensor": "handoffs",
-  "timestamp": "2026-04-29T12:27:21.125392",
+  "timestamp": "2026-04-30T22:43:54.843061",
   "summary": {
-    "files_audited": 6,
-    "issues_found": 6
+    "files_audited": 8,
+    "issues_found": 17
   },
   "issues": [
     {
-      "file": "reports/handoff/2026-04-29-p1-Review-Dream-Cycle-Failures-(Frontmatter,-Handoffs,-Links).md",
+      "file": "reports/handoff/2026-04-29-p3-Improve-add_task-tool:-resolve-project-GID-before-calling,-prevent-accidental-project-creation.md",
       "issue": "ready_no_checkboxes"
     },
     {
-      "file": "reports/handoff/2026-04-29-p3-Improve-add_task-tool:-resolve-project-GID-before-calling,-prevent-accidental-project-creation.md",
-      "issue": "ready_no_checkboxes"
+      "file": "reports/handoff/2026-04-29-p2-Fix-edit_handoff-tool:-preserve-frontmatter-and-support-append-mode.md",
+      "issue": "missing_frontmatter",
+      "field": "title"
+    },
+    {
+      "file": "reports/handoff/2026-04-29-p2-Fix-edit_handoff-tool:-preserve-frontmatter-and-support-append-mode.md",
+      "issue": "missing_frontmatter",
+      "field": "priority"
+    },
+    {
+      "file": "reports/handoff/2026-04-29-p2-Fix-edit_handoff-tool:-preserve-frontmatter-and-support-append-mode.md",
+      "issue": "missing_frontmatter",
+      "field": "assigned_to"
+    },
+    {
+      "file": "reports/handoff/2026-04-29-p2-Fix-edit_handoff-tool:-preserve-frontmatter-and-support-append-mode.md",
+      "issue": "missing_frontmatter",
+      "field": "status"
+    },
+    {
+      "file": "reports/handoff/2026-04-29-p2-Fix-edit_handoff-tool:-preserve-frontmatter-and-support-append-mode.md",
+      "issue": "missing_frontmatter",
+      "field": "date"
+    },
+    {
+      "file": "reports/handoff/2026-04-29-p2-Fix-edit_handoff-tool:-preserve-frontmatter-and-support-append-mode.md",
+      "issue": "missing_section",
+      "section": "## Execution Steps"
     },
     {
       "file": "reports/handoff/2026-04-29-p1-Enhance-Tasks-Report-Output-Specification.md",
@@ -28,6 +54,35 @@
     },
     {
       "file": "reports/handoff/2026-04-29-p1-Review-and-reconcile-launch-plan-dates-for-Notes-projects.md",
+      "issue": "ready_no_checkboxes"
+    },
+    {
+      "file": "reports/handoff/2026-04-29-p2-Redesign-handoff-tool-API:-edit_handoff-+-archive_handoff-+-standard-sections.md",
+      "issue": "missing_frontmatter",
+      "field": "title"
+    },
+    {
+      "file": "reports/handoff/2026-04-29-p2-Redesign-handoff-tool-API:-edit_handoff-+-archive_handoff-+-standard-sections.md",
+      "issue": "missing_frontmatter",
+      "field": "priority"
+    },
+    {
+      "file": "reports/handoff/2026-04-29-p2-Redesign-handoff-tool-API:-edit_handoff-+-archive_handoff-+-standard-sections.md",
+      "issue": "missing_frontmatter",
+      "field": "assigned_to"
+    },
+    {
+      "file": "reports/handoff/2026-04-29-p2-Redesign-handoff-tool-API:-edit_handoff-+-archive_handoff-+-standard-sections.md",
+      "issue": "missing_frontmatter",
+      "field": "status"
+    },
+    {
+      "file": "reports/handoff/2026-04-29-p2-Redesign-handoff-tool-API:-edit_handoff-+-archive_handoff-+-standard-sections.md",
+      "issue": "missing_frontmatter",
+      "field": "date"
+    },
+    {
+      "file": "reports/handoff/2026-04-29-p2-Redesign-handoff-tool-API:-edit_handoff-+-archive_handoff-+-standard-sections.md",
       "issue": "ready_no_checkboxes"
     }
   ]

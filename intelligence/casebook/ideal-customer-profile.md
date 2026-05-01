@@ -1,9 +1,12 @@
+---
+title: "Ideal Customer Profile (ICP)"
+type: intelligence
+domain: intelligence/casebook
+taxonomy: none
+---
+
 # Ideal Customer Profile (ICP)
 
-- **taxonomy:** none
-- **type:** intelligence
-
-# Ideal Customer Profile (ICP)
 
 > **Sources:**
 > - Customer Care Index (CCI) space: [Ideal Customer Profile](https://casecommons.atlassian.net/wiki/spaces/CCI/pages/2782855169/Ideal+Customer+Profile+ICP)

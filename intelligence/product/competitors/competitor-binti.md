@@ -1,9 +1,12 @@
+---
+title: "Competitor Profile: Binti"
+type: intelligence
+domain: intelligence/product/competitors
+taxonomy: none
+---
+
 # Competitor Profile: Binti
 
-- **taxonomy:** Competitors
-- **type:** intelligence
-
-# Competitor Profile: Binti
 
 > **Scope:** Full competitive profile across all 6 roadmap themes.
 > **Sources:** Confluence Revenue Team analysis (Binti page, last updated 2021), First Round Review, GetApp/G2 review data, Binti website, Sidekick Solutions consulting blog

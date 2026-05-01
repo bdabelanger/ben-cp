@@ -1,7 +1,9 @@
-# 2026 Roadmap Themes — Customer Sentiment Analysis
-
-- **type:** intelligence
-- **taxonomy:** Reporting, Workflows, Service Plan, Integrations
+---
+title: "2026 Roadmap Themes"
+type: intelligence
+domain: intelligence/product
+taxonomy: none
+---
 
 # 2026 Roadmap Themes — Customer Sentiment Analysis
 

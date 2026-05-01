@@ -1,28 +1,32 @@
-# Dream Report — 2026-04-29
+# Dream Report — 2026-04-30
 
-**Run:** 12:26 · **Sensors:** 12/12 OK · **Duration:** 59.7s
+**Run:** 22:43 · **Sensors:** 12/12 OK · **Duration:** 15.6s
 
 ## Sensor Summary
 
 | Sensor | Status | Detail |
 |--------|--------|--------|
-| reindex | 🟡 | 141 directories, 494 files scanned, 2 frontmatter missing |
+| reindex | 🟡 | 147 directories, 516 files scanned |
 | pulse | 🟢 | clean |
-| links | 🟢 | 105 files scanned |
-| frontmatter | 🔴 | 105 files scanned, 27 issues found |
+| links | 🟢 | 123 files scanned |
+| frontmatter | 🟢 | 123 files scanned |
 | drift | 🟢 | clean |
-| handoffs | 🔴 | 6 files audited, 6 issues found |
+| handoffs | 🔴 | 8 files audited, 17 issues found |
 | index | 🟢 | clean |
-| agents | 🟡 | 102 files scanned, 2 issues found |
-| bloat | 🟡 | 248 total files, 2 yellow flags, 561 files touched 24h |
-| changelog | 🟢 | clean |
+| agents | 🟡 | 120 files scanned, 2 issues found |
+| bloat | 🔴 | 273 total files, 1 red flags, 2 yellow flags, 14 files touched 24h |
+| changelog | 🟡 | 14 unlogged changes |
 | intelligence | 🟢 | clean |
 | scripts | 🟢 | 5 skills checked |
 
 ## Highlights
 
-- **6 handoff issues** — missing sections or stale READY files
-- 2 files over 250KB (watch list)
+- **17 handoff issues** — missing sections or stale READY files
+- **1 files over 750KB** — token economy risk
+
+## Large Files (>750KB)
+
+- `reports/asana/raw/all_projects.json` — 1035.7KB
 
 ## Pipeline Reports
 
@@ -34,8 +38,8 @@
 
 [Full report](../tasks/report.md)
 
-_Last synced: 2026-04-29 12:26 · 64 Asana tasks · 46 Jira issues_
-**13 overdue tasks** — see full report for details.
+_Last synced: 2026-04-30 22:43 · 65 Asana tasks · 0 Jira issues_
+**24 overdue tasks** — see full report for details.
 
 ### ⚠️ Release Readiness
 
@@ -43,7 +47,7 @@ _Last synced: 2026-04-29 12:26 · 64 Asana tasks · 46 Jira issues_
 
 Release `Platform-2026-4-2` — 1 repos to bump, 0 leaks
 
-### ✅ Platform Status
+### ⚠️ Platform Status
 
 [Full report](../status/report.md)
 

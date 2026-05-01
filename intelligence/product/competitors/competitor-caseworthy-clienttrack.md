@@ -1,7 +1,9 @@
-# Competitor Profile: CaseWorthy / ClientTrack
-
-- **taxonomy:** Competitors, Workflows, Communication
-- **type:** intelligence
+---
+title: "Competitor Profile: CaseWorthy / ClientTrack"
+type: intelligence
+domain: intelligence/product/competitors
+taxonomy: none
+---
 
 # Competitor Profile: CaseWorthy / ClientTrack
 

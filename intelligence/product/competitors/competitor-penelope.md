@@ -1,7 +1,9 @@
-# Competitor Profile: Penelope (Bonterra / Athena Software)
-
-- **taxonomy:** Competitors
-- **type:** intelligence
+---
+title: "Competitor Profile: Penelope (Bonterra / Athena Software)"
+type: intelligence
+domain: intelligence/product/competitors
+taxonomy: none
+---
 
 # Competitor Profile: Penelope (Bonterra / Athena Software)
 

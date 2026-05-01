@@ -1,13 +1,28 @@
 {
   "sensor": "changelog",
-  "timestamp": "2026-04-29T12:27:21.468327",
+  "timestamp": "2026-04-30T22:43:54.962551",
   "summary": {
     "root_versions_found": 0,
     "version_issues": 0,
     "subdirectory_changelogs": 0,
-    "unlogged_changes": 0
+    "unlogged_changes": 14
   },
   "version_issues": [],
   "subdirectory_changelogs": [],
-  "unlogged_changes": []
+  "unlogged_changes": [
+    "intelligence/casebook/human-service-subdomains.md",
+    "intelligence/product/competitors/competitor-charity-tracker.md",
+    "intelligence/product/competitors/casebook-self-profile.md",
+    "intelligence/casebook/service-delivery-research.md",
+    "reports/handoff/2026-04-29-p2-Fix-edit_handoff-tool:-preserve-frontmatter-and-support-append-mode.md",
+    "intelligence/product/competitors/competitor-penelope.md",
+    "intelligence/product/competitors/competitor-caseworthy-clienttrack.md",
+    "reports/handoff/2026-04-29-p2-Redesign-handoff-tool-API:-edit_handoff-+-archive_handoff-+-standard-sections.md",
+    "intelligence/product/competitors/competitor-social-solutions-eto.md",
+    "intelligence/product/competitors/competitor-bonterra-apricot.md",
+    "intelligence/product/competitors/competitor-binti.md",
+    "intelligence/casebook/ideal-customer-profile.md",
+    "intelligence/product/roadmap-themes-2026.md",
+    "intelligence/casebook/acronym-abbreviation-guide.md"
+  ]
 }

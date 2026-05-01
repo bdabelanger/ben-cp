@@ -1,7 +1,9 @@
-# Competitor Profile: Bonterra / Apricot
-
-- **type:** intelligence
-- **taxonomy:** Competitors, Workflows, Communication
+---
+title: "Competitor Profile: Bonterra / Apricot"
+type: intelligence
+domain: intelligence/product/competitors
+taxonomy: none
+---
 
 # Competitor Profile: Bonterra / Apricot
 

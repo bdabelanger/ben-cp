@@ -1,9 +1,12 @@
+---
+title: "Casebook PBC — Competitive Self-Profile"
+type: intelligence
+domain: intelligence/product/competitors
+taxonomy: none
+---
+
 # Casebook PBC — Competitive Self-Profile
 
-- **taxonomy:** Competitors
-- **type:** intelligence
-
-# Casebook PBC — Competitive Self-Profile
 
 > **Purpose:** How Casebook appears from the outside — customer profile, market position, review sentiment, compliance posture, and honest weaknesses. Used for competitive positioning and slide copy.
 > **Sources:** G2, Capterra, Software Advice review aggregations; Casebook PBC website; ICP documentation; Casebook Platform Security PDF; casebook.net/cjis

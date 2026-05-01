@@ -1,8 +1,9 @@
 ---
-title: Notes - Bulk "General Notes"
+title: Launch plan - Notes - Bulk General Notes
 type: launch_plan
 domain: product/projects/q2
 status: active
+taxonomy: Notes
 ---
 
 # Launch Plan: Notes - Bulk "General Notes"

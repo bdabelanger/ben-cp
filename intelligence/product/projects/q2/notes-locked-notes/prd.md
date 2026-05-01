@@ -3,7 +3,9 @@ title: Notes - Locked Notes
 type: prd
 domain: product/projects/q2
 status: active
+taxonomy: Notes
 ---
+
 
 # PRD: Notes - Locked Notes
 

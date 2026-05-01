@@ -19,4 +19,7 @@ Gather all required static images and short videos/GIFs from Ben to update the r
 Task: Assets from Ben: Static images and short video/gif
 ## Execution Steps
 
-_Steps to be defined during execution._
+- [🔲] **Asset Inventory**: Human to list the specific assets required from Ben.
+- [🔲] **Asset Collection**: Human to confirm receipt and placement of assets.
+- [🔲] **Ready for Integration**: Human to mark when assets are ready for video updates.
+

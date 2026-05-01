@@ -1,8 +1,9 @@
 ---
-title: Services WLV - Bulk actions
+title: Launch plan - Services - WLV bulk actions
 type: launch_plan
 domain: product/projects/q2
 status: active
+taxonomy: Service Plan, Workload View
 ---
 
 # Launch Plan: Services WLV - Bulk actions

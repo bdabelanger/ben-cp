@@ -139,16 +139,12 @@ reports/
 | `tsconfig.json` | TypeScript config |
 ---
 ## Auto-generated Stats
-> Last updated: 2026-04-29 12:27 by dream/reindex
+> Last updated: 2026-04-30 22:43 by dream/reindex
 
 | Metric | Value |
 |--------|-------|
-| Directories | 141 |
-| Markdown files | 494 |
-| Frontmatter coverage | 99.6% |
-| Missing frontmatter | 2 |
+| Directories | 147 |
+| Markdown files | 516 |
+| Frontmatter coverage | 100.0% |
+| Missing frontmatter | 0 |
 | Unknown taxonomy terms | 0 |
-
-**Missing frontmatter (first 5):**
-- `governance/agents/antigravity/scratch/documentation_triad_templates.md`
-- `governance/agents/claude/projects/-Users-benbelanger-GitHub-ben-cp/memory/MEMORY.md`

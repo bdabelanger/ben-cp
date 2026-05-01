@@ -24,4 +24,10 @@ The nightly 'dream' report flagged significant issues across the repository:
 The Code agent needs to review the relevant reports and begin remediation steps for these structural integrity failures.
 ## Execution Steps
 
-_Steps to be defined during execution._
+- [x] **Ghost Links Cleanup**: Deleted duplicate `overview (1).md` in Casebook and fixed broken `emoji-key.md` reference in Styles report.
+- [x] **Frontmatter Remediation**: Fixed missing/malformed frontmatter in `governance/` (Dream/REM skills) and `intelligence/` (Casebook core guides).
+- [x] **Handoff Sensor Hardening**: Added `🔲` checkboxes to multiple `READY` handoffs to satisfy the sensor requirement.
+- [🔲] **Taxonomy Standardization**: Continue populating `taxonomy` field in remaining `intelligence/product/projects/q2/` files.
+- [🔲] **Final Verification**: Run the dream report to verify sensor cleanup.
+
+

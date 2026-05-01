@@ -49,4 +49,8 @@ This primes Claude to do the right thing without code changes.
 
 ## Execution Steps
 
-_Steps to be defined during execution._
+- [🔲] **Tool Description Update**: Update `add_task` description in `src/ben-cp.ts` to mandate GID resolution.
+- [🔲] **Validation Logic**: Implement Option C (fail loudly if GID is missing).
+- [🔲] **Build & Deploy**: Run `npm run build` and `refresh_mcp`.
+- [🔲] **Verification**: Test `add_task` without GID and confirm error message.
+

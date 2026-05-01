@@ -1,7 +1,9 @@
-# Competitor Profile: Social Solutions ETO (Bonterra ETO)
-
-- **taxonomy:** Competitors, Workflows, Communication
-- **type:** intelligence
+---
+title: "Competitor Profile: Social Solutions ETO (Bonterra ETO)"
+type: intelligence
+domain: intelligence/product/competitors
+taxonomy: none
+---
 
 # Competitor Profile: Social Solutions ETO (Bonterra ETO)
 

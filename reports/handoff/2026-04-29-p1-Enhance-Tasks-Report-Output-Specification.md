@@ -27,7 +27,11 @@ date: 2026-04-29
 This change requires modification to the `tasks/SKILL.md` or associated pipeline scripts within the repository structure. Please coordinate with Code Agent for implementation.
 ## Execution Steps
 
-_Steps to be defined during execution._
+- [🔲] **Pipeline Refactor**: Update `skills/tasks/run.py` to include task descriptions and cross-system links.
+- [🔲] **Sorting & Filtering**: Implement sorting by due date and priority; add `--verbose` flag.
+- [🔲] **Documentation**: Update `skills/tasks/SKILL.md` to reflect the new output specification.
+- [🔲] **Verification**: Generate the report and confirm output format.
+
 
 ---
 

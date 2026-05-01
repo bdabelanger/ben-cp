@@ -3,6 +3,7 @@ title: Notes - Notes datagrid
 type: prd
 domain: product/projects/q2
 status: active
+taxonomy: Notes
 ---
 
 # PRD: Notes - Notes datagrid

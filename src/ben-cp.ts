@@ -156,6 +156,49 @@ async function walkDir(dir: string): Promise<string[]> {
   return files.flat().filter(f => f.endsWith('.md'));
 }
 
+function stringifyFrontmatter(metadata: Record<string, any>): string {
+  let yaml = "---\n";
+  for (const [key, value] of Object.entries(metadata)) {
+    if (value === null || value === undefined) continue;
+    if (Array.isArray(value)) {
+      yaml += `${key}: ${value.join(", ")}\n`;
+    } else if (typeof value === 'object') {
+      yaml += `${key}:\n`;
+      for (const [subKey, subValue] of Object.entries(value)) {
+        yaml += `  ${subKey}: ${subValue}\n`;
+      }
+    } else {
+      yaml += `${key}: ${value}\n`;
+    }
+  }
+  yaml += "---\n";
+  return yaml;
+}
+
+function extractFrontmatterAndBody(content: string): { metadata: Record<string, any>, body: string } {
+  const fmMatch = content.match(/^---\n([\s\S]*?)\n---/);
+  if (fmMatch) {
+    return {
+      metadata: parseFrontmatter(fmMatch[1]),
+      body: content.slice(fmMatch[0].length).trim()
+    };
+  }
+  // Fallback to legacy metadata scraping
+  const metadata: Record<string, any> = {};
+  const metaMatches = content.matchAll(/- \*\*([^:]+):\*\* (.*)/g);
+  for (const match of metaMatches) { metadata[match[1]] = match[2].trim(); }
+  
+  // Body starts after the last metadata match or at the first H1
+  let body = content;
+  const lastMetaIndex = content.lastIndexOf('- **');
+  if (lastMetaIndex !== -1) {
+    const endOfMetaLine = content.indexOf('\n', lastMetaIndex);
+    body = content.slice(endOfMetaLine === -1 ? content.length : endOfMetaLine).trim();
+  }
+  
+  return { metadata, body };
+}
+
 async function writeChangelogInternal(a: any, skillsPath: string, date: string): Promise<string[]> {
   const written: string[] = [];
   const changesLines = (a.completed_work ?? []).map((w: any) => `- \`${w.path}\` — ${w.change} ${w.status}`).join("\n");
@@ -398,7 +441,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "refresh_mcp",
-      description: "Rebuilds the MCP server and cleans up duplicate or orphan processes. Use this to apply code changes and ensure only one instance per host app is running.",
+      description: "Rebuilds the MCP server and cleans up duplicate or orphan processes. Use this to apply code changes. IMPORTANT: After calling this tool, the agent MUST stop and ask the user to manually refresh/reconnect the MCP server in their host application.",
       inputSchema: { type: "object" }
     },
   ]
@@ -533,13 +576,19 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const date = new Date().toISOString().split('T')[0];
       const filename = ensureSingleExtension(`${date}-${priority.toLowerCase()}-${title.replace(/\s+/g, '-')}`);
       const fullPath = path.join(handoffPath, filename);
-      const header = `# Implementation Plan: ${title}\n\n` +
-        `> **Prepared by:** Code (Gemini) (${date})\n` +
-        `> **Assigned to:** ${assigned_to}\n` +
-        `> **Repo root:** ${rootPath}\n` +
-        `> **Priority:** ${priority}\n` +
-        `> **STATUS**: 🔲 READY — pick up ${date}\n\n---\n\n`;
-      await fs.writeFile(fullPath, header + content, "utf-8");
+      
+      const metadata = {
+        title,
+        priority,
+        assigned_to,
+        status: `READY — pick up ${date}`,
+        date
+      };
+
+      const fm = stringifyFrontmatter(metadata);
+      const fullContent = `${fm}\n# Implementation Plan: ${title}\n\n${content}`;
+      
+      await fs.writeFile(fullPath, fullContent, "utf-8");
       return { content: [{ type: "text", text: `Handoff created: \`${filename}\`` }] };
     }
 
@@ -670,7 +719,17 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const sanitizedFilename = ensureSingleExtension(fileName);
       const fullPath = path.join(artRoot, sanitizedFilename);
       const date = new Date().toISOString().split('T')[0];
-      const fullContent = `# ${title}\n\n> **Artist:** ${agent}\n> **Date:** ${date}\n\n${content}\n`;
+      
+      const metadata = {
+        title,
+        artist: agent,
+        date,
+        type: "art",
+        domain: "art"
+      };
+
+      const fm = stringifyFrontmatter(metadata);
+      const fullContent = `${fm}\n# ${title}\n\n${content}\n`;
       await fs.writeFile(fullPath, fullContent, "utf-8");
 
       // Update Index
@@ -716,9 +775,16 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       } catch (e: any) {
         if (e.message.includes("already exists")) throw e;
       }
-      let metaBlock = "";
-      for (const [key, value] of Object.entries(metadata)) { metaBlock += `- **${key}:** ${value}\n`; }
-      const fullContent = `# ${title}\n\n${metaBlock}\n${content}\n`;
+      
+      const fullMetadata = {
+        title,
+        type: "intelligence",
+        domain,
+        ...metadata
+      };
+
+      const fm = stringifyFrontmatter(fullMetadata);
+      const fullContent = `${fm}\n# ${title}\n\n${content}\n`;
       await fs.writeFile(fullPath, fullContent, "utf-8");
       return { content: [{ type: "text", text: "Intelligence record created." }] };
     }
@@ -746,32 +812,43 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         }
       }
 
-      let existingContent = await fs.readFile(fullPath, "utf-8");
+      const existingContent = await fs.readFile(fullPath, "utf-8");
+      const { metadata: currentMetadata, body: currentBody } = extractFrontmatterAndBody(existingContent);
 
-      const lines = existingContent.split('\n');
-      let currentTitle = lines[0].replace(/^# /, '');
-      if (title) currentTitle = title;
-
-      const currentMetadata: Record<string, string> = {};
-      const metaMatches = existingContent.matchAll(/- \*\*([^:]+):\*\* (.*)/g);
-      for (const match of metaMatches) { currentMetadata[match[1]] = match[2].trim(); }
+      if (title) currentMetadata.title = title;
       Object.assign(currentMetadata, metadata);
 
-      let currentBody = existingContent.split('\n\n').slice(2).join('\n\n');
-      if (content) currentBody = content;
-
-      let metaBlock = "";
-      for (const [key, value] of Object.entries(currentMetadata)) { metaBlock += `- **${key}:** ${value}\n`; }
-      let newContent = `# ${currentTitle}\n\n${metaBlock}\n${currentBody}`;
+      let finalBody = currentBody;
+      if (content) {
+        // If content is provided, we use it as the new body.
+        // But we must preserve the H1 if the content doesn't have it.
+        if (!content.trim().startsWith("# ")) {
+          finalBody = `# ${currentMetadata.title || "Untitled"}\n\n${content}`;
+        } else {
+          finalBody = content;
+        }
+      } else {
+        // If no content, we just update the H1 in the existing body if title changed
+        if (title && finalBody.startsWith("# ")) {
+          finalBody = finalBody.replace(/^# .*/, `# ${title}`);
+        }
+      }
 
       // Handle embedded linking logic
       if (relationship && targetPath) {
         const tPath = path.resolve(rootPath, "intelligence", targetPath.endsWith(".md") ? targetPath : `${targetPath}.md`);
         const tCont = await fs.readFile(tPath, "utf-8");
-        newContent = newContent.replace(/(# .*\n\n)/, `$1- **${relationship}:** [[${targetPath}]]\n`);
-        await fs.writeFile(tPath, tCont.replace(/(# .*\n\n)/, `$1- **linked-by:** [[${relPath}]] (${relationship})\n`), "utf-8");
+        const { metadata: tMeta, body: tBody } = extractFrontmatterAndBody(tCont);
+        
+        // Link target to source
+        tMeta["linked-by"] = `[[${relPath}]] (${relationship})`;
+        await fs.writeFile(tPath, stringifyFrontmatter(tMeta) + "\n" + tBody, "utf-8");
+        
+        // Link source to target
+        currentMetadata[relationship] = `[[${targetPath}]]`;
       }
 
+      const newContent = stringifyFrontmatter(currentMetadata) + "\n" + finalBody;
       await fs.writeFile(fullPath, newContent, "utf-8");
       return { content: [{ type: "text", text: `Intelligence record ${relPath} updated${relationship ? " and linked" : ""}.` }] };
     }

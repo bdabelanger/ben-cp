@@ -1,9 +1,12 @@
+---
+title: "Human Service Subdomains"
+type: intelligence
+domain: intelligence/casebook
+taxonomy: none
+---
+
 # Human Service Subdomains
 
-- **type:** intelligence
-- **taxonomy:** none
-
-# Human Service Subdomains
 
 > **Source:** Confluence — [Human service subdomains](https://casecommons.atlassian.net/wiki/spaces/PROD/pages/2460385291/Human+service+subdomains)
 > **Last updated in Confluence:** 2022-05-12

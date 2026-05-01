@@ -1,9 +1,12 @@
+---
+title: "Service Delivery Research — Domain Patterns & Terminology"
+type: intelligence
+domain: intelligence/casebook
+taxonomy: Service Plan, Services
+---
+
 # Service Delivery Research — Domain Patterns & Terminology
 
-- **taxonomy:** Service Plan, Services
-- **type:** intelligence
-
-# Service Delivery Research — Domain Patterns & Terminology
 
 > **Source:** Confluence — [Service Delivery Research](https://casecommons.atlassian.net/wiki/spaces/PROD/pages/652574739/Service+Delivery+Research)
 > **Last updated in Confluence:** 2021-10-19

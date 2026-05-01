@@ -4,7 +4,7 @@ import sys
 
 # Standard Repo Paths
 # skills/intelligence/02_parse.py -> ../.. -> ben-cp/
-REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
 SCHEMA_PATH = os.path.join(REPO_ROOT, "skills/intelligence/schemas/source-to-intelligence-prompt.md")
 
 def parse_file(file_path):

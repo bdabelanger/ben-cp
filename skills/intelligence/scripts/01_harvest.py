@@ -13,7 +13,7 @@ from requests.auth import HTTPBasicAuth
 
 # Path Configuration
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-REPO_ROOT  = os.path.abspath(os.path.join(SCRIPT_DIR, "..", ".."))
+REPO_ROOT  = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "..", ".."))
 INTEL_DIR  = os.path.join(REPO_ROOT, "intelligence")
 ASANA_CACHE = os.path.join(REPO_ROOT, "reports", "asana", "raw", "all_projects.json")
 
